@@ -1,0 +1,140 @@
+{
+  "_fv": 66,
+  "_type": "block",
+  "definition": {
+    "texture": "rotten_log_top",
+    "textureTop": "rotten_log_top",
+    "textureLeft": "inactive_eye_log",
+    "textureFront": "inactive_eye_log",
+    "textureRight": "inactive_eye_log",
+    "textureBack": "inactive_eye_log",
+    "renderType": 10,
+    "customModelName": "Normal",
+    "rotationMode": 5,
+    "enablePitch": false,
+    "emissiveRendering": false,
+    "displayFluidOverlay": false,
+    "itemTexture": "",
+    "particleTexture": "",
+    "tintType": "No tint",
+    "isItemTinted": false,
+    "hasTransparency": false,
+    "connectedSides": false,
+    "transparencyType": "SOLID",
+    "disableOffset": false,
+    "boundingBoxes": [
+      {
+        "mx": 0.0,
+        "my": 0.0,
+        "mz": 0.0,
+        "Mx": 16.0,
+        "My": 16.0,
+        "Mz": 16.0,
+        "subtract": false
+      }
+    ],
+    "name": "Inactive Infested Rotten Log",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "hardness": 2.1999999999999997,
+    "resistance": 16.0,
+    "hasGravity": false,
+    "isWaterloggable": false,
+    "creativeTabs": [],
+    "destroyTool": "pickaxe",
+    "customDrop": {
+      "value": "CUSTOM:InfestedRottenLog"
+    },
+    "dropAmount": 1,
+    "useLootTableForDrops": false,
+    "requiresCorrectTool": false,
+    "enchantPowerBonus": 0.0,
+    "plantsGrowOn": false,
+    "canRedstoneConnect": false,
+    "lightOpacity": 15,
+    "material": {
+      "value": "WOOD"
+    },
+    "tickRate": 20,
+    "tickRandomly": true,
+    "isReplaceable": false,
+    "canProvidePower": false,
+    "emittedRedstonePower": {
+      "fixedValue": 15.0
+    },
+    "colorOnMap": "DEFAULT",
+    "creativePickItem": {
+      "value": "CUSTOM:InfestedRottenLog"
+    },
+    "offsetType": "NONE",
+    "aiPathNodeType": "DEFAULT",
+    "flammability": 0,
+    "fireSpreadSpeed": 0,
+    "isLadder": false,
+    "slipperiness": 0.6,
+    "speedFactor": 1.0,
+    "jumpFactor": 1.0,
+    "reactionToPushing": "NORMAL",
+    "isNotColidable": false,
+    "isCustomSoundType": false,
+    "soundOnStep": {
+      "value": "BASALT"
+    },
+    "breakSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
+    },
+    "luminance": 0,
+    "unbreakable": false,
+    "vanillaToolTier": "NONE",
+    "isBonemealable": false,
+    "hasInventory": false,
+    "guiBoundTo": "<NONE>",
+    "openGUIOnRightClick": false,
+    "inventorySize": 0,
+    "inventoryStackSize": 64,
+    "inventoryDropWhenDestroyed": false,
+    "inventoryComparatorPower": false,
+    "inventoryOutSlotIDs": [],
+    "inventoryInSlotIDs": [],
+    "hasEnergyStorage": false,
+    "energyInitial": 0,
+    "energyCapacity": 400000,
+    "energyMaxReceive": 200,
+    "energyMaxExtract": 200,
+    "isFluidTank": false,
+    "fluidCapacity": 8000,
+    "fluidRestrictions": [],
+    "onTickUpdate": {
+      "name": "InactiveEyeLogTick"
+    },
+    "generateFeature": true,
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:WatchingUndergrowth"
+      }
+    ],
+    "blocksToReplace": [
+      {
+        "value": "CUSTOM:RottenLog"
+      }
+    ],
+    "generationShape": "UNIFORM",
+    "frequencyPerChunks": 24,
+    "frequencyOnChunk": 14,
+    "minGenerateHeight": 0,
+    "maxGenerateHeight": 340
+  }
+}

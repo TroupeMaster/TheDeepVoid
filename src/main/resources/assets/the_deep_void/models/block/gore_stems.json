@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "the_deep_void:block/gore_grass",
+    "particle": "the_deep_void:block/gore_grass"
+  },
+  "render_type": "cutout"
+}

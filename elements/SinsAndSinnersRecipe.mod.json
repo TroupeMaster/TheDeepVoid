@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:SacredCinnabar"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:SacredCinnabar"
+      },
+      {
+        "value": "CUSTOM:Seer"
+      },
+      {
+        "value": "CUSTOM:SacredCinnabar"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:SacredCinnabar"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:SinsAndSinners"
+    },
+    "name": "sins_and_sinners",
+    "namespace": "mod"
+  }
+}

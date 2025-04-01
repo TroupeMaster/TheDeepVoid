@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 3,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:Onyx"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "Blocks.BOOKSHELF"
+      },
+      {
+        "value": "Blocks.BOOKSHELF"
+      },
+      {
+        "value": "Blocks.BOOKSHELF"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:Onyx"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:AncientBookshelf"
+    },
+    "name": "ancient_bookshelf",
+    "namespace": "mod"
+  }
+}

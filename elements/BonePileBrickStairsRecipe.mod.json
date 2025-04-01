@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 4,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:BonePileBricks"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:BonePileBricks"
+      },
+      {
+        "value": "CUSTOM:BonePileBricks"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:BonePileBricks"
+      },
+      {
+        "value": "CUSTOM:BonePileBricks"
+      },
+      {
+        "value": "CUSTOM:BonePileBricks"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:BonePileBrickStairs"
+    },
+    "name": "bone_pile_brick_stairs",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/template_glass_pane_noside",
+  "textures": {
+    "particle": "the_deep_void:block/bismuth_glass",
+    "pane": "the_deep_void:block/bismuth_glass"
+  },
+  "render_type": "cutout"
+}

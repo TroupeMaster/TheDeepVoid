@@ -1,0 +1,30 @@
+{
+  "_fv": 66,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "Weave At No End",
+    "achievementDescription": "Defeat Mror'dyygothre, The Weaver Of Souls",
+    "achievementIcon": {
+      "value": "CUSTOM:WeaverMask.helmet"
+    },
+    "background": "Default",
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
+    "hideIfNotCompleted": false,
+    "rewardLoot": [],
+    "rewardRecipes": [
+      "WeaverMaskRecipe",
+      "WeaverRobeRecipe",
+      "GodsScourgeRecipe",
+      "SinsAndSinnersRecipe"
+    ],
+    "rewardFunction": "No function",
+    "rewardXP": 0,
+    "achievementType": "challenge",
+    "parent": {
+      "value": "CUSTOM:PrettyGems"
+    },
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"40\" y=\"80\"><next><block type=\"custom_trigger\"></block></next></block></xml>"
+  }
+}

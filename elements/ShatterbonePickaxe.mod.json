@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:VoidMatter"
+      },
+      {
+        "value": "CUSTOM:GrimGem"
+      },
+      {
+        "value": "CUSTOM:BlackMoss"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:OnyxPickaxe"
+      },
+      {
+        "value": "CUSTOM:GrimGem"
+      },
+      {
+        "value": "CUSTOM:AncientOnyx"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:VoidMatter"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:ReinforcedPickaxe"
+    },
+    "name": "shatterbone_pickaxe",
+    "namespace": "mod"
+  }
+}

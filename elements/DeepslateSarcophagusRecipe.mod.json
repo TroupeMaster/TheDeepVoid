@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "Blocks.COBBLED_DEEPSLATE"
+      },
+      {
+        "value": "Blocks.COBBLED_DEEPSLATE"
+      },
+      {
+        "value": "Blocks.COBBLED_DEEPSLATE"
+      },
+      {
+        "value": "CUSTOM:AncientDeepslateBricks"
+      },
+      {
+        "value": "CUSTOM:AncientDeepslateBricks"
+      },
+      {
+        "value": "CUSTOM:AncientDeepslateBricks"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:DeepslateSarcophagusBlock"
+    },
+    "name": "deepslate_sarcophagus",
+    "namespace": "mod"
+  }
+}

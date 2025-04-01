@@ -1,0 +1,21 @@
+{
+  "_fv": 66,
+  "_type": "potion",
+  "definition": {
+    "potionName": "Potion of Rot",
+    "splashName": "Splash Potion of Rot",
+    "lingeringName": "Lingering Potion of Rot",
+    "arrowName": "Arrow of Rot",
+    "effects": [
+      {
+        "effect": {
+          "value": "CUSTOM:Rot"
+        },
+        "duration": 240,
+        "amplifier": 0,
+        "ambient": false,
+        "showParticles": true
+      }
+    ]
+  }
+}

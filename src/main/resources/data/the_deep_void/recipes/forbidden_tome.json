@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "cdc",
+    "efe"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:void_matter"
+    },
+    "b": {
+      "item": "the_deep_void:ancient_onyx"
+    },
+    "c": {
+      "item": "the_deep_void:void_filled_sponge"
+    },
+    "d": {
+      "item": "minecraft:writable_book"
+    },
+    "e": {
+      "item": "the_deep_void:black_moss"
+    },
+    "f": {
+      "item": "the_deep_void:grim_gem"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:forbidden_tome",
+    "count": 1
+  }
+}

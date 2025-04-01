@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:BoneMarrow"
+      },
+      {
+        "value": "CUSTOM:BoneMarrow"
+      },
+      {
+        "value": "CUSTOM:BoneMarrow"
+      },
+      {
+        "value": "CUSTOM:CookedCrawlerEgg"
+      },
+      {
+        "value": "CUSTOM:CookedCrawlerEgg"
+      },
+      {
+        "value": "CUSTOM:CookedCrawlerEgg"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:CrawlerOmelette"
+    },
+    "name": "crawler_omelette",
+    "namespace": "mod"
+  }
+}

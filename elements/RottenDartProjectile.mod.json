@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "CUSTOM:RottenDart"
+    },
+    "showParticles": false,
+    "actionSound": {
+      "value": "entity.arrow.shoot"
+    },
+    "igniteFire": false,
+    "power": 0.8,
+    "damage": 1.0,
+    "knockback": 0,
+    "entityModel": "Modelarrow",
+    "customModelTexture": "rotten_dart_proj.png",
+    "onHitsEntity": {
+      "name": "RottenDartProjectileProjectileHitsLivingEntity"
+    }
+  }
+}

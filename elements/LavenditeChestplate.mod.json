@@ -1,0 +1,28 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "Items.IRON_CHESTPLATE"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:BlockOfLavendite"
+    },
+    "smithingInputTemplateStack": {
+      "value": "CUSTOM:SmithingTemplateLavendite"
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:LavenditeArmor.body"
+    },
+    "name": "lavendite_chestplate",
+    "namespace": "mod"
+  }
+}

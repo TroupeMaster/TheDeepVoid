@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "Items.ARROW"
+    },
+    "showParticles": false,
+    "actionSound": {
+      "value": "particle.soul_escape"
+    },
+    "igniteFire": false,
+    "power": 1.4000000000000001,
+    "damage": 4.5,
+    "knockback": 1,
+    "entityModel": "Modelbig_shade_arrow",
+    "customModelTexture": "big_shade_arrow.png",
+    "onFlyingTick": {
+      "name": "BigShadeArrowWhileProjectileFlyingTick"
+    }
+  }
+}

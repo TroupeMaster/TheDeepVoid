@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": {
+    "item": "minecraft:diamond_sword"
+  },
+  "addition": {
+    "item": "the_deep_void:smithing_template_rot"
+  },
+  "result": {
+    "item": "the_deep_void:rotten_diamond_sword"
+  }
+}

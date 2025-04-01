@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "A Forsaken Place",
+    "achievementDescription": "Enter the deepest parts of this world",
+    "achievementIcon": {
+      "value": "Blocks.DEEPSLATE"
+    },
+    "background": "Default",
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
+    "hideIfNotCompleted": false,
+    "rewardLoot": [],
+    "rewardRecipes": [
+      "VoidPendantRecipe",
+      "BoneMushRecipe",
+      "OnyxRecipe",
+      "CorpseRecipe",
+      "BonePickaxeRecipe",
+      "BoneAxeRecipe",
+      "BoneShovelRecipe",
+      "BoneHoeRecipe",
+      "BoneSwordRecipe",
+      "PileOfBonesRecipe",
+      "BlockOfBonePileRecipe",
+      "RottenBoneHelmet",
+      "RottenBoneChestplate",
+      "RottenBoneLeggings",
+      "RottenBoneBoots",
+      "MossyBonePileRecipe",
+      "MournerHideToRottenFlesh",
+      "MournerHideCampfire",
+      "MournerHideSmoker",
+      "StalkerTreatRecipe",
+      "PoweredLavaGeyserRecipe",
+      "FerrymanLanternRecipe"
+    ],
+    "rewardFunction": "No function",
+    "rewardXP": 0,
+    "achievementType": "goal",
+    "parent": {
+      "value": "CUSTOM:TheDeepVoidAdvancement"
+    },
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"40\" y=\"80\"><next><block type=\"dimension_entered\"><field name=\"dimension\">CUSTOM:DeepVoid</field></block></next></block></xml>"
+  }
+}

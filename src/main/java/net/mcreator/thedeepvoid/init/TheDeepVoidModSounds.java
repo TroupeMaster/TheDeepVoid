@@ -1,0 +1,110 @@
+
+/*
+ *    MCreator note: This file will be REGENERATED on each build.
+ */
+package net.mcreator.thedeepvoid.init;
+
+import net.minecraftforge.registries.RegistryObject;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.DeferredRegister;
+
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.resources.ResourceLocation;
+
+import net.mcreator.thedeepvoid.TheDeepVoidMod;
+
+public class TheDeepVoidModSounds {
+	public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, TheDeepVoidMod.MODID);
+	public static final RegistryObject<SoundEvent> STALKER_AMBIENT = REGISTRY.register("stalker_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "stalker_ambient")));
+	public static final RegistryObject<SoundEvent> DISTANT_GROWL = REGISTRY.register("distant_growl", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "distant_growl")));
+	public static final RegistryObject<SoundEvent> MOURNER_AMBIENT = REGISTRY.register("mourner_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "mourner_ambient")));
+	public static final RegistryObject<SoundEvent> HALLUCINATION_AMBIENT = REGISTRY.register("hallucination_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hallucination_ambient")));
+	public static final RegistryObject<SoundEvent> HALLUCINATION_SCREAM = REGISTRY.register("hallucination_scream", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hallucination_scream")));
+	public static final RegistryObject<SoundEvent> VOID_CAVE_AMBIENT = REGISTRY.register("void_cave_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "void_cave_ambient")));
+	public static final RegistryObject<SoundEvent> LURKER_AMBIENT = REGISTRY.register("lurker_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "lurker_ambient")));
+	public static final RegistryObject<SoundEvent> LURKER_HURT = REGISTRY.register("lurker_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "lurker_hurt")));
+	public static final RegistryObject<SoundEvent> LURKER_DEATH = REGISTRY.register("lurker_death", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "lurker_death")));
+	public static final RegistryObject<SoundEvent> BONE_CRACK = REGISTRY.register("bone_crack", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "bone_crack")));
+	public static final RegistryObject<SoundEvent> NIGHTMARE_AMBIENT = REGISTRY.register("nightmare_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "nightmare_ambient")));
+	public static final RegistryObject<SoundEvent> NIGHTMARE_APPEAR = REGISTRY.register("nightmare_appear", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "nightmare_appear")));
+	public static final RegistryObject<SoundEvent> NIGHTMARE_WHISPERS = REGISTRY.register("nightmare_whispers", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "nightmare_whispers")));
+	public static final RegistryObject<SoundEvent> STAB = REGISTRY.register("stab", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "stab")));
+	public static final RegistryObject<SoundEvent> FLESH_BLOCK_STEP = REGISTRY.register("flesh_block_step", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "flesh_block_step")));
+	public static final RegistryObject<SoundEvent> DEEP_RUMBLE = REGISTRY.register("deep_rumble", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "deep_rumble")));
+	public static final RegistryObject<SoundEvent> FALLING_ROCKS = REGISTRY.register("falling_rocks", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "falling_rocks")));
+	public static final RegistryObject<SoundEvent> LURKING_MONST3R_MUSIC = REGISTRY.register("lurking_monst3r_music", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "lurking_monst3r_music")));
+	public static final RegistryObject<SoundEvent> DEVOURER_AMBIENT = REGISTRY.register("devourer_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "devourer_ambient")));
+	public static final RegistryObject<SoundEvent> CHASMS_MONST3R_MUSIC = REGISTRY.register("chasms_monst3r_music", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "chasms_monst3r_music")));
+	public static final RegistryObject<SoundEvent> AMALGAM_STEP = REGISTRY.register("amalgam_step", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "amalgam_step")));
+	public static final RegistryObject<SoundEvent> AMALGAM_AMBIENT = REGISTRY.register("amalgam_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "amalgam_ambient")));
+	public static final RegistryObject<SoundEvent> DISTANT_STALKER = REGISTRY.register("distant_stalker", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "distant_stalker")));
+	public static final RegistryObject<SoundEvent> DISTANT_STALKER2 = REGISTRY.register("distant_stalker2", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "distant_stalker2")));
+	public static final RegistryObject<SoundEvent> STALKER_HURT = REGISTRY.register("stalker_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "stalker_hurt")));
+	public static final RegistryObject<SoundEvent> STALKER_EMERGES_NEW = REGISTRY.register("stalker_emerges_new", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "stalker_emerges_new")));
+	public static final RegistryObject<SoundEvent> GRAVEKEEPER_AMBIENT = REGISTRY.register("gravekeeper_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "gravekeeper_ambient")));
+	public static final RegistryObject<SoundEvent> GRAVEKEEPER_HURT = REGISTRY.register("gravekeeper_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "gravekeeper_hurt")));
+	public static final RegistryObject<SoundEvent> GRAVEKEEPER_DEATH = REGISTRY.register("gravekeeper_death", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "gravekeeper_death")));
+	public static final RegistryObject<SoundEvent> ROAMER_AMBIENT = REGISTRY.register("roamer_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "roamer_ambient")));
+	public static final RegistryObject<SoundEvent> ROAMER_HURT = REGISTRY.register("roamer_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "roamer_hurt")));
+	public static final RegistryObject<SoundEvent> ROAMER_DEATH = REGISTRY.register("roamer_death", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "roamer_death")));
+	public static final RegistryObject<SoundEvent> HEARTBEAT_AMBIENT = REGISTRY.register("heartbeat_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "heartbeat_ambient")));
+	public static final RegistryObject<SoundEvent> DISTANT_MONSTER = REGISTRY.register("distant_monster", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "distant_monster")));
+	public static final RegistryObject<SoundEvent> EVERHUNGER_AMBIENT = REGISTRY.register("everhunger_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "everhunger_ambient")));
+	public static final RegistryObject<SoundEvent> EVERHUNGER_SCREAM = REGISTRY.register("everhunger_scream", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "everhunger_scream")));
+	public static final RegistryObject<SoundEvent> EVERHUNGER_HURT = REGISTRY.register("everhunger_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "everhunger_hurt")));
+	public static final RegistryObject<SoundEvent> CLAW_SCRAPES_STONE = REGISTRY.register("claw_scrapes_stone", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "claw_scrapes_stone")));
+	public static final RegistryObject<SoundEvent> HALLUCINATION_ATTACK = REGISTRY.register("hallucination_attack", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hallucination_attack")));
+	public static final RegistryObject<SoundEvent> MONOLITH_AMBIENT = REGISTRY.register("monolith_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "monolith_ambient")));
+	public static final RegistryObject<SoundEvent> MONOLITH_AMBIENT_NEW = REGISTRY.register("monolith_ambient_new", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "monolith_ambient_new")));
+	public static final RegistryObject<SoundEvent> STONE_DRAGGING = REGISTRY.register("stone_dragging", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "stone_dragging")));
+	public static final RegistryObject<SoundEvent> STONE_IMPACT = REGISTRY.register("stone_impact", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "stone_impact")));
+	public static final RegistryObject<SoundEvent> ONLOOKER_HALLUCINATION_SPAWN = REGISTRY.register("onlooker_hallucination_spawn", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "onlooker_hallucination_spawn")));
+	public static final RegistryObject<SoundEvent> ONLOOKER_AMBIENT = REGISTRY.register("onlooker_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "onlooker_ambient")));
+	public static final RegistryObject<SoundEvent> ONLOOKER_HURT = REGISTRY.register("onlooker_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "onlooker_hurt")));
+	public static final RegistryObject<SoundEvent> UNDERGROWTH_CREAK = REGISTRY.register("undergrowth_creak", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "undergrowth_creak")));
+	public static final RegistryObject<SoundEvent> KNOCKING = REGISTRY.register("knocking", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "knocking")));
+	public static final RegistryObject<SoundEvent> INTENSE_KNOCKING = REGISTRY.register("intense_knocking", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "intense_knocking")));
+	public static final RegistryObject<SoundEvent> INSISTENT_KNOCKING = REGISTRY.register("insistent_knocking", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "insistent_knocking")));
+	public static final RegistryObject<SoundEvent> HUNTER_AMBIENT = REGISTRY.register("hunter_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hunter_ambient")));
+	public static final RegistryObject<SoundEvent> HUNTER_HURT = REGISTRY.register("hunter_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hunter_hurt")));
+	public static final RegistryObject<SoundEvent> EVERHUNGER_CHASE = REGISTRY.register("everhunger_chase", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "everhunger_chase")));
+	public static final RegistryObject<SoundEvent> DEATH_MAW_HIDING = REGISTRY.register("death_maw_hiding", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "death_maw_hiding")));
+	public static final RegistryObject<SoundEvent> DEATH_MAW_HURT = REGISTRY.register("death_maw_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "death_maw_hurt")));
+	public static final RegistryObject<SoundEvent> DEATH_MAW_BITE = REGISTRY.register("death_maw_bite", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "death_maw_bite")));
+	public static final RegistryObject<SoundEvent> DEATH_MAW_CHASE = REGISTRY.register("death_maw_chase", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "death_maw_chase")));
+	public static final RegistryObject<SoundEvent> VOID_CAVE_AMBIENT_2 = REGISTRY.register("void_cave_ambient_2", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "void_cave_ambient_2")));
+	public static final RegistryObject<SoundEvent> VOID_CAVE_AMBIENT_3 = REGISTRY.register("void_cave_ambient_3", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "void_cave_ambient_3")));
+	public static final RegistryObject<SoundEvent> FOOL_EATER_HURT = REGISTRY.register("fool_eater_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "fool_eater_hurt")));
+	public static final RegistryObject<SoundEvent> FOOL_EATER_AMBIENT = REGISTRY.register("fool_eater_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "fool_eater_ambient")));
+	public static final RegistryObject<SoundEvent> FOOL_EATER_TARGETS = REGISTRY.register("fool_eater_targets", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "fool_eater_targets")));
+	public static final RegistryObject<SoundEvent> CLAWS_SLASH = REGISTRY.register("claws_slash", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "claws_slash")));
+	public static final RegistryObject<SoundEvent> SLOW_WHISPERS = REGISTRY.register("slow_whispers", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "slow_whispers")));
+	public static final RegistryObject<SoundEvent> SLOW_WHISPERS_2 = REGISTRY.register("slow_whispers_2", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "slow_whispers_2")));
+	public static final RegistryObject<SoundEvent> INSECTS_CRAWLING = REGISTRY.register("insects_crawling", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "insects_crawling")));
+	public static final RegistryObject<SoundEvent> INSECT_CRY_1 = REGISTRY.register("insect_cry_1", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "insect_cry_1")));
+	public static final RegistryObject<SoundEvent> INSECT_CRY_2 = REGISTRY.register("insect_cry_2", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "insect_cry_2")));
+	public static final RegistryObject<SoundEvent> INSECTS_CRAWLING_LOUD = REGISTRY.register("insects_crawling_loud", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "insects_crawling_loud")));
+	public static final RegistryObject<SoundEvent> INSECT_CRY_1_LOUD = REGISTRY.register("insect_cry_1_loud", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "insect_cry_1_loud")));
+	public static final RegistryObject<SoundEvent> INSECT_CRY_2_LOUD = REGISTRY.register("insect_cry_2_loud", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "insect_cry_2_loud")));
+	public static final RegistryObject<SoundEvent> INSECT_FLY = REGISTRY.register("insect_fly", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "insect_fly")));
+	public static final RegistryObject<SoundEvent> MOTHER_CRAWLER_AMBIENT = REGISTRY.register("mother_crawler_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "mother_crawler_ambient")));
+	public static final RegistryObject<SoundEvent> MOTHER_CRAWLER_HURT = REGISTRY.register("mother_crawler_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "mother_crawler_hurt")));
+	public static final RegistryObject<SoundEvent> MOTHER_CRAWLER_DEATH = REGISTRY.register("mother_crawler_death", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "mother_crawler_death")));
+	public static final RegistryObject<SoundEvent> GIANT_CREATURE_BREATHING = REGISTRY.register("giant_creature_breathing", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "giant_creature_breathing")));
+	public static final RegistryObject<SoundEvent> GIANT_CREATURE_ANGRY = REGISTRY.register("giant_creature_angry", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "giant_creature_angry")));
+	public static final RegistryObject<SoundEvent> DEATH_VULTURE_AMBIENT = REGISTRY.register("death_vulture_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "death_vulture_ambient")));
+	public static final RegistryObject<SoundEvent> DEATH_VULTURE_HURT = REGISTRY.register("death_vulture_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "death_vulture_hurt")));
+	public static final RegistryObject<SoundEvent> RIDING_CROP_HIT = REGISTRY.register("riding_crop_hit", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "riding_crop_hit")));
+	public static final RegistryObject<SoundEvent> CROW_CALL = REGISTRY.register("crow_call", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "crow_call")));
+	public static final RegistryObject<SoundEvent> SOUL_SEEKER_SLASH = REGISTRY.register("soul_seeker_slash", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "soul_seeker_slash")));
+	public static final RegistryObject<SoundEvent> SINS_AND_SINNERS = REGISTRY.register("sins_and_sinners", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "sins_and_sinners")));
+	public static final RegistryObject<SoundEvent> FORSAKEN_BARRENS_AMBIENT = REGISTRY.register("forsaken_barrens_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "forsaken_barrens_ambient")));
+	public static final RegistryObject<SoundEvent> STALKER_DEATH = REGISTRY.register("stalker_death", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "stalker_death")));
+	public static final RegistryObject<SoundEvent> EYEKIN_AMBIENT = REGISTRY.register("eyekin_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "eyekin_ambient")));
+	public static final RegistryObject<SoundEvent> EYEKIN_HURT = REGISTRY.register("eyekin_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "eyekin_hurt")));
+	public static final RegistryObject<SoundEvent> EYEKIN_DEATH = REGISTRY.register("eyekin_death", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "eyekin_death")));
+	public static final RegistryObject<SoundEvent> EYEKIN_FLY = REGISTRY.register("eyekin_fly", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "eyekin_fly")));
+	public static final RegistryObject<SoundEvent> ABDUCTOR_AMBIENT = REGISTRY.register("abductor_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "abductor_ambient")));
+	public static final RegistryObject<SoundEvent> CENTIGAZE_AMBIENT = REGISTRY.register("centigaze_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "centigaze_ambient")));
+	public static final RegistryObject<SoundEvent> CENTIGAZE_HIDDEN = REGISTRY.register("centigaze_hidden", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "centigaze_hidden")));
+}

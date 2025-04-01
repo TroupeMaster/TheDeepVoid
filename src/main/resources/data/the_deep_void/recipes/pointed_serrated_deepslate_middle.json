@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:deepslate_serrated_stalagmite_frustum"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:deepslate_serrated_stalagmite_middle",
+    "count": 2
+  }
+}

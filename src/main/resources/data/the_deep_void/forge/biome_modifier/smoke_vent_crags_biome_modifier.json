@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:ashen_crags",
+  "features": "the_deep_void:smoke_vent_crags",
+  "step": "surface_structures"
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:sacred_cinnabar"
+    },
+    "b": {
+      "item": "the_deep_void:seer"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:sins_and_sinners",
+    "count": 1
+  }
+}

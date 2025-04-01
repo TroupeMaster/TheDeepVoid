@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:FleshChunk"
+      },
+      {
+        "value": "CUSTOM:FleshChunk"
+      },
+      {
+        "value": "CUSTOM:FleshChunk"
+      },
+      {
+        "value": "CUSTOM:FleshChunk"
+      },
+      {
+        "value": "CUSTOM:FleshChunk"
+      },
+      {
+        "value": "CUSTOM:FleshChunk"
+      },
+      {
+        "value": "CUSTOM:FleshChunk"
+      },
+      {
+        "value": "CUSTOM:FleshChunk"
+      },
+      {
+        "value": "CUSTOM:FleshChunk"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:BlockOfAncientFlesh"
+    },
+    "name": "block_of_ancient_flesh",
+    "namespace": "mod"
+  }
+}

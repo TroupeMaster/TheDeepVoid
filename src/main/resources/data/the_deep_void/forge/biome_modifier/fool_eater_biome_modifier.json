@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "the_deep_void:forgotten_valley",
+    "the_deep_void:grim_canopy"
+  ],
+  "spawners": {
+    "type": "the_deep_void:fool_eater",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

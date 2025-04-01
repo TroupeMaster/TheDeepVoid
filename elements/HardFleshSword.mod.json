@@ -1,0 +1,41 @@
+{
+  "_fv": 66,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "hard_flesh_sword",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Hard Flesh Sword",
+    "specialInformation": {
+      "fixedValue": [
+        "§9Steals the life force of foes, healing the wielder based on the damage dealt divided by 4"
+      ]
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "efficiency": 12.0,
+    "attackSpeed": 1.2000000000000002,
+    "enchantability": 32,
+    "damageVsEntity": 8.0,
+    "usageCount": 864,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:HardFleshIngot"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "DIAMOND",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

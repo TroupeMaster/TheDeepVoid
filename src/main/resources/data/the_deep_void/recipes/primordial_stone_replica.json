@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:fake_bedrock"
+    },
+    "b": {
+      "item": "the_deep_void:liquid_void_bucket"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:primordial_stone_replica",
+    "count": 8
+  }
+}

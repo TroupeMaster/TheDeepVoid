@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smelting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "BLOCKS",
+    "xpReward": 1.5,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smeltingInputStack": {
+      "value": "CUSTOM:FossilizedFlesh"
+    },
+    "smeltingReturnStack": {
+      "value": "CUSTOM:FleshChunk"
+    },
+    "name": "fossilized_flesh_furnace",
+    "namespace": "mod"
+  }
+}

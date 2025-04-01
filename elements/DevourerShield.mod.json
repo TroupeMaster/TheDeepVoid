@@ -1,0 +1,50 @@
+{
+  "_fv": 66,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Shield",
+    "renderType": 1,
+    "blockingRenderType": 1,
+    "texture": "devourer_tendril",
+    "customModelName": "devourer_shield:default",
+    "blockingModelName": "devourer_shield_block:default",
+    "name": "Devourer Shield",
+    "specialInformation": {
+      "fixedValue": [
+        "§9Brings all foes near the wielder when held up"
+      ]
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "efficiency": 4.0,
+    "attackSpeed": 1.0,
+    "enchantability": 14,
+    "damageVsEntity": 4.0,
+    "usageCount": 540,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:FleshBlock"
+      },
+      {
+        "value": "CUSTOM:PustulentFleshBlock"
+      },
+      {
+        "value": "CUSTOM:Tendrils"
+      },
+      {
+        "value": "CUSTOM:DevourerTendril"
+      }
+    ],
+    "immuneToFire": true,
+    "blockDropsTier": "STONE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false
+  }
+}

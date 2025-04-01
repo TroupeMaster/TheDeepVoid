@@ -1,0 +1,33 @@
+{
+  "_fv": 66,
+  "_type": "structure",
+  "definition": {
+    "structure": "desolate_fortification",
+    "projection": "rigid",
+    "ignoredBlocks": [
+      {
+        "value": "Blocks.STRUCTURE_BLOCK"
+      }
+    ],
+    "spacing": 70,
+    "separation": 54,
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:ForgottenValley"
+      },
+      {
+        "value": "CUSTOM:MourningGraveyard"
+      }
+    ],
+    "terrainAdaptation": "beard_thin",
+    "generationStep": "SURFACE_STRUCTURES",
+    "surfaceDetectionType": "WORLD_SURFACE_WG",
+    "useStartHeight": false,
+    "startHeightProviderType": "UNIFORM",
+    "startHeightMin": 0,
+    "startHeightMax": 128,
+    "size": 1,
+    "maxDistanceFromCenter": 64,
+    "jigsawPools": []
+  }
+}

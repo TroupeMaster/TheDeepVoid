@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "the_deep_void:ancient_deepslate_bricks"
+  },
+  "result": "the_deep_void:chiseled_ancient_deepslate_bricks"
+}

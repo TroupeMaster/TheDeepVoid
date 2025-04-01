@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "bcd",
+    "efe"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:block_of_voidrium"
+    },
+    "b": {
+      "item": "the_deep_void:sulfur_glass"
+    },
+    "c": {
+      "item": "minecraft:tinted_glass"
+    },
+    "d": {
+      "item": "the_deep_void:bismuth_glass"
+    },
+    "e": {
+      "item": "the_deep_void:ancient_onyx"
+    },
+    "f": {
+      "item": "the_deep_void:void_matter"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:voidrium_glass",
+    "count": 1
+  }
+}

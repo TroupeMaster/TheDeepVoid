@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/flesh_bricks_newer",
+    "up": "the_deep_void:block/teeth_trap_newer",
+    "north": "the_deep_void:block/flesh_bricks_newer",
+    "east": "the_deep_void:block/flesh_bricks_newer",
+    "south": "the_deep_void:block/flesh_bricks_newer",
+    "west": "the_deep_void:block/flesh_bricks_newer",
+    "particle": "the_deep_void:block/flesh_bricks_newer"
+  },
+  "render_type": "solid"
+}

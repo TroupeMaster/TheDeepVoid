@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 8,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "CUSTOM:FleshBlock"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "Items.ROTTEN_FLESH"
+    },
+    "name": "flesh_to_rotten_flesh",
+    "namespace": "mod"
+  }
+}

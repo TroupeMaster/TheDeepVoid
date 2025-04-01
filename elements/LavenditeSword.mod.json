@@ -1,0 +1,44 @@
+{
+  "_fv": 66,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Pickaxe",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "lavendite_sword",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Lavendite Sword",
+    "specialInformation": {
+      "fixedValue": [
+        "§9Has a chance to explode into tiny shards on each hit"
+      ]
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "efficiency": 6.0,
+    "attackSpeed": 2.0,
+    "enchantability": 22,
+    "damageVsEntity": 8.0,
+    "usageCount": 10,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:Lavendite"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "IRON",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "LavenditeSwordLivingEntityIsHitWithTool"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "_fv": 66,
+  "_type": "structure",
+  "definition": {
+    "structure": "trapped_void_chest",
+    "projection": "rigid",
+    "ignoredBlocks": [
+      {
+        "value": "Blocks.STRUCTURE_BLOCK"
+      }
+    ],
+    "spacing": 164,
+    "separation": 82,
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:ForgottenValley"
+      }
+    ],
+    "terrainAdaptation": "beard_thin",
+    "generationStep": "SURFACE_STRUCTURES",
+    "surfaceDetectionType": "WORLD_SURFACE_WG",
+    "useStartHeight": false,
+    "startHeightProviderType": "UNIFORM",
+    "startHeightMin": 0,
+    "startHeightMax": 128,
+    "size": 1,
+    "maxDistanceFromCenter": 64,
+    "jigsawPools": []
+  }
+}

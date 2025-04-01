@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "REDSTONE",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:AncientDeepslate"
+      },
+      {
+        "value": "CUSTOM:DeepslateLavaGeyser"
+      },
+      {
+        "value": "CUSTOM:AncientDeepslate"
+      },
+      {
+        "value": "Blocks.REDSTONE_TORCH"
+      },
+      {
+        "value": "Items.LAVA_BUCKET"
+      },
+      {
+        "value": "Blocks.REDSTONE_TORCH"
+      },
+      {
+        "value": "CUSTOM:AncientDeepslate"
+      },
+      {
+        "value": "CUSTOM:AncientDeepslate"
+      },
+      {
+        "value": "CUSTOM:AncientDeepslate"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:PoweredLavaGeyser"
+    },
+    "name": "powered_lava_geyser",
+    "namespace": "mod"
+  }
+}

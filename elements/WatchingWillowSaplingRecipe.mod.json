@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 2,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:HangingMarrow"
+      },
+      {
+        "value": "CUSTOM:RottenLog"
+      },
+      {
+        "value": "CUSTOM:HangingMarrow"
+      },
+      {
+        "value": "CUSTOM:HangingMarrow"
+      },
+      {
+        "value": "CUSTOM:InfestedRottenLog"
+      },
+      {
+        "value": "CUSTOM:HangingMarrow"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:RottenLog"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:WatchingWillowSapling"
+    },
+    "name": "watching_willow_sapling",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:UmbriumGem"
+      },
+      {
+        "value": "CUSTOM:UmbriumGem"
+      },
+      {
+        "value": "CUSTOM:UmbriumGem"
+      },
+      {
+        "value": "CUSTOM:RefinedBismuth"
+      },
+      {
+        "value": "CUSTOM:OnyxArmor.helmet"
+      },
+      {
+        "value": "CUSTOM:RefinedBismuth"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Voidrium.helmet"
+    },
+    "name": "voidrium_helmet",
+    "namespace": "mod"
+  }
+}

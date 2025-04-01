@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "bbb"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:cobbled_deepslate"
+    },
+    "b": {
+      "item": "the_deep_void:ancient_deepslate_bricks"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:deepslate_sarcophagus_block",
+    "count": 1
+  }
+}

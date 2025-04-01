@@ -1,0 +1,25 @@
+{
+  "_fv": 66,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "Items.ARROW"
+    },
+    "showParticles": false,
+    "actionSound": {
+      "value": "particle.soul_escape"
+    },
+    "igniteFire": false,
+    "power": 1.0,
+    "damage": 5.0,
+    "knockback": 5,
+    "entityModel": "Modelarrow",
+    "customModelTexture": "shade_arrow.png",
+    "onHitsEntity": {
+      "name": "ShadeArrowProjectileHitsLivingEntity"
+    },
+    "onFlyingTick": {
+      "name": "ShadeArrowWhileProjectileFlyingTick"
+    }
+  }
+}

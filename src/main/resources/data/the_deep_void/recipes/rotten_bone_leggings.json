@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "b b",
+    "c c"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:mourner_hide"
+    },
+    "b": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "c": {
+      "item": "minecraft:bone"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:rotten_bone_armor_leggings",
+    "count": 1
+  }
+}

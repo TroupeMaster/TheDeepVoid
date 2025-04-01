@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Stone cutting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "stoneCuttingInputStack": {
+      "value": "CUSTOM:MonolithicStone"
+    },
+    "stoneCuttingReturnStack": {
+      "value": "CUSTOM:MonolithicStoneStairs"
+    },
+    "name": "monolithic_stone_stairs_stone_cutter",
+    "namespace": "mod"
+  }
+}

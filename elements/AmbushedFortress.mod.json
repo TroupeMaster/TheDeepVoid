@@ -1,0 +1,36 @@
+{
+  "_fv": 66,
+  "_type": "structure",
+  "definition": {
+    "structure": "overtaken_fortress",
+    "projection": "rigid",
+    "ignoredBlocks": [
+      {
+        "value": "Blocks.STRUCTURE_BLOCK"
+      }
+    ],
+    "spacing": 62,
+    "separation": 52,
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:ForgottenValley"
+      },
+      {
+        "value": "CUSTOM:MourningGraveyard"
+      },
+      {
+        "value": "CUSTOM:FilledGraveyard"
+      }
+    ],
+    "terrainAdaptation": "beard_thin",
+    "generationStep": "SURFACE_STRUCTURES",
+    "surfaceDetectionType": "WORLD_SURFACE_WG",
+    "useStartHeight": false,
+    "startHeightProviderType": "UNIFORM",
+    "startHeightMin": 0,
+    "startHeightMax": 128,
+    "size": 1,
+    "maxDistanceFromCenter": 64,
+    "jigsawPools": []
+  }
+}

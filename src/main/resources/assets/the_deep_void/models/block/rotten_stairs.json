@@ -1,0 +1,10 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "particle": "the_deep_void:block/petrified_planks",
+    "bottom": "the_deep_void:block/petrified_planks",
+    "top": "the_deep_void:block/petrified_planks",
+    "side": "the_deep_void:block/petrified_planks"
+  },
+  "render_type": "solid"
+}

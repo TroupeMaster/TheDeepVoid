@@ -1,0 +1,7 @@
+{
+  "type": "the_deep_void:structure_feature",
+  "config": {
+    "structure": "the_deep_void:flesh_cave_air_struc",
+    "ignored_blocks": "minecraft:structure_block"
+  }
+}

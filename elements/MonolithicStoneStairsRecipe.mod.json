@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 4,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:MonolithicStone"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:MonolithicStone"
+      },
+      {
+        "value": "CUSTOM:MonolithicStone"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:MonolithicStone"
+      },
+      {
+        "value": "CUSTOM:MonolithicStone"
+      },
+      {
+        "value": "CUSTOM:MonolithicStone"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:MonolithicStoneStairs"
+    },
+    "name": "monolithic_stone_stairs",
+    "namespace": "mod"
+  }
+}

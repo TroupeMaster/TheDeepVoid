@@ -1,0 +1,92 @@
+{
+  "_fv": 66,
+  "_type": "plant",
+  "definition": {
+    "renderType": 2,
+    "texture": "goo_covering",
+    "textureBottom": "",
+    "customModelName": "goo_cover:default",
+    "itemTexture": "goo_cover_item",
+    "particleTexture": "",
+    "tintType": "No tint",
+    "isItemTinted": false,
+    "plantType": "normal",
+    "suspiciousStewEffect": "SPEED",
+    "suspiciousStewDuration": 100,
+    "growapableSpawnType": "Cave",
+    "growapableMaxHeight": 3,
+    "customBoundingBox": true,
+    "disableOffset": false,
+    "boundingBoxes": [
+      {
+        "mx": 0.0,
+        "my": 0.0,
+        "mz": 0.0,
+        "Mx": 16.0,
+        "My": 1.0,
+        "Mz": 16.0,
+        "subtract": false
+      }
+    ],
+    "name": "Goo Cover",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [],
+    "hardness": 0.2,
+    "resistance": 0.5,
+    "luminance": 0,
+    "unbreakable": false,
+    "isSolid": false,
+    "isCustomSoundType": true,
+    "soundOnStep": {
+      "value": "SLIME"
+    },
+    "breakSound": {
+      "value": "block.slime.break"
+    },
+    "stepSound": {
+      "value": "CUSTOM:flesh_block_step"
+    },
+    "placeSound": {
+      "value": "CUSTOM:flesh_block_step"
+    },
+    "hitSound": {
+      "value": "block.slime.hit"
+    },
+    "fallSound": {
+      "value": "block.slime.fall"
+    },
+    "useLootTableForDrops": false,
+    "customDrop": {
+      "value": "CUSTOM:GooCoverBlock"
+    },
+    "dropAmount": 1,
+    "forceTicking": false,
+    "emissiveRendering": false,
+    "hasTileEntity": false,
+    "isReplaceable": true,
+    "colorOnMap": "DEFAULT",
+    "creativePickItem": {
+      "value": "CUSTOM:GooCoverBlock"
+    },
+    "offsetType": "NONE",
+    "aiPathNodeType": "DEFAULT",
+    "flammability": 0,
+    "fireSpreadSpeed": 0,
+    "jumpFactor": 0.9,
+    "speedFactor": 0.8,
+    "canBePlacedOn": [],
+    "isBonemealable": false,
+    "frequencyOnChunks": 5,
+    "generateFeature": true,
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:CrawlerNest"
+      }
+    ],
+    "generationType": "Grass",
+    "patchSize": 64,
+    "generateAtAnyHeight": false
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "_fv": 66,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "C",
+    "keyBindingName": "Armor Toggle",
+    "keyBindingCategoryKey": "gameplay",
+    "onKeyPressed": {
+      "name": "ArmorToggleOnKeyPressed"
+    }
+  }
+}

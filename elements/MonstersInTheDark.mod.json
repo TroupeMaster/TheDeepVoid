@@ -1,0 +1,12 @@
+{
+  "_fv": 66,
+  "_type": "damagetype",
+  "definition": {
+    "exhaustion": 0.1,
+    "scaling": "always",
+    "effects": "hurt",
+    "normalDeathMessage": "%1$s was engulfed by darkness",
+    "itemDeathMessage": "%1$s was engulfed by darkness",
+    "playerDeathMessage": "%1$s was engulfed by darkness"
+  }
+}

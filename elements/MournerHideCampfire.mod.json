@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Campfire cooking",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "FOOD",
+    "xpReward": 0.1,
+    "cookingTime": 34,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "campfireCookingInputStack": {
+      "value": "CUSTOM:MournerHide"
+    },
+    "campfireCookingReturnStack": {
+      "value": "Items.LEATHER"
+    },
+    "name": "mourner_hide_campfire",
+    "namespace": "mod"
+  }
+}

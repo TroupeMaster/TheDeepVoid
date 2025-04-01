@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:watching_undergrowth",
+  "features": "the_deep_void:inactive_infested_rotten_roots",
+  "step": "underground_ores"
+}

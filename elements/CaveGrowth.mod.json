@@ -1,0 +1,118 @@
+{
+  "_fv": 66,
+  "_type": "plant",
+  "definition": {
+    "renderType": 13,
+    "texture": "deep_growth",
+    "textureBottom": "",
+    "customModelName": "Crop model",
+    "itemTexture": "",
+    "particleTexture": "",
+    "tintType": "No tint",
+    "isItemTinted": false,
+    "plantType": "normal",
+    "suspiciousStewEffect": "SPEED",
+    "suspiciousStewDuration": 100,
+    "growapableSpawnType": "Cave",
+    "growapableMaxHeight": 3,
+    "customBoundingBox": false,
+    "disableOffset": false,
+    "boundingBoxes": [
+      {
+        "mx": 0.0,
+        "my": 0.0,
+        "mz": 0.0,
+        "Mx": 16.0,
+        "My": 16.0,
+        "Mz": 16.0,
+        "subtract": false
+      }
+    ],
+    "name": "Cave Growth",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "hardness": 0.5,
+    "resistance": 0.5,
+    "luminance": 0,
+    "unbreakable": false,
+    "isSolid": false,
+    "isCustomSoundType": false,
+    "soundOnStep": {
+      "value": "NETHER_SPROUT"
+    },
+    "breakSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
+    },
+    "useLootTableForDrops": false,
+    "customDrop": {
+      "value": "Blocks.AIR"
+    },
+    "dropAmount": 1,
+    "forceTicking": false,
+    "emissiveRendering": false,
+    "hasTileEntity": false,
+    "isReplaceable": true,
+    "colorOnMap": "DEFAULT",
+    "creativePickItem": {
+      "value": ""
+    },
+    "offsetType": "XZ",
+    "aiPathNodeType": "DEFAULT",
+    "flammability": 0,
+    "fireSpreadSpeed": 0,
+    "jumpFactor": 1.0,
+    "speedFactor": 1.0,
+    "canBePlacedOn": [
+      {
+        "value": "Blocks.DEEPSLATE"
+      },
+      {
+        "value": "CUSTOM:CobbledAncientDeepslate"
+      },
+      {
+        "value": "CUSTOM:AncientDeepslate"
+      },
+      {
+        "value": "Blocks.COBBLED_DEEPSLATE"
+      }
+    ],
+    "isBonemealable": false,
+    "frequencyOnChunks": 15,
+    "generateFeature": true,
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:ForgottenValley"
+      },
+      {
+        "value": "CUSTOM:MourningGraveyard"
+      },
+      {
+        "value": "CUSTOM:WatchingUndergrowth"
+      },
+      {
+        "value": "CUSTOM:FilledGraveyard"
+      }
+    ],
+    "generationType": "Grass",
+    "patchSize": 45,
+    "generateAtAnyHeight": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "the_deep_void:cut_rotten_bone_block"
+  },
+  "result": "the_deep_void:cut_rotten_bone_block_stairs"
+}

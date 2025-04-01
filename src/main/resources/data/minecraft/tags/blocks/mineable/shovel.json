@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:desolate_soil_active",
+    "the_deep_void:grim_soil",
+    "the_deep_void:chiseled_desolate_bricks",
+    "the_deep_void:ash_block",
+    "the_deep_void:desolate_brick_wall",
+    "the_deep_void:desolate_brick_slab",
+    "the_deep_void:desolate_brick_stairs",
+    "the_deep_void:desolate_bricks",
+    "the_deep_void:desolate_soil"
+  ]
+}

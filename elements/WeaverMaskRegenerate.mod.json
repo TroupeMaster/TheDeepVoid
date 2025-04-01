@@ -1,0 +1,7 @@
+{
+  "_fv": 66,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"event_trigger\" deletable=\"false\" x=\"40\" y=\"40\"><field name=\"trigger\">entity_healed</field><next><block type=\"controls_if\"><value name=\"IF0\"><block type=\"compare_mcitems\"><value name=\"a\"><block type=\"entity_get_armor_slot_item\"><value name=\"slotid\"><block type=\"math_number\"><field name=\"NUM\">3</field></block></value><value name=\"entity\"><block type=\"entity_from_deps\"></block></value></block></value><value name=\"b\"><block type=\"mcitem_all\"><field name=\"value\">CUSTOM:WeaverMask.helmet</field></block></value></block></value><statement name=\"DO0\"><block type=\"controls_if\"><value name=\"IF0\"><block type=\"logic_negate\"><value name=\"BOOL\"><block type=\"entity_haspotioneffect\"><field name=\"potion\">CUSTOM:GoldenBlood</field><value name=\"entity\"><block type=\"entity_from_deps\"></block></value></block></value></block></value><statement name=\"DO0\"><block type=\"cancel_event\"></block></statement></block></statement></block></next></block></xml>"
+  }
+}

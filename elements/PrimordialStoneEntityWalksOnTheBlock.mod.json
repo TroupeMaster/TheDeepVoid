@@ -1,0 +1,7 @@
+{
+  "_fv": 66,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"event_trigger\" deletable=\"false\" x=\"40\" y=\"40\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"controls_if\"><value name=\"IF0\"><block type=\"logic_binary_ops\" inline=\"false\"><field name=\"OP\">OR</field><value name=\"A\"><block type=\"logic_entity_compare\"><field name=\"entity\">EntityPlayer</field><value name=\"compareTo\"><block type=\"entity_from_deps\"></block></value></block></value><value name=\"B\"><block type=\"logic_entity_compare\"><field name=\"entity\">EntityPlayerMP</field><value name=\"compareTo\"><block type=\"entity_from_deps\"></block></value></block></value></block></value><statement name=\"DO0\"><block type=\"controls_if\"><value name=\"IF0\"><block type=\"logic_negate\"><value name=\"BOOL\"><block type=\"entity_has_achievement\"><field name=\"achievement\">CUSTOM:WeveHitRockBottom</field><value name=\"entity\"><block type=\"entity_from_deps\"></block></value></block></value></block></value><statement name=\"DO0\"><block type=\"entity_add_achievement\"><field name=\"achievement\">CUSTOM:WeveHitRockBottom</field><value name=\"entity\"><block type=\"entity_from_deps\"></block></value></block></statement></block></statement></block></next></block></xml>"
+  }
+}

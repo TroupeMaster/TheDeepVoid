@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:CobbledAncientDeepslate"
+      },
+      {
+        "value": "CUSTOM:DesolateSoil"
+      },
+      {
+        "value": "CUSTOM:CobbledAncientDeepslate"
+      },
+      {
+        "value": "CUSTOM:DesolateSoil"
+      },
+      {
+        "value": "CUSTOM:Onyx"
+      },
+      {
+        "value": "CUSTOM:DesolateSoil"
+      },
+      {
+        "value": "CUSTOM:CobbledAncientDeepslate"
+      },
+      {
+        "value": "CUSTOM:DesolateSoil"
+      },
+      {
+        "value": "CUSTOM:CobbledAncientDeepslate"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:SmithingTemplateGrim"
+    },
+    "name": "grim_smithing_template",
+    "namespace": "mod"
+  }
+}

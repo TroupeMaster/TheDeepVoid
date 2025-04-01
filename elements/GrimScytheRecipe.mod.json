@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:GrimGem"
+      },
+      {
+        "value": "CUSTOM:GrimGem"
+      },
+      {
+        "value": "CUSTOM:VoidMatter"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:RefinedOnyx"
+      },
+      {
+        "value": "CUSTOM:AncientOnyx"
+      },
+      {
+        "value": "CUSTOM:RefinedOnyx"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:GrimScythe"
+    },
+    "name": "grim_scythe",
+    "namespace": "mod"
+  }
+}

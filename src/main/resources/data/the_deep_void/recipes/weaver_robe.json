@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a a",
+    "bcb",
+    "ccc"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:seer"
+    },
+    "b": {
+      "item": "the_deep_void:hard_flesh_ingot"
+    },
+    "c": {
+      "item": "the_deep_void:sacred_cinnabar"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:weaver_robe_chestplate",
+    "count": 1
+  }
+}

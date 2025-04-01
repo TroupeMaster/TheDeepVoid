@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/deepslate",
+    "up": "the_deep_void:block/deepslate_lava_geyser",
+    "north": "the_deep_void:block/ancient_deepslate",
+    "east": "the_deep_void:block/ancient_deepslate",
+    "south": "the_deep_void:block/ancient_deepslate",
+    "west": "the_deep_void:block/ancient_deepslate",
+    "particle": "the_deep_void:block/deepslate"
+  },
+  "render_type": "solid"
+}

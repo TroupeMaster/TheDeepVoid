@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/primordial_rock",
+    "up": "the_deep_void:block/primordial_rock",
+    "north": "the_deep_void:block/primordial_rock",
+    "east": "the_deep_void:block/primordial_rock",
+    "south": "the_deep_void:block/primordial_rock",
+    "west": "the_deep_void:block/primordial_rock",
+    "particle": "the_deep_void:block/primordial_rock"
+  },
+  "render_type": "solid"
+}

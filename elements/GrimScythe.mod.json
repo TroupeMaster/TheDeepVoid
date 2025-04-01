@@ -1,0 +1,52 @@
+{
+  "_fv": 66,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "grim_scythe",
+    "customModelName": "soul_seeker_scythe:default",
+    "blockingModelName": "Normal blocking",
+    "name": "Soul Seeker",
+    "specialInformation": {
+      "fixedValue": [
+        "§9Each hit repeats itself, dealing 6 damage in a AOE and spawning additional XP orbs",
+        "§9Killing a foe fuels the scythe with their soul. At 5 souls, right click to throw the scythe. The thrown scythe steals the soul of foes and their lifeforce"
+      ]
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "efficiency": 8.0,
+    "attackSpeed": 1.0,
+    "enchantability": 10,
+    "damageVsEntity": 10.0,
+    "usageCount": 1561,
+    "glowCondition": {
+      "fixedValue": true,
+      "name": "GrimScytheHasItemGlowingEffect"
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:GrimGem"
+      },
+      {
+        "value": "CUSTOM:RefinedOnyx"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "DIAMOND",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "GrimScytheRightclicked"
+    },
+    "onEntityHitWith": {
+      "name": "GrimScytheLivingEntityIsHitWithTool"
+    }
+  }
+}

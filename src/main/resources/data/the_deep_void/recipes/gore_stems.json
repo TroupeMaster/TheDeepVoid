@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:eyeball"
+    },
+    "b": {
+      "item": "the_deep_void:tendrils"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:gore_stems",
+    "count": 1
+  }
+}

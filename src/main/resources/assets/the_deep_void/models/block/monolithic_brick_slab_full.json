@@ -1,0 +1,10 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "particle": "the_deep_void:block/monolithic_bricks",
+    "bottom": "the_deep_void:block/monolithic_bricks",
+    "top": "the_deep_void:block/monolithic_bricks",
+    "side": "the_deep_void:block/monolithic_bricks"
+  },
+  "render_type": "solid"
+}

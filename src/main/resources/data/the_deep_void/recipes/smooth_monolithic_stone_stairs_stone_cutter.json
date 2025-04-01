@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "the_deep_void:smooth_monolithic_stone"
+  },
+  "result": "the_deep_void:smooth_monolithic_stone_stairs"
+}

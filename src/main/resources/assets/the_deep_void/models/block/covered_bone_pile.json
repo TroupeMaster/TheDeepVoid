@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "the_deep_void:block/infested_bone_pile",
+    "particle": "the_deep_void:block/infested_bone_pile"
+  },
+  "render_type": "solid"
+}

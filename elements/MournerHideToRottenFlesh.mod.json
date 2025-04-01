@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smelting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "FOOD",
+    "xpReward": 0.1,
+    "cookingTime": 34,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smeltingInputStack": {
+      "value": "CUSTOM:MournerHide"
+    },
+    "smeltingReturnStack": {
+      "value": "Items.LEATHER"
+    },
+    "name": "mourner_hide_furnace",
+    "namespace": "mod"
+  }
+}

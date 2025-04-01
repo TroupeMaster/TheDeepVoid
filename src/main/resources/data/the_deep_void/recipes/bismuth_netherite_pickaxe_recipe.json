@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": {
+    "item": "minecraft:netherite_pickaxe"
+  },
+  "addition": {
+    "item": "the_deep_void:refined_bismuth"
+  },
+  "result": {
+    "item": "the_deep_void:bismuth_netherite_pickaxe"
+  }
+}

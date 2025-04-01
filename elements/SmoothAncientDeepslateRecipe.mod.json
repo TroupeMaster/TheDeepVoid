@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smelting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "BLOCKS",
+    "xpReward": 0.1,
+    "cookingTime": 120,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "smeltingInputStack": {
+      "value": "CUSTOM:AncientDeepslate"
+    },
+    "smeltingReturnStack": {
+      "value": "CUSTOM:SmoothAncientDeepslate"
+    },
+    "name": "smooth_ancient_deepslate",
+    "namespace": "mod"
+  }
+}

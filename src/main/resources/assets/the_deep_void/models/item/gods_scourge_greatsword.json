@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/gods_scourge_greatsword",
+  "textures": {
+    "0": "the_deep_void:block/gods_scourge_greatsword",
+    "particle": "the_deep_void:item/chain"
+  }
+}

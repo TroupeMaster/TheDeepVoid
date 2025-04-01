@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "the_deep_void:block/primordial_stone_slab"
+    },
+    "type=top": {
+      "model": "the_deep_void:block/primordial_stone_slab_top"
+    },
+    "type=double": {
+      "model": "the_deep_void:block/primordial_stone_slab_full"
+    }
+  }
+}

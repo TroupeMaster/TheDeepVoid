@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/rotten_log_top",
+    "up": "the_deep_void:block/rotten_log_top",
+    "north": "the_deep_void:block/eye_log",
+    "east": "the_deep_void:block/eye_log",
+    "south": "the_deep_void:block/eye_log",
+    "west": "the_deep_void:block/eye_log",
+    "particle": "the_deep_void:block/rotten_log_top"
+  },
+  "render_type": "solid"
+}

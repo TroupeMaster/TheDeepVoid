@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:voidlight_brick_slab"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:chiseled_voidlight",
+    "count": 1
+  }
+}

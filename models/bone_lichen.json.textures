@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "bone_lichen_texture"
+      },
+      "name": "default"
+    }
+  }
+}

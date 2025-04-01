@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_deep_void:forgotten_valley",
+    "the_deep_void:mourning_graveyard",
+    "the_deep_void:watching_undergrowth",
+    "the_deep_void:filled_graveyard"
+  ],
+  "features": "the_deep_void:cave_growth",
+  "step": "vegetal_decoration"
+}

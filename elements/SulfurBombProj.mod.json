@@ -1,0 +1,28 @@
+{
+  "_fv": 66,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "CUSTOM:SulfurBomb"
+    },
+    "showParticles": false,
+    "actionSound": {
+      "value": "entity.arrow.shoot"
+    },
+    "igniteFire": false,
+    "power": 1.0,
+    "damage": 5.0,
+    "knockback": 5,
+    "entityModel": "Default",
+    "customModelTexture": "",
+    "onHitsBlock": {
+      "name": "SulfurBombProjProjectileHitsLivingEntity"
+    },
+    "onHitsEntity": {
+      "name": "SulfurBombProjProjectileHitsLivingEntity"
+    },
+    "onFlyingTick": {
+      "name": "SulfurBombProjWhileProjectileFlyingTick"
+    }
+  }
+}

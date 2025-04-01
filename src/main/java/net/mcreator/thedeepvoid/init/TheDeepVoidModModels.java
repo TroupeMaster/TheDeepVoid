@@ -1,0 +1,140 @@
+
+/*
+ *    MCreator note: This file will be REGENERATED on each build.
+ */
+package net.mcreator.thedeepvoid.init;
+
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.api.distmarker.Dist;
+
+import net.mcreator.thedeepvoid.client.model.Modelweaver;
+import net.mcreator.thedeepvoid.client.model.Modelwanderer;
+import net.mcreator.thedeepvoid.client.model.Modelvoid_guardian;
+import net.mcreator.thedeepvoid.client.model.Modelvoid_dweller3;
+import net.mcreator.thedeepvoid.client.model.Modelthrown_soul_seeker;
+import net.mcreator.thedeepvoid.client.model.Modelthe_nightmare;
+import net.mcreator.thedeepvoid.client.model.Modeltamed_mother_bone_crawler;
+import net.mcreator.thedeepvoid.client.model.Modelswarmer;
+import net.mcreator.thedeepvoid.client.model.Modelsulfur_tnt;
+import net.mcreator.thedeepvoid.client.model.Modelstalker_remodel;
+import net.mcreator.thedeepvoid.client.model.Modelstalker_new;
+import net.mcreator.thedeepvoid.client.model.Modelstalker_animated;
+import net.mcreator.thedeepvoid.client.model.Modelstalker2;
+import net.mcreator.thedeepvoid.client.model.Modelspore_spewer;
+import net.mcreator.thedeepvoid.client.model.Modelspike;
+import net.mcreator.thedeepvoid.client.model.Modelsmall_flesh_cube;
+import net.mcreator.thedeepvoid.client.model.Modelscarecrow;
+import net.mcreator.thedeepvoid.client.model.Modelrotten_corpse_remodel;
+import net.mcreator.thedeepvoid.client.model.Modelrotten_corpse;
+import net.mcreator.thedeepvoid.client.model.Modelrooted_rework;
+import net.mcreator.thedeepvoid.client.model.Modelroot_entity;
+import net.mcreator.thedeepvoid.client.model.Modelroamer;
+import net.mcreator.thedeepvoid.client.model.Modeloverseer_inactive_big;
+import net.mcreator.thedeepvoid.client.model.Modeloverseer_inactive;
+import net.mcreator.thedeepvoid.client.model.Modeloverseer_bigpillar;
+import net.mcreator.thedeepvoid.client.model.Modeloverseer;
+import net.mcreator.thedeepvoid.client.model.Modelonlooker;
+import net.mcreator.thedeepvoid.client.model.Modelnightmare_remodel;
+import net.mcreator.thedeepvoid.client.model.Modelmourner_remodel;
+import net.mcreator.thedeepvoid.client.model.Modelmourner;
+import net.mcreator.thedeepvoid.client.model.Modelmother_bone_crawler;
+import net.mcreator.thedeepvoid.client.model.Modellurker;
+import net.mcreator.thedeepvoid.client.model.Modellighthead;
+import net.mcreator.thedeepvoid.client.model.Modellicker;
+import net.mcreator.thedeepvoid.client.model.Modelhunter;
+import net.mcreator.thedeepvoid.client.model.Modelhallucination_new;
+import net.mcreator.thedeepvoid.client.model.Modelgravekeeper;
+import net.mcreator.thedeepvoid.client.model.Modelgoo_spitter;
+import net.mcreator.thedeepvoid.client.model.Modelfool_eater_rework;
+import net.mcreator.thedeepvoid.client.model.Modelfool_eater_new;
+import net.mcreator.thedeepvoid.client.model.Modelflesh_cube;
+import net.mcreator.thedeepvoid.client.model.Modelferryman;
+import net.mcreator.thedeepvoid.client.model.Modelfalling_corpse;
+import net.mcreator.thedeepvoid.client.model.Modeleverhunger;
+import net.mcreator.thedeepvoid.client.model.Modeldeath_vulture;
+import net.mcreator.thedeepvoid.client.model.Modeldeath_maw_hidden;
+import net.mcreator.thedeepvoid.client.model.Modeldeath_maw;
+import net.mcreator.thedeepvoid.client.model.Modeldark_throw_knife;
+import net.mcreator.thedeepvoid.client.model.Modelcharred_walker;
+import net.mcreator.thedeepvoid.client.model.Modelbone_crawler_remodeled;
+import net.mcreator.thedeepvoid.client.model.Modelbone_crawler;
+import net.mcreator.thedeepvoid.client.model.Modelblind_prophet;
+import net.mcreator.thedeepvoid.client.model.Modelbig_shade_arrow;
+import net.mcreator.thedeepvoid.client.model.Modelbeholder;
+import net.mcreator.thedeepvoid.client.model.Modelbaby_bone_crawler;
+import net.mcreator.thedeepvoid.client.model.Modelarrow;
+import net.mcreator.thedeepvoid.client.model.Modelamalgam_rework;
+import net.mcreator.thedeepvoid.client.model.Modelamalgam_newer;
+import net.mcreator.thedeepvoid.client.model.Modelamalgam;
+import net.mcreator.thedeepvoid.client.model.Modelalpha_bone_crawler;
+import net.mcreator.thedeepvoid.client.model.Modelabducter;
+
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = {Dist.CLIENT})
+public class TheDeepVoidModModels {
+	@SubscribeEvent
+	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		event.registerLayerDefinition(Modelthrown_soul_seeker.LAYER_LOCATION, Modelthrown_soul_seeker::createBodyLayer);
+		event.registerLayerDefinition(Modeloverseer.LAYER_LOCATION, Modeloverseer::createBodyLayer);
+		event.registerLayerDefinition(Modeloverseer_bigpillar.LAYER_LOCATION, Modeloverseer_bigpillar::createBodyLayer);
+		event.registerLayerDefinition(Modelweaver.LAYER_LOCATION, Modelweaver::createBodyLayer);
+		event.registerLayerDefinition(Modelspike.LAYER_LOCATION, Modelspike::createBodyLayer);
+		event.registerLayerDefinition(Modelabducter.LAYER_LOCATION, Modelabducter::createBodyLayer);
+		event.registerLayerDefinition(Modelonlooker.LAYER_LOCATION, Modelonlooker::createBodyLayer);
+		event.registerLayerDefinition(Modeleverhunger.LAYER_LOCATION, Modeleverhunger::createBodyLayer);
+		event.registerLayerDefinition(Modelarrow.LAYER_LOCATION, Modelarrow::createBodyLayer);
+		event.registerLayerDefinition(Modelmourner_remodel.LAYER_LOCATION, Modelmourner_remodel::createBodyLayer);
+		event.registerLayerDefinition(Modelswarmer.LAYER_LOCATION, Modelswarmer::createBodyLayer);
+		event.registerLayerDefinition(Modelbone_crawler.LAYER_LOCATION, Modelbone_crawler::createBodyLayer);
+		event.registerLayerDefinition(Modelrooted_rework.LAYER_LOCATION, Modelrooted_rework::createBodyLayer);
+		event.registerLayerDefinition(Modelamalgam_rework.LAYER_LOCATION, Modelamalgam_rework::createBodyLayer);
+		event.registerLayerDefinition(Modelmourner.LAYER_LOCATION, Modelmourner::createBodyLayer);
+		event.registerLayerDefinition(Modelnightmare_remodel.LAYER_LOCATION, Modelnightmare_remodel::createBodyLayer);
+		event.registerLayerDefinition(Modelalpha_bone_crawler.LAYER_LOCATION, Modelalpha_bone_crawler::createBodyLayer);
+		event.registerLayerDefinition(Modeldark_throw_knife.LAYER_LOCATION, Modeldark_throw_knife::createBodyLayer);
+		event.registerLayerDefinition(Modelbig_shade_arrow.LAYER_LOCATION, Modelbig_shade_arrow::createBodyLayer);
+		event.registerLayerDefinition(Modelgravekeeper.LAYER_LOCATION, Modelgravekeeper::createBodyLayer);
+		event.registerLayerDefinition(Modeldeath_vulture.LAYER_LOCATION, Modeldeath_vulture::createBodyLayer);
+		event.registerLayerDefinition(Modelroot_entity.LAYER_LOCATION, Modelroot_entity::createBodyLayer);
+		event.registerLayerDefinition(Modeltamed_mother_bone_crawler.LAYER_LOCATION, Modeltamed_mother_bone_crawler::createBodyLayer);
+		event.registerLayerDefinition(Modelsmall_flesh_cube.LAYER_LOCATION, Modelsmall_flesh_cube::createBodyLayer);
+		event.registerLayerDefinition(Modellurker.LAYER_LOCATION, Modellurker::createBodyLayer);
+		event.registerLayerDefinition(Modelhallucination_new.LAYER_LOCATION, Modelhallucination_new::createBodyLayer);
+		event.registerLayerDefinition(Modelspore_spewer.LAYER_LOCATION, Modelspore_spewer::createBodyLayer);
+		event.registerLayerDefinition(Modelstalker2.LAYER_LOCATION, Modelstalker2::createBodyLayer);
+		event.registerLayerDefinition(Modelmother_bone_crawler.LAYER_LOCATION, Modelmother_bone_crawler::createBodyLayer);
+		event.registerLayerDefinition(Modelfalling_corpse.LAYER_LOCATION, Modelfalling_corpse::createBodyLayer);
+		event.registerLayerDefinition(Modelrotten_corpse.LAYER_LOCATION, Modelrotten_corpse::createBodyLayer);
+		event.registerLayerDefinition(Modelvoid_dweller3.LAYER_LOCATION, Modelvoid_dweller3::createBodyLayer);
+		event.registerLayerDefinition(Modelscarecrow.LAYER_LOCATION, Modelscarecrow::createBodyLayer);
+		event.registerLayerDefinition(Modelbeholder.LAYER_LOCATION, Modelbeholder::createBodyLayer);
+		event.registerLayerDefinition(Modelferryman.LAYER_LOCATION, Modelferryman::createBodyLayer);
+		event.registerLayerDefinition(Modelbaby_bone_crawler.LAYER_LOCATION, Modelbaby_bone_crawler::createBodyLayer);
+		event.registerLayerDefinition(Modeldeath_maw.LAYER_LOCATION, Modeldeath_maw::createBodyLayer);
+		event.registerLayerDefinition(Modelfool_eater_rework.LAYER_LOCATION, Modelfool_eater_rework::createBodyLayer);
+		event.registerLayerDefinition(Modelstalker_new.LAYER_LOCATION, Modelstalker_new::createBodyLayer);
+		event.registerLayerDefinition(Modelvoid_guardian.LAYER_LOCATION, Modelvoid_guardian::createBodyLayer);
+		event.registerLayerDefinition(Modellighthead.LAYER_LOCATION, Modellighthead::createBodyLayer);
+		event.registerLayerDefinition(Modelhunter.LAYER_LOCATION, Modelhunter::createBodyLayer);
+		event.registerLayerDefinition(Modelthe_nightmare.LAYER_LOCATION, Modelthe_nightmare::createBodyLayer);
+		event.registerLayerDefinition(Modelrotten_corpse_remodel.LAYER_LOCATION, Modelrotten_corpse_remodel::createBodyLayer);
+		event.registerLayerDefinition(Modelstalker_animated.LAYER_LOCATION, Modelstalker_animated::createBodyLayer);
+		event.registerLayerDefinition(Modelwanderer.LAYER_LOCATION, Modelwanderer::createBodyLayer);
+		event.registerLayerDefinition(Modelamalgam_newer.LAYER_LOCATION, Modelamalgam_newer::createBodyLayer);
+		event.registerLayerDefinition(Modeldeath_maw_hidden.LAYER_LOCATION, Modeldeath_maw_hidden::createBodyLayer);
+		event.registerLayerDefinition(Modeloverseer_inactive_big.LAYER_LOCATION, Modeloverseer_inactive_big::createBodyLayer);
+		event.registerLayerDefinition(Modelgoo_spitter.LAYER_LOCATION, Modelgoo_spitter::createBodyLayer);
+		event.registerLayerDefinition(Modelstalker_remodel.LAYER_LOCATION, Modelstalker_remodel::createBodyLayer);
+		event.registerLayerDefinition(Modelbone_crawler_remodeled.LAYER_LOCATION, Modelbone_crawler_remodeled::createBodyLayer);
+		event.registerLayerDefinition(Modeloverseer_inactive.LAYER_LOCATION, Modeloverseer_inactive::createBodyLayer);
+		event.registerLayerDefinition(Modelfool_eater_new.LAYER_LOCATION, Modelfool_eater_new::createBodyLayer);
+		event.registerLayerDefinition(Modelroamer.LAYER_LOCATION, Modelroamer::createBodyLayer);
+		event.registerLayerDefinition(Modelcharred_walker.LAYER_LOCATION, Modelcharred_walker::createBodyLayer);
+		event.registerLayerDefinition(Modelsulfur_tnt.LAYER_LOCATION, Modelsulfur_tnt::createBodyLayer);
+		event.registerLayerDefinition(Modelflesh_cube.LAYER_LOCATION, Modelflesh_cube::createBodyLayer);
+		event.registerLayerDefinition(Modelblind_prophet.LAYER_LOCATION, Modelblind_prophet::createBodyLayer);
+		event.registerLayerDefinition(Modellicker.LAYER_LOCATION, Modellicker::createBodyLayer);
+		event.registerLayerDefinition(Modelamalgam.LAYER_LOCATION, Modelamalgam::createBodyLayer);
+	}
+}

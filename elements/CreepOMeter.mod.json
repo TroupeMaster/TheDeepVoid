@@ -1,0 +1,68 @@
+{
+  "_fv": 66,
+  "_type": "item",
+  "definition": {
+    "renderType": 0,
+    "texture": "creep_o_meter",
+    "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
+    "name": "Creep-O-Meter 3000",
+    "rarity": "EPIC",
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "stackSize": 1,
+    "enchantability": 0,
+    "useDuration": 0,
+    "toolType": 1.0,
+    "damageCount": 0,
+    "recipeRemainder": {
+      "value": ""
+    },
+    "destroyAnyBlock": false,
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "specialInformation": {
+      "fixedValue": [
+        "§bCreative mode only",
+        "§9Shows the spawn timer for the Stalker/Nightmare",
+        " §9-Stalker is above y=0 and Nightmare below",
+        " §9-Right click to show the Stalking Stalker/Darkness count instead",
+        " §9-Right click while sneaking to show if the Stalker is after you above y=0 or the Darkness Damage Build Up below y=0"
+      ]
+    },
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "onRightClickedInAir": {
+      "name": "CreepOMeterRightclicked"
+    },
+    "onItemInUseTick": {
+      "name": "CreepOMeterItemInHandTick"
+    },
+    "enableRanged": false,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "CUSTOM:BoneBallProjectile"
+    },
+    "isFood": false,
+    "nutritionalValue": 4,
+    "saturation": 0.3,
+    "eatResultItem": {
+      "value": ""
+    },
+    "isMeat": false,
+    "isAlwaysEdible": false,
+    "animation": "none"
+  }
+}

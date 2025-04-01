@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 2,
+  "ingredient": {
+    "item": "the_deep_void:smooth_ancient_deepslate"
+  },
+  "result": "the_deep_void:smooth_ancient_deepslate_slab"
+}

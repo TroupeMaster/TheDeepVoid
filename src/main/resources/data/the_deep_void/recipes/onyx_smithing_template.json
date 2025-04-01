@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cdc",
+    "aca"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:lavendite"
+    },
+    "b": {
+      "item": "the_deep_void:block_of_bone_pile"
+    },
+    "c": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "d": {
+      "item": "the_deep_void:smithing_template_onyx"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:smithing_template_onyx",
+    "count": 2
+  }
+}

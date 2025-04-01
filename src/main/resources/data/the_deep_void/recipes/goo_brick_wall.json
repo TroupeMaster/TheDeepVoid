@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:goo_bricks"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:goo_brick_wall",
+    "count": 6
+  }
+}

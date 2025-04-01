@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 3,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:RottenPlanks"
+      },
+      {
+        "value": "CUSTOM:RottenPlanks"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:RottenPlanks"
+      },
+      {
+        "value": "CUSTOM:RottenPlanks"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:RottenPlanks"
+      },
+      {
+        "value": "CUSTOM:RottenPlanks"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:RottenDoor"
+    },
+    "name": "rotten_door",
+    "namespace": "mod"
+  }
+}

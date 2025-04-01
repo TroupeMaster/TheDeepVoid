@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " a ",
+    " a ",
+    "bcb"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:voidrium_gem"
+    },
+    "b": {
+      "item": "the_deep_void:refined_bismuth"
+    },
+    "c": {
+      "item": "the_deep_void:onyx_sword"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:voidrium_sword",
+    "count": 1
+  }
+}

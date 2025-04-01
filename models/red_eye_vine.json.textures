@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "red_eye_vine_new"
+      },
+      "name": "default"
+    }
+  }
+}

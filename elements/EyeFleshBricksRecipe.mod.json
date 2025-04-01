@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 4,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EyeFleshBlock"
+      },
+      {
+        "value": "CUSTOM:EyeFleshBlock"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:EyeFleshBlock"
+      },
+      {
+        "value": "CUSTOM:EyeFleshBlock"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:EyeFleshBricks"
+    },
+    "name": "eye_flesh_bricks",
+    "namespace": "mod"
+  }
+}

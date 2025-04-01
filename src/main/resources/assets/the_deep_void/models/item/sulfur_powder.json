@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "the_deep_void:item/sulfur_powder"
+  },
+  "render_type": "translucent"
+}

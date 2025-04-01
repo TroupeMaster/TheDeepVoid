@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:forgotten_valley",
+  "features": "the_deep_void:mossy_bone_pile",
+  "step": "underground_ores"
+}

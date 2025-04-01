@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:gold_nugget"
+    },
+    "b": {
+      "item": "the_deep_void:eyeball"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:golden_eyeball",
+    "count": 1
+  }
+}

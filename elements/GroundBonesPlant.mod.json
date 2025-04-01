@@ -1,0 +1,116 @@
+{
+  "_fv": 66,
+  "_type": "plant",
+  "definition": {
+    "renderType": 13,
+    "texture": "floor_bones",
+    "textureBottom": "",
+    "customModelName": "Crop model",
+    "itemTexture": "",
+    "particleTexture": "",
+    "tintType": "No tint",
+    "isItemTinted": false,
+    "plantType": "normal",
+    "suspiciousStewEffect": "SPEED",
+    "suspiciousStewDuration": 100,
+    "growapableSpawnType": "Cave",
+    "growapableMaxHeight": 3,
+    "customBoundingBox": true,
+    "disableOffset": false,
+    "boundingBoxes": [
+      {
+        "mx": 0.0,
+        "my": 0.0,
+        "mz": 0.0,
+        "Mx": 16.0,
+        "My": 8.0,
+        "Mz": 16.0,
+        "subtract": false
+      }
+    ],
+    "name": "Ground Bones",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [],
+    "hardness": 0.4,
+    "resistance": 1.0,
+    "luminance": 0,
+    "unbreakable": false,
+    "isSolid": false,
+    "isCustomSoundType": false,
+    "soundOnStep": {
+      "value": "BONE"
+    },
+    "breakSound": {
+      "value": ""
+    },
+    "stepSound": {
+      "value": ""
+    },
+    "placeSound": {
+      "value": ""
+    },
+    "hitSound": {
+      "value": ""
+    },
+    "fallSound": {
+      "value": ""
+    },
+    "useLootTableForDrops": false,
+    "customDrop": {
+      "value": "Items.BONE"
+    },
+    "dropAmount": 3,
+    "forceTicking": false,
+    "emissiveRendering": false,
+    "hasTileEntity": false,
+    "isReplaceable": false,
+    "colorOnMap": "DEFAULT",
+    "creativePickItem": {
+      "value": "CUSTOM:GroundBones"
+    },
+    "offsetType": "XZ",
+    "aiPathNodeType": "DEFAULT",
+    "flammability": 0,
+    "fireSpreadSpeed": 0,
+    "jumpFactor": 1.0,
+    "speedFactor": 1.0,
+    "canBePlacedOn": [],
+    "isBonemealable": false,
+    "frequencyOnChunks": 7,
+    "generateFeature": true,
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:ForgottenValley"
+      },
+      {
+        "value": "CUSTOM:MourningGraveyard"
+      },
+      {
+        "value": "CUSTOM:GrimCanopy"
+      },
+      {
+        "value": "CUSTOM:GloomyDeathgrounds"
+      },
+      {
+        "value": "CUSTOM:WindsweptHollow"
+      },
+      {
+        "value": "CUSTOM:DriftingMonoliths"
+      },
+      {
+        "value": "CUSTOM:WatchingUndergrowth"
+      },
+      {
+        "value": "CUSTOM:CrawlerNest"
+      },
+      {
+        "value": "CUSTOM:FilledGraveyard"
+      }
+    ],
+    "generationType": "Flower",
+    "patchSize": 24,
+    "generateAtAnyHeight": false
+  }
+}

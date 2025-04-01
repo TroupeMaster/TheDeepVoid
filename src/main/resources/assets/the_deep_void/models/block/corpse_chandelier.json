@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/corpse_chandelier",
+  "textures": {
+    "all": "the_deep_void:block/corpse_chandelier_new",
+    "particle": "the_deep_void:block/chiseled_rotten_bone",
+    "0": "the_deep_void:block/corpse_chandelier_new"
+  },
+  "render_type": "cutout"
+}

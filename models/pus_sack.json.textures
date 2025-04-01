@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "pus_sack_texture"
+      },
+      "name": "default"
+    }
+  }
+}

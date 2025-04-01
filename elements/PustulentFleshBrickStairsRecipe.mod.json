@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 4,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:PustulentFleshBricks"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:PustulentFleshBricks"
+      },
+      {
+        "value": "CUSTOM:PustulentFleshBricks"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:PustulentFleshBricks"
+      },
+      {
+        "value": "CUSTOM:PustulentFleshBricks"
+      },
+      {
+        "value": "CUSTOM:PustulentFleshBricks"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:PustulentFleshBrickStairs"
+    },
+    "name": "pustulent_flesh_brick_stairs",
+    "namespace": "mod"
+  }
+}
