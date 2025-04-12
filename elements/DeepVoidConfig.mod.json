@@ -190,9 +190,9 @@
               "value": ""
             },
             "logicField": 0,
-            "numberField": 800.0,
+            "numberField": 1200.0,
             "textDefault": "",
-            "comment": "The time it takes for the Stalker to spawn in ticks (Default = 800 ticks)",
+            "comment": "The time it takes for the Stalker to spawn in ticks (Default = 1,200 ticks)",
             "vardisplay": "StalkerSpawnTimer",
             "varname": "StalkerSpawnTimer",
             "enablecomment": true,

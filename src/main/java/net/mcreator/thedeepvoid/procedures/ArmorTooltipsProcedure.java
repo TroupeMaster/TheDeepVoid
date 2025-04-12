@@ -219,7 +219,7 @@ public class ArmorTooltipsProcedure {
 		}
 		if (itemstack.getItem() == TheDeepVoidModItems.WEAVER_BOOTS_BOOTS.get()) {
 			if (Screen.hasShiftDown()) {
-				tooltip.add(Component.literal("\u00A77When sneaking:"));
+				tooltip.add(Component.literal("\u00A77On No Gravity key pressed:"));
 				tooltip.add(Component.literal(" \u00A79-Allows the wearer to walk on air if there are no solid blocks underneath"));
 				tooltip.add(Component.literal("\u00A77On Armor Ability key pressed:"));
 				tooltip.add(Component.literal(" \u00A79-The wearer will dash where they're facing"));

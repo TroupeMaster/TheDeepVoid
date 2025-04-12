@@ -1,0 +1,12 @@
+{
+  "_fv": 66,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "LSHIFT",
+    "keyBindingName": "Weaver Boots No Gravity",
+    "keyBindingCategoryKey": "movement",
+    "onKeyPressed": {
+      "name": "WeaverBootsNoGravityOnKeyPressed"
+    }
+  }
+}

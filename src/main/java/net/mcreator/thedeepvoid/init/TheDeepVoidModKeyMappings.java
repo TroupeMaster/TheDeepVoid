@@ -15,6 +15,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.KeyMapping;
 
+import net.mcreator.thedeepvoid.network.WeaverBootsNoGravityMessage;
 import net.mcreator.thedeepvoid.network.MotherCallOutMessage;
 import net.mcreator.thedeepvoid.network.ArmorToggleMessage;
 import net.mcreator.thedeepvoid.network.ArmorAbilityMessage;
@@ -61,12 +62,26 @@ public class TheDeepVoidModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	public static final KeyMapping WEAVER_BOOTS_NO_GRAVITY = new KeyMapping("key.the_deep_void.weaver_boots_no_gravity", GLFW.GLFW_KEY_LEFT_SHIFT, "key.categories.movement") {
+		private boolean isDownOld = false;
+
+		@Override
+		public void setDown(boolean isDown) {
+			super.setDown(isDown);
+			if (isDownOld != isDown && isDown) {
+				TheDeepVoidMod.PACKET_HANDLER.sendToServer(new WeaverBootsNoGravityMessage(0, 0));
+				WeaverBootsNoGravityMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+			}
+			isDownOld = isDown;
+		}
+	};
 
 	@SubscribeEvent
 	public static void registerKeyMappings(RegisterKeyMappingsEvent event) {
 		event.register(ARMOR_ABILITY);
 		event.register(ARMOR_TOGGLE);
 		event.register(MOTHER_CALL_OUT);
+		event.register(WEAVER_BOOTS_NO_GRAVITY);
 	}
 
 	@Mod.EventBusSubscriber({Dist.CLIENT})
@@ -77,6 +92,7 @@ public class TheDeepVoidModKeyMappings {
 				ARMOR_ABILITY.consumeClick();
 				ARMOR_TOGGLE.consumeClick();
 				MOTHER_CALL_OUT.consumeClick();
+				WEAVER_BOOTS_NO_GRAVITY.consumeClick();
 			}
 		}
 	}

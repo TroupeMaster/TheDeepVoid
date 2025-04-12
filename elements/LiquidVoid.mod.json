@@ -45,6 +45,9 @@
     "colorOnMap": "DEFAULT",
     "onEntityCollides": {
       "name": "LiquidVoidMobplayerCollidesBlock"
+    },
+    "onRandomUpdateEvent": {
+      "name": "LiquidVoidOnTickUpdate"
     }
   }
 }

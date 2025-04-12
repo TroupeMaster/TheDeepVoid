@@ -7,12 +7,14 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
+
 public class WeaverBootsBootsTickEventProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		if (!world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude()) {
-			if (entity.isShiftKeyDown()) {
+			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).noGravity == true) {
 				if (entity.isNoGravity() == false) {
 					entity.setNoGravity(true);
 				}

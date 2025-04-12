@@ -145,9 +145,9 @@ public class CallOfTheVoidDigProcedure {
 											_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 80, 99, false, false));
 									}
 									if (entityiterator instanceof LightEntity) {
-										if (world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY() - 0.45, entityiterator.getZ())).getLightEmission(world,
-												BlockPos.containing(entityiterator.getX(), entityiterator.getY() - 0.45, entityiterator.getZ())) > 0) {
-											world.setBlock(BlockPos.containing(entityiterator.getX(), entityiterator.getY() - 0.45, entityiterator.getZ()), Blocks.AIR.defaultBlockState(), 3);
+										if (world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())).getLightEmission(world,
+												BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ())) > 0) {
+											world.setBlock(BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), Blocks.AIR.defaultBlockState(), 3);
 											if (world instanceof ServerLevel _level)
 												_level.sendParticles(ParticleTypes.SOUL, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 1, 0, 1, 0, 0.1);
 											if (!entityiterator.level().isClientSide())

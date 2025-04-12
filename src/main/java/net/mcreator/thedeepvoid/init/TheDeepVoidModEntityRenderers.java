@@ -11,6 +11,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
+import net.mcreator.thedeepvoid.client.renderer.WatchingStalkerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.WandererRenderer;
 import net.mcreator.thedeepvoid.client.renderer.VoidDwellerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.ThrownSoulSeekerRenderer;
@@ -169,5 +170,6 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.CENTIGAZE_HIDDEN.get(), CentigazeHiddenRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.STALKING_STALKER.get(), StalkingStalkerRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.SHADOW.get(), ShadowRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.WATCHING_STALKER.get(), WatchingStalkerRenderer::new);
 	}
 }

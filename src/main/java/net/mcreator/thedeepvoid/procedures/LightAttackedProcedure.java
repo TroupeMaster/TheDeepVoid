@@ -28,6 +28,7 @@ import net.mcreator.thedeepvoid.entity.DamnedEntity;
 import net.mcreator.thedeepvoid.entity.CrossEyesEntity;
 import net.mcreator.thedeepvoid.entity.CharredSpikeEntity;
 import net.mcreator.thedeepvoid.entity.BigEyeEntity;
+import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import javax.annotation.Nullable;
@@ -49,39 +50,61 @@ public class LightAttackedProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (entity instanceof LightEntity) {
-			if (!(sourceentity instanceof ShadowEntity)) {
-				if (event != null && event.isCancelable()) {
-					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
+			if (DeepVoidConfigConfiguration.DESTROYLIGHTSOURCES.get() == true) {
+				if (sourceentity == null) {
+					if (event != null && event.isCancelable()) {
+						event.setCanceled(true);
+					} else if (event != null && event.hasResult()) {
+						event.setResult(Event.Result.DENY);
+					}
 				}
-			} else {
-				if (!entity.level().isClientSide())
-					entity.discard();
-				TheDeepVoidMod.queueServerWork(15, () -> {
-					if (!sourceentity.level().isClientSide())
-						sourceentity.discard();
-				});
-				if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())).getLightEmission(world, BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())) > 0) {
+				if (!(sourceentity instanceof ShadowEntity)) {
+					if (event != null && event.isCancelable()) {
+						event.setCanceled(true);
+					} else if (event != null && event.hasResult()) {
+						event.setResult(Event.Result.DENY);
+					}
+				} else {
+					if (!entity.level().isClientSide())
+						entity.discard();
 					TheDeepVoidMod.queueServerWork(15, () -> {
-						world.destroyBlock(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ()), false);
+						if (!sourceentity.level().isClientSide())
+							sourceentity.discard();
 					});
+					if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())).getLightEmission(world, BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())) > 0) {
+						TheDeepVoidMod.queueServerWork(15, () -> {
+							world.destroyBlock(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ()), false);
+						});
+					}
+					if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())).getLightEmission(world, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())) > 0) {
+						TheDeepVoidMod.queueServerWork(15, () -> {
+							world.destroyBlock(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), false);
+						});
+					}
 				}
-			}
-			if (sourceentity instanceof StalkingStalkerEntity) {
-				if (!entity.level().isClientSide())
-					entity.discard();
-				if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())).getLightEmission(world, BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())) > 0) {
-					TheDeepVoidMod.queueServerWork(15, () -> {
+				if (sourceentity instanceof StalkingStalkerEntity) {
+					if (!entity.level().isClientSide())
+						entity.discard();
+					if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())).getLightEmission(world, BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())) > 0) {
+						TheDeepVoidMod.queueServerWork(15, () -> {
+							world.destroyBlock(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ()), false);
+						});
+					}
+					if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())).getLightEmission(world, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())) > 0) {
+						TheDeepVoidMod.queueServerWork(15, () -> {
+							world.destroyBlock(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), false);
+						});
+					}
+				}
+				if (sourceentity instanceof DamnedEntity || sourceentity instanceof BigEyeEntity || sourceentity instanceof CrossEyesEntity || sourceentity instanceof FourEyesEntity || sourceentity instanceof MultipleEyesEntity) {
+					if (!entity.level().isClientSide())
+						entity.discard();
+					if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())).getLightEmission(world, BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())) > 0) {
 						world.destroyBlock(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ()), false);
-					});
-				}
-			}
-			if (sourceentity instanceof DamnedEntity || sourceentity instanceof BigEyeEntity || sourceentity instanceof CrossEyesEntity || sourceentity instanceof FourEyesEntity || sourceentity instanceof MultipleEyesEntity) {
-				if (!entity.level().isClientSide())
-					entity.discard();
-				if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())).getLightEmission(world, BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())) > 0) {
-					world.destroyBlock(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ()), false);
+					}
+					if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())).getLightEmission(world, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())) > 0) {
+						world.destroyBlock(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), false);
+					}
 				}
 			}
 		}

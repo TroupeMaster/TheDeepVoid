@@ -6,6 +6,8 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 
@@ -36,6 +38,20 @@ public class PlayerEntersWorldProcedure {
 			double _setval = 0;
 			entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 				capability.NightmareCount = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		{
+			double _setval = 0;
+			entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.StalkerStalkCount = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		{
+			double _setval = Mth.nextInt(RandomSource.create(), 0, 60);
+			entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.randomStalkerValue = _setval;
 				capability.syncPlayerVariables(entity);
 			});
 		}

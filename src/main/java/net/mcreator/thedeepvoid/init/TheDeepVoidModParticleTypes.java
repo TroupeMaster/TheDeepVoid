@@ -27,4 +27,5 @@ public class TheDeepVoidModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> GRIM_SWEEP = REGISTRY.register("grim_sweep", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> SHADE_DROP = REGISTRY.register("shade_drop", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> FLAME_OF_SPITE = REGISTRY.register("flame_of_spite", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> BLACK_TENTACLE = REGISTRY.register("black_tentacle", () -> new SimpleParticleType(false));
 }

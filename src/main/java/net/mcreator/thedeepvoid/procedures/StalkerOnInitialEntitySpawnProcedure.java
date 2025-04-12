@@ -19,6 +19,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
+import net.mcreator.thedeepvoid.entity.StalkerEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import java.util.List;
@@ -72,14 +73,6 @@ public class StalkerOnInitialEntitySpawnProcedure {
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeEffect(MobEffects.GLOWING);
 		}
-		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) {
-			TheDeepVoidMod.queueServerWork(5400, () -> {
-				if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) {
-					if (!entity.level().isClientSide())
-						entity.discard();
-				}
-			});
-		}
 		if (entity.isPassenger()) {
 			entity.stopRiding();
 		}
@@ -92,7 +85,7 @@ public class StalkerOnInitialEntitySpawnProcedure {
 			if (entity.getPersistentData().getDouble("voidCallCooldown") >= 540) {
 				if (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() < entity.getY() - 1 || (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() > entity.getY() + 1)
 						&& world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude()
-						&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _livEnt45 && _livEnt45.hasEffect(TheDeepVoidModMobEffects.CALL_OF_THE_VOID.get())) == false) {
+						&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _livEnt39 && _livEnt39.hasEffect(TheDeepVoidModMobEffects.CALL_OF_THE_VOID.get())) == false) {
 					if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.CALL_OF_THE_VOID.get(), 420, 0));
 				}
@@ -100,5 +93,20 @@ public class StalkerOnInitialEntitySpawnProcedure {
 				entity.getPersistentData().putDouble("voidCallCooldown", (entity.getPersistentData().getDouble("voidCallCooldown") + 1));
 			}
 		}
+		TheDeepVoidMod.queueServerWork(2800, () -> {
+			if (entity instanceof StalkerEntity) {
+				((StalkerEntity) entity).setAnimation("animation.stalker_digHide");
+			}
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 99, false, false));
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 40, 99, false, false));
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, 99, false, false));
+			TheDeepVoidMod.queueServerWork(35, () -> {
+				if (!entity.level().isClientSide())
+					entity.discard();
+			});
+		});
 	}
 }

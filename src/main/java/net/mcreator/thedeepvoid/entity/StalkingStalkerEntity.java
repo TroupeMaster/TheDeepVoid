@@ -21,12 +21,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnGroupData;
@@ -105,16 +107,19 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 	protected void registerGoals() {
 		super.registerGoals();
 		this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, (float) 100));
-		this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(3, new FloatGoal(this));
-		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 1));
-		this.targetSelector.addGoal(5, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(6, new MeleeAttackGoal(this, 1.4, true) {
+		this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, LightEntity.class, (float) 6, 1.2, 1.2));
+		this.goalSelector.addGoal(3, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(4, new FloatGoal(this));
+		this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1));
+		this.targetSelector.addGoal(6, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(7, new MeleeAttackGoal(this, 1.4, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return 9;
 			}
 		});
+		this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, MournerEntity.class, false, true));
+		this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, WandererEntity.class, false, true));
 	}
 
 	@Override

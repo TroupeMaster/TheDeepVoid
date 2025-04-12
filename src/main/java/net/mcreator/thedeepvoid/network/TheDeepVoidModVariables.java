@@ -90,6 +90,10 @@ public class TheDeepVoidModVariables {
 			clone.CallOfTheVoidEnd = original.CallOfTheVoidEnd;
 			clone.InSurvival = original.InSurvival;
 			clone.SendToHell = original.SendToHell;
+			clone.randomStalkerValue = original.randomStalkerValue;
+			clone.stalkingCount = original.stalkingCount;
+			clone.stalkWatcherCount = original.stalkWatcherCount;
+			clone.noGravity = original.noGravity;
 			if (!event.isWasDeath()) {
 				clone.playerX = original.playerX;
 				clone.playerY = original.playerY;
@@ -369,6 +373,10 @@ public class TheDeepVoidModVariables {
 		public boolean SendToHell = false;
 		public boolean naturalTeleport = false;
 		public double weaverBoots = 0;
+		public double randomStalkerValue = 0;
+		public double stalkingCount = 0;
+		public double stalkWatcherCount = 0;
+		public boolean noGravity = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -435,6 +443,10 @@ public class TheDeepVoidModVariables {
 			nbt.putBoolean("SendToHell", SendToHell);
 			nbt.putBoolean("naturalTeleport", naturalTeleport);
 			nbt.putDouble("weaverBoots", weaverBoots);
+			nbt.putDouble("randomStalkerValue", randomStalkerValue);
+			nbt.putDouble("stalkingCount", stalkingCount);
+			nbt.putDouble("stalkWatcherCount", stalkWatcherCount);
+			nbt.putBoolean("noGravity", noGravity);
 			return nbt;
 		}
 
@@ -498,6 +510,10 @@ public class TheDeepVoidModVariables {
 			SendToHell = nbt.getBoolean("SendToHell");
 			naturalTeleport = nbt.getBoolean("naturalTeleport");
 			weaverBoots = nbt.getDouble("weaverBoots");
+			randomStalkerValue = nbt.getDouble("randomStalkerValue");
+			stalkingCount = nbt.getDouble("stalkingCount");
+			stalkWatcherCount = nbt.getDouble("stalkWatcherCount");
+			noGravity = nbt.getBoolean("noGravity");
 		}
 	}
 
@@ -580,6 +596,10 @@ public class TheDeepVoidModVariables {
 					variables.SendToHell = message.data.SendToHell;
 					variables.naturalTeleport = message.data.naturalTeleport;
 					variables.weaverBoots = message.data.weaverBoots;
+					variables.randomStalkerValue = message.data.randomStalkerValue;
+					variables.stalkingCount = message.data.stalkingCount;
+					variables.stalkWatcherCount = message.data.stalkWatcherCount;
+					variables.noGravity = message.data.noGravity;
 				}
 			});
 			context.setPacketHandled(true);

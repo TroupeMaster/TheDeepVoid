@@ -47,27 +47,19 @@ public class LightIsPlacedProcedure {
 						&& !((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == TheDeepVoidModBlocks.VOIDRIUM_GLASS.get()) && !((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.BEACON)
 						&& !((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == TheDeepVoidModBlocks.DEAD_FERRYMAN.get())) {
 					if (world.getBlockState(BlockPos.containing(x, y, z)).getLightEmission(world, BlockPos.containing(x, y, z)) > 6) {
-						if (world.getBlockState(BlockPos.containing(x, y, z)).canOcclude()) {
-							if (!world.getEntitiesOfClass(LightEntity.class, AABB.ofSize(new Vec3(x, (y + 0.5), z), 0.5, 0.5, 0.5), e -> true).isEmpty() == false) {
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = TheDeepVoidModEntities.LIGHT.get().spawn(_level, BlockPos.containing(x, y + 0.5, z), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-									}
-								}
-							}
-						} else {
-							if (!world.getEntitiesOfClass(LightEntity.class, AABB.ofSize(new Vec3(x, (y + 1), z), 0.5, 0.5, 0.5), e -> true).isEmpty() == false) {
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = TheDeepVoidModEntities.LIGHT.get().spawn(_level, BlockPos.containing(x, y + 1, z), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-									}
+						if (!world.getEntitiesOfClass(LightEntity.class, AABB.ofSize(new Vec3(x, (y + 0.45), z), 0.5, 0.5, 0.5), e -> true).isEmpty() == false) {
+							if (world instanceof ServerLevel _level) {
+								Entity entityToSpawn = TheDeepVoidModEntities.LIGHT.get().spawn(_level, BlockPos.containing(x, y + 0.45, z), MobSpawnType.MOB_SUMMONED);
+								if (entityToSpawn != null) {
+									entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 								}
 							}
 						}
 					}
 				}
+			}
+			if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.WATER || (world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.WATER) {
+				world.setBlock(BlockPos.containing(x, y, z), TheDeepVoidModBlocks.LIQUID_VOID.get().defaultBlockState(), 3);
 			}
 		}
 	}

@@ -43,7 +43,7 @@ public class DeepVoidConfigConfiguration {
 		PLACECORPSEONIMPACT = BUILDER.comment("If falling corpses should place a corpse on impact").define("PlaceCorpseOnImpact", true);
 		STALKERSPAWNS = BUILDER.comment("If the Stalker should spawn or not").define("StalkerSpawns", true);
 		STALKINGSTALKERSPAWNS = BUILDER.comment("If Stalking Stalkers should spawn or not").define("StalkingStalkerSpawns", true);
-		STALKERSPAWNTIMER = BUILDER.comment("The time it takes for the Stalker to spawn in ticks (Default = 800 ticks)").define("StalkerSpawnTimer", (double) 800);
+		STALKERSPAWNTIMER = BUILDER.comment("The time it takes for the Stalker to spawn in ticks (Default = 1,200 ticks)").define("StalkerSpawnTimer", (double) 1200);
 		BUILDER.pop();
 		BUILDER.push("Misc");
 		SEEKLIGHTWARNING = BUILDER.comment("Whether the ''Seek Light'' warning should appear when the Stalker is close or not (Happens only one time)").define("SeekLightWarning", true);

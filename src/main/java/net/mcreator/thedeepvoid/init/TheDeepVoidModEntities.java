@@ -16,6 +16,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
+import net.mcreator.thedeepvoid.entity.WatchingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.WandererEntity;
 import net.mcreator.thedeepvoid.entity.VoidDwellerEntity;
 import net.mcreator.thedeepvoid.entity.ThrownSoulSeekerEntity;
@@ -360,6 +361,8 @@ public class TheDeepVoidModEntities {
 			EntityType.Builder.<ShadowEntity>of(ShadowEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ShadowEntity::new)
 
 					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<WatchingStalkerEntity>> WATCHING_STALKER = register("watching_stalker", EntityType.Builder.<WatchingStalkerEntity>of(WatchingStalkerEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(84).setUpdateInterval(3).setCustomClientFactory(WatchingStalkerEntity::new).fireImmune().sized(0.6f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -436,6 +439,7 @@ public class TheDeepVoidModEntities {
 			CentigazeHiddenEntity.init();
 			StalkingStalkerEntity.init();
 			ShadowEntity.init();
+			WatchingStalkerEntity.init();
 		});
 	}
 
@@ -509,5 +513,6 @@ public class TheDeepVoidModEntities {
 		event.put(CENTIGAZE_HIDDEN.get(), CentigazeHiddenEntity.createAttributes().build());
 		event.put(STALKING_STALKER.get(), StalkingStalkerEntity.createAttributes().build());
 		event.put(SHADOW.get(), ShadowEntity.createAttributes().build());
+		event.put(WATCHING_STALKER.get(), WatchingStalkerEntity.createAttributes().build());
 	}
 }

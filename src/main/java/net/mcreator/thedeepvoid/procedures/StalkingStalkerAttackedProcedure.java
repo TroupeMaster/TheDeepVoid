@@ -19,7 +19,9 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.thedeepvoid.entity.WandererEntity;
 import net.mcreator.thedeepvoid.entity.StalkingStalkerEntity;
+import net.mcreator.thedeepvoid.entity.MournerEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import javax.annotation.Nullable;
@@ -131,7 +133,7 @@ public class StalkingStalkerAttackedProcedure {
 			}.checkGamemode(entity))) {
 				if (sourceentity instanceof StalkingStalkerEntity) {
 					if (sourceentity.getPersistentData().getBoolean("deep_void:counterAttack") == true) {
-						if (sourceentity.getPersistentData().getDouble("deep_void:attackCount") >= 2) {
+						if (sourceentity.getPersistentData().getDouble("deep_void:attackCount") > 1) {
 							if (sourceentity instanceof Mob _entity)
 								_entity.getNavigation()
 										.moveTo((sourceentity.level()
@@ -158,6 +160,12 @@ public class StalkingStalkerAttackedProcedure {
 						}
 					}
 				}
+			}
+		}
+		if (entity instanceof MournerEntity || entity instanceof WandererEntity) {
+			if (sourceentity instanceof StalkingStalkerEntity) {
+				if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 30, 4, false, false));
 			}
 		}
 	}

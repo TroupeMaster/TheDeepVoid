@@ -21,6 +21,7 @@ import net.mcreator.thedeepvoid.client.particle.DeepslatePebbleParticle;
 import net.mcreator.thedeepvoid.client.particle.DarkTearParticle;
 import net.mcreator.thedeepvoid.client.particle.BrokenBoneParticle;
 import net.mcreator.thedeepvoid.client.particle.BloodParticle;
+import net.mcreator.thedeepvoid.client.particle.BlackTentacleParticle;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class TheDeepVoidModParticles {
@@ -38,5 +39,6 @@ public class TheDeepVoidModParticles {
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.GRIM_SWEEP.get(), GrimSweepParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.SHADE_DROP.get(), ShadeDropParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.FLAME_OF_SPITE.get(), FlameOfSpiteParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.BLACK_TENTACLE.get(), BlackTentacleParticle::provider);
 	}
 }
