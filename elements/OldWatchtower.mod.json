@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "structure",
   "definition": {
-    "structure": "old_watchtower",
+    "structure": "old_watchtower_new",
     "projection": "rigid",
     "ignoredBlocks": [
       {
@@ -12,9 +12,6 @@
     "spacing": 48,
     "separation": 40,
     "restrictionBiomes": [
-      {
-        "value": "CUSTOM:ForgottenValley"
-      },
       {
         "value": "CUSTOM:MourningGraveyard"
       },

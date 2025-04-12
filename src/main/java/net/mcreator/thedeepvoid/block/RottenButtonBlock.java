@@ -9,6 +9,6 @@ import net.minecraft.world.level.block.ButtonBlock;
 
 public class RottenButtonBlock extends ButtonBlock {
 	public RottenButtonBlock() {
-		super(BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.BASALT).strength(2.2f, 16f).dynamicShape(), BlockSetType.OAK, 30, true);
+		super(BlockBehaviour.Properties.of().ignitedByLava().instrument(NoteBlockInstrument.BASS).sound(SoundType.BASALT).strength(2.2f, 16f), BlockSetType.OAK, 30, true);
 	}
 }

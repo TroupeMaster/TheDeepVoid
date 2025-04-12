@@ -23,7 +23,7 @@ public class VoidriumPickaxeItem extends PickaxeItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 6f;
+				return 4f;
 			}
 
 			public int getLevel() {

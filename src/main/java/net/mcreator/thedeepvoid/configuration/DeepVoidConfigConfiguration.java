@@ -24,6 +24,7 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Boolean> OLDLIGHTSYSTEM;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> PLAYERHALLUCINATES;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> STALKERBREAKSBLOCKS;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> DARKNESS;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> HELL;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> STALKED;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> CORPSERAIN;
@@ -42,7 +43,7 @@ public class DeepVoidConfigConfiguration {
 		PLACECORPSEONIMPACT = BUILDER.comment("If falling corpses should place a corpse on impact").define("PlaceCorpseOnImpact", true);
 		STALKERSPAWNS = BUILDER.comment("If the Stalker should spawn or not").define("StalkerSpawns", true);
 		STALKINGSTALKERSPAWNS = BUILDER.comment("If Stalking Stalkers should spawn or not").define("StalkingStalkerSpawns", true);
-		STALKERSPAWNTIMER = BUILDER.comment("The time it takes for the Stalker to spawn in ticks (Default = 400 ticks)").define("StalkerSpawnTimer", (double) 400);
+		STALKERSPAWNTIMER = BUILDER.comment("The time it takes for the Stalker to spawn in ticks (Default = 800 ticks)").define("StalkerSpawnTimer", (double) 800);
 		BUILDER.pop();
 		BUILDER.push("Misc");
 		SEEKLIGHTWARNING = BUILDER.comment("Whether the ''Seek Light'' warning should appear when the Stalker is close or not (Happens only one time)").define("SeekLightWarning", true);
@@ -53,6 +54,7 @@ public class DeepVoidConfigConfiguration {
 		OLDLIGHTSYSTEM = BUILDER.comment("If the old light breaking mechanic should be used instead of the new one").define("OldLightSystem", false);
 		PLAYERHALLUCINATES = BUILDER.comment("If players should hallucinate below y=1 or not").define("PlayerHallucinates", true);
 		STALKERBREAKSBLOCKS = BUILDER.comment("Should the Stalker be able to break certain blocks").define("StalkerBreaksBlocks", true);
+		DARKNESS = BUILDER.comment("If Darkness should attack the Player below y=0 while still keeping Hallucinate").define("Darkness", true);
 		BUILDER.pop();
 		BUILDER.push("Gameplay Changes");
 		HELL = BUILDER.comment("When a player dies, they get send to the Deep Void").define("Hell", false);

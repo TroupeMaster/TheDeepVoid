@@ -26,6 +26,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.entity.AbductorEntity;
+import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import java.util.List;
@@ -93,6 +94,16 @@ public class AbductorOnEntityTickUpdateProcedure {
 										_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
 									}
 								}
+								if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+									_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VOID_BLESSING.get(), (int) (double) DeepVoidConfigConfiguration.VOIDBLESSINGTIMER.get(), 0));
+								TheDeepVoidMod.queueServerWork(10, () -> {
+									{
+										Entity _ent = entityiterator;
+										_ent.teleportTo(x, 300, z);
+										if (_ent instanceof ServerPlayer _serverPlayer)
+											_serverPlayer.connection.teleport(x, 300, z, _ent.getYRot(), _ent.getXRot());
+									}
+								});
 							}
 						}
 					}
@@ -106,7 +117,7 @@ public class AbductorOnEntityTickUpdateProcedure {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _livEnt27 && _livEnt27.hasEffect(TheDeepVoidModMobEffects.FIXATION.get()))) {
+				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _livEnt31 && _livEnt31.hasEffect(TheDeepVoidModMobEffects.FIXATION.get()))) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.sculk_shrieker.shriek")), SoundSource.HOSTILE, (float) 1.4,

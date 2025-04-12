@@ -14,7 +14,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.Level;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.client.renderer.LightTexture;
 import net.minecraft.client.renderer.DimensionSpecialEffects;
 import net.minecraft.client.multiplayer.ClientLevel;
@@ -57,16 +56,14 @@ public class RenderSkyDeepVoidProcedure {
 					RenderSystem.defaultBlendFunc();
 					flag |= predicate.test(objects);
 				}
-				if (flag) {
-					RenderSystem.defaultBlendFunc();
-					RenderSystem.disableBlend();
-					RenderSystem.enableCull();
-					RenderSystem.enableDepthTest();
-					RenderSystem.depthMask(true);
-				}
+				RenderSystem.defaultBlendFunc();
+				RenderSystem.disableBlend();
+				RenderSystem.enableCull();
+				RenderSystem.enableDepthTest();
+				RenderSystem.depthMask(true);
 				return flag;
 			}
-			return false;
+			return true;
 		}
 
 		@Override
@@ -82,16 +79,14 @@ public class RenderSkyDeepVoidProcedure {
 					RenderSystem.defaultBlendFunc();
 					flag |= predicate.test(objects);
 				}
-				if (flag) {
-					RenderSystem.defaultBlendFunc();
-					RenderSystem.disableBlend();
-					RenderSystem.enableCull();
-					RenderSystem.enableDepthTest();
-					RenderSystem.depthMask(true);
-				}
+				RenderSystem.defaultBlendFunc();
+				RenderSystem.disableBlend();
+				RenderSystem.enableCull();
+				RenderSystem.enableDepthTest();
+				RenderSystem.depthMask(true);
 				return flag;
 			}
-			return false;
+			return true;
 		}
 
 		@Override
@@ -108,17 +103,15 @@ public class RenderSkyDeepVoidProcedure {
 					RenderSystem.defaultBlendFunc();
 					flag |= predicate.test(objects);
 				}
-				if (flag) {
-					RenderSystem.defaultBlendFunc();
-					RenderSystem.disableBlend();
-					RenderSystem.enableCull();
-					RenderSystem.enableDepthTest();
-					RenderSystem.depthMask(Minecraft.useShaderTransparency());
-				}
+				RenderSystem.defaultBlendFunc();
+				RenderSystem.disableBlend();
+				RenderSystem.enableCull();
+				RenderSystem.enableDepthTest();
+				RenderSystem.depthMask(Minecraft.useShaderTransparency());
 				lightTexture.turnOffLightLayer();
 				return flag;
 			}
-			return false;
+			return true;
 		}
 
 		@Override
@@ -130,7 +123,7 @@ public class RenderSkyDeepVoidProcedure {
 					flag |= predicate.test(objects);
 				return flag;
 			}
-			return false;
+			return true;
 		}
 
 		@Override
@@ -144,6 +137,10 @@ public class RenderSkyDeepVoidProcedure {
 	}
 
 	private static RegisterDimensionSpecialEffectsEvent provider = null;
+
+	public static void register(String name, DimensionSpecialEffects effects) {
+		provider.register(new ResourceLocation("the_deep_void", name), effects);
+	}
 
 	public static void register(ResourceKey<Level> dimension, DimensionSpecialEffects effects) {
 		provider.register(dimension.location(), effects);
@@ -202,6 +199,5 @@ public class RenderSkyDeepVoidProcedure {
 	}
 
 	private static void execute(@Nullable Event event) {
-		register(ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void")), createNetherEffects(false, false, false));
 	}
 }

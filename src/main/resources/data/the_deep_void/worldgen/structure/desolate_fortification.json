@@ -12,7 +12,7 @@
   "project_start_to_heightmap": "WORLD_SURFACE_WG",
   "biomes": [
     "the_deep_void:forgotten_valley",
-    "the_deep_void:mourning_graveyard"
+    "the_deep_void:windswept_hollow"
   ],
   "use_expansion_hack": false
 }

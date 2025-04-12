@@ -8,6 +8,6 @@ import net.minecraft.world.level.block.SoundType;
 
 public class MonolithicBrickWallBlock extends WallBlock {
 	public MonolithicBrickWallBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHER_BRICKS).strength(5f, 8f).requiresCorrectToolForDrops().dynamicShape().forceSolidOn());
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHER_BRICKS).strength(5f, 8f).requiresCorrectToolForDrops().forceSolidOn());
 	}
 }

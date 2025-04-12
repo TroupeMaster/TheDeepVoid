@@ -51,6 +51,22 @@ public class AllSeeingSwordKillProcedure {
 								(int) ((sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).hasteAllSeeing + 1), false, false));
 				}
 			}
+			if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SOUL_CLEAVER.get()) {
+				if (Math.random() < 0.7) {
+					{
+						double _setval = sourceentity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.DIG_SPEED) ? _livEnt.getEffect(MobEffects.DIG_SPEED).getAmplifier() : 0;
+						sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+							capability.hasteAllSeeing = _setval;
+							capability.syncPlayerVariables(sourceentity);
+						});
+					}
+					if (sourceentity instanceof LivingEntity _entity)
+						_entity.removeEffect(MobEffects.DIG_SPEED);
+					if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.DIG_SPEED, 55,
+								(int) ((sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).hasteAllSeeing + 1), false, false));
+				}
+			}
 		}
 	}
 }

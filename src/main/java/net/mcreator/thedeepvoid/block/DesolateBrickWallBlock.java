@@ -17,7 +17,7 @@ import net.mcreator.thedeepvoid.procedures.DesolateSoilEntityWalksOnBlockProcedu
 
 public class DesolateBrickWallBlock extends WallBlock {
 	public DesolateBrickWallBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.SOUL_SOIL).strength(1.5f).dynamicShape().forceSolidOn());
+		super(BlockBehaviour.Properties.of().sound(SoundType.SOUL_SOIL).strength(1.5f).forceSolidOn());
 	}
 
 	@Override

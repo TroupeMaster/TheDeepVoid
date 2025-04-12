@@ -64,6 +64,7 @@ public class CustomSkyDeepVoidProcedure {
 			ClientLevel level = minecraft.level;
 			Vec3 pos = entity.getPosition(partialTick);
 			execute(null);
+			return true;
 		}
 		return false;
 	};
@@ -103,7 +104,7 @@ public class CustomSkyDeepVoidProcedure {
 			RenderSystem.setShader(GameRenderer::getPositionShader);
 			BufferBuilder bufferBuilder = Tesselator.getInstance().getBuilder();
 			bufferBuilder.begin(VertexFormat.Mode.TRIANGLE_FAN, DefaultVertexFormat.POSITION);
-			bufferBuilder.vertex(0.0F, 16.0F, 0.0F).color(color).endVertex();
+			bufferBuilder.vertex(0.0F, 16.0F, 0.0F).endVertex();
 			for (int i = 0; i <= 8; ++i) {
 				bufferBuilder.vertex(512.0F * Mth.cos(45.0F * i * Mth.DEG_TO_RAD), 16.0F, 512.0F * Mth.sin(45.0F * i * Mth.DEG_TO_RAD)).endVertex();
 			}

@@ -12,6 +12,7 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
+import net.mcreator.thedeepvoid.entity.StalkingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.MultipleEyesEntity;
 import net.mcreator.thedeepvoid.entity.LurkerEntity;
 import net.mcreator.thedeepvoid.entity.FourEyesEntity;
@@ -23,7 +24,8 @@ public class BlockOfBonePileEntityWalksOnTheBlockProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (!(entity instanceof DamnedEntity) && !(entity instanceof BigEyeEntity) && !(entity instanceof CrossEyesEntity) && !(entity instanceof FourEyesEntity) && !(entity instanceof MultipleEyesEntity) && !(entity instanceof LurkerEntity)) {
+		if (!(entity instanceof DamnedEntity) && !(entity instanceof BigEyeEntity) && !(entity instanceof CrossEyesEntity) && !(entity instanceof FourEyesEntity) && !(entity instanceof MultipleEyesEntity) && !(entity instanceof StalkingStalkerEntity)
+				&& !(entity instanceof LurkerEntity)) {
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.BROKEN_BONE.get()), x, (y + 0.95), z, 5, 0.1, 0.1, 0.1, 0.1);
 		}

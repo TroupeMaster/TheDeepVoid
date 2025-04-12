@@ -190,9 +190,9 @@
               "value": ""
             },
             "logicField": 0,
-            "numberField": 400.0,
+            "numberField": 800.0,
             "textDefault": "",
-            "comment": "The time it takes for the Stalker to spawn in ticks (Default = 400 ticks)",
+            "comment": "The time it takes for the Stalker to spawn in ticks (Default = 800 ticks)",
             "vardisplay": "StalkerSpawnTimer",
             "varname": "StalkerSpawnTimer",
             "enablecomment": true,
@@ -336,6 +336,23 @@
             "comment": "Should the Stalker be able to break certain blocks",
             "vardisplay": "StalkerBreaksBlocks",
             "varname": "StalkerBreaksBlocks",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "If Darkness should attack the Player below y=0 while still keeping Hallucinate",
+            "vardisplay": "Darkness",
+            "varname": "Darkness",
             "enablecomment": true,
             "stringlist": []
           }

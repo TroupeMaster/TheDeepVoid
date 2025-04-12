@@ -14,13 +14,17 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.projectile.ThrownPotion;
-import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
+import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
+import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -30,6 +34,7 @@ import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.AreaEffectCloud;
@@ -44,9 +49,11 @@ import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.BlockPos;
 
-import net.mcreator.thedeepvoid.procedures.StalkerStalkingOnInitialEntitySpawnProcedure;
-import net.mcreator.thedeepvoid.procedures.StalkerStalkingOnEntityTickUpdateProcedure;
+import net.mcreator.thedeepvoid.procedures.StalkingStalkerOnInitialEntitySpawnProcedure;
+import net.mcreator.thedeepvoid.procedures.StalkerFollowsPlayerProcedure;
+import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 import javax.annotation.Nullable;
@@ -67,9 +74,10 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 
 	public StalkingStalkerEntity(EntityType<StalkingStalkerEntity> type, Level world) {
 		super(type, world);
-		xpReward = 0;
+		xpReward = 200;
 		setNoAi(false);
 		setMaxUpStep(1f);
+		setPersistenceRequired();
 	}
 
 	@Override
@@ -77,7 +85,7 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "stalking_stalker_texture_new");
+		this.entityData.define(TEXTURE, "stalker_animated");
 	}
 
 	public void setTexture(String texture) {
@@ -99,6 +107,14 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 		this.goalSelector.addGoal(1, new LookAtPlayerGoal(this, Player.class, (float) 100));
 		this.goalSelector.addGoal(2, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(3, new FloatGoal(this));
+		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 1));
+		this.targetSelector.addGoal(5, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(6, new MeleeAttackGoal(this, 1.4, true) {
+			@Override
+			protected double getAttackReachSqr(LivingEntity entity) {
+				return 9;
+			}
+		});
 	}
 
 	@Override
@@ -107,22 +123,33 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
+	}
+
+	protected void dropCustomDeathLoot(DamageSource source, int looting, boolean recentlyHitIn) {
+		super.dropCustomDeathLoot(source, looting, recentlyHitIn);
+		this.spawnAtLocation(new ItemStack(TheDeepVoidModItems.STALKER_SCYTHE_CLAW.get()));
+	}
+
+	@Override
+	public void playStepSound(BlockPos pos, BlockState blockIn) {
+		this.playSound(ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("intentionally_empty")), 0.15f, 1);
+	}
+
+	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:stalker_hurt"));
 	}
 
 	@Override
 	public SoundEvent getDeathSound() {
-		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.death"));
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:stalker_death"));
 	}
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
 		if (source.is(DamageTypes.IN_FIRE))
-			return false;
-		if (source.getDirectEntity() instanceof AbstractArrow)
-			return false;
-		if (source.getDirectEntity() instanceof Player)
 			return false;
 		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)
 			return false;
@@ -135,8 +162,6 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 		if (source.is(DamageTypes.LIGHTNING_BOLT))
 			return false;
 		if (source.is(DamageTypes.EXPLOSION))
-			return false;
-		if (source.is(DamageTypes.TRIDENT))
 			return false;
 		if (source.is(DamageTypes.FALLING_ANVIL))
 			return false;
@@ -152,7 +177,7 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		StalkerStalkingOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		StalkingStalkerOnInitialEntitySpawnProcedure.execute(this);
 		return retval;
 	}
 
@@ -172,7 +197,7 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		StalkerStalkingOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
+		StalkerFollowsPlayerProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
 
@@ -186,11 +211,13 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.6);
-		builder = builder.add(Attributes.MAX_HEALTH, 10);
-		builder = builder.add(Attributes.ARMOR, 0);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
+		builder = builder.add(Attributes.MAX_HEALTH, 480);
+		builder = builder.add(Attributes.ARMOR, 10);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 100);
+		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 5);
+		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 0.8);
 		return builder;
 	}
 
@@ -199,11 +226,29 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 			if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))
 
 			) {
-				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalkingStalker_walk"));
+				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalker_walk"));
 			}
-			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalkingStalker_idle"));
+			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalker_slowIdle"));
 		}
 		return PlayState.STOP;
+	}
+
+	private PlayState attackingPredicate(AnimationState event) {
+		double d1 = this.getX() - this.xOld;
+		double d0 = this.getZ() - this.zOld;
+		float velocity = (float) Math.sqrt(d1 * d1 + d0 * d0);
+		if (getAttackAnim(event.getPartialTick()) > 0f && !this.swinging) {
+			this.swinging = true;
+			this.lastSwing = level().getGameTime();
+		}
+		if (this.swinging && this.lastSwing + 7L <= level().getGameTime()) {
+			this.swinging = false;
+		}
+		if (this.swinging && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
+			event.getController().forceAnimationReset();
+			return event.setAndContinue(RawAnimation.begin().thenPlay("animation.stalker_attack"));
+		}
+		return PlayState.CONTINUE;
 	}
 
 	String prevAnim = "empty";
@@ -245,6 +290,7 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar data) {
 		data.add(new AnimationController<>(this, "movement", 4, this::movementPredicate));
+		data.add(new AnimationController<>(this, "attacking", 4, this::attackingPredicate));
 		data.add(new AnimationController<>(this, "procedure", 4, this::procedurePredicate));
 	}
 

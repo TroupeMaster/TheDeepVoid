@@ -9,6 +9,6 @@ import net.minecraft.world.level.block.SlabBlock;
 
 public class FakeBedrockSlabBlock extends SlabBlock {
 	public FakeBedrockSlabBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).strength(70f, 1200f).requiresCorrectToolForDrops().pushReaction(PushReaction.BLOCK).dynamicShape());
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.STONE).strength(70f, 1200f).requiresCorrectToolForDrops().pushReaction(PushReaction.BLOCK));
 	}
 }

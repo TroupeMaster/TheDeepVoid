@@ -12,9 +12,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
-import net.mcreator.thedeepvoid.entity.TinyLightEntity;
 import net.mcreator.thedeepvoid.entity.LightEntity;
-import net.mcreator.thedeepvoid.entity.BigLightEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import java.util.Comparator;
@@ -36,22 +34,8 @@ public class ShadowOnEntityTickUpdateProcedure {
 			}
 		}
 		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) {
-			if (!world.getEntitiesOfClass(BigLightEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {
-				if (entity instanceof Mob _entity && ((Entity) world.getEntitiesOfClass(BigLightEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).stream().sorted(new Object() {
-					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _ent)
-					_entity.setTarget(_ent);
-			} else if (!world.getEntitiesOfClass(LightEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {
+			if (!world.getEntitiesOfClass(LightEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {
 				if (entity instanceof Mob _entity && ((Entity) world.getEntitiesOfClass(LightEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).stream().sorted(new Object() {
-					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _ent)
-					_entity.setTarget(_ent);
-			} else if (!world.getEntitiesOfClass(TinyLightEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {
-				if (entity instanceof Mob _entity && ((Entity) world.getEntitiesOfClass(TinyLightEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).stream().sorted(new Object() {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 					}

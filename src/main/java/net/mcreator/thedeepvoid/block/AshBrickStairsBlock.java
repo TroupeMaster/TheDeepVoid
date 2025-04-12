@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Blocks;
 
 public class AshBrickStairsBlock extends StairBlock {
 	public AshBrickStairsBlock() {
-		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().sound(SoundType.SOUL_SOIL).strength(1.2f, 0f).dynamicShape());
+		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().sound(SoundType.SOUL_SOIL).strength(1.2f, 0f));
 	}
 
 	@Override

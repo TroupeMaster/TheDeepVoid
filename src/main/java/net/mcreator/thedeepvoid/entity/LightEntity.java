@@ -37,6 +37,7 @@ public class LightEntity extends Monster {
 		setMaxUpStep(0f);
 		xpReward = 0;
 		setNoAi(true);
+		setPersistenceRequired();
 	}
 
 	@Override
@@ -47,6 +48,11 @@ public class LightEntity extends Monster {
 	@Override
 	public MobType getMobType() {
 		return MobType.UNDEFINED;
+	}
+
+	@Override
+	public boolean removeWhenFarAway(double distanceToClosestPlayer) {
+		return false;
 	}
 
 	@Override

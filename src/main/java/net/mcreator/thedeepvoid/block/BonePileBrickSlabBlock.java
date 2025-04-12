@@ -13,7 +13,7 @@ import net.minecraft.core.BlockPos;
 
 public class BonePileBrickSlabBlock extends SlabBlock {
 	public BonePileBrickSlabBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.BONE_BLOCK).strength(0.8f, 8f).dynamicShape());
+		super(BlockBehaviour.Properties.of().sound(SoundType.BONE_BLOCK).strength(0.8f, 8f));
 	}
 
 	@Override

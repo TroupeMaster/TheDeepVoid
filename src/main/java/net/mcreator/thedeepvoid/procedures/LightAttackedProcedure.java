@@ -14,16 +14,20 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.thedeepvoid.entity.TinyLightEntity;
 import net.mcreator.thedeepvoid.entity.ThrownSoulSeekerEntity;
 import net.mcreator.thedeepvoid.entity.SummonedCharredSpikeEntity;
 import net.mcreator.thedeepvoid.entity.SulfurTntEntityEntity;
+import net.mcreator.thedeepvoid.entity.StalkingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.ShadowEntity;
 import net.mcreator.thedeepvoid.entity.RootedCloneEntity;
+import net.mcreator.thedeepvoid.entity.MultipleEyesEntity;
 import net.mcreator.thedeepvoid.entity.LightEntity;
+import net.mcreator.thedeepvoid.entity.FourEyesEntity;
 import net.mcreator.thedeepvoid.entity.DeathMawHiddenEntity;
+import net.mcreator.thedeepvoid.entity.DamnedEntity;
+import net.mcreator.thedeepvoid.entity.CrossEyesEntity;
 import net.mcreator.thedeepvoid.entity.CharredSpikeEntity;
-import net.mcreator.thedeepvoid.entity.BigLightEntity;
+import net.mcreator.thedeepvoid.entity.BigEyeEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import javax.annotation.Nullable;
@@ -44,7 +48,7 @@ public class LightAttackedProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (entity instanceof LightEntity || entity instanceof TinyLightEntity || entity instanceof BigLightEntity) {
+		if (entity instanceof LightEntity) {
 			if (!(sourceentity instanceof ShadowEntity)) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
@@ -62,6 +66,22 @@ public class LightAttackedProcedure {
 					TheDeepVoidMod.queueServerWork(15, () -> {
 						world.destroyBlock(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ()), false);
 					});
+				}
+			}
+			if (sourceentity instanceof StalkingStalkerEntity) {
+				if (!entity.level().isClientSide())
+					entity.discard();
+				if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())).getLightEmission(world, BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())) > 0) {
+					TheDeepVoidMod.queueServerWork(15, () -> {
+						world.destroyBlock(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ()), false);
+					});
+				}
+			}
+			if (sourceentity instanceof DamnedEntity || sourceentity instanceof BigEyeEntity || sourceentity instanceof CrossEyesEntity || sourceentity instanceof FourEyesEntity || sourceentity instanceof MultipleEyesEntity) {
+				if (!entity.level().isClientSide())
+					entity.discard();
+				if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())).getLightEmission(world, BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())) > 0) {
+					world.destroyBlock(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ()), false);
 				}
 			}
 		}

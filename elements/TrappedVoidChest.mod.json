@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "structure",
   "definition": {
-    "structure": "trapped_void_chest",
+    "structure": "trapped_monolith",
     "projection": "rigid",
     "ignoredBlocks": [
       {
@@ -13,7 +13,10 @@
     "separation": 82,
     "restrictionBiomes": [
       {
-        "value": "CUSTOM:ForgottenValley"
+        "value": "CUSTOM:GrimCanopy"
+      },
+      {
+        "value": "CUSTOM:WindsweptHollow"
       }
     ],
     "terrainAdaptation": "beard_thin",

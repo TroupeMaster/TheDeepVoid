@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.Blocks;
 
 public class VoidlightBrickStairsBlock extends StairBlock {
 	public VoidlightBrickStairsBlock() {
-		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 2f).lightLevel(s -> 6).dynamicShape());
+		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 2f).lightLevel(s -> 6));
 	}
 
 	@Override

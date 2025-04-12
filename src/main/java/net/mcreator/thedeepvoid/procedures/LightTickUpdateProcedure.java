@@ -17,10 +17,8 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
-import net.mcreator.thedeepvoid.entity.TinyLightEntity;
 import net.mcreator.thedeepvoid.entity.ShadowEntity;
 import net.mcreator.thedeepvoid.entity.LightEntity;
-import net.mcreator.thedeepvoid.entity.BigLightEntity;
 
 import javax.annotation.Nullable;
 
@@ -38,7 +36,7 @@ public class LightTickUpdateProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof BigLightEntity || entity instanceof LightEntity || entity instanceof TinyLightEntity) {
+		if (entity instanceof LightEntity) {
 			if (y <= 0) {
 				if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty()) {
 					if (entity.getPersistentData().getDouble("deep_void:shadowSpawn") >= 160) {

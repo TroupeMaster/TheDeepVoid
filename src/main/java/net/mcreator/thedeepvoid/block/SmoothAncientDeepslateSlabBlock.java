@@ -8,6 +8,6 @@ import net.minecraft.world.level.block.SlabBlock;
 
 public class SmoothAncientDeepslateSlabBlock extends SlabBlock {
 	public SmoothAncientDeepslateSlabBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE_TILES).strength(4.5f, 7.5f).requiresCorrectToolForDrops().dynamicShape());
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE_TILES).strength(4.5f, 7.5f).requiresCorrectToolForDrops());
 	}
 }

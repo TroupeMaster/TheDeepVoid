@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Blocks;
 
 public class CutRottenBoneBlockStairsBlock extends StairBlock {
 	public CutRottenBoneBlockStairsBlock() {
-		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().sound(SoundType.BONE_BLOCK).strength(2.2f, 16f).requiresCorrectToolForDrops().dynamicShape());
+		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().sound(SoundType.BONE_BLOCK).strength(2.2f, 16f).requiresCorrectToolForDrops());
 	}
 
 	@Override

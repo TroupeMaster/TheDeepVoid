@@ -13,7 +13,7 @@ import net.minecraft.core.BlockPos;
 
 public class BonePileBrickWallBlock extends WallBlock {
 	public BonePileBrickWallBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.BONE_BLOCK).strength(0.8f, 8f).dynamicShape().forceSolidOn());
+		super(BlockBehaviour.Properties.of().sound(SoundType.BONE_BLOCK).strength(0.8f, 8f).forceSolidOn());
 	}
 
 	@Override

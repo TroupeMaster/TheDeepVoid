@@ -107,21 +107,19 @@ public class StalkerEntity extends Monster implements GeoEntity {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, BigLightEntity.class, (float) 6, 1.4, 1.3));
-		this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, LightEntity.class, (float) 4, 1.3, 1.2));
-		this.goalSelector.addGoal(3, new AvoidEntityGoal<>(this, TinyLightEntity.class, (float) 2, 1.2, 1.1));
-		this.goalSelector.addGoal(4, new MeleeAttackGoal(this, 1.2, true) {
+		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, LightEntity.class, (float) 6, 1.3, 1.2));
+		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.2, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return 9;
 			}
 		});
-		this.targetSelector.addGoal(5, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(6, new WaterAvoidingRandomStrollGoal(this, 0.8));
-		this.goalSelector.addGoal(7, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(8, new FloatGoal(this));
-		this.targetSelector.addGoal(9, new NearestAttackableTargetGoal(this, Player.class, false, false));
-		this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, ServerPlayer.class, false, false));
+		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(4, new WaterAvoidingRandomStrollGoal(this, 0.8));
+		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(6, new FloatGoal(this));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, Player.class, false, false));
+		this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, ServerPlayer.class, false, false));
 	}
 
 	@Override

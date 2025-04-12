@@ -15,7 +15,7 @@ import net.mcreator.thedeepvoid.procedures.OnyxOreBlockDestroyedByPlayerProcedur
 
 public class BismuthBrickSlabBlock extends SlabBlock {
 	public BismuthBrickSlabBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.AMETHYST).strength(2f, 3f).requiresCorrectToolForDrops().dynamicShape());
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.AMETHYST).strength(2f, 3f).requiresCorrectToolForDrops());
 	}
 
 	@Override

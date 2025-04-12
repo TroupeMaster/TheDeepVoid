@@ -13,7 +13,7 @@
     "separation": 44,
     "restrictionBiomes": [
       {
-        "value": "CUSTOM:ForgottenValley"
+        "value": "CUSTOM:AshenCrags"
       }
     ],
     "terrainAdaptation": "beard_thin",

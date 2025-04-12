@@ -12,6 +12,9 @@ public class LightOnEntityTickUpdateProcedure {
 		if (world.getBlockState(BlockPos.containing(x, y - 1, z)).getLightEmission(world, BlockPos.containing(x, y - 1, z)) == 0) {
 			if (!entity.level().isClientSide())
 				entity.discard();
+		} else if (world.getBlockState(BlockPos.containing(x, y - 0.5, z)).getLightEmission(world, BlockPos.containing(x, y - 0.5, z)) == 0) {
+			if (!entity.level().isClientSide())
+				entity.discard();
 		}
 	}
 }

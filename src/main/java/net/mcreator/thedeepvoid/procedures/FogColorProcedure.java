@@ -21,6 +21,12 @@ import javax.annotation.Nullable;
 public class FogColorProcedure {
 	public static ViewportEvent.ComputeFogColor provider = null;
 
+	public static void setColor(int color) {
+		provider.setRed((color >> 16 & 255) / 255.0F);
+		provider.setGreen((color >> 8 & 255) / 255.0F);
+		provider.setBlue((color & 255) / 255.0F);
+	}
+
 	public static void setColor(float level, int color) {
 		if (level <= 0.0F)
 			return;
@@ -53,10 +59,10 @@ public class FogColorProcedure {
 
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z) {
 		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:gloomy_deathgrounds")) || world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:staring_hills"))) {
-			setColor((float) 0.5, 255 << 24 | 16 << 16 | 0 << 8 | 0);
+			setColor(255 << 24 | 16 << 16 | 0 << 8 | 0);
 		}
 		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:crawler_nest"))) {
-			setColor((float) 0.4, 255 << 24 | 15 << 16 | 16 << 8 | 15);
+			setColor(255 << 24 | 15 << 16 | 16 << 8 | 15);
 		}
 	}
 }

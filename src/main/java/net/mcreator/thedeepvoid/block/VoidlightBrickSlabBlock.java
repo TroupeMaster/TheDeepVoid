@@ -9,6 +9,6 @@ import net.minecraft.world.level.block.SlabBlock;
 
 public class VoidlightBrickSlabBlock extends SlabBlock {
 	public VoidlightBrickSlabBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 2f).lightLevel(s -> 6).dynamicShape());
+		super(BlockBehaviour.Properties.of().sound(SoundType.SHROOMLIGHT).strength(1f, 2f).lightLevel(s -> 6));
 	}
 }

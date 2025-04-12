@@ -16,7 +16,7 @@ import net.mcreator.thedeepvoid.procedures.OnyxOreBlockDestroyedByPlayerProcedur
 
 public class BismuthBrickStairsBlock extends StairBlock {
 	public BismuthBrickStairsBlock() {
-		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.AMETHYST).strength(2f, 3f).requiresCorrectToolForDrops().dynamicShape());
+		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.AMETHYST).strength(2f, 3f).requiresCorrectToolForDrops());
 	}
 
 	@Override

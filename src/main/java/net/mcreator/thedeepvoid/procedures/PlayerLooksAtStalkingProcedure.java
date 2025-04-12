@@ -18,20 +18,17 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
-import net.mcreator.thedeepvoid.entity.StalkingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.OverseerPillarEntity;
 import net.mcreator.thedeepvoid.entity.OverseerEntity;
 import net.mcreator.thedeepvoid.entity.OverseerBigPillarEntity;
 import net.mcreator.thedeepvoid.entity.HallucinationEntity;
 import net.mcreator.thedeepvoid.entity.BigOverseerEntity;
 import net.mcreator.thedeepvoid.entity.AmalgamEntity;
-import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import javax.annotation.Nullable;
 
@@ -55,34 +52,6 @@ public class PlayerLooksAtStalkingProcedure {
 		if (entity == null)
 			return;
 		double distance = 0;
-		if (!world.getEntitiesOfClass(StalkingStalkerEntity.class, AABB.ofSize(new Vec3(x, y, z), 250, 250, 250), e -> true).isEmpty()) {
-			distance = 1;
-			for (int index0 = 0; index0 < 20; index0++) {
-				{
-					final Vec3 _center = new Vec3((entity.getX() + entity.getLookAngle().x * distance), (entity.getY() + entity.getLookAngle().y * distance), (entity.getZ() + entity.getLookAngle().z * distance));
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(1 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-					for (Entity entityiterator : _entfound) {
-						if (entityiterator instanceof StalkingStalkerEntity) {
-							if (entityiterator.getPersistentData().getBoolean("deep_void:despawning") == false) {
-								entityiterator.getPersistentData().putBoolean("deep_void:despawning", true);
-								if (world instanceof ServerLevel _level)
-									_level.sendParticles(ParticleTypes.SMOKE, (entityiterator.getX()), (entityiterator.getY() + 1), (entityiterator.getZ()), 5, 0.5, 0.5, 0.5, 0.1);
-								if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 99, false, false));
-								if (entityiterator instanceof StalkingStalkerEntity) {
-									((StalkingStalkerEntity) entityiterator).setAnimation("animation.stalkingStalker_dig");
-								}
-								TheDeepVoidMod.queueServerWork(35, () -> {
-									if (!entityiterator.level().isClientSide())
-										entityiterator.discard();
-								});
-							}
-						}
-					}
-				}
-				distance = distance + 1;
-			}
-		}
 		if (!world.getEntitiesOfClass(OverseerEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {
 			if (!(new Object() {
 				public boolean checkGamemode(Entity _ent) {
@@ -106,7 +75,7 @@ public class PlayerLooksAtStalkingProcedure {
 				}
 			}.checkGamemode(entity))) {
 				distance = 1;
-				for (int index1 = 0; index1 < 40; index1++) {
+				for (int index0 = 0; index0 < 40; index0++) {
 					{
 						final Vec3 _center = new Vec3((entity.getX() + entity.getLookAngle().x * distance), (entity.getY() + entity.getLookAngle().y * distance), (entity.getZ() + entity.getLookAngle().z * distance));
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
@@ -162,7 +131,7 @@ public class PlayerLooksAtStalkingProcedure {
 				}
 			}.checkGamemode(entity))) {
 				distance = 1;
-				for (int index2 = 0; index2 < 40; index2++) {
+				for (int index1 = 0; index1 < 40; index1++) {
 					{
 						final Vec3 _center = new Vec3((entity.getX() + entity.getLookAngle().x * distance), (entity.getY() + entity.getLookAngle().y * distance), (entity.getZ() + entity.getLookAngle().z * distance));
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
@@ -218,7 +187,7 @@ public class PlayerLooksAtStalkingProcedure {
 				}
 			}.checkGamemode(entity))) {
 				distance = 1;
-				for (int index3 = 0; index3 < 40; index3++) {
+				for (int index2 = 0; index2 < 40; index2++) {
 					{
 						final Vec3 _center = new Vec3((entity.getX() + entity.getLookAngle().x * distance), (entity.getY() + entity.getLookAngle().y * distance), (entity.getZ() + entity.getLookAngle().z * distance));
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
@@ -256,7 +225,7 @@ public class PlayerLooksAtStalkingProcedure {
 				}
 			}.checkGamemode(entity))) {
 				distance = 1;
-				for (int index4 = 0; index4 < 40; index4++) {
+				for (int index3 = 0; index3 < 40; index3++) {
 					{
 						final Vec3 _center = new Vec3((entity.getX() + entity.getLookAngle().x * distance), (entity.getY() + entity.getLookAngle().y * distance), (entity.getZ() + entity.getLookAngle().z * distance));
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
@@ -294,7 +263,7 @@ public class PlayerLooksAtStalkingProcedure {
 				}
 			}.checkGamemode(entity))) {
 				distance = 1;
-				for (int index5 = 0; index5 < 40; index5++) {
+				for (int index4 = 0; index4 < 40; index4++) {
 					{
 						final Vec3 _center = new Vec3((entity.getX() + entity.getLookAngle().x * distance), (entity.getY() + entity.getLookAngle().y * distance), (entity.getZ() + entity.getLookAngle().z * distance));
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
@@ -352,7 +321,7 @@ public class PlayerLooksAtStalkingProcedure {
 				}
 			}.checkGamemode(entity))) {
 				distance = 1;
-				for (int index6 = 0; index6 < 40; index6++) {
+				for (int index5 = 0; index5 < 40; index5++) {
 					{
 						final Vec3 _center = new Vec3((entity.getX() + entity.getLookAngle().x * distance), (entity.getY() + entity.getLookAngle().y * distance), (entity.getZ() + entity.getLookAngle().z * distance));
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(8 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();

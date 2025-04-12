@@ -58,5 +58,24 @@ public class AllSeeingSwordLivingEntityIsHitWithToolProcedure {
 				entity.getPersistentData().putString("deep_void:painfulSharer", (sourceentity.getDisplayName().getString()));
 			}
 		}
+		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SOUL_CLEAVER.get()) {
+			if ((sourceentity instanceof Player _plrCldRem21 ? _plrCldRem21.getCooldowns().getCooldownPercent((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 0f) * 100 : 0) <= 0) {
+				if (sourceentity instanceof Player _player)
+					_player.getCooldowns().addCooldown((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 520);
+				{
+					ItemStack _ist = (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY);
+					if (_ist.hurt(100, RandomSource.create(), null)) {
+						_ist.shrink(1);
+						_ist.setDamageValue(0);
+					}
+				}
+				sourceentity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy"))), sourceentity),
+						(float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / 5));
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.PAINFUL.get(), 480, 0));
+				entity.getPersistentData().putString("deep_void:painfulSharer", (sourceentity.getDisplayName().getString()));
+				entity.getPersistentData().putBoolean("deep_void:advancedPainful", true);
+			}
+		}
 	}
 }

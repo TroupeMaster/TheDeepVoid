@@ -23,7 +23,7 @@ public class VoidriumShovelItem extends ShovelItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 6.5f;
+				return 4.5f;
 			}
 
 			public int getLevel() {

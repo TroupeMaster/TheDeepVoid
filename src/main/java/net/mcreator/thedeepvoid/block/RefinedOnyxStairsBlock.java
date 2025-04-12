@@ -9,7 +9,7 @@ import net.minecraft.world.level.block.Blocks;
 
 public class RefinedOnyxStairsBlock extends StairBlock {
 	public RefinedOnyxStairsBlock() {
-		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3f, 5f).requiresCorrectToolForDrops().dynamicShape());
+		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().sound(SoundType.NETHERITE_BLOCK).strength(3f, 5f).requiresCorrectToolForDrops());
 	}
 
 	@Override

@@ -120,6 +120,12 @@ public class FogStartCaveProcedure {
 					setShape(FogShape.CYLINDER);
 				}
 			}
+			if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:watching_undergrowth"))) {
+				if (entity.getY() > 40) {
+					setDistance(5, 80);
+					setShape(FogShape.CYLINDER);
+				}
+			}
 			if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:crawler_nest"))) {
 				if (entity.getY() > 40) {
 					setDistance(35, 100);

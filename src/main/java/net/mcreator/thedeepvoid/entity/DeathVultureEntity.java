@@ -108,12 +108,11 @@ public class DeathVultureEntity extends Monster implements GeoEntity {
 		});
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setAlertOthers());
 		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, BigLightEntity.class, (float) 6, 1.4, 1.3));
-		this.goalSelector.addGoal(5, new AvoidEntityGoal<>(this, LightEntity.class, (float) 4, 1.3, 1.2));
-		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(7, new LeapAtTargetGoal(this, (float) 0.2));
-		this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, Player.class, false, false));
-		this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, (float) 30));
+		this.goalSelector.addGoal(4, new AvoidEntityGoal<>(this, LightEntity.class, (float) 6, 1.3, 1.2));
+		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(6, new LeapAtTargetGoal(this, (float) 0.2));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, Player.class, false, false));
+		this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, (float) 30));
 	}
 
 	@Override

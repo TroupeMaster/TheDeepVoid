@@ -18,7 +18,6 @@ import net.minecraft.world.entity.Entity;
 
 import net.mcreator.thedeepvoid.entity.WandererEntity;
 import net.mcreator.thedeepvoid.entity.VoidDwellerEntity;
-import net.mcreator.thedeepvoid.entity.TinyLightEntity;
 import net.mcreator.thedeepvoid.entity.ThrownSoulSeekerEntity;
 import net.mcreator.thedeepvoid.entity.TenebrisCultroEntity;
 import net.mcreator.thedeepvoid.entity.TamedMotherBoneCrawlerEntity;
@@ -91,7 +90,6 @@ import net.mcreator.thedeepvoid.entity.BoneBallProjectileEntity;
 import net.mcreator.thedeepvoid.entity.BlindProphetEntity;
 import net.mcreator.thedeepvoid.entity.BigShadeArrowEntity;
 import net.mcreator.thedeepvoid.entity.BigOverseerEntity;
-import net.mcreator.thedeepvoid.entity.BigLightEntity;
 import net.mcreator.thedeepvoid.entity.BigEyeEntity;
 import net.mcreator.thedeepvoid.entity.BeholderEntity;
 import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerNeutralEntity;
@@ -126,10 +124,6 @@ public class TheDeepVoidModEntities {
 			EntityType.Builder.<FlareEntity>of(FlareEntity::new, MobCategory.MISC).setCustomClientFactory(FlareEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<LightEntity>> LIGHT = register("light",
 			EntityType.Builder.<LightEntity>of(LightEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(LightEntity::new).fireImmune().sized(0.1f, 0.1f));
-	public static final RegistryObject<EntityType<TinyLightEntity>> TINY_LIGHT = register("tiny_light", EntityType.Builder.<TinyLightEntity>of(TinyLightEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
-			.setUpdateInterval(3).setCustomClientFactory(TinyLightEntity::new).fireImmune().sized(0.1f, 0.1f));
-	public static final RegistryObject<EntityType<BigLightEntity>> BIG_LIGHT = register("big_light",
-			EntityType.Builder.<BigLightEntity>of(BigLightEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BigLightEntity::new).fireImmune().sized(0.1f, 0.1f));
 	public static final RegistryObject<EntityType<LavenditeShardProjEntity>> LAVENDITE_SHARD_PROJ = register("lavendite_shard_proj", EntityType.Builder.<LavenditeShardProjEntity>of(LavenditeShardProjEntity::new, MobCategory.MISC)
 			.setCustomClientFactory(LavenditeShardProjEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<DevourerHookTendrilEntity>> DEVOURER_HOOK_TENDRIL = register("devourer_hook_tendril", EntityType.Builder.<DevourerHookTendrilEntity>of(DevourerHookTendrilEntity::new, MobCategory.MISC)
@@ -378,8 +372,6 @@ public class TheDeepVoidModEntities {
 			FallingCorpseEntity.init();
 			GhostlyNightmareEntity.init();
 			LightEntity.init();
-			TinyLightEntity.init();
-			BigLightEntity.init();
 			AmalgamEntity.init();
 			CrossEyesEntity.init();
 			MultipleEyesEntity.init();
@@ -453,8 +445,6 @@ public class TheDeepVoidModEntities {
 		event.put(FALLING_CORPSE.get(), FallingCorpseEntity.createAttributes().build());
 		event.put(GHOSTLY_NIGHTMARE.get(), GhostlyNightmareEntity.createAttributes().build());
 		event.put(LIGHT.get(), LightEntity.createAttributes().build());
-		event.put(TINY_LIGHT.get(), TinyLightEntity.createAttributes().build());
-		event.put(BIG_LIGHT.get(), BigLightEntity.createAttributes().build());
 		event.put(AMALGAM.get(), AmalgamEntity.createAttributes().build());
 		event.put(CROSS_EYES.get(), CrossEyesEntity.createAttributes().build());
 		event.put(MULTIPLE_EYES.get(), MultipleEyesEntity.createAttributes().build());

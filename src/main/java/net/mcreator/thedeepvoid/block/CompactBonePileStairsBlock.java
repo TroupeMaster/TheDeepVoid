@@ -14,7 +14,7 @@ import net.minecraft.core.BlockPos;
 
 public class CompactBonePileStairsBlock extends StairBlock {
 	public CompactBonePileStairsBlock() {
-		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().sound(SoundType.BONE_BLOCK).strength(0.8f, 8f).dynamicShape());
+		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().sound(SoundType.BONE_BLOCK).strength(0.8f, 8f));
 	}
 
 	@Override

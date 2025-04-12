@@ -93,11 +93,9 @@ public class ShadowEntity extends Monster implements GeoEntity {
 				return 7.29;
 			}
 		});
-		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, BigLightEntity.class, false, false));
-		this.targetSelector.addGoal(3, new NearestAttackableTargetGoal(this, LightEntity.class, false, false));
-		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, TinyLightEntity.class, false, false));
-		this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(6, new FloatGoal(this));
+		this.targetSelector.addGoal(2, new NearestAttackableTargetGoal(this, LightEntity.class, false, false));
+		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
+		this.goalSelector.addGoal(4, new FloatGoal(this));
 	}
 
 	@Override

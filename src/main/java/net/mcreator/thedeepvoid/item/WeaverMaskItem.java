@@ -13,8 +13,6 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 
-import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
-
 public abstract class WeaverMaskItem extends ArmorItem {
 	public WeaverMaskItem(ArmorItem.Type type, Item.Properties properties) {
 		super(new ArmorMaterial() {
@@ -25,7 +23,7 @@ public abstract class WeaverMaskItem extends ArmorItem {
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{0, 0, 0, 6}[type.getSlot().getIndex()];
+				return new int[]{0, 0, 0, 4}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -40,7 +38,7 @@ public abstract class WeaverMaskItem extends ArmorItem {
 
 			@Override
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(TheDeepVoidModItems.REFINED_CINNABAR.get()));
+				return Ingredient.of();
 			}
 
 			@Override
@@ -55,7 +53,7 @@ public abstract class WeaverMaskItem extends ArmorItem {
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0.2f;
+				return 0.1f;
 			}
 		}, type, properties);
 	}

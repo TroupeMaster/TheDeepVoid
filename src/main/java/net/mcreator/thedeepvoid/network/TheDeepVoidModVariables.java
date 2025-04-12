@@ -130,6 +130,7 @@ public class TheDeepVoidModVariables {
 				clone.godsScourgeDash = original.godsScourgeDash;
 				clone.grimRottenArmorAttack = original.grimRottenArmorAttack;
 				clone.naturalTeleport = original.naturalTeleport;
+				clone.weaverBoots = original.weaverBoots;
 			}
 		}
 
@@ -194,6 +195,8 @@ public class TheDeepVoidModVariables {
 		public boolean CultTemplePlaced = false;
 		public boolean StalkerDespawned = false;
 		public boolean WeaverTemplePlaced = false;
+		public double stalkerSpawnX = 0;
+		public double stalkerSpawnZ = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -205,6 +208,8 @@ public class TheDeepVoidModVariables {
 			CultTemplePlaced = nbt.getBoolean("CultTemplePlaced");
 			StalkerDespawned = nbt.getBoolean("StalkerDespawned");
 			WeaverTemplePlaced = nbt.getBoolean("WeaverTemplePlaced");
+			stalkerSpawnX = nbt.getDouble("stalkerSpawnX");
+			stalkerSpawnZ = nbt.getDouble("stalkerSpawnZ");
 		}
 
 		@Override
@@ -212,6 +217,8 @@ public class TheDeepVoidModVariables {
 			nbt.putBoolean("CultTemplePlaced", CultTemplePlaced);
 			nbt.putBoolean("StalkerDespawned", StalkerDespawned);
 			nbt.putBoolean("WeaverTemplePlaced", WeaverTemplePlaced);
+			nbt.putDouble("stalkerSpawnX", stalkerSpawnX);
+			nbt.putDouble("stalkerSpawnZ", stalkerSpawnZ);
 			return nbt;
 		}
 
@@ -361,6 +368,7 @@ public class TheDeepVoidModVariables {
 		public boolean grimRottenArmorAttack = false;
 		public boolean SendToHell = false;
 		public boolean naturalTeleport = false;
+		public double weaverBoots = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -426,6 +434,7 @@ public class TheDeepVoidModVariables {
 			nbt.putBoolean("grimRottenArmorAttack", grimRottenArmorAttack);
 			nbt.putBoolean("SendToHell", SendToHell);
 			nbt.putBoolean("naturalTeleport", naturalTeleport);
+			nbt.putDouble("weaverBoots", weaverBoots);
 			return nbt;
 		}
 
@@ -488,6 +497,7 @@ public class TheDeepVoidModVariables {
 			grimRottenArmorAttack = nbt.getBoolean("grimRottenArmorAttack");
 			SendToHell = nbt.getBoolean("SendToHell");
 			naturalTeleport = nbt.getBoolean("naturalTeleport");
+			weaverBoots = nbt.getDouble("weaverBoots");
 		}
 	}
 
@@ -569,6 +579,7 @@ public class TheDeepVoidModVariables {
 					variables.grimRottenArmorAttack = message.data.grimRottenArmorAttack;
 					variables.SendToHell = message.data.SendToHell;
 					variables.naturalTeleport = message.data.naturalTeleport;
+					variables.weaverBoots = message.data.weaverBoots;
 				}
 			});
 			context.setPacketHandled(true);

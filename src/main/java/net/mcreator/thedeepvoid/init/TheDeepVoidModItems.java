@@ -23,6 +23,8 @@ import net.minecraft.client.renderer.item.ItemProperties;
 
 import net.mcreator.thedeepvoid.item.WeaverRobeItem;
 import net.mcreator.thedeepvoid.item.WeaverMaskItem;
+import net.mcreator.thedeepvoid.item.WeaverLeggingsItem;
+import net.mcreator.thedeepvoid.item.WeaverBootsItem;
 import net.mcreator.thedeepvoid.item.VultureMuzzleItem;
 import net.mcreator.thedeepvoid.item.VoidriumSwordItem;
 import net.mcreator.thedeepvoid.item.VoidriumShovelItem;
@@ -41,6 +43,7 @@ import net.mcreator.thedeepvoid.item.SulfurBombItem;
 import net.mcreator.thedeepvoid.item.StalkerTreatItem;
 import net.mcreator.thedeepvoid.item.StalkerScytheClawItem;
 import net.mcreator.thedeepvoid.item.SpyglassDummyItem;
+import net.mcreator.thedeepvoid.item.SoulCleaverItem;
 import net.mcreator.thedeepvoid.item.SorrowArmorTrimItem;
 import net.mcreator.thedeepvoid.item.SmithingTemplateRotItem;
 import net.mcreator.thedeepvoid.item.SmithingTemplateOnyxItem;
@@ -676,7 +679,11 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> CREEP_O_METER = REGISTRY.register("creep_o_meter", () -> new CreepOMeterItem());
 	public static final RegistryObject<Item> CENTIGAZE_SPAWN_EGG = REGISTRY.register("centigaze_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.CENTIGAZE, -16382190, -14475466, new Item.Properties()));
 	public static final RegistryObject<Item> DESOLATE_SOIL_ACTIVE = block(TheDeepVoidModBlocks.DESOLATE_SOIL_ACTIVE);
+	public static final RegistryObject<Item> STALKING_STALKER_SPAWN_EGG = REGISTRY.register("stalking_stalker_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.STALKING_STALKER, -16053493, -14475232, new Item.Properties()));
 	public static final RegistryObject<Item> SHADOW_SPAWN_EGG = REGISTRY.register("shadow_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.SHADOW, -16777216, -15329770, new Item.Properties()));
+	public static final RegistryObject<Item> SOUL_CLEAVER = REGISTRY.register("soul_cleaver", () -> new SoulCleaverItem());
+	public static final RegistryObject<Item> WEAVER_LEGGINGS_LEGGINGS = REGISTRY.register("weaver_leggings_leggings", () -> new WeaverLeggingsItem.Leggings());
+	public static final RegistryObject<Item> WEAVER_BOOTS_BOOTS = REGISTRY.register("weaver_boots_boots", () -> new WeaverBootsItem.Boots());
 
 	// Start of user code block custom items
 	// End of user code block custom items

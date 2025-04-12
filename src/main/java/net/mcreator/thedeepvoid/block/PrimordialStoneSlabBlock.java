@@ -9,6 +9,6 @@ import net.minecraft.world.level.block.SlabBlock;
 
 public class PrimordialStoneSlabBlock extends SlabBlock {
 	public PrimordialStoneSlabBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERRACK).strength(70f, 1200f).requiresCorrectToolForDrops().pushReaction(PushReaction.BLOCK).dynamicShape());
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERRACK).strength(70f, 1200f).requiresCorrectToolForDrops().pushReaction(PushReaction.BLOCK));
 	}
 }

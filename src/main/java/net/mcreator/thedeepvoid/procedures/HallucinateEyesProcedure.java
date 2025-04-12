@@ -22,6 +22,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
+import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 public class HallucinateEyesProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -234,81 +235,83 @@ public class HallucinateEyesProcedure {
 				}
 			}
 		}
-		if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) <= 1) {
-			if (!(entity instanceof LivingEntity _livEnt47 && _livEnt47.hasEffect(TheDeepVoidModMobEffects.VOID_BLESSING.get()))) {
-				if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).hallucinateHurt >= 40) {
-					{
-						double _setval = 0;
-						entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.hallucinateHurt = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getArmorValue() : 0) > 1) {
-						if (entity instanceof LivingEntity _livEnt49 && _livEnt49.hasEffect(MobEffects.DAMAGE_RESISTANCE)) {
-							entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:monsters_in_the_dark")))),
-									(float) (2 * ((entity instanceof LivingEntity _livEnt ? _livEnt.getArmorValue() : 0) / 4)
-											* ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.DAMAGE_RESISTANCE) ? _livEnt.getEffect(MobEffects.DAMAGE_RESISTANCE).getAmplifier() : 0) + 1)
-											+ (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).darknessDamageBuildUp / 2));
+		if (DeepVoidConfigConfiguration.DARKNESS.get() == true) {
+			if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) <= 1) {
+				if (!(entity instanceof LivingEntity _livEnt48 && _livEnt48.hasEffect(TheDeepVoidModMobEffects.VOID_BLESSING.get()))) {
+					if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).hallucinateHurt >= 40) {
+						{
+							double _setval = 0;
+							entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.hallucinateHurt = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						if ((entity instanceof LivingEntity _livEnt ? _livEnt.getArmorValue() : 0) > 1) {
+							if (entity instanceof LivingEntity _livEnt50 && _livEnt50.hasEffect(MobEffects.DAMAGE_RESISTANCE)) {
+								entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:monsters_in_the_dark")))),
+										(float) (2 * ((entity instanceof LivingEntity _livEnt ? _livEnt.getArmorValue() : 0) / 4)
+												* ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.DAMAGE_RESISTANCE) ? _livEnt.getEffect(MobEffects.DAMAGE_RESISTANCE).getAmplifier() : 0) + 1)
+												+ (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).darknessDamageBuildUp / 2));
+							} else {
+								entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:monsters_in_the_dark")))),
+										(float) (2 * ((entity instanceof LivingEntity _livEnt ? _livEnt.getArmorValue() : 0) / 4)
+												+ (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).darknessDamageBuildUp / 2));
+							}
 						} else {
-							entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:monsters_in_the_dark")))),
-									(float) (2 * ((entity instanceof LivingEntity _livEnt ? _livEnt.getArmorValue() : 0) / 4)
-											+ (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).darknessDamageBuildUp / 2));
+							if (entity instanceof LivingEntity _livEnt58 && _livEnt58.hasEffect(MobEffects.DAMAGE_RESISTANCE)) {
+								entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:monsters_in_the_dark")))),
+										(float) (2 * ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.DAMAGE_RESISTANCE) ? _livEnt.getEffect(MobEffects.DAMAGE_RESISTANCE).getAmplifier() : 0) + 2)
+												+ (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).darknessDamageBuildUp / 2));
+							} else {
+								entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:monsters_in_the_dark")))),
+										(float) (2 + (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).darknessDamageBuildUp / 2));
+							}
+						}
+						{
+							double _setval = (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).darknessDamageBuildUp + 1;
+							entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.darknessDamageBuildUp = _setval;
+								capability.syncPlayerVariables(entity);
+							});
+						}
+						if (Math.random() < 0.8) {
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:slow_whispers")), SoundSource.HOSTILE, 1,
+											(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.1));
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:slow_whispers")), SoundSource.HOSTILE, 1, (float) Mth.nextDouble(RandomSource.create(), 0.8, 1.1), false);
+								}
+							}
+						} else if (Math.random() < 0.8) {
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:slow_whispers_2")), SoundSource.HOSTILE, 1,
+											(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.1));
+								} else {
+									_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:slow_whispers_2")), SoundSource.HOSTILE, 1, (float) Mth.nextDouble(RandomSource.create(), 0.8, 1.1), false);
+								}
+							}
 						}
 					} else {
-						if (entity instanceof LivingEntity _livEnt57 && _livEnt57.hasEffect(MobEffects.DAMAGE_RESISTANCE)) {
-							entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:monsters_in_the_dark")))),
-									(float) (2 * ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.DAMAGE_RESISTANCE) ? _livEnt.getEffect(MobEffects.DAMAGE_RESISTANCE).getAmplifier() : 0) + 2)
-											+ (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).darknessDamageBuildUp / 2));
-						} else {
-							entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:monsters_in_the_dark")))),
-									(float) (2 + (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).darknessDamageBuildUp / 2));
+						{
+							double _setval = (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).hallucinateHurt + 1;
+							entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+								capability.hallucinateHurt = _setval;
+								capability.syncPlayerVariables(entity);
+							});
 						}
 					}
+				}
+			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) > 1) {
+				if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).darknessDamageBuildUp > 0) {
 					{
-						double _setval = (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).darknessDamageBuildUp + 1;
+						double _setval = 0;
 						entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 							capability.darknessDamageBuildUp = _setval;
 							capability.syncPlayerVariables(entity);
 						});
 					}
-					if (Math.random() < 0.8) {
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:slow_whispers")), SoundSource.HOSTILE, 1,
-										(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.1));
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:slow_whispers")), SoundSource.HOSTILE, 1, (float) Mth.nextDouble(RandomSource.create(), 0.8, 1.1), false);
-							}
-						}
-					} else if (Math.random() < 0.8) {
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:slow_whispers_2")), SoundSource.HOSTILE, 1,
-										(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.1));
-							} else {
-								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:slow_whispers_2")), SoundSource.HOSTILE, 1, (float) Mth.nextDouble(RandomSource.create(), 0.8, 1.1), false);
-							}
-						}
-					}
-				} else {
-					{
-						double _setval = (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).hallucinateHurt + 1;
-						entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.hallucinateHurt = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-				}
-			}
-		} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) > 1) {
-			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).darknessDamageBuildUp > 0) {
-				{
-					double _setval = 0;
-					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.darknessDamageBuildUp = _setval;
-						capability.syncPlayerVariables(entity);
-					});
 				}
 			}
 		}

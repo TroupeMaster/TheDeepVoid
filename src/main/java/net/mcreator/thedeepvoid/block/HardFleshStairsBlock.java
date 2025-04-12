@@ -14,7 +14,7 @@ import net.mcreator.thedeepvoid.procedures.FleshBlockEntityWalksOnTheBlockProced
 
 public class HardFleshStairsBlock extends StairBlock {
 	public HardFleshStairsBlock() {
-		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().sound(SoundType.PACKED_MUD).strength(10f, 8f).friction(0.7f).dynamicShape());
+		super(() -> Blocks.AIR.defaultBlockState(), BlockBehaviour.Properties.of().sound(SoundType.PACKED_MUD).strength(10f, 8f).friction(0.7f));
 	}
 
 	@Override

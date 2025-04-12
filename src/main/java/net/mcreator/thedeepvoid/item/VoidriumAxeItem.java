@@ -23,7 +23,7 @@ public class VoidriumAxeItem extends AxeItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 10f;
+				return 8f;
 			}
 
 			public int getLevel() {

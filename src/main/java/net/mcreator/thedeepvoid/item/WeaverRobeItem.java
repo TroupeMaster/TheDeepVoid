@@ -23,7 +23,7 @@ public abstract class WeaverRobeItem extends ArmorItem {
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{0, 0, 7, 0}[type.getSlot().getIndex()];
+				return new int[]{0, 0, 6, 0}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -53,7 +53,7 @@ public abstract class WeaverRobeItem extends ArmorItem {
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0.2f;
+				return 0.1f;
 			}
 		}, type, properties);
 	}

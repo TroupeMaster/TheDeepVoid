@@ -8,6 +8,7 @@ import net.minecraftforge.event.TickEvent;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
@@ -18,11 +19,14 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
+import net.mcreator.thedeepvoid.entity.LightEntity;
 
 import javax.annotation.Nullable;
 
@@ -131,7 +135,7 @@ public class CallOfTheVoidDigProcedure {
 								for (Entity entityiterator : _entfound) {
 									if (entityiterator instanceof StalkerEntity) {
 										if (entityiterator instanceof StalkerEntity) {
-											((StalkerEntity) entityiterator).setAnimation("animation.stalker_dig");
+											((StalkerEntity) entityiterator).setAnimation("animation.stalker_digOut");
 										}
 										if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 											_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 99, false, false));
@@ -139,6 +143,16 @@ public class CallOfTheVoidDigProcedure {
 											_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 80, 99, false, false));
 										if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 											_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 80, 99, false, false));
+									}
+									if (entityiterator instanceof LightEntity) {
+										if (world.getBlockState(BlockPos.containing(entityiterator.getX(), entityiterator.getY() - 0.45, entityiterator.getZ())).getLightEmission(world,
+												BlockPos.containing(entityiterator.getX(), entityiterator.getY() - 0.45, entityiterator.getZ())) > 0) {
+											world.setBlock(BlockPos.containing(entityiterator.getX(), entityiterator.getY() - 0.45, entityiterator.getZ()), Blocks.AIR.defaultBlockState(), 3);
+											if (world instanceof ServerLevel _level)
+												_level.sendParticles(ParticleTypes.SOUL, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 1, 0, 1, 0, 0.1);
+											if (!entityiterator.level().isClientSide())
+												entityiterator.discard();
+										}
 									}
 								}
 							}

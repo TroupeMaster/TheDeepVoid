@@ -1,10 +1,6 @@
 package net.mcreator.thedeepvoid.procedures;
 
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.living.LivingEvent;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
@@ -24,29 +20,15 @@ import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
-import net.mcreator.thedeepvoid.entity.TinyLightEntity;
 import net.mcreator.thedeepvoid.entity.LightEntity;
-import net.mcreator.thedeepvoid.entity.BigLightEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
-import javax.annotation.Nullable;
-
-@Mod.EventBusSubscriber
 public class LightBreakInDarknessProcedure {
-	@SubscribeEvent
-	public static void onEntityTick(LivingEvent.LivingTickEvent event) {
-		execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity());
-	}
-
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
-		execute(null, world, x, y, z, entity);
-	}
-
-	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		if (DeepVoidConfigConfiguration.OLDLIGHTSYSTEM.get() == false) {
-			if (entity instanceof TinyLightEntity || entity instanceof LightEntity || entity instanceof BigLightEntity) {
+			if (entity instanceof LightEntity) {
 				if (DeepVoidConfigConfiguration.DESTROYLIGHTSOURCES.get() == true) {
 					if (DeepVoidConfigConfiguration.ALLOWSOULLIGHT.get() == true) {
 						if (world.getBlockState(BlockPos.containing(x, y - 1, z)).getLightEmission(world, BlockPos.containing(x, y - 1, z)) > 0 && y >= 0

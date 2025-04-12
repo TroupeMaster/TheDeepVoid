@@ -13,7 +13,7 @@ import net.mcreator.thedeepvoid.procedures.FleshBlockEntityWalksOnTheBlockProced
 
 public class HardFleshSlabBlock extends SlabBlock {
 	public HardFleshSlabBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.PACKED_MUD).strength(10f, 8f).friction(0.7f).dynamicShape());
+		super(BlockBehaviour.Properties.of().sound(SoundType.PACKED_MUD).strength(10f, 8f).friction(0.7f));
 	}
 
 	@Override

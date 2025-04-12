@@ -25,7 +25,7 @@ public class FlareWhileProjectileFlyingTickProcedure {
 				immediatesourceentity.discard();
 		});
 		if (world instanceof ServerLevel _level) {
-			Entity entityToSpawn = TheDeepVoidModEntities.BIG_LIGHT.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+			Entity entityToSpawn = TheDeepVoidModEntities.LIGHT.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 			if (entityToSpawn != null) {
 				entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 			}

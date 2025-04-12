@@ -477,7 +477,11 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.ROTTEN_DELIGHT.get());
 				tabData.accept(TheDeepVoidModItems.CREEP_O_METER.get());
 				tabData.accept(TheDeepVoidModItems.CENTIGAZE_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.STALKING_STALKER_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.SHADOW_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.SOUL_CLEAVER.get());
+				tabData.accept(TheDeepVoidModItems.WEAVER_LEGGINGS_LEGGINGS.get());
+				tabData.accept(TheDeepVoidModItems.WEAVER_BOOTS_BOOTS.get());
 			})
 
 					.build());

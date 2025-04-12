@@ -13,7 +13,6 @@ import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
 import net.mcreator.thedeepvoid.client.renderer.WandererRenderer;
 import net.mcreator.thedeepvoid.client.renderer.VoidDwellerRenderer;
-import net.mcreator.thedeepvoid.client.renderer.TinyLightRenderer;
 import net.mcreator.thedeepvoid.client.renderer.ThrownSoulSeekerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.TenebrisCultroRenderer;
 import net.mcreator.thedeepvoid.client.renderer.TamedMotherBoneCrawlerRenderer;
@@ -77,7 +76,6 @@ import net.mcreator.thedeepvoid.client.renderer.BoneCrawlerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BlindProphetRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BigShadeArrowRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BigOverseerRenderer;
-import net.mcreator.thedeepvoid.client.renderer.BigLightRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BigEyeRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BeholderRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BabyBoneCrawlerRenderer;
@@ -100,8 +98,6 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.PUS_BALL_PROJECTILE.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.FLARE.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.LIGHT.get(), LightRenderer::new);
-		event.registerEntityRenderer(TheDeepVoidModEntities.TINY_LIGHT.get(), TinyLightRenderer::new);
-		event.registerEntityRenderer(TheDeepVoidModEntities.BIG_LIGHT.get(), BigLightRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.LAVENDITE_SHARD_PROJ.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.DEVOURER_HOOK_TENDRIL.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.AMALGAM.get(), AmalgamRenderer::new);

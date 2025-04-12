@@ -7,6 +7,6 @@ import net.minecraft.world.level.block.SoundType;
 
 public class AshBrickWallBlock extends WallBlock {
 	public AshBrickWallBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.SOUL_SOIL).strength(1.2f, 0f).dynamicShape().forceSolidOn());
+		super(BlockBehaviour.Properties.of().sound(SoundType.SOUL_SOIL).strength(1.2f, 0f).forceSolidOn());
 	}
 }
