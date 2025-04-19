@@ -93,7 +93,7 @@ public class PlayerAttackedByStalkerProcedure {
 			}
 		}
 		if (sourceentity instanceof GravekeeperEntity) {
-			if (Math.random() < 0.4) {
+			if (Math.random() < 0.6) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 100, 0));
 			}

@@ -22,6 +22,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.item.ItemProperties;
 
 import net.mcreator.thedeepvoid.item.WeaverRobeItem;
+import net.mcreator.thedeepvoid.item.WeaverOfSoulsTreasureBagItem;
 import net.mcreator.thedeepvoid.item.WeaverMaskItem;
 import net.mcreator.thedeepvoid.item.WeaverLeggingsItem;
 import net.mcreator.thedeepvoid.item.WeaverBootsItem;
@@ -33,6 +34,7 @@ import net.mcreator.thedeepvoid.item.VoidriumItem;
 import net.mcreator.thedeepvoid.item.VoidriumHoeItem;
 import net.mcreator.thedeepvoid.item.VoidriumAxeItem;
 import net.mcreator.thedeepvoid.item.VoidPendantItem;
+import net.mcreator.thedeepvoid.item.VoidMirrorItem;
 import net.mcreator.thedeepvoid.item.VoidMatterItem;
 import net.mcreator.thedeepvoid.item.VoidLensItem;
 import net.mcreator.thedeepvoid.item.VoidDaggerItem;
@@ -106,6 +108,7 @@ import net.mcreator.thedeepvoid.item.LavenditeDevourerHookItem;
 import net.mcreator.thedeepvoid.item.LavenditeBoneSwordItem;
 import net.mcreator.thedeepvoid.item.LavenditeArmorItem;
 import net.mcreator.thedeepvoid.item.LavenditeAllSeeingSwordItem;
+import net.mcreator.thedeepvoid.item.HexedDollItem;
 import net.mcreator.thedeepvoid.item.HatchingEnzymeItem;
 import net.mcreator.thedeepvoid.item.HardFleshSwordItem;
 import net.mcreator.thedeepvoid.item.HardFleshIngotItem;
@@ -136,6 +139,7 @@ import net.mcreator.thedeepvoid.item.DisturbingRootItem;
 import net.mcreator.thedeepvoid.item.DevourerTendrilItem;
 import net.mcreator.thedeepvoid.item.DevourerShieldItem;
 import net.mcreator.thedeepvoid.item.DevourerHookItem;
+import net.mcreator.thedeepvoid.item.DarkmareItem;
 import net.mcreator.thedeepvoid.item.CultItem;
 import net.mcreator.thedeepvoid.item.CruelStilettoItem;
 import net.mcreator.thedeepvoid.item.CreepOMeterItem;
@@ -178,7 +182,6 @@ public class TheDeepVoidModItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, TheDeepVoidMod.MODID);
 	public static final RegistryObject<Item> BLOCK_OF_BONE_PILE = block(TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE);
 	public static final RegistryObject<Item> PILE_OF_BONES = block(TheDeepVoidModBlocks.PILE_OF_BONES);
-	public static final RegistryObject<Item> DAMNED_SPAWN_EGG = REGISTRY.register("damned_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.DAMNED, -15396334, -1, new Item.Properties()));
 	public static final RegistryObject<Item> STALKER_SCYTHE_CLAW = REGISTRY.register("stalker_scythe_claw", () -> new StalkerScytheClawItem());
 	public static final RegistryObject<Item> ROTTEN_BONE_BLOCK = block(TheDeepVoidModBlocks.ROTTEN_BONE_BLOCK);
 	public static final RegistryObject<Item> ROTTEN_BONE = REGISTRY.register("rotten_bone", () -> new RottenBoneItem());
@@ -374,10 +377,6 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> ROTTEN_SICKLE = REGISTRY.register("rotten_sickle", () -> new ReapingHookItem());
 	public static final RegistryObject<Item> ROTTEN_FOSSIL = block(TheDeepVoidModBlocks.ROTTEN_FOSSIL);
 	public static final RegistryObject<Item> SMOKE_VENT = block(TheDeepVoidModBlocks.SMOKE_VENT);
-	public static final RegistryObject<Item> CROSS_EYES_SPAWN_EGG = REGISTRY.register("cross_eyes_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.CROSS_EYES, -15396334, -1, new Item.Properties()));
-	public static final RegistryObject<Item> MULTIPLE_EYES_SPAWN_EGG = REGISTRY.register("multiple_eyes_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.MULTIPLE_EYES, -15396334, -1, new Item.Properties()));
-	public static final RegistryObject<Item> BIG_EYE_SPAWN_EGG = REGISTRY.register("big_eye_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.BIG_EYE, -15396334, -1, new Item.Properties()));
-	public static final RegistryObject<Item> FOUR_EYES_SPAWN_EGG = REGISTRY.register("four_eyes_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.FOUR_EYES, -15396334, -1, new Item.Properties()));
 	public static final RegistryObject<Item> BISMUTH_LANTERN = block(TheDeepVoidModBlocks.BISMUTH_LANTERN);
 	public static final RegistryObject<Item> BISMUTH_LANTERN_HANGED = block(TheDeepVoidModBlocks.BISMUTH_LANTERN_HANGED);
 	public static final RegistryObject<Item> ROTTEN_MOSS = block(TheDeepVoidModBlocks.ROTTEN_MOSS);
@@ -684,6 +683,16 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> SOUL_CLEAVER = REGISTRY.register("soul_cleaver", () -> new SoulCleaverItem());
 	public static final RegistryObject<Item> WEAVER_LEGGINGS_LEGGINGS = REGISTRY.register("weaver_leggings_leggings", () -> new WeaverLeggingsItem.Leggings());
 	public static final RegistryObject<Item> WEAVER_BOOTS_BOOTS = REGISTRY.register("weaver_boots_boots", () -> new WeaverBootsItem.Boots());
+	public static final RegistryObject<Item> VOID_MIRROR = REGISTRY.register("void_mirror", () -> new VoidMirrorItem());
+	public static final RegistryObject<Item> WEAVER_OF_SOULS_SPAWN_EGG = REGISTRY.register("weaver_of_souls_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.WEAVER_OF_SOULS, -15724528, -15786978, new Item.Properties()));
+	public static final RegistryObject<Item> DARKMARE = REGISTRY.register("darkmare", () -> new DarkmareItem());
+	public static final RegistryObject<Item> HAND_SPAWN_SPAWN_EGG = REGISTRY.register("hand_spawn_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.HAND_SPAWN, -1, -1, new Item.Properties()));
+	public static final RegistryObject<Item> DAMNED_SPAWN_EGG = REGISTRY.register("damned_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.DAMNED, -15396334, -1, new Item.Properties()));
+	public static final RegistryObject<Item> SOUL_ORB_PILLAR = block(TheDeepVoidModBlocks.SOUL_ORB_PILLAR);
+	public static final RegistryObject<Item> SOUL_CONTAINER = block(TheDeepVoidModBlocks.SOUL_CONTAINER);
+	public static final RegistryObject<Item> CHAINED_WEAVER_SPAWN_EGG = REGISTRY.register("chained_weaver_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.CHAINED_WEAVER, -12036769, -15786978, new Item.Properties()));
+	public static final RegistryObject<Item> HEXED_DOLL = REGISTRY.register("hexed_doll", () -> new HexedDollItem());
+	public static final RegistryObject<Item> WEAVER_OF_SOULS_TREASURE_BAG = REGISTRY.register("weaver_of_souls_treasure_bag", () -> new WeaverOfSoulsTreasureBagItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items

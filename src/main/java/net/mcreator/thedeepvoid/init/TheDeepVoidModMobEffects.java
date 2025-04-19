@@ -10,6 +10,7 @@ import net.minecraftforge.registries.DeferredRegister;
 
 import net.minecraft.world.effect.MobEffect;
 
+import net.mcreator.thedeepvoid.potion.WeaverCurseMobEffect;
 import net.mcreator.thedeepvoid.potion.VoidriumMarkMobEffect;
 import net.mcreator.thedeepvoid.potion.VoidBlessingMobEffect;
 import net.mcreator.thedeepvoid.potion.TrembleMobEffect;
@@ -33,6 +34,7 @@ import net.mcreator.thedeepvoid.potion.FixationMobEffect;
 import net.mcreator.thedeepvoid.potion.DistractedMobEffect;
 import net.mcreator.thedeepvoid.potion.DecompositionMobEffect;
 import net.mcreator.thedeepvoid.potion.DeadInsideMobEffect;
+import net.mcreator.thedeepvoid.potion.DarkmareMusicMobEffect;
 import net.mcreator.thedeepvoid.potion.ComboMobEffect;
 import net.mcreator.thedeepvoid.potion.CallOfTheVoidMobEffect;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
@@ -64,4 +66,6 @@ public class TheDeepVoidModMobEffects {
 	public static final RegistryObject<MobEffect> MOTHERLY_CALL = REGISTRY.register("motherly_call", () -> new MotherlyCallMobEffect());
 	public static final RegistryObject<MobEffect> SINS_AND_SINNERS_MUSIC = REGISTRY.register("sins_and_sinners_music", () -> new SinsAndSinnersMusicMobEffect());
 	public static final RegistryObject<MobEffect> DISTRACTED = REGISTRY.register("distracted", () -> new DistractedMobEffect());
+	public static final RegistryObject<MobEffect> DARKMARE_MUSIC = REGISTRY.register("darkmare_music", () -> new DarkmareMusicMobEffect());
+	public static final RegistryObject<MobEffect> WEAVER_CURSE = REGISTRY.register("weaver_curse", () -> new WeaverCurseMobEffect());
 }

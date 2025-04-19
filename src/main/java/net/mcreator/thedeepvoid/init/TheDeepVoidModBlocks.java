@@ -41,6 +41,8 @@ import net.mcreator.thedeepvoid.block.SulfurLanternHangingBlock;
 import net.mcreator.thedeepvoid.block.SulfurLanternBlock;
 import net.mcreator.thedeepvoid.block.SulfurGlassPaneBlock;
 import net.mcreator.thedeepvoid.block.SulfurGlassBlock;
+import net.mcreator.thedeepvoid.block.SoulOrbPillarBlock;
+import net.mcreator.thedeepvoid.block.SoulContainerBlock;
 import net.mcreator.thedeepvoid.block.SmoothMonolithicStoneStairsBlock;
 import net.mcreator.thedeepvoid.block.SmoothMonolithicStoneSlabBlock;
 import net.mcreator.thedeepvoid.block.SmoothMonolithicStoneBlock;
@@ -570,6 +572,8 @@ public class TheDeepVoidModBlocks {
 	public static final RegistryObject<Block> REFINED_ONYX_STAIRS = REGISTRY.register("refined_onyx_stairs", () -> new RefinedOnyxStairsBlock());
 	public static final RegistryObject<Block> REFINED_ONYX_SLAB = REGISTRY.register("refined_onyx_slab", () -> new RefinedOnyxSlabBlock());
 	public static final RegistryObject<Block> DESOLATE_SOIL_ACTIVE = REGISTRY.register("desolate_soil_active", () -> new DesolateSoilActiveBlock());
+	public static final RegistryObject<Block> SOUL_ORB_PILLAR = REGISTRY.register("soul_orb_pillar", () -> new SoulOrbPillarBlock());
+	public static final RegistryObject<Block> SOUL_CONTAINER = REGISTRY.register("soul_container", () -> new SoulContainerBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

@@ -135,6 +135,8 @@ public class TheDeepVoidModVariables {
 				clone.grimRottenArmorAttack = original.grimRottenArmorAttack;
 				clone.naturalTeleport = original.naturalTeleport;
 				clone.weaverBoots = original.weaverBoots;
+				clone.heartbeatIndicator = original.heartbeatIndicator;
+				clone.hasSoulOrb = original.hasSoulOrb;
 			}
 		}
 
@@ -377,6 +379,8 @@ public class TheDeepVoidModVariables {
 		public double stalkingCount = 0;
 		public double stalkWatcherCount = 0;
 		public boolean noGravity = false;
+		public double heartbeatIndicator = 0;
+		public boolean hasSoulOrb = false;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -447,6 +451,8 @@ public class TheDeepVoidModVariables {
 			nbt.putDouble("stalkingCount", stalkingCount);
 			nbt.putDouble("stalkWatcherCount", stalkWatcherCount);
 			nbt.putBoolean("noGravity", noGravity);
+			nbt.putDouble("heartbeatIndicator", heartbeatIndicator);
+			nbt.putBoolean("hasSoulOrb", hasSoulOrb);
 			return nbt;
 		}
 
@@ -514,6 +520,8 @@ public class TheDeepVoidModVariables {
 			stalkingCount = nbt.getDouble("stalkingCount");
 			stalkWatcherCount = nbt.getDouble("stalkWatcherCount");
 			noGravity = nbt.getBoolean("noGravity");
+			heartbeatIndicator = nbt.getDouble("heartbeatIndicator");
+			hasSoulOrb = nbt.getBoolean("hasSoulOrb");
 		}
 	}
 
@@ -600,6 +608,8 @@ public class TheDeepVoidModVariables {
 					variables.stalkingCount = message.data.stalkingCount;
 					variables.stalkWatcherCount = message.data.stalkWatcherCount;
 					variables.noGravity = message.data.noGravity;
+					variables.heartbeatIndicator = message.data.heartbeatIndicator;
+					variables.hasSoulOrb = message.data.hasSoulOrb;
 				}
 			});
 			context.setPacketHandled(true);

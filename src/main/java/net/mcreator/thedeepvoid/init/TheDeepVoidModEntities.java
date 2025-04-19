@@ -16,6 +16,7 @@ import net.minecraft.world.entity.MobCategory;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.Entity;
 
+import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
 import net.mcreator.thedeepvoid.entity.WatchingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.WandererEntity;
 import net.mcreator.thedeepvoid.entity.VoidDwellerEntity;
@@ -32,7 +33,9 @@ import net.mcreator.thedeepvoid.entity.StalkingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.StalkerTreatThrownEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
 import net.mcreator.thedeepvoid.entity.SporeSpewerEntity;
+import net.mcreator.thedeepvoid.entity.SoulOrbEntity;
 import net.mcreator.thedeepvoid.entity.SmallFleshCubeEntity;
+import net.mcreator.thedeepvoid.entity.ShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.ShadowEntity;
 import net.mcreator.thedeepvoid.entity.ShadeArrowEntity;
 import net.mcreator.thedeepvoid.entity.ScarecrowEntity;
@@ -58,6 +61,7 @@ import net.mcreator.thedeepvoid.entity.LightEntity;
 import net.mcreator.thedeepvoid.entity.LickerHookTongueEntity;
 import net.mcreator.thedeepvoid.entity.LickerEntity;
 import net.mcreator.thedeepvoid.entity.LavenditeShardProjEntity;
+import net.mcreator.thedeepvoid.entity.HandSpawnEntity;
 import net.mcreator.thedeepvoid.entity.HallucinationEntity;
 import net.mcreator.thedeepvoid.entity.GravekeeperEntity;
 import net.mcreator.thedeepvoid.entity.GooSpitterEntity;
@@ -79,6 +83,7 @@ import net.mcreator.thedeepvoid.entity.DeathMawEntity;
 import net.mcreator.thedeepvoid.entity.DamnedEntity;
 import net.mcreator.thedeepvoid.entity.CrossEyesEntity;
 import net.mcreator.thedeepvoid.entity.CharredSpikeEntity;
+import net.mcreator.thedeepvoid.entity.ChainedWeaverEntity;
 import net.mcreator.thedeepvoid.entity.CentigazeHiddenEntity;
 import net.mcreator.thedeepvoid.entity.CentigazeEntity;
 import net.mcreator.thedeepvoid.entity.CathedralGhostEntity;
@@ -103,10 +108,6 @@ import net.mcreator.thedeepvoid.TheDeepVoidMod;
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TheDeepVoidModEntities {
 	public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, TheDeepVoidMod.MODID);
-	public static final RegistryObject<EntityType<DamnedEntity>> DAMNED = register("damned",
-			EntityType.Builder.<DamnedEntity>of(DamnedEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(65).setUpdateInterval(3).setCustomClientFactory(DamnedEntity::new)
-
-					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<FallingCorpseEntity>> FALLING_CORPSE = register("falling_corpse", EntityType.Builder.<FallingCorpseEntity>of(FallingCorpseEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FallingCorpseEntity::new).fireImmune().sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<BoneBallProjectileEntity>> BONE_BALL_PROJECTILE = register("bone_ball_projectile", EntityType.Builder.<BoneBallProjectileEntity>of(BoneBallProjectileEntity::new, MobCategory.MISC)
@@ -135,22 +136,6 @@ public class TheDeepVoidModEntities {
 					.sized(1f, 2f));
 	public static final RegistryObject<EntityType<TenebrisCultroEntity>> DARK_DAGGER = register("dark_dagger",
 			EntityType.Builder.<TenebrisCultroEntity>of(TenebrisCultroEntity::new, MobCategory.MISC).setCustomClientFactory(TenebrisCultroEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
-	public static final RegistryObject<EntityType<CrossEyesEntity>> CROSS_EYES = register("cross_eyes",
-			EntityType.Builder.<CrossEyesEntity>of(CrossEyesEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(65).setUpdateInterval(3).setCustomClientFactory(CrossEyesEntity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<MultipleEyesEntity>> MULTIPLE_EYES = register("multiple_eyes",
-			EntityType.Builder.<MultipleEyesEntity>of(MultipleEyesEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(65).setUpdateInterval(3).setCustomClientFactory(MultipleEyesEntity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<BigEyeEntity>> BIG_EYE = register("big_eye",
-			EntityType.Builder.<BigEyeEntity>of(BigEyeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(65).setUpdateInterval(3).setCustomClientFactory(BigEyeEntity::new)
-
-					.sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<FourEyesEntity>> FOUR_EYES = register("four_eyes",
-			EntityType.Builder.<FourEyesEntity>of(FourEyesEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(65).setUpdateInterval(3).setCustomClientFactory(FourEyesEntity::new)
-
-					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<SulfurTntEntityEntity>> SULFUR_TNT_ENTITY = register("sulfur_tnt_entity", EntityType.Builder.<SulfurTntEntityEntity>of(SulfurTntEntityEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(SulfurTntEntityEntity::new).fireImmune().sized(1f, 1f));
 	public static final RegistryObject<EntityType<CathedralGhostEntity>> CATHEDRAL_GHOST = register("cathedral_ghost", EntityType.Builder.<CathedralGhostEntity>of(CathedralGhostEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
@@ -363,6 +348,38 @@ public class TheDeepVoidModEntities {
 					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<WatchingStalkerEntity>> WATCHING_STALKER = register("watching_stalker", EntityType.Builder.<WatchingStalkerEntity>of(WatchingStalkerEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(84).setUpdateInterval(3).setCustomClientFactory(WatchingStalkerEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<WeaverOfSoulsEntity>> WEAVER_OF_SOULS = register("weaver_of_souls", EntityType.Builder.<WeaverOfSoulsEntity>of(WeaverOfSoulsEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(78).setUpdateInterval(3).setCustomClientFactory(WeaverOfSoulsEntity::new).fireImmune().sized(2.8f, 2.8f));
+	public static final RegistryObject<EntityType<HandSpawnEntity>> HAND_SPAWN = register("hand_spawn",
+			EntityType.Builder.<HandSpawnEntity>of(HandSpawnEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(HandSpawnEntity::new).fireImmune().sized(0.8f, 0.1f));
+	public static final RegistryObject<EntityType<ShadowHandEntity>> SHADOW_HAND = register("shadow_hand", EntityType.Builder.<ShadowHandEntity>of(ShadowHandEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+			.setUpdateInterval(3).setCustomClientFactory(ShadowHandEntity::new).fireImmune().sized(0.4f, 1.8f));
+	public static final RegistryObject<EntityType<DamnedEntity>> DAMNED = register("damned",
+			EntityType.Builder.<DamnedEntity>of(DamnedEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(65).setUpdateInterval(3).setCustomClientFactory(DamnedEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<CrossEyesEntity>> CROSS_EYES = register("cross_eyes",
+			EntityType.Builder.<CrossEyesEntity>of(CrossEyesEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(65).setUpdateInterval(3).setCustomClientFactory(CrossEyesEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<BigEyeEntity>> BIG_EYE = register("big_eye",
+			EntityType.Builder.<BigEyeEntity>of(BigEyeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(65).setUpdateInterval(3).setCustomClientFactory(BigEyeEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<MultipleEyesEntity>> MULTIPLE_EYES = register("multiple_eyes",
+			EntityType.Builder.<MultipleEyesEntity>of(MultipleEyesEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(65).setUpdateInterval(3).setCustomClientFactory(MultipleEyesEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<FourEyesEntity>> FOUR_EYES = register("four_eyes",
+			EntityType.Builder.<FourEyesEntity>of(FourEyesEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(65).setUpdateInterval(3).setCustomClientFactory(FourEyesEntity::new)
+
+					.sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<SoulOrbEntity>> SOUL_ORB = register("soul_orb",
+			EntityType.Builder.<SoulOrbEntity>of(SoulOrbEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(SoulOrbEntity::new)
+
+					.sized(0.8f, 0.8f));
+	public static final RegistryObject<EntityType<ChainedWeaverEntity>> CHAINED_WEAVER = register("chained_weaver", EntityType.Builder.<ChainedWeaverEntity>of(ChainedWeaverEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ChainedWeaverEntity::new).fireImmune().sized(2.8f, 2.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -371,15 +388,10 @@ public class TheDeepVoidModEntities {
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
 		event.enqueueWork(() -> {
-			DamnedEntity.init();
 			FallingCorpseEntity.init();
 			GhostlyNightmareEntity.init();
 			LightEntity.init();
 			AmalgamEntity.init();
-			CrossEyesEntity.init();
-			MultipleEyesEntity.init();
-			BigEyeEntity.init();
-			FourEyesEntity.init();
 			SulfurTntEntityEntity.init();
 			CathedralGhostEntity.init();
 			GhostEntity.init();
@@ -440,20 +452,25 @@ public class TheDeepVoidModEntities {
 			StalkingStalkerEntity.init();
 			ShadowEntity.init();
 			WatchingStalkerEntity.init();
+			WeaverOfSoulsEntity.init();
+			HandSpawnEntity.init();
+			ShadowHandEntity.init();
+			DamnedEntity.init();
+			CrossEyesEntity.init();
+			BigEyeEntity.init();
+			MultipleEyesEntity.init();
+			FourEyesEntity.init();
+			SoulOrbEntity.init();
+			ChainedWeaverEntity.init();
 		});
 	}
 
 	@SubscribeEvent
 	public static void registerAttributes(EntityAttributeCreationEvent event) {
-		event.put(DAMNED.get(), DamnedEntity.createAttributes().build());
 		event.put(FALLING_CORPSE.get(), FallingCorpseEntity.createAttributes().build());
 		event.put(GHOSTLY_NIGHTMARE.get(), GhostlyNightmareEntity.createAttributes().build());
 		event.put(LIGHT.get(), LightEntity.createAttributes().build());
 		event.put(AMALGAM.get(), AmalgamEntity.createAttributes().build());
-		event.put(CROSS_EYES.get(), CrossEyesEntity.createAttributes().build());
-		event.put(MULTIPLE_EYES.get(), MultipleEyesEntity.createAttributes().build());
-		event.put(BIG_EYE.get(), BigEyeEntity.createAttributes().build());
-		event.put(FOUR_EYES.get(), FourEyesEntity.createAttributes().build());
 		event.put(SULFUR_TNT_ENTITY.get(), SulfurTntEntityEntity.createAttributes().build());
 		event.put(CATHEDRAL_GHOST.get(), CathedralGhostEntity.createAttributes().build());
 		event.put(GHOST.get(), GhostEntity.createAttributes().build());
@@ -514,5 +531,15 @@ public class TheDeepVoidModEntities {
 		event.put(STALKING_STALKER.get(), StalkingStalkerEntity.createAttributes().build());
 		event.put(SHADOW.get(), ShadowEntity.createAttributes().build());
 		event.put(WATCHING_STALKER.get(), WatchingStalkerEntity.createAttributes().build());
+		event.put(WEAVER_OF_SOULS.get(), WeaverOfSoulsEntity.createAttributes().build());
+		event.put(HAND_SPAWN.get(), HandSpawnEntity.createAttributes().build());
+		event.put(SHADOW_HAND.get(), ShadowHandEntity.createAttributes().build());
+		event.put(DAMNED.get(), DamnedEntity.createAttributes().build());
+		event.put(CROSS_EYES.get(), CrossEyesEntity.createAttributes().build());
+		event.put(BIG_EYE.get(), BigEyeEntity.createAttributes().build());
+		event.put(MULTIPLE_EYES.get(), MultipleEyesEntity.createAttributes().build());
+		event.put(FOUR_EYES.get(), FourEyesEntity.createAttributes().build());
+		event.put(SOUL_ORB.get(), SoulOrbEntity.createAttributes().build());
+		event.put(CHAINED_WEAVER.get(), ChainedWeaverEntity.createAttributes().build());
 	}
 }

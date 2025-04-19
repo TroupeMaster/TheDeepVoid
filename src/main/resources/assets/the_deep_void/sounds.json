@@ -826,5 +826,59 @@
         "stream": false
       }
     ]
+  },
+  "weaver_ambient": {
+    "subtitle": "subtitles.weaver_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:weaver_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "weaver_hurt": {
+    "subtitle": "subtitles.weaver_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:weaver_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "ominous_murmurs": {
+    "subtitle": "subtitles.ominous_murmurs",
+    "sounds": [
+      {
+        "name": "the_deep_void:640093__roloxi__murmuring-1",
+        "stream": false
+      }
+    ]
+  },
+  "darkmare": {
+    "subtitle": "subtitles.darkmare",
+    "sounds": [
+      {
+        "name": "the_deep_void:darkmare-dark-fantasy-studio",
+        "stream": true
+      }
+    ]
+  },
+  "weaver_scream": {
+    "subtitle": "subtitles.weaver_scream",
+    "sounds": [
+      {
+        "name": "the_deep_void:weaver_scream",
+        "stream": false
+      }
+    ]
+  },
+  "weaver_scream_loud": {
+    "subtitle": "subtitles.weaver_scream_loud",
+    "sounds": [
+      {
+        "name": "the_deep_void:weaver_scream_loud",
+        "stream": false
+      }
+    ]
   }
 }

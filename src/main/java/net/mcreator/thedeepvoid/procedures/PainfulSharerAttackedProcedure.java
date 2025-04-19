@@ -50,19 +50,38 @@ public class PainfulSharerAttackedProcedure {
 			for (Entity entityiterator : _entfound) {
 				if (entityiterator instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TheDeepVoidModMobEffects.PAINFUL.get())) {
 					if ((entityiterator.getPersistentData().getString("deep_void:painfulSharer")).equals(entity.getDisplayName().getString())) {
-						if (event != null && event.isCancelable()) {
-							event.setCanceled(true);
-						} else if (event != null && event.hasResult()) {
-							event.setResult(Event.Result.DENY);
-						}
-						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), sourceentity), (float) amount);
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.HOSTILE,
-										1, (float) Mth.nextDouble(RandomSource.create(), 0.8, 1.4));
-							} else {
-								_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.HOSTILE, 1,
-										(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.4), false);
+						if ((entityiterator instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.PAINFUL.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.PAINFUL.get()).getAmplifier() : 0) > 1) {
+							if (event != null && event.isCancelable()) {
+								event.setCanceled(true);
+							} else if (event != null && event.hasResult()) {
+								event.setResult(Event.Result.DENY);
+							}
+							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), sourceentity),
+									(float) (amount + (entityiterator instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.PAINFUL.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.PAINFUL.get()).getAmplifier() : 0)));
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")),
+											SoundSource.HOSTILE, 1, (float) Mth.nextDouble(RandomSource.create(), 0.8, 1.4));
+								} else {
+									_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.HOSTILE, 1,
+											(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.4), false);
+								}
+							}
+						} else {
+							if (event != null && event.isCancelable()) {
+								event.setCanceled(true);
+							} else if (event != null && event.hasResult()) {
+								event.setResult(Event.Result.DENY);
+							}
+							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), sourceentity), (float) amount);
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")),
+											SoundSource.HOSTILE, 1, (float) Mth.nextDouble(RandomSource.create(), 0.8, 1.4));
+								} else {
+									_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.HOSTILE, 1,
+											(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.4), false);
+								}
 							}
 						}
 					}

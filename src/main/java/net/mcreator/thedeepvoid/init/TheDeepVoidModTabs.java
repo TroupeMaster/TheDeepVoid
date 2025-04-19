@@ -6,20 +6,24 @@ package net.mcreator.thedeepvoid.init;
 
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
 
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
+@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TheDeepVoidModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TheDeepVoidMod.MODID);
 	public static final RegistryObject<CreativeModeTab> THE_DEEP_VOID = REGISTRY.register("the_deep_void",
 			() -> CreativeModeTab.builder().title(Component.translatable("item_group.the_deep_void.the_deep_void")).icon(() -> new ItemStack(TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get())).displayItems((parameters, tabData) -> {
 				tabData.accept(TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get().asItem());
-				tabData.accept(TheDeepVoidModItems.DAMNED_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.STALKER_SCYTHE_CLAW.get());
 				tabData.accept(TheDeepVoidModBlocks.ROTTEN_BONE_BLOCK.get().asItem());
 				tabData.accept(TheDeepVoidModItems.ROTTEN_BONE.get());
@@ -482,7 +486,23 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.SOUL_CLEAVER.get());
 				tabData.accept(TheDeepVoidModItems.WEAVER_LEGGINGS_LEGGINGS.get());
 				tabData.accept(TheDeepVoidModItems.WEAVER_BOOTS_BOOTS.get());
+				tabData.accept(TheDeepVoidModItems.VOID_MIRROR.get());
+				tabData.accept(TheDeepVoidModItems.WEAVER_OF_SOULS_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.DARKMARE.get());
+				tabData.accept(TheDeepVoidModItems.DAMNED_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModBlocks.SOUL_ORB_PILLAR.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.SOUL_CONTAINER.get().asItem());
+				tabData.accept(TheDeepVoidModItems.CHAINED_WEAVER_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.HEXED_DOLL.get());
+				tabData.accept(TheDeepVoidModItems.WEAVER_OF_SOULS_TREASURE_BAG.get());
 			})
 
 					.build());
+
+	@SubscribeEvent
+	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
+		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
+			tabData.accept(TheDeepVoidModItems.HAND_SPAWN_SPAWN_EGG.get());
+		}
+	}
 }

@@ -1,39 +1,39 @@
 
 package net.mcreator.thedeepvoid.client.renderer;
 
+import software.bernie.geckolib.renderer.GeoEntityRenderer;
+import software.bernie.geckolib.cache.object.BakedGeoModel;
+
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
-import net.minecraft.client.renderer.entity.layers.HumanoidArmorLayer;
-import net.minecraft.client.renderer.entity.LivingEntityRenderer;
-import net.minecraft.client.renderer.entity.HumanoidMobRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.model.geom.ModelLayers;
-import net.minecraft.client.model.HumanoidModel;
 
+import net.mcreator.thedeepvoid.entity.model.FourEyesModel;
+import net.mcreator.thedeepvoid.entity.layer.FourEyesLayer;
 import net.mcreator.thedeepvoid.entity.FourEyesEntity;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class FourEyesRenderer extends HumanoidMobRenderer<FourEyesEntity, HumanoidModel<FourEyesEntity>> {
-	public FourEyesRenderer(EntityRendererProvider.Context context) {
-		super(context, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER)), 0f);
-		this.addLayer(new HumanoidArmorLayer(this, new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_INNER_ARMOR)), new HumanoidModel(context.bakeLayer(ModelLayers.PLAYER_OUTER_ARMOR)), context.getModelManager()));
-		this.addLayer(new RenderLayer<FourEyesEntity, HumanoidModel<FourEyesEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("the_deep_void:textures/entities/eyes5.png");
-
-			@Override
-			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, FourEyesEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
-				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.eyes(LAYER_TEXTURE));
-				this.getParentModel().renderToBuffer(poseStack, vertexConsumer, light, LivingEntityRenderer.getOverlayCoords(entity, 0), 1, 1, 1, 1);
-			}
-		});
+public class FourEyesRenderer extends GeoEntityRenderer<FourEyesEntity> {
+	public FourEyesRenderer(EntityRendererProvider.Context renderManager) {
+		super(renderManager, new FourEyesModel());
+		this.shadowRadius = 0f;
+		this.addRenderLayer(new FourEyesLayer(this));
 	}
 
 	@Override
-	public ResourceLocation getTextureLocation(FourEyesEntity entity) {
-		return new ResourceLocation("the_deep_void:textures/entities/eyes5.png");
+	public RenderType getRenderType(FourEyesEntity animatable, ResourceLocation texture, MultiBufferSource bufferSource, float partialTick) {
+		return RenderType.entityTranslucent(getTextureLocation(animatable));
+	}
+
+	@Override
+	public void preRender(PoseStack poseStack, FourEyesEntity entity, BakedGeoModel model, MultiBufferSource bufferSource, VertexConsumer buffer, boolean isReRender, float partialTick, int packedLight, int packedOverlay, float red, float green,
+			float blue, float alpha) {
+		float scale = 1f;
+		this.scaleHeight = scale;
+		this.scaleWidth = scale;
+		super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
 	}
 }

@@ -28,6 +28,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.StalkingStalkerEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
+import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import javax.annotation.Nullable;
 
@@ -154,7 +155,8 @@ public class PlayerIsInDeepVoidProcedure {
 			}
 		}
 		if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerCount == Math.floor(((double) DeepVoidConfigConfiguration.STALKERSPAWNTIMER.get() * 40) / 100)
-				&& world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0 && y > 0 && (entity instanceof LivingEntity _livEnt30 && _livEnt30.hasEffect(TheDeepVoidModMobEffects.VOID_BLESSING.get())) == false) {
+				&& world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0 && y > 0 && (entity instanceof LivingEntity _livEnt30 && _livEnt30.hasEffect(TheDeepVoidModMobEffects.VOID_BLESSING.get())) == false
+				&& (entity instanceof LivingEntity _livEnt31 && _livEnt31.hasEffect(TheDeepVoidModMobEffects.WEAVER_CURSE.get())) == false) {
 			{
 				double _setval = Math.floor(((double) DeepVoidConfigConfiguration.STALKERSPAWNTIMER.get() * 40) / 100) + 1;
 				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -162,6 +164,31 @@ public class PlayerIsInDeepVoidProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
+			{
+				double _setval = 1;
+				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.heartbeatIndicator = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			TheDeepVoidMod.queueServerWork(4, () -> {
+				{
+					double _setval = 2;
+					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.heartbeatIndicator = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			});
+			TheDeepVoidMod.queueServerWork(10, () -> {
+				{
+					double _setval = 0;
+					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.heartbeatIndicator = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			});
 			if (!world.getEntitiesOfClass(StalkingStalkerEntity.class, AABB.ofSize(new Vec3(x, y, z), 100, 100, 100), e -> true).isEmpty()) {
 				{
 					final Vec3 _center = new Vec3(x, y, z);
@@ -207,7 +234,8 @@ public class PlayerIsInDeepVoidProcedure {
 			}
 		}
 		if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerCount == Math.floor(((double) DeepVoidConfigConfiguration.STALKERSPAWNTIMER.get() * 75) / 100)
-				&& world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0 && y > 0 && (entity instanceof LivingEntity _livEnt47 && _livEnt47.hasEffect(TheDeepVoidModMobEffects.VOID_BLESSING.get())) == false) {
+				&& world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0 && y > 0 && (entity instanceof LivingEntity _livEnt50 && _livEnt50.hasEffect(TheDeepVoidModMobEffects.VOID_BLESSING.get())) == false
+				&& (entity instanceof LivingEntity _livEnt51 && _livEnt51.hasEffect(TheDeepVoidModMobEffects.WEAVER_CURSE.get())) == false) {
 			{
 				double _setval = Math.floor(((double) DeepVoidConfigConfiguration.STALKERSPAWNTIMER.get() * 75) / 100) + 1;
 				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -215,6 +243,31 @@ public class PlayerIsInDeepVoidProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
+			{
+				double _setval = 1;
+				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.heartbeatIndicator = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+			TheDeepVoidMod.queueServerWork(4, () -> {
+				{
+					double _setval = 2;
+					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.heartbeatIndicator = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			});
+			TheDeepVoidMod.queueServerWork(10, () -> {
+				{
+					double _setval = 0;
+					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.heartbeatIndicator = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			});
 			if (!world.getEntitiesOfClass(StalkingStalkerEntity.class, AABB.ofSize(new Vec3(x, y, z), 100, 100, 100), e -> true).isEmpty()) {
 				{
 					final Vec3 _center = new Vec3(x, y, z);
@@ -274,6 +327,11 @@ public class PlayerIsInDeepVoidProcedure {
 					}
 				}
 			}
+		}
+		if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerCount >= Math.floor(((double) DeepVoidConfigConfiguration.STALKERSPAWNTIMER.get() * 92) / 100)
+				&& (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerCount < (double) DeepVoidConfigConfiguration.STALKERSPAWNTIMER.get()) {
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.PARANOIA.get(), 5, 0, false, false));
 		}
 	}
 }

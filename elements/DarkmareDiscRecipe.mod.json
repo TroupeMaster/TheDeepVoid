@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:LiquidVoid.bucket"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:VoidMatter"
+      },
+      {
+        "value": "CUSTOM:SinsAndSinners"
+      },
+      {
+        "value": "CUSTOM:VoidMatter"
+      },
+      {
+        "value": "CUSTOM:FleshBlock"
+      },
+      {
+        "value": "CUSTOM:FleshBlock"
+      },
+      {
+        "value": "CUSTOM:FleshBlock"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Darkmare"
+    },
+    "name": "darkmare_disc",
+    "namespace": "mod"
+  }
+}

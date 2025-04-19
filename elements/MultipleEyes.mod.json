@@ -1,39 +1,24 @@
 {
   "_fv": 66,
-  "_type": "livingentity",
+  "_type": "animatedentity",
   "definition": {
-    "mobName": "Damned",
+    "mobName": "Multiple Eyes",
     "mobLabel": "",
-    "mobModelName": "Biped",
-    "mobModelTexture": "eyes3.png",
-    "transparentModelCondition": {
-      "fixedValue": false
-    },
-    "isShakingCondition": {
-      "fixedValue": false
-    },
-    "solidBoundingBox": {
-      "fixedValue": false
-    },
+    "mobModelTexture": "multipleeyes.png",
+    "mobModelGlowTexture": "eyes3.png",
     "visualScale": {
       "fixedValue": 1.0
     },
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
-    "modelLayers": [
-      {
-        "model": "Default",
-        "texture": "eyes3.png",
-        "disableHurtOverlay": false,
-        "glow": true
-      }
-    ],
+    "entityDataEntries": [],
     "modelWidth": 0.6,
     "modelHeight": 1.8,
     "modelShadowSize": 0.0,
     "mountedYOffset": 0.0,
-    "hasSpawnEgg": true,
+    "stepHeight": 0.0,
+    "hasSpawnEgg": false,
     "spawnEggBaseColor": {
       "value": -15396334,
       "falpha": 0.0
@@ -42,7 +27,11 @@
       "value": -1,
       "falpha": 0.0
     },
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
     "isBoss": false,
     "bossBarColor": "PINK",
     "bossBarType": "PROGRESS",
@@ -70,23 +59,18 @@
     "attackKnockback": 0.0,
     "knockbackResistance": 0.0,
     "movementSpeed": 0.1,
-    "stepHeight": 0.0,
     "armorBaseValue": 0.0,
     "trackingRange": 65,
     "followRange": 45,
     "health": 1,
     "xpAmount": 0,
     "waterMob": false,
-    "breatheUnderwater": {
-      "fixedValue": false
-    },
-    "pushedByFluids": {
-      "fixedValue": true
-    },
     "flyingMob": false,
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "deathTime": 20,
+    "lerp": 4,
     "disableCollisions": false,
     "ridable": false,
     "canControlForward": false,
@@ -122,7 +106,6 @@
     "raidCelebrationSound": {
       "value": ""
     },
-    "entityDataEntries": [],
     "whenMobIsHurt": {
       "name": "DamnedEntityIsHurt"
     },
@@ -132,11 +115,38 @@
     "onPlayerCollidesWith": {
       "name": "DamnedEntityIsHurt"
     },
+    "onInitialSpawn": {
+      "name": "DamnedOnInitialEntitySpawn"
+    },
     "hasAI": true,
     "aiBase": "(none)",
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"wander\"><field name=\"speed\">0.1</field><field name=\"condition\">null,null</field><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayer</field><field name=\"radius\">50</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"attack_with_range\"><field name=\"range\">2.3</field><field name=\"speed\">1</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></xml>",
+    "model": "multipleeyes.geo.json",
+    "groupName": "head",
+    "animation1": "animation.multipleEyes_idle",
+    "animation2": "",
+    "animation3": "",
+    "animation4": "",
+    "animation5": "",
+    "animation6": "",
+    "animation7": "",
+    "animation8": "",
+    "animation9": "",
+    "animation10": "",
+    "enable2": false,
+    "enable3": false,
+    "enable4": false,
+    "enable5": false,
+    "enable6": false,
+    "enable7": false,
+    "enable8": false,
+    "enable9": false,
+    "enable10": false,
     "breedable": false,
     "tameable": false,
+    "disableDeathRotation": false,
+    "headMovement": true,
+    "eyeHeight": false,
     "breedTriggerItems": [],
     "ranged": false,
     "rangedAttackItem": {
@@ -145,6 +155,16 @@
     "rangedItemType": "Default item",
     "rangedAttackInterval": 20,
     "rangedAttackRadius": 10.0,
+    "height": 0.0,
+    "raidSpawnsCount": [
+      4,
+      3,
+      3,
+      4,
+      4,
+      4,
+      2
+    ],
     "spawnThisMob": true,
     "doesDespawnWhenIdle": true,
     "spawningCondition": {
@@ -166,17 +186,14 @@
       },
       {
         "value": "CUSTOM:MourningGraveyard"
+      },
+      {
+        "value": "CUSTOM:WindsweptHollow"
+      },
+      {
+        "value": "CUSTOM:WatchingUndergrowth"
       }
     ],
-    "spawnInDungeons": false,
-    "raidSpawnsCount": [
-      4,
-      3,
-      3,
-      4,
-      4,
-      4,
-      2
-    ]
+    "spawnInDungeons": false
   }
 }

@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "soul_orb_pillar"
+      },
+      "name": "default"
+    }
+  }
+}

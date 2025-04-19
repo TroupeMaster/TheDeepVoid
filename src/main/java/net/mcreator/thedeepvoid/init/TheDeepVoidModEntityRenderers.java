@@ -11,6 +11,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
+import net.mcreator.thedeepvoid.client.renderer.WeaverOfSoulsRenderer;
 import net.mcreator.thedeepvoid.client.renderer.WatchingStalkerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.WandererRenderer;
 import net.mcreator.thedeepvoid.client.renderer.VoidDwellerRenderer;
@@ -25,8 +26,10 @@ import net.mcreator.thedeepvoid.client.renderer.SulfurTntEntityRenderer;
 import net.mcreator.thedeepvoid.client.renderer.StalkingStalkerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.StalkerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.SporeSpewerRenderer;
+import net.mcreator.thedeepvoid.client.renderer.SoulOrbRenderer;
 import net.mcreator.thedeepvoid.client.renderer.SmallFleshCubeRenderer;
 import net.mcreator.thedeepvoid.client.renderer.ShadowRenderer;
+import net.mcreator.thedeepvoid.client.renderer.ShadowHandRenderer;
 import net.mcreator.thedeepvoid.client.renderer.ShadeArrowRenderer;
 import net.mcreator.thedeepvoid.client.renderer.ScarecrowRenderer;
 import net.mcreator.thedeepvoid.client.renderer.RottenDartProjectileRenderer;
@@ -47,6 +50,7 @@ import net.mcreator.thedeepvoid.client.renderer.MotherBoneCrawlerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.LurkerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.LightRenderer;
 import net.mcreator.thedeepvoid.client.renderer.LickerRenderer;
+import net.mcreator.thedeepvoid.client.renderer.HandSpawnRenderer;
 import net.mcreator.thedeepvoid.client.renderer.HallucinationRenderer;
 import net.mcreator.thedeepvoid.client.renderer.GravekeeperRenderer;
 import net.mcreator.thedeepvoid.client.renderer.GooSpitterRenderer;
@@ -66,6 +70,7 @@ import net.mcreator.thedeepvoid.client.renderer.DeathMawHiddenRenderer;
 import net.mcreator.thedeepvoid.client.renderer.DamnedRenderer;
 import net.mcreator.thedeepvoid.client.renderer.CrossEyesRenderer;
 import net.mcreator.thedeepvoid.client.renderer.CharredSpikeRenderer;
+import net.mcreator.thedeepvoid.client.renderer.ChainedWeaverRenderer;
 import net.mcreator.thedeepvoid.client.renderer.CentigazeRenderer;
 import net.mcreator.thedeepvoid.client.renderer.CentigazeHiddenRenderer;
 import net.mcreator.thedeepvoid.client.renderer.CathedralGhostRenderer;
@@ -89,7 +94,6 @@ import net.mcreator.thedeepvoid.client.renderer.AbductorRenderer;
 public class TheDeepVoidModEntityRenderers {
 	@SubscribeEvent
 	public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
-		event.registerEntityRenderer(TheDeepVoidModEntities.DAMNED.get(), DamnedRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.FALLING_CORPSE.get(), FallingCorpseRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.BONE_BALL_PROJECTILE.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.GHOSTLY_NIGHTMARE.get(), GhostlyNightmareRenderer::new);
@@ -103,10 +107,6 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.DEVOURER_HOOK_TENDRIL.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.AMALGAM.get(), AmalgamRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.DARK_DAGGER.get(), TenebrisCultroRenderer::new);
-		event.registerEntityRenderer(TheDeepVoidModEntities.CROSS_EYES.get(), CrossEyesRenderer::new);
-		event.registerEntityRenderer(TheDeepVoidModEntities.MULTIPLE_EYES.get(), MultipleEyesRenderer::new);
-		event.registerEntityRenderer(TheDeepVoidModEntities.BIG_EYE.get(), BigEyeRenderer::new);
-		event.registerEntityRenderer(TheDeepVoidModEntities.FOUR_EYES.get(), FourEyesRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.SULFUR_TNT_ENTITY.get(), SulfurTntEntityRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.CATHEDRAL_GHOST.get(), CathedralGhostRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.GHOST.get(), GhostRenderer::new);
@@ -171,5 +171,15 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.STALKING_STALKER.get(), StalkingStalkerRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.SHADOW.get(), ShadowRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.WATCHING_STALKER.get(), WatchingStalkerRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.WEAVER_OF_SOULS.get(), WeaverOfSoulsRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.HAND_SPAWN.get(), HandSpawnRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.SHADOW_HAND.get(), ShadowHandRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.DAMNED.get(), DamnedRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.CROSS_EYES.get(), CrossEyesRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.BIG_EYE.get(), BigEyeRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.MULTIPLE_EYES.get(), MultipleEyesRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.FOUR_EYES.get(), FourEyesRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.SOUL_ORB.get(), SoulOrbRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.CHAINED_WEAVER.get(), ChainedWeaverRenderer::new);
 	}
 }

@@ -43,7 +43,7 @@ public class EntityAttackedRottenHeartProcedure {
 			if (sourceentity instanceof LivingEntity _entity)
 				_entity.removeEffect(MobEffects.MOVEMENT_SPEED);
 			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:enchantment_damage"))), sourceentity),
-					(float) (amount * 2));
+					(float) (amount * ((sourceentity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.ROTTEN_HEART.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.ROTTEN_HEART.get()).getAmplifier() : 0) + 1)));
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 80, 0));
 		}

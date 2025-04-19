@@ -32,9 +32,11 @@ public class PainKillerEntityHurtProcedure {
 			return;
 		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get())) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 240, 1));
+				_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 240,
+						(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()).getAmplifier() : 0) + 1)));
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 240, 1));
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 240,
+						(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()).getAmplifier() : 0) + 1)));
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get());
 		}

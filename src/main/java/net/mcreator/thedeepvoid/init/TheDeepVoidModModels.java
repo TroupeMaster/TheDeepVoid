@@ -23,7 +23,9 @@ import net.mcreator.thedeepvoid.client.model.Modelstalker_new;
 import net.mcreator.thedeepvoid.client.model.Modelstalker_animated;
 import net.mcreator.thedeepvoid.client.model.Modelstalker2;
 import net.mcreator.thedeepvoid.client.model.Modelspore_spewer;
+import net.mcreator.thedeepvoid.client.model.Modelspike_spawn;
 import net.mcreator.thedeepvoid.client.model.Modelspike;
+import net.mcreator.thedeepvoid.client.model.ModelsoulOrb;
 import net.mcreator.thedeepvoid.client.model.Modelsmall_flesh_cube;
 import net.mcreator.thedeepvoid.client.model.Modelscarecrow;
 import net.mcreator.thedeepvoid.client.model.Modelrotten_corpse_remodel;
@@ -78,6 +80,7 @@ public class TheDeepVoidModModels {
 		event.registerLayerDefinition(Modelthrown_soul_seeker.LAYER_LOCATION, Modelthrown_soul_seeker::createBodyLayer);
 		event.registerLayerDefinition(Modeloverseer.LAYER_LOCATION, Modeloverseer::createBodyLayer);
 		event.registerLayerDefinition(Modeloverseer_bigpillar.LAYER_LOCATION, Modeloverseer_bigpillar::createBodyLayer);
+		event.registerLayerDefinition(Modelspike_spawn.LAYER_LOCATION, Modelspike_spawn::createBodyLayer);
 		event.registerLayerDefinition(Modelweaver.LAYER_LOCATION, Modelweaver::createBodyLayer);
 		event.registerLayerDefinition(Modelspike.LAYER_LOCATION, Modelspike::createBodyLayer);
 		event.registerLayerDefinition(Modelabducter.LAYER_LOCATION, Modelabducter::createBodyLayer);
@@ -94,6 +97,7 @@ public class TheDeepVoidModModels {
 		event.registerLayerDefinition(Modelalpha_bone_crawler.LAYER_LOCATION, Modelalpha_bone_crawler::createBodyLayer);
 		event.registerLayerDefinition(Modeldark_throw_knife.LAYER_LOCATION, Modeldark_throw_knife::createBodyLayer);
 		event.registerLayerDefinition(Modelbig_shade_arrow.LAYER_LOCATION, Modelbig_shade_arrow::createBodyLayer);
+		event.registerLayerDefinition(ModelsoulOrb.LAYER_LOCATION, ModelsoulOrb::createBodyLayer);
 		event.registerLayerDefinition(Modelgravekeeper.LAYER_LOCATION, Modelgravekeeper::createBodyLayer);
 		event.registerLayerDefinition(Modeldeath_vulture.LAYER_LOCATION, Modeldeath_vulture::createBodyLayer);
 		event.registerLayerDefinition(Modelroot_entity.LAYER_LOCATION, Modelroot_entity::createBodyLayer);

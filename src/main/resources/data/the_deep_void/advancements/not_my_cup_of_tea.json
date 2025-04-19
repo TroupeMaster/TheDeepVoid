@@ -9,7 +9,7 @@
     "description": {
       "translate": "advancements.not_my_cup_of_tea.descr"
     },
-    "frame": "goal",
+    "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false

@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "overlay",
   "definition": {
-    "priority": "NORMAL",
+    "priority": "LOW",
     "components": [],
     "baseTexture": "black_mass_approaching.png",
     "overlayTarget": "Ingame",

@@ -107,4 +107,10 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> ABDUCTOR_AMBIENT = REGISTRY.register("abductor_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "abductor_ambient")));
 	public static final RegistryObject<SoundEvent> CENTIGAZE_AMBIENT = REGISTRY.register("centigaze_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "centigaze_ambient")));
 	public static final RegistryObject<SoundEvent> CENTIGAZE_HIDDEN = REGISTRY.register("centigaze_hidden", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "centigaze_hidden")));
+	public static final RegistryObject<SoundEvent> WEAVER_AMBIENT = REGISTRY.register("weaver_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "weaver_ambient")));
+	public static final RegistryObject<SoundEvent> WEAVER_HURT = REGISTRY.register("weaver_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "weaver_hurt")));
+	public static final RegistryObject<SoundEvent> OMINOUS_MURMURS = REGISTRY.register("ominous_murmurs", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "ominous_murmurs")));
+	public static final RegistryObject<SoundEvent> DARKMARE = REGISTRY.register("darkmare", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "darkmare")));
+	public static final RegistryObject<SoundEvent> WEAVER_SCREAM = REGISTRY.register("weaver_scream", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "weaver_scream")));
+	public static final RegistryObject<SoundEvent> WEAVER_SCREAM_LOUD = REGISTRY.register("weaver_scream_loud", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "weaver_scream_loud")));
 }

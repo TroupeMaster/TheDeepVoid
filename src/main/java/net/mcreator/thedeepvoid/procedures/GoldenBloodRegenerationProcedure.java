@@ -33,7 +33,8 @@ public class GoldenBloodRegenerationProcedure {
 				event.setResult(Event.Result.DENY);
 			}
 			if (entity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + amount * 1.5));
+				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1)
+						+ amount * ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.GOLDEN_BLOOD.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.GOLDEN_BLOOD.get()).getAmplifier() : 0) + 0.5)));
 		}
 	}
 }

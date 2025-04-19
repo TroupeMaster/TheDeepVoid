@@ -9,7 +9,7 @@
     "description": {
       "translate": "advancements.a_comforting_light.descr"
     },
-    "frame": "goal",
+    "frame": "task",
     "show_toast": true,
     "announce_to_chat": true,
     "hidden": false
