@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "livingentity",
   "definition": {
-    "mobName": "Hand Spawn",
+    "mobName": "Shadow Hand",
     "mobLabel": "",
     "mobModelName": "Modelspike_spawn",
     "mobModelTexture": "spike_spawn.png",
@@ -35,16 +35,16 @@
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -1,
+      "value": -16760499,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -1,
+      "value": -16777216,
       "falpha": 0.0
     },
     "creativeTabs": [
       {
-        "value": "MISC"
+        "value": "CUSTOM:TheDeepVoid"
       }
     ],
     "isBoss": false,

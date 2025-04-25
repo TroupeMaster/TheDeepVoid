@@ -137,6 +137,7 @@ public class TheDeepVoidModVariables {
 				clone.weaverBoots = original.weaverBoots;
 				clone.heartbeatIndicator = original.heartbeatIndicator;
 				clone.hasSoulOrb = original.hasSoulOrb;
+				clone.handheldBreak = original.handheldBreak;
 			}
 		}
 
@@ -203,6 +204,7 @@ public class TheDeepVoidModVariables {
 		public boolean WeaverTemplePlaced = false;
 		public double stalkerSpawnX = 0;
 		public double stalkerSpawnZ = 0;
+		public double weaverFightCount = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -216,6 +218,7 @@ public class TheDeepVoidModVariables {
 			WeaverTemplePlaced = nbt.getBoolean("WeaverTemplePlaced");
 			stalkerSpawnX = nbt.getDouble("stalkerSpawnX");
 			stalkerSpawnZ = nbt.getDouble("stalkerSpawnZ");
+			weaverFightCount = nbt.getDouble("weaverFightCount");
 		}
 
 		@Override
@@ -225,6 +228,7 @@ public class TheDeepVoidModVariables {
 			nbt.putBoolean("WeaverTemplePlaced", WeaverTemplePlaced);
 			nbt.putDouble("stalkerSpawnX", stalkerSpawnX);
 			nbt.putDouble("stalkerSpawnZ", stalkerSpawnZ);
+			nbt.putDouble("weaverFightCount", weaverFightCount);
 			return nbt;
 		}
 
@@ -381,6 +385,7 @@ public class TheDeepVoidModVariables {
 		public boolean noGravity = false;
 		public double heartbeatIndicator = 0;
 		public boolean hasSoulOrb = false;
+		public double handheldBreak = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -453,6 +458,7 @@ public class TheDeepVoidModVariables {
 			nbt.putBoolean("noGravity", noGravity);
 			nbt.putDouble("heartbeatIndicator", heartbeatIndicator);
 			nbt.putBoolean("hasSoulOrb", hasSoulOrb);
+			nbt.putDouble("handheldBreak", handheldBreak);
 			return nbt;
 		}
 
@@ -522,6 +528,7 @@ public class TheDeepVoidModVariables {
 			noGravity = nbt.getBoolean("noGravity");
 			heartbeatIndicator = nbt.getDouble("heartbeatIndicator");
 			hasSoulOrb = nbt.getBoolean("hasSoulOrb");
+			handheldBreak = nbt.getDouble("handheldBreak");
 		}
 	}
 
@@ -610,6 +617,7 @@ public class TheDeepVoidModVariables {
 					variables.noGravity = message.data.noGravity;
 					variables.heartbeatIndicator = message.data.heartbeatIndicator;
 					variables.hasSoulOrb = message.data.hasSoulOrb;
+					variables.handheldBreak = message.data.handheldBreak;
 				}
 			});
 			context.setPacketHandled(true);

@@ -14,6 +14,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
+import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
@@ -25,14 +26,17 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerBossEvent;
@@ -44,8 +48,11 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
+import net.mcreator.thedeepvoid.procedures.WeaverOfSoulsPlayerCountProcedure;
 import net.mcreator.thedeepvoid.procedures.WeaverOfSoulsOnEntityTickUpdateProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
+
+import javax.annotation.Nullable;
 
 public class WeaverOfSoulsEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.BOOLEAN);
@@ -150,6 +157,13 @@ public class WeaverOfSoulsEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
+	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
+		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
+		WeaverOfSoulsPlayerCountProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		return retval;
+	}
+
+	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
@@ -219,6 +233,9 @@ public class WeaverOfSoulsEntity extends Monster implements GeoEntity {
 					&& !this.isAggressive()) {
 				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.fallenWeaver_walk"));
 			}
+			if (this.isDeadOrDying()) {
+				return event.setAndContinue(RawAnimation.begin().thenPlay("animation.fallenWeaver_death"));
+			}
 			if (this.isAggressive() && event.isMoving()) {
 				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.fallenWeaver_aggressive"));
 			}
@@ -249,7 +266,7 @@ public class WeaverOfSoulsEntity extends Monster implements GeoEntity {
 	@Override
 	protected void tickDeath() {
 		++this.deathTime;
-		if (this.deathTime == 20) {
+		if (this.deathTime == 73) {
 			this.remove(WeaverOfSoulsEntity.RemovalReason.KILLED);
 			this.dropExperience();
 		}

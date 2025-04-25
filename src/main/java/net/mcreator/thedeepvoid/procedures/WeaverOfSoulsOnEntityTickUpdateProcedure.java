@@ -460,7 +460,7 @@ public class WeaverOfSoulsOnEntityTickUpdateProcedure {
 		if (entity.getPersistentData().getDouble("deep_void:screamCooldown") > 0) {
 			entity.getPersistentData().putDouble("deep_void:screamCooldown", (entity.getPersistentData().getDouble("deep_void:screamCooldown") - 1));
 		}
-		if (entity.getPersistentData().getDouble("deep_void:screamCooldown") == 0 && entity.getPersistentData().getBoolean("deep_void:screamPlayed") == true) {
+		if (entity.getPersistentData().getDouble("deep_void:screamCooldown") <= 0 && entity.getPersistentData().getBoolean("deep_void:screamPlayed") == true) {
 			entity.getPersistentData().putBoolean("deep_void:screamPlayed", false);
 		}
 	}

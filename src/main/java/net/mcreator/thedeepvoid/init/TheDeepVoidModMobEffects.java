@@ -28,9 +28,11 @@ import net.mcreator.thedeepvoid.potion.MadnessMobEffect;
 import net.mcreator.thedeepvoid.potion.LurkerHeadNearMobEffect;
 import net.mcreator.thedeepvoid.potion.LookingMobEffect;
 import net.mcreator.thedeepvoid.potion.InvisibleHandsMobEffect;
+import net.mcreator.thedeepvoid.potion.HexedMobEffect;
 import net.mcreator.thedeepvoid.potion.HallucinateMobEffect;
 import net.mcreator.thedeepvoid.potion.GoldenBloodMobEffect;
 import net.mcreator.thedeepvoid.potion.FixationMobEffect;
+import net.mcreator.thedeepvoid.potion.DoomMobEffect;
 import net.mcreator.thedeepvoid.potion.DistractedMobEffect;
 import net.mcreator.thedeepvoid.potion.DecompositionMobEffect;
 import net.mcreator.thedeepvoid.potion.DeadInsideMobEffect;
@@ -68,4 +70,6 @@ public class TheDeepVoidModMobEffects {
 	public static final RegistryObject<MobEffect> DISTRACTED = REGISTRY.register("distracted", () -> new DistractedMobEffect());
 	public static final RegistryObject<MobEffect> DARKMARE_MUSIC = REGISTRY.register("darkmare_music", () -> new DarkmareMusicMobEffect());
 	public static final RegistryObject<MobEffect> WEAVER_CURSE = REGISTRY.register("weaver_curse", () -> new WeaverCurseMobEffect());
+	public static final RegistryObject<MobEffect> HEXED = REGISTRY.register("hexed", () -> new HexedMobEffect());
+	public static final RegistryObject<MobEffect> DOOM = REGISTRY.register("doom", () -> new DoomMobEffect());
 }

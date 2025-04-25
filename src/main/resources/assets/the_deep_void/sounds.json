@@ -880,5 +880,59 @@
         "stream": false
       }
     ]
+  },
+  "tombstone_hit1": {
+    "subtitle": "subtitles.tombstone_hit1",
+    "sounds": [
+      {
+        "name": "the_deep_void:tombstone_hit1",
+        "stream": false
+      }
+    ]
+  },
+  "tombstone_hit2": {
+    "subtitle": "subtitles.tombstone_hit2",
+    "sounds": [
+      {
+        "name": "the_deep_void:tombstone_hit2",
+        "stream": false
+      }
+    ]
+  },
+  "tombstone_hit3": {
+    "subtitle": "subtitles.tombstone_hit3",
+    "sounds": [
+      {
+        "name": "the_deep_void:tombstone_hit3",
+        "stream": false
+      }
+    ]
+  },
+  "tombstone_mobhit1": {
+    "subtitle": "subtitles.tombstone_mobhit1",
+    "sounds": [
+      {
+        "name": "the_deep_void:tombstone_mobhit1",
+        "stream": false
+      }
+    ]
+  },
+  "tombstone_mobhit2": {
+    "subtitle": "subtitles.tombstone_mobhit2",
+    "sounds": [
+      {
+        "name": "the_deep_void:tombstone_mobhit2",
+        "stream": false
+      }
+    ]
+  },
+  "tombstone_mobhit3": {
+    "subtitle": "subtitles.tombstone_mobhit3",
+    "sounds": [
+      {
+        "name": "the_deep_void:tombstone_mobhit3",
+        "stream": false
+      }
+    ]
   }
 }

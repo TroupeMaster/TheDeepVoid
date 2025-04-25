@@ -23,6 +23,7 @@ import net.mcreator.thedeepvoid.entity.LightEntity;
 import net.mcreator.thedeepvoid.entity.FourEyesEntity;
 import net.mcreator.thedeepvoid.entity.DamnedEntity;
 import net.mcreator.thedeepvoid.entity.CrossEyesEntity;
+import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import javax.annotation.Nullable;
 
@@ -41,94 +42,96 @@ public class LightTickUpdateProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof LightEntity) {
-			if (y <= 0) {
-				if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty()) {
-					if (entity.getPersistentData().getDouble("deep_void:shadowSpawn") >= 180) {
-						entity.getPersistentData().putDouble("deep_void:shadowSpawn", 0);
-						if (Math.random() < 0.25) {
-							if (!(!world.getEntitiesOfClass(ShadowEntity.class, AABB.ofSize(new Vec3((x + 8), y, z), 10, 10, 10), e -> true).isEmpty())) {
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = TheDeepVoidModEntities.SHADOW.get().spawn(_level, BlockPos.containing(x + 8 + Mth.nextInt(RandomSource.create(), 1, 4), y, z), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+			if (DeepVoidConfigConfiguration.DESTROYLIGHTSOURCES.get() == true) {
+				if (y <= 0) {
+					if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty()) {
+						if (entity.getPersistentData().getDouble("deep_void:shadowSpawn") >= 180) {
+							entity.getPersistentData().putDouble("deep_void:shadowSpawn", 0);
+							if (Math.random() < 0.25) {
+								if (!(!world.getEntitiesOfClass(ShadowEntity.class, AABB.ofSize(new Vec3((x + 8), y, z), 10, 10, 10), e -> true).isEmpty())) {
+									if (world instanceof ServerLevel _level) {
+										Entity entityToSpawn = TheDeepVoidModEntities.SHADOW.get().spawn(_level, BlockPos.containing(x + 8 + Mth.nextInt(RandomSource.create(), 1, 4), y, z), MobSpawnType.MOB_SUMMONED);
+										if (entityToSpawn != null) {
+											entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+										}
 									}
 								}
-							}
-						} else if (Math.random() < 0.25) {
-							if (!(!world.getEntitiesOfClass(ShadowEntity.class, AABB.ofSize(new Vec3((x - 8), y, z), 10, 10, 10), e -> true).isEmpty())) {
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = TheDeepVoidModEntities.SHADOW.get().spawn(_level, BlockPos.containing(x - 8 + Mth.nextInt(RandomSource.create(), -4, -1), y, z), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+							} else if (Math.random() < 0.25) {
+								if (!(!world.getEntitiesOfClass(ShadowEntity.class, AABB.ofSize(new Vec3((x - 8), y, z), 10, 10, 10), e -> true).isEmpty())) {
+									if (world instanceof ServerLevel _level) {
+										Entity entityToSpawn = TheDeepVoidModEntities.SHADOW.get().spawn(_level, BlockPos.containing(x - 8 + Mth.nextInt(RandomSource.create(), -4, -1), y, z), MobSpawnType.MOB_SUMMONED);
+										if (entityToSpawn != null) {
+											entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+										}
 									}
 								}
-							}
-						} else if (Math.random() < 0.25) {
-							if (!(!world.getEntitiesOfClass(ShadowEntity.class, AABB.ofSize(new Vec3(x, y, (z - 8)), 10, 10, 10), e -> true).isEmpty())) {
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = TheDeepVoidModEntities.SHADOW.get().spawn(_level, BlockPos.containing(x, y, z - 8 + Mth.nextInt(RandomSource.create(), -4, -1)), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+							} else if (Math.random() < 0.25) {
+								if (!(!world.getEntitiesOfClass(ShadowEntity.class, AABB.ofSize(new Vec3(x, y, (z - 8)), 10, 10, 10), e -> true).isEmpty())) {
+									if (world instanceof ServerLevel _level) {
+										Entity entityToSpawn = TheDeepVoidModEntities.SHADOW.get().spawn(_level, BlockPos.containing(x, y, z - 8 + Mth.nextInt(RandomSource.create(), -4, -1)), MobSpawnType.MOB_SUMMONED);
+										if (entityToSpawn != null) {
+											entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+										}
+									}
+								}
+							} else {
+								if (!(!world.getEntitiesOfClass(ShadowEntity.class, AABB.ofSize(new Vec3(x, y, (z + 8)), 10, 10, 10), e -> true).isEmpty())) {
+									if (world instanceof ServerLevel _level) {
+										Entity entityToSpawn = TheDeepVoidModEntities.SHADOW.get().spawn(_level, BlockPos.containing(x, y, z + 8 + Mth.nextInt(RandomSource.create(), 1, 4)), MobSpawnType.MOB_SUMMONED);
+										if (entityToSpawn != null) {
+											entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+										}
 									}
 								}
 							}
 						} else {
-							if (!(!world.getEntitiesOfClass(ShadowEntity.class, AABB.ofSize(new Vec3(x, y, (z + 8)), 10, 10, 10), e -> true).isEmpty())) {
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = TheDeepVoidModEntities.SHADOW.get().spawn(_level, BlockPos.containing(x, y, z + 8 + Mth.nextInt(RandomSource.create(), 1, 4)), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-									}
-								}
-							}
+							entity.getPersistentData().putDouble("deep_void:shadowSpawn", (entity.getPersistentData().getDouble("deep_void:shadowSpawn") + 1));
 						}
-					} else {
-						entity.getPersistentData().putDouble("deep_void:shadowSpawn", (entity.getPersistentData().getDouble("deep_void:shadowSpawn") + 1));
 					}
-				}
-			} else {
-				if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 180, 180, 180), e -> true).isEmpty()) {
-					if (entity.getPersistentData().getDouble("deep_void:damnedSpawn") >= 240) {
-						entity.getPersistentData().putDouble("deep_void:damnedSpawn", 0);
-						if (Math.random() < 0.25) {
-							if (!(!world.getEntitiesOfClass(DamnedEntity.class, AABB.ofSize(new Vec3((x + 8), y, z), 10, 10, 10), e -> true).isEmpty())) {
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = TheDeepVoidModEntities.DAMNED.get().spawn(_level, BlockPos.containing(x + 8 + Mth.nextInt(RandomSource.create(), 1, 4), y, z), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				} else {
+					if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 180, 180, 180), e -> true).isEmpty()) {
+						if (entity.getPersistentData().getDouble("deep_void:damnedSpawn") >= 240) {
+							entity.getPersistentData().putDouble("deep_void:damnedSpawn", 0);
+							if (Math.random() < 0.25) {
+								if (!(!world.getEntitiesOfClass(DamnedEntity.class, AABB.ofSize(new Vec3((x + 8), y, z), 10, 10, 10), e -> true).isEmpty())) {
+									if (world instanceof ServerLevel _level) {
+										Entity entityToSpawn = TheDeepVoidModEntities.DAMNED.get().spawn(_level, BlockPos.containing(x + 8 + Mth.nextInt(RandomSource.create(), 1, 4), y, z), MobSpawnType.MOB_SUMMONED);
+										if (entityToSpawn != null) {
+											entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+										}
 									}
 								}
-							}
-						} else if (Math.random() < 0.25) {
-							if (!(!world.getEntitiesOfClass(CrossEyesEntity.class, AABB.ofSize(new Vec3((x - 8), y, z), 10, 10, 10), e -> true).isEmpty())) {
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = TheDeepVoidModEntities.CROSS_EYES.get().spawn(_level, BlockPos.containing(x - 8 + Mth.nextInt(RandomSource.create(), -4, -1), y, z), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+							} else if (Math.random() < 0.25) {
+								if (!(!world.getEntitiesOfClass(CrossEyesEntity.class, AABB.ofSize(new Vec3((x - 8), y, z), 10, 10, 10), e -> true).isEmpty())) {
+									if (world instanceof ServerLevel _level) {
+										Entity entityToSpawn = TheDeepVoidModEntities.CROSS_EYES.get().spawn(_level, BlockPos.containing(x - 8 + Mth.nextInt(RandomSource.create(), -4, -1), y, z), MobSpawnType.MOB_SUMMONED);
+										if (entityToSpawn != null) {
+											entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+										}
 									}
 								}
-							}
-						} else if (Math.random() < 0.25) {
-							if (!(!world.getEntitiesOfClass(FourEyesEntity.class, AABB.ofSize(new Vec3(x, y, (z - 8)), 10, 10, 10), e -> true).isEmpty())) {
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = TheDeepVoidModEntities.FOUR_EYES.get().spawn(_level, BlockPos.containing(x, y, z - 8 + Mth.nextInt(RandomSource.create(), -4, -1)), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+							} else if (Math.random() < 0.25) {
+								if (!(!world.getEntitiesOfClass(FourEyesEntity.class, AABB.ofSize(new Vec3(x, y, (z - 8)), 10, 10, 10), e -> true).isEmpty())) {
+									if (world instanceof ServerLevel _level) {
+										Entity entityToSpawn = TheDeepVoidModEntities.FOUR_EYES.get().spawn(_level, BlockPos.containing(x, y, z - 8 + Mth.nextInt(RandomSource.create(), -4, -1)), MobSpawnType.MOB_SUMMONED);
+										if (entityToSpawn != null) {
+											entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+										}
+									}
+								}
+							} else {
+								if (!(!world.getEntitiesOfClass(MultipleEyesEntity.class, AABB.ofSize(new Vec3(x, y, (z + 8)), 10, 10, 10), e -> true).isEmpty())) {
+									if (world instanceof ServerLevel _level) {
+										Entity entityToSpawn = TheDeepVoidModEntities.MULTIPLE_EYES.get().spawn(_level, BlockPos.containing(x, y, z + 8 + Mth.nextInt(RandomSource.create(), 1, 4)), MobSpawnType.MOB_SUMMONED);
+										if (entityToSpawn != null) {
+											entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+										}
 									}
 								}
 							}
 						} else {
-							if (!(!world.getEntitiesOfClass(MultipleEyesEntity.class, AABB.ofSize(new Vec3(x, y, (z + 8)), 10, 10, 10), e -> true).isEmpty())) {
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = TheDeepVoidModEntities.MULTIPLE_EYES.get().spawn(_level, BlockPos.containing(x, y, z + 8 + Mth.nextInt(RandomSource.create(), 1, 4)), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-									}
-								}
-							}
+							entity.getPersistentData().putDouble("deep_void:damnedSpawn", (entity.getPersistentData().getDouble("deep_void:damnedSpawn") + 1));
 						}
-					} else {
-						entity.getPersistentData().putDouble("deep_void:damnedSpawn", (entity.getPersistentData().getDouble("deep_void:damnedSpawn") + 1));
 					}
 				}
 			}

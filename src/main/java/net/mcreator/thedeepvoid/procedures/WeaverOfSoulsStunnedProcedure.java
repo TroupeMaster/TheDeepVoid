@@ -50,7 +50,7 @@ public class WeaverOfSoulsStunnedProcedure {
 					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 5, 99, false, false));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 5, 0, false, false));
-				if (entity.getPersistentData().getDouble("deep_void:stunCount") >= 300) {
+				if (entity.getPersistentData().getDouble("deep_void:stunCount") >= 160) {
 					entity.getPersistentData().putBoolean("deep_void:stunned", false);
 					entity.getPersistentData().putDouble("deep_void:stunCount", 0);
 					if (entity instanceof WeaverOfSoulsEntity) {
@@ -78,10 +78,10 @@ public class WeaverOfSoulsStunnedProcedure {
 					((WeaverOfSoulsEntity) entity).setAnimation("empty");
 				}
 			}
-			if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()) {
+			if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 90, 90, 90), e -> true).isEmpty()) {
 				{
 					final Vec3 _center = new Vec3(x, y, z);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(80 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(90 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (entityiterator instanceof Player) {
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -90,7 +90,7 @@ public class WeaverOfSoulsStunnedProcedure {
 					}
 				}
 			}
-			if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty())
+			if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 90, 90, 90), e -> true).isEmpty())
 					&& (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) != (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);

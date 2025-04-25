@@ -18,7 +18,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.mcreator.thedeepvoid.procedures.VoidriumLeggingsTickEventProcedure;
 import net.mcreator.thedeepvoid.procedures.VoidriumHelmetTickEventProcedure;
 import net.mcreator.thedeepvoid.procedures.VoidriumChestplateTickEventProcedure;
-import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
 import com.google.common.collect.Iterables;
 
@@ -27,12 +26,12 @@ public abstract class SacredVoidriumItem extends ArmorItem {
 		super(new ArmorMaterial() {
 			@Override
 			public int getDurabilityForType(ArmorItem.Type type) {
-				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 140;
+				return new int[]{13, 15, 16, 11}[type.getSlot().getIndex()] * 0;
 			}
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{7, 9, 10, 7}[type.getSlot().getIndex()];
+				return new int[]{8, 10, 12, 8}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -47,7 +46,7 @@ public abstract class SacredVoidriumItem extends ArmorItem {
 
 			@Override
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(TheDeepVoidModItems.ROUGH_VOIDRIUM.get()));
+				return Ingredient.of();
 			}
 
 			@Override
@@ -62,7 +61,7 @@ public abstract class SacredVoidriumItem extends ArmorItem {
 
 			@Override
 			public float getKnockbackResistance() {
-				return 0.3f;
+				return 0.4f;
 			}
 		}, type, properties);
 	}
@@ -74,7 +73,7 @@ public abstract class SacredVoidriumItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/sacred_voidrium__layer_1.png";
+			return "the_deep_void:textures/models/armor/soulfused_voidrium__layer_1.png";
 		}
 
 		@Override
@@ -93,7 +92,7 @@ public abstract class SacredVoidriumItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/sacred_voidrium__layer_1.png";
+			return "the_deep_void:textures/models/armor/soulfused_voidrium__layer_1.png";
 		}
 
 		@Override
@@ -112,7 +111,7 @@ public abstract class SacredVoidriumItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/sacred_voidrium__layer_2.png";
+			return "the_deep_void:textures/models/armor/soulfused_voidrium__layer_2.png";
 		}
 
 		@Override
@@ -131,7 +130,7 @@ public abstract class SacredVoidriumItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/sacred_voidrium__layer_1.png";
+			return "the_deep_void:textures/models/armor/soulfused_voidrium__layer_1.png";
 		}
 	}
 }

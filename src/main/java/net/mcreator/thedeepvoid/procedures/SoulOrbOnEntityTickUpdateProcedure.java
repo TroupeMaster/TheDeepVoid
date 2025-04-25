@@ -27,11 +27,13 @@ public class SoulOrbOnEntityTickUpdateProcedure {
 					for (Entity entityiterator : _entfound) {
 						if (entityiterator instanceof Player) {
 							if ((entityiterator.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).hasSoulOrb == true) {
-								{
-									Entity _ent = entity;
-									_ent.teleportTo((entityiterator.getX()), (entityiterator.getY() + 2.5), (entityiterator.getZ()));
-									if (_ent instanceof ServerPlayer _serverPlayer)
-										_serverPlayer.connection.teleport((entityiterator.getX()), (entityiterator.getY() + 2.5), (entityiterator.getZ()), _ent.getYRot(), _ent.getXRot());
+								if ((entity.getPersistentData().getString("deep_void:owner")).equals(entityiterator.getDisplayName().getString())) {
+									{
+										Entity _ent = entity;
+										_ent.teleportTo((entityiterator.getX()), (entityiterator.getY() + 2.5), (entityiterator.getZ()));
+										if (_ent instanceof ServerPlayer _serverPlayer)
+											_serverPlayer.connection.teleport((entityiterator.getX()), (entityiterator.getY() + 2.5), (entityiterator.getZ()), _ent.getYRot(), _ent.getXRot());
+									}
 								}
 							} else {
 								entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.PLAYER_ATTACK), entityiterator), 1);

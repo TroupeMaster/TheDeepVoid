@@ -36,4 +36,9 @@ public class WeaverOfSoulsRenderer extends GeoEntityRenderer<WeaverOfSoulsEntity
 		this.scaleWidth = scale;
 		super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
 	}
+
+	@Override
+	protected float getDeathMaxRotation(WeaverOfSoulsEntity entityLivingBaseIn) {
+		return 0.0F;
+	}
 }

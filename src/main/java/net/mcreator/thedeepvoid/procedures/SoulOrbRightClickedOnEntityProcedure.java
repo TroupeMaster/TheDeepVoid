@@ -20,6 +20,7 @@ public class SoulOrbRightClickedOnEntityProcedure {
 				});
 			}
 			entity.getPersistentData().putBoolean("deep_void:pickedUp", true);
+			entity.getPersistentData().putString("deep_void:owner", (sourceentity.getDisplayName().getString()));
 			{
 				Entity _ent = entity;
 				_ent.teleportTo((sourceentity.getX()), (sourceentity.getY() + 2.5), (sourceentity.getZ()));

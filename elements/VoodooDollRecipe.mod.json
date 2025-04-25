@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:OnyxNeedle"
+      },
+      {
+        "value": "CUSTOM:SacredCinnabar"
+      },
+      {
+        "value": "CUSTOM:SacredCinnabar"
+      },
+      {
+        "value": "CUSTOM:SoulShard"
+      },
+      {
+        "value": "CUSTOM:HexedDoll"
+      },
+      {
+        "value": "CUSTOM:SacredCinnabar"
+      },
+      {
+        "value": "CUSTOM:SacredCinnabar"
+      },
+      {
+        "value": "CUSTOM:SoulShard"
+      },
+      {
+        "value": "CUSTOM:UmbriumGem"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:VoodooDoll"
+    },
+    "name": "voodoo_doll",
+    "namespace": "mod"
+  }
+}

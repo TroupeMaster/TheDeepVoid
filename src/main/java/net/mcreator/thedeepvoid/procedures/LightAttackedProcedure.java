@@ -22,6 +22,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
 import net.mcreator.thedeepvoid.entity.ThrownSoulSeekerEntity;
+import net.mcreator.thedeepvoid.entity.SummonedShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.SummonedCharredSpikeEntity;
 import net.mcreator.thedeepvoid.entity.SulfurTntEntityEntity;
 import net.mcreator.thedeepvoid.entity.StalkingStalkerEntity;
@@ -164,7 +165,7 @@ public class LightAttackedProcedure {
 					_level.sendParticles(ParticleTypes.SMOKE, (entity.getX()), (entity.getY()), (entity.getZ()), 10, (Mth.nextDouble(RandomSource.create(), -0.01, 0.01)), 1, (Mth.nextDouble(RandomSource.create(), -0.01, 0.01)), 0.4);
 			}
 		}
-		if (entity instanceof ShadowHandEntity || entity instanceof HandSpawnEntity) {
+		if (entity instanceof ShadowHandEntity || entity instanceof SummonedShadowHandEntity || entity instanceof HandSpawnEntity) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
 			} else if (event != null && event.hasResult()) {

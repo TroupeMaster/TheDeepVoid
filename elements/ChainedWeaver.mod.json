@@ -12,6 +12,9 @@
     "boundingBoxScale": {
       "fixedValue": 1.0
     },
+    "solidBoundingBox": {
+      "name": "ChainedWeaverSolidBoundingBoxCondition"
+    },
     "entityDataEntries": [],
     "modelWidth": 2.8,
     "modelHeight": 2.8,
@@ -105,6 +108,9 @@
     },
     "raidCelebrationSound": {
       "value": ""
+    },
+    "onRightClickedOn": {
+      "name": "ChainedWeaverRightClickedOnEntity"
     },
     "onMobTickUpdate": {
       "name": "ChainedWeaverOnEntityTickUpdate"

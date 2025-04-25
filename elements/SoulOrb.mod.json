@@ -33,16 +33,20 @@
     "modelHeight": 0.8,
     "modelShadowSize": 0.0,
     "mountedYOffset": 0.0,
-    "hasSpawnEgg": false,
+    "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -1,
+      "value": -16743782,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -1,
+      "value": -12590593,
       "falpha": 0.0
     },
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
     "isBoss": false,
     "bossBarColor": "PINK",
     "bossBarType": "PROGRESS",
@@ -74,7 +78,7 @@
     "armorBaseValue": 0.0,
     "trackingRange": 1,
     "followRange": 1,
-    "health": 20,
+    "health": 100,
     "xpAmount": 0,
     "waterMob": false,
     "breatheUnderwater": {
@@ -111,10 +115,10 @@
       "value": ""
     },
     "hurtSound": {
-      "value": ""
+      "value": "intentionally_empty"
     },
     "deathSound": {
-      "value": ""
+      "value": "intentionally_empty"
     },
     "stepSound": {
       "value": ""
@@ -123,6 +127,9 @@
       "value": ""
     },
     "entityDataEntries": [],
+    "whenMobDies": {
+      "name": "SoulOrbEntityDies"
+    },
     "onRightClickedOn": {
       "name": "SoulOrbRightClickedOnEntity"
     },

@@ -26,6 +26,7 @@ import net.mcreator.thedeepvoid.entity.TamedMotherBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.TamedBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.TamedAlphaBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.SwarmerEntity;
+import net.mcreator.thedeepvoid.entity.SummonedShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.SummonedCharredSpikeEntity;
 import net.mcreator.thedeepvoid.entity.SulfurTntEntityEntity;
 import net.mcreator.thedeepvoid.entity.SulfurBombProjEntity;
@@ -75,6 +76,7 @@ import net.mcreator.thedeepvoid.entity.FallingCorpseEntity;
 import net.mcreator.thedeepvoid.entity.EyekinFlyingEntity;
 import net.mcreator.thedeepvoid.entity.EyekinEntity;
 import net.mcreator.thedeepvoid.entity.EverhungerEntity;
+import net.mcreator.thedeepvoid.entity.DoomingTombstoneEntity;
 import net.mcreator.thedeepvoid.entity.DevourerHookTendrilEntity;
 import net.mcreator.thedeepvoid.entity.DevourerEntity;
 import net.mcreator.thedeepvoid.entity.DeathVultureEntity;
@@ -380,6 +382,10 @@ public class TheDeepVoidModEntities {
 					.sized(0.8f, 0.8f));
 	public static final RegistryObject<EntityType<ChainedWeaverEntity>> CHAINED_WEAVER = register("chained_weaver", EntityType.Builder.<ChainedWeaverEntity>of(ChainedWeaverEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ChainedWeaverEntity::new).fireImmune().sized(2.8f, 2.8f));
+	public static final RegistryObject<EntityType<DoomingTombstoneEntity>> DOOMING_TOMBSTONE = register("dooming_tombstone", EntityType.Builder.<DoomingTombstoneEntity>of(DoomingTombstoneEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(DoomingTombstoneEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<SummonedShadowHandEntity>> SUMMONED_SHADOW_HAND = register("summoned_shadow_hand", EntityType.Builder.<SummonedShadowHandEntity>of(SummonedShadowHandEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SummonedShadowHandEntity::new).fireImmune().sized(0.4f, 1.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -462,6 +468,8 @@ public class TheDeepVoidModEntities {
 			FourEyesEntity.init();
 			SoulOrbEntity.init();
 			ChainedWeaverEntity.init();
+			DoomingTombstoneEntity.init();
+			SummonedShadowHandEntity.init();
 		});
 	}
 
@@ -541,5 +549,7 @@ public class TheDeepVoidModEntities {
 		event.put(FOUR_EYES.get(), FourEyesEntity.createAttributes().build());
 		event.put(SOUL_ORB.get(), SoulOrbEntity.createAttributes().build());
 		event.put(CHAINED_WEAVER.get(), ChainedWeaverEntity.createAttributes().build());
+		event.put(DOOMING_TOMBSTONE.get(), DoomingTombstoneEntity.createAttributes().build());
+		event.put(SUMMONED_SHADOW_HAND.get(), SummonedShadowHandEntity.createAttributes().build());
 	}
 }

@@ -69,7 +69,7 @@
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
-    "deathTime": 20,
+    "deathTime": 73,
     "lerp": 4,
     "disableCollisions": false,
     "ridable": false,
@@ -109,6 +109,9 @@
     "onMobTickUpdate": {
       "name": "WeaverOfSoulsOnEntityTickUpdate"
     },
+    "onInitialSpawn": {
+      "name": "WeaverOfSoulsPlayerCount"
+    },
     "hasAI": true,
     "aiBase": "(none)",
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"attack_on_collide\"><field name=\"speed\">1.8</field><field name=\"longmemory\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"attack_action\"><field name=\"callhelp\">FALSE</field><field name=\"condition\">null,null</field><next><block type=\"wander\"><field name=\"speed\">1</field><field name=\"condition\">null,null</field><next><block type=\"look_around\"><field name=\"condition\">null,null</field><next><block type=\"swim_in_water\"><field name=\"condition\">null,null</field><next><block type=\"attack_entity\"><field name=\"insight\">TRUE</field><field name=\"nearby\">FALSE</field><field name=\"entity\">EntityPlayer</field><field name=\"condition\">null,null</field></block></next></block></next></block></next></block></next></block></next></block></next></block></xml>",
@@ -116,7 +119,7 @@
     "groupName": "",
     "animation1": "animation.fallenWeaver_idle",
     "animation2": "animation.fallenWeaver_walk",
-    "animation3": "",
+    "animation3": "animation.fallenWeaver_death",
     "animation4": "",
     "animation5": "",
     "animation6": "",
@@ -125,7 +128,7 @@
     "animation9": "",
     "animation10": "animation.fallenWeaver_aggressive",
     "enable2": true,
-    "enable3": false,
+    "enable3": true,
     "enable4": false,
     "enable5": false,
     "enable6": false,
@@ -135,7 +138,7 @@
     "enable10": true,
     "breedable": false,
     "tameable": false,
-    "disableDeathRotation": false,
+    "disableDeathRotation": true,
     "headMovement": false,
     "eyeHeight": false,
     "breedTriggerItems": [],

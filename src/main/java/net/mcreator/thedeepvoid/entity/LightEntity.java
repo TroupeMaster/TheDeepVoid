@@ -66,6 +66,11 @@ public class LightEntity extends Monster {
 	}
 
 	@Override
+	public SoundEvent getDeathSound() {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("intentionally_empty"));
+	}
+
+	@Override
 	public boolean hurt(DamageSource damagesource, float amount) {
 		if (damagesource.is(DamageTypes.IN_FIRE))
 			return false;

@@ -12,6 +12,7 @@ import net.mcreator.thedeepvoid.entity.TamedMotherBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.TamedBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.TamedAlphaBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.SwarmerEntity;
+import net.mcreator.thedeepvoid.entity.SummonedShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.StalkingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
 import net.mcreator.thedeepvoid.entity.SporeSpewerEntity;
@@ -41,6 +42,7 @@ import net.mcreator.thedeepvoid.entity.FleshCubeEntity;
 import net.mcreator.thedeepvoid.entity.EyekinFlyingEntity;
 import net.mcreator.thedeepvoid.entity.EyekinEntity;
 import net.mcreator.thedeepvoid.entity.EverhungerEntity;
+import net.mcreator.thedeepvoid.entity.DoomingTombstoneEntity;
 import net.mcreator.thedeepvoid.entity.DevourerEntity;
 import net.mcreator.thedeepvoid.entity.DeathVultureEntity;
 import net.mcreator.thedeepvoid.entity.DeathMawEntity;
@@ -444,6 +446,20 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof ChainedWeaverEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof DoomingTombstoneEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof SummonedShadowHandEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

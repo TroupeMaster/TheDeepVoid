@@ -113,4 +113,10 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> DARKMARE = REGISTRY.register("darkmare", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "darkmare")));
 	public static final RegistryObject<SoundEvent> WEAVER_SCREAM = REGISTRY.register("weaver_scream", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "weaver_scream")));
 	public static final RegistryObject<SoundEvent> WEAVER_SCREAM_LOUD = REGISTRY.register("weaver_scream_loud", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "weaver_scream_loud")));
+	public static final RegistryObject<SoundEvent> TOMBSTONE_HIT1 = REGISTRY.register("tombstone_hit1", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "tombstone_hit1")));
+	public static final RegistryObject<SoundEvent> TOMBSTONE_HIT2 = REGISTRY.register("tombstone_hit2", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "tombstone_hit2")));
+	public static final RegistryObject<SoundEvent> TOMBSTONE_HIT3 = REGISTRY.register("tombstone_hit3", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "tombstone_hit3")));
+	public static final RegistryObject<SoundEvent> TOMBSTONE_MOBHIT1 = REGISTRY.register("tombstone_mobhit1", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "tombstone_mobhit1")));
+	public static final RegistryObject<SoundEvent> TOMBSTONE_MOBHIT2 = REGISTRY.register("tombstone_mobhit2", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "tombstone_mobhit2")));
+	public static final RegistryObject<SoundEvent> TOMBSTONE_MOBHIT3 = REGISTRY.register("tombstone_mobhit3", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "tombstone_mobhit3")));
 }

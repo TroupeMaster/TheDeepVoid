@@ -29,7 +29,11 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": []
+      "fixedValue": [
+        "§7Once used:",
+        " §9If in the Deep Void: Teleports you back to the Overworld",
+        " §9If in any other dimension: Teleports you to the Deep Void"
+      ]
     },
     "glowCondition": {
       "fixedValue": false

@@ -127,7 +127,7 @@
     "specialInformation": {
       "fixedValue": []
     },
-    "hardness": 10.0,
+    "hardness": 99.0,
     "resistance": 200.0,
     "hasGravity": false,
     "isWaterloggable": false,
@@ -136,13 +136,13 @@
         "value": "CUSTOM:TheDeepVoid"
       }
     ],
-    "destroyTool": "pickaxe",
+    "destroyTool": "Not specified",
     "customDrop": {
       "value": ""
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
-    "requiresCorrectTool": true,
+    "requiresCorrectTool": false,
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canRedstoneConnect": false,
@@ -191,7 +191,7 @@
       "value": ""
     },
     "luminance": 0,
-    "unbreakable": false,
+    "unbreakable": true,
     "vanillaToolTier": "NONE",
     "isBonemealable": false,
     "hasInventory": true,

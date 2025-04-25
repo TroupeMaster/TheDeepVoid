@@ -2,21 +2,24 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    " a ",
-    "bcb",
-    "ddd"
+    "aba",
+    "cdc",
+    "aea"
   ],
   "key": {
     "a": {
-      "item": "the_deep_void:liquid_void_bucket"
+      "item": "the_deep_void:sacred_cinnabar"
     },
     "b": {
-      "item": "the_deep_void:void_matter"
+      "item": "the_deep_void:liquid_void_bucket"
     },
     "c": {
-      "item": "the_deep_void:sins_and_sinners"
+      "item": "the_deep_void:black_moss"
     },
     "d": {
+      "item": "minecraft:soul_sand"
+    },
+    "e": {
       "item": "the_deep_void:flesh_block"
     }
   },

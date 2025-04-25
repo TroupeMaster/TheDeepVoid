@@ -6,19 +6,14 @@ package net.mcreator.thedeepvoid.init;
 
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.Registries;
 
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class TheDeepVoidModTabs {
 	public static final DeferredRegister<CreativeModeTab> REGISTRY = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TheDeepVoidMod.MODID);
 	public static final RegistryObject<CreativeModeTab> THE_DEEP_VOID = REGISTRY.register("the_deep_void",
@@ -489,20 +484,20 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.VOID_MIRROR.get());
 				tabData.accept(TheDeepVoidModItems.WEAVER_OF_SOULS_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.DARKMARE.get());
+				tabData.accept(TheDeepVoidModItems.HAND_SPAWN_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.DAMNED_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModBlocks.SOUL_ORB_PILLAR.get().asItem());
+				tabData.accept(TheDeepVoidModItems.SOUL_ORB_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModBlocks.SOUL_CONTAINER.get().asItem());
 				tabData.accept(TheDeepVoidModItems.CHAINED_WEAVER_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.HEXED_DOLL.get());
 				tabData.accept(TheDeepVoidModItems.WEAVER_OF_SOULS_TREASURE_BAG.get());
+				tabData.accept(TheDeepVoidModItems.VOODOO_DOLL.get());
+				tabData.accept(TheDeepVoidModItems.SOUL_SHARD.get());
+				tabData.accept(TheDeepVoidModItems.THE_HARVEST.get());
+				tabData.accept(TheDeepVoidModItems.HARVESTER_MASK_HELMET.get());
+				tabData.accept(TheDeepVoidModItems.TOMBSTONE.get());
 			})
 
 					.build());
-
-	@SubscribeEvent
-	public static void buildTabContentsVanilla(BuildCreativeModeTabContentsEvent tabData) {
-		if (tabData.getTabKey() == CreativeModeTabs.SPAWN_EGGS) {
-			tabData.accept(TheDeepVoidModItems.HAND_SPAWN_SPAWN_EGG.get());
-		}
-	}
 }

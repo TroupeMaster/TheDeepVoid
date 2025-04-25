@@ -1,6 +1,8 @@
 {
   "replace": false,
   "values": [
+    "the_deep_void:tombstone",
+    "the_deep_void:the_harvest",
     "the_deep_void:soul_cleaver",
     "the_deep_void:cruel_stiletto",
     "the_deep_void:gods_scourge_greatsword",

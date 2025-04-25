@@ -1,6 +1,7 @@
 
 package net.mcreator.thedeepvoid.entity;
 
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
@@ -21,12 +22,15 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.procedures.SoulOrbRightClickedOnEntityProcedure;
 import net.mcreator.thedeepvoid.procedures.SoulOrbOnEntityTickUpdateProcedure;
+import net.mcreator.thedeepvoid.procedures.SoulOrbEntityDiesProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 public class SoulOrbEntity extends PathfinderMob {
@@ -70,8 +74,24 @@ public class SoulOrbEntity extends PathfinderMob {
 	}
 
 	@Override
+	public SoundEvent getHurtSound(DamageSource ds) {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("intentionally_empty"));
+	}
+
+	@Override
+	public SoundEvent getDeathSound() {
+		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("intentionally_empty"));
+	}
+
+	@Override
 	public boolean causeFallDamage(float l, float d, DamageSource source) {
 		return false;
+	}
+
+	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		SoulOrbEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override
@@ -128,7 +148,7 @@ public class SoulOrbEntity extends PathfinderMob {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0);
-		builder = builder.add(Attributes.MAX_HEALTH, 20);
+		builder = builder.add(Attributes.MAX_HEALTH, 100);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 1);

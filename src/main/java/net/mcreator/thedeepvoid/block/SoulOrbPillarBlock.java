@@ -33,8 +33,7 @@ import net.mcreator.thedeepvoid.block.entity.SoulOrbPillarBlockEntity;
 
 public class SoulOrbPillarBlock extends Block implements EntityBlock {
 	public SoulOrbPillarBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.BASALT).strength(10f, 200f).requiresCorrectToolForDrops().noOcclusion().pushReaction(PushReaction.BLOCK)
-				.isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.BASALT).strength(-1, 3600000).noOcclusion().pushReaction(PushReaction.BLOCK).isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override

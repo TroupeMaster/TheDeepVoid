@@ -3,13 +3,13 @@
   "_type": "armor",
   "definition": {
     "enableHelmet": true,
-    "textureHelmet": "sacred_voidrium_helmet",
+    "textureHelmet": "soul_voidrium_helmet",
     "enableBody": true,
-    "textureBody": "sacred_voidrium_chestplate",
+    "textureBody": "soulfused_voidrium_chestplate",
     "enableLeggings": true,
-    "textureLeggings": "sacred_voidrium_leggings",
+    "textureLeggings": "soulfused_voidrium_leggings",
     "enableBoots": true,
-    "textureBoots": "sacred_voidrium_boots",
+    "textureBoots": "soulfused_voidrium_boots",
     "onHelmetTick": {
       "name": "VoidriumHelmetTickEvent"
     },
@@ -24,11 +24,11 @@
         "value": "CUSTOM:TheDeepVoid"
       }
     ],
-    "armorTextureFile": "sacred_voidrium_",
-    "helmetName": "Sacred Voidrium Helmet",
-    "bodyName": "Sacred Voidrium Chestplate",
-    "leggingsName": "Sacred Voidrium Leggings",
-    "bootsName": "Sacred Voidrium Boots",
+    "armorTextureFile": "soulfused_voidrium_",
+    "helmetName": "Soul-Fused Voidrium Helmet",
+    "bodyName": "Soul-Fused Voidrium Chestplate",
+    "leggingsName": "Soul-Fused Voidrium Leggings",
+    "bootsName": "Soul-Fused Voidrium Boots",
     "helmetSpecialInformation": {
       "fixedValue": []
     },
@@ -93,21 +93,17 @@
     "bootsPiglinNeutral": {
       "fixedValue": false
     },
-    "maxDamage": 140,
-    "damageValueHelmet": 7,
-    "damageValueBody": 10,
-    "damageValueLeggings": 9,
-    "damageValueBoots": 7,
+    "maxDamage": 0,
+    "damageValueHelmet": 8,
+    "damageValueBody": 12,
+    "damageValueLeggings": 10,
+    "damageValueBoots": 8,
     "enchantability": 24,
     "toughness": 4.5,
-    "knockbackResistance": 0.30000000000000004,
+    "knockbackResistance": 0.4,
     "equipSound": {
       "value": "item.armor.equip_netherite"
     },
-    "repairItems": [
-      {
-        "value": "CUSTOM:RoughVoidrium"
-      }
-    ]
+    "repairItems": []
   }
 }

@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "the_deep_void:item/sacred_voidrium_boots"
+    "layer0": "the_deep_void:item/soulfused_voidrium_boots"
   }
 }

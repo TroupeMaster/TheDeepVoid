@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "the_deep_void:item/sacred_voidrium_helmet"
+    "layer0": "the_deep_void:item/soul_voidrium_helmet"
   }
 }

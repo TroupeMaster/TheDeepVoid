@@ -12,31 +12,31 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": ""
+        "value": "CUSTOM:SacredCinnabar"
       },
       {
         "value": "CUSTOM:LiquidVoid.bucket"
       },
       {
-        "value": ""
+        "value": "CUSTOM:SacredCinnabar"
       },
       {
-        "value": "CUSTOM:VoidMatter"
+        "value": "CUSTOM:BlackMoss"
       },
       {
-        "value": "CUSTOM:SinsAndSinners"
+        "value": "Blocks.SOUL_SAND"
       },
       {
-        "value": "CUSTOM:VoidMatter"
+        "value": "CUSTOM:BlackMoss"
       },
       {
-        "value": "CUSTOM:FleshBlock"
-      },
-      {
-        "value": "CUSTOM:FleshBlock"
+        "value": "CUSTOM:SacredCinnabar"
       },
       {
         "value": "CUSTOM:FleshBlock"
+      },
+      {
+        "value": "CUSTOM:SacredCinnabar"
       }
     ],
     "recipeReturnStack": {

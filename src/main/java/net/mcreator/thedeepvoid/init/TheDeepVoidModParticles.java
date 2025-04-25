@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.mcreator.thedeepvoid.client.particle.SoulSweepParticle;
 import net.mcreator.thedeepvoid.client.particle.ShadeDropParticle;
 import net.mcreator.thedeepvoid.client.particle.PusSporeParticle;
 import net.mcreator.thedeepvoid.client.particle.PentagramParticle;
@@ -40,5 +41,6 @@ public class TheDeepVoidModParticles {
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.SHADE_DROP.get(), ShadeDropParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.FLAME_OF_SPITE.get(), FlameOfSpiteParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.BLACK_TENTACLE.get(), BlackTentacleParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.SOUL_SWEEP.get(), SoulSweepParticle::provider);
 	}
 }

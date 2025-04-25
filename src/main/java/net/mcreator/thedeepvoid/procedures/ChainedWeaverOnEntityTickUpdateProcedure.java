@@ -18,6 +18,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.ChainedWeaverEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
@@ -67,18 +68,87 @@ public class ChainedWeaverOnEntityTickUpdateProcedure {
 				}
 			}
 		}
-		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty()) {
-			if (entity.getPersistentData().getBoolean("deep_void:message") == false) {
+		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 55, 55, 55), e -> true).isEmpty()) {
+			if (entity.getPersistentData().getBoolean("deep_void:message") == false && entity.getPersistentData().getBoolean("deep_void:talking") == false) {
 				entity.getPersistentData().putBoolean("deep_void:message", true);
 				entity.getPersistentData().putDouble("deep_void:messageCount", 200);
 				{
 					final Vec3 _center = new Vec3(x, y, z);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(60 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(55 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (entityiterator instanceof Player) {
-							if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-								_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lGet me out of these chains.. \u00A7c\u00A7l\u00A7kGOD"), true);
+							if (Math.random() < 0.25) {
+								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
+									_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lThe Void is accepting, the Void embraces all, shows us the path.. \u00A7c\u00A7l\u00A7kGOD"), true);
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY() + 1.4, entityiterator.getZ()),
+												ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_ambient")), SoundSource.HOSTILE, (float) 0.5, 1);
+									} else {
+										_level.playLocalSound((entityiterator.getX()), (entityiterator.getY() + 1.4), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_ambient")),
+												SoundSource.HOSTILE, (float) 0.5, 1, false);
+									}
+								}
+							} else if (Math.random() < 0.25) {
+								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
+									_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lGet me out of these chains.. \u00A7c\u00A7l\u00A7kGOD"), true);
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY() + 1.4, entityiterator.getZ()),
+												ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_ambient")), SoundSource.HOSTILE, (float) 0.5, 1);
+									} else {
+										_level.playLocalSound((entityiterator.getX()), (entityiterator.getY() + 1.4), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_ambient")),
+												SoundSource.HOSTILE, (float) 0.5, 1, false);
+									}
+								}
+							} else if (Math.random() < 0.25) {
+								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
+									_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lA Vessel granted for the unascended.. \u00A7c\u00A7l\u00A7kGOD"), true);
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY() + 1.4, entityiterator.getZ()),
+												ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_ambient")), SoundSource.HOSTILE, (float) 0.5, 1);
+									} else {
+										_level.playLocalSound((entityiterator.getX()), (entityiterator.getY() + 1.4), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_ambient")),
+												SoundSource.HOSTILE, (float) 0.5, 1, false);
+									}
+								}
+							} else if (Math.random() < 0.25) {
+								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
+									_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lA Vessel to make one with the Void.. \u00A7c\u00A7l\u00A7kGOD"), true);
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY() + 1.4, entityiterator.getZ()),
+												ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_ambient")), SoundSource.HOSTILE, (float) 0.5, 1);
+									} else {
+										_level.playLocalSound((entityiterator.getX()), (entityiterator.getY() + 1.4), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_ambient")),
+												SoundSource.HOSTILE, (float) 0.5, 1, false);
+									}
+								}
+							} else {
+								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
+									_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lGet me out of these chains.. \u00A7c\u00A7l\u00A7kGOD"), true);
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY() + 1.4, entityiterator.getZ()),
+												ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_ambient")), SoundSource.HOSTILE, (float) 0.5, 1);
+									} else {
+										_level.playLocalSound((entityiterator.getX()), (entityiterator.getY() + 1.4), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_ambient")),
+												SoundSource.HOSTILE, (float) 0.5, 1, false);
+									}
+								}
+							}
 						}
+					}
+				}
+			}
+			{
+				final Vec3 _center = new Vec3(x, y, z);
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+				for (Entity entityiterator : _entfound) {
+					if (entityiterator instanceof Player) {
+						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.WEAVER_CURSE.get(), 5, 0, false, false));
 					}
 				}
 			}
@@ -91,5 +161,6 @@ public class ChainedWeaverOnEntityTickUpdateProcedure {
 				entity.getPersistentData().putBoolean("deep_void:message", false);
 			}
 		}
+		entity.setDeltaMovement(new Vec3(0, 0, 0));
 	}
 }

@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 1,
+    "blockingRenderType": 0,
+    "texture": "grim_shard",
+    "customModelName": "tombstone:default",
+    "blockingModelName": "Normal blocking",
+    "name": "§b§l§kSoul §b§lTombstone §b§l§kSoul",
+    "specialInformation": {
+      "fixedValue": [
+        "§9A tombstone with a 3 hit combo. When the wielder successfully performs the combo, all mobs around the target including itself will be inflicted with Doom.",
+        "§9When a victim is Doomed, a tombstone will fall on their head, dealing 25% of their health in damage.",
+        "§9The Tombstone needs to be almost fully charged in order to deal damage."
+      ]
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "efficiency": 12.0,
+    "attackSpeed": 0.7999999999999999,
+    "enchantability": 0,
+    "damageVsEntity": 18.0,
+    "usageCount": 0,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": true,
+    "blockDropsTier": "NETHERITE",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "TombstoneLivingEntityIsHitWithTool"
+    },
+    "onItemInInventoryTick": {
+      "name": "TombstoneToolInInventoryTick"
+    },
+    "onItemInUseTick": {
+      "name": "TombstoneInHandTick"
+    }
+  }
+}
