@@ -42,7 +42,7 @@ public class LavenditeVoidriumSwordItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(TheDeepVoidModItems.VOIDRIUM_GEM.get()));
 			}
-		}, 3, -2.1f, new Item.Properties().fireResistant());
+		}, 3, -1.9f, new Item.Properties().fireResistant());
 	}
 
 	@Override
@@ -55,6 +55,6 @@ public class LavenditeVoidriumSwordItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Deals double damage each 3 hits"));
+		list.add(Component.literal("\u00A79Deals double damage each 3 hit"));
 	}
 }

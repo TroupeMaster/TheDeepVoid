@@ -29,6 +29,9 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Boolean> STALKED;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> CORPSERAIN;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> CREEPINGDARKNESS;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> ENDLESSABYSS;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> OVERWRITEWITHSEPULCHER;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> OVERWRITEWITHTEMPLE;
 	static {
 		BUILDER.push("Generation&World");
 		PLACECULTTEMPLE = BUILDER.comment("Whether the Cult Temple will be place at 0,0 or not").define("PlaceCultTemple", true);
@@ -57,10 +60,15 @@ public class DeepVoidConfigConfiguration {
 		DARKNESS = BUILDER.comment("If Darkness should attack the Player below y=0 while still keeping Hallucinate").define("Darkness", true);
 		BUILDER.pop();
 		BUILDER.push("Gameplay Changes");
-		HELL = BUILDER.comment("When a player dies, they get send to the Deep Void").define("Hell", false);
+		HELL = BUILDER.comment("When a player dies, they get sent to the Deep Void").define("Hell", false);
 		STALKED = BUILDER.comment("The Stalker can spawn in the overworld").define("Stalked", false);
 		CORPSERAIN = BUILDER.comment("Corpses fall from the sky in the overworld").define("CorpseRain", false);
 		CREEPINGDARKNESS = BUILDER.comment("Darkness engulfs everything").define("CreepingDarkness", false);
+		ENDLESSABYSS = BUILDER.comment("The player spawns in the Deep Void").define("EndlessAbyss", false);
+		BUILDER.pop();
+		BUILDER.push("Critical Changes");
+		OVERWRITEWITHSEPULCHER = BUILDER.comment("If true, the old structure containing the Weaver Of Souls will be overwritten by the new one (this WILL destroy anything around it)").define("OverwriteWithSepulcher", false);
+		OVERWRITEWITHTEMPLE = BUILDER.define("OverwriteWithTemple", false);
 		BUILDER.pop();
 
 		SPEC = BUILDER.build();

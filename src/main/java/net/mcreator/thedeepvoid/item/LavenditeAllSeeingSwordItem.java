@@ -40,7 +40,7 @@ public class LavenditeAllSeeingSwordItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(TheDeepVoidModItems.REFINED_CINNABAR.get()));
 			}
-		}, 3, -2.1f, new Item.Properties().fireResistant());
+		}, 3, -1.9f, new Item.Properties().fireResistant());
 	}
 
 	@Override

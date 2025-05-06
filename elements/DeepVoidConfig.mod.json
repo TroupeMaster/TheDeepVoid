@@ -372,7 +372,7 @@
             "logicField": 1,
             "numberField": 0.0,
             "textDefault": "",
-            "comment": "When a player dies, they get send to the Deep Void",
+            "comment": "When a player dies, they get sent to the Deep Void",
             "vardisplay": "Hell",
             "varname": "Hell",
             "enablecomment": true,
@@ -427,6 +427,62 @@
             "vardisplay": "CreepingDarkness",
             "varname": "CreepingDarkness",
             "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 1,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "The player spawns in the Deep Void",
+            "vardisplay": "EndlessAbyss",
+            "varname": "EndlessAbyss",
+            "enablecomment": true,
+            "stringlist": []
+          }
+        ]
+      },
+      {
+        "category": "Critical Changes",
+        "entries": [
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 1,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "If true, the old structure containing the Weaver Of Souls will be overwritten by the new one (this WILL destroy anything around it)",
+            "vardisplay": "OverwriteWithSepulcher",
+            "varname": "OverwriteWithSepulcher",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 1,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "If true, the old entrance structure in the Overworld will be overwritten by the new one (this WILL destroy anything around it)",
+            "vardisplay": "OverwriteWithTemple",
+            "varname": "OverwriteWithTemple",
+            "enablecomment": false,
             "stringlist": []
           }
         ]

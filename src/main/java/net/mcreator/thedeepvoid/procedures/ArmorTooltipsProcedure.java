@@ -334,7 +334,7 @@ public class ArmorTooltipsProcedure {
 		if (itemstack.getItem() == TheDeepVoidModItems.WEAVER_ROBE_CHESTPLATE.get()) {
 			if (Screen.hasShiftDown()) {
 				tooltip.add(Component.literal("\u00A77When attacking:"));
-				tooltip.add(Component.literal(" \u00A79-The wearer is teleported behind the foe and given Regeneration II"));
+				tooltip.add(Component.literal(" \u00A79-Each 6 hit, the wearer is teleported behind the foe and given Regeneration II for 7 seconds"));
 			} else {
 				tooltip.add(Component.literal("\u00A76Press Shift to show abilities"));
 			}
@@ -379,7 +379,7 @@ public class ArmorTooltipsProcedure {
 					tooltip.add(Component.literal("\u00A77When worn:"));
 					tooltip.add(Component.literal(" \u00A79-Has a higher chance to repeat the damage, divided by half, dealt"));
 					tooltip.add(Component.literal("\u00A77On Armor Ability key pressed:"));
-					tooltip.add(Component.literal(" \u00A79-Teleports the wearer, damaging the very soul of victims they pass through and applying Hexed I"));
+					tooltip.add(Component.literal(" \u00A79-Teleports the wearer, damaging the very soul of victims they pass through, applying Hexed I and giving Regeneration I"));
 					tooltip.add(Component.literal("\u00A77When attacked:"));
 					tooltip.add(Component.literal(" \u00A79-Damages the attacker"));
 					tooltip.add(Component.literal(" \u00A79-Summons Shadow Hands to attack"));

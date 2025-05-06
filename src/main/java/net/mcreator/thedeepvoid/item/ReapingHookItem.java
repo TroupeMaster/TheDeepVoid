@@ -56,7 +56,7 @@ public class ReapingHookItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79On each swing of the sickle, dash towards the nearest foe"));
+		list.add(Component.literal("\u00A79On each swing of the sickle, dash toward the nearest foe"));
 	}
 
 	@Override

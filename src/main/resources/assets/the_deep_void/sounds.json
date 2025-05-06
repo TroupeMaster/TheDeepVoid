@@ -934,5 +934,14 @@
         "stream": false
       }
     ]
+  },
+  "from_within_monst3r_music": {
+    "subtitle": "subtitles.from_within_monst3r_music",
+    "sounds": [
+      {
+        "name": "the_deep_void:monst3r-music_-from-within--dark-ambient-horror-soundscape",
+        "stream": true
+      }
+    ]
   }
 }

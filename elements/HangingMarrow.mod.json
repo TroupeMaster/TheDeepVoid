@@ -58,7 +58,7 @@
     "canRedstoneConnect": false,
     "lightOpacity": 0,
     "material": {
-      "value": "PLANTS"
+      "value": "ROCK"
     },
     "tickRate": 10,
     "tickRandomly": false,
@@ -126,6 +126,9 @@
     },
     "onNeighbourBlockChanges": {
       "name": "HangingMarrowBlockAdded"
+    },
+    "onDestroyedByPlayer": {
+      "name": "HangingMarrowBlockDestroyedByPlayer"
     },
     "generateFeature": false,
     "restrictionBiomes": [],

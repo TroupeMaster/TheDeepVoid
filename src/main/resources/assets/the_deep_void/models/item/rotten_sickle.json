@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "the_deep_void:item/reaping_hook"
+    "layer0": "the_deep_void:item/sickle"
   }
 }

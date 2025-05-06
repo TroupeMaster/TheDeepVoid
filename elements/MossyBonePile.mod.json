@@ -54,7 +54,7 @@
     "useLootTableForDrops": false,
     "requiresCorrectTool": false,
     "enchantPowerBonus": 0.0,
-    "plantsGrowOn": true,
+    "plantsGrowOn": false,
     "canRedstoneConnect": false,
     "lightOpacity": 15,
     "material": {
@@ -103,7 +103,10 @@
     "luminance": 0,
     "unbreakable": false,
     "vanillaToolTier": "NONE",
-    "isBonemealable": false,
+    "isBonemealable": true,
+    "onBonemealSuccess": {
+      "name": "BlockOfBonePileOnBoneMealSuccess"
+    },
     "hasInventory": false,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,

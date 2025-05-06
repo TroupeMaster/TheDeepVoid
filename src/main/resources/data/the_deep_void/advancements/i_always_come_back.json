@@ -20,7 +20,14 @@
     }
   },
   "rewards": {
-    "experience": 50
+    "experience": 50,
+    "recipes": [
+      "the_deep_void:void_effigy",
+      "the_deep_void:tombstone",
+      "the_deep_void:harvester_mask",
+      "the_deep_void:the_harvest",
+      "the_deep_void:voodoo_doll"
+    ]
   },
   "parent": "the_deep_void:weave_at_no_end"
 }

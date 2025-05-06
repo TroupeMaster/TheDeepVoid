@@ -30,7 +30,7 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "§9Gives Golden Blood on consumption, making regenerating give 1.5x more health"
+        "§9Gives Golden Blood on consumption, making regenerating give more health"
       ]
     },
     "glowCondition": {

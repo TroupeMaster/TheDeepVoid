@@ -16,6 +16,7 @@ import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
@@ -28,6 +29,7 @@ import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
@@ -45,6 +47,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.mcreator.thedeepvoid.procedures.EverhungerThisEntityKillsAnotherOneProcedure;
 import net.mcreator.thedeepvoid.procedures.EverhungerOnEntityTickUpdateProcedure;
 import net.mcreator.thedeepvoid.procedures.EverhungerNaturalEntitySpawningConditionProcedure;
+import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 public class EverhungerEntity extends Monster implements GeoEntity {
@@ -67,6 +70,7 @@ public class EverhungerEntity extends Monster implements GeoEntity {
 		setNoAi(false);
 		setMaxUpStep(0.6f);
 		setPersistenceRequired();
+		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(TheDeepVoidModItems.FLESH_GLOVE.get()));
 	}
 
 	@Override

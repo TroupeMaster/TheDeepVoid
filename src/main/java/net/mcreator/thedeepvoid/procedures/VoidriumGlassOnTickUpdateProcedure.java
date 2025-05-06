@@ -36,8 +36,6 @@ public class VoidriumGlassOnTickUpdateProcedure {
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VOIDRIUM_MARK.get(), 300, 0));
 						}
-						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VOID_BLESSING.get(), 60, 0));
 					}
 				}
 			}

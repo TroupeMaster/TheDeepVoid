@@ -5,13 +5,13 @@
     "toolType": "Sword",
     "renderType": 0,
     "blockingRenderType": 0,
-    "texture": "grim_sickle",
+    "texture": "soul_seeker",
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
     "name": "Grim Sickle",
     "specialInformation": {
       "fixedValue": [
-        "§9On each swing of the sickle, dash towards the nearest foe"
+        "§9On each swing of the sickle, dash toward the nearest foe"
       ]
     },
     "creativeTabs": [

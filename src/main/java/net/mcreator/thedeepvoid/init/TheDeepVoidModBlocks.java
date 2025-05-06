@@ -23,6 +23,8 @@ import net.mcreator.thedeepvoid.block.VoidRoseBlock;
 import net.mcreator.thedeepvoid.block.VoidRootsBlock;
 import net.mcreator.thedeepvoid.block.VoidFilledSpongeBlock;
 import net.mcreator.thedeepvoid.block.VoidFernBlock;
+import net.mcreator.thedeepvoid.block.VoidEffigyOpenBlock;
+import net.mcreator.thedeepvoid.block.VoidEffigyBlock;
 import net.mcreator.thedeepvoid.block.VoidCoreBlock;
 import net.mcreator.thedeepvoid.block.VoidCaveAirBlock;
 import net.mcreator.thedeepvoid.block.VeinyFleshBlock;
@@ -222,6 +224,8 @@ import net.mcreator.thedeepvoid.block.CinnabarMonolithStoneWallBlock;
 import net.mcreator.thedeepvoid.block.CinnabarMonolithStoneStairsBlock;
 import net.mcreator.thedeepvoid.block.CinnabarMonolithStoneSlabBlock;
 import net.mcreator.thedeepvoid.block.CinnabarMonolithStoneBlock;
+import net.mcreator.thedeepvoid.block.CinnabarGlassPaneBlock;
+import net.mcreator.thedeepvoid.block.CinnabarGlassBlock;
 import net.mcreator.thedeepvoid.block.CinnabarChainBlock;
 import net.mcreator.thedeepvoid.block.ChiseledVoidlightBlock;
 import net.mcreator.thedeepvoid.block.ChiseledDesolateBricksBlock;
@@ -574,6 +578,10 @@ public class TheDeepVoidModBlocks {
 	public static final RegistryObject<Block> DESOLATE_SOIL_ACTIVE = REGISTRY.register("desolate_soil_active", () -> new DesolateSoilActiveBlock());
 	public static final RegistryObject<Block> SOUL_ORB_PILLAR = REGISTRY.register("soul_orb_pillar", () -> new SoulOrbPillarBlock());
 	public static final RegistryObject<Block> SOUL_CONTAINER = REGISTRY.register("soul_container", () -> new SoulContainerBlock());
+	public static final RegistryObject<Block> VOID_EFFIGY = REGISTRY.register("void_effigy", () -> new VoidEffigyBlock());
+	public static final RegistryObject<Block> VOID_EFFIGY_OPEN = REGISTRY.register("void_effigy_open", () -> new VoidEffigyOpenBlock());
+	public static final RegistryObject<Block> CINNABAR_GLASS = REGISTRY.register("cinnabar_glass", () -> new CinnabarGlassBlock());
+	public static final RegistryObject<Block> CINNABAR_GLASS_PANE = REGISTRY.register("cinnabar_glass_pane", () -> new CinnabarGlassPaneBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

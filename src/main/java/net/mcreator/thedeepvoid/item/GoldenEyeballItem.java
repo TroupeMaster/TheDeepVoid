@@ -17,7 +17,7 @@ public class GoldenEyeballItem extends Item {
 
 	@Override
 	public int getUseDuration(ItemStack itemstack) {
-		return 18;
+		return 20;
 	}
 
 	@Override

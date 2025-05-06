@@ -22,7 +22,7 @@ public class HexedDollItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Right click on a Soul Container to summon the Weaver Of Souls"));
+		list.add(Component.literal("\u00A79Right click on a Soul Container to summon the Weaver Of Souls if there are none nearby"));
 	}
 
 	@Override

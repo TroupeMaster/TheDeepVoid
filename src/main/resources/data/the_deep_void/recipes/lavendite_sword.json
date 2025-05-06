@@ -2,18 +2,15 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    " a ",
-    " a ",
-    "bcb"
+    "a",
+    "a",
+    "b"
   ],
   "key": {
     "a": {
       "item": "the_deep_void:lavendite"
     },
     "b": {
-      "item": "the_deep_void:mourner_hide"
-    },
-    "c": {
       "item": "the_deep_void:rotten_bone"
     }
   },

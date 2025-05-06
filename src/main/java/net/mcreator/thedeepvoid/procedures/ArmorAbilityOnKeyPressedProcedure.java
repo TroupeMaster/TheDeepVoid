@@ -268,6 +268,8 @@ public class ArmorAbilityOnKeyPressedProcedure {
 									5);
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.HEXED.get(), 60, 0));
+							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0));
 						}
 					}
 				}
@@ -359,13 +361,13 @@ public class ArmorAbilityOnKeyPressedProcedure {
 			}
 		}
 		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.CRAWLER_CHESTPLATE.get()) {
-			if (!(entity instanceof LivingEntity _livEnt131 && _livEnt131.hasEffect(MobEffects.SLOW_FALLING))) {
+			if (!(entity instanceof LivingEntity _livEnt132 && _livEnt132.hasEffect(MobEffects.SLOW_FALLING))) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 140, 0, false, false));
 			}
 		}
 		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GRIM_CRAWLER_CHESTPLATE.get()) {
-			if (!(entity instanceof LivingEntity _livEnt135 && _livEnt135.hasEffect(MobEffects.SLOW_FALLING))) {
+			if (!(entity instanceof LivingEntity _livEnt136 && _livEnt136.hasEffect(MobEffects.SLOW_FALLING))) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.SLOW_FALLING, 200, 0, false, false));
 			}
@@ -373,7 +375,7 @@ public class ArmorAbilityOnKeyPressedProcedure {
 		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.WEAVER_BOOTS_BOOTS.get()) {
 			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).weaverBoots <= 0) {
 				{
-					double _setval = 60;
+					double _setval = 30;
 					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 						capability.weaverBoots = _setval;
 						capability.syncPlayerVariables(entity);

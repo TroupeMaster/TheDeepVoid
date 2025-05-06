@@ -1,10 +1,10 @@
 modLoader="javafml"
 loaderVersion="[47,)"
-license="All Rights Reserved"
+license="GNU General Public License version 3 (GPLv3)"
 
 [[mods]]
 modId="the_deep_void"
-version="1.78"
+version="1.83"
 displayName="The Deep Void"
 displayURL="https://mcreator.net"
 logoFile="logo.png"

@@ -34,17 +34,17 @@ public class WeaverSetsItsAttackTargetProcedure {
 			return;
 		if (sourceentity instanceof WeaverOfSoulsEntity) {
 			if (entity instanceof Player) {
-				if (entity.getPersistentData().getBoolean("deep_void:screamPlayed") == false) {
+				if (sourceentity.getPersistentData().getBoolean("deep_void:screamPlayed") == false) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_scream_loud")),
-									SoundSource.HOSTILE, 1, 1);
+									SoundSource.HOSTILE, 2, 1);
 						} else {
-							_level.playLocalSound((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_scream_loud")), SoundSource.HOSTILE, 1, 1, false);
+							_level.playLocalSound((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_scream_loud")), SoundSource.HOSTILE, 2, 1, false);
 						}
 					}
-					entity.getPersistentData().putBoolean("deep_void:screamPlayed", true);
-					entity.getPersistentData().putDouble("deep_void:screamCooldown", 100);
+					sourceentity.getPersistentData().putBoolean("deep_void:screamPlayed", true);
+					sourceentity.getPersistentData().putDouble("deep_void:screamCooldown", 140);
 				}
 			}
 		}

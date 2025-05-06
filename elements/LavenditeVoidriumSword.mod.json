@@ -11,7 +11,7 @@
     "name": "Lavendite Voidrium Sword",
     "specialInformation": {
       "fixedValue": [
-        "§9Deals double damage each 3 hits"
+        "§9Deals double damage each 3 hit"
       ]
     },
     "creativeTabs": [
@@ -20,7 +20,7 @@
       }
     ],
     "efficiency": 34.0,
-    "attackSpeed": 1.9000000000000001,
+    "attackSpeed": 2.1,
     "enchantability": 20,
     "damageVsEntity": 7.0,
     "usageCount": 3461,

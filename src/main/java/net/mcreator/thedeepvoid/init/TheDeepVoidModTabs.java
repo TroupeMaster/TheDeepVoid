@@ -419,7 +419,6 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.SINS_AND_SINNERS.get());
 				tabData.accept(TheDeepVoidModBlocks.ANCIENT_ALTAR.get().asItem());
 				tabData.accept(TheDeepVoidModItems.BLIND_PROPHET_SPAWN_EGG.get());
-				tabData.accept(TheDeepVoidModItems.GODS_SCOURGE_GREATSWORD.get());
 				tabData.accept(TheDeepVoidModItems.WEAVER_ROBE_CHESTPLATE.get());
 				tabData.accept(TheDeepVoidModItems.SACRED_CINNABAR.get());
 				tabData.accept(TheDeepVoidModItems.SACRED_VOIDRIUM_HELMET.get());
@@ -497,6 +496,29 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.THE_HARVEST.get());
 				tabData.accept(TheDeepVoidModItems.HARVESTER_MASK_HELMET.get());
 				tabData.accept(TheDeepVoidModItems.TOMBSTONE.get());
+				tabData.accept(TheDeepVoidModBlocks.VOID_EFFIGY.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.CINNABAR_GLASS.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.CINNABAR_GLASS_PANE.get().asItem());
+				tabData.accept(TheDeepVoidModItems.FLESH_GLOVE.get());
+				tabData.accept(TheDeepVoidModItems.LAVENDITE_PICKAXE.get());
+				tabData.accept(TheDeepVoidModItems.LAVENDITE_AXE.get());
+				tabData.accept(TheDeepVoidModItems.LAVENDITE_SHOVEL.get());
+				tabData.accept(TheDeepVoidModItems.LAVENDITE_HOE.get());
+				tabData.accept(TheDeepVoidModItems.BONE_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.REGENERATION_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.ABSORPTION_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.RESISTANCE_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.GLOWING_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.ROT_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.JUMP_BOOST_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.HEXED_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.FIRE_RESISTANCE_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.POISON_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.SPEED_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.HEALTH_BOOST_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.WITHER_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.SATURATION_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.JUDGEMENT.get());
 			})
 
 					.build());

@@ -46,7 +46,7 @@
         "value": "CUSTOM:TheDeepVoid"
       }
     ],
-    "destroyTool": "Not specified",
+    "destroyTool": "pickaxe",
     "customDrop": {
       "value": ""
     },

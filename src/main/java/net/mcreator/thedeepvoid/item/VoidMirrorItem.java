@@ -38,7 +38,7 @@ public class VoidMirrorItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Once used:"));
+		list.add(Component.literal("\u00A77Once used (Hold):"));
 		list.add(Component.literal(" \u00A79If in the Deep Void: Teleports you back to the Overworld"));
 		list.add(Component.literal(" \u00A79If in any other dimension: Teleports you to the Deep Void"));
 	}

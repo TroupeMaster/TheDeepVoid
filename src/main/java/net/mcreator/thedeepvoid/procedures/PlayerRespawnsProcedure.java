@@ -1,11 +1,17 @@
 package net.mcreator.thedeepvoid.procedures;
 
+import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerPlayer;
@@ -20,7 +26,9 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
+import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
+import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import javax.annotation.Nullable;
 
@@ -28,14 +36,14 @@ import javax.annotation.Nullable;
 public class PlayerRespawnsProcedure {
 	@SubscribeEvent
 	public static void onPlayerRespawned(PlayerEvent.PlayerRespawnEvent event) {
-		execute(event, event.getEntity());
+		execute(event, event.getEntity().level(), event.getEntity());
 	}
 
-	public static void execute(Entity entity) {
-		execute(null, entity);
+	public static void execute(LevelAccessor world, Entity entity) {
+		execute(null, world, entity);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity) {
+	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		if (DeepVoidConfigConfiguration.HELL.get() == true) {
@@ -61,6 +69,21 @@ public class PlayerRespawnsProcedure {
 						_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
 					}
 				}
+				TheDeepVoidMod.queueServerWork(5, () -> {
+					{
+						Entity _ent = entity;
+						_ent.teleportTo((entity.getX()), 250, (entity.getZ()));
+						if (_ent instanceof ServerPlayer _serverPlayer)
+							_serverPlayer.connection.teleport((entity.getX()), 250, (entity.getZ()), _ent.getYRot(), _ent.getXRot());
+					}
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VOID_BLESSING.get(), 600, 0, false, false));
+					if (entity instanceof Player _player) {
+						ItemStack _setstack = new ItemStack(Blocks.TORCH).copy();
+						_setstack.setCount(2);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+					}
+				});
 			}
 		}
 	}

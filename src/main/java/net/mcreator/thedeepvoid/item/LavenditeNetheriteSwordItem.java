@@ -38,7 +38,7 @@ public class LavenditeNetheriteSwordItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(Items.NETHERITE_INGOT));
 			}
-		}, 3, -2.1f, new Item.Properties().fireResistant());
+		}, 3, -1.9f, new Item.Properties().fireResistant());
 	}
 
 	@Override

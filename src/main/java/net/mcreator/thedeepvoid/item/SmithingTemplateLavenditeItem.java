@@ -23,7 +23,7 @@ public class SmithingTemplateLavenditeItem extends Item {
 		list.add(Component.literal("\u00A77Applies to:"));
 		list.add(Component.literal(" \u00A79Any sword / Shield / Devourer Hook"));
 		list.add(Component.literal(""));
-		list.add(Component.literal("\u00A72+3 Attack Speed"));
+		list.add(Component.literal("\u00A72+5 Attack Speed"));
 		list.add(Component.literal("\u00A72-1 Attack Damage"));
 	}
 }

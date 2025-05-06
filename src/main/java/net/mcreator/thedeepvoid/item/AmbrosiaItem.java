@@ -27,7 +27,7 @@ public class AmbrosiaItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Gives Golden Blood on consumption, making regenerating give 1.5x more health"));
+		list.add(Component.literal("\u00A79Gives Golden Blood on consumption, making regenerating give more health"));
 	}
 
 	@Override

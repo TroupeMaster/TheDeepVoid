@@ -11,7 +11,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
@@ -56,15 +55,15 @@ public class VoidDaggerRightclickedProcedure {
 						_level.playLocalSound((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")), SoundSource.PLAYERS, 1, 1, false);
 					}
 				}
-				if (Math.random() < 0.5) {
+				if (Math.random() < 0.7) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 240, 0));
+						_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 240, 0));
 				}
 			} else {
-				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.PLAYER_ATTACK), sourceentity), 5);
+				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.PLAYER_ATTACK), sourceentity), 6);
 				if (Math.random() < 0.5) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 240, 0));
+						_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 240, 0));
 				}
 			}
 		}

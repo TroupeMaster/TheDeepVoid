@@ -23,7 +23,7 @@ public abstract class WeaverMaskItem extends ArmorItem {
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{0, 0, 0, 4}[type.getSlot().getIndex()];
+				return new int[]{0, 0, 0, 3}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -48,7 +48,7 @@ public abstract class WeaverMaskItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 3f;
+				return 0.2f;
 			}
 
 			@Override

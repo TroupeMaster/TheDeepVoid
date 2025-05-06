@@ -42,20 +42,22 @@ public class DeathVultureTickUpdateProcedure {
 								((DeathVultureEntity) entity).setAnimation("animation.vulture_dash");
 							}
 							TheDeepVoidMod.queueServerWork(8, () -> {
-								if (world instanceof Level _level) {
-									if (!_level.isClientSide()) {
-										_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:death_vulture_ambient")), SoundSource.HOSTILE,
-												(float) 1.2, (float) Mth.nextDouble(RandomSource.create(), 1.3, 1.7));
-									} else {
-										_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:death_vulture_ambient")), SoundSource.HOSTILE, (float) 1.2,
-												(float) Mth.nextDouble(RandomSource.create(), 1.3, 1.7), false);
+								if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
+									if (world instanceof Level _level) {
+										if (!_level.isClientSide()) {
+											_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:death_vulture_ambient")),
+													SoundSource.HOSTILE, (float) 1.2, (float) Mth.nextDouble(RandomSource.create(), 1.3, 1.7));
+										} else {
+											_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:death_vulture_ambient")), SoundSource.HOSTILE, (float) 1.2,
+													(float) Mth.nextDouble(RandomSource.create(), 1.3, 1.7), false);
+										}
 									}
+									entity.setDeltaMovement(new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() - entity.getX()) * 0.2), 0.25,
+											(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() - entity.getZ()) * 0.2)));
+									if (entity instanceof Mob _entity)
+										_entity.getNavigation().moveTo(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()), ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
+												((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ()), 1);
 								}
-								entity.setDeltaMovement(new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() - entity.getX()) * 0.2), 0.25,
-										(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() - entity.getZ()) * 0.2)));
-								if (entity instanceof Mob _entity)
-									_entity.getNavigation().moveTo(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()), ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
-											((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ()), 1);
 							});
 						}
 					}
@@ -133,7 +135,7 @@ public class DeathVultureTickUpdateProcedure {
 		}
 		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get() || (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.MOSSY_BONE_PILE.get()
 				|| (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BLOCK_OF_SKULL_PILE.get()) {
-			if (!(entity instanceof LivingEntity _livEnt63 && _livEnt63.hasEffect(MobEffects.MOVEMENT_SLOWDOWN))) {
+			if (!(entity instanceof LivingEntity _livEnt65 && _livEnt65.hasEffect(MobEffects.MOVEMENT_SLOWDOWN))) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 0, false, false));
 			}

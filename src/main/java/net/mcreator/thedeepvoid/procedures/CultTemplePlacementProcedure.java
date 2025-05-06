@@ -34,16 +34,23 @@ public class CultTemplePlacementProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world) {
 		if (TheDeepVoidModVariables.MapVariables.get(world).CultTemplePlaced == false && DeepVoidConfigConfiguration.PLACECULTTEMPLE.get() == true) {
 			if (world instanceof ServerLevel _serverworld) {
-				StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("the_deep_void", "void_cult_temple"));
+				StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("the_deep_void", "void_temple_new"));
 				if (template != null) {
-					template.placeInWorld(_serverworld, new BlockPos(0, -64, 0), new BlockPos(0, -64, 0), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random, 3);
+					template.placeInWorld(_serverworld, new BlockPos(-12, -64, -12), new BlockPos(-12, -64, -12), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random, 3);
 				}
 			}
 			TheDeepVoidModVariables.MapVariables.get(world).CultTemplePlaced = true;
 			TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
 			TheDeepVoidMod.queueServerWork(20, () -> {
-				world.setBlock(new BlockPos(0, -64, 0), Blocks.AIR.defaultBlockState(), 3);
+				world.setBlock(new BlockPos(-8, -63, -12), Blocks.AIR.defaultBlockState(), 3);
 			});
+		}
+		if (TheDeepVoidModVariables.MapVariables.get(world).CultTemplePlaced == true && TheDeepVoidModVariables.MapVariables.get(world).surfaceOverwritten == false && DeepVoidConfigConfiguration.PLACECULTTEMPLE.get() == true
+				&& DeepVoidConfigConfiguration.OVERWRITEWITHTEMPLE.get() == true) {
+			TheDeepVoidModVariables.MapVariables.get(world).surfaceOverwritten = true;
+			TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
+			TheDeepVoidModVariables.MapVariables.get(world).CultTemplePlaced = false;
+			TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
 		}
 	}
 }

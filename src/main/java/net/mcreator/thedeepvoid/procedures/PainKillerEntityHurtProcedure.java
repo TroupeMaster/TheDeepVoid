@@ -39,6 +39,14 @@ public class PainKillerEntityHurtProcedure {
 						(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()).getAmplifier() : 0) + 1)));
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get());
+			if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()).getAmplifier() : 0) > 1) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.DOLPHINS_GRACE, 240,
+							(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()).getAmplifier() : 0) + 1)));
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.SATURATION, 240,
+							(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()).getAmplifier() : 0) + 1)));
+			}
 		}
 	}
 }

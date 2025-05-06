@@ -38,7 +38,7 @@ public class LavenditeStoneSwordItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(Blocks.COBBLESTONE), new ItemStack(Blocks.COBBLED_DEEPSLATE), new ItemStack(Blocks.BLACKSTONE));
 			}
-		}, 3, -2.1f, new Item.Properties());
+		}, 3, -1.9f, new Item.Properties());
 	}
 
 	@Override

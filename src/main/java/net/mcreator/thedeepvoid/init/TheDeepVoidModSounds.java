@@ -119,4 +119,5 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> TOMBSTONE_MOBHIT1 = REGISTRY.register("tombstone_mobhit1", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "tombstone_mobhit1")));
 	public static final RegistryObject<SoundEvent> TOMBSTONE_MOBHIT2 = REGISTRY.register("tombstone_mobhit2", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "tombstone_mobhit2")));
 	public static final RegistryObject<SoundEvent> TOMBSTONE_MOBHIT3 = REGISTRY.register("tombstone_mobhit3", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "tombstone_mobhit3")));
+	public static final RegistryObject<SoundEvent> FROM_WITHIN_MONST3R_MUSIC = REGISTRY.register("from_within_monst3r_music", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "from_within_monst3r_music")));
 }

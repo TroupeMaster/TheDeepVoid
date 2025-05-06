@@ -40,7 +40,7 @@
       }
     ],
     "recipeReturnStack": {
-      "value": "CUSTOM:GodsScourgeGreatsword"
+      "value": "CUSTOM:Judgement"
     },
     "name": "gods_scourge",
     "namespace": "mod"

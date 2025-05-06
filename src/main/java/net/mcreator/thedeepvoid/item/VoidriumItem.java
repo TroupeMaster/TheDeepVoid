@@ -32,7 +32,7 @@ public abstract class VoidriumItem extends ArmorItem {
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{6, 9, 9, 6}[type.getSlot().getIndex()];
+				return new int[]{7, 10, 10, 7}[type.getSlot().getIndex()];
 			}
 
 			@Override

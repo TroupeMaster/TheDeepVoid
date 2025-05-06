@@ -113,6 +113,8 @@ public class LightAttackedProcedure {
 				if (sourceentity instanceof DamnedEntity || sourceentity instanceof BigEyeEntity || sourceentity instanceof CrossEyesEntity || sourceentity instanceof FourEyesEntity || sourceentity instanceof MultipleEyesEntity) {
 					if (!entity.level().isClientSide())
 						entity.discard();
+					if (!sourceentity.level().isClientSide())
+						sourceentity.discard();
 					if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())).getLightEmission(world, BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ())) > 0) {
 						world.destroyBlock(BlockPos.containing(entity.getX(), entity.getY() - 0.45, entity.getZ()), false);
 					}

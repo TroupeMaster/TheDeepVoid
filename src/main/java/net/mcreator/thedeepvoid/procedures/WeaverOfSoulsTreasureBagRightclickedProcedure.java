@@ -1,16 +1,16 @@
 package net.mcreator.thedeepvoid.procedures;
 
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.items.ItemHandlerHelper;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.advancements.AdvancementProgress;
@@ -31,46 +31,60 @@ public class WeaverOfSoulsTreasureBagRightclickedProcedure {
 				_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.bundle.drop_contents")), SoundSource.PLAYERS, 1, (float) 0.9, false);
 			}
 		}
-		if (entity instanceof Player _player) {
-			ItemStack _setstack = new ItemStack(TheDeepVoidModItems.REFINED_CINNABAR.get()).copy();
-			_setstack.setCount(24);
-			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+		for (int index0 = 0; index0 < 24; index0++) {
+			if (world instanceof ServerLevel _level) {
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.REFINED_CINNABAR.get()));
+				entityToSpawn.setPickUpDelay(10);
+				entityToSpawn.setUnlimitedLifetime();
+				_level.addFreshEntity(entityToSpawn);
+			}
 		}
-		if (entity instanceof Player _player) {
-			ItemStack _setstack = new ItemStack(TheDeepVoidModItems.REFINED_BISMUTH.get()).copy();
-			_setstack.setCount(12);
-			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+		for (int index1 = 0; index1 < 12; index1++) {
+			if (world instanceof ServerLevel _level) {
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.EXPERIENCE_BOTTLE));
+				entityToSpawn.setPickUpDelay(10);
+				entityToSpawn.setUnlimitedLifetime();
+				_level.addFreshEntity(entityToSpawn);
+			}
 		}
-		if (entity instanceof Player _player) {
-			ItemStack _setstack = new ItemStack(Items.EXPERIENCE_BOTTLE).copy();
-			_setstack.setCount(12);
-			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+		for (int index2 = 0; index2 < 12; index2++) {
+			if (world instanceof ServerLevel _level) {
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.REFINED_BISMUTH.get()));
+				entityToSpawn.setPickUpDelay(10);
+				entityToSpawn.setUnlimitedLifetime();
+				_level.addFreshEntity(entityToSpawn);
+			}
 		}
-		if (entity instanceof Player _player) {
-			ItemStack _setstack = new ItemStack(TheDeepVoidModItems.ROUGH_VOIDRIUM.get()).copy();
-			_setstack.setCount(4);
-			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+		for (int index3 = 0; index3 < 8; index3++) {
+			if (world instanceof ServerLevel _level) {
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.SACRED_CINNABAR.get()));
+				entityToSpawn.setPickUpDelay(10);
+				entityToSpawn.setUnlimitedLifetime();
+				_level.addFreshEntity(entityToSpawn);
+			}
 		}
-		if (entity instanceof Player _player) {
-			ItemStack _setstack = new ItemStack(Items.ENCHANTED_GOLDEN_APPLE).copy();
-			_setstack.setCount(2);
-			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+		for (int index4 = 0; index4 < 2; index4++) {
+			if (world instanceof ServerLevel _level) {
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.ENCHANTED_GOLDEN_APPLE));
+				entityToSpawn.setPickUpDelay(10);
+				entityToSpawn.setUnlimitedLifetime();
+				_level.addFreshEntity(entityToSpawn);
+			}
 		}
-		if (entity instanceof Player _player) {
-			ItemStack _setstack = new ItemStack(TheDeepVoidModItems.SACRED_CINNABAR.get()).copy();
-			_setstack.setCount(8);
-			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-		}
-		if (entity instanceof Player _player) {
-			ItemStack _setstack = new ItemStack(TheDeepVoidModItems.HEXED_DOLL.get()).copy();
-			_setstack.setCount(1);
-			ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.HEXED_DOLL.get()));
+			entityToSpawn.setPickUpDelay(10);
+			entityToSpawn.setUnlimitedLifetime();
+			_level.addFreshEntity(entityToSpawn);
 		}
 		if (TheDeepVoidModVariables.MapVariables.get(world).weaverFightCount >= 2) {
-			if (entity instanceof Player _player) {
-				ItemStack _setstack = new ItemStack(TheDeepVoidModItems.SOUL_SHARD.get()).copy();
-				_setstack.setCount(2);
-				ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+			for (int index5 = 0; index5 < 2; index5++) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.SOUL_SHARD.get()));
+					entityToSpawn.setPickUpDelay(10);
+					entityToSpawn.setUnlimitedLifetime();
+					_level.addFreshEntity(entityToSpawn);
+				}
 			}
 			if (entity instanceof ServerPlayer _player) {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:i_always_come_back"));

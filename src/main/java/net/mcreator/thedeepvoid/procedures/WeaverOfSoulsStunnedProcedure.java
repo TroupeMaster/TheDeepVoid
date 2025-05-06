@@ -50,7 +50,7 @@ public class WeaverOfSoulsStunnedProcedure {
 					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 5, 99, false, false));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 5, 0, false, false));
-				if (entity.getPersistentData().getDouble("deep_void:stunCount") >= 160) {
+				if (entity.getPersistentData().getDouble("deep_void:stunCount") >= 200) {
 					entity.getPersistentData().putBoolean("deep_void:stunned", false);
 					entity.getPersistentData().putDouble("deep_void:stunCount", 0);
 					if (entity instanceof WeaverOfSoulsEntity) {

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:onyx"
+    },
+    "b": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "c": {
+      "item": "the_deep_void:eyeball"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:forgotten_token",
+    "count": 1
+  }
+}

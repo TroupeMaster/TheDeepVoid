@@ -112,6 +112,12 @@ public class MrordyygothreEntityDiesProcedure {
 					_level.addFreshEntity(entityToSpawn);
 				}
 			}
+			if (world instanceof ServerLevel _level) {
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.SOUL_SHARD.get()));
+				entityToSpawn.setPickUpDelay(10);
+				entityToSpawn.setUnlimitedLifetime();
+				_level.addFreshEntity(entityToSpawn);
+			}
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 						"stopsound @a record the_deep_void:sins_and_sinners");

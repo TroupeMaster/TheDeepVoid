@@ -94,13 +94,13 @@
       "fixedValue": false
     },
     "maxDamage": 0,
-    "damageValueHelmet": 8,
-    "damageValueBody": 12,
-    "damageValueLeggings": 10,
-    "damageValueBoots": 8,
+    "damageValueHelmet": 10,
+    "damageValueBody": 14,
+    "damageValueLeggings": 12,
+    "damageValueBoots": 10,
     "enchantability": 24,
-    "toughness": 4.5,
-    "knockbackResistance": 0.4,
+    "toughness": 5.2,
+    "knockbackResistance": 0.5,
     "equipSound": {
       "value": "item.armor.equip_netherite"
     },

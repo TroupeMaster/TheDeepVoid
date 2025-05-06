@@ -44,13 +44,13 @@ public class GrimScytheLivingEntityIsHitWithToolProcedure {
 				_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.DARK_TEAR.get()), (entity.getX()), (entity.getY() + 1.2), (entity.getZ()), 8, 0.6, 0.6, 0.6, 0.1);
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.GRIM_SWEEP.get()), (entity.getX()), (entity.getY() + 1.2), (entity.getZ()), 1, 0, 0, 0, 0);
-			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), sourceentity), 8);
+			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), sourceentity), 6);
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
 					if (!(entityiterator == entity) && !(entityiterator == sourceentity) && entityiterator instanceof LivingEntity) {
-						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), sourceentity), 6);
+						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), sourceentity), 5);
 						if (world instanceof ServerLevel _level)
 							_level.addFreshEntity(new ExperienceOrb(_level, x, y, z, 1));
 					}

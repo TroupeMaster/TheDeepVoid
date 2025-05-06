@@ -27,6 +27,7 @@ import net.mcreator.thedeepvoid.potion.MotherlyCallMobEffect;
 import net.mcreator.thedeepvoid.potion.MadnessMobEffect;
 import net.mcreator.thedeepvoid.potion.LurkerHeadNearMobEffect;
 import net.mcreator.thedeepvoid.potion.LookingMobEffect;
+import net.mcreator.thedeepvoid.potion.LacerationMobEffect;
 import net.mcreator.thedeepvoid.potion.InvisibleHandsMobEffect;
 import net.mcreator.thedeepvoid.potion.HexedMobEffect;
 import net.mcreator.thedeepvoid.potion.HallucinateMobEffect;
@@ -72,4 +73,5 @@ public class TheDeepVoidModMobEffects {
 	public static final RegistryObject<MobEffect> WEAVER_CURSE = REGISTRY.register("weaver_curse", () -> new WeaverCurseMobEffect());
 	public static final RegistryObject<MobEffect> HEXED = REGISTRY.register("hexed", () -> new HexedMobEffect());
 	public static final RegistryObject<MobEffect> DOOM = REGISTRY.register("doom", () -> new DoomMobEffect());
+	public static final RegistryObject<MobEffect> LACERATION = REGISTRY.register("laceration", () -> new LacerationMobEffect());
 }

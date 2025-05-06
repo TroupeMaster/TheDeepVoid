@@ -85,12 +85,12 @@
       "fixedValue": false
     },
     "maxDamage": 0,
-    "damageValueHelmet": 5,
+    "damageValueHelmet": 4,
     "damageValueBody": 0,
     "damageValueLeggings": 0,
     "damageValueBoots": 0,
     "enchantability": 45,
-    "toughness": 3.5,
+    "toughness": 1.0,
     "knockbackResistance": 0.1,
     "equipSound": {
       "value": "block.soul_sand.place"

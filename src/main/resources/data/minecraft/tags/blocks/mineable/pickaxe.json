@@ -1,6 +1,14 @@
 {
   "replace": false,
   "values": [
+    "the_deep_void:cinnabar_glass_pane",
+    "the_deep_void:cinnabar_glass",
+    "the_deep_void:sulfur_glass_pane",
+    "the_deep_void:bismuth_glass_pane",
+    "the_deep_void:sulfur_glass",
+    "the_deep_void:bismuth_glass",
+    "the_deep_void:void_effigy_open",
+    "the_deep_void:void_effigy",
     "the_deep_void:refined_onyx_slab",
     "the_deep_void:refined_onyx_stairs",
     "the_deep_void:block_of_ancient_onyx",

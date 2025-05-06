@@ -5,7 +5,7 @@
     "name": "Music Disc",
     "rarity": "RARE",
     "texture": "chasms_music_disc",
-    "description": "MONST3R MUSIC - Chasms",
+    "description": "MONST3R MUSIC - From Within",
     "creativeTabs": [
       {
         "value": "CUSTOM:TheDeepVoid"
@@ -18,9 +18,9 @@
       "fixedValue": false
     },
     "music": {
-      "value": "CUSTOM:chasms_monst3r_music"
+      "value": "CUSTOM:from_within_monst3r_music"
     },
-    "lengthInTicks": 7800,
+    "lengthInTicks": 3840,
     "analogOutput": 6
   }
 }

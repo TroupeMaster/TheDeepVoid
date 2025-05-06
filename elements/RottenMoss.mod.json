@@ -58,7 +58,7 @@
     "canRedstoneConnect": false,
     "lightOpacity": 15,
     "material": {
-      "value": "MOSS_BLOCK"
+      "value": "ROCK"
     },
     "tickRate": 0,
     "tickRandomly": false,
@@ -103,7 +103,10 @@
     "luminance": 0,
     "unbreakable": false,
     "vanillaToolTier": "NONE",
-    "isBonemealable": false,
+    "isBonemealable": true,
+    "onBonemealSuccess": {
+      "name": "BlockOfBonePileOnBoneMealSuccess"
+    },
     "hasInventory": false,
     "guiBoundTo": "<NONE>",
     "openGUIOnRightClick": false,

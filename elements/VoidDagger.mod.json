@@ -11,7 +11,8 @@
     "name": "Void Dagger",
     "specialInformation": {
       "fixedValue": [
-        "§9Puts a second dagger in the wielder's off-hand"
+        "§9Puts a second dagger in the wielder's off-hand",
+        "§9Inflicts Wither on hit"
       ]
     },
     "creativeTabs": [
@@ -22,7 +23,7 @@
     "efficiency": 8.0,
     "attackSpeed": 1.7999999999999998,
     "enchantability": 10,
-    "damageVsEntity": 5.0,
+    "damageVsEntity": 6.0,
     "usageCount": 1561,
     "glowCondition": {
       "fixedValue": false

@@ -15,6 +15,6 @@ public class AmbrosiaPlayerFinishesUsingItemProcedure {
 		if (entity instanceof Player _player)
 			_player.getCooldowns().addCooldown(itemstack.getItem(), 400);
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.GOLDEN_BLOOD.get(), 240, 0));
+			_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.GOLDEN_BLOOD.get(), 240, 1));
 	}
 }

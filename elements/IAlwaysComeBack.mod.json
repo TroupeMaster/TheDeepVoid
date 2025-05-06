@@ -13,7 +13,13 @@
     "announceToChat": true,
     "hideIfNotCompleted": false,
     "rewardLoot": [],
-    "rewardRecipes": [],
+    "rewardRecipes": [
+      "VoidEffigyRecipe",
+      "TombstoneRecipe",
+      "HarvesterMaskRecipe",
+      "TheHarvestRecipe",
+      "VoodooDollRecipe"
+    ],
     "rewardFunction": "No function",
     "rewardXP": 50,
     "achievementType": "challenge",

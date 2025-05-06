@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "tool",
   "definition": {
-    "toolType": "Pickaxe",
+    "toolType": "Sword",
     "renderType": 0,
     "blockingRenderType": 0,
     "texture": "lavendite_sword",
@@ -11,7 +11,7 @@
     "name": "Lavendite Sword",
     "specialInformation": {
       "fixedValue": [
-        "§9Has a chance to explode into tiny shards on each hit"
+        "§9Explodes into shards when broken"
       ]
     },
     "creativeTabs": [
@@ -19,11 +19,11 @@
         "value": "CUSTOM:TheDeepVoid"
       }
     ],
-    "efficiency": 6.0,
-    "attackSpeed": 2.0,
+    "efficiency": 60.0,
+    "attackSpeed": 3.0,
     "enchantability": 22,
     "damageVsEntity": 8.0,
-    "usageCount": 10,
+    "usageCount": 12,
     "glowCondition": {
       "fixedValue": false
     },
@@ -36,9 +36,6 @@
     "blockDropsTier": "IRON",
     "blocksAffected": [],
     "stayInGridWhenCrafting": false,
-    "damageOnCrafting": false,
-    "onEntityHitWith": {
-      "name": "LavenditeSwordLivingEntityIsHitWithTool"
-    }
+    "damageOnCrafting": false
   }
 }

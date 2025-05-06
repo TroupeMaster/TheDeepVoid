@@ -11,14 +11,15 @@
     "name": "Void Dagger",
     "specialInformation": {
       "fixedValue": [
-        "§9Right click with the dagger to attack. Deals more damage after attacking with the dagger in the main-hand"
+        "§9Right click with the dagger to attack. Deals more damage after attacking with the dagger in the main-hand",
+        "§9Inflicts rot on hit (right click)"
       ]
     },
     "creativeTabs": [],
     "efficiency": 8.0,
     "attackSpeed": 1.7999999999999998,
     "enchantability": 10,
-    "damageVsEntity": 5.0,
+    "damageVsEntity": 6.0,
     "usageCount": 1561,
     "glowCondition": {
       "fixedValue": false

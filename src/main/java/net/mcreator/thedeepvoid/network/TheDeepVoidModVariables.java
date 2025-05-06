@@ -94,6 +94,7 @@ public class TheDeepVoidModVariables {
 			clone.stalkingCount = original.stalkingCount;
 			clone.stalkWatcherCount = original.stalkWatcherCount;
 			clone.noGravity = original.noGravity;
+			clone.teleportToVoid = original.teleportToVoid;
 			if (!event.isWasDeath()) {
 				clone.playerX = original.playerX;
 				clone.playerY = original.playerY;
@@ -138,6 +139,7 @@ public class TheDeepVoidModVariables {
 				clone.heartbeatIndicator = original.heartbeatIndicator;
 				clone.hasSoulOrb = original.hasSoulOrb;
 				clone.handheldBreak = original.handheldBreak;
+				clone.weaverRobeCooldown = original.weaverRobeCooldown;
 			}
 		}
 
@@ -205,6 +207,8 @@ public class TheDeepVoidModVariables {
 		public double stalkerSpawnX = 0;
 		public double stalkerSpawnZ = 0;
 		public double weaverFightCount = 0;
+		public boolean overwritten = false;
+		public boolean surfaceOverwritten = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -219,6 +223,8 @@ public class TheDeepVoidModVariables {
 			stalkerSpawnX = nbt.getDouble("stalkerSpawnX");
 			stalkerSpawnZ = nbt.getDouble("stalkerSpawnZ");
 			weaverFightCount = nbt.getDouble("weaverFightCount");
+			overwritten = nbt.getBoolean("overwritten");
+			surfaceOverwritten = nbt.getBoolean("surfaceOverwritten");
 		}
 
 		@Override
@@ -229,6 +235,8 @@ public class TheDeepVoidModVariables {
 			nbt.putDouble("stalkerSpawnX", stalkerSpawnX);
 			nbt.putDouble("stalkerSpawnZ", stalkerSpawnZ);
 			nbt.putDouble("weaverFightCount", weaverFightCount);
+			nbt.putBoolean("overwritten", overwritten);
+			nbt.putBoolean("surfaceOverwritten", surfaceOverwritten);
 			return nbt;
 		}
 
@@ -386,6 +394,8 @@ public class TheDeepVoidModVariables {
 		public double heartbeatIndicator = 0;
 		public boolean hasSoulOrb = false;
 		public double handheldBreak = 0;
+		public boolean teleportToVoid = false;
+		public double weaverRobeCooldown = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -459,6 +469,8 @@ public class TheDeepVoidModVariables {
 			nbt.putDouble("heartbeatIndicator", heartbeatIndicator);
 			nbt.putBoolean("hasSoulOrb", hasSoulOrb);
 			nbt.putDouble("handheldBreak", handheldBreak);
+			nbt.putBoolean("teleportToVoid", teleportToVoid);
+			nbt.putDouble("weaverRobeCooldown", weaverRobeCooldown);
 			return nbt;
 		}
 
@@ -529,6 +541,8 @@ public class TheDeepVoidModVariables {
 			heartbeatIndicator = nbt.getDouble("heartbeatIndicator");
 			hasSoulOrb = nbt.getBoolean("hasSoulOrb");
 			handheldBreak = nbt.getDouble("handheldBreak");
+			teleportToVoid = nbt.getBoolean("teleportToVoid");
+			weaverRobeCooldown = nbt.getDouble("weaverRobeCooldown");
 		}
 	}
 
@@ -618,6 +632,8 @@ public class TheDeepVoidModVariables {
 					variables.heartbeatIndicator = message.data.heartbeatIndicator;
 					variables.hasSoulOrb = message.data.hasSoulOrb;
 					variables.handheldBreak = message.data.handheldBreak;
+					variables.teleportToVoid = message.data.teleportToVoid;
+					variables.weaverRobeCooldown = message.data.weaverRobeCooldown;
 				}
 			});
 			context.setPacketHandled(true);

@@ -23,7 +23,7 @@ public abstract class HarvesterMaskItem extends ArmorItem {
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{0, 0, 0, 5}[type.getSlot().getIndex()];
+				return new int[]{0, 0, 0, 4}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -48,7 +48,7 @@ public abstract class HarvesterMaskItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 3.5f;
+				return 1f;
 			}
 
 			@Override

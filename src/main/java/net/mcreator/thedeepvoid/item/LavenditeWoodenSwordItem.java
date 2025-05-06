@@ -39,7 +39,7 @@ public class LavenditeWoodenSwordItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(ItemTags.create(new ResourceLocation("minecraft:planks")));
 			}
-		}, 3, -2.1f, new Item.Properties());
+		}, 3, -1.9f, new Item.Properties());
 	}
 
 	@Override
