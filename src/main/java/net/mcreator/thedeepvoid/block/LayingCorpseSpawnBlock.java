@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
@@ -23,6 +24,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.procedures.CorpseSpawnPlantDestroyedByPlayerProcedure;
+import net.mcreator.thedeepvoid.procedures.CorpseNeighbourBlockChangesProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class LayingCorpseSpawnBlock extends FlowerBlock {
@@ -61,6 +63,12 @@ public class LayingCorpseSpawnBlock extends FlowerBlock {
 	@Override
 	public PlantType getPlantType(BlockGetter world, BlockPos pos) {
 		return PlantType.CAVE;
+	}
+
+	@Override
+	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
+		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
+		CorpseNeighbourBlockChangesProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override

@@ -239,7 +239,6 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModBlocks.FAKE_BEDROCK.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.FAKE_BEDROCK_STAIRS.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.FAKE_BEDROCK_SLAB.get().asItem());
-				tabData.accept(TheDeepVoidModBlocks.INFESTED_ROTTEN_WOOD.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.GORE_STEMS.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.GROUND_BONES.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.FOSSILIZED_FLESH.get().asItem());
@@ -460,6 +459,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.ALPHA_BONE_CRAWLER_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.BABY_BONE_CRAWLER_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.ROTTEN_CORPSE_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.ROTTEN_CULT_MEMBER_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.EYEKIN_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.SWARMER_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.DEATH_MAW_SPAWN_EGG.get());
@@ -480,6 +480,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.SOUL_CLEAVER.get());
 				tabData.accept(TheDeepVoidModItems.WEAVER_LEGGINGS_LEGGINGS.get());
 				tabData.accept(TheDeepVoidModItems.WEAVER_BOOTS_BOOTS.get());
+				tabData.accept(TheDeepVoidModItems.WATCHING_STALKER_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.VOID_MIRROR.get());
 				tabData.accept(TheDeepVoidModItems.WEAVER_OF_SOULS_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.DARKMARE.get());
@@ -519,6 +520,21 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.WITHER_NEEDLE.get());
 				tabData.accept(TheDeepVoidModItems.SATURATION_NEEDLE.get());
 				tabData.accept(TheDeepVoidModItems.JUDGEMENT.get());
+				tabData.accept(TheDeepVoidModItems.FORSAKEN_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.ELYTRA_PIECE.get());
+				tabData.accept(TheDeepVoidModItems.VOIDRIUM_BULWARK.get());
+				tabData.accept(TheDeepVoidModBlocks.BIG_SMOKE_VENT.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.VENT_STONE.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.CORPSE_PILE.get().asItem());
+				tabData.accept(TheDeepVoidModItems.SEEKER_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModBlocks.BIG_TOOTH.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.SOUL_FORGE.get().asItem());
+				tabData.accept(TheDeepVoidModItems.SOUL_FUSED_INGOT.get());
+				tabData.accept(TheDeepVoidModItems.APOSTLE_OF_CATASTROPHE_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.CHAINSAW.get());
+				tabData.accept(TheDeepVoidModItems.APOSTLE_OF_CATASTROPHE_TREASURE_BAG.get());
+				tabData.accept(TheDeepVoidModBlocks.RED_GATE.get().asItem());
+				tabData.accept(TheDeepVoidModItems.IDLING_APOSTLE_SPAWN_EGG.get());
 			})
 
 					.build());

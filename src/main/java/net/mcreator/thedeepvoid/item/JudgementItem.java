@@ -58,9 +58,9 @@ public class JudgementItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Executes entities in front of the wielder if their health is below 25%"));
-		list.add(Component.literal("\u00A79Right click to teleport dash, dealing damage to foes in the wielder's path"));
-		list.add(Component.literal("\u00A79Deals half of the damage to nearby foes when swinging the sword at full charge"));
+		list.add(Component.literal("\u00A77Executes entities in front of the wielder if their health is below 25%"));
+		list.add(Component.literal("\u00A77Right click to teleport dash, dealing damage to foes in the wielder's path"));
+		list.add(Component.literal("\u00A77Deals half of the damage to nearby foes when swinging the sword at full charge"));
 	}
 
 	@Override

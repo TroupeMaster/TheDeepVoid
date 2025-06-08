@@ -10,6 +10,9 @@
     "absolute": 0
   },
   "project_start_to_heightmap": "WORLD_SURFACE_WG",
-  "biomes": "the_deep_void:filled_graveyard",
+  "biomes": [
+    "the_deep_void:filled_graveyard",
+    "the_deep_void:gathering_grounds"
+  ],
   "use_expansion_hack": false
 }

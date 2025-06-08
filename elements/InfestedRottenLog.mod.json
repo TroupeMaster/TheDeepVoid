@@ -2,14 +2,14 @@
   "_fv": 66,
   "_type": "block",
   "definition": {
-    "texture": "rotten_log_top",
+    "texture": "eye_log_animated",
     "textureTop": "rotten_log_top",
     "textureLeft": "eye_log",
     "textureFront": "eye_log",
     "textureRight": "eye_log",
     "textureBack": "eye_log",
-    "renderType": 10,
-    "customModelName": "Normal",
+    "renderType": 2,
+    "customModelName": "infested_log:default",
     "rotationMode": 5,
     "enablePitch": false,
     "emissiveRendering": false,
@@ -18,9 +18,9 @@
     "particleTexture": "",
     "tintType": "No tint",
     "isItemTinted": false,
-    "hasTransparency": false,
+    "hasTransparency": true,
     "connectedSides": false,
-    "transparencyType": "SOLID",
+    "transparencyType": "CUTOUT",
     "disableOffset": false,
     "boundingBoxes": [
       {
@@ -56,7 +56,7 @@
     "enchantPowerBonus": 0.0,
     "plantsGrowOn": false,
     "canRedstoneConnect": false,
-    "lightOpacity": 15,
+    "lightOpacity": 0,
     "material": {
       "value": "WOOD"
     },

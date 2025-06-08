@@ -46,7 +46,7 @@ public class LavenditeAllSeeingSwordItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Right click on an entity to pass your pain onto them, sacrificing your health based on a quarter of your opponent's current health and some durability"));
-		list.add(Component.literal("\u00A79Each hit makes the sword swing faster"));
+		list.add(Component.literal("\u00A77Right click on an entity to pass your pain onto them, sacrificing your health based on a quarter of your opponent's current health and some durability"));
+		list.add(Component.literal("\u00A77Each hit makes the sword swing faster"));
 	}
 }

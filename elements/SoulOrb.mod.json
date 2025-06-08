@@ -4,13 +4,13 @@
   "definition": {
     "mobName": "Soul Orb",
     "mobLabel": "",
-    "mobModelName": "ModelsoulOrb",
+    "mobModelName": "ModelsoulOrbHigher",
     "mobModelTexture": "soulorb.png",
     "transparentModelCondition": {
       "fixedValue": false
     },
     "isShakingCondition": {
-      "fixedValue": true
+      "fixedValue": false
     },
     "solidBoundingBox": {
       "fixedValue": false
@@ -19,18 +19,19 @@
       "fixedValue": 1.0
     },
     "boundingBoxScale": {
-      "fixedValue": 1.0
+      "fixedValue": 1.0,
+      "name": "SoulOrbBoundingBoxScale"
     },
     "modelLayers": [
       {
-        "model": "ModelsoulOrb",
+        "model": "ModelsoulOrbHigher",
         "texture": "soulorb.png",
         "disableHurtOverlay": true,
         "glow": true
       }
     ],
-    "modelWidth": 0.8,
-    "modelHeight": 0.8,
+    "modelWidth": 0.6,
+    "modelHeight": 1.8,
     "modelShadowSize": 0.0,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,
@@ -132,9 +133,6 @@
     },
     "onRightClickedOn": {
       "name": "SoulOrbRightClickedOnEntity"
-    },
-    "onMobTickUpdate": {
-      "name": "SoulOrbOnEntityTickUpdate"
     },
     "hasAI": true,
     "aiBase": "(none)",

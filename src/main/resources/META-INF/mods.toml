@@ -4,7 +4,7 @@ license="GNU General Public License version 3 (GPLv3)"
 
 [[mods]]
 modId="the_deep_void"
-version="1.83"
+version="1.85"
 displayName="The Deep Void"
 displayURL="https://mcreator.net"
 logoFile="logo.png"

@@ -54,7 +54,7 @@
     "name": "Void Effigy",
     "specialInformation": {
       "fixedValue": [
-        "§9Gives Void's Blessing to all nearby Players when activated with redstone"
+        "§7Gives Void's Blessing to all nearby Players when activated with redstone"
       ]
     },
     "hardness": 2.0,

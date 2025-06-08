@@ -11,7 +11,7 @@
     "name": "Flesh Glove",
     "specialInformation": {
       "fixedValue": [
-        "§9Inflicts Laceration on hit, increasing the damage dealt each hit"
+        "§7Inflicts Laceration on hit, increasing the damage dealt each hit"
       ]
     },
     "creativeTabs": [

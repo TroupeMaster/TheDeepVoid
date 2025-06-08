@@ -17,6 +17,9 @@
     "restrictionBiomes": [
       {
         "value": "CUSTOM:FilledGraveyard"
+      },
+      {
+        "value": "CUSTOM:GatheringGrounds"
       }
     ],
     "terrainAdaptation": "none",

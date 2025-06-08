@@ -25,6 +25,7 @@ import net.mcreator.thedeepvoid.client.model.Modelstalker2;
 import net.mcreator.thedeepvoid.client.model.Modelspore_spewer;
 import net.mcreator.thedeepvoid.client.model.Modelspike_spawn;
 import net.mcreator.thedeepvoid.client.model.Modelspike;
+import net.mcreator.thedeepvoid.client.model.ModelsoulOrbHigher;
 import net.mcreator.thedeepvoid.client.model.ModelsoulOrb;
 import net.mcreator.thedeepvoid.client.model.Modelsmall_flesh_cube;
 import net.mcreator.thedeepvoid.client.model.Modelscarecrow;
@@ -86,6 +87,7 @@ public class TheDeepVoidModModels {
 		event.registerLayerDefinition(Modelabducter.LAYER_LOCATION, Modelabducter::createBodyLayer);
 		event.registerLayerDefinition(Modelonlooker.LAYER_LOCATION, Modelonlooker::createBodyLayer);
 		event.registerLayerDefinition(Modeleverhunger.LAYER_LOCATION, Modeleverhunger::createBodyLayer);
+		event.registerLayerDefinition(ModelsoulOrbHigher.LAYER_LOCATION, ModelsoulOrbHigher::createBodyLayer);
 		event.registerLayerDefinition(Modelarrow.LAYER_LOCATION, Modelarrow::createBodyLayer);
 		event.registerLayerDefinition(Modelmourner_remodel.LAYER_LOCATION, Modelmourner_remodel::createBodyLayer);
 		event.registerLayerDefinition(Modelswarmer.LAYER_LOCATION, Modelswarmer::createBodyLayer);

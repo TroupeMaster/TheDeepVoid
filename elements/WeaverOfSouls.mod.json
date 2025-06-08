@@ -81,7 +81,7 @@
     "immuneToCactus": true,
     "immuneToDrowning": true,
     "immuneToLightning": true,
-    "immuneToPotions": false,
+    "immuneToPotions": true,
     "immuneToPlayer": false,
     "immuneToExplosion": false,
     "immuneToTrident": false,

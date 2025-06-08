@@ -38,8 +38,8 @@
         }
       }
     ],
-    "modelWidth": 1.0,
-    "modelHeight": 2.0,
+    "modelWidth": 3.0,
+    "modelHeight": 3.0,
     "modelShadowSize": 0.0,
     "mountedYOffset": 0.0,
     "hasSpawnEgg": true,

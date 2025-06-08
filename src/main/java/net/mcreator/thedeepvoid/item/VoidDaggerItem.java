@@ -58,8 +58,8 @@ public class VoidDaggerItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Puts a second dagger in the wielder's off-hand"));
-		list.add(Component.literal("\u00A79Inflicts Wither on hit"));
+		list.add(Component.literal("\u00A77Puts a second dagger in the wielder's off-hand"));
+		list.add(Component.literal("\u00A77Inflicts Wither on hit"));
 	}
 
 	@Override

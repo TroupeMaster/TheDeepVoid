@@ -1,6 +1,10 @@
 {
   "replace": false,
   "values": [
+    "the_deep_void:big_tooth",
+    "the_deep_void:vent_stone",
+    "the_deep_void:big_smoke_vent_corner",
+    "the_deep_void:big_smoke_vent",
     "the_deep_void:cinnabar_glass_pane",
     "the_deep_void:cinnabar_glass",
     "the_deep_void:sulfur_glass_pane",
@@ -79,8 +83,6 @@
     "the_deep_void:bone_pile_bricks",
     "the_deep_void:fossilized_flesh",
     "the_deep_void:ground_bones",
-    "the_deep_void:inactive_infested_rotten_wood",
-    "the_deep_void:infested_rotten_wood",
     "the_deep_void:fake_bedrock_slab",
     "the_deep_void:fake_bedrock_stairs",
     "the_deep_void:fake_bedrock",
@@ -95,7 +97,6 @@
     "the_deep_void:grim_block",
     "the_deep_void:block_of_voidrium",
     "the_deep_void:voidrium_ore",
-    "the_deep_void:inactive_infested_rotten_log",
     "the_deep_void:infested_rotten_log",
     "the_deep_void:sulfur_lantern_hanging",
     "the_deep_void:sulfur_lantern",

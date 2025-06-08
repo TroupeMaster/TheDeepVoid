@@ -41,8 +41,8 @@ public class ShadestormItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Fires a flury of arrows that applies Combo to the victim"));
-		list.add(Component.literal("\u00A79When shot, fire a huge arrow that deals extra damage in a AOE if the target has the effect Combo"));
+		list.add(Component.literal("\u00A77Fires a flury of arrows that applies Combo to the victim"));
+		list.add(Component.literal("\u00A77When shot, fire a huge arrow that deals extra damage in a AOE if the target has the effect Combo"));
 	}
 
 	@Override

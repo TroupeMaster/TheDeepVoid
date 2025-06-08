@@ -30,7 +30,7 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "§9Roots all foes around the caster"
+        "§7Roots all foes around the caster"
       ]
     },
     "glowCondition": {

@@ -58,7 +58,7 @@
     "canRedstoneConnect": false,
     "lightOpacity": 0,
     "material": {
-      "value": "MISCELLANEOUS"
+      "value": "ROCK"
     },
     "tickRate": 0,
     "tickRandomly": false,
@@ -121,6 +121,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onNeighbourBlockChanges": {
+      "name": "CorpseNeighbourBlockChanges"
+    },
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [

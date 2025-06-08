@@ -23,7 +23,8 @@ public class RidingCropItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Hit a Muzzled Death Vulture to make it perform a dash"));
+		list.add(Component.literal("\u00A79Upon right clicking while riding a Muzzled Death Vulture"));
+		list.add(Component.literal(" \u00A77Hit the Muzzled Death Vulture to make it perform a dash"));
 	}
 
 	@Override

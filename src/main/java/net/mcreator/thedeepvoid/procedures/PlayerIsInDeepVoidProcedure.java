@@ -14,6 +14,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
+import net.minecraft.tags.TagKey;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -25,7 +26,6 @@ import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
-import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import javax.annotation.Nullable;
 
@@ -45,13 +45,14 @@ public class PlayerIsInDeepVoidProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) {
+		//These are some functions that activate every tick for the player, which have general uses
+		if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) {//When under y=1, give the player Hallucinate
 			if (DeepVoidConfigConfiguration.PLAYERHALLUCINATES.get() == true) {
 				if (entity.getY() <= 1 && (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.HALLUCINATE.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.HALLUCINATE.get()).getDuration() : 0) <= 8) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.HALLUCINATE.get(), 140, 0, false, false));
 				}
-			}
+			} //If higher than y=0, decrease the Nightmare Count
 			if (y > 0) {
 				if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).NightmareCount >= 10) {
 					{
@@ -62,7 +63,7 @@ public class PlayerIsInDeepVoidProcedure {
 						});
 					}
 				}
-			}
+			} //When under y=20, increase the chance of a ''Cave Tremble'' to happen. Reset to 0 if not successful
 			if (y <= 20) {
 				if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).cave_tremble >= 10000) {
 					{
@@ -93,7 +94,7 @@ public class PlayerIsInDeepVoidProcedure {
 					}
 				}
 			}
-		}
+		} //If the player is outside the Deep Void, set the ''StalkerSpawn'' variable to false
 		if (((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) == false) {
 			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerSpawn == true) {
 				{
@@ -104,13 +105,10 @@ public class PlayerIsInDeepVoidProcedure {
 					});
 				}
 			}
-		}
-		if ((world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:forgotten_valley")) || world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:ashen_crags"))
-				|| world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:mourning_graveyard")) || world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:gloomy_deathgrounds"))
-				|| world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:drifting_monoliths")) || world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:staring_hills"))
-				|| world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:filled_graveyard")) || world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:grim_canopy"))) && y >= 40) {
+		} //When higher than y=20, randomly spawn a falling corpse if the biome can spawn those
+		if (world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:falling_corpse_spawn"))) && y >= 40) {
 			if (DeepVoidConfigConfiguration.SPAWNFALLINGCORPSE.get() == true) {
-				if ((entity instanceof LivingEntity _livEnt21 && _livEnt21.hasEffect(TheDeepVoidModMobEffects.LURKER_HEAD_NEAR.get())) == false) {
+				if ((entity instanceof LivingEntity _livEnt14 && _livEnt14.hasEffect(TheDeepVoidModMobEffects.LURKER_HEAD_NEAR.get())) == false) {
 					if (Math.random() < 0.005) {
 						if (world instanceof ServerLevel _level) {
 							Entity entityToSpawn = TheDeepVoidModEntities.FALLING_CORPSE.get().spawn(_level,
@@ -122,7 +120,7 @@ public class PlayerIsInDeepVoidProcedure {
 					}
 				}
 			}
-		}
+		} //Reset all Stalker Variables if the Stalker despawns (StalkerDespawned=true)
 		if (TheDeepVoidModVariables.MapVariables.get(world).StalkerDespawned == true) {
 			TheDeepVoidModVariables.MapVariables.get(world).StalkerDespawned = false;
 			TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
@@ -147,118 +145,6 @@ public class PlayerIsInDeepVoidProcedure {
 					capability.syncPlayerVariables(entity);
 				});
 			}
-		}
-		if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerCount == Math.floor(((double) DeepVoidConfigConfiguration.STALKERSPAWNTIMER.get() * 40) / 100)
-				&& world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0 && y > 0 && (entity instanceof LivingEntity _livEnt30 && _livEnt30.hasEffect(TheDeepVoidModMobEffects.VOID_BLESSING.get())) == false
-				&& (entity instanceof LivingEntity _livEnt31 && _livEnt31.hasEffect(TheDeepVoidModMobEffects.WEAVER_CURSE.get())) == false) {
-			{
-				double _setval = Math.floor(((double) DeepVoidConfigConfiguration.STALKERSPAWNTIMER.get() * 40) / 100) + 1;
-				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.StalkerCount = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			{
-				double _setval = 1;
-				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.heartbeatIndicator = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			TheDeepVoidMod.queueServerWork(4, () -> {
-				{
-					double _setval = 2;
-					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.heartbeatIndicator = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-			});
-			TheDeepVoidMod.queueServerWork(10, () -> {
-				{
-					double _setval = 0;
-					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.heartbeatIndicator = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-			});
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.warden.heartbeat")), SoundSource.HOSTILE, 4, (float) 0.6);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.warden.heartbeat")), SoundSource.HOSTILE, 4, (float) 0.6, false);
-				}
-			}
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:stalker_ambient")), SoundSource.HOSTILE, 4, (float) 0.8);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:stalker_ambient")), SoundSource.HOSTILE, 4, (float) 0.8, false);
-				}
-			}
-		}
-		if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerCount == Math.floor(((double) DeepVoidConfigConfiguration.STALKERSPAWNTIMER.get() * 75) / 100)
-				&& world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0 && y > 0 && (entity instanceof LivingEntity _livEnt39 && _livEnt39.hasEffect(TheDeepVoidModMobEffects.VOID_BLESSING.get())) == false
-				&& (entity instanceof LivingEntity _livEnt40 && _livEnt40.hasEffect(TheDeepVoidModMobEffects.WEAVER_CURSE.get())) == false) {
-			{
-				double _setval = Math.floor(((double) DeepVoidConfigConfiguration.STALKERSPAWNTIMER.get() * 75) / 100) + 1;
-				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.StalkerCount = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			{
-				double _setval = 1;
-				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-					capability.heartbeatIndicator = _setval;
-					capability.syncPlayerVariables(entity);
-				});
-			}
-			TheDeepVoidMod.queueServerWork(4, () -> {
-				{
-					double _setval = 2;
-					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.heartbeatIndicator = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-			});
-			TheDeepVoidMod.queueServerWork(10, () -> {
-				{
-					double _setval = 0;
-					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.heartbeatIndicator = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-			});
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.warden.heartbeat")), SoundSource.HOSTILE, 4, (float) 0.6);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.warden.heartbeat")), SoundSource.HOSTILE, 4, (float) 0.6, false);
-				}
-			}
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:stalker_ambient")), SoundSource.HOSTILE, 4, (float) 0.6);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:stalker_ambient")), SoundSource.HOSTILE, 4, (float) 0.6, false);
-				}
-			}
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.HOSTILE, 4, (float) 0.8);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.HOSTILE, 4, (float) 0.8, false);
-				}
-			}
-		}
-		if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerCount >= Math.floor(((double) DeepVoidConfigConfiguration.STALKERSPAWNTIMER.get() * 92) / 100)
-				&& (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerCount < (double) DeepVoidConfigConfiguration.STALKERSPAWNTIMER.get()) {
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.PARANOIA.get(), 5, 0, false, false));
 		}
 	}
 }

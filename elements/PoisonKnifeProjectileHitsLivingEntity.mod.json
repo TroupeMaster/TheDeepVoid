@@ -1,0 +1,7 @@
+{
+  "_fv": 66,
+  "_type": "procedure",
+  "definition": {
+    "procedurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"event_trigger\" deletable=\"false\" x=\"40\" y=\"40\"><field name=\"trigger\">no_ext_trigger</field><next><block type=\"controls_if\"><value name=\"IF0\"><block type=\"logic_negate\"><value name=\"BOOL\"><block type=\"item_istype\"><field name=\"item_type\">Shield</field><value name=\"item\"><block type=\"entity_get_use_item\"><value name=\"entity\"><block type=\"entity_from_deps\"></block></value></block></value></block></value></block></value><statement name=\"DO0\"><block type=\"entity_add_potion\"><field name=\"potion\">POISON</field><value name=\"level\"><block type=\"math_number\"><field name=\"NUM\">1</field></block></value><value name=\"duration\"><block type=\"math_number\"><field name=\"NUM\">80</field></block></value><value name=\"entity\"><block type=\"entity_from_deps\"></block></value></block></statement></block></next></block></xml>"
+  }
+}

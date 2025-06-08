@@ -137,6 +137,9 @@
       },
       {
         "value": "CUSTOM:StaringHills"
+      },
+      {
+        "value": "CUSTOM:GatheringGrounds"
       }
     ],
     "blocksToReplace": [
@@ -152,7 +155,7 @@
     ],
     "generationShape": "TRIANGLE",
     "frequencyPerChunks": 1,
-    "frequencyOnChunk": 5,
+    "frequencyOnChunk": 4,
     "minGenerateHeight": -64,
     "maxGenerateHeight": 0
   }

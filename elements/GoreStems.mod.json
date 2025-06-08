@@ -3,7 +3,7 @@
   "_type": "plant",
   "definition": {
     "renderType": 12,
-    "texture": "gore_grass",
+    "texture": "gore_stem_animated",
     "textureBottom": "",
     "customModelName": "Cross model",
     "itemTexture": "",

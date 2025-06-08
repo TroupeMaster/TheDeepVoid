@@ -107,6 +107,9 @@
       },
       {
         "value": "CUSTOM:FilledGraveyard"
+      },
+      {
+        "value": "CUSTOM:GatheringGrounds"
       }
     ],
     "generationType": "Flower",

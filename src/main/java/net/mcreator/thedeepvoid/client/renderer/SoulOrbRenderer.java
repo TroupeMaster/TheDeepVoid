@@ -12,21 +12,21 @@ import net.minecraft.client.model.EntityModel;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.thedeepvoid.entity.SoulOrbEntity;
-import net.mcreator.thedeepvoid.client.model.ModelsoulOrb;
+import net.mcreator.thedeepvoid.client.model.ModelsoulOrbHigher;
 
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-public class SoulOrbRenderer extends MobRenderer<SoulOrbEntity, ModelsoulOrb<SoulOrbEntity>> {
+public class SoulOrbRenderer extends MobRenderer<SoulOrbEntity, ModelsoulOrbHigher<SoulOrbEntity>> {
 	public SoulOrbRenderer(EntityRendererProvider.Context context) {
-		super(context, new ModelsoulOrb(context.bakeLayer(ModelsoulOrb.LAYER_LOCATION)), 0f);
-		this.addLayer(new RenderLayer<SoulOrbEntity, ModelsoulOrb<SoulOrbEntity>>(this) {
+		super(context, new ModelsoulOrbHigher(context.bakeLayer(ModelsoulOrbHigher.LAYER_LOCATION)), 0f);
+		this.addLayer(new RenderLayer<SoulOrbEntity, ModelsoulOrbHigher<SoulOrbEntity>>(this) {
 			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("the_deep_void:textures/entities/soulorb.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, SoulOrbEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
 				VertexConsumer vertexConsumer = bufferSource.getBuffer(RenderType.eyes(LAYER_TEXTURE));
-				EntityModel model = new ModelsoulOrb(Minecraft.getInstance().getEntityModels().bakeLayer(ModelsoulOrb.LAYER_LOCATION));
+				EntityModel model = new ModelsoulOrbHigher(Minecraft.getInstance().getEntityModels().bakeLayer(ModelsoulOrbHigher.LAYER_LOCATION));
 				this.getParentModel().copyPropertiesTo(model);
 				model.prepareMobModel(entity, limbSwing, limbSwingAmount, partialTicks);
 				model.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netHeadYaw, headPitch);
@@ -38,10 +38,5 @@ public class SoulOrbRenderer extends MobRenderer<SoulOrbEntity, ModelsoulOrb<Sou
 	@Override
 	public ResourceLocation getTextureLocation(SoulOrbEntity entity) {
 		return new ResourceLocation("the_deep_void:textures/entities/soulorb.png");
-	}
-
-	@Override
-	protected boolean isShaking(SoulOrbEntity entity) {
-		return true;
 	}
 }

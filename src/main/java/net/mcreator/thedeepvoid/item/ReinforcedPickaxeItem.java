@@ -44,6 +44,6 @@ public class ReinforcedPickaxeItem extends PickaxeItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Can crack Bedrock and extract Voidrium Ore"));
+		list.add(Component.literal("\u00A77Can crack Bedrock and extract Voidrium Ore"));
 	}
 }

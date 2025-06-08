@@ -943,5 +943,95 @@
         "stream": true
       }
     ]
+  },
+  "gathering_grounds_loop": {
+    "subtitle": "subtitles.gathering_grounds_loop",
+    "sounds": [
+      {
+        "name": "the_deep_void:gathering_grounds_loop",
+        "stream": false
+      }
+    ]
+  },
+  "soul_passing_by": {
+    "subtitle": "subtitles.soul_passing_by",
+    "sounds": [
+      {
+        "name": "the_deep_void:soul_passing_by_new",
+        "stream": false
+      }
+    ]
+  },
+  "forsaken_ambient": {
+    "subtitle": "subtitles.forsaken_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:forsaken_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "forsaken_hurt": {
+    "subtitle": "subtitles.forsaken_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:forsaken_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "seeker_spawn": {
+    "subtitle": "subtitles.seeker_spawn",
+    "sounds": [
+      {
+        "name": "the_deep_void:seeker_spawn",
+        "stream": false
+      }
+    ]
+  },
+  "chainsaw": {
+    "subtitle": "subtitles.chainsaw",
+    "sounds": [
+      {
+        "name": "the_deep_void:dark-fantasy-studio-chainsaw_-no-copyright-music",
+        "stream": true
+      }
+    ]
+  },
+  "apostle_laugh": {
+    "subtitle": "subtitles.apostle_laugh",
+    "sounds": [
+      {
+        "name": "the_deep_void:apostle_laugh",
+        "stream": false
+      }
+    ]
+  },
+  "apostle_hysterical_laugh": {
+    "subtitle": "subtitles.apostle_hysterical_laugh",
+    "sounds": [
+      {
+        "name": "the_deep_void:apostle_hysterical_laugh",
+        "stream": false
+      }
+    ]
+  },
+  "decapitate": {
+    "subtitle": "subtitles.decapitate",
+    "sounds": [
+      {
+        "name": "the_deep_void:decapitate",
+        "stream": false
+      }
+    ]
+  },
+  "fog_appear": {
+    "subtitle": "subtitles.fog_appear",
+    "sounds": [
+      {
+        "name": "the_deep_void:fog_coming_new",
+        "stream": false
+      }
+    ]
   }
 }

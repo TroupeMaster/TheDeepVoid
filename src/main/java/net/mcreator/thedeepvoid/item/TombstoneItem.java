@@ -57,9 +57,9 @@ public class TombstoneItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79A tombstone with a 3 hit combo. When the wielder successfully performs the combo, all mobs around the target including itself will be inflicted with Doom."));
-		list.add(Component.literal("\u00A79When a victim is Doomed, a tombstone will fall on their head, dealing 25% of their health in damage."));
-		list.add(Component.literal("\u00A79The Tombstone needs to be almost fully charged in order to deal damage."));
+		list.add(Component.literal("\u00A77A tombstone with a 3 hit combo. When the wielder successfully performs the combo, all mobs around the target including itself will be inflicted with Doom."));
+		list.add(Component.literal("\u00A77When a victim is Doomed, a tombstone will fall on their head, dealing 25% of their health in damage."));
+		list.add(Component.literal("\u00A77The Tombstone needs to be almost fully charged in order to deal damage."));
 	}
 
 	@Override

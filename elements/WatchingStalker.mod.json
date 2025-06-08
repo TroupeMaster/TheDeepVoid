@@ -18,18 +18,18 @@
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "stepHeight": 0.6,
-    "hasSpawnEgg": false,
+    "hasSpawnEgg": true,
     "spawnEggBaseColor": {
-      "value": -1,
+      "value": -16777216,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -1,
+      "value": -16777216,
       "falpha": 0.0
     },
     "creativeTabs": [
       {
-        "value": "MISC"
+        "value": "CUSTOM:TheDeepVoid"
       }
     ],
     "isBoss": false,
@@ -156,13 +156,20 @@
       4,
       2
     ],
-    "spawnThisMob": false,
+    "spawnThisMob": true,
     "doesDespawnWhenIdle": false,
-    "spawningProbability": 20,
+    "spawningCondition": {
+      "name": "StalkingStalkerNaturalEntitySpawningCondition"
+    },
+    "spawningProbability": 1,
     "mobSpawningType": "monster",
-    "minNumberOfMobsPerGroup": 4,
-    "maxNumberOfMobsPerGroup": 4,
-    "restrictionBiomes": [],
+    "minNumberOfMobsPerGroup": 1,
+    "maxNumberOfMobsPerGroup": 1,
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:GatheringGrounds"
+      }
+    ],
     "spawnInDungeons": false
   }
 }

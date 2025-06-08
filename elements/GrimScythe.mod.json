@@ -11,8 +11,8 @@
     "name": "Soul Seeker",
     "specialInformation": {
       "fixedValue": [
-        "§9Each hit repeats itself, dealing 6 damage in a AOE and spawning additional XP orbs",
-        "§9Killing a foe fuels the scythe with their soul. At 5 souls, right click to throw the scythe. The thrown scythe steals the soul of foes and their lifeforce"
+        "§7Each hit repeats itself, dealing 6 damage in a AOE and spawning additional XP orbs",
+        "§7Killing a foe fuels the scythe with their soul. At 5 souls, right click to throw the scythe. The thrown scythe steals the soul of foes and their lifeforce"
       ]
     },
     "creativeTabs": [

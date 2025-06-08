@@ -11,7 +11,7 @@
     "name": "Shatterbone Pickaxe",
     "specialInformation": {
       "fixedValue": [
-        "§9Can crack Bedrock and extract Voidrium Ore"
+        "§7Can crack Bedrock and extract Voidrium Ore"
       ]
     },
     "creativeTabs": [

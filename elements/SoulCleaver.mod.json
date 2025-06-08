@@ -11,9 +11,9 @@
     "name": "Soul Weaver",
     "specialInformation": {
       "fixedValue": [
-        "§9Right click on an entity to pass your pain onto them, sacrificing your health based on a fifth of your opponent's current health",
-        "§9Each hit makes the sword swing faster",
-        "§9The Painful effect spreads to other targets when the victim dies"
+        "§7Right click on an entity to pass your pain onto them, sacrificing your health based on a fifth of your opponent's current health",
+        "§7Each hit makes the sword swing faster",
+        "§7The Painful effect spreads to other targets when the victim dies"
       ]
     },
     "creativeTabs": [

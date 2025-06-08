@@ -29,7 +29,10 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": []
+      "fixedValue": [
+        "§9Upon right clicking",
+        " §7Dash in any direction, pushing foes away and applying Rot"
+      ]
     },
     "glowCondition": {
       "fixedValue": false

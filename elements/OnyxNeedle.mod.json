@@ -29,7 +29,10 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": []
+      "fixedValue": [
+        "§9Upon right clicking",
+        " §7Stab yourself to get the Pain Killer effect"
+      ]
     },
     "glowCondition": {
       "fixedValue": false

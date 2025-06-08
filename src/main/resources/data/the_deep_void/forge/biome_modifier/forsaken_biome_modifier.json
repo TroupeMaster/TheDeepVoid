@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "the_deep_void:gathering_grounds",
+  "spawners": {
+    "type": "the_deep_void:forsaken",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 2
+  }
+}

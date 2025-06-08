@@ -50,10 +50,9 @@ public class VoidPendantItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Once used:"));
-		list.add(Component.literal(" \u00A79Teleports you back to the Overworld"));
-		list.add(Component.literal(""));
-		list.add(Component.literal(" \u00A79Use on a Void Core to link it to it."));
+		list.add(Component.literal("\u00A79Once used:"));
+		list.add(Component.literal(" \u00A77Teleports you back to the Overworld"));
+		list.add(Component.literal(" \u00A77Use on a Void Core to link it to it."));
 	}
 
 	@Override

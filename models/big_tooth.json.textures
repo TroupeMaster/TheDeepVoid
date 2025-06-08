@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "big_tooth"
+      },
+      "name": "default"
+    }
+  }
+}

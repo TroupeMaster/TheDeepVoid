@@ -11,9 +11,9 @@
     "name": "Judgement",
     "specialInformation": {
       "fixedValue": [
-        "§9Executes entities in front of the wielder if their health is below 25%",
-        "§9Right click to teleport dash, dealing damage to foes in the wielder's path",
-        "§9Deals half of the damage to nearby foes when swinging the sword at full charge"
+        "§7Executes entities in front of the wielder if their health is below 25%",
+        "§7Right click to teleport dash, dealing damage to foes in the wielder's path",
+        "§7Deals half of the damage to nearby foes when swinging the sword at full charge"
       ]
     },
     "creativeTabs": [

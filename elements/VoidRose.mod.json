@@ -93,6 +93,9 @@
       },
       {
         "value": "CUSTOM:WindsweptHollow"
+      },
+      {
+        "value": "CUSTOM:GatheringGrounds"
       }
     ],
     "generationType": "Flower",

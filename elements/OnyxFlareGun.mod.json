@@ -30,7 +30,8 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "§9Scares off the Stalker and weakens it on direct hit"
+        "§9Upon right clicking",
+        " §7Scare off the Stalker and weaken it on direct hit"
       ]
     },
     "glowCondition": {

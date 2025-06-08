@@ -301,6 +301,33 @@
             "depth": 0,
             "offset": 0
           }
+        },
+        {
+          "biome": "the_deep_void:gathering_grounds",
+          "parameters": {
+            "temperature": [
+              -1.2,
+              0
+            ],
+            "humidity": [
+              -0.1,
+              0.4
+            ],
+            "continentalness": [
+              0.3,
+              1
+            ],
+            "weirdness": [
+              0,
+              0.2
+            ],
+            "erosion": [
+              -0.8,
+              0.1
+            ],
+            "depth": 0,
+            "offset": 0
+          }
         }
       ]
     },
@@ -1469,6 +1496,78 @@
                       "type": "minecraft:block",
                       "result_state": {
                         "Name": "the_deep_void:cobbled_ancient_deepslate"
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "the_deep_void:gathering_grounds"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:above_preliminary_surface"
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": false,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:water",
+                            "offset": -1,
+                            "surface_depth_multiplier": 0,
+                            "add_stone_depth": false
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "the_deep_void:mossy_bone_pile"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "the_deep_void:block_of_bone_pile"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "surface_type": "floor",
+                      "add_surface_depth": true,
+                      "secondary_depth_range": 0,
+                      "offset": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "the_deep_void:block_of_bone_pile"
                       }
                     }
                   }

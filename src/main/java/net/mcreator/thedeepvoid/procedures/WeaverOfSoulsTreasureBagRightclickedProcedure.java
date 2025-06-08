@@ -78,14 +78,6 @@ public class WeaverOfSoulsTreasureBagRightclickedProcedure {
 			_level.addFreshEntity(entityToSpawn);
 		}
 		if (TheDeepVoidModVariables.MapVariables.get(world).weaverFightCount >= 2) {
-			for (int index5 = 0; index5 < 2; index5++) {
-				if (world instanceof ServerLevel _level) {
-					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.SOUL_SHARD.get()));
-					entityToSpawn.setPickUpDelay(10);
-					entityToSpawn.setUnlimitedLifetime();
-					_level.addFreshEntity(entityToSpawn);
-				}
-			}
 			if (entity instanceof ServerPlayer _player) {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:i_always_come_back"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);

@@ -9,7 +9,8 @@
     "the_deep_void:drifting_monoliths",
     "the_deep_void:windswept_hollow",
     "the_deep_void:crawler_nest",
-    "the_deep_void:filled_graveyard"
+    "the_deep_void:filled_graveyard",
+    "the_deep_void:gathering_grounds"
   ],
   "features": "the_deep_void:pointed_serrated_deepslate_tall",
   "step": "underground_structures"

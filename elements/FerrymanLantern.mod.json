@@ -98,7 +98,9 @@
     ],
     "name": "Ferryman's Lantern",
     "specialInformation": {
-      "fixedValue": []
+      "fixedValue": [
+        "§7The creatures aren't interested in breaking this lantern"
+      ]
     },
     "hardness": 3.5,
     "resistance": 3.5,
@@ -121,7 +123,7 @@
     "canRedstoneConnect": false,
     "lightOpacity": 0,
     "material": {
-      "value": "MISCELLANEOUS"
+      "value": "ROCK"
     },
     "tickRate": 0,
     "tickRandomly": false,

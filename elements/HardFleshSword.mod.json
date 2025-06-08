@@ -11,7 +11,7 @@
     "name": "Hard Flesh Sword",
     "specialInformation": {
       "fixedValue": [
-        "§9Steals the life force of foes, healing the wielder based on the damage dealt divided by 4"
+        "§7Steals the life force of foes, healing the wielder based on the damage dealt divided by 4"
       ]
     },
     "creativeTabs": [

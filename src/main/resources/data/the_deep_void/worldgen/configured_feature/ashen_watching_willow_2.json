@@ -1,7 +1,7 @@
 {
   "type": "the_deep_void:structure_feature",
   "config": {
-    "structure": "the_deep_void:ashen_watching_willow2",
+    "structure": "the_deep_void:watching_willow1_void",
     "random_rotation": true,
     "random_mirror": true,
     "ignored_blocks": [

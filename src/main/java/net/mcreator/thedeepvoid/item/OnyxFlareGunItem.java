@@ -23,7 +23,8 @@ public class OnyxFlareGunItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Scares off the Stalker and weakens it on direct hit"));
+		list.add(Component.literal("\u00A79Upon right clicking"));
+		list.add(Component.literal(" \u00A77Scare off the Stalker and weaken it on direct hit"));
 	}
 
 	@Override

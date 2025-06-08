@@ -19,11 +19,13 @@ import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.BlockAndTintGetter;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
@@ -32,10 +34,18 @@ import net.mcreator.thedeepvoid.procedures.VoidriumGlassBlockIsPlacedByProcedure
 import net.mcreator.thedeepvoid.procedures.VoidriumGlassBlockAddedProcedure;
 import net.mcreator.thedeepvoid.block.entity.VoidriumGlassBlockEntity;
 
+import java.util.List;
+
 public class VoidriumGlassBlock extends Block implements EntityBlock {
 	public VoidriumGlassBlock() {
 		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.HAT).sound(SoundType.GLASS).strength(25f, 6f).lightLevel(s -> 8).requiresCorrectToolForDrops().noOcclusion().pushReaction(PushReaction.BLOCK)
 				.hasPostProcess((bs, br, bp) -> true).emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false));
+	}
+
+	@Override
+	public void appendHoverText(ItemStack itemstack, BlockGetter level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
+		list.add(Component.literal("\u00A77Stops any Player that isn't the owner from breaking blocks except the glass in a radius when on top of a beacon"));
 	}
 
 	@Override

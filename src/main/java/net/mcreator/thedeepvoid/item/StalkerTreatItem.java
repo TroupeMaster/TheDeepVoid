@@ -23,8 +23,10 @@ public class StalkerTreatItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Upon right clicking, deters the Stalker and stops it from coming for a short period of time"));
-		list.add(Component.literal("\u00A79Upon right clicking while crouching, throws the treat to distract the Stalker"));
+		list.add(Component.literal("\u00A79Upon right clicking"));
+		list.add(Component.literal(" \u00A77deters the Stalker and stops it from coming for a short period of time"));
+		list.add(Component.literal("\u00A79Upon right clicking while crouching"));
+		list.add(Component.literal(" \u00A77Throws the treat to distract the Stalker"));
 	}
 
 	@Override

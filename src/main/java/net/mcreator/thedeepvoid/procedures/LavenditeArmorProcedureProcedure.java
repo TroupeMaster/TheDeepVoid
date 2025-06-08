@@ -64,6 +64,8 @@ public class LavenditeArmorProcedureProcedure {
 		double health_boost = 0;
 		double resistance = 0;
 		double slowness = 0;
+		double weakness = 0;
+		double fatigue = 0;
 		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.LAVENDITE_ARMOR_HELMET.get()
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.LAVENDITE_ARMOR_CHESTPLATE.get()
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.LAVENDITE_ARMOR_LEGGINGS.get()
@@ -179,6 +181,15 @@ public class LavenditeArmorProcedureProcedure {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 60, (int) (slowness + 1), false, false));
 				}
+				fatigue = entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.DIG_SLOWDOWN) ? _livEnt.getEffect(MobEffects.DIG_SLOWDOWN).getAmplifier() : 0;
+				if (entity instanceof LivingEntity _entity)
+					_entity.removeEffect(MobEffects.DIG_SLOWDOWN);
+				if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.DIG_SLOWDOWN) ? _livEnt.getEffect(MobEffects.DIG_SLOWDOWN).getAmplifier() : 0) < 3) {
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.DIG_SLOWDOWN, 60, (int) (weakness + 1), false, false));
+				}
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 60, 1, false, false));
 				if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.DAMAGE_RESISTANCE) ? _livEnt.getEffect(MobEffects.DAMAGE_RESISTANCE).getAmplifier() : 0) >= 10) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
@@ -189,6 +200,8 @@ public class LavenditeArmorProcedureProcedure {
 					}
 					if (entity instanceof LivingEntity _entity)
 						_entity.removeEffect(MobEffects.DAMAGE_RESISTANCE);
+					if (entity instanceof LivingEntity _entity)
+						_entity.removeEffect(MobEffects.WEAKNESS);
 					resistance = 0;
 					sourceentity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), entity), (float) (amount / 2));
 				}

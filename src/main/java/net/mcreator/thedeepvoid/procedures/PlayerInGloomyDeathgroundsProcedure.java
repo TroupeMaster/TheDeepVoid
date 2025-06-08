@@ -79,6 +79,36 @@ public class PlayerInGloomyDeathgroundsProcedure {
 				}
 			}
 		}
+		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:gathering_grounds"))) {
+			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).gatheringAmbience >= 400) {
+				{
+					double _setval = 0;
+					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.gatheringAmbience = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+				if (Math.random() < 0.4) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y + 1.5, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:soul_passing_by")), SoundSource.AMBIENT, 10,
+									Mth.nextInt(RandomSource.create(), (int) 0.9, (int) 1.1));
+						} else {
+							_level.playLocalSound(x, (y + 1.5), z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:soul_passing_by")), SoundSource.AMBIENT, 10, Mth.nextInt(RandomSource.create(), (int) 0.9, (int) 1.1),
+									false);
+						}
+					}
+				}
+			} else {
+				{
+					double _setval = (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).gatheringAmbience + 1;
+					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+						capability.gatheringAmbience = _setval;
+						capability.syncPlayerVariables(entity);
+					});
+				}
+			}
+		}
 		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:drifting_monoliths"))) {
 			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).monolithAmbience >= 700) {
 				{
@@ -221,8 +251,8 @@ public class PlayerInGloomyDeathgroundsProcedure {
 					});
 				}
 			}
-			if (!(entity instanceof ServerPlayer _plr38 && _plr38.level() instanceof ServerLevel
-					&& _plr38.getAdvancements().getOrStartProgress(_plr38.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:does_it_hate"))).isDone())) {
+			if (!(entity instanceof ServerPlayer _plr41 && _plr41.level() instanceof ServerLevel
+					&& _plr41.getAdvancements().getOrStartProgress(_plr41.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:does_it_hate"))).isDone())) {
 				if (entity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:does_it_hate"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);

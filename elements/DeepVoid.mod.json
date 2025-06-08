@@ -35,6 +35,9 @@
       },
       {
         "value": "CUSTOM:FilledGraveyard"
+      },
+      {
+        "value": "CUSTOM:GatheringGrounds"
       }
     ],
     "worldGenType": "Normal world gen",
@@ -52,7 +55,7 @@
     "hasFog": false,
     "isDark": true,
     "doesWaterVaporize": false,
-    "sleepResult": "BED_EXPLODES",
+    "sleepResult": "DENY",
     "hasSkyLight": false,
     "imitateOverworldBehaviour": false,
     "portalFrame": {

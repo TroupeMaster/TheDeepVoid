@@ -70,8 +70,8 @@ public class GrimScytheItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Each hit repeats itself, dealing 6 damage in a AOE and spawning additional XP orbs"));
-		list.add(Component.literal("\u00A79Killing a foe fuels the scythe with their soul. At 5 souls, right click to throw the scythe. The thrown scythe steals the soul of foes and their lifeforce"));
+		list.add(Component.literal("\u00A77Each hit repeats itself, dealing 6 damage in a AOE and spawning additional XP orbs"));
+		list.add(Component.literal("\u00A77Killing a foe fuels the scythe with their soul. At 5 souls, right click to throw the scythe. The thrown scythe steals the soul of foes and their lifeforce"));
 	}
 
 	@Override

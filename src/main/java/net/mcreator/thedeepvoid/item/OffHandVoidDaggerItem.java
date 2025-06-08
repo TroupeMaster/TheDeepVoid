@@ -48,8 +48,8 @@ public class OffHandVoidDaggerItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Right click with the dagger to attack. Deals more damage after attacking with the dagger in the main-hand"));
-		list.add(Component.literal("\u00A79Inflicts rot on hit (right click)"));
+		list.add(Component.literal("\u00A77Right click with the dagger to attack. Deals more damage after attacking with the dagger in the main-hand"));
+		list.add(Component.literal("\u00A77Inflicts rot on hit (right click)"));
 	}
 
 	@Override

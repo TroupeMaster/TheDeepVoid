@@ -5,14 +5,14 @@
     "toolType": "Sword",
     "renderType": 1,
     "blockingRenderType": 0,
-    "texture": "grim_scythe",
-    "customModelName": "the_harvest:default",
+    "texture": "harvester",
+    "customModelName": "harvester_new:default",
     "blockingModelName": "Normal blocking",
     "name": "§b§l§kSoul §b§lThe Harvest §b§l§kSoul",
     "specialInformation": {
       "fixedValue": [
-        "§9Hitting a foe with the scythe will create a soul slash, damaging any mob nearby and giving them the Hexed effect.",
-        "§9When attacking a foe that has Hexed, one more level will be added as well as two additional seconds."
+        "§7Hitting a foe with the scythe will create a soul slash, damaging any mob nearby and giving them the Hexed effect.",
+        "§7When attacking a foe that has Hexed, one more level will be added as well as two additional seconds."
       ]
     },
     "creativeTabs": [

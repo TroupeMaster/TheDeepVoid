@@ -83,6 +83,9 @@
     "restrictionBiomes": [
       {
         "value": "CUSTOM:GrimCanopy"
+      },
+      {
+        "value": "CUSTOM:GatheringGrounds"
       }
     ],
     "generationType": "Grass",

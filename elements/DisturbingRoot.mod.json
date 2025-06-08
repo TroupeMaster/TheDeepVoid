@@ -43,7 +43,7 @@
     "projectile": {
       "value": "CUSTOM:BoneBallProjectile"
     },
-    "isFood": true,
+    "isFood": false,
     "nutritionalValue": 0,
     "saturation": 0.0,
     "eatResultItem": {

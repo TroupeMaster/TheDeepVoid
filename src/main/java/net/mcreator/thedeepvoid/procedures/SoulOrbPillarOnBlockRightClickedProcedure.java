@@ -4,6 +4,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
@@ -17,7 +18,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
 import net.mcreator.thedeepvoid.entity.SoulOrbEntity;
 
@@ -37,20 +37,13 @@ public class SoulOrbPillarOnBlockRightClickedProcedure {
 					return false;
 				}
 			}.getValue(world, BlockPos.containing(x, y, z), "deep_void:receiveOrb")) == true) {
-				if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).hasSoulOrb == true) {
-					if (!world.getEntitiesOfClass(SoulOrbEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY() + 2.5), (entity.getZ())), 2, 2, 2), e -> true).isEmpty()) {
-						{
-							boolean _setval = false;
-							entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-								capability.hasSoulOrb = _setval;
-								capability.syncPlayerVariables(entity);
-							});
-						}
-						{
-							final Vec3 _center = new Vec3((entity.getX()), (entity.getY() + 2.5), (entity.getZ()));
-							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-							for (Entity entityiterator : _entfound) {
-								if (entityiterator instanceof SoulOrbEntity) {
+				if (entity.isVehicle()) {
+					{
+						final Vec3 _center = new Vec3((entity.getX()), (entity.getY() + 2), (entity.getZ()));
+						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+						for (Entity entityiterator : _entfound) {
+							if (entityiterator instanceof SoulOrbEntity) {
+								if ((entityiterator.getVehicle()) == entity) {
 									if (!entityiterator.level().isClientSide())
 										entityiterator.discard();
 									if (world instanceof ServerLevel _level)
@@ -66,8 +59,44 @@ public class SoulOrbPillarOnBlockRightClickedProcedure {
 											}
 										}
 									}
+									if ((new Object() {
+										public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+											BlockEntity blockEntity = world.getBlockEntity(pos);
+											if (blockEntity != null)
+												return blockEntity.getPersistentData().getBoolean(tag);
+											return false;
+										}
+									}.getValue(world, BlockPos.containing(x, y, z), "deep_void:startStun")) == false) {
+										if (!world.isClientSide()) {
+											BlockPos _bp = BlockPos.containing(x, y, z);
+											BlockEntity _blockEntity = world.getBlockEntity(_bp);
+											BlockState _bs = world.getBlockState(_bp);
+											if (_blockEntity != null)
+												_blockEntity.getPersistentData().putBoolean("deep_void:startStun", true);
+											if (world instanceof Level _level)
+												_level.sendBlockUpdated(_bp, _bs, _bs, 3);
+										}
+									}
 								}
 							}
+						}
+					}
+					if ((new Object() {
+						public boolean getValue(LevelAccessor world, BlockPos pos, String tag) {
+							BlockEntity blockEntity = world.getBlockEntity(pos);
+							if (blockEntity != null)
+								return blockEntity.getPersistentData().getBoolean(tag);
+							return false;
+						}
+					}.getValue(world, BlockPos.containing(x, y, z), "deep_void:startStun")) == true) {
+						if (!world.isClientSide()) {
+							BlockPos _bp = BlockPos.containing(x, y, z);
+							BlockEntity _blockEntity = world.getBlockEntity(_bp);
+							BlockState _bs = world.getBlockState(_bp);
+							if (_blockEntity != null)
+								_blockEntity.getPersistentData().putBoolean("deep_void:startStun", false);
+							if (world instanceof Level _level)
+								_level.sendBlockUpdated(_bp, _bs, _bs, 3);
 						}
 						if (!world.getEntitiesOfClass(WeaverOfSoulsEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()) {
 							{

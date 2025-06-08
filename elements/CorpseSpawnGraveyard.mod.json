@@ -94,6 +94,9 @@
     "onBlockAdded": {
       "name": "CorpseSpawnGraveyardPlantAdded"
     },
+    "onNeighbourBlockChanges": {
+      "name": "CorpseNeighbourBlockChanges"
+    },
     "onDestroyedByPlayer": {
       "name": "CorpseSpawnPlantDestroyedByPlayer"
     }

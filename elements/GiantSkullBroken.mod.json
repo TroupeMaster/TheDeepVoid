@@ -23,6 +23,9 @@
       },
       {
         "value": "CUSTOM:FilledGraveyard"
+      },
+      {
+        "value": "CUSTOM:ForgottenValley"
       }
     ],
     "terrainAdaptation": "none",

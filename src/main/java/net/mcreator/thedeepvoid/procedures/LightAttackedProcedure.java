@@ -16,10 +16,10 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
 import net.mcreator.thedeepvoid.entity.ThrownSoulSeekerEntity;
 import net.mcreator.thedeepvoid.entity.SummonedShadowHandEntity;
@@ -175,19 +175,22 @@ public class LightAttackedProcedure {
 			}
 		}
 		if (entity instanceof SoulOrbEntity) {
-			if (!entity.level().isClientSide())
-				entity.discard();
-			world.levelEvent(2001, BlockPos.containing(x, y, z), Block.getId(Blocks.BLUE_ICE.defaultBlockState()));
-		}
-		if (entity instanceof Player && (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).hasSoulOrb == true) {
-			if (!world.getEntitiesOfClass(SoulOrbEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 8, 8, 8), e -> true).isEmpty()) {
-				{
-					boolean _setval = false;
-					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.hasSoulOrb = _setval;
-						capability.syncPlayerVariables(entity);
-					});
+			if (sourceentity instanceof Player) {
+				if (event != null && event.isCancelable()) {
+					event.setCanceled(true);
+				} else if (event != null && event.hasResult()) {
+					event.setResult(Event.Result.DENY);
 				}
+				if (sourceentity instanceof Player _player && !_player.level().isClientSide())
+					_player.displayClientMessage(Component.literal("\u00A7b\u00A7l\u00A7kSOUL \u00A7b\u00A7lTake me. \u00A7b\u00A7l\u00A7kSOUL"), true);
+			} else {
+				if (!entity.level().isClientSide())
+					entity.discard();
+				world.levelEvent(2001, BlockPos.containing(x, y, z), Block.getId(Blocks.BLUE_ICE.defaultBlockState()));
+			}
+		}
+		if (entity instanceof Player) {
+			if (!world.getEntitiesOfClass(SoulOrbEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 8, 8, 8), e -> true).isEmpty()) {
 				{
 					final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(8 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();

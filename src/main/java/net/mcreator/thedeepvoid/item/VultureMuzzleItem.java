@@ -18,6 +18,7 @@ public class VultureMuzzleItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Restrains weakened Death Vultures"));
+		list.add(Component.literal("\u00A79Upon right clicking a Death Vulture"));
+		list.add(Component.literal(" \u00A77Restrain weakened Death Vultures"));
 	}
 }

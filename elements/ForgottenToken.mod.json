@@ -30,7 +30,7 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "§9Locates any Abductor nearby and when under y=0, tells how close the Nightmare is to spawn"
+        "§7Locates any Abductor nearby and when under y=0, tells how close the Nightmare is to spawn"
       ]
     },
     "glowCondition": {

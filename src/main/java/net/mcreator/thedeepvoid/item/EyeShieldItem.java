@@ -28,6 +28,6 @@ public class EyeShieldItem extends ShieldItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Paralizes every foe in front of the wielder when blocking an attack"));
+		list.add(Component.literal("\u00A77Paralizes every foe in front of the wielder when blocking an attack"));
 	}
 }

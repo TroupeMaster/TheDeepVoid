@@ -1,13 +1,9 @@
 {
-  "parent": "block/cube",
+  "parent": "the_deep_void:custom/infested_log",
   "textures": {
-    "down": "the_deep_void:block/rotten_log_top",
-    "up": "the_deep_void:block/rotten_log_top",
-    "north": "the_deep_void:block/eye_log",
-    "east": "the_deep_void:block/eye_log",
-    "south": "the_deep_void:block/eye_log",
-    "west": "the_deep_void:block/eye_log",
-    "particle": "the_deep_void:block/rotten_log_top"
+    "all": "the_deep_void:block/eye_log_animated",
+    "particle": "the_deep_void:block/eye_log_animated",
+    "0": "the_deep_void:block/eye_log_animated"
   },
-  "render_type": "solid"
+  "render_type": "cutout"
 }

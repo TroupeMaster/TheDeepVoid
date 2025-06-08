@@ -23,7 +23,7 @@ public class ForbiddenTomeItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Flings shadow daggers out of your enemies, dealing damage. The daggers then home onto the nearest foe, healing the caster"));
+		list.add(Component.literal("\u00A77Flings shadow daggers out of your enemies, dealing damage. The daggers then home onto the nearest foe, healing the caster"));
 	}
 
 	@Override

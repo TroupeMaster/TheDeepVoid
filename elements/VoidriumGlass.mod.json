@@ -35,7 +35,9 @@
     ],
     "name": "Voidrium Glass",
     "specialInformation": {
-      "fixedValue": []
+      "fixedValue": [
+        "§7Stops any Player that isn't the owner from breaking blocks except the glass in a radius when on top of a beacon"
+      ]
     },
     "hardness": 25.0,
     "resistance": 6.0,

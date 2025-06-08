@@ -21,7 +21,7 @@ public class EndlessQuiverItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Supplies regular arrows endlessly"));
+		list.add(Component.literal("\u00A77Supplies regular arrows endlessly"));
 	}
 
 	@Override

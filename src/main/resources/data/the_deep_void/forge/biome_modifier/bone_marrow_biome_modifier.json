@@ -6,7 +6,8 @@
     "the_deep_void:mourning_graveyard",
     "the_deep_void:watching_undergrowth",
     "the_deep_void:crawler_nest",
-    "the_deep_void:filled_graveyard"
+    "the_deep_void:filled_graveyard",
+    "the_deep_void:gathering_grounds"
   ],
   "features": "the_deep_void:bone_marrow",
   "step": "vegetal_decoration"

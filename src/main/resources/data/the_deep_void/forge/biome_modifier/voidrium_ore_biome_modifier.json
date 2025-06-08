@@ -5,7 +5,8 @@
     "the_deep_void:drifting_monoliths",
     "the_deep_void:filled_graveyard",
     "the_deep_void:gloomy_deathgrounds",
-    "the_deep_void:staring_hills"
+    "the_deep_void:staring_hills",
+    "the_deep_void:gathering_grounds"
   ],
   "features": "the_deep_void:voidrium_ore",
   "step": "underground_ores"

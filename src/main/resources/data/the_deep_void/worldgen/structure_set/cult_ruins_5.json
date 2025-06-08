@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "the_deep_void:cult_ruins_5",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 6,
+    "separation": 2,
+    "salt": 1175744535
+  }
+}

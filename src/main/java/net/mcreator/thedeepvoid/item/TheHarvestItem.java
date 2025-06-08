@@ -54,7 +54,7 @@ public class TheHarvestItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Hitting a foe with the scythe will create a soul slash, damaging any mob nearby and giving them the Hexed effect."));
-		list.add(Component.literal("\u00A79When attacking a foe that has Hexed, one more level will be added as well as two additional seconds."));
+		list.add(Component.literal("\u00A77Hitting a foe with the scythe will create a soul slash, damaging any mob nearby and giving them the Hexed effect."));
+		list.add(Component.literal("\u00A77When attacking a foe that has Hexed, one more level will be added as well as two additional seconds."));
 	}
 }

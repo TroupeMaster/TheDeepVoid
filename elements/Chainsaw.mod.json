@@ -1,0 +1,26 @@
+{
+  "_fv": 66,
+  "_type": "musicdisc",
+  "definition": {
+    "name": "Music Disc",
+    "rarity": "EPIC",
+    "texture": "chainsaw_disc",
+    "description": "§7DARK FANTASY STUDIO - CHAINSAW",
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "music": {
+      "value": "CUSTOM:chainsaw"
+    },
+    "lengthInTicks": 2520,
+    "analogOutput": 8
+  }
+}

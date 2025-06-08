@@ -41,9 +41,9 @@ public class VoodooDollItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79While using the doll, the souls of victims in front of the user will be slowly drained, damaging them and concentrating them at a point. "));
-		list.add(Component.literal("\u00A79When enough soul is collected, release an explosion at a point, applying Hexed IV to any nearby mobs."));
-		list.add(Component.literal("\u00A79If the Player stops using the doll when there isn't enough soul, regeneration will be given to the Player depending on how many souls were collected so far"));
+		list.add(Component.literal("\u00A77While using the doll, the souls of victims in front of the user will be slowly drained, damaging them and concentrating them at a point. "));
+		list.add(Component.literal("\u00A77When enough soul is collected, release an explosion at a point, applying Hexed IV to any nearby mobs."));
+		list.add(Component.literal("\u00A77If the Player stops using the doll when there isn't enough soul, regeneration will be given to the Player depending on how many souls were collected so far"));
 	}
 
 	@Override

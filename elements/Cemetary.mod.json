@@ -44,6 +44,9 @@
       },
       {
         "value": "CUSTOM:FilledGraveyard"
+      },
+      {
+        "value": "CUSTOM:GatheringGrounds"
       }
     ],
     "terrainAdaptation": "beard_box",

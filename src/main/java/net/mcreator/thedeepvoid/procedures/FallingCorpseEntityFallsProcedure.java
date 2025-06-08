@@ -10,9 +10,11 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -66,7 +68,13 @@ public class FallingCorpseEntityFallsProcedure {
 			if (!entity.level().isClientSide())
 				entity.discard();
 			if (DeepVoidConfigConfiguration.PLACECORPSEONIMPACT.get() == true) {
-				if (!world.getBlockState(BlockPos.containing(x, y, z)).canOcclude()) {
+				if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.CORPSE_PILE.get()) {
+					world.setBlock(BlockPos.containing(x, y - 1, z), TheDeepVoidModBlocks.BLOCK_OF_SKULL_PILE.get().defaultBlockState(), 3);
+				}
+				if ((world.getBlockState(BlockPos.containing(x, y, z))).is(BlockTags.create(new ResourceLocation("the_deep_void:replaceable_corpse")))) {
+					world.setBlock(BlockPos.containing(x, y, z), TheDeepVoidModBlocks.CORPSE_PILE.get().defaultBlockState(), 3);
+				}
+				if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == Blocks.AIR) {
 					world.setBlock(BlockPos.containing(x, y, z), TheDeepVoidModBlocks.CORPSE.get().defaultBlockState(), 3);
 					if (Math.random() < 0.25) {
 						{

@@ -140,6 +140,9 @@ public class TheDeepVoidModVariables {
 				clone.hasSoulOrb = original.hasSoulOrb;
 				clone.handheldBreak = original.handheldBreak;
 				clone.weaverRobeCooldown = original.weaverRobeCooldown;
+				clone.gatheringAmbience = original.gatheringAmbience;
+				clone.pickedUpApostle = original.pickedUpApostle;
+				clone.posYApostle = original.posYApostle;
 			}
 		}
 
@@ -209,6 +212,7 @@ public class TheDeepVoidModVariables {
 		public double weaverFightCount = 0;
 		public boolean overwritten = false;
 		public boolean surfaceOverwritten = false;
+		public double apostleFightCount = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -225,6 +229,7 @@ public class TheDeepVoidModVariables {
 			weaverFightCount = nbt.getDouble("weaverFightCount");
 			overwritten = nbt.getBoolean("overwritten");
 			surfaceOverwritten = nbt.getBoolean("surfaceOverwritten");
+			apostleFightCount = nbt.getDouble("apostleFightCount");
 		}
 
 		@Override
@@ -237,6 +242,7 @@ public class TheDeepVoidModVariables {
 			nbt.putDouble("weaverFightCount", weaverFightCount);
 			nbt.putBoolean("overwritten", overwritten);
 			nbt.putBoolean("surfaceOverwritten", surfaceOverwritten);
+			nbt.putDouble("apostleFightCount", apostleFightCount);
 			return nbt;
 		}
 
@@ -396,6 +402,9 @@ public class TheDeepVoidModVariables {
 		public double handheldBreak = 0;
 		public boolean teleportToVoid = false;
 		public double weaverRobeCooldown = 0;
+		public double gatheringAmbience = 0;
+		public boolean pickedUpApostle = false;
+		public double posYApostle = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -471,6 +480,9 @@ public class TheDeepVoidModVariables {
 			nbt.putDouble("handheldBreak", handheldBreak);
 			nbt.putBoolean("teleportToVoid", teleportToVoid);
 			nbt.putDouble("weaverRobeCooldown", weaverRobeCooldown);
+			nbt.putDouble("gatheringAmbience", gatheringAmbience);
+			nbt.putBoolean("pickedUpApostle", pickedUpApostle);
+			nbt.putDouble("posYApostle", posYApostle);
 			return nbt;
 		}
 
@@ -543,6 +555,9 @@ public class TheDeepVoidModVariables {
 			handheldBreak = nbt.getDouble("handheldBreak");
 			teleportToVoid = nbt.getBoolean("teleportToVoid");
 			weaverRobeCooldown = nbt.getDouble("weaverRobeCooldown");
+			gatheringAmbience = nbt.getDouble("gatheringAmbience");
+			pickedUpApostle = nbt.getBoolean("pickedUpApostle");
+			posYApostle = nbt.getDouble("posYApostle");
 		}
 	}
 
@@ -634,6 +649,9 @@ public class TheDeepVoidModVariables {
 					variables.handheldBreak = message.data.handheldBreak;
 					variables.teleportToVoid = message.data.teleportToVoid;
 					variables.weaverRobeCooldown = message.data.weaverRobeCooldown;
+					variables.gatheringAmbience = message.data.gatheringAmbience;
+					variables.pickedUpApostle = message.data.pickedUpApostle;
+					variables.posYApostle = message.data.posYApostle;
 				}
 			});
 			context.setPacketHandled(true);

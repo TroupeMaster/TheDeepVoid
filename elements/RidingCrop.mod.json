@@ -30,7 +30,8 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "§9Hit a Muzzled Death Vulture to make it perform a dash"
+        "§9Upon right clicking while riding a Muzzled Death Vulture",
+        " §7Hit the Muzzled Death Vulture to make it perform a dash"
       ]
     },
     "glowCondition": {

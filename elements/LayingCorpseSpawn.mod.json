@@ -105,11 +105,17 @@
       },
       {
         "value": "CUSTOM:FilledGraveyard"
+      },
+      {
+        "value": "CUSTOM:GatheringGrounds"
       }
     ],
     "generationType": "Flower",
     "patchSize": 1,
     "generateAtAnyHeight": false,
+    "onNeighbourBlockChanges": {
+      "name": "CorpseNeighbourBlockChanges"
+    },
     "onDestroyedByPlayer": {
       "name": "CorpseSpawnPlantDestroyedByPlayer"
     }

@@ -3,7 +3,8 @@
   "biomes": [
     "the_deep_void:grim_canopy",
     "the_deep_void:ashen_crags",
-    "the_deep_void:watching_undergrowth"
+    "the_deep_void:watching_undergrowth",
+    "the_deep_void:gathering_grounds"
   ],
   "features": "the_deep_void:void_fern",
   "step": "vegetal_decoration"

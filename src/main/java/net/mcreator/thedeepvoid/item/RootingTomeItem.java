@@ -23,7 +23,7 @@ public class RootingTomeItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Roots all foes around the caster"));
+		list.add(Component.literal("\u00A77Roots all foes around the caster"));
 	}
 
 	@Override

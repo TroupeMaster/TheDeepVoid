@@ -30,10 +30,9 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "§7Once used:",
-        " §9Teleports you back to the Overworld",
-        "",
-        " §9Use on a Void Core to link it to it."
+        "§9Once used:",
+        " §7Teleports you back to the Overworld",
+        " §7Use on a Void Core to link it to it."
       ]
     },
     "glowCondition": {

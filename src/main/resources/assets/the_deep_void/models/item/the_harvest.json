@@ -1,7 +1,7 @@
 {
-  "parent": "the_deep_void:custom/the_harvest",
+  "parent": "the_deep_void:custom/harvester_new",
   "textures": {
-    "0": "the_deep_void:block/the_harvester",
-    "particle": "the_deep_void:item/grim_scythe"
+    "0": "the_deep_void:block/harvester_new",
+    "particle": "the_deep_void:item/harvester"
   }
 }

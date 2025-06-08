@@ -14,6 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.FlowerBlock;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.ItemStack;
@@ -23,6 +24,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.procedures.CorpseSpawnPlantDestroyedByPlayerProcedure;
 import net.mcreator.thedeepvoid.procedures.CorpseSpawnGraveyardPlantAddedProcedure;
+import net.mcreator.thedeepvoid.procedures.CorpseNeighbourBlockChangesProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class CorpseSpawnGraveyardBlock extends FlowerBlock {
@@ -55,6 +57,12 @@ public class CorpseSpawnGraveyardBlock extends FlowerBlock {
 	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
 		super.onPlace(blockstate, world, pos, oldState, moving);
 		CorpseSpawnGraveyardPlantAddedProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+	}
+
+	@Override
+	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
+		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
+		CorpseNeighbourBlockChangesProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	@Override

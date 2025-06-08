@@ -21,9 +21,6 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
 import net.mcreator.thedeepvoid.entity.SoulOrbEntity;
 
-import java.util.List;
-import java.util.Comparator;
-
 public class SoulOrbPillarOnTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if (!world.getEntitiesOfClass(WeaverOfSoulsEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()) {
@@ -41,15 +38,6 @@ public class SoulOrbPillarOnTickUpdateProcedure {
 							Entity entityToSpawn = TheDeepVoidModEntities.SOUL_ORB.get().spawn(_level, BlockPos.containing(x, y + 1, z), MobSpawnType.MOB_SUMMONED);
 							if (entityToSpawn != null) {
 								entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-							}
-						}
-						{
-							final Vec3 _center = new Vec3(x, (y + 1), z);
-							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-							for (Entity entityiterator : _entfound) {
-								if (entityiterator instanceof SoulOrbEntity) {
-									entityiterator.getPersistentData().putBoolean("deep_void:pickedUp", false);
-								}
 							}
 						}
 						for (int index0 = 0; index0 < 10; index0++) {

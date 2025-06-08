@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "aca",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:voidrium_gem"
+    },
+    "b": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "c": {
+      "item": "minecraft:shield"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:voidrium_bulwark",
+    "count": 1
+  }
+}

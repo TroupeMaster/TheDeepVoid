@@ -21,7 +21,6 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> VOIDBLESSINGTIMER;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> ALLOWOTHERWORLDTP;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> ALLOWSOULLIGHT;
-	public static final ForgeConfigSpec.ConfigValue<Boolean> OLDLIGHTSYSTEM;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> PLAYERHALLUCINATES;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> STALKERBREAKSBLOCKS;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> DARKNESS;
@@ -43,7 +42,7 @@ public class DeepVoidConfigConfiguration {
 		BUILDER.push("Spawns");
 		SPAWNABDUCTORS = BUILDER.comment("Whether Abductors will spawn in the Overworld or not").define("SpawnAbductors", true);
 		SPAWNFALLINGCORPSE = BUILDER.comment("If corpses should fall from the sky in the Deep Void").define("SpawnFallingCorpse", true);
-		PLACECORPSEONIMPACT = BUILDER.comment("If falling corpses should place a corpse on impact").define("PlaceCorpseOnImpact", true);
+		PLACECORPSEONIMPACT = BUILDER.comment("If falling corpses should place a corpse on impact").define("PlaceCorpseOnImpact", false);
 		STALKERSPAWNS = BUILDER.comment("If the Stalker should spawn or not").define("StalkerSpawns", true);
 		STALKINGSTALKERSPAWNS = BUILDER.comment("If Stalking Stalkers should spawn or not").define("StalkingStalkerSpawns", true);
 		STALKERSPAWNTIMER = BUILDER.comment("The time it takes for the Stalker to spawn in ticks (Default = 1,200 ticks)").define("StalkerSpawnTimer", (double) 1200);
@@ -54,7 +53,6 @@ public class DeepVoidConfigConfiguration {
 		VOIDBLESSINGTIMER = BUILDER.comment("How long the Void Blessing effect should last when entering the Deep Void (In ticks)").define("VoidBlessingTimer", (double) 600);
 		ALLOWOTHERWORLDTP = BUILDER.comment("Should players teleport to the Deep Void when falling in the void in any dimension").define("AllowOtherWorldTp", false);
 		ALLOWSOULLIGHT = BUILDER.comment("Should Soul light sources not get destroyed").define("AllowSoulLight", false);
-		OLDLIGHTSYSTEM = BUILDER.comment("If the old light breaking mechanic should be used instead of the new one").define("OldLightSystem", false);
 		PLAYERHALLUCINATES = BUILDER.comment("If players should hallucinate below y=1 or not").define("PlayerHallucinates", true);
 		STALKERBREAKSBLOCKS = BUILDER.comment("Should the Stalker be able to break certain blocks").define("StalkerBreaksBlocks", true);
 		DARKNESS = BUILDER.comment("If Darkness should attack the Player below y=0 while still keeping Hallucinate").define("Darkness", true);

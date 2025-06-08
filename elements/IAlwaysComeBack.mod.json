@@ -3,7 +3,7 @@
   "_type": "achievement",
   "definition": {
     "achievementName": "''I Always Come Back''-A Purple Dude, probably",
-    "achievementDescription": "Fight the Weaver Of Souls a second time to get Soul Shards",
+    "achievementDescription": "Fight a boss a second time",
     "achievementIcon": {
       "value": "CUSTOM:HexedDoll"
     },

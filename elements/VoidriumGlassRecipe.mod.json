@@ -12,13 +12,13 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:BlockOfUmbrium"
+        "value": "CUSTOM:SoulFusedIngot"
       },
       {
         "value": "CUSTOM:BlockOfUmbrium"
       },
       {
-        "value": "CUSTOM:BlockOfUmbrium"
+        "value": "CUSTOM:SoulFusedIngot"
       },
       {
         "value": "CUSTOM:SulfurGlass"

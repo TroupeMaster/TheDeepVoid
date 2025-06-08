@@ -30,7 +30,9 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "§9Right click on a Soul Container to summon the Weaver Of Souls if there are none nearby"
+        "§9Right click on a Soul Container to summon the Weaver Of Souls",
+        "",
+        "§9Right click on a Soul Forge to summon the Apostle Of Catastrophe, breaking the Soul Forge in the process"
       ]
     },
     "glowCondition": {

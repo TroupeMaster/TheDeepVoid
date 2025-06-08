@@ -11,8 +11,8 @@
     "name": "Void Dagger",
     "specialInformation": {
       "fixedValue": [
-        "§9Right click with the dagger to attack. Deals more damage after attacking with the dagger in the main-hand",
-        "§9Inflicts rot on hit (right click)"
+        "§7Right click with the dagger to attack. Deals more damage after attacking with the dagger in the main-hand",
+        "§7Inflicts rot on hit (right click)"
       ]
     },
     "creativeTabs": [],

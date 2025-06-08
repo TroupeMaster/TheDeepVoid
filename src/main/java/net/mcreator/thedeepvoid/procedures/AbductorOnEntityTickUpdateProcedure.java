@@ -11,6 +11,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
@@ -154,6 +156,24 @@ public class AbductorOnEntityTickUpdateProcedure {
 			}
 		} else {
 			entity.getPersistentData().putDouble("deep_void:stare", (entity.getPersistentData().getDouble("deep_void:stare") + 1));
+		}
+		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 12, 12, 12), e -> true).isEmpty())) {
+			if (entity.getPersistentData().getDouble("deep_void:callOut") >= 100) {
+				entity.getPersistentData().putDouble("deep_void:callOut", 0);
+				if (Math.random() < 0.5) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:abductor_ambient")), SoundSource.HOSTILE, 4,
+									(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
+						} else {
+							_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:abductor_ambient")), SoundSource.HOSTILE, 4,
+									(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+						}
+					}
+				}
+			} else {
+				entity.getPersistentData().putDouble("deep_void:callOut", (entity.getPersistentData().getDouble("deep_void:callOut") + 1));
+			}
 		}
 	}
 }

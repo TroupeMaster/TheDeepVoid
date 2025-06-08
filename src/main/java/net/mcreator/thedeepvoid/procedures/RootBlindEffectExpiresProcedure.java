@@ -16,6 +16,6 @@ public class RootBlindEffectExpiresProcedure {
 		yOffset = 1.5;
 		distance = 1;
 		world.levelEvent(2001, BlockPos.containing(entity.getX() + entity.getLookAngle().x * distance, entity.getY() + yOffset, entity.getZ() + entity.getLookAngle().z * distance),
-				Block.getId(TheDeepVoidModBlocks.INFESTED_ROTTEN_WOOD.get().defaultBlockState()));
+				Block.getId(TheDeepVoidModBlocks.INFESTED_ROTTEN_ROOTS.get().defaultBlockState()));
 	}
 }

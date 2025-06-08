@@ -63,6 +63,7 @@ public class PlayerAttackedByStalkerProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
+		//When the player is attacked by some entities
 		if (sourceentity instanceof StalkerEntity) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.DECOMPOSITION.get(), 160, 0));

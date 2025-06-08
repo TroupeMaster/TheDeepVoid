@@ -11,8 +11,8 @@
     "name": "Void Dagger",
     "specialInformation": {
       "fixedValue": [
-        "§9Puts a second dagger in the wielder's off-hand",
-        "§9Inflicts Wither on hit"
+        "§7Puts a second dagger in the wielder's off-hand",
+        "§7Inflicts Wither on hit"
       ]
     },
     "creativeTabs": [

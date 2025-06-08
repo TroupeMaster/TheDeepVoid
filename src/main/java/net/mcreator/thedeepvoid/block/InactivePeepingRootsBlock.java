@@ -41,10 +41,9 @@ public class InactivePeepingRootsBlock extends FlowerBlock {
 
 	@Override
 	public boolean mayPlaceOn(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
-		return groundState.is(TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get()) || groundState.is(TheDeepVoidModBlocks.ROTTEN_LOG.get()) || groundState.is(TheDeepVoidModBlocks.INACTIVE_INFESTED_ROTTEN_LOG.get())
-				|| groundState.is(TheDeepVoidModBlocks.INFESTED_ROTTEN_LOG.get()) || groundState.is(TheDeepVoidModBlocks.COBBLED_ANCIENT_DEEPSLATE.get()) || groundState.is(TheDeepVoidModBlocks.ANCIENT_DEEPSLATE.get())
-				|| groundState.is(Blocks.DEEPSLATE) || groundState.is(Blocks.COBBLED_DEEPSLATE) || groundState.is(TheDeepVoidModBlocks.ROTTEN_WOOD.get()) || groundState.is(TheDeepVoidModBlocks.ROTTEN_MOSS.get())
-				|| groundState.is(TheDeepVoidModBlocks.MOSSY_BONE_PILE.get());
+		return groundState.is(TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get()) || groundState.is(TheDeepVoidModBlocks.ROTTEN_LOG.get()) || groundState.is(TheDeepVoidModBlocks.INFESTED_ROTTEN_LOG.get())
+				|| groundState.is(TheDeepVoidModBlocks.COBBLED_ANCIENT_DEEPSLATE.get()) || groundState.is(TheDeepVoidModBlocks.ANCIENT_DEEPSLATE.get()) || groundState.is(Blocks.DEEPSLATE) || groundState.is(Blocks.COBBLED_DEEPSLATE)
+				|| groundState.is(TheDeepVoidModBlocks.ROTTEN_WOOD.get()) || groundState.is(TheDeepVoidModBlocks.ROTTEN_MOSS.get()) || groundState.is(TheDeepVoidModBlocks.MOSSY_BONE_PILE.get());
 	}
 
 	@Override

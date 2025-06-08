@@ -30,7 +30,8 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "§9Restrains weakened Death Vultures"
+        "§9Upon right clicking a Death Vulture",
+        " §7Restrain weakened Death Vultures"
       ]
     },
     "glowCondition": {

@@ -112,6 +112,9 @@
       },
       {
         "value": "CUSTOM:WatchingUndergrowth"
+      },
+      {
+        "value": "CUSTOM:GatheringGrounds"
       }
     ],
     "generationType": "Grass",

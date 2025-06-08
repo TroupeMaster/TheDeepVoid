@@ -20,45 +20,49 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
+import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
+import net.mcreator.thedeepvoid.entity.ApostleOfCatastropheEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 public class DoomEffectStartedappliedProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 23, 99, false, false));
-		if (world instanceof ServerLevel _level) {
-			Entity entityToSpawn = TheDeepVoidModEntities.DOOMING_TOMBSTONE.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
-			if (entityToSpawn != null) {
-				entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-			}
-		}
-		for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), 1, 10); index0++) {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.PLAYERS, 1,
-							(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
-				} else {
-					_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.PLAYERS, 1,
-							(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+		if (!(entity instanceof WeaverOfSoulsEntity) && !(entity instanceof ApostleOfCatastropheEntity)) {
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 23, 99, false, false));
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.DOOMING_TOMBSTONE.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 				}
 			}
-		}
-		TheDeepVoidMod.queueServerWork(18, () -> {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:tombstone_mobhit3")), SoundSource.PLAYERS, 1,
-							(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
-				} else {
-					_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:tombstone_mobhit3")), SoundSource.PLAYERS, 1,
-							(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+			for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), 1, 10); index0++) {
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.PLAYERS, 1,
+								(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
+					} else {
+						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.PLAYERS, 1,
+								(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+					}
 				}
 			}
-		});
-		TheDeepVoidMod.queueServerWork(23, () -> {
-			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy")))),
-					(float) (((entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) * 25) / 100));
-		});
+			TheDeepVoidMod.queueServerWork(18, () -> {
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:tombstone_mobhit3")), SoundSource.PLAYERS, 1,
+								(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2));
+					} else {
+						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:tombstone_mobhit3")), SoundSource.PLAYERS, 1,
+								(float) Mth.nextDouble(RandomSource.create(), 0.8, 1.2), false);
+					}
+				}
+			});
+			TheDeepVoidMod.queueServerWork(23, () -> {
+				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy")))),
+						(float) (((entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) * 25) / 100));
+			});
+		}
 	}
 }

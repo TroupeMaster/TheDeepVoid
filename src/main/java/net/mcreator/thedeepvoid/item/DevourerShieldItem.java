@@ -29,6 +29,6 @@ public class DevourerShieldItem extends ShieldItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Brings all foes near the wielder when held up"));
+		list.add(Component.literal("\u00A77Brings all foes near the wielder when held up"));
 	}
 }

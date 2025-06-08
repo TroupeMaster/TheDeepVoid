@@ -46,6 +46,6 @@ public class HardFleshSwordItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Steals the life force of foes, healing the wielder based on the damage dealt divided by 4"));
+		list.add(Component.literal("\u00A77Steals the life force of foes, healing the wielder based on the damage dealt divided by 4"));
 	}
 }

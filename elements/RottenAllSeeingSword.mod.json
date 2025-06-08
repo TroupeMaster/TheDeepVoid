@@ -11,8 +11,8 @@
     "name": "Rotten All-Seeing Sword",
     "specialInformation": {
       "fixedValue": [
-        "§9Right click on an entity to pass your pain onto them, sacrificing your health based on a quarter of your opponent's current health and some durability",
-        "§9Each hit makes the sword swing faster"
+        "§7Right click on an entity to pass your pain onto them, sacrificing your health based on a quarter of your opponent's current health and some durability",
+        "§7Each hit makes the sword swing faster"
       ]
     },
     "creativeTabs": [

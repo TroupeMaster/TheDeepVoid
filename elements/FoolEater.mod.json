@@ -14,7 +14,7 @@
     },
     "entityDataEntries": [],
     "modelWidth": 1.0,
-    "modelHeight": 4.0,
+    "modelHeight": 5.6,
     "modelShadowSize": 0.0,
     "mountedYOffset": 0.0,
     "stepHeight": 2.5,
@@ -171,6 +171,9 @@
       },
       {
         "value": "CUSTOM:GrimCanopy"
+      },
+      {
+        "value": "CUSTOM:GatheringGrounds"
       }
     ],
     "spawnInDungeons": false

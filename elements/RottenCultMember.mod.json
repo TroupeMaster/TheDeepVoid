@@ -18,13 +18,13 @@
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "stepHeight": 0.6,
-    "hasSpawnEgg": false,
+    "hasSpawnEgg": true,
     "spawnEggBaseColor": {
       "value": -6513508,
       "falpha": 0.0
     },
     "spawnEggDotColor": {
-      "value": -11711422,
+      "value": -16053493,
       "falpha": 0.0
     },
     "creativeTabs": [
@@ -153,21 +153,18 @@
       4,
       2
     ],
-    "spawnThisMob": false,
+    "spawnThisMob": true,
     "doesDespawnWhenIdle": true,
     "spawningCondition": {
       "name": "BoneCrawlerNaturalEntitySpawningCondition"
     },
-    "spawningProbability": 1,
+    "spawningProbability": 2,
     "mobSpawningType": "monster",
     "minNumberOfMobsPerGroup": 1,
-    "maxNumberOfMobsPerGroup": 1,
+    "maxNumberOfMobsPerGroup": 2,
     "restrictionBiomes": [
       {
-        "value": "CUSTOM:AshenCrags"
-      },
-      {
-        "value": "CUSTOM:FilledGraveyard"
+        "value": "CUSTOM:GatheringGrounds"
       }
     ],
     "spawnInDungeons": false

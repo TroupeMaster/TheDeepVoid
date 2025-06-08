@@ -30,7 +30,7 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "§9Flings shadow daggers out of your enemies, dealing damage. The daggers then home onto the nearest foe, healing the caster"
+        "§7Flings shadow daggers out of your enemies, dealing damage. The daggers then home onto the nearest foe, healing the caster"
       ]
     },
     "glowCondition": {

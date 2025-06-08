@@ -11,7 +11,7 @@
     "name": "Gravedigger's Shovel",
     "specialInformation": {
       "fixedValue": [
-        "§9Breaks bone related blocks instantly"
+        "§7Break bone related blocks instantly"
       ]
     },
     "creativeTabs": [

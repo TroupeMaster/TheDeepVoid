@@ -29,7 +29,7 @@ public class VoidEffigyBlock extends Block {
 	@Override
 	public void appendHoverText(ItemStack itemstack, BlockGetter level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Gives Void's Blessing to all nearby Players when activated with redstone"));
+		list.add(Component.literal("\u00A77Gives Void's Blessing to all nearby Players when activated with redstone"));
 	}
 
 	@Override

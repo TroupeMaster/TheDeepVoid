@@ -138,7 +138,7 @@
             "block": {
               "value": ""
             },
-            "logicField": 0,
+            "logicField": 1,
             "numberField": 0.0,
             "textDefault": "",
             "comment": "If falling corpses should place a corpse on impact",
@@ -285,23 +285,6 @@
             "comment": "Should Soul light sources not get destroyed",
             "vardisplay": "AllowSoulLight",
             "varname": "AllowSoulLight",
-            "enablecomment": true,
-            "stringlist": []
-          },
-          {
-            "item": {
-              "value": ""
-            },
-            "silkTouchMode": 0,
-            "block": {
-              "value": ""
-            },
-            "logicField": 1,
-            "numberField": 0.0,
-            "textDefault": "",
-            "comment": "If the old light breaking mechanic should be used instead of the new one",
-            "vardisplay": "OldLightSystem",
-            "varname": "OldLightSystem",
             "enablecomment": true,
             "stringlist": []
           },

@@ -29,9 +29,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "§9Gives Golden Blood on consumption, making regenerating give more health"
-      ]
+      "fixedValue": []
     },
     "glowCondition": {
       "fixedValue": false

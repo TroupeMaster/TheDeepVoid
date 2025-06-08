@@ -12,10 +12,10 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:SoulShard"
+        "value": "CUSTOM:SoulFusedIngot"
       },
       {
-        "value": "CUSTOM:SoulShard"
+        "value": "CUSTOM:SoulFusedIngot"
       },
       {
         "value": "CUSTOM:LavenditeVoidriumSword"

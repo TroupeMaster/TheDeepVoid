@@ -30,9 +30,9 @@
     "damageVsEntity": 0.0,
     "specialInformation": {
       "fixedValue": [
-        "§9While using the doll, the souls of victims in front of the user will be slowly drained, damaging them and concentrating them at a point. ",
-        "§9When enough soul is collected, release an explosion at a point, applying Hexed IV to any nearby mobs.",
-        "§9If the Player stops using the doll when there isn't enough soul, regeneration will be given to the Player depending on how many souls were collected so far"
+        "§7While using the doll, the souls of victims in front of the user will be slowly drained, damaging them and concentrating them at a point. ",
+        "§7When enough soul is collected, release an explosion at a point, applying Hexed IV to any nearby mobs.",
+        "§7If the Player stops using the doll when there isn't enough soul, regeneration will be given to the Player depending on how many souls were collected so far"
       ]
     },
     "glowCondition": {

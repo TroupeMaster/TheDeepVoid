@@ -1,0 +1,15 @@
+{
+  "parent": "the_deep_void:custom/voidrium_shield",
+  "textures": {
+    "0": "the_deep_void:block/voidrium_shield",
+    "particle": "the_deep_void:item/umbrium_gem"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "blocking": 1
+      },
+      "model": "the_deep_void:item/voidrium_bulwark_0"
+    }
+  ]
+}

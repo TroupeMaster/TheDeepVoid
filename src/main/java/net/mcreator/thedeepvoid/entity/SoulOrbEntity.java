@@ -14,10 +14,12 @@ import net.minecraft.world.entity.ai.navigation.FlyingPathNavigation;
 import net.minecraft.world.entity.ai.control.FlyingMoveControl;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.InteractionResult;
@@ -29,8 +31,8 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.procedures.SoulOrbRightClickedOnEntityProcedure;
-import net.mcreator.thedeepvoid.procedures.SoulOrbOnEntityTickUpdateProcedure;
 import net.mcreator.thedeepvoid.procedures.SoulOrbEntityDiesProcedure;
+import net.mcreator.thedeepvoid.procedures.SoulOrbBoundingBoxScaleProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 public class SoulOrbEntity extends PathfinderMob {
@@ -112,7 +114,7 @@ public class SoulOrbEntity extends PathfinderMob {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		SoulOrbOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
+		this.refreshDimensions();
 	}
 
 	@Override
@@ -126,6 +128,16 @@ public class SoulOrbEntity extends PathfinderMob {
 
 	@Override
 	protected void pushEntities() {
+	}
+
+	@Override
+	public EntityDimensions getDimensions(Pose pose) {
+		Entity entity = this;
+		Level world = this.level();
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		return super.getDimensions(pose).scale((float) SoulOrbBoundingBoxScaleProcedure.execute(entity));
 	}
 
 	@Override
