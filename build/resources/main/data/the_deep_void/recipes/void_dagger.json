@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a a",
+    "bcb",
+    "ded"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:lavendite"
+    },
+    "b": {
+      "item": "the_deep_void:onyx"
+    },
+    "c": {
+      "item": "the_deep_void:smithing_template_onyx"
+    },
+    "d": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "e": {
+      "item": "the_deep_void:refined_onyx"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:void_dagger",
+    "count": 1
+  }
+}

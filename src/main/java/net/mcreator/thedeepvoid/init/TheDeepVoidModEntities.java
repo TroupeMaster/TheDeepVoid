@@ -100,6 +100,7 @@ import net.mcreator.thedeepvoid.entity.BuiltBigOverseerPillarEntity;
 import net.mcreator.thedeepvoid.entity.BuiltBigOverseerEntity;
 import net.mcreator.thedeepvoid.entity.BoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.BoneBallProjectileEntity;
+import net.mcreator.thedeepvoid.entity.BloodshotEntity;
 import net.mcreator.thedeepvoid.entity.BlindProphetEntity;
 import net.mcreator.thedeepvoid.entity.BigShadeArrowEntity;
 import net.mcreator.thedeepvoid.entity.BigOverseerEntity;
@@ -414,6 +415,8 @@ public class TheDeepVoidModEntities {
 			EntityType.Builder.<RotKnifeEntity>of(RotKnifeEntity::new, MobCategory.MISC).setCustomClientFactory(RotKnifeEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<IdlingApostleEntity>> IDLING_APOSTLE = register("idling_apostle", EntityType.Builder.<IdlingApostleEntity>of(IdlingApostleEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(99).setUpdateInterval(3).setCustomClientFactory(IdlingApostleEntity::new).fireImmune().sized(0.9f, 3.8f));
+	public static final RegistryObject<EntityType<BloodshotEntity>> BLOODSHOT = register("bloodshot",
+			EntityType.Builder.<BloodshotEntity>of(BloodshotEntity::new, MobCategory.MISC).setCustomClientFactory(BloodshotEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));

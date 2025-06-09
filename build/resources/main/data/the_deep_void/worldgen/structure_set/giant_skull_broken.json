@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "the_deep_void:giant_skull_broken",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 8,
+    "separation": 4,
+    "salt": 1695576724
+  }
+}

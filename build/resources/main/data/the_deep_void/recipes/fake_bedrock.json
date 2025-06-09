@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "experience": 0.4,
+  "cookingtime": 140,
+  "ingredient": {
+    "item": "the_deep_void:cracked_bedrock"
+  },
+  "result": "the_deep_void:fake_bedrock"
+}

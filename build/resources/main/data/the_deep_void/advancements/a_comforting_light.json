@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:ferryman_lantern"
+    },
+    "title": {
+      "translate": "advancements.a_comforting_light.title"
+    },
+    "description": {
+      "translate": "advancements.a_comforting_light.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "a_comforting_light_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_deep_void:ferryman_lantern"
+            ],
+            "count": {
+              "min": 1,
+              "max": 999
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 15
+  },
+  "parent": "the_deep_void:is_it_amethyst"
+}

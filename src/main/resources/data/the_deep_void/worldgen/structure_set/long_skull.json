@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "the_deep_void:long_skull",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 4,
+    "separation": 3,
+    "salt": 1627735598
+  }
+}

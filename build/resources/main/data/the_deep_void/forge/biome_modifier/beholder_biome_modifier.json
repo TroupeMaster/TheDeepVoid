@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "the_deep_void:gloomy_deathgrounds",
+    "the_deep_void:staring_hills"
+  ],
+  "spawners": {
+    "type": "the_deep_void:beholder",
+    "weight": 2,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

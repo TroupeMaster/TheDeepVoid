@@ -41,6 +41,7 @@ import net.mcreator.thedeepvoid.potion.DarkmareMusicMobEffect;
 import net.mcreator.thedeepvoid.potion.ComboMobEffect;
 import net.mcreator.thedeepvoid.potion.ChainsawMusicMobEffect;
 import net.mcreator.thedeepvoid.potion.CallOfTheVoidMobEffect;
+import net.mcreator.thedeepvoid.potion.BloodBoilMobEffect;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 public class TheDeepVoidModMobEffects {
@@ -76,4 +77,5 @@ public class TheDeepVoidModMobEffects {
 	public static final RegistryObject<MobEffect> DOOM = REGISTRY.register("doom", () -> new DoomMobEffect());
 	public static final RegistryObject<MobEffect> LACERATION = REGISTRY.register("laceration", () -> new LacerationMobEffect());
 	public static final RegistryObject<MobEffect> CHAINSAW_MUSIC = REGISTRY.register("chainsaw_music", () -> new ChainsawMusicMobEffect());
+	public static final RegistryObject<MobEffect> BLOOD_BOIL = REGISTRY.register("blood_boil", () -> new BloodBoilMobEffect());
 }

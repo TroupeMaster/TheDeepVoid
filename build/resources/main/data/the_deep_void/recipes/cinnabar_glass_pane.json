@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:cinnabar_glass"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:cinnabar_glass_pane",
+    "count": 16
+  }
+}

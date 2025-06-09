@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_deep_void:ashen_crags",
+    "the_deep_void:windswept_hollow",
+    "the_deep_void:watching_undergrowth"
+  ],
+  "features": "the_deep_void:bismuth_ore",
+  "step": "underground_ores"
+}

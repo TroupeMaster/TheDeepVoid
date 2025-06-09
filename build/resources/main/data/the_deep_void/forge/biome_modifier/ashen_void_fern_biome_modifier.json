@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_deep_void:windswept_hollow",
+    "the_deep_void:ashen_crags",
+    "the_deep_void:drifting_monoliths"
+  ],
+  "features": "the_deep_void:ashen_void_fern",
+  "step": "vegetal_decoration"
+}

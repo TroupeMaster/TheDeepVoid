@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:flesh_block",
+    "the_deep_void:pustulent_flesh_block",
+    "minecraft:cooked_porkchop",
+    "minecraft:cooked_cod",
+    "minecraft:cookie",
+    "minecraft:cooked_salmon",
+    "minecraft:cooked_beef",
+    "minecraft:cooked_chicken",
+    "minecraft:cooked_rabbit",
+    "minecraft:cooked_mutton",
+    "minecraft:honeycomb",
+    "minecraft:honey_bottle",
+    "minecraft:redstone",
+    "the_deep_void:eyeball",
+    "the_deep_void:big_blue_eye",
+    "the_deep_void:big_green_eye",
+    "the_deep_void:big_red_eye",
+    "the_deep_void:big_yellow_eye"
+  ]
+}

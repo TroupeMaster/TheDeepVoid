@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "bcb",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:refined_cinnabar"
+    },
+    "b": {
+      "item": "the_deep_void:soul_shard"
+    },
+    "c": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:chainsaw",
+    "count": 1
+  }
+}

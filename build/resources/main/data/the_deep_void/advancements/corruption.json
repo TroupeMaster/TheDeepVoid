@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:voidrium_glass"
+    },
+    "title": {
+      "translate": "advancements.corruption.title"
+    },
+    "description": {
+      "translate": "advancements.corruption.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "corruption_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 24
+  },
+  "parent": "the_deep_void:pretty_gems"
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " a ",
+    " b ",
+    "cdc"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:goo_ball"
+    },
+    "b": {
+      "item": "the_deep_void:block_of_goo"
+    },
+    "c": {
+      "item": "the_deep_void:bone_crawler_chitin"
+    },
+    "d": {
+      "item": "the_deep_void:rotten_bone"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:goo_sword",
+    "count": 1
+  }
+}

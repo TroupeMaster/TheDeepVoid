@@ -1,0 +1,78 @@
+{
+  "feature": "the_deep_void:bone_piles",
+  "placement": [
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "uniform",
+        "value": {
+          "min_inclusive": 1,
+          "max_inclusive": 4
+        }
+      }
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:all_of",
+        "predicates": [
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "the_deep_void:cobbled_ancient_deepslate",
+            "offset": [
+              2,
+              -1,
+              0
+            ]
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "the_deep_void:cobbled_ancient_deepslate",
+            "offset": [
+              -2,
+              -1,
+              0
+            ]
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "the_deep_void:cobbled_ancient_deepslate",
+            "offset": [
+              0,
+              -1,
+              2
+            ]
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "the_deep_void:cobbled_ancient_deepslate",
+            "offset": [
+              0,
+              -1,
+              -2
+            ]
+          },
+          {
+            "type": "minecraft:solid",
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

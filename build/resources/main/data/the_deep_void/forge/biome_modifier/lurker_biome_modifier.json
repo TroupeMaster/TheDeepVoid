@@ -1,0 +1,16 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "the_deep_void:forgotten_valley",
+    "the_deep_void:grim_canopy",
+    "the_deep_void:mourning_graveyard",
+    "the_deep_void:filled_graveyard",
+    "the_deep_void:gathering_grounds"
+  ],
+  "spawners": {
+    "type": "the_deep_void:lurker",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

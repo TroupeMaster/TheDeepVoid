@@ -1,0 +1,83 @@
+{
+  "feature": "the_deep_void:ashen_watching_willow_1",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 5
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "uniform",
+        "value": {
+          "min_inclusive": 0,
+          "max_inclusive": 1
+        }
+      }
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:all_of",
+        "predicates": [
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "the_deep_void:ash_block",
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "the_deep_void:ash_block",
+            "offset": [
+              2,
+              -1,
+              0
+            ]
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "the_deep_void:ash_block",
+            "offset": [
+              -2,
+              -1,
+              0
+            ]
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "the_deep_void:ash_block",
+            "offset": [
+              0,
+              -1,
+              2
+            ]
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "the_deep_void:ash_block",
+            "offset": [
+              0,
+              -1,
+              -2
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

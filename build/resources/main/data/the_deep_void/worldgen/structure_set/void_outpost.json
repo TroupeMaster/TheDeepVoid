@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "the_deep_void:void_outpost",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 85,
+    "separation": 55,
+    "salt": 309857775
+  }
+}

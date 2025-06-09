@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "the_deep_void:smithing_template_lavendite"
+  },
+  "base": {
+    "item": "minecraft:iron_boots"
+  },
+  "addition": {
+    "item": "the_deep_void:block_of_lavendite"
+  },
+  "result": {
+    "item": "the_deep_void:lavendite_armor_boots"
+  }
+}

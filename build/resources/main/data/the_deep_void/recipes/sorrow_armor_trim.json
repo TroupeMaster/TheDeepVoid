@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "aca",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:onyx"
+    },
+    "b": {
+      "item": "the_deep_void:sorrow_armor_trim"
+    },
+    "c": {
+      "item": "the_deep_void:mourner_hide"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:sorrow_armor_trim",
+    "count": 2
+  }
+}

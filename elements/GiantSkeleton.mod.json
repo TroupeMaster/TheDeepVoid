@@ -12,8 +12,8 @@
         "value": "Blocks.AIR"
       }
     ],
-    "spacing": 68,
-    "separation": 35,
+    "spacing": 20,
+    "separation": 15,
     "restrictionBiomes": [
       {
         "value": "CUSTOM:ForgottenValley"

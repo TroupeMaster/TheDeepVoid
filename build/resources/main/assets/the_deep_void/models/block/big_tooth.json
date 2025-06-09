@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/big_tooth",
+  "textures": {
+    "all": "the_deep_void:block/big_tooth",
+    "particle": "the_deep_void:block/big_tooth",
+    "0": "the_deep_void:block/big_tooth"
+  },
+  "render_type": "solid"
+}

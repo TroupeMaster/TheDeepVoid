@@ -1,0 +1,9 @@
+JVM:         C:\Users\nolet\.mcreator\gradle\jdks\eclipse_adoptium-17-amd64-windows\jdk-17.0.14+7\bin\java.exe
+JVM Args:    
+Run Args:    "--strip", "--input", "C:\Users\nolet\Documents\Worspaces\DeepVoid\build\fg_cache\mcp\1.20.1-20230612.114412\joined\0b7c6ff4e17ce454626e769a31ce366e20dbfb96\AccessTransformer\output.jar", "--output", "C:\Users\nolet\Documents\Worspaces\DeepVoid\build\fg_cache\mcp\1.20.1-20230612.114412\joined\0b7c6ff4e17ce454626e769a31ce366e20dbfb96\SideStripper\output.jar", "--data", "C:\Users\nolet\Documents\Worspaces\DeepVoid\build\fg_cache\mcp\1.20.1-20230612.114412\joined\0b7c6ff4e17ce454626e769a31ce366e20dbfb96\SideStripper\string_data.sas"
+Classpath:   C:\Users\nolet\.mcreator\gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\mergetool\1.1.7\mergetool-1.1.7-fatjar.jar
+Working Dir: C:\Users\nolet\Documents\Worspaces\DeepVoid\build\fg_cache\mcp\1.20.1-20230612.114412\joined\0b7c6ff4e17ce454626e769a31ce366e20dbfb96\SideStripper
+Main Class:  net.minecraftforge.mergetool.ConsoleMerger
+Input:  C:\Users\nolet\Documents\Worspaces\DeepVoid\build\fg_cache\mcp\1.20.1-20230612.114412\joined\0b7c6ff4e17ce454626e769a31ce366e20dbfb96\AccessTransformer\output.jar
+Output: C:\Users\nolet\Documents\Worspaces\DeepVoid\build\fg_cache\mcp\1.20.1-20230612.114412\joined\0b7c6ff4e17ce454626e769a31ce366e20dbfb96\SideStripper\output.jar
+Data:   C:\Users\nolet\Documents\Worspaces\DeepVoid\build\fg_cache\mcp\1.20.1-20230612.114412\joined\0b7c6ff4e17ce454626e769a31ce366e20dbfb96\SideStripper\string_data.sas

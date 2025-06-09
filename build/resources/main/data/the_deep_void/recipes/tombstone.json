@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " a ",
+    "bcb",
+    "ded"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:smooth_ancient_deepslate"
+    },
+    "b": {
+      "item": "the_deep_void:ancient_deepslate_bricks"
+    },
+    "c": {
+      "item": "the_deep_void:block_of_refined_onyx"
+    },
+    "d": {
+      "item": "the_deep_void:soul_fused_ingot"
+    },
+    "e": {
+      "item": "the_deep_void:block_of_voidrium"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:tombstone",
+    "count": 1
+  }
+}

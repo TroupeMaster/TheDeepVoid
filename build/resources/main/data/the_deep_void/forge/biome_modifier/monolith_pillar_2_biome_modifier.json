@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:drifting_monoliths",
+  "features": "the_deep_void:monolith_pillar_2",
+  "step": "surface_structures"
+}

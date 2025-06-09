@@ -63,6 +63,22 @@ public class ApostleTreasureBagRightClickProcedure {
 				_level.addFreshEntity(entityToSpawn);
 			}
 		}
+		if (Math.random() < 0.25) {
+			if (world instanceof ServerLevel _level) {
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.KNIFE_GLOVE.get()));
+				entityToSpawn.setPickUpDelay(10);
+				entityToSpawn.setUnlimitedLifetime();
+				_level.addFreshEntity(entityToSpawn);
+			}
+		}
+		if (Math.random() < 0.25) {
+			if (world instanceof ServerLevel _level) {
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.HERESY.get()));
+				entityToSpawn.setPickUpDelay(10);
+				entityToSpawn.setUnlimitedLifetime();
+				_level.addFreshEntity(entityToSpawn);
+			}
+		}
 		if (TheDeepVoidModVariables.MapVariables.get(world).apostleFightCount >= 2) {
 			if (entity instanceof ServerPlayer _player) {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:i_always_come_back"));

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aba",
+    "bab",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:tendrils"
+    },
+    "b": {
+      "item": "the_deep_void:flesh_block"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:veiny_flesh",
+    "count": 9
+  }
+}

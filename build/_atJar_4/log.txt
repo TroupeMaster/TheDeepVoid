@@ -1,0 +1,7 @@
+Java Launcher: C:\Users\nolet\.mcreator\gradle\jdks\OpenJDK17U-jdk_x64_windows_hotspot_17\jdk-17.0.15+6\bin\java.exe
+Arguments: '--inJar, C:\Users\nolet\Documents\Worspaces\DeepVoid\build\fg_cache\net\minecraftforge\forge\1.20.1-47.2.0\forge-1.20.1-47.2.0-injected.jar, --outJar, C:\Users\nolet\Documents\Worspaces\DeepVoid\build\fg_cache\net\minecraftforge\forge\1.20.1-47.2.0_mapped_official_1.20.1\forge-1.20.1-47.2.0_mapped_official_1.20.1.jar, --logFile, accesstransform.log, --atFile, C:\Users\nolet\Documents\Worspaces\DeepVoid\src\main\resources\META-INF\accesstransformer.cfg, --atFile, C:\Users\nolet\Documents\Worspaces\DeepVoid\build\_atJar_4\parent_at.cfg'
+Classpath:
+ - C:\Users\nolet\.mcreator\gradle\caches\forge_gradle\maven_downloader\net\minecraftforge\accesstransformers\8.2.1\accesstransformers-8.2.1-fatjar.jar
+Working directory: C:\Users\nolet\Documents\Worspaces\DeepVoid\build\_atJar_4
+Main class: net.minecraftforge.accesstransformer.TransformerProcessor
+====================================

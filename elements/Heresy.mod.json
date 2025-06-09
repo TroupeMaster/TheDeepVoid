@@ -1,0 +1,62 @@
+{
+  "_fv": 66,
+  "_type": "animateditem",
+  "definition": {
+    "renderType": 0,
+    "texture": "heresy",
+    "name": "§4§l§kPRAY §c§lHeresy §4§l§kPRAY",
+    "idle": "animation.heresy_idle",
+    "rarity": "COMMON",
+    "displaySettings": "heresy.json",
+    "leftArm": "",
+    "rightArm": "",
+    "perspective": "All Perspectives",
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "firstPersonArms": false,
+    "stackSize": 1,
+    "enchantability": 0,
+    "useDuration": 0,
+    "toolType": 1.0,
+    "damageCount": 0,
+    "recipeRemainder": {
+      "value": ""
+    },
+    "destroyAnyBlock": false,
+    "immuneToFire": true,
+    "stayInGridWhenCrafting": false,
+    "enableArmPose": false,
+    "damageOnCrafting": false,
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "specialInformation": {
+      "fixedValue": [
+        "§7Right click to shoot a Bloodshot, a bullet made from blood, which goes in a straight line and pierces. On hit, applies Blood Boil",
+        "§7When the chamber is empty, right click to sacrifice 25% of current health to create new bullets",
+        "§7 Capacity: 7 bullets"
+      ]
+    },
+    "hasGlow": false,
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "onRightClickedInAir": {
+      "name": "HeresyRightclicked"
+    },
+    "isFood": false,
+    "nutritionalValue": 4,
+    "saturation": 0.3,
+    "eatResultItem": {
+      "value": ""
+    },
+    "isMeat": false,
+    "isAlwaysEdible": false,
+    "animation": "none",
+    "normal": "heresy.geo.json",
+    "armPoseList": [],
+    "disableSwing": true
+  }
+}

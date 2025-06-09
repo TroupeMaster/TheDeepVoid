@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:seer"
+    },
+    "title": {
+      "translate": "advancements.its_alive.title"
+    },
+    "description": {
+      "translate": "advancements.its_alive.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "its_alive_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 15
+  },
+  "parent": "the_deep_void:it_wasnt_there_before"
+}

@@ -29,6 +29,7 @@ import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
+import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
@@ -83,6 +84,8 @@ public class ApostleDiesProcedure {
 					_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.BLOOD.get()), (entity.getX()), (entity.getY() + 1.8), (entity.getZ()), 40, 0, 0.12, 0, 0.1);
 			});
 			TheDeepVoidMod.queueServerWork(85, () -> {
+				TheDeepVoidModVariables.MapVariables.get(world).apostleFightCount = TheDeepVoidModVariables.MapVariables.get(world).apostleFightCount + 1;
+				TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.FLAME_OF_SPITE.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 40, 0, 0.1, 0, 0.1);
 				{

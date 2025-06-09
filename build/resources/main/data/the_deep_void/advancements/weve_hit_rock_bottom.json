@@ -1,0 +1,31 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:primordial_stone"
+    },
+    "title": {
+      "translate": "advancements.weve_hit_rock_bottom.title"
+    },
+    "description": {
+      "translate": "advancements.weve_hit_rock_bottom.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "weve_hit_rock_bottom_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "the_deep_void:primordial_stone_replica",
+      "the_deep_void:primordial_stone_stairs",
+      "the_deep_void:primordial_stone_slab"
+    ]
+  },
+  "parent": "the_deep_void:bone_bottom"
+}

@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:void_pendant"
+    },
+    "title": {
+      "translate": "advancements.not_my_cup_of_tea.title"
+    },
+    "description": {
+      "translate": "advancements.not_my_cup_of_tea.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "not_my_cup_of_tea_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "the_deep_void:bone_bottom"
+}

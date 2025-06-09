@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Blood Boil",
+    "icon": "blood_boil",
+    "color": {
+      "value": -458752,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "mobEffectCategory": "NEUTRAL",
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onActiveTick": {
+      "name": "BloodBoilOnEffectActiveTick"
+    },
+    "onExpired": {
+      "name": "BloodBoilEffectExpires"
+    }
+  }
+}

@@ -46,7 +46,7 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 			return;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
 			entity.getPersistentData().putDouble("deep_void:attackChance", (entity.getPersistentData().getDouble("deep_void:attackChance") + 1));
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 3) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 2.5) {
 				entity.getPersistentData().putDouble("deep_void:attackChance", (entity.getPersistentData().getDouble("deep_void:attackChance") + 1));
 			}
 		}
@@ -137,7 +137,7 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 												_ent.getYRot(), _ent.getXRot());
 						}
 					}
-					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 3) {
+					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 2.5) {
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
 								_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.witch.throw")), SoundSource.HOSTILE, 2, (float) 0.6);
@@ -312,7 +312,7 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 					}
 				}
 			});
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 3) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 2.5) {
 				TheDeepVoidMod.queueServerWork(14, () -> {
 					if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 						if (world instanceof Level _level) {
@@ -548,14 +548,36 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 									(float) Mth.nextDouble(RandomSource.create(), 0.7, 1.1), false);
 						}
 					}
-					if (Math.random() < 0.15) {
+					if (Math.random() < 0.2) {
 						{
 							final Vec3 _center = new Vec3(x, y, z);
 							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 							for (Entity entityiterator : _entfound) {
 								if (entityiterator instanceof Player) {
 									if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-										_player.displayClientMessage(Component.literal("\u00A7cWhat beautiful misery ! Mercy you ask like the pitiful being you are !"), false);
+										_player.displayClientMessage(Component.literal("\u00A7cNone can escape their fate ! My blades shall cut deep !"), false);
+								}
+							}
+						}
+					} else if (Math.random() < 0.15) {
+						{
+							final Vec3 _center = new Vec3(x, y, z);
+							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+							for (Entity entityiterator : _entfound) {
+								if (entityiterator instanceof Player) {
+									if (entityiterator instanceof Player _player && !_player.level().isClientSide())
+										_player.displayClientMessage(Component.literal("\u00A7cYour sins cannot be pardoned ! Only death shall show you the true path !"), false);
+								}
+							}
+						}
+					} else if (Math.random() < 0.2) {
+						{
+							final Vec3 _center = new Vec3(x, y, z);
+							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+							for (Entity entityiterator : _entfound) {
+								if (entityiterator instanceof Player) {
+									if (entityiterator instanceof Player _player && !_player.level().isClientSide())
+										_player.displayClientMessage(Component.literal("\u00A7cThis shall be a bloodbath !"), false);
 								}
 							}
 						}
@@ -577,29 +599,7 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 							for (Entity entityiterator : _entfound) {
 								if (entityiterator instanceof Player) {
 									if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-										_player.displayClientMessage(Component.literal("\u00A7cThis shall be a bloodbath !"), false);
-								}
-							}
-						}
-					} else if (Math.random() < 0.15) {
-						{
-							final Vec3 _center = new Vec3(x, y, z);
-							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-							for (Entity entityiterator : _entfound) {
-								if (entityiterator instanceof Player) {
-									if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-										_player.displayClientMessage(Component.literal("\u00A7cYour sins cannot be pardoned ! Only death shall show you the true path !"), false);
-								}
-							}
-						}
-					} else if (Math.random() < 0.15) {
-						{
-							final Vec3 _center = new Vec3(x, y, z);
-							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-							for (Entity entityiterator : _entfound) {
-								if (entityiterator instanceof Player) {
-									if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-										_player.displayClientMessage(Component.literal("\u00A7cNone can escape their fate ! My blades shall cut deep !"), false);
+										_player.displayClientMessage(Component.literal("\u00A7cWhat beautiful misery ! Mercy you ask like the pathetic worm you are !"), false);
 								}
 							}
 						}

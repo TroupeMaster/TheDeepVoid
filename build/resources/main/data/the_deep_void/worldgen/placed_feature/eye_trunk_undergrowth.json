@@ -1,0 +1,93 @@
+{
+  "feature": "the_deep_void:eye_trunk_undergrowth",
+  "placement": [
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "uniform",
+        "value": {
+          "min_inclusive": 0,
+          "max_inclusive": 4
+        }
+      }
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:all_of",
+        "predicates": [
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "the_deep_void:ancient_deepslate",
+              "the_deep_void:block_of_bone_pile"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "the_deep_void:ancient_deepslate",
+              "the_deep_void:block_of_bone_pile"
+            ],
+            "offset": [
+              2,
+              -1,
+              0
+            ]
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "the_deep_void:ancient_deepslate",
+              "the_deep_void:block_of_bone_pile"
+            ],
+            "offset": [
+              -2,
+              -1,
+              0
+            ]
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "the_deep_void:ancient_deepslate",
+              "the_deep_void:block_of_bone_pile"
+            ],
+            "offset": [
+              0,
+              -1,
+              2
+            ]
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": [
+              "the_deep_void:ancient_deepslate",
+              "the_deep_void:block_of_bone_pile"
+            ],
+            "offset": [
+              0,
+              -1,
+              -2
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

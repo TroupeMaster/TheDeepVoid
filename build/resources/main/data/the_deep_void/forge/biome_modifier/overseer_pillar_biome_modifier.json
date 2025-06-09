@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "the_deep_void:drifting_monoliths",
+  "spawners": {
+    "type": "the_deep_void:overseer_pillar",
+    "weight": 2,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "abc",
+    " db",
+    "e a"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:void_matter"
+    },
+    "b": {
+      "item": "the_deep_void:grim_gem"
+    },
+    "c": {
+      "item": "the_deep_void:black_moss"
+    },
+    "d": {
+      "item": "the_deep_void:onyx_pickaxe"
+    },
+    "e": {
+      "item": "the_deep_void:ancient_onyx"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:reinforced_pickaxe",
+    "count": 1
+  }
+}

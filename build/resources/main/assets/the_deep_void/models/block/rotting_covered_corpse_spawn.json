@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/covered_corpse_goo",
+  "textures": {
+    "all": "the_deep_void:block/block_of_bone_pile",
+    "particle": "the_deep_void:block/block_of_bone_pile",
+    "0": "the_deep_void:block/rotting_corpse_goo"
+  },
+  "render_type": "cutout"
+}

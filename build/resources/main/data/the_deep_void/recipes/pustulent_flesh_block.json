@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "the_deep_void:flesh_block"
+    },
+    {
+      "item": "the_deep_void:flesh_block"
+    },
+    {
+      "item": "the_deep_void:flesh_block"
+    },
+    {
+      "item": "the_deep_void:flesh_block"
+    },
+    {
+      "item": "the_deep_void:pus_flower"
+    },
+    {
+      "item": "the_deep_void:flesh_block"
+    },
+    {
+      "item": "the_deep_void:flesh_block"
+    },
+    {
+      "item": "the_deep_void:flesh_block"
+    },
+    {
+      "item": "the_deep_void:flesh_block"
+    }
+  ],
+  "result": {
+    "item": "the_deep_void:pustulent_flesh_block",
+    "count": 8
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/soul_forge",
+  "textures": {
+    "all": "the_deep_void:block/soul_forge",
+    "particle": "the_deep_void:block/soul_forge",
+    "0": "the_deep_void:block/soul_forge"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:stalker_scythe_claw"
+    },
+    "title": {
+      "translate": "advancements.hunter.title"
+    },
+    "description": {
+      "translate": "advancements.hunter.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "hunter_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 20
+  },
+  "parent": "the_deep_void:bone_bottom"
+}

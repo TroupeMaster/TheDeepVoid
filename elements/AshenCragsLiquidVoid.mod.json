@@ -1,0 +1,14 @@
+{
+  "_fv": 66,
+  "_type": "feature",
+  "definition": {
+    "skipPlacement": false,
+    "generationStep": "SURFACE_STRUCTURES",
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:AshenCrags"
+      }
+    ],
+    "featurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"feature_container\" deletable=\"false\" x=\"40\" y=\"40\"><value name=\"feature\"><block type=\"feature_delta\" inline=\"false\"><comment pinned=\"false\" h=\"124\" w=\"262\">This block represents a delta feature, similar to the ones that generate in the Basalt Deltas biome.This feature should generate at an early generation stage, for example SURFACE_STRUCTURE or RAW_GENERATION</comment><value name=\"contents\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">CUSTOM:LiquidVoid</field><comment pinned=\"false\" h=\"80\" w=\"160\">This is the block that appears in the filling of the delta.</comment></block></value><value name=\"rim\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">CUSTOM:AshBlock</field><comment pinned=\"false\" h=\"80\" w=\"160\">This is the block that makes up the rim of the delta.</comment></block></value><value name=\"size\"><block type=\"int_provider_uniform\"><field name=\"min\">3</field><field name=\"max\">7</field></block></value><value name=\"rimSize\"><block type=\"int_provider_uniform\" collapsed=\"true\"><field name=\"min\">0</field><field name=\"max\">2</field><comment pinned=\"false\" h=\"80\" w=\"160\">This is the size of the magma rim. If the value is 0, magma won't generate at all</comment></block></value></block></value><next><block type=\"placement_rarity\"><field name=\"rarity\">2</field><next><block type=\"placement_count_on_every_layer\"><value name=\"count\"><block type=\"int_provider_constant\"><field name=\"value\">14</field></block></value><next><block type=\"placement_biome_filter\"></block></next></block></next></block></next></block></xml>"
+  }
+}

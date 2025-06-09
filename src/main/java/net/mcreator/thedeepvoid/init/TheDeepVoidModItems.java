@@ -125,10 +125,12 @@ import net.mcreator.thedeepvoid.item.LavenditeBoneSwordItem;
 import net.mcreator.thedeepvoid.item.LavenditeAxeItem;
 import net.mcreator.thedeepvoid.item.LavenditeArmorItem;
 import net.mcreator.thedeepvoid.item.LavenditeAllSeeingSwordItem;
+import net.mcreator.thedeepvoid.item.KnifeGloveItem;
 import net.mcreator.thedeepvoid.item.JumpBoostNeedleItem;
 import net.mcreator.thedeepvoid.item.JudgementItem;
 import net.mcreator.thedeepvoid.item.HexedNeedleItem;
 import net.mcreator.thedeepvoid.item.HexedDollItem;
+import net.mcreator.thedeepvoid.item.HeresyItem;
 import net.mcreator.thedeepvoid.item.HealthBoostNeedleItem;
 import net.mcreator.thedeepvoid.item.HatchingEnzymeItem;
 import net.mcreator.thedeepvoid.item.HarvesterMaskItem;
@@ -769,6 +771,10 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> RED_GATE = block(TheDeepVoidModBlocks.RED_GATE);
 	public static final RegistryObject<Item> RED_GATE_NON_SOLID = block(TheDeepVoidModBlocks.RED_GATE_NON_SOLID);
 	public static final RegistryObject<Item> IDLING_APOSTLE_SPAWN_EGG = REGISTRY.register("idling_apostle_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.IDLING_APOSTLE, -15597568, -8427264, new Item.Properties()));
+	public static final RegistryObject<Item> KNIFE_GLOVE = REGISTRY.register("knife_glove", () -> new KnifeGloveItem());
+	public static final RegistryObject<Item> BLOCK_OF_SOUL_FUSED_INGOTS = block(TheDeepVoidModBlocks.BLOCK_OF_SOUL_FUSED_INGOTS);
+	public static final RegistryObject<Item> VOID_GROWTH = block(TheDeepVoidModBlocks.VOID_GROWTH);
+	public static final RegistryObject<Item> HERESY = REGISTRY.register("heresy", () -> new HeresyItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:gloomy_deathgrounds",
+  "features": "the_deep_void:fleshy_bone_pillar",
+  "step": "surface_structures"
+}

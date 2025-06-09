@@ -535,6 +535,9 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.APOSTLE_OF_CATASTROPHE_TREASURE_BAG.get());
 				tabData.accept(TheDeepVoidModBlocks.RED_GATE.get().asItem());
 				tabData.accept(TheDeepVoidModItems.IDLING_APOSTLE_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.KNIFE_GLOVE.get());
+				tabData.accept(TheDeepVoidModBlocks.BLOCK_OF_SOUL_FUSED_INGOTS.get().asItem());
+				tabData.accept(TheDeepVoidModItems.HERESY.get());
 			})
 
 					.build());

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cdc",
+    "aca"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:refined_onyx"
+    },
+    "b": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "c": {
+      "item": "the_deep_void:rotten_wood"
+    },
+    "d": {
+      "item": "the_deep_void:flesh_chunk"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:glutton_block",
+    "count": 1
+  }
+}

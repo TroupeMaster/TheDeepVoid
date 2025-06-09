@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "cdc",
+    "ede"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:mourner_hide"
+    },
+    "b": {
+      "item": "minecraft:arrow"
+    },
+    "c": {
+      "item": "the_deep_void:ancient_onyx"
+    },
+    "d": {
+      "item": "the_deep_void:voidrium_gem"
+    },
+    "e": {
+      "item": "the_deep_void:soul_shard"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:endless_quiver",
+    "count": 1
+  }
+}

@@ -21,6 +21,7 @@ import net.mcreator.thedeepvoid.block.VoidlightBrickSlabBlock;
 import net.mcreator.thedeepvoid.block.VoidlightBlock;
 import net.mcreator.thedeepvoid.block.VoidRoseBlock;
 import net.mcreator.thedeepvoid.block.VoidRootsBlock;
+import net.mcreator.thedeepvoid.block.VoidGrowthBlock;
 import net.mcreator.thedeepvoid.block.VoidFilledSpongeBlock;
 import net.mcreator.thedeepvoid.block.VoidFernBlock;
 import net.mcreator.thedeepvoid.block.VoidEffigyOpenBlock;
@@ -250,6 +251,7 @@ import net.mcreator.thedeepvoid.block.BlueFireBlock;
 import net.mcreator.thedeepvoid.block.BlossomingDesolateLichenBlock;
 import net.mcreator.thedeepvoid.block.BlockOfUmbriumBlock;
 import net.mcreator.thedeepvoid.block.BlockOfSulfurBlock;
+import net.mcreator.thedeepvoid.block.BlockOfSoulFusedIngotsBlock;
 import net.mcreator.thedeepvoid.block.BlockOfSkullPileBlock;
 import net.mcreator.thedeepvoid.block.BlockOfRottenBonePileBlock;
 import net.mcreator.thedeepvoid.block.BlockOfRefinedOnyxBlock;
@@ -594,6 +596,8 @@ public class TheDeepVoidModBlocks {
 	public static final RegistryObject<Block> SOUL_FORGE = REGISTRY.register("soul_forge", () -> new SoulForgeBlock());
 	public static final RegistryObject<Block> RED_GATE = REGISTRY.register("red_gate", () -> new RedGateBlock());
 	public static final RegistryObject<Block> RED_GATE_NON_SOLID = REGISTRY.register("red_gate_non_solid", () -> new RedGateNonSolidBlock());
+	public static final RegistryObject<Block> BLOCK_OF_SOUL_FUSED_INGOTS = REGISTRY.register("block_of_soul_fused_ingots", () -> new BlockOfSoulFusedIngotsBlock());
+	public static final RegistryObject<Block> VOID_GROWTH = REGISTRY.register("void_growth", () -> new VoidGrowthBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

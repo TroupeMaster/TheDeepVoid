@@ -1,0 +1,16 @@
+{
+  "feature": "the_deep_void:ashen_crags_liquid_void",
+  "placement": [
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 2
+    },
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 14
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

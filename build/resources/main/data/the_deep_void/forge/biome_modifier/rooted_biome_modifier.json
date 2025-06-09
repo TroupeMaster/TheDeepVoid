@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "the_deep_void:watching_undergrowth",
+    "the_deep_void:grim_canopy"
+  ],
+  "spawners": {
+    "type": "the_deep_void:rooted",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 2
+  }
+}

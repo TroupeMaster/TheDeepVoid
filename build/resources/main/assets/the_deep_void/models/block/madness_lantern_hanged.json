@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/madness_lantern_roof",
+  "textures": {
+    "all": "the_deep_void:block/madness_lantern",
+    "particle": "the_deep_void:block/madness_lantern",
+    "missing": "the_deep_void:block/madness_lantern"
+  },
+  "render_type": "cutout"
+}

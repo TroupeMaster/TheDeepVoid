@@ -1,0 +1,22 @@
+{
+  "feature": "the_deep_void:bone_floor_graveyard",
+  "placement": [
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:count",
+      "count": {
+        "type": "uniform",
+        "value": {
+          "min_inclusive": 2,
+          "max_inclusive": 8
+        }
+      }
+    }
+  ]
+}

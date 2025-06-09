@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "ab",
+    "ac",
+    " d"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:refined_cinnabar"
+    },
+    "b": {
+      "item": "the_deep_void:seer"
+    },
+    "c": {
+      "item": "the_deep_void:bone_axe"
+    },
+    "d": {
+      "item": "the_deep_void:rotten_bone"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:all_seeing_axe",
+    "count": 1
+  }
+}

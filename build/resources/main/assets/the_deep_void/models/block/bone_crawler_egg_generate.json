@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/bone_crawler_egg",
+  "textures": {
+    "all": "the_deep_void:block/bone_crawler_egg",
+    "particle": "the_deep_void:block/bone_crawler_egg",
+    "0": "the_deep_void:block/bone_crawler_egg"
+  },
+  "render_type": "cutout"
+}

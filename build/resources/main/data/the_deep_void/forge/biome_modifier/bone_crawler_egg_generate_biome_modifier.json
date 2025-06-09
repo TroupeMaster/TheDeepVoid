@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:crawler_nest",
+  "features": "the_deep_void:bone_crawler_egg_generate",
+  "step": "vegetal_decoration"
+}

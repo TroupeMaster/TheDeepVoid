@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/polished_ancient_deepslate_new",
+    "up": "the_deep_void:block/ancient_altar_top_new",
+    "north": "the_deep_void:block/ancient_altar_side",
+    "east": "the_deep_void:block/ancient_altar_side",
+    "south": "the_deep_void:block/ancient_altar_side",
+    "west": "the_deep_void:block/ancient_altar_side",
+    "particle": "the_deep_void:block/polished_ancient_deepslate_new"
+  },
+  "render_type": "solid"
+}

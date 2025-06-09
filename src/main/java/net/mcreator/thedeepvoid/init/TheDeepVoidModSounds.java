@@ -130,4 +130,8 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> APOSTLE_HYSTERICAL_LAUGH = REGISTRY.register("apostle_hysterical_laugh", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "apostle_hysterical_laugh")));
 	public static final RegistryObject<SoundEvent> DECAPITATE = REGISTRY.register("decapitate", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "decapitate")));
 	public static final RegistryObject<SoundEvent> FOG_APPEAR = REGISTRY.register("fog_appear", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "fog_appear")));
+	public static final RegistryObject<SoundEvent> HERESY_SHOOT = REGISTRY.register("heresy_shoot", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "heresy_shoot")));
+	public static final RegistryObject<SoundEvent> HERESY_LEVER = REGISTRY.register("heresy_lever", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "heresy_lever")));
+	public static final RegistryObject<SoundEvent> HERESY_SHELL_FALL = REGISTRY.register("heresy_shell_fall", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "heresy_shell_fall")));
+	public static final RegistryObject<SoundEvent> FLESH = REGISTRY.register("flesh", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "flesh")));
 }

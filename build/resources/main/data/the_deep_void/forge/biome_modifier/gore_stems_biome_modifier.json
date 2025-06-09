@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_deep_void:gloomy_deathgrounds",
+    "the_deep_void:staring_hills"
+  ],
+  "features": "the_deep_void:gore_stems",
+  "step": "vegetal_decoration"
+}

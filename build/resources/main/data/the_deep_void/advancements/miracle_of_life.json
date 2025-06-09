@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:bone_crawler_egg"
+    },
+    "title": {
+      "translate": "advancements.miracle_of_life.title"
+    },
+    "description": {
+      "translate": "advancements.miracle_of_life.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "miracle_of_life_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "the_deep_void:creepy_crawlies"
+}
