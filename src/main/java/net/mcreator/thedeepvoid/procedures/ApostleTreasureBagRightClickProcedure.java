@@ -63,7 +63,7 @@ public class ApostleTreasureBagRightClickProcedure {
 				_level.addFreshEntity(entityToSpawn);
 			}
 		}
-		if (Math.random() < 0.25) {
+		if (Math.random() < 0.5) {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.KNIFE_GLOVE.get()));
 				entityToSpawn.setPickUpDelay(10);
@@ -71,7 +71,7 @@ public class ApostleTreasureBagRightClickProcedure {
 				_level.addFreshEntity(entityToSpawn);
 			}
 		}
-		if (Math.random() < 0.25) {
+		if (Math.random() < 0.5) {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.HERESY.get()));
 				entityToSpawn.setPickUpDelay(10);

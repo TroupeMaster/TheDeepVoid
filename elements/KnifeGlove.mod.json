@@ -11,7 +11,7 @@
     "name": "§4§l§kPRAY §c§lKnife Glove §4§l§kPRAY",
     "specialInformation": {
       "fixedValue": [
-        "§7Right click to throw multiple knives, which inflict either Poison II or Rot I, in random directions the more there are",
+        "§7Right click to throw multiple knives, which inflict either Poison II or Rot I, in random directions",
         "§7Right click while sneaking to perform a backward jump"
       ]
     },
@@ -23,7 +23,7 @@
     "efficiency": 1.0,
     "attackSpeed": 3.0,
     "enchantability": 24,
-    "damageVsEntity": 6.0,
+    "damageVsEntity": 8.0,
     "usageCount": 0,
     "glowCondition": {
       "fixedValue": false
