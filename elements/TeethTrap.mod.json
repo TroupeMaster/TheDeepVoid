@@ -2,12 +2,12 @@
   "_fv": 66,
   "_type": "block",
   "definition": {
-    "texture": "flesh_bricks_newer",
-    "textureTop": "teeth_trap_newer",
-    "textureLeft": "flesh_bricks_newer",
-    "textureFront": "flesh_bricks_newer",
-    "textureRight": "flesh_bricks_newer",
-    "textureBack": "flesh_bricks_newer",
+    "texture": "veiny_flesh_bricks",
+    "textureTop": "veiny_teeth_trap",
+    "textureLeft": "veiny_flesh_bricks",
+    "textureFront": "veiny_flesh_bricks",
+    "textureRight": "veiny_flesh_bricks",
+    "textureBack": "veiny_flesh_bricks",
     "renderType": 10,
     "customModelName": "Normal",
     "rotationMode": 0,
@@ -95,7 +95,7 @@
       "value": "block.slime.hit"
     },
     "placeSound": {
-      "value": "CUSTOM:flesh_block_step"
+      "value": "CUSTOM:flesh_block_place"
     },
     "stepSound": {
       "value": "CUSTOM:flesh_block_step"

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/old_bone_block_top",
+    "up": "the_deep_void:block/old_bone_block_top",
+    "north": "the_deep_void:block/old_bone_block_side",
+    "east": "the_deep_void:block/old_bone_block_side",
+    "south": "the_deep_void:block/old_bone_block_side",
+    "west": "the_deep_void:block/old_bone_block_side",
+    "particle": "the_deep_void:block/old_bone_block_top"
+  },
+  "render_type": "solid"
+}

@@ -45,7 +45,7 @@ public class LayingCorpseSpawnBlock extends FlowerBlock {
 
 	@Override
 	public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter world, BlockPos pos, Player player) {
-		return new ItemStack(TheDeepVoidModBlocks.LAYING_CORPSE.get());
+		return new ItemStack(TheDeepVoidModBlocks.OLD_LAYING_CORPSE.get());
 	}
 
 	@Override

@@ -16,7 +16,7 @@
     "separation": 4,
     "restrictionBiomes": [
       {
-        "value": "CUSTOM:ForgottenValley"
+        "value": "CUSTOM:FilledGraveyard"
       }
     ],
     "terrainAdaptation": "none",

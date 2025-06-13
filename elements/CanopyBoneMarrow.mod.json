@@ -86,6 +86,9 @@
       },
       {
         "value": "CUSTOM:GatheringGrounds"
+      },
+      {
+        "value": "CUSTOM:FilledGraveyard"
       }
     ],
     "generationType": "Grass",

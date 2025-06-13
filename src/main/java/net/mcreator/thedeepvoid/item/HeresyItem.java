@@ -116,10 +116,11 @@ public class HeresyItem extends Item implements GeoItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Right click to shoot a Bloodshot, a bullet made from blood, which goes in a straight line and pierces. On hit, applies Blood Boil"));
+		list.add(Component.literal("\u00A77Right click to shoot a Blood Shot, a bullet made from blood, which goes in a straight line and pierces. On hit, applies Blood Boil"));
 		list.add(Component.literal("\u00A77When the chamber is full, the bullet will split into 5 fragment, which are slower, as well as the main bullet"));
 		list.add(Component.literal("\u00A77When the chamber is full, sneak to fire all 7 bullets at once with higher damage but with less range and pierce. Uses 35% of current health when reloading"));
 		list.add(Component.literal("\u00A77When the chamber is empty, right click to sacrifice 25% of current health to create new bullets"));
+		list.add(Component.literal("\u00A77If, when reloading, the shooter has Absorption, Golden Blood Shots will be created instead. They shoot further but with less damage."));
 		list.add(Component.literal("\u00A77 Capacity: 7 bullets"));
 	}
 

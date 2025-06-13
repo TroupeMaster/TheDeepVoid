@@ -2,6 +2,9 @@
   "feature": "the_deep_void:goo_nest",
   "placement": [
     {
+      "type": "minecraft:biome"
+    },
+    {
       "type": "minecraft:in_square"
     },
     {

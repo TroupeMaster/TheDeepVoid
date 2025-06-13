@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "block",
   "definition": {
-    "texture": "flesh_block_new",
+    "texture": "veiny_flesh",
     "textureTop": "bone_block_top",
     "textureLeft": "flesh_bone_block_new",
     "textureFront": "flesh_bone_block_new",

@@ -41,14 +41,10 @@
     "resistance": 4.0,
     "hasGravity": false,
     "isWaterloggable": false,
-    "creativeTabs": [
-      {
-        "value": "CUSTOM:TheDeepVoid"
-      }
-    ],
+    "creativeTabs": [],
     "destroyTool": "hoe",
     "customDrop": {
-      "value": ""
+      "value": "CUSTOM:FleshBlock"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -69,7 +65,7 @@
     },
     "colorOnMap": "DEFAULT",
     "creativePickItem": {
-      "value": ""
+      "value": "CUSTOM:FleshBlock"
     },
     "offsetType": "NONE",
     "aiPathNodeType": "DEFAULT",
@@ -95,7 +91,7 @@
       "value": "block.slime.hit"
     },
     "placeSound": {
-      "value": "CUSTOM:flesh_block_step"
+      "value": "CUSTOM:flesh_block_place"
     },
     "stepSound": {
       "value": "CUSTOM:flesh_block_step"
@@ -124,7 +120,7 @@
     "onEntityWalksOn": {
       "name": "FleshBlockEntityWalksOnTheBlock"
     },
-    "generateFeature": true,
+    "generateFeature": false,
     "restrictionBiomes": [
       {
         "value": "CUSTOM:StaringHills"

@@ -1,10 +1,10 @@
 {
   "parent": "block/cube_bottom_top",
   "textures": {
-    "particle": "the_deep_void:block/pustulent_flesh_bricks_newer",
-    "bottom": "the_deep_void:block/pustulent_flesh_bricks_newer",
-    "top": "the_deep_void:block/pustulent_flesh_bricks_newer",
-    "side": "the_deep_void:block/pustulent_flesh_bricks_newer"
+    "particle": "the_deep_void:block/pus_veiny_flesh",
+    "bottom": "the_deep_void:block/pus_veiny_flesh",
+    "top": "the_deep_void:block/pus_veiny_flesh",
+    "side": "the_deep_void:block/pus_veiny_flesh"
   },
   "render_type": "solid"
 }

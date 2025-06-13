@@ -134,4 +134,5 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> HERESY_LEVER = REGISTRY.register("heresy_lever", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "heresy_lever")));
 	public static final RegistryObject<SoundEvent> HERESY_SHELL_FALL = REGISTRY.register("heresy_shell_fall", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "heresy_shell_fall")));
 	public static final RegistryObject<SoundEvent> FLESH = REGISTRY.register("flesh", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "flesh")));
+	public static final RegistryObject<SoundEvent> FLESH_BLOCK_PLACE = REGISTRY.register("flesh_block_place", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "flesh_block_place")));
 }

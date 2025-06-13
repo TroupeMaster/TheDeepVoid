@@ -1,9 +1,6 @@
 
 package net.mcreator.thedeepvoid.block;
 
-import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraft.world.phys.shapes.Shapes;
-import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
@@ -33,7 +30,7 @@ import net.mcreator.thedeepvoid.block.entity.SoulOrbPillarBlockEntity;
 
 public class SoulOrbPillarBlock extends Block implements EntityBlock {
 	public SoulOrbPillarBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.BASALT).strength(-1, 3600000).noOcclusion().pushReaction(PushReaction.BLOCK).isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.BASALT).strength(-1, 3600000).pushReaction(PushReaction.BLOCK));
 	}
 
 	@Override
@@ -44,17 +41,6 @@ public class SoulOrbPillarBlock extends Block implements EntityBlock {
 	@Override
 	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
 		return 0;
-	}
-
-	@Override
-	public VoxelShape getVisualShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return Shapes.empty();
-	}
-
-	@Override
-	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
-		return Shapes.or(box(0, 0, 0, 16, 2, 16), box(0, 16, 0, 16, 18, 16), box(2, 2, 2, 14, 16, 14), box(1, 2, 1, 2, 16, 5), box(1, 2, 11, 2, 16, 15), box(14, 2, 11, 15, 16, 15), box(14, 2, 1, 15, 16, 5), box(11, 2, 1, 14, 16, 2),
-				box(2, 2, 1, 5, 16, 2), box(2, 2, 14, 5, 16, 15), box(11, 2, 14, 14, 16, 15));
 	}
 
 	@Override

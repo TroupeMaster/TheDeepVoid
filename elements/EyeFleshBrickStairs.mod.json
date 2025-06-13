@@ -2,10 +2,10 @@
   "_fv": 66,
   "_type": "block",
   "definition": {
-    "texture": "eye_flesh_bricks",
-    "textureTop": "eye_flesh_bricks",
+    "texture": "eye_veiny_bricks",
+    "textureTop": "eye_veiny_bricks",
     "textureLeft": "",
-    "textureFront": "eye_flesh_bricks",
+    "textureFront": "eye_veiny_bricks",
     "textureRight": "",
     "textureBack": "",
     "renderType": 11,
@@ -96,7 +96,7 @@
       "value": "block.slime.hit"
     },
     "placeSound": {
-      "value": "CUSTOM:flesh_block_step"
+      "value": "CUSTOM:flesh_block_place"
     },
     "stepSound": {
       "value": "CUSTOM:flesh_block_step"

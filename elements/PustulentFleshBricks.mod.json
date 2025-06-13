@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "block",
   "definition": {
-    "texture": "pustulent_flesh_bricks_newer",
+    "texture": "pus_veiny_flesh",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
@@ -33,7 +33,7 @@
         "subtract": false
       }
     ],
-    "name": "Pustulent Flesh Bricks",
+    "name": "Pustulent Flesh Block",
     "specialInformation": {
       "fixedValue": []
     },
@@ -41,14 +41,10 @@
     "resistance": 4.0,
     "hasGravity": false,
     "isWaterloggable": false,
-    "creativeTabs": [
-      {
-        "value": "CUSTOM:TheDeepVoid"
-      }
-    ],
+    "creativeTabs": [],
     "destroyTool": "hoe",
     "customDrop": {
-      "value": ""
+      "value": "CUSTOM:PustulentFleshBlock"
     },
     "dropAmount": 1,
     "useLootTableForDrops": false,
@@ -69,7 +65,7 @@
     },
     "colorOnMap": "DEFAULT",
     "creativePickItem": {
-      "value": ""
+      "value": "CUSTOM:PustulentFleshBlock"
     },
     "offsetType": "NONE",
     "aiPathNodeType": "DEFAULT",
@@ -95,7 +91,7 @@
       "value": "block.slime.hit"
     },
     "placeSound": {
-      "value": "CUSTOM:flesh_block_step"
+      "value": "CUSTOM:flesh_block_place"
     },
     "stepSound": {
       "value": "CUSTOM:flesh_block_step"

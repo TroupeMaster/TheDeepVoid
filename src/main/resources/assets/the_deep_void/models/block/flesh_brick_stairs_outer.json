@@ -1,10 +1,10 @@
 {
   "parent": "block/outer_stairs",
   "textures": {
-    "particle": "the_deep_void:block/flesh_bricks_newer",
-    "bottom": "the_deep_void:block/flesh_bricks_newer",
-    "top": "the_deep_void:block/flesh_bricks_newer",
-    "side": "the_deep_void:block/flesh_bricks_newer"
+    "particle": "the_deep_void:block/veiny_flesh_bricks",
+    "bottom": "the_deep_void:block/veiny_flesh_bricks",
+    "top": "the_deep_void:block/veiny_flesh_bricks",
+    "side": "the_deep_void:block/veiny_flesh_bricks"
   },
   "render_type": "solid"
 }

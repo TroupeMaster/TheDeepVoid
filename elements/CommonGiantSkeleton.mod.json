@@ -12,8 +12,8 @@
         "value": "Blocks.AIR"
       }
     ],
-    "spacing": 18,
-    "separation": 9,
+    "spacing": 14,
+    "separation": 5,
     "restrictionBiomes": [
       {
         "value": "CUSTOM:FilledGraveyard"

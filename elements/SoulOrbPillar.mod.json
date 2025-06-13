@@ -18,7 +18,7 @@
     "particleTexture": "",
     "tintType": "No tint",
     "isItemTinted": false,
-    "hasTransparency": true,
+    "hasTransparency": false,
     "connectedSides": false,
     "transparencyType": "SOLID",
     "disableOffset": false,
@@ -28,98 +28,8 @@
         "my": 0.0,
         "mz": 0.0,
         "Mx": 16.0,
-        "My": 2.0,
+        "My": 16.0,
         "Mz": 16.0,
-        "subtract": false
-      },
-      {
-        "mx": 0.0,
-        "my": 16.0,
-        "mz": 0.0,
-        "Mx": 16.0,
-        "My": 18.0,
-        "Mz": 16.0,
-        "subtract": false
-      },
-      {
-        "mx": 2.0,
-        "my": 2.0,
-        "mz": 2.0,
-        "Mx": 14.0,
-        "My": 16.0,
-        "Mz": 14.0,
-        "subtract": false
-      },
-      {
-        "mx": 1.0,
-        "my": 2.0,
-        "mz": 1.0,
-        "Mx": 2.0,
-        "My": 16.0,
-        "Mz": 5.0,
-        "subtract": false
-      },
-      {
-        "mx": 1.0,
-        "my": 2.0,
-        "mz": 11.0,
-        "Mx": 2.0,
-        "My": 16.0,
-        "Mz": 15.0,
-        "subtract": false
-      },
-      {
-        "mx": 14.0,
-        "my": 2.0,
-        "mz": 11.0,
-        "Mx": 15.0,
-        "My": 16.0,
-        "Mz": 15.0,
-        "subtract": false
-      },
-      {
-        "mx": 14.0,
-        "my": 2.0,
-        "mz": 1.0,
-        "Mx": 15.0,
-        "My": 16.0,
-        "Mz": 5.0,
-        "subtract": false
-      },
-      {
-        "mx": 11.0,
-        "my": 2.0,
-        "mz": 1.0,
-        "Mx": 14.0,
-        "My": 16.0,
-        "Mz": 2.0,
-        "subtract": false
-      },
-      {
-        "mx": 2.0,
-        "my": 2.0,
-        "mz": 1.0,
-        "Mx": 5.0,
-        "My": 16.0,
-        "Mz": 2.0,
-        "subtract": false
-      },
-      {
-        "mx": 2.0,
-        "my": 2.0,
-        "mz": 14.0,
-        "Mx": 5.0,
-        "My": 16.0,
-        "Mz": 15.0,
-        "subtract": false
-      },
-      {
-        "mx": 11.0,
-        "my": 2.0,
-        "mz": 14.0,
-        "Mx": 14.0,
-        "My": 16.0,
-        "Mz": 15.0,
         "subtract": false
       }
     ],

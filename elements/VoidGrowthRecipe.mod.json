@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 8,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:ConnectedMarrow"
+      },
+      {
+        "value": "CUSTOM:ConnectedMarrow"
+      },
+      {
+        "value": "CUSTOM:ConnectedMarrow"
+      },
+      {
+        "value": "CUSTOM:ConnectedMarrow"
+      },
+      {
+        "value": "CUSTOM:LiquidVoid.bucket"
+      },
+      {
+        "value": "CUSTOM:ConnectedMarrow"
+      },
+      {
+        "value": "CUSTOM:ConnectedMarrow"
+      },
+      {
+        "value": "CUSTOM:ConnectedMarrow"
+      },
+      {
+        "value": "CUSTOM:ConnectedMarrow"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:VoidGrowth"
+    },
+    "name": "void_growth",
+    "namespace": "mod"
+  }
+}

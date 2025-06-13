@@ -9,7 +9,7 @@
     "textureRight": "",
     "textureBack": "",
     "renderType": 2,
-    "customModelName": "corpse_pile:default",
+    "customModelName": "corpse_pile_new:default",
     "rotationMode": 1,
     "enablePitch": false,
     "emissiveRendering": false,
@@ -80,7 +80,7 @@
     "speedFactor": 1.0,
     "jumpFactor": 1.0,
     "reactionToPushing": "DESTROY",
-    "isNotColidable": false,
+    "isNotColidable": true,
     "isCustomSoundType": false,
     "soundOnStep": {
       "value": "BONE"

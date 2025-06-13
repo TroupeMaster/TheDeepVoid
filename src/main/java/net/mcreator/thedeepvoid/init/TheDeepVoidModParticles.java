@@ -15,6 +15,7 @@ import net.mcreator.thedeepvoid.client.particle.PusSporeParticle;
 import net.mcreator.thedeepvoid.client.particle.PentagramParticle;
 import net.mcreator.thedeepvoid.client.particle.LickerTongueParticle;
 import net.mcreator.thedeepvoid.client.particle.GrimSweepParticle;
+import net.mcreator.thedeepvoid.client.particle.GoldBloodParticle;
 import net.mcreator.thedeepvoid.client.particle.FlyParticle;
 import net.mcreator.thedeepvoid.client.particle.FlameOfSpiteParticle;
 import net.mcreator.thedeepvoid.client.particle.EyeParticle;
@@ -42,5 +43,6 @@ public class TheDeepVoidModParticles {
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.FLAME_OF_SPITE.get(), FlameOfSpiteParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.BLACK_TENTACLE.get(), BlackTentacleParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.SOUL_SWEEP.get(), SoulSweepParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.GOLD_BLOOD.get(), GoldBloodParticle::provider);
 	}
 }

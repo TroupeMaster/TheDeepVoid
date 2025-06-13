@@ -2,6 +2,9 @@
   "feature": "the_deep_void:bone_floor_graveyard",
   "placement": [
     {
+      "type": "minecraft:biome"
+    },
+    {
       "type": "minecraft:in_square"
     },
     {

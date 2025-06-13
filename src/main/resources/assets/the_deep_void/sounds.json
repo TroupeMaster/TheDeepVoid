@@ -1069,5 +1069,14 @@
         "stream": false
       }
     ]
+  },
+  "flesh_block_place": {
+    "subtitle": "subtitles.flesh_block_place",
+    "sounds": [
+      {
+        "name": "the_deep_void:flesh_place",
+        "stream": false
+      }
+    ]
   }
 }

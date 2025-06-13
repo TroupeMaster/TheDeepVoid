@@ -45,7 +45,7 @@ public class CorpseSpawnBlock extends FlowerBlock {
 
 	@Override
 	public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter world, BlockPos pos, Player player) {
-		return new ItemStack(TheDeepVoidModBlocks.CORPSE.get());
+		return new ItemStack(TheDeepVoidModBlocks.OLD_CORPSE.get());
 	}
 
 	@Override

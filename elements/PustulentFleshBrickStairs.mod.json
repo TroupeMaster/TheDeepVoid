@@ -2,10 +2,10 @@
   "_fv": 66,
   "_type": "block",
   "definition": {
-    "texture": "pustulent_flesh_bricks_newer",
-    "textureTop": "pustulent_flesh_bricks_newer",
+    "texture": "pus_veiny_flesh",
+    "textureTop": "pus_veiny_flesh",
     "textureLeft": "",
-    "textureFront": "pustulent_flesh_bricks_newer",
+    "textureFront": "pus_veiny_flesh",
     "textureRight": "",
     "textureBack": "",
     "renderType": 11,
@@ -34,7 +34,7 @@
         "subtract": false
       }
     ],
-    "name": "Pustulent Flesh Brick Stairs",
+    "name": "Pustulent Flesh Stairs",
     "specialInformation": {
       "fixedValue": []
     },
@@ -96,7 +96,7 @@
       "value": "block.slime.hit"
     },
     "placeSound": {
-      "value": "CUSTOM:flesh_block_step"
+      "value": "CUSTOM:flesh_block_place"
     },
     "stepSound": {
       "value": "CUSTOM:flesh_block_step"

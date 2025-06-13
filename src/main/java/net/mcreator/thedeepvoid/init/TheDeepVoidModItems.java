@@ -775,6 +775,18 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> BLOCK_OF_SOUL_FUSED_INGOTS = block(TheDeepVoidModBlocks.BLOCK_OF_SOUL_FUSED_INGOTS);
 	public static final RegistryObject<Item> VOID_GROWTH = block(TheDeepVoidModBlocks.VOID_GROWTH);
 	public static final RegistryObject<Item> HERESY = REGISTRY.register("heresy", () -> new HeresyItem());
+	public static final RegistryObject<Item> FLESH_STAIRS = block(TheDeepVoidModBlocks.FLESH_STAIRS);
+	public static final RegistryObject<Item> FLESH_SLAB = block(TheDeepVoidModBlocks.FLESH_SLAB);
+	public static final RegistryObject<Item> TENDONS = block(TheDeepVoidModBlocks.TENDONS);
+	public static final RegistryObject<Item> OLD_CORPSE_PILE = block(TheDeepVoidModBlocks.OLD_CORPSE_PILE);
+	public static final RegistryObject<Item> OLD_CORPSE = block(TheDeepVoidModBlocks.OLD_CORPSE);
+	public static final RegistryObject<Item> OLD_WALL_CORPSE = block(TheDeepVoidModBlocks.OLD_WALL_CORPSE);
+	public static final RegistryObject<Item> OLD_COVERED_CORPSE = block(TheDeepVoidModBlocks.OLD_COVERED_CORPSE);
+	public static final RegistryObject<Item> OLD_LAYING_CORPSE = block(TheDeepVoidModBlocks.OLD_LAYING_CORPSE);
+	public static final RegistryObject<Item> OLD_BONE_BLOCK = block(TheDeepVoidModBlocks.OLD_BONE_BLOCK);
+	public static final RegistryObject<Item> FLESHY_ROTTEN_BONE_BLOCK = block(TheDeepVoidModBlocks.FLESHY_ROTTEN_BONE_BLOCK);
+	public static final RegistryObject<Item> FLESHY_OLD_BONE_BLOCK = block(TheDeepVoidModBlocks.FLESHY_OLD_BONE_BLOCK);
+	public static final RegistryObject<Item> EYE_TENDONS = block(TheDeepVoidModBlocks.EYE_TENDONS);
 
 	// Start of user code block custom items
 	// End of user code block custom items

@@ -12,20 +12,19 @@ import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.resources.ResourceKey;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.item.HeresyItem;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
+import net.mcreator.thedeepvoid.entity.GoldenBloodshotEntity;
 import net.mcreator.thedeepvoid.entity.BloodshotEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
@@ -67,52 +66,28 @@ public class HeresyRightclickedProcedure {
 			});
 			if (entity.isShiftKeyDown() && itemstack.getOrCreateTag().getDouble("deep_void:rounds") == 7) {
 				for (int index0 = 0; index0 < 7; index0++) {
-					{
-						Entity _shootFrom = entity;
-						Level projectileLevel = _shootFrom.level();
-						if (!projectileLevel.isClientSide()) {
-							Projectile _entityToSpawn = new Object() {
-								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
-									AbstractArrow entityToSpawn = new BloodshotEntity(TheDeepVoidModEntities.BLOODSHOT.get(), level);
-									entityToSpawn.setOwner(shooter);
-									entityToSpawn.setBaseDamage(damage);
-									entityToSpawn.setKnockback(knockback);
-									entityToSpawn.setSilent(true);
-									entityToSpawn.setPierceLevel(piercing);
-									return entityToSpawn;
-								}
-							}.getArrow(projectileLevel, entity, 20, 0, (byte) 1);
-							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 12);
-							projectileLevel.addFreshEntity(_entityToSpawn);
-						}
-					}
-				}
-				entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entity.getYRot() + 180)) * (-1.7)), (Math.sin(Math.toRadians(0 - entity.getXRot())) * (-0.8)), (Math.cos(Math.toRadians(entity.getYRot())) * (-1.7))));
-				itemstack.getOrCreateTag().putDouble("deep_void:rounds", (-1));
-			} else {
-				{
-					Entity _shootFrom = entity;
-					Level projectileLevel = _shootFrom.level();
-					if (!projectileLevel.isClientSide()) {
-						Projectile _entityToSpawn = new Object() {
-							public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
-								AbstractArrow entityToSpawn = new BloodshotEntity(TheDeepVoidModEntities.BLOODSHOT.get(), level);
-								entityToSpawn.setOwner(shooter);
-								entityToSpawn.setBaseDamage(damage);
-								entityToSpawn.setKnockback(knockback);
-								entityToSpawn.setSilent(true);
-								entityToSpawn.setPierceLevel(piercing);
-								return entityToSpawn;
+					if (itemstack.getOrCreateTag().getBoolean("deep_void:goldBlood") == true) {
+						{
+							Entity _shootFrom = entity;
+							Level projectileLevel = _shootFrom.level();
+							if (!projectileLevel.isClientSide()) {
+								Projectile _entityToSpawn = new Object() {
+									public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
+										AbstractArrow entityToSpawn = new GoldenBloodshotEntity(TheDeepVoidModEntities.GOLDEN_BLOODSHOT.get(), level);
+										entityToSpawn.setOwner(shooter);
+										entityToSpawn.setBaseDamage(damage);
+										entityToSpawn.setKnockback(knockback);
+										entityToSpawn.setSilent(true);
+										entityToSpawn.setPierceLevel(piercing);
+										return entityToSpawn;
+									}
+								}.getArrow(projectileLevel, entity, 12, 0, (byte) 1);
+								_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.2, 8);
+								projectileLevel.addFreshEntity(_entityToSpawn);
 							}
-						}.getArrow(projectileLevel, entity, 3, 0, (byte) 3);
-						_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-						_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 4, 1);
-						projectileLevel.addFreshEntity(_entityToSpawn);
-					}
-				}
-				if (itemstack.getOrCreateTag().getDouble("deep_void:rounds") == 7) {
-					for (int index1 = 0; index1 < 4; index1++) {
+						}
+					} else {
 						{
 							Entity _shootFrom = entity;
 							Level projectileLevel = _shootFrom.level();
@@ -127,10 +102,103 @@ public class HeresyRightclickedProcedure {
 										entityToSpawn.setPierceLevel(piercing);
 										return entityToSpawn;
 									}
-								}.getArrow(projectileLevel, entity, 4, 0, (byte) 1);
+								}.getArrow(projectileLevel, entity, 20, 0, (byte) 1);
 								_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 0.6, 10);
+								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 12);
 								projectileLevel.addFreshEntity(_entityToSpawn);
+							}
+						}
+					}
+				}
+				entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entity.getYRot() + 180)) * (-1.7)), (Math.sin(Math.toRadians(0 - entity.getXRot())) * (-0.8)), (Math.cos(Math.toRadians(entity.getYRot())) * (-1.7))));
+				itemstack.getOrCreateTag().putDouble("deep_void:rounds", (-1));
+			} else {
+				if (itemstack.getOrCreateTag().getBoolean("deep_void:goldBlood") == true) {
+					{
+						Entity _shootFrom = entity;
+						Level projectileLevel = _shootFrom.level();
+						if (!projectileLevel.isClientSide()) {
+							Projectile _entityToSpawn = new Object() {
+								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
+									AbstractArrow entityToSpawn = new GoldenBloodshotEntity(TheDeepVoidModEntities.GOLDEN_BLOODSHOT.get(), level);
+									entityToSpawn.setOwner(shooter);
+									entityToSpawn.setBaseDamage(damage);
+									entityToSpawn.setKnockback(knockback);
+									entityToSpawn.setSilent(true);
+									entityToSpawn.setPierceLevel(piercing);
+									return entityToSpawn;
+								}
+							}.getArrow(projectileLevel, entity, (float) 1.5, 0, (byte) 4);
+							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 4.2, 0);
+							projectileLevel.addFreshEntity(_entityToSpawn);
+						}
+					}
+				} else {
+					{
+						Entity _shootFrom = entity;
+						Level projectileLevel = _shootFrom.level();
+						if (!projectileLevel.isClientSide()) {
+							Projectile _entityToSpawn = new Object() {
+								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
+									AbstractArrow entityToSpawn = new BloodshotEntity(TheDeepVoidModEntities.BLOODSHOT.get(), level);
+									entityToSpawn.setOwner(shooter);
+									entityToSpawn.setBaseDamage(damage);
+									entityToSpawn.setKnockback(knockback);
+									entityToSpawn.setSilent(true);
+									entityToSpawn.setPierceLevel(piercing);
+									return entityToSpawn;
+								}
+							}.getArrow(projectileLevel, entity, 3, 0, (byte) 3);
+							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 4, 1);
+							projectileLevel.addFreshEntity(_entityToSpawn);
+						}
+					}
+				}
+				if (itemstack.getOrCreateTag().getDouble("deep_void:rounds") == 7) {
+					for (int index1 = 0; index1 < 4; index1++) {
+						if (itemstack.getOrCreateTag().getBoolean("deep_void:goldBlood") == true) {
+							{
+								Entity _shootFrom = entity;
+								Level projectileLevel = _shootFrom.level();
+								if (!projectileLevel.isClientSide()) {
+									Projectile _entityToSpawn = new Object() {
+										public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
+											AbstractArrow entityToSpawn = new GoldenBloodshotEntity(TheDeepVoidModEntities.GOLDEN_BLOODSHOT.get(), level);
+											entityToSpawn.setOwner(shooter);
+											entityToSpawn.setBaseDamage(damage);
+											entityToSpawn.setKnockback(knockback);
+											entityToSpawn.setSilent(true);
+											entityToSpawn.setPierceLevel(piercing);
+											return entityToSpawn;
+										}
+									}.getArrow(projectileLevel, entity, 2, 0, (byte) 2);
+									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+									_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 0.8, 10);
+									projectileLevel.addFreshEntity(_entityToSpawn);
+								}
+							}
+						} else {
+							{
+								Entity _shootFrom = entity;
+								Level projectileLevel = _shootFrom.level();
+								if (!projectileLevel.isClientSide()) {
+									Projectile _entityToSpawn = new Object() {
+										public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
+											AbstractArrow entityToSpawn = new BloodshotEntity(TheDeepVoidModEntities.BLOODSHOT.get(), level);
+											entityToSpawn.setOwner(shooter);
+											entityToSpawn.setBaseDamage(damage);
+											entityToSpawn.setKnockback(knockback);
+											entityToSpawn.setSilent(true);
+											entityToSpawn.setPierceLevel(piercing);
+											return entityToSpawn;
+										}
+									}.getArrow(projectileLevel, entity, 4, 0, (byte) 1);
+									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
+									_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 0.6, 10);
+									projectileLevel.addFreshEntity(_entityToSpawn);
+								}
 							}
 						}
 					}
@@ -143,13 +211,17 @@ public class HeresyRightclickedProcedure {
 				_player.getCooldowns().addCooldown(itemstack.getItem(), 25);
 			if (itemstack.getItem() instanceof HeresyItem)
 				itemstack.getOrCreateTag().putString("geckoAnim", "animation.heresy_reload");
+			itemstack.getOrCreateTag().putBoolean("deep_void:goldBlood", false);
+			if (entity instanceof LivingEntity _livEnt58 && _livEnt58.hasEffect(MobEffects.ABSORPTION)) {
+				itemstack.getOrCreateTag().putBoolean("deep_void:goldBlood", true);
+			}
 			TheDeepVoidMod.queueServerWork(10, () -> {
 				if (itemstack.getOrCreateTag().getDouble("deep_void:rounds") == -1) {
-					entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy")))),
-							(float) Math.ceil(((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 35) / 100));
+					if (entity instanceof LivingEntity _entity)
+						_entity.setHealth((float) Math.ceil((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) - ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 35) / 100));
 				} else {
-					entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy")))),
-							(float) Math.ceil(((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 25) / 100));
+					if (entity instanceof LivingEntity _entity)
+						_entity.setHealth((float) Math.ceil((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) - ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 25) / 100));
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {

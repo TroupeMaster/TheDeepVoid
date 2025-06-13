@@ -158,7 +158,6 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModBlocks.FLESH_BRICKS.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.FLESH_BRICK_STAIRS.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.FLESH_BRICK_SLAB.get().asItem());
-				tabData.accept(TheDeepVoidModBlocks.PUSTULENT_FLESH_BRICKS.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.ROTTEN_DOOR.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.ROTTEN_TRAPDOOR.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.WALL_CORPSE.get().asItem());
@@ -386,7 +385,6 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModBlocks.BIG_YELLOW_EYE.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.HUGE_EYE_VINE_STEM.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.POROUS_FLESH.get().asItem());
-				tabData.accept(TheDeepVoidModBlocks.VEINY_FLESH.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.GAPING_POROUS_FLESH.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.CARRION.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.MESSY_FLESH.get().asItem());
@@ -537,7 +535,20 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.IDLING_APOSTLE_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.KNIFE_GLOVE.get());
 				tabData.accept(TheDeepVoidModBlocks.BLOCK_OF_SOUL_FUSED_INGOTS.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.VOID_GROWTH.get().asItem());
 				tabData.accept(TheDeepVoidModItems.HERESY.get());
+				tabData.accept(TheDeepVoidModBlocks.FLESH_STAIRS.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.FLESH_SLAB.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.TENDONS.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.OLD_CORPSE_PILE.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.OLD_CORPSE.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.OLD_WALL_CORPSE.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.OLD_COVERED_CORPSE.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.OLD_LAYING_CORPSE.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.OLD_BONE_BLOCK.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.FLESHY_ROTTEN_BONE_BLOCK.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.FLESHY_OLD_BONE_BLOCK.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.EYE_TENDONS.get().asItem());
 			})
 
 					.build());

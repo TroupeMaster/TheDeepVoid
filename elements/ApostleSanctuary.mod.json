@@ -9,8 +9,8 @@
         "value": "Blocks.STRUCTURE_BLOCK"
       }
     ],
-    "spacing": 80,
-    "separation": 45,
+    "spacing": 70,
+    "separation": 50,
     "restrictionBiomes": [
       {
         "value": "#mod:is_deep_void"

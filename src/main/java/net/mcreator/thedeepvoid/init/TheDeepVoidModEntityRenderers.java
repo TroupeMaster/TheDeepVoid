@@ -199,5 +199,6 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.ROT_KNIFE.get(), RotKnifeRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.IDLING_APOSTLE.get(), IdlingApostleRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.BLOODSHOT.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.GOLDEN_BLOODSHOT.get(), ThrownItemRenderer::new);
 	}
 }

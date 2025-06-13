@@ -12,7 +12,7 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:PustulentFleshBricks"
+        "value": "CUSTOM:PustulentFleshBlock"
       },
       {
         "value": ""
@@ -21,22 +21,22 @@
         "value": ""
       },
       {
-        "value": "CUSTOM:PustulentFleshBricks"
+        "value": "CUSTOM:PustulentFleshBlock"
       },
       {
-        "value": "CUSTOM:PustulentFleshBricks"
+        "value": "CUSTOM:PustulentFleshBlock"
       },
       {
         "value": ""
       },
       {
-        "value": "CUSTOM:PustulentFleshBricks"
+        "value": "CUSTOM:PustulentFleshBlock"
       },
       {
-        "value": "CUSTOM:PustulentFleshBricks"
+        "value": "CUSTOM:PustulentFleshBlock"
       },
       {
-        "value": "CUSTOM:PustulentFleshBricks"
+        "value": "CUSTOM:PustulentFleshBlock"
       }
     ],
     "recipeReturnStack": {

@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/veiny_flesh",
+    "up": "the_deep_void:block/old_bone_block_top",
+    "north": "the_deep_void:block/fleshy_old_bone",
+    "east": "the_deep_void:block/fleshy_old_bone",
+    "south": "the_deep_void:block/fleshy_old_bone",
+    "west": "the_deep_void:block/fleshy_old_bone",
+    "particle": "the_deep_void:block/veiny_flesh"
+  },
+  "render_type": "solid"
+}

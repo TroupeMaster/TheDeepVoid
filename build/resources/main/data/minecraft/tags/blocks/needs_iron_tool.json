@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "the_deep_void:fleshy_rotten_bone_block",
     "the_deep_void:block_of_raw_cinnabar",
     "the_deep_void:block_of_cinnabar",
     "the_deep_void:cinnabar_ore",

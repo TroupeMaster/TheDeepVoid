@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
+    "the_deep_void:fleshy_old_bone_block",
+    "the_deep_void:fleshy_rotten_bone_block",
+    "the_deep_void:old_bone_block",
     "the_deep_void:block_of_soul_fused_ingots",
     "the_deep_void:big_tooth",
     "the_deep_void:vent_stone",

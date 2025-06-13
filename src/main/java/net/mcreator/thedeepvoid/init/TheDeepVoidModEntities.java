@@ -70,6 +70,7 @@ import net.mcreator.thedeepvoid.entity.HandSpawnEntity;
 import net.mcreator.thedeepvoid.entity.HallucinationEntity;
 import net.mcreator.thedeepvoid.entity.GravekeeperEntity;
 import net.mcreator.thedeepvoid.entity.GooSpitterEntity;
+import net.mcreator.thedeepvoid.entity.GoldenBloodshotEntity;
 import net.mcreator.thedeepvoid.entity.GhostlyNightmareEntity;
 import net.mcreator.thedeepvoid.entity.GhostEntity;
 import net.mcreator.thedeepvoid.entity.FourEyesEntity;
@@ -417,6 +418,8 @@ public class TheDeepVoidModEntities {
 			.setTrackingRange(99).setUpdateInterval(3).setCustomClientFactory(IdlingApostleEntity::new).fireImmune().sized(0.9f, 3.8f));
 	public static final RegistryObject<EntityType<BloodshotEntity>> BLOODSHOT = register("bloodshot",
 			EntityType.Builder.<BloodshotEntity>of(BloodshotEntity::new, MobCategory.MISC).setCustomClientFactory(BloodshotEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<GoldenBloodshotEntity>> GOLDEN_BLOODSHOT = register("golden_bloodshot", EntityType.Builder.<GoldenBloodshotEntity>of(GoldenBloodshotEntity::new, MobCategory.MISC)
+			.setCustomClientFactory(GoldenBloodshotEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));

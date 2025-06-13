@@ -14,7 +14,7 @@
     "enablePitch": false,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
-    "itemTexture": "",
+    "itemTexture": "void_growth",
     "particleTexture": "",
     "tintType": "No tint",
     "isItemTinted": false,
@@ -41,7 +41,11 @@
     "resistance": 1.0,
     "hasGravity": false,
     "isWaterloggable": true,
-    "creativeTabs": [],
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
     "destroyTool": "Not specified",
     "customDrop": {
       "value": "Blocks.AIR"
@@ -58,7 +62,7 @@
     },
     "tickRate": 0,
     "tickRandomly": false,
-    "isReplaceable": true,
+    "isReplaceable": false,
     "canProvidePower": false,
     "emittedRedstonePower": {
       "fixedValue": 15.0
@@ -75,7 +79,7 @@
     "slipperiness": 0.6,
     "speedFactor": 1.0,
     "jumpFactor": 1.0,
-    "reactionToPushing": "NORMAL",
+    "reactionToPushing": "DESTROY",
     "isNotColidable": true,
     "isCustomSoundType": false,
     "soundOnStep": {
@@ -117,6 +121,9 @@
     "isFluidTank": false,
     "fluidCapacity": 8000,
     "fluidRestrictions": [],
+    "onBlockAdded": {
+      "name": "VoidGrowthNeighbourBlockChanges"
+    },
     "onNeighbourBlockChanges": {
       "name": "VoidGrowthNeighbourBlockChanges"
     },

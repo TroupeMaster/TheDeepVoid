@@ -2,6 +2,9 @@
   "feature": "the_deep_void:hard_flesh_node",
   "placement": [
     {
+      "type": "minecraft:biome"
+    },
+    {
       "type": "minecraft:in_square"
     },
     {

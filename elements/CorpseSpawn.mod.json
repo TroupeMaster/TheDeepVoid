@@ -3,9 +3,9 @@
   "_type": "plant",
   "definition": {
     "renderType": 2,
-    "texture": "block_of_bone_pile",
+    "texture": "old_corpse",
     "textureBottom": "",
-    "customModelName": "corpse:default",
+    "customModelName": "old_corpse:default",
     "itemTexture": "bone_pile_item",
     "particleTexture": "block_of_bone_pile",
     "tintType": "No tint",
@@ -68,7 +68,7 @@
     "isReplaceable": false,
     "colorOnMap": "DEFAULT",
     "creativePickItem": {
-      "value": "CUSTOM:Corpse"
+      "value": "CUSTOM:OldCorpse"
     },
     "offsetType": "NONE",
     "aiPathNodeType": "DEFAULT",

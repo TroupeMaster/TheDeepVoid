@@ -1,9 +1,9 @@
 {
-  "parent": "the_deep_void:custom/laying_corpse",
+  "parent": "the_deep_void:custom/old_laying_corpse",
   "textures": {
-    "all": "the_deep_void:block/block_of_bone_pile",
+    "all": "the_deep_void:block/old_corpse",
     "particle": "the_deep_void:block/block_of_bone_pile",
-    "0": "the_deep_void:block/corpse_texture"
+    "0": "the_deep_void:block/old_corpse"
   },
   "render_type": "cutout"
 }

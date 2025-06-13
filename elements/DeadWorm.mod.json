@@ -12,11 +12,11 @@
         "value": "Blocks.AIR"
       }
     ],
-    "spacing": 4,
-    "separation": 2,
+    "spacing": 8,
+    "separation": 4,
     "restrictionBiomes": [
       {
-        "value": "CUSTOM:ForgottenValley"
+        "value": "CUSTOM:FilledGraveyard"
       }
     ],
     "terrainAdaptation": "none",

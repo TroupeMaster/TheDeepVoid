@@ -1,12 +1,28 @@
 {
-  "type": "the_deep_void:structure_feature",
+  "type": "minecraft:simple_block",
   "config": {
-    "structure": "the_deep_void:corpse_struc",
-    "random_rotation": true,
-    "random_mirror": true,
-    "ignored_blocks": [
-      "minecraft:air",
-      "minecraft:structure_block"
-    ]
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "the_deep_void:old_corpse"
+          },
+          "weight": 1
+        },
+        {
+          "data": {
+            "Name": "the_deep_void:old_covered_corpse"
+          },
+          "weight": 1
+        },
+        {
+          "data": {
+            "Name": "the_deep_void:old_laying_corpse"
+          },
+          "weight": 1
+        }
+      ]
+    }
   }
 }
