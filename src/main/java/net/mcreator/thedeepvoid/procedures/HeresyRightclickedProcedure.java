@@ -102,7 +102,7 @@ public class HeresyRightclickedProcedure {
 										entityToSpawn.setPierceLevel(piercing);
 										return entityToSpawn;
 									}
-								}.getArrow(projectileLevel, entity, 20, 0, (byte) 1);
+								}.getArrow(projectileLevel, entity, 25, 0, (byte) 1);
 								_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 12);
 								projectileLevel.addFreshEntity(_entityToSpawn);

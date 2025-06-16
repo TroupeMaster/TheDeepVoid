@@ -20,6 +20,7 @@ import net.mcreator.thedeepvoid.potion.SinsAndSinnersMusicMobEffect;
 import net.mcreator.thedeepvoid.potion.RottenHeartMobEffect;
 import net.mcreator.thedeepvoid.potion.RotMobEffect;
 import net.mcreator.thedeepvoid.potion.RootBlindMobEffect;
+import net.mcreator.thedeepvoid.potion.PitchBlackMusicMobEffect;
 import net.mcreator.thedeepvoid.potion.ParanoiaMobEffect;
 import net.mcreator.thedeepvoid.potion.PainfulMobEffect;
 import net.mcreator.thedeepvoid.potion.PainKillerMobEffect;
@@ -78,4 +79,5 @@ public class TheDeepVoidModMobEffects {
 	public static final RegistryObject<MobEffect> LACERATION = REGISTRY.register("laceration", () -> new LacerationMobEffect());
 	public static final RegistryObject<MobEffect> CHAINSAW_MUSIC = REGISTRY.register("chainsaw_music", () -> new ChainsawMusicMobEffect());
 	public static final RegistryObject<MobEffect> BLOOD_BOIL = REGISTRY.register("blood_boil", () -> new BloodBoilMobEffect());
+	public static final RegistryObject<MobEffect> PITCH_BLACK_MUSIC = REGISTRY.register("pitch_black_music", () -> new PitchBlackMusicMobEffect());
 }

@@ -135,4 +135,9 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> HERESY_SHELL_FALL = REGISTRY.register("heresy_shell_fall", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "heresy_shell_fall")));
 	public static final RegistryObject<SoundEvent> FLESH = REGISTRY.register("flesh", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "flesh")));
 	public static final RegistryObject<SoundEvent> FLESH_BLOCK_PLACE = REGISTRY.register("flesh_block_place", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "flesh_block_place")));
+	public static final RegistryObject<SoundEvent> PITCH_BLACK = REGISTRY.register("pitch_black", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "pitch_black")));
+	public static final RegistryObject<SoundEvent> HIVEMIND_AMBIENT = REGISTRY.register("hivemind_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hivemind_ambient")));
+	public static final RegistryObject<SoundEvent> HIVEMIND_HURT = REGISTRY.register("hivemind_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hivemind_hurt")));
+	public static final RegistryObject<SoundEvent> HIVEMIND_SCREAM = REGISTRY.register("hivemind_scream", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hivemind_scream")));
+	public static final RegistryObject<SoundEvent> EYEKIN_WING_FLAP = REGISTRY.register("eyekin_wing_flap", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "eyekin_wing_flap")));
 }

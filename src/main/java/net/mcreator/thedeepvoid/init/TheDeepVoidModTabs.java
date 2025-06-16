@@ -412,10 +412,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.WEAVER_MASK_HELMET.get());
 				tabData.accept(TheDeepVoidModBlocks.LAYING_CORPSE.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.JACK_O_LAYING_CORPSE.get().asItem());
-				tabData.accept(TheDeepVoidModItems.MRORDYYGOTHRE_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.SINS_AND_SINNERS.get());
-				tabData.accept(TheDeepVoidModBlocks.ANCIENT_ALTAR.get().asItem());
-				tabData.accept(TheDeepVoidModItems.BLIND_PROPHET_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.WEAVER_ROBE_CHESTPLATE.get());
 				tabData.accept(TheDeepVoidModItems.SACRED_CINNABAR.get());
 				tabData.accept(TheDeepVoidModItems.SACRED_VOIDRIUM_HELMET.get());
@@ -549,6 +546,16 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModBlocks.FLESHY_ROTTEN_BONE_BLOCK.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.FLESHY_OLD_BONE_BLOCK.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.EYE_TENDONS.get().asItem());
+				tabData.accept(TheDeepVoidModItems.MISANTHROPIC_HIVEMIND_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.PITCH_BLACK.get());
+				tabData.accept(TheDeepVoidModItems.MISANTHROPIC_HIVEMIND_TREASURE_BAG.get());
+				tabData.accept(TheDeepVoidModItems.FLESH_FANGS_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.GORE_EXPECTORATOR_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.HIVE_BRAIN_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.FLESH_BONE.get());
+				tabData.accept(TheDeepVoidModItems.ANIMOSITY.get());
+				tabData.accept(TheDeepVoidModItems.BLOODY_RIB_CAGE_CHESTPLATE.get());
+				tabData.accept(TheDeepVoidModItems.EYEKIN_SADDLE.get());
 			})
 
 					.build());

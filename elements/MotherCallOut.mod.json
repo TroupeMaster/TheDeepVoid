@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "keybind",
   "definition": {
-    "triggerKey": "X",
+    "triggerKey": "NONE",
     "keyBindingName": "Mother Call Out",
     "keyBindingCategoryKey": "gameplay",
     "onKeyPressed": {

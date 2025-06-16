@@ -4,13 +4,13 @@ license="GNU General Public License version 3 (GPLv3)"
 
 [[mods]]
 modId="the_deep_void"
-version="1.87"
+version="1.88"
 displayName="The Deep Void"
-displayURL="https://mcreator.net"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/the-deep-void"
 logoFile="logo.png"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 authors="Mortius"
-description="A mod that adds a new dimension filled with mysteries and a dark ambience."
+description="The Deep Void adds a new creepy dimension for you to explore with tons of new content centered around a desolate and forgotten Void."
 
 # Start of user code block mod configuration
 # End of user code block mod configuration

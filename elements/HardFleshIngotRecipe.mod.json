@@ -12,7 +12,7 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:BlockOfRottenBonePile"
+        "value": "CUSTOM:FleshBone"
       },
       {
         "value": "CUSTOM:FleshChunk"
@@ -30,13 +30,13 @@
         "value": "CUSTOM:FleshChunk"
       },
       {
-        "value": "CUSTOM:BlackMoss"
+        "value": "CUSTOM:FleshBone"
       },
       {
         "value": "CUSTOM:FleshChunk"
       },
       {
-        "value": "CUSTOM:BlockOfRottenBonePile"
+        "value": "CUSTOM:FleshBone"
       }
     ],
     "recipeReturnStack": {

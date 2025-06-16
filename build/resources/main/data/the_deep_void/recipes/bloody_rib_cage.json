@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "the_deep_void:rotten_bone"
+    },
+    {
+      "item": "the_deep_void:rotten_bone"
+    },
+    {
+      "item": "the_deep_void:flesh_bone"
+    },
+    {
+      "item": "the_deep_void:flesh_bone"
+    },
+    {
+      "item": "the_deep_void:flesh_bone"
+    },
+    {
+      "item": "the_deep_void:rotten_bone"
+    }
+  ],
+  "result": {
+    "item": "the_deep_void:bloody_rib_cage_chestplate",
+    "count": 1
+  }
+}

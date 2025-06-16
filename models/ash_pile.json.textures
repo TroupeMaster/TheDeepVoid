@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "void_ash_block"
+      },
+      "name": "default"
+    }
+  }
+}

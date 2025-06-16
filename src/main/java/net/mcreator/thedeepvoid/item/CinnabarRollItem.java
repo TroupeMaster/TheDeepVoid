@@ -12,7 +12,7 @@ import net.mcreator.thedeepvoid.procedures.CinnabarRollPlayerFinishesUsingItemPr
 
 public class CinnabarRollItem extends Item {
 	public CinnabarRollItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(4).saturationMod(14f).alwaysEat().build()));
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(4).saturationMod(14f).build()));
 	}
 
 	@Override

@@ -49,6 +49,8 @@ import net.mcreator.thedeepvoid.entity.RotKnifeEntity;
 import net.mcreator.thedeepvoid.entity.RootedEntity;
 import net.mcreator.thedeepvoid.entity.RootedCloneEntity;
 import net.mcreator.thedeepvoid.entity.RoamerEntity;
+import net.mcreator.thedeepvoid.entity.RideableFlyingEyekinEntity;
+import net.mcreator.thedeepvoid.entity.RideableEyekinEntity;
 import net.mcreator.thedeepvoid.entity.PusBallProjectileEntity;
 import net.mcreator.thedeepvoid.entity.PoisonKnifeEntity;
 import net.mcreator.thedeepvoid.entity.OverseerPillarEntity;
@@ -57,18 +59,20 @@ import net.mcreator.thedeepvoid.entity.OverseerBigPillarEntity;
 import net.mcreator.thedeepvoid.entity.NightmareEntity;
 import net.mcreator.thedeepvoid.entity.MuzzledDeathVultureEntity;
 import net.mcreator.thedeepvoid.entity.MultipleEyesEntity;
-import net.mcreator.thedeepvoid.entity.MrordyygothreEntity;
 import net.mcreator.thedeepvoid.entity.MournerEntity;
 import net.mcreator.thedeepvoid.entity.MotherBoneCrawlerEntity;
+import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
 import net.mcreator.thedeepvoid.entity.LurkerEntity;
 import net.mcreator.thedeepvoid.entity.LightEntity;
 import net.mcreator.thedeepvoid.entity.LickerHookTongueEntity;
 import net.mcreator.thedeepvoid.entity.LickerEntity;
 import net.mcreator.thedeepvoid.entity.LavenditeShardProjEntity;
 import net.mcreator.thedeepvoid.entity.IdlingApostleEntity;
+import net.mcreator.thedeepvoid.entity.HiveBrainEntity;
 import net.mcreator.thedeepvoid.entity.HandSpawnEntity;
 import net.mcreator.thedeepvoid.entity.HallucinationEntity;
 import net.mcreator.thedeepvoid.entity.GravekeeperEntity;
+import net.mcreator.thedeepvoid.entity.GoreExpectoratorEntity;
 import net.mcreator.thedeepvoid.entity.GooSpitterEntity;
 import net.mcreator.thedeepvoid.entity.GoldenBloodshotEntity;
 import net.mcreator.thedeepvoid.entity.GhostlyNightmareEntity;
@@ -76,6 +80,7 @@ import net.mcreator.thedeepvoid.entity.GhostEntity;
 import net.mcreator.thedeepvoid.entity.FourEyesEntity;
 import net.mcreator.thedeepvoid.entity.ForsakenEntity;
 import net.mcreator.thedeepvoid.entity.FoolEaterEntity;
+import net.mcreator.thedeepvoid.entity.FleshFangsEntity;
 import net.mcreator.thedeepvoid.entity.FleshCubeEntity;
 import net.mcreator.thedeepvoid.entity.FlareEntity;
 import net.mcreator.thedeepvoid.entity.FallingCorpseEntity;
@@ -102,7 +107,7 @@ import net.mcreator.thedeepvoid.entity.BuiltBigOverseerEntity;
 import net.mcreator.thedeepvoid.entity.BoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.BoneBallProjectileEntity;
 import net.mcreator.thedeepvoid.entity.BloodshotEntity;
-import net.mcreator.thedeepvoid.entity.BlindProphetEntity;
+import net.mcreator.thedeepvoid.entity.BloodSpitEntity;
 import net.mcreator.thedeepvoid.entity.BigShadeArrowEntity;
 import net.mcreator.thedeepvoid.entity.BigOverseerEntity;
 import net.mcreator.thedeepvoid.entity.BigEyeEntity;
@@ -167,16 +172,8 @@ public class TheDeepVoidModEntities {
 			EntityType.Builder.<SulfurBombProjEntity>of(SulfurBombProjEntity::new, MobCategory.MISC).setCustomClientFactory(SulfurBombProjEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<ThrownSoulSeekerEntity>> THROWN_SOUL_SEEKER = register("thrown_soul_seeker", EntityType.Builder.<ThrownSoulSeekerEntity>of(ThrownSoulSeekerEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(ThrownSoulSeekerEntity::new).fireImmune().sized(2f, 0.5f));
-	public static final RegistryObject<EntityType<MrordyygothreEntity>> MRORDYYGOTHRE = register("mrordyygothre",
-			EntityType.Builder.<MrordyygothreEntity>of(MrordyygothreEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(78).setUpdateInterval(3).setCustomClientFactory(MrordyygothreEntity::new)
-
-					.sized(0.6f, 2f));
 	public static final RegistryObject<EntityType<CharredSpikeEntity>> CHARRED_SPIKE = register("charred_spike", EntityType.Builder.<CharredSpikeEntity>of(CharredSpikeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(CharredSpikeEntity::new).fireImmune().sized(0.6f, 1.8f));
-	public static final RegistryObject<EntityType<BlindProphetEntity>> BLIND_PROPHET = register("blind_prophet",
-			EntityType.Builder.<BlindProphetEntity>of(BlindProphetEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(78).setUpdateInterval(3).setCustomClientFactory(BlindProphetEntity::new)
-
-					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<SummonedCharredSpikeEntity>> SUMMONED_CHARRED_SPIKE = register("summoned_charred_spike", EntityType.Builder.<SummonedCharredSpikeEntity>of(SummonedCharredSpikeEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(SummonedCharredSpikeEntity::new).fireImmune().sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<ShadeArrowEntity>> SHADE_ARROW = register("shade_arrow",
@@ -420,6 +417,32 @@ public class TheDeepVoidModEntities {
 			EntityType.Builder.<BloodshotEntity>of(BloodshotEntity::new, MobCategory.MISC).setCustomClientFactory(BloodshotEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<GoldenBloodshotEntity>> GOLDEN_BLOODSHOT = register("golden_bloodshot", EntityType.Builder.<GoldenBloodshotEntity>of(GoldenBloodshotEntity::new, MobCategory.MISC)
 			.setCustomClientFactory(GoldenBloodshotEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<MisanthropicHivemindEntity>> MISANTHROPIC_HIVEMIND = register("misanthropic_hivemind",
+			EntityType.Builder.<MisanthropicHivemindEntity>of(MisanthropicHivemindEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(84).setUpdateInterval(3)
+					.setCustomClientFactory(MisanthropicHivemindEntity::new)
+
+					.sized(1.8f, 3.4f));
+	public static final RegistryObject<EntityType<FleshFangsEntity>> FLESH_FANGS = register("flesh_fangs",
+			EntityType.Builder.<FleshFangsEntity>of(FleshFangsEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FleshFangsEntity::new)
+
+					.sized(1f, 1f));
+	public static final RegistryObject<EntityType<GoreExpectoratorEntity>> GORE_EXPECTORATOR = register("gore_expectorator",
+			EntityType.Builder.<GoreExpectoratorEntity>of(GoreExpectoratorEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GoreExpectoratorEntity::new)
+
+					.sized(1.4f, 5f));
+	public static final RegistryObject<EntityType<BloodSpitEntity>> BLOOD_SPIT = register("blood_spit",
+			EntityType.Builder.<BloodSpitEntity>of(BloodSpitEntity::new, MobCategory.MISC).setCustomClientFactory(BloodSpitEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<HiveBrainEntity>> HIVE_BRAIN = register("hive_brain",
+			EntityType.Builder.<HiveBrainEntity>of(HiveBrainEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(HiveBrainEntity::new).fireImmune().sized(1f, 1f));
+	public static final RegistryObject<EntityType<RideableEyekinEntity>> RIDEABLE_EYEKIN = register("rideable_eyekin",
+			EntityType.Builder.<RideableEyekinEntity>of(RideableEyekinEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(74).setUpdateInterval(3).setCustomClientFactory(RideableEyekinEntity::new)
+
+					.sized(2.2f, 3.2f));
+	public static final RegistryObject<EntityType<RideableFlyingEyekinEntity>> RIDEABLE_FLYING_EYEKIN = register("rideable_flying_eyekin",
+			EntityType.Builder.<RideableFlyingEyekinEntity>of(RideableFlyingEyekinEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(78).setUpdateInterval(3)
+					.setCustomClientFactory(RideableFlyingEyekinEntity::new)
+
+					.sized(3f, 1f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -439,9 +462,7 @@ public class TheDeepVoidModEntities {
 			BuiltOverseerPillarEntity.init();
 			DeathMawHiddenEntity.init();
 			ThrownSoulSeekerEntity.init();
-			MrordyygothreEntity.init();
 			CharredSpikeEntity.init();
-			BlindProphetEntity.init();
 			SummonedCharredSpikeEntity.init();
 			MournerEntity.init();
 			BoneCrawlerEntity.init();
@@ -508,6 +529,12 @@ public class TheDeepVoidModEntities {
 			SeekerEntity.init();
 			ApostleOfCatastropheEntity.init();
 			IdlingApostleEntity.init();
+			MisanthropicHivemindEntity.init();
+			FleshFangsEntity.init();
+			GoreExpectoratorEntity.init();
+			HiveBrainEntity.init();
+			RideableEyekinEntity.init();
+			RideableFlyingEyekinEntity.init();
 		});
 	}
 
@@ -524,9 +551,7 @@ public class TheDeepVoidModEntities {
 		event.put(BUILT_OVERSEER_PILLAR.get(), BuiltOverseerPillarEntity.createAttributes().build());
 		event.put(DEATH_MAW_HIDDEN.get(), DeathMawHiddenEntity.createAttributes().build());
 		event.put(THROWN_SOUL_SEEKER.get(), ThrownSoulSeekerEntity.createAttributes().build());
-		event.put(MRORDYYGOTHRE.get(), MrordyygothreEntity.createAttributes().build());
 		event.put(CHARRED_SPIKE.get(), CharredSpikeEntity.createAttributes().build());
-		event.put(BLIND_PROPHET.get(), BlindProphetEntity.createAttributes().build());
 		event.put(SUMMONED_CHARRED_SPIKE.get(), SummonedCharredSpikeEntity.createAttributes().build());
 		event.put(MOURNER.get(), MournerEntity.createAttributes().build());
 		event.put(BONE_CRAWLER.get(), BoneCrawlerEntity.createAttributes().build());
@@ -593,5 +618,11 @@ public class TheDeepVoidModEntities {
 		event.put(SEEKER.get(), SeekerEntity.createAttributes().build());
 		event.put(APOSTLE_OF_CATASTROPHE.get(), ApostleOfCatastropheEntity.createAttributes().build());
 		event.put(IDLING_APOSTLE.get(), IdlingApostleEntity.createAttributes().build());
+		event.put(MISANTHROPIC_HIVEMIND.get(), MisanthropicHivemindEntity.createAttributes().build());
+		event.put(FLESH_FANGS.get(), FleshFangsEntity.createAttributes().build());
+		event.put(GORE_EXPECTORATOR.get(), GoreExpectoratorEntity.createAttributes().build());
+		event.put(HIVE_BRAIN.get(), HiveBrainEntity.createAttributes().build());
+		event.put(RIDEABLE_EYEKIN.get(), RideableEyekinEntity.createAttributes().build());
+		event.put(RIDEABLE_FLYING_EYEKIN.get(), RideableFlyingEyekinEntity.createAttributes().build());
 	}
 }

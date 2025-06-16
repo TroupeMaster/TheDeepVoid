@@ -10,7 +10,7 @@ public class GoldenEyeballPlayerFinishesUsingItemProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 4));
+			_entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 100, 2));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 40, 0));
 	}

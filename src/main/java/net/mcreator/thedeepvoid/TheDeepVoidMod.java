@@ -28,6 +28,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModMenus;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModFluids;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModFluidTypes;
+import net.mcreator.thedeepvoid.init.TheDeepVoidModFeatures;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEnchantments;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
@@ -59,7 +60,7 @@ public class TheDeepVoidMod {
 		TheDeepVoidModEntities.REGISTRY.register(bus);
 		TheDeepVoidModEnchantments.REGISTRY.register(bus);
 		TheDeepVoidModTabs.REGISTRY.register(bus);
-
+		TheDeepVoidModFeatures.REGISTRY.register(bus);
 		StructureFeature.REGISTRY.register(bus);
 		TheDeepVoidModMobEffects.REGISTRY.register(bus);
 		TheDeepVoidModPotions.REGISTRY.register(bus);

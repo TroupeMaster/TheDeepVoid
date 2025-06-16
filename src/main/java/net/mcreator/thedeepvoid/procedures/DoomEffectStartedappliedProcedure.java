@@ -21,6 +21,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
+import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
 import net.mcreator.thedeepvoid.entity.ApostleOfCatastropheEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
@@ -28,7 +29,7 @@ public class DoomEffectStartedappliedProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (!(entity instanceof WeaverOfSoulsEntity) && !(entity instanceof ApostleOfCatastropheEntity)) {
+		if (!(entity instanceof WeaverOfSoulsEntity) && !(entity instanceof MisanthropicHivemindEntity) && !(entity instanceof ApostleOfCatastropheEntity)) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 23, 99, false, false));
 			if (world instanceof ServerLevel _level) {

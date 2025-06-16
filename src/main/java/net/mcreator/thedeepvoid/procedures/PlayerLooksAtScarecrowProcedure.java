@@ -9,14 +9,17 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.GameType;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
+import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.entity.ScarecrowEntity;
 
 import javax.annotation.Nullable;
@@ -60,23 +63,25 @@ public class PlayerLooksAtScarecrowProcedure {
 				return false;
 			}
 		}.checkGamemode(entity))) {
-			if (!world.getEntitiesOfClass(ScarecrowEntity.class, AABB.ofSize(new Vec3(x, y, z), 25, 25, 25), e -> true).isEmpty()) {
-				distance = 1;
-				for (int index0 = 0; index0 < 20; index0++) {
-					{
-						final Vec3 _center = new Vec3((entity.getX() + entity.getLookAngle().x * distance), (entity.getY() + entity.getLookAngle().y * distance), (entity.getZ() + entity.getLookAngle().z * distance));
-						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-						for (Entity entityiterator : _entfound) {
-							if (entityiterator instanceof ScarecrowEntity) {
-								if (!world.getEntitiesOfClass(ScarecrowEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 28, 28, 28), e -> true).isEmpty()) {
-									if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-										_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.FIXATION.get(), 5, 0, false, false));
-									entityiterator.getPersistentData().putDouble("deep_void:crowCall", (entityiterator.getPersistentData().getDouble("deep_void:crowCall") + 1));
+			if (!((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BLOODY_RIB_CAGE_CHESTPLATE.get())) {
+				if (!world.getEntitiesOfClass(ScarecrowEntity.class, AABB.ofSize(new Vec3(x, y, z), 25, 25, 25), e -> true).isEmpty()) {
+					distance = 1;
+					for (int index0 = 0; index0 < 20; index0++) {
+						{
+							final Vec3 _center = new Vec3((entity.getX() + entity.getLookAngle().x * distance), (entity.getY() + entity.getLookAngle().y * distance), (entity.getZ() + entity.getLookAngle().z * distance));
+							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+							for (Entity entityiterator : _entfound) {
+								if (entityiterator instanceof ScarecrowEntity) {
+									if (!world.getEntitiesOfClass(ScarecrowEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 28, 28, 28), e -> true).isEmpty()) {
+										if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+											_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.FIXATION.get(), 5, 0, false, false));
+										entityiterator.getPersistentData().putDouble("deep_void:crowCall", (entityiterator.getPersistentData().getDouble("deep_void:crowCall") + 1));
+									}
 								}
 							}
 						}
+						distance = distance + 1;
 					}
-					distance = distance + 1;
 				}
 			}
 		}

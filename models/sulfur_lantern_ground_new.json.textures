@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "sulfur_lantern"
+      },
+      "name": "default"
+    }
+  }
+}

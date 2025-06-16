@@ -4,7 +4,6 @@ package net.mcreator.thedeepvoid.entity;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
-import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -12,24 +11,16 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnGroupData;
 import net.minecraft.world.entity.MobType;
-import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.DifficultyInstance;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
-import net.minecraft.nbt.CompoundTag;
 
-import net.mcreator.thedeepvoid.procedures.CharredSpikeOnInitialEntitySpawnProcedure;
-import net.mcreator.thedeepvoid.procedures.CharredSpikeOnEntityTickUpdateProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
-
-import javax.annotation.Nullable;
 
 public class CharredSpikeEntity extends Monster {
 	public CharredSpikeEntity(PlayMessages.SpawnEntity packet, Level world) {
@@ -98,19 +89,6 @@ public class CharredSpikeEntity extends Monster {
 	@Override
 	public boolean fireImmune() {
 		return true;
-	}
-
-	@Override
-	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
-		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		CharredSpikeOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ());
-		return retval;
-	}
-
-	@Override
-	public void baseTick() {
-		super.baseTick();
-		CharredSpikeOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	public static void init() {

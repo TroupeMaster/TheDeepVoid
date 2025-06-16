@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "the_deep_void:item/eye_vine_item"
+    "layer0": "the_deep_void:item/eye_vine"
   },
   "render_type": "translucent"
 }

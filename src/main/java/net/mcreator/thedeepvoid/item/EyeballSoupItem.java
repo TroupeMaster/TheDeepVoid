@@ -12,7 +12,7 @@ import net.minecraft.world.entity.LivingEntity;
 
 public class EyeballSoupItem extends Item {
 	public EyeballSoupItem() {
-		super(new Item.Properties().stacksTo(16).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(5).saturationMod(8f).alwaysEat().build()));
+		super(new Item.Properties().stacksTo(16).rarity(Rarity.COMMON).food((new FoodProperties.Builder()).nutrition(5).saturationMod(8f).build()));
 	}
 
 	@Override

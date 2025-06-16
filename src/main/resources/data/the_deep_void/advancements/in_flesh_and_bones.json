@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:flesh_bone"
+    },
+    "title": {
+      "translate": "advancements.in_flesh_and_bones.title"
+    },
+    "description": {
+      "translate": "advancements.in_flesh_and_bones.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "in_flesh_and_bones_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "the_deep_void:does_it_hate"
+}

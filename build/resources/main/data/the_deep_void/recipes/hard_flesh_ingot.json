@@ -4,11 +4,11 @@
   "pattern": [
     "abc",
     "bdb",
-    "eba"
+    "aba"
   ],
   "key": {
     "a": {
-      "item": "the_deep_void:block_of_rotten_bone_pile"
+      "item": "the_deep_void:flesh_bone"
     },
     "b": {
       "item": "the_deep_void:flesh_chunk"
@@ -18,9 +18,6 @@
     },
     "d": {
       "item": "the_deep_void:refined_onyx"
-    },
-    "e": {
-      "item": "the_deep_void:black_moss"
     }
   },
   "result": {

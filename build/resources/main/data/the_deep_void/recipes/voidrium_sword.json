@@ -3,17 +3,20 @@
   "category": "equipment",
   "pattern": [
     " a ",
-    " a ",
-    "bcb"
+    "ba ",
+    "cdc"
   ],
   "key": {
     "a": {
       "item": "the_deep_void:voidrium_gem"
     },
     "b": {
-      "item": "the_deep_void:refined_bismuth"
+      "item": "the_deep_void:sacred_cinnabar"
     },
     "c": {
+      "item": "the_deep_void:refined_bismuth"
+    },
+    "d": {
       "item": "the_deep_void:onyx_sword"
     }
   },

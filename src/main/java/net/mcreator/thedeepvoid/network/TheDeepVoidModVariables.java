@@ -143,6 +143,9 @@ public class TheDeepVoidModVariables {
 				clone.gatheringAmbience = original.gatheringAmbience;
 				clone.pickedUpApostle = original.pickedUpApostle;
 				clone.posYApostle = original.posYApostle;
+				clone.attackedByAnimosity = original.attackedByAnimosity;
+				clone.eyekinCooldown = original.eyekinCooldown;
+				clone.eyekinDash = original.eyekinDash;
 			}
 		}
 
@@ -405,6 +408,9 @@ public class TheDeepVoidModVariables {
 		public double gatheringAmbience = 0;
 		public boolean pickedUpApostle = false;
 		public double posYApostle = 0;
+		public boolean attackedByAnimosity = false;
+		public double eyekinCooldown = 0;
+		public double eyekinDash = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -483,6 +489,9 @@ public class TheDeepVoidModVariables {
 			nbt.putDouble("gatheringAmbience", gatheringAmbience);
 			nbt.putBoolean("pickedUpApostle", pickedUpApostle);
 			nbt.putDouble("posYApostle", posYApostle);
+			nbt.putBoolean("attackedByAnimosity", attackedByAnimosity);
+			nbt.putDouble("eyekinCooldown", eyekinCooldown);
+			nbt.putDouble("eyekinDash", eyekinDash);
 			return nbt;
 		}
 
@@ -558,6 +567,9 @@ public class TheDeepVoidModVariables {
 			gatheringAmbience = nbt.getDouble("gatheringAmbience");
 			pickedUpApostle = nbt.getBoolean("pickedUpApostle");
 			posYApostle = nbt.getDouble("posYApostle");
+			attackedByAnimosity = nbt.getBoolean("attackedByAnimosity");
+			eyekinCooldown = nbt.getDouble("eyekinCooldown");
+			eyekinDash = nbt.getDouble("eyekinDash");
 		}
 	}
 
@@ -652,6 +664,9 @@ public class TheDeepVoidModVariables {
 					variables.gatheringAmbience = message.data.gatheringAmbience;
 					variables.pickedUpApostle = message.data.pickedUpApostle;
 					variables.posYApostle = message.data.posYApostle;
+					variables.attackedByAnimosity = message.data.attackedByAnimosity;
+					variables.eyekinCooldown = message.data.eyekinCooldown;
+					variables.eyekinDash = message.data.eyekinDash;
 				}
 			});
 			context.setPacketHandled(true);

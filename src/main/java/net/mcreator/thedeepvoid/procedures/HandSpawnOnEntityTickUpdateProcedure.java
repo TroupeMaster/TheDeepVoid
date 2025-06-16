@@ -26,7 +26,7 @@ public class HandSpawnOnEntityTickUpdateProcedure {
 		if (!(!world.getEntitiesOfClass(ShadowHandEntity.class, AABB.ofSize(new Vec3(x, (y + 0.5), z), 0.5, 0.5, 0.5), e -> true).isEmpty())
 				&& !(!world.getEntitiesOfClass(SeekerEntity.class, AABB.ofSize(new Vec3(x, (y + 0.5), z), 0.5, 0.5, 0.5), e -> true).isEmpty())) {
 			if (entity.getPersistentData().getBoolean("deep_void:randomDone") == false) {
-				if (Math.random() < 0.08) {
+				if (Math.random() < 0.02) {
 					entity.getPersistentData().putBoolean("deep_void:randomDone", true);
 					TheDeepVoidMod.queueServerWork(60, () -> {
 						if (!(!world.getEntitiesOfClass(SeekerEntity.class, AABB.ofSize(new Vec3(x, (y + 0.5), z), 0.5, 0.5, 0.5), e -> true).isEmpty())) {

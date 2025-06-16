@@ -14,7 +14,7 @@
     "enablePitch": false,
     "emissiveRendering": false,
     "displayFluidOverlay": false,
-    "itemTexture": "eye_vine_item",
+    "itemTexture": "eye_vine",
     "particleTexture": "",
     "tintType": "No tint",
     "isItemTinted": false,

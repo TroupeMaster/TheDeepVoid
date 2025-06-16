@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "keybind",
   "definition": {
-    "triggerKey": "V",
+    "triggerKey": "NONE",
     "keyBindingName": "Armor Ability",
     "keyBindingCategoryKey": "gameplay",
     "onKeyPressed": {

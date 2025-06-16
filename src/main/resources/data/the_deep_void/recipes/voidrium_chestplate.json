@@ -2,18 +2,21 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    "a a",
     "aba",
-    "cac"
+    "aca",
+    "dad"
   ],
   "key": {
     "a": {
       "item": "the_deep_void:voidrium_gem"
     },
     "b": {
-      "item": "the_deep_void:onyx_armor_chestplate"
+      "item": "the_deep_void:sacred_cinnabar"
     },
     "c": {
+      "item": "the_deep_void:onyx_armor_chestplate"
+    },
+    "d": {
       "item": "the_deep_void:refined_bismuth"
     }
   },

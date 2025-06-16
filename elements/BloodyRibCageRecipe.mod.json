@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:FleshBone"
+      },
+      {
+        "value": "CUSTOM:FleshBone"
+      },
+      {
+        "value": "CUSTOM:FleshBone"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:BloodyRibCage.body"
+    },
+    "name": "bloody_rib_cage",
+    "namespace": "mod"
+  }
+}

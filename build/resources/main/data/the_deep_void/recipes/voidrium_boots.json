@@ -3,7 +3,7 @@
   "category": "equipment",
   "pattern": [
     "aba",
-    "c c"
+    "cdc"
   ],
   "key": {
     "a": {
@@ -14,6 +14,9 @@
     },
     "c": {
       "item": "the_deep_void:refined_bismuth"
+    },
+    "d": {
+      "item": "the_deep_void:sacred_cinnabar"
     }
   },
   "result": {

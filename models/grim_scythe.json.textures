@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "1": "grim_scythe_texture"
+      },
+      "name": "default"
+    }
+  }
+}

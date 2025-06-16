@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "rotting_corpse_goo"
+      },
+      "name": "default"
+    }
+  }
+}

@@ -3,7 +3,8 @@
   "category": "equipment",
   "pattern": [
     "aaa",
-    "bcb"
+    "bcb",
+    " d "
   ],
   "key": {
     "a": {
@@ -14,6 +15,9 @@
     },
     "c": {
       "item": "the_deep_void:onyx_armor_helmet"
+    },
+    "d": {
+      "item": "the_deep_void:sacred_cinnabar"
     }
   },
   "result": {

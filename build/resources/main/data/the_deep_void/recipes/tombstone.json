@@ -4,7 +4,7 @@
   "pattern": [
     " a ",
     "bcb",
-    "ded"
+    "def"
   ],
   "key": {
     "a": {
@@ -14,13 +14,16 @@
       "item": "the_deep_void:ancient_deepslate_bricks"
     },
     "c": {
-      "item": "the_deep_void:block_of_refined_onyx"
+      "item": "the_deep_void:block_of_soul_fused_ingots"
     },
     "d": {
-      "item": "the_deep_void:soul_fused_ingot"
+      "item": "the_deep_void:sacred_cinnabar"
     },
     "e": {
       "item": "the_deep_void:block_of_voidrium"
+    },
+    "f": {
+      "item": "the_deep_void:hard_flesh_ingot"
     }
   },
   "result": {

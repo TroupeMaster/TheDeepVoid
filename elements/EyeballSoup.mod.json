@@ -50,7 +50,7 @@
       "value": "Items.BOWL"
     },
     "isMeat": false,
-    "isAlwaysEdible": true,
+    "isAlwaysEdible": false,
     "animation": "eat"
   }
 }

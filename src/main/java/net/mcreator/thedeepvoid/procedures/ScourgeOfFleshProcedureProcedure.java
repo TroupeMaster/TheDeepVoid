@@ -19,6 +19,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEnchantments;
+import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
 
 import javax.annotation.Nullable;
 
@@ -46,8 +47,13 @@ public class ScourgeOfFleshProcedureProcedure {
 					} else if (event != null && event.hasResult()) {
 						event.setResult(Event.Result.DENY);
 					}
-					entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:enchantment_damage"))), sourceentity),
-							(float) (amount + 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(TheDeepVoidModEnchantments.SCOURGE_OF_FLESH.get())));
+					if (entity instanceof MisanthropicHivemindEntity) {
+						entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:enchantment_damage"))), sourceentity),
+								(float) (amount + 0.8 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(TheDeepVoidModEnchantments.SCOURGE_OF_FLESH.get())));
+					} else {
+						entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:enchantment_damage"))), sourceentity),
+								(float) (amount + 2.5 * (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getEnchantmentLevel(TheDeepVoidModEnchantments.SCOURGE_OF_FLESH.get())));
+					}
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 0));
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())

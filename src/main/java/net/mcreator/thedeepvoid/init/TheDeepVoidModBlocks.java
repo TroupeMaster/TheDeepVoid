@@ -313,7 +313,6 @@ import net.mcreator.thedeepvoid.block.AncientDeepslateBrickStairsBlock;
 import net.mcreator.thedeepvoid.block.AncientDeepslateBrickSlabBlock;
 import net.mcreator.thedeepvoid.block.AncientDeepslateBlock;
 import net.mcreator.thedeepvoid.block.AncientBookshelfBlock;
-import net.mcreator.thedeepvoid.block.AncientAltarBlock;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 public class TheDeepVoidModBlocks {
@@ -583,7 +582,6 @@ public class TheDeepVoidModBlocks {
 	public static final RegistryObject<Block> LAYING_CORPSE = REGISTRY.register("laying_corpse", () -> new LayingCorpseBlock());
 	public static final RegistryObject<Block> JACK_O_LAYING_CORPSE = REGISTRY.register("jack_o_laying_corpse", () -> new JackOLayingCorpseBlock());
 	public static final RegistryObject<Block> LAYING_CORPSE_SPAWN = REGISTRY.register("laying_corpse_spawn", () -> new LayingCorpseSpawnBlock());
-	public static final RegistryObject<Block> ANCIENT_ALTAR = REGISTRY.register("ancient_altar", () -> new AncientAltarBlock());
 	public static final RegistryObject<Block> BLOCK_OF_RAW_CINNABAR = REGISTRY.register("block_of_raw_cinnabar", () -> new BlockOfRawCinnabarBlock());
 	public static final RegistryObject<Block> BISMUTH_BRICKS = REGISTRY.register("bismuth_bricks", () -> new BismuthBricksBlock());
 	public static final RegistryObject<Block> BISMUTH_BRICK_STAIRS = REGISTRY.register("bismuth_brick_stairs", () -> new BismuthBrickStairsBlock());

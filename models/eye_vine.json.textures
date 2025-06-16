@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "eye_vine_texture"
+      },
+      "name": "default"
+    }
+  }
+}
