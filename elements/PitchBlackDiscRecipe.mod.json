@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Cinnabar"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:Cinnabar"
+      },
+      {
+        "value": "CUSTOM:FleshBone"
+      },
+      {
+        "value": "CUSTOM:FleshBlock"
+      },
+      {
+        "value": "CUSTOM:FleshBone"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:FleshBone"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:PitchBlack"
+    },
+    "name": "pitch_black_disc",
+    "namespace": "mod"
+  }
+}

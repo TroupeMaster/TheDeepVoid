@@ -53,6 +53,10 @@
     "the_deep_void:cult_helmet",
     "the_deep_void:cult_chestplate",
     "the_deep_void:cult_leggings",
-    "the_deep_void:cult_boots"
+    "the_deep_void:cult_boots",
+    "the_deep_void:sacred_voidrium_helmet",
+    "the_deep_void:sacred_voidrium_chestplate",
+    "the_deep_void:sacred_voidrium_leggings",
+    "the_deep_void:sacred_voidrium_boots"
   ]
 }

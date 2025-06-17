@@ -4,7 +4,7 @@ license="GNU General Public License version 3 (GPLv3)"
 
 [[mods]]
 modId="the_deep_void"
-version="1.88"
+version="1.88.1"
 displayName="The Deep Void"
 displayURL="https://www.curseforge.com/minecraft/mc-mods/the-deep-void"
 logoFile="logo.png"

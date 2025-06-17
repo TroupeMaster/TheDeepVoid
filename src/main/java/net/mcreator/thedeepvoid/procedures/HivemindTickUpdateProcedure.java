@@ -23,6 +23,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
+import net.mcreator.thedeepvoid.entity.SmallFleshCubeEntity;
 import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
 import net.mcreator.thedeepvoid.entity.GoreExpectoratorEntity;
 import net.mcreator.thedeepvoid.entity.FleshCubeEntity;
@@ -348,6 +349,7 @@ public class HivemindTickUpdateProcedure {
 					}
 				}
 				if (!world.getEntitiesOfClass(DevourerEntity.class, AABB.ofSize(new Vec3(x, y, z), 30, 30, 30), e -> true).isEmpty() || !world.getEntitiesOfClass(FleshCubeEntity.class, AABB.ofSize(new Vec3(x, y, z), 30, 30, 30), e -> true).isEmpty()
+						|| !world.getEntitiesOfClass(SmallFleshCubeEntity.class, AABB.ofSize(new Vec3(x, y, z), 30, 30, 30), e -> true).isEmpty()
 						|| !world.getEntitiesOfClass(GoreExpectoratorEntity.class, AABB.ofSize(new Vec3(x, y, z), 30, 30, 30), e -> true).isEmpty()) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
@@ -362,6 +364,11 @@ public class HivemindTickUpdateProcedure {
 								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 999);
 								if (entity instanceof LivingEntity _entity)
 									_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 15));
+							}
+							if (entityiterator instanceof SmallFleshCubeEntity) {
+								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 999);
+								if (entity instanceof LivingEntity _entity)
+									_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 2));
 							}
 						}
 					}

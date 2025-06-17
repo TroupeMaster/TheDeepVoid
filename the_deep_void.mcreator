@@ -38036,6 +38036,19 @@
         ]
       },
       "path": "~/Other"
+    },
+    {
+      "name": "PitchBlackDiscRecipe",
+      "type": "recipe",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pitch_black_disc_recipe",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/the_deep_void/recipes/pitch_black_disc.json"
+        ]
+      },
+      "path": "~/Recipes"
     }
   ],
   "variable_elements": [
@@ -39710,7 +39723,11 @@
       "CUSTOM:Cult.helmet",
       "CUSTOM:Cult.body",
       "CUSTOM:Cult.legs",
-      "CUSTOM:Cult.boots"
+      "CUSTOM:Cult.boots",
+      "CUSTOM:SacredVoidrium.helmet",
+      "CUSTOM:SacredVoidrium.body",
+      "CUSTOM:SacredVoidrium.legs",
+      "CUSTOM:SacredVoidrium.boots"
     ],
     "BLOCKS:mod:breakable": [
       "TAG:minecraft:doors",
@@ -42433,7 +42450,7 @@
   "workspaceSettings": {
     "modid": "the_deep_void",
     "modName": "The Deep Void",
-    "version": "1.88",
+    "version": "1.88.1",
     "description": "The Deep Void adds a new creepy dimension for you to explore with tons of new content centered around a desolate and forgotten Void.",
     "author": "Mortius",
     "websiteURL": "https://www.curseforge.com/minecraft/mc-mods/the-deep-void",
