@@ -1,6 +1,0 @@
-{
-  "parent": "item/handheld",
-  "textures": {
-    "layer0": "the_deep_void:item/reinforced_pickaxe"
-  }
-}

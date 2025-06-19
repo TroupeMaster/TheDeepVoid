@@ -1,8 +1,0 @@
-{
-  "parent": "block/crop",
-  "textures": {
-    "crop": "the_deep_void:block/big_teeth",
-    "particle": "the_deep_void:block/big_teeth"
-  },
-  "render_type": "cutout"
-}

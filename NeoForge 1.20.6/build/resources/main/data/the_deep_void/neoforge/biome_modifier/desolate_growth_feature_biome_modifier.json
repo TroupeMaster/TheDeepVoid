@@ -1,6 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": "the_deep_void:windswept_hollow",
-  "features": "the_deep_void:desolate_growth_feature",
-  "step": "vegetal_decoration"
-}

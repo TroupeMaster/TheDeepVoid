@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "the_deep_void:item/bone_pile_item"
-  },
-  "render_type": "translucent"
-}

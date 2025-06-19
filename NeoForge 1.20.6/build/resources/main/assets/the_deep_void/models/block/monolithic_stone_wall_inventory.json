@@ -1,8 +1,0 @@
-{
-  "parent": "block/wall_inventory",
-  "textures": {
-    "wall": "the_deep_void:block/monolith_stone",
-    "particle": "the_deep_void:block/monolith_stone"
-  },
-  "render_type": "solid"
-}

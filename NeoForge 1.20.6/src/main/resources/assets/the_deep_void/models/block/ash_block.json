@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "the_deep_void:block/void_ash_block",
-    "particle": "the_deep_void:block/void_ash_block"
-  },
-  "render_type": "solid"
-}

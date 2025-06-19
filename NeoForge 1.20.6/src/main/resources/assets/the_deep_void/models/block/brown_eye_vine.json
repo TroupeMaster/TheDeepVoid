@@ -1,9 +1,0 @@
-{
-  "parent": "the_deep_void:custom/brown_eye",
-  "textures": {
-    "all": "the_deep_void:block/brown_eye",
-    "particle": "the_deep_void:block/eye_vine_stem",
-    "0": "the_deep_void:block/brown_eye"
-  },
-  "render_type": "cutout"
-}

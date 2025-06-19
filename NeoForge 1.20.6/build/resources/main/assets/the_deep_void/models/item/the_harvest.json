@@ -1,7 +1,0 @@
-{
-  "parent": "the_deep_void:custom/harvester_new",
-  "textures": {
-    "0": "the_deep_void:block/harvester_new",
-    "particle": "the_deep_void:item/harvester"
-  }
-}

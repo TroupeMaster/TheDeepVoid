@@ -1,6 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": "the_deep_void:ashen_crags",
-  "features": "the_deep_void:terrain_deformity",
-  "step": "local_modifications"
-}

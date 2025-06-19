@@ -1,6 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": "the_deep_void:staring_hills",
-  "features": "the_deep_void:big_blue_eye_generate",
-  "step": "surface_structures"
-}

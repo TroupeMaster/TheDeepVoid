@@ -1,9 +1,0 @@
-{
-  "asset_name": "lavendite_trim",
-  "description": {
-    "color": "#A78BBC",
-    "translate": "trim_material.the_deep_void.lavendite_trim"
-  },
-  "ingredient": "the_deep_void:lavendite",
-  "item_model_index": 0.0
-}

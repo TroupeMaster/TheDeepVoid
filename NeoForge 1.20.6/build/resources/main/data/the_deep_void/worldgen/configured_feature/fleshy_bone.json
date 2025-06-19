@@ -1,9 +1,0 @@
-{
-  "type": "the_deep_void:structure_feature",
-  "config": {
-    "structure": "the_deep_void:fleshy_bone",
-    "random_rotation": true,
-    "random_mirror": true,
-    "ignored_blocks": "minecraft:air"
-  }
-}

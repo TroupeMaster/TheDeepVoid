@@ -1,6 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": "the_deep_void:crawler_nest",
-  "features": "the_deep_void:covered_skull_pile",
-  "step": "underground_ores"
-}

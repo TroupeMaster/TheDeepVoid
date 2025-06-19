@@ -1,9 +1,0 @@
-{
-  "asset_name": "onyx_trim",
-  "description": {
-    "color": "#28252D",
-    "translate": "trim_material.the_deep_void.onyx_trim"
-  },
-  "ingredient": "the_deep_void:onyx",
-  "item_model_index": 0.0
-}

@@ -1,9 +1,0 @@
-{
-  "parent": "the_deep_void:custom/bones",
-  "textures": {
-    "all": "the_deep_void:block/bones_new_texture",
-    "particle": "the_deep_void:block/block_of_bone_pile",
-    "0": "the_deep_void:block/bones_new_texture"
-  },
-  "render_type": "cutout"
-}

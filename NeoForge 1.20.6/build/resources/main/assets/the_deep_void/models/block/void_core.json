@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "the_deep_void:block/void_crate",
-    "particle": "the_deep_void:block/void_crate"
-  },
-  "render_type": "solid"
-}

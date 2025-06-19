@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "the_deep_void:block/bone_moss_top",
-    "particle": "the_deep_void:block/bone_moss_top"
-  },
-  "render_type": "solid"
-}

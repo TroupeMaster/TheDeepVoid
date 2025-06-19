@@ -1,9 +1,0 @@
-{
-  "parent": "the_deep_void:custom/peeping_growth",
-  "textures": {
-    "all": "the_deep_void:block/peeping_growth",
-    "particle": "the_deep_void:block/peeping_growth",
-    "0": "the_deep_void:block/peeping_growth"
-  },
-  "render_type": "cutout"
-}

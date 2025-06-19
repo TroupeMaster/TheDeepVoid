@@ -1,6 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": "the_deep_void:watching_undergrowth",
-  "features": "the_deep_void:eye_tree_undergrowth",
-  "step": "vegetal_decoration"
-}

@@ -1,9 +1,0 @@
-{
-  "parent": "the_deep_void:custom/goo_cover",
-  "textures": {
-    "all": "the_deep_void:block/goo_covering",
-    "particle": "the_deep_void:block/goo_covering",
-    "0": "the_deep_void:block/goo_covering"
-  },
-  "render_type": "cutout"
-}

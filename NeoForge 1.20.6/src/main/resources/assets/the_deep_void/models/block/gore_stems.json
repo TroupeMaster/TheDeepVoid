@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "the_deep_void:block/gore_stem_animated",
-    "particle": "the_deep_void:block/gore_stem_animated"
-  },
-  "render_type": "cutout"
-}

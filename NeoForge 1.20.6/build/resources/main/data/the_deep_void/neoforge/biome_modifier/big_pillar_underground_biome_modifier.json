@@ -1,6 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": "the_deep_void:drifting_monoliths",
-  "features": "the_deep_void:big_pillar_underground",
-  "step": "underground_decoration"
-}

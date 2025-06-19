@@ -1,7 +1,0 @@
-{
-  "parent": "the_deep_void:custom/lavendite_shield_block",
-  "textures": {
-    "0": "the_deep_void:block/lavendite_shield_texture",
-    "particle": "the_deep_void:item/lavendite_shard"
-  }
-}

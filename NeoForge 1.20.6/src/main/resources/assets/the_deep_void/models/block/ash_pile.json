@@ -1,9 +1,0 @@
-{
-  "parent": "the_deep_void:custom/ash_pile",
-  "textures": {
-    "all": "the_deep_void:block/void_ash_block",
-    "particle": "the_deep_void:block/void_ash_block",
-    "0": "the_deep_void:block/void_ash_block"
-  },
-  "render_type": "cutout"
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "the_deep_void:block/goo_growth_top",
-    "particle": "the_deep_void:block/goo_growth_top"
-  },
-  "render_type": "cutout"
-}

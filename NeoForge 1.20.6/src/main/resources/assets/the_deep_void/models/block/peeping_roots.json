@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "the_deep_void:block/peeping_roots",
-    "particle": "the_deep_void:block/peeping_roots"
-  },
-  "render_type": "cutout"
-}

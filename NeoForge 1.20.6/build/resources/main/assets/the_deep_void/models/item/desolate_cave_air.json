@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "the_deep_void:item/desolate_cave_air_item"
-  },
-  "render_type": "translucent"
-}

@@ -1,7 +1,0 @@
-{
-  "parent": "the_deep_void:custom/voidrium_shield_block",
-  "textures": {
-    "1": "the_deep_void:block/voidrium_shield",
-    "particle": "the_deep_void:item/umbrium_gem"
-  }
-}

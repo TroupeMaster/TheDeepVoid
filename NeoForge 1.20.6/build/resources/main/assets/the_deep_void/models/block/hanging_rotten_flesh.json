@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "the_deep_void:block/hanging_rotten_flesh",
-    "particle": "the_deep_void:block/hanging_rotten_flesh"
-  },
-  "render_type": "cutout"
-}

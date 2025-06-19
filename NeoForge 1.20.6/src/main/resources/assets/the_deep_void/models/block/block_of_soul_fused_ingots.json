@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "the_deep_void:block/block_of_soul_fused_ingot",
-    "particle": "the_deep_void:block/block_of_soul_fused_ingot"
-  },
-  "render_type": "solid"
-}

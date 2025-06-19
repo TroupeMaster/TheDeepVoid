@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "the_deep_void:block/deepslate_stalagmite_base",
-    "particle": "the_deep_void:block/deepslate_stalagmite_base"
-  },
-  "render_type": "cutout"
-}

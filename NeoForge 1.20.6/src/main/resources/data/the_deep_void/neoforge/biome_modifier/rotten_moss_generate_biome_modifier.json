@@ -1,9 +1,0 @@
-{
-  "type": "neoforge:add_features",
-  "biomes": [
-    "the_deep_void:watching_undergrowth",
-    "the_deep_void:grim_canopy"
-  ],
-  "features": "the_deep_void:rotten_moss_generate",
-  "step": "raw_generation"
-}

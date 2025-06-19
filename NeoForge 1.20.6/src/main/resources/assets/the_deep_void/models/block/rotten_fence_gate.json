@@ -1,8 +1,0 @@
-{
-  "parent": "block/template_fence_gate",
-  "textures": {
-    "particle": "the_deep_void:block/petrified_planks",
-    "texture": "the_deep_void:block/petrified_planks"
-  },
-  "render_type": "solid"
-}
