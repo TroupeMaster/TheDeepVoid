@@ -1,0 +1,44 @@
+{
+  "_fv": 66,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "flesh_glove",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Flesh Glove",
+    "specialInformation": {
+      "fixedValue": [
+        "§7Inflicts Laceration on hit, increasing the damage dealt each hit"
+      ]
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "efficiency": 20.0,
+    "attackSpeed": 20.0,
+    "enchantability": 20,
+    "damageVsEntity": 4.0,
+    "usageCount": 2031,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:FleshChunk"
+      }
+    ],
+    "immuneToFire": true,
+    "blockDropsTier": "DIAMOND",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "FleshGloveLivingEntityIsHitWithTool"
+    }
+  }
+}

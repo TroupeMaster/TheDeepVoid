@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 4,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:BlockOfGoo"
+      },
+      {
+        "value": "CUSTOM:BlockOfGoo"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:BlockOfGoo"
+      },
+      {
+        "value": "CUSTOM:BlockOfGoo"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:GooBricks"
+    },
+    "name": "goo_bricks",
+    "namespace": "mod"
+  }
+}

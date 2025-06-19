@@ -1,0 +1,10 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "particle": "the_deep_void:block/hard_flesh_block",
+    "bottom": "the_deep_void:block/hard_flesh_block",
+    "top": "the_deep_void:block/hard_flesh_block",
+    "side": "the_deep_void:block/hard_flesh_block"
+  },
+  "render_type": "solid"
+}

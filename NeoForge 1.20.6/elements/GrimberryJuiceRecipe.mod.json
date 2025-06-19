@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 3,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Grimberry"
+      },
+      {
+        "value": "CUSTOM:Grimberry"
+      },
+      {
+        "value": "CUSTOM:Grimberry"
+      },
+      {
+        "value": "CUSTOM:Grimberry"
+      },
+      {
+        "value": "CUSTOM:Grimberry"
+      },
+      {
+        "value": "CUSTOM:Grimberry"
+      },
+      {
+        "value": "Items.GLASS_BOTTLE"
+      },
+      {
+        "value": "Items.GLASS_BOTTLE"
+      },
+      {
+        "value": "Items.GLASS_BOTTLE"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:GrimberryJuice"
+    },
+    "name": "grimberry_juice",
+    "namespace": "mod"
+  }
+}

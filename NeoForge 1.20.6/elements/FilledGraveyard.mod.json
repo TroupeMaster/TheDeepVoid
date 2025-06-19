@@ -1,0 +1,129 @@
+{
+  "_fv": 66,
+  "_type": "biome",
+  "definition": {
+    "name": "Filled Graveyard",
+    "groundBlock": {
+      "value": "CUSTOM:BlockOfSkullPile"
+    },
+    "undergroundBlock": {
+      "value": "CUSTOM:CobbledAncientDeepslate"
+    },
+    "underwaterBlock": {
+      "value": "CUSTOM:AncientDeepslate"
+    },
+    "airColor": {
+      "value": -16777216,
+      "falpha": 0.0
+    },
+    "grassColor": {
+      "value": -14211547,
+      "falpha": 0.0
+    },
+    "foliageColor": {
+      "value": -14211547,
+      "falpha": 0.0
+    },
+    "waterColor": {
+      "value": -16777216,
+      "falpha": 0.0
+    },
+    "waterFogColor": {
+      "value": -16777216,
+      "falpha": 0.0
+    },
+    "ambientSound": {
+      "value": "ambient.soul_sand_valley.loop"
+    },
+    "additionsSound": {
+      "value": ""
+    },
+    "music": {
+      "value": "CUSTOM:lurking_monst3r_music"
+    },
+    "moodSound": {
+      "value": ""
+    },
+    "moodSoundDelay": 6000,
+    "spawnParticles": true,
+    "particleToSpawn": {
+      "value": "WHITE_ASH"
+    },
+    "particlesProbability": 0.8,
+    "rainingPossibility": 0.0,
+    "temperature": 0.2,
+    "spawnBiome": false,
+    "spawnInCaves": false,
+    "spawnBiomeNether": false,
+    "genTemperature": {
+      "min": -0.6,
+      "max": 0.0
+    },
+    "genHumidity": {
+      "min": -0.1,
+      "max": 0.0
+    },
+    "genContinentalness": {
+      "min": -0.1,
+      "max": 0.3
+    },
+    "genErosion": {
+      "min": -0.2,
+      "max": 0.0
+    },
+    "genWeirdness": {
+      "min": -0.1,
+      "max": 0.9
+    },
+    "treesPerChunk": 0,
+    "vanillaTreeType": "Default",
+    "treeType": 0,
+    "minHeight": 7,
+    "treeStem": {
+      "value": ""
+    },
+    "treeBranch": {
+      "value": ""
+    },
+    "treeVines": {
+      "value": ""
+    },
+    "treeFruits": {
+      "value": ""
+    },
+    "defaultFeatures": [
+      "Caves"
+    ],
+    "spawnStronghold": false,
+    "spawnMineshaft": false,
+    "spawnMineshaftMesa": false,
+    "spawnPillagerOutpost": false,
+    "villageType": "none",
+    "spawnWoodlandMansion": false,
+    "spawnJungleTemple": false,
+    "spawnDesertPyramid": false,
+    "spawnSwampHut": false,
+    "spawnIgloo": false,
+    "spawnOceanMonument": false,
+    "spawnShipwreck": false,
+    "spawnShipwreckBeached": false,
+    "spawnBuriedTreasure": false,
+    "oceanRuinType": "NONE",
+    "spawnNetherBridge": false,
+    "spawnNetherFossil": false,
+    "spawnBastionRemnant": false,
+    "spawnEndCity": false,
+    "spawnRuinedPortal": "NONE",
+    "spawnEntries": [
+      {
+        "entity": {
+          "value": "CUSTOM:Mourner"
+        },
+        "minGroup": 1,
+        "maxGroup": 1,
+        "weight": 2,
+        "spawnType": "monster"
+      }
+    ]
+  }
+}

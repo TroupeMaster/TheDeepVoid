@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:VoidMatter"
+      },
+      {
+        "value": "CUSTOM:AncientOnyx"
+      },
+      {
+        "value": "CUSTOM:VoidMatter"
+      },
+      {
+        "value": "CUSTOM:VoidFilledSponge"
+      },
+      {
+        "value": "Items.WRITABLE_BOOK"
+      },
+      {
+        "value": "CUSTOM:VoidFilledSponge"
+      },
+      {
+        "value": "CUSTOM:BlackMoss"
+      },
+      {
+        "value": "CUSTOM:GrimGem"
+      },
+      {
+        "value": "CUSTOM:BlackMoss"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:ForbiddenTome"
+    },
+    "name": "forbidden_tome",
+    "namespace": "mod"
+  }
+}

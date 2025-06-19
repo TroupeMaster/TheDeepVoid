@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:flesh_block"
+    },
+    "b": {
+      "item": "the_deep_void:gore_stems"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:eye_flesh_block",
+    "count": 8
+  }
+}

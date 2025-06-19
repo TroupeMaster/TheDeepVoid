@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "the_deep_void:item/lavendite_diamond_sword"
+  }
+}

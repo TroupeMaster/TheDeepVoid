@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "a  ",
+    "aa ",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:smooth_ancient_deepslate"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:smooth_ancient_deepslate_stairs",
+    "count": 4
+  }
+}

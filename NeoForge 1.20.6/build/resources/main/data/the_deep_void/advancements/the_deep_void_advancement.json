@@ -1,0 +1,29 @@
+{
+  "display": {
+    "background": "the_deep_void:textures/screens/advancement_background.png",
+    "icon": {
+      "id": "the_deep_void:block_of_bone_pile"
+    },
+    "title": {
+      "translate": "advancements.the_deep_void_advancement.title"
+    },
+    "description": {
+      "translate": "advancements.the_deep_void_advancement.descr"
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "the_deep_void_advancement_0": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "the_deep_void:eye_of_the_deep"
+    ]
+  }
+}

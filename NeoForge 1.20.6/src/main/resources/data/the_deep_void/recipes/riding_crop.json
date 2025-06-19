@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "  a",
+    "abc",
+    "bc "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:leather"
+    },
+    "b": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "c": {
+      "item": "the_deep_void:mourner_hide"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:riding_crop",
+    "count": 1
+  }
+}

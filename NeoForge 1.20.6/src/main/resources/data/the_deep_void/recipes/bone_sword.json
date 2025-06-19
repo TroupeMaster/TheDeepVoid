@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " a ",
+    " a ",
+    "bcb"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:bone"
+    },
+    "b": {
+      "item": "the_deep_void:mourner_hide"
+    },
+    "c": {
+      "item": "the_deep_void:rotten_bone"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:bone_sword",
+    "count": 1
+  }
+}

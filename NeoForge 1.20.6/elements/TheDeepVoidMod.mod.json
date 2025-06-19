@@ -1,0 +1,11 @@
+{
+  "_fv": 66,
+  "_type": "painting",
+  "definition": {
+    "texture": "square_logo",
+    "width": 400,
+    "height": 400,
+    "title": "The Deep Void Mod",
+    "author": "Mortius"
+  }
+}

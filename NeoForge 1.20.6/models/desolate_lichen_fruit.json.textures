@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "desolate_lichen_fruit"
+      },
+      "name": "default"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:SoulFusedIngot"
+      },
+      {
+        "value": "CUSTOM:BlockOfUmbrium"
+      },
+      {
+        "value": "CUSTOM:SoulFusedIngot"
+      },
+      {
+        "value": "CUSTOM:SulfurGlass"
+      },
+      {
+        "value": "CUSTOM:CinnabarGlass"
+      },
+      {
+        "value": "CUSTOM:BismuthGlass"
+      },
+      {
+        "value": "CUSTOM:SacredCinnabar"
+      },
+      {
+        "value": "CUSTOM:VoidMatter"
+      },
+      {
+        "value": "CUSTOM:SacredCinnabar"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:VoidriumGlass"
+    },
+    "name": "voidrium_glass",
+    "namespace": "mod"
+  }
+}

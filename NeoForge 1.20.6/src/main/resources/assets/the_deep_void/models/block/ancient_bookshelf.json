@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/rotten_bone_block",
+    "up": "the_deep_void:block/rotten_bone_block",
+    "north": "the_deep_void:block/ancient_bookshelf",
+    "east": "the_deep_void:block/ancient_bookshelf",
+    "south": "the_deep_void:block/ancient_bookshelf",
+    "west": "the_deep_void:block/ancient_bookshelf",
+    "particle": "the_deep_void:block/rotten_bone_block"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Blasting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.4,
+    "cookingTime": 140,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "blastingInputStack": {
+      "value": "CUSTOM:CrackedBedrock"
+    },
+    "blastingReturnStack": {
+      "value": "CUSTOM:FakeBedrock"
+    },
+    "name": "fake_bedrock",
+    "namespace": "mod"
+  }
+}

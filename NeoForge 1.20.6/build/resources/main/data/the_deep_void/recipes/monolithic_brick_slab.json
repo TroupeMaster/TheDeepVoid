@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:monolithic_bricks"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:monolithic_brick_slab",
+    "count": 6
+  }
+}

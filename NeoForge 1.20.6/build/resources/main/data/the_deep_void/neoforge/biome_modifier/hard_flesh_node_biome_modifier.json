@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "the_deep_void:gloomy_deathgrounds",
+    "the_deep_void:staring_hills"
+  ],
+  "features": "the_deep_void:hard_flesh_node",
+  "step": "surface_structures"
+}

@@ -1,0 +1,35 @@
+{
+  "_fv": 66,
+  "_type": "achievement",
+  "definition": {
+    "achievementName": "Feeling Watched",
+    "achievementDescription": "Find a desolate cave under the windswept hollow",
+    "achievementIcon": {
+      "value": "CUSTOM:DesolateSoil"
+    },
+    "background": "Default",
+    "disableDisplay": false,
+    "showPopup": true,
+    "announceToChat": true,
+    "hideIfNotCompleted": false,
+    "rewardLoot": [],
+    "rewardRecipes": [
+      "VoidVisionSpyglass",
+      "GrimGemRecipe",
+      "GrimHelmet",
+      "GrimSmithingTemplate",
+      "GrimChestplate",
+      "GrimLeggings",
+      "GrimBoots",
+      "GrimScytheRecipe",
+      "EyeShieldRecipe"
+    ],
+    "rewardFunction": "No function",
+    "rewardXP": 0,
+    "achievementType": "task",
+    "parent": {
+      "value": "CUSTOM:BoneBottom"
+    },
+    "triggerxml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"advancement_trigger\" deletable=\"false\" x=\"40\" y=\"80\"><next><block type=\"custom_trigger\"></block></next></block></xml>"
+  }
+}

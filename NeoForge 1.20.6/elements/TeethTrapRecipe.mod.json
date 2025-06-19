@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 4,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "REDSTONE",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:TeethBlock"
+      },
+      {
+        "value": "CUSTOM:TeethBlock"
+      },
+      {
+        "value": "CUSTOM:TeethBlock"
+      },
+      {
+        "value": "CUSTOM:FleshBricks"
+      },
+      {
+        "value": "Blocks.STONE_PRESSURE_PLATE"
+      },
+      {
+        "value": "CUSTOM:FleshBricks"
+      },
+      {
+        "value": "CUSTOM:FleshBricks"
+      },
+      {
+        "value": "Items.REDSTONE"
+      },
+      {
+        "value": "CUSTOM:FleshBricks"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:TeethTrap"
+    },
+    "name": "teeth_trap",
+    "namespace": "mod"
+  }
+}

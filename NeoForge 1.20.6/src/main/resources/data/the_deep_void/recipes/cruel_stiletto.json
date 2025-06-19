@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " ab",
+    "cba",
+    "dc "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:grim_gem"
+    },
+    "b": {
+      "item": "the_deep_void:void_matter"
+    },
+    "c": {
+      "item": "the_deep_void:ancient_onyx"
+    },
+    "d": {
+      "item": "the_deep_void:onyx_sword"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:cruel_stiletto",
+    "count": 1
+  }
+}

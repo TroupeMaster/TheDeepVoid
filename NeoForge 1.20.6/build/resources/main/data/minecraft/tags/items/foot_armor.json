@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:weaver_boots_boots",
+    "the_deep_void:grim_lavendite_boots",
+    "the_deep_void:sacred_voidrium_boots",
+    "the_deep_void:cult_boots",
+    "the_deep_void:grim_crawler_boots",
+    "the_deep_void:crawler_boots",
+    "the_deep_void:all_seeing_boots",
+    "the_deep_void:flesh_armor_boots",
+    "the_deep_void:voidrium_boots",
+    "the_deep_void:bismuth_netherite_boots",
+    "the_deep_void:lavendite_armor_boots",
+    "the_deep_void:grim_rotten_bone_boots",
+    "the_deep_void:onyx_armor_boots",
+    "the_deep_void:rotten_bone_armor_boots"
+  ]
+}

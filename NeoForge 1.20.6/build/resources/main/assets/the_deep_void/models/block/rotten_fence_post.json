@@ -1,0 +1,8 @@
+{
+  "parent": "block/fence_post",
+  "textures": {
+    "texture": "the_deep_void:block/petrified_planks",
+    "particle": "the_deep_void:block/petrified_planks"
+  },
+  "render_type": "solid"
+}

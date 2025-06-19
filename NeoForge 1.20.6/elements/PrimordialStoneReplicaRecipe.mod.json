@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 8,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:FakeBedrock"
+      },
+      {
+        "value": "CUSTOM:FakeBedrock"
+      },
+      {
+        "value": "CUSTOM:FakeBedrock"
+      },
+      {
+        "value": "CUSTOM:FakeBedrock"
+      },
+      {
+        "value": "CUSTOM:LiquidVoid.bucket"
+      },
+      {
+        "value": "CUSTOM:FakeBedrock"
+      },
+      {
+        "value": "CUSTOM:FakeBedrock"
+      },
+      {
+        "value": "CUSTOM:FakeBedrock"
+      },
+      {
+        "value": "CUSTOM:FakeBedrock"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:PrimordialStoneReplica"
+    },
+    "name": "primordial_stone_replica",
+    "namespace": "mod"
+  }
+}

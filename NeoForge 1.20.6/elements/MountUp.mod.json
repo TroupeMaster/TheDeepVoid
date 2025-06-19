@@ -1,0 +1,15 @@
+{
+  "_fv": 66,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "NONE",
+    "keyBindingName": "Mount Up",
+    "keyBindingCategoryKey": "movement",
+    "onKeyPressed": {
+      "name": "MountUpOnKeyPressed"
+    },
+    "onKeyReleased": {
+      "name": "MountUpOnKeyReleased"
+    }
+  }
+}

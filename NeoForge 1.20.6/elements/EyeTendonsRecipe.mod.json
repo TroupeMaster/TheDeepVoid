@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 8,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Tendons"
+      },
+      {
+        "value": "CUSTOM:Tendons"
+      },
+      {
+        "value": "CUSTOM:Tendons"
+      },
+      {
+        "value": "CUSTOM:Tendons"
+      },
+      {
+        "value": "CUSTOM:GoreStems"
+      },
+      {
+        "value": "CUSTOM:Tendons"
+      },
+      {
+        "value": "CUSTOM:Tendons"
+      },
+      {
+        "value": "CUSTOM:Tendons"
+      },
+      {
+        "value": "CUSTOM:Tendons"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:EyeTendons"
+    },
+    "name": "eye_tendons",
+    "namespace": "mod"
+  }
+}

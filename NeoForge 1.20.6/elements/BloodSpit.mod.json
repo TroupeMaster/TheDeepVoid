@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "projectile",
+  "definition": {
+    "projectileItem": {
+      "value": "Blocks.AIR"
+    },
+    "showParticles": false,
+    "actionSound": {
+      "value": "CUSTOM:flesh_block_step"
+    },
+    "igniteFire": false,
+    "power": 0.7000000000000001,
+    "damage": 2.0,
+    "knockback": 0,
+    "entityModel": "Default",
+    "customModelTexture": "",
+    "onFlyingTick": {
+      "name": "BloodSpitWhileProjectileFlyingTick"
+    }
+  }
+}

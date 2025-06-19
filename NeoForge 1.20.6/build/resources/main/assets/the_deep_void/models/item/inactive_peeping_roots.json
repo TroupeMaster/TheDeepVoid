@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "the_deep_void:block/inactive_peeping_roots"
+  }
+}

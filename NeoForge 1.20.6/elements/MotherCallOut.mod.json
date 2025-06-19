@@ -1,0 +1,12 @@
+{
+  "_fv": 66,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "NONE",
+    "keyBindingName": "Mother Call Out",
+    "keyBindingCategoryKey": "gameplay",
+    "onKeyPressed": {
+      "name": "MotherCallOutOnKeyPressed"
+    }
+  }
+}

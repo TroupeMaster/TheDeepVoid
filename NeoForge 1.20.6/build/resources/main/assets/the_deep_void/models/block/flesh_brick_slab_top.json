@@ -1,0 +1,10 @@
+{
+  "parent": "block/slab_top",
+  "textures": {
+    "particle": "the_deep_void:block/veiny_flesh_bricks",
+    "bottom": "the_deep_void:block/veiny_flesh_bricks",
+    "top": "the_deep_void:block/veiny_flesh_bricks",
+    "side": "the_deep_void:block/veiny_flesh_bricks"
+  },
+  "render_type": "solid"
+}

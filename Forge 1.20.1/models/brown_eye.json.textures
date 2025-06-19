@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "brown_eye"
+      },
+      "name": "default"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "ded"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:infested_rotten_roots"
+    },
+    "b": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "c": {
+      "item": "the_deep_void:liquid_void_bucket"
+    },
+    "d": {
+      "item": "the_deep_void:smooth_ancient_deepslate"
+    },
+    "e": {
+      "item": "minecraft:redstone_block"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:rooter",
+    "count": 1
+  }
+}

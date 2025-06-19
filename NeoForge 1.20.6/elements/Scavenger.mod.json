@@ -1,0 +1,11 @@
+{
+  "_fv": 66,
+  "_type": "armortrim",
+  "definition": {
+    "name": "Scavenger",
+    "item": {
+      "value": "CUSTOM:ScavengerArmorTrim"
+    },
+    "armorTextureFile": "scavenger_"
+  }
+}

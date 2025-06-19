@@ -1,0 +1,10 @@
+{
+  "parent": "block/cube_bottom_top",
+  "textures": {
+    "particle": "the_deep_void:block/cinnabar_monolith_stone",
+    "bottom": "the_deep_void:block/cinnabar_monolith_stone",
+    "top": "the_deep_void:block/cinnabar_monolith_stone",
+    "side": "the_deep_void:block/cinnabar_monolith_stone"
+  },
+  "render_type": "solid"
+}

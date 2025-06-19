@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "the_deep_void:gloomy_deathgrounds",
+  "features": "the_deep_void:fleshy_bone",
+  "step": "surface_structures"
+}

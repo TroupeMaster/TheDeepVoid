@@ -1,0 +1,49 @@
+{
+  "display": {
+    "icon": {
+      "id": "the_deep_void:covered_skull_pile"
+    },
+    "title": {
+      "translate": "advancements.creepy_crawlies.title"
+    },
+    "description": {
+      "translate": "advancements.creepy_crawlies.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "creepy_crawlies_0": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biomes": "the_deep_void:crawler_nest"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "the_deep_void:hanging_goo",
+      "the_deep_void:connected_hanging_goo",
+      "the_deep_void:block_of_goo",
+      "the_deep_void:goo_cover",
+      "the_deep_void:goo_bricks",
+      "the_deep_void:goo_brick_stairs",
+      "the_deep_void:goo_brick_slab",
+      "the_deep_void:goo_brick_wall"
+    ]
+  },
+  "parent": "the_deep_void:bone_bottom"
+}

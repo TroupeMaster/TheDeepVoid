@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "bbb",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:mourner_hide"
+    },
+    "b": {
+      "item": "the_deep_void:rotten_bone"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:lurker_head",
+    "count": 3
+  }
+}

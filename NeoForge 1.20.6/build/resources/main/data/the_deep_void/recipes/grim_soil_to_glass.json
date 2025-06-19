@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "experience": 0.1,
+  "cookingtime": 140,
+  "ingredient": {
+    "item": "the_deep_void:desolate_soil"
+  },
+  "result": {
+    "id": "minecraft:glass"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smelting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "BLOCKS",
+    "xpReward": 0.1,
+    "cookingTime": 80,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smeltingInputStack": {
+      "value": "CUSTOM:BlockOfGoo"
+    },
+    "smeltingReturnStack": {
+      "value": "CUSTOM:MeltedGoo"
+    },
+    "name": "melted_goo",
+    "namespace": "mod"
+  }
+}

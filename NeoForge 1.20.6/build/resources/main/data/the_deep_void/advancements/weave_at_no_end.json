@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "id": "the_deep_void:weaver_mask_helmet"
+    },
+    "title": {
+      "translate": "advancements.weave_at_no_end.title"
+    },
+    "description": {
+      "translate": "advancements.weave_at_no_end.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "weave_at_no_end_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "the_deep_void:weaver_mask",
+      "the_deep_void:weaver_robe",
+      "the_deep_void:gods_scourge",
+      "the_deep_void:sins_and_sinners"
+    ]
+  },
+  "parent": "the_deep_void:pretty_gems"
+}

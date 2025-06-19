@@ -1,0 +1,44 @@
+{
+  "_fv": 66,
+  "_type": "feature",
+  "definition": {
+    "skipPlacement": false,
+    "generationStep": "LAKES",
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:ForgottenValley"
+      },
+      {
+        "value": "CUSTOM:GrimCanopy"
+      },
+      {
+        "value": "CUSTOM:AshenCrags"
+      },
+      {
+        "value": "CUSTOM:MourningGraveyard"
+      },
+      {
+        "value": "CUSTOM:GloomyDeathgrounds"
+      },
+      {
+        "value": "CUSTOM:WatchingUndergrowth"
+      },
+      {
+        "value": "CUSTOM:DriftingMonoliths"
+      },
+      {
+        "value": "CUSTOM:WindsweptHollow"
+      },
+      {
+        "value": "CUSTOM:CrawlerNest"
+      },
+      {
+        "value": "CUSTOM:FilledGraveyard"
+      },
+      {
+        "value": "CUSTOM:GatheringGrounds"
+      }
+    ],
+    "featurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"feature_container\" deletable=\"false\" x=\"40\" y=\"40\"><value name=\"feature\"><block type=\"feature_lake\"><value name=\"fluid\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">CUSTOM:LiquidVoid</field></block></value><value name=\"border\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">Blocks.DEEPSLATE</field></block></value></block></value><next><block type=\"placement_rarity\"><field name=\"rarity\">10</field><next><block type=\"placement_in_square\"><next><block type=\"placement_height_range\"><value name=\"height\"><block type=\"height_provider_biased_to_bottom\"><field name=\"inner\">5</field><value name=\"min\"><block type=\"vertical_anchor_above_bottom\"><field name=\"value\">4</field></block></value><value name=\"max\"><block type=\"vertical_anchor_absolute\"><field name=\"value\">0</field></block></value></block></value></block></next></block></next></block></next></block></xml>"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "the_deep_void:crawler_nest",
+  "spawners": {
+    "type": "the_deep_void:goo_spitter",
+    "weight": 2,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

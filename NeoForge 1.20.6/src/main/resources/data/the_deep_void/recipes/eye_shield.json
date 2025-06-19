@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "cdc",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:desolate_soil"
+    },
+    "b": {
+      "item": "the_deep_void:grim_gem"
+    },
+    "c": {
+      "item": "the_deep_void:refined_onyx"
+    },
+    "d": {
+      "item": "the_deep_void:void_lens"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:eye_shield",
+    "count": 1
+  }
+}

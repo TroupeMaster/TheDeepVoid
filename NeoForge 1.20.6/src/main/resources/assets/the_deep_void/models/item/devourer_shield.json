@@ -1,0 +1,15 @@
+{
+  "parent": "the_deep_void:custom/devourer_shield",
+  "textures": {
+    "0": "the_deep_void:block/devourer_shield",
+    "particle": "the_deep_void:item/devourer_tendril"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "blocking": 1
+      },
+      "model": "the_deep_void:item/devourer_shield_0"
+    }
+  ]
+}

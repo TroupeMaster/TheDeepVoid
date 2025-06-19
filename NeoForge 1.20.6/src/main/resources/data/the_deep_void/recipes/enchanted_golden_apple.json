@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": {
+    "item": "minecraft:golden_apple"
+  },
+  "addition": {
+    "item": "the_deep_void:block_of_refined_bismuth"
+  },
+  "result": {
+    "id": "minecraft:enchanted_golden_apple"
+  }
+}

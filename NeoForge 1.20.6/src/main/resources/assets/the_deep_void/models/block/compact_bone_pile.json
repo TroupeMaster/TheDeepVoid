@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "the_deep_void:block/huge_bone_bricks",
+    "particle": "the_deep_void:block/huge_bone_bricks"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "the_deep_void:gloomy_deathgrounds",
+    "the_deep_void:staring_hills"
+  ],
+  "features": "the_deep_void:flesh_blobs_generate",
+  "step": "raw_generation"
+}

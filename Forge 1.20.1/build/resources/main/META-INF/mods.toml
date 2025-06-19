@@ -1,0 +1,35 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="GNU General Public License version 3 (GPLv3)"
+
+[[mods]]
+modId="the_deep_void"
+version="1.89"
+displayName="The Deep Void"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/the-deep-void"
+logoFile="logo.png"
+credits="Created using mod maker MCreator - https://mcreator.net/about"
+authors="Mortius"
+description="The Deep Void adds a new creepy dimension for you to explore with tons of new content centered around a desolate and forgotten Void."
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
+[[dependencies.the_deep_void]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1]"
+    ordering="AFTER"
+    side="BOTH"
+
+
+[[dependencies.the_deep_void]]
+    modId="geckolib"
+    mandatory=false
+    versionRange="[0,)"
+    ordering="NONE"
+    side="BOTH"
+
+
+# Start of user code block dependencies configuration
+# End of user code block dependencies configuration

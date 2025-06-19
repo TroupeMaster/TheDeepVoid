@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "the_deep_void:staring_hills",
+  "spawners": {
+    "type": "the_deep_void:eyekin",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:cinnabar_monolith_stone"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:cinnabar_monolith_stone_slab",
+    "count": 6
+  }
+}

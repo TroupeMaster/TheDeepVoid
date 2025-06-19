@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "the_deep_void:filled_graveyard",
+    "the_deep_void:mourning_graveyard"
+  ],
+  "features": "the_deep_void:corpse_pile_generate",
+  "step": "local_modifications"
+}

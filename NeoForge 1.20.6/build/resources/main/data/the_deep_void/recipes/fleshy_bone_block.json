@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa",
+    "aa",
+    "bb"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:bone_block"
+    },
+    "b": {
+      "item": "the_deep_void:flesh_block"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:fleshy_bone_block",
+    "count": 4
+  }
+}

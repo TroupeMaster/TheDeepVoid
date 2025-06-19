@@ -1,0 +1,9 @@
+{
+  "parent": "block/template_glass_pane_post",
+  "textures": {
+    "particle": "the_deep_void:block/sulfur_glass",
+    "edge": "the_deep_void:block/sulfur_glass",
+    "pane": "the_deep_void:block/sulfur_glass"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:JackOCorpse"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:JackOCorpse"
+      },
+      {
+        "value": "Blocks.CHAIN"
+      },
+      {
+        "value": "CUSTOM:JackOCorpse"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:JackOCorpse"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:CorpseChandelier"
+    },
+    "name": "corpse_chandelier",
+    "namespace": "mod"
+  }
+}

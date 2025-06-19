@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:DesolateSoil"
+      },
+      {
+        "value": "CUSTOM:GrimGem"
+      },
+      {
+        "value": "CUSTOM:DesolateSoil"
+      },
+      {
+        "value": "CUSTOM:RefinedOnyx"
+      },
+      {
+        "value": "CUSTOM:VoidLens"
+      },
+      {
+        "value": "CUSTOM:RefinedOnyx"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:DesolateSoil"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:EyeShield"
+    },
+    "name": "eye_shield",
+    "namespace": "mod"
+  }
+}

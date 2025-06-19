@@ -1,0 +1,28 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "Items.DIAMOND_LEGGINGS"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:RefinedOnyx"
+    },
+    "smithingInputTemplateStack": {
+      "value": "CUSTOM:SmithingTemplateOnyx"
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:OnyxArmor.legs"
+    },
+    "name": "onyx_leggings",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "the_deep_void:block/hanging_marrow",
+    "particle": "the_deep_void:block/hanging_marrow"
+  },
+  "render_type": "cutout"
+}

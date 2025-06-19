@@ -1,0 +1,20 @@
+{
+  "_fv": 66,
+  "_type": "feature",
+  "definition": {
+    "skipPlacement": false,
+    "generationStep": "RAW_GENERATION",
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:GloomyDeathgrounds"
+      },
+      {
+        "value": "CUSTOM:StaringHills"
+      }
+    ],
+    "generateCondition": {
+      "name": "FleshBlobsGenerateAdditionalGenerationCondition"
+    },
+    "featurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"feature_container\" deletable=\"false\" x=\"40\" y=\"40\"><value name=\"feature\"><block type=\"feature_replace_sphere\"><value name=\"targetState\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">Blocks.DEEPSLATE</field></block></value><value name=\"newState\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">CUSTOM:ActiveFleshBlock</field></block></value><value name=\"radius\"><block type=\"int_provider_uniform\"><field name=\"min\">4</field><field name=\"max\">12</field></block></value></block></value><next><block type=\"placement_count_on_every_layer\"><value name=\"count\"><block type=\"int_provider_uniform\"><field name=\"min\">2</field><field name=\"max\">8</field></block></value><next><block type=\"placement_height_range\"><value name=\"height\"><block type=\"height_provider_uniform\"><value name=\"min\"><block type=\"vertical_anchor_absolute\"><field name=\"value\">-60</field></block></value><value name=\"max\"><block type=\"vertical_anchor_absolute\"><field name=\"value\">30</field></block></value></block></value><next><block type=\"placement_biome_filter\"></block></next></block></next></block></next></block></xml>"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "a",
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:flesh_block"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:tendons",
+    "count": 8
+  }
+}

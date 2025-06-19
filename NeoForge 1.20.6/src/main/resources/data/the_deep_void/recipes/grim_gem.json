@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:grim_shard"
+    },
+    "b": {
+      "item": "the_deep_void:cinnabar"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:grim_gem",
+    "count": 1
+  }
+}

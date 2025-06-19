@@ -1,0 +1,66 @@
+{
+  "_fv": 66,
+  "_type": "item",
+  "definition": {
+    "renderType": 0,
+    "texture": "void_mirror",
+    "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
+    "name": "Void Mirror",
+    "rarity": "UNCOMMON",
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "stackSize": 1,
+    "enchantability": 0,
+    "useDuration": 100,
+    "toolType": 1.0,
+    "damageCount": 0,
+    "recipeRemainder": {
+      "value": ""
+    },
+    "destroyAnyBlock": false,
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "specialInformation": {
+      "fixedValue": [
+        "§7Once used (Hold):",
+        " §9If in the Deep Void: Teleports you back to the Overworld",
+        " §9If in any other dimension: Teleports you to the Deep Void"
+      ]
+    },
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "onRightClickedInAir": {
+      "name": "VoidMirrorRightclicked"
+    },
+    "onFinishUsingItem": {
+      "name": "VoidMirrorPlayerFinishesUsingItem"
+    },
+    "enableRanged": false,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "CUSTOM:BoneBallProjectile"
+    },
+    "isFood": true,
+    "nutritionalValue": 0,
+    "saturation": 0.0,
+    "eatResultItem": {
+      "value": "CUSTOM:VoidMirror"
+    },
+    "isMeat": false,
+    "isAlwaysEdible": true,
+    "animation": "block"
+  }
+}

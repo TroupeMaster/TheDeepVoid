@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": {
+    "item": "the_deep_void:grim_rotten_bone_boots"
+  },
+  "addition": {
+    "item": "the_deep_void:hard_flesh_ingot"
+  },
+  "result": {
+    "id": "the_deep_void:flesh_armor_boots"
+  }
+}

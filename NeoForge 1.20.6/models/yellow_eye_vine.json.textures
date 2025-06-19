@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "yellow_eye_vine"
+      },
+      "name": "default"
+    }
+  }
+}

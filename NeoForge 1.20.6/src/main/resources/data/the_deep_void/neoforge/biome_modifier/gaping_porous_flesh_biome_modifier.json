@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "the_deep_void:staring_hills",
+  "features": "the_deep_void:gaping_porous_flesh",
+  "step": "underground_ores"
+}

@@ -1,0 +1,47 @@
+{
+  "_fv": 66,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "sickle",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "Rotten Sickle",
+    "specialInformation": {
+      "fixedValue": [
+        "§7On each swing of the sickle, dash toward the nearest foe"
+      ]
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "efficiency": 6.0,
+    "attackSpeed": 10.0,
+    "enchantability": 22,
+    "damageVsEntity": 2.0,
+    "usageCount": 450,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [
+      {
+        "value": "CUSTOM:RottenBone"
+      }
+    ],
+    "immuneToFire": false,
+    "blockDropsTier": "IRON",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onEntityHitWith": {
+      "name": "ReapingHookLivingEntityIsHitWithTool"
+    },
+    "onEntitySwing": {
+      "name": "ReapingHookEntitySwingsItem"
+    }
+  }
+}

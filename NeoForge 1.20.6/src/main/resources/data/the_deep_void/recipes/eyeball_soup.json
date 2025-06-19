@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a",
+    "b",
+    "c"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:tendrils"
+    },
+    "b": {
+      "item": "the_deep_void:eyeball"
+    },
+    "c": {
+      "item": "minecraft:bowl"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:eyeball_soup",
+    "count": 1
+  }
+}

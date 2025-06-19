@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " ab",
+    "abc",
+    "dd "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "b": {
+      "item": "the_deep_void:mourner_hide"
+    },
+    "c": {
+      "item": "the_deep_void:onyx"
+    },
+    "d": {
+      "item": "minecraft:leather"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:vulture_muzzle",
+    "count": 1
+  }
+}

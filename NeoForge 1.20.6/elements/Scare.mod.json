@@ -1,0 +1,11 @@
+{
+  "_fv": 66,
+  "_type": "armortrim",
+  "definition": {
+    "name": "Scare",
+    "item": {
+      "value": "CUSTOM:ScareArmorTrim"
+    },
+    "armorTextureFile": "scare_"
+  }
+}

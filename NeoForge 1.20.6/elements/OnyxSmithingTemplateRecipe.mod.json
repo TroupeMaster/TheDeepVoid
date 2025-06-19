@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 2,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:Lavendite"
+      },
+      {
+        "value": "CUSTOM:BlockOfBonePile"
+      },
+      {
+        "value": "CUSTOM:Lavendite"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:SmithingTemplateOnyx"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:Lavendite"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:Lavendite"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:SmithingTemplateOnyx"
+    },
+    "name": "onyx_smithing_template",
+    "namespace": "mod"
+  }
+}

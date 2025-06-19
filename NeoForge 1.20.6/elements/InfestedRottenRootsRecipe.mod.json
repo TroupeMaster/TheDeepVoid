@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 4,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:RottenRoots"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:RottenRoots"
+      },
+      {
+        "value": "CUSTOM:DisturbingRoot"
+      },
+      {
+        "value": "CUSTOM:RottenRoots"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:RottenRoots"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:InfestedRottenRoots"
+    },
+    "name": "infested_rotten_roots",
+    "namespace": "mod"
+  }
+}

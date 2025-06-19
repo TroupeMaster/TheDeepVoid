@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:rotten_bone"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:block_of_rotten_bone_pile",
+    "count": 1
+  }
+}

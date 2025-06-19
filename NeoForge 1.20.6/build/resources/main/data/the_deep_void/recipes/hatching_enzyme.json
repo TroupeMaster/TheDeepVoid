@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "dbd"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "b": {
+      "item": "the_deep_void:goo_ball"
+    },
+    "c": {
+      "item": "minecraft:honey_bottle"
+    },
+    "d": {
+      "item": "the_deep_void:bone_mush"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:hatching_enzyme",
+    "count": 1
+  }
+}

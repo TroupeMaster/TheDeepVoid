@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "the_deep_void:onyx_armor_chestplate"
+    },
+    "title": {
+      "translate": "advancements.cover_me_with_onyx.title"
+    },
+    "description": {
+      "translate": "advancements.cover_me_with_onyx.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "cover_me_with_onyx_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "the_deep_void:shining_darkness_in_deepest_parts"
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "bdb"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:teeth_block"
+    },
+    "b": {
+      "item": "the_deep_void:flesh_bricks"
+    },
+    "c": {
+      "item": "minecraft:stone_pressure_plate"
+    },
+    "d": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:teeth_trap",
+    "count": 4
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "the_deep_void:block/eye_veiny_flesh",
+    "particle": "the_deep_void:block/eye_veiny_flesh"
+  },
+  "render_type": "solid"
+}

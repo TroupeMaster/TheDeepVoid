@@ -1,0 +1,16 @@
+{
+  "type": "the_deep_void:flesh_blobs_generate",
+  "config": {
+    "target": {
+      "Name": "minecraft:deepslate"
+    },
+    "state": {
+      "Name": "the_deep_void:active_flesh_block"
+    },
+    "radius": {
+      "type": "uniform",
+      "min_inclusive": 4,
+      "max_inclusive": 12
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "the_deep_void:block/bismuth_glass"
+  },
+  "render_type": "cutout"
+}

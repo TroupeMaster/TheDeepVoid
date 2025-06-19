@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "the_deep_void:block/block_of_bismuth_new",
+    "particle": "the_deep_void:block/block_of_bismuth_new"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "deepslate_sarcophagus"
+      },
+      "name": "default"
+    }
+  }
+}

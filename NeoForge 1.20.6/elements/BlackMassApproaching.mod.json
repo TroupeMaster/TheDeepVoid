@@ -1,0 +1,20 @@
+{
+  "_fv": 66,
+  "_type": "overlay",
+  "definition": {
+    "priority": "LOW",
+    "components": [],
+    "baseTexture": "black_mass_approaching.png",
+    "overlayTarget": "Ingame",
+    "displayCondition": {
+      "name": "BlackMassApproachingDisplayOverlayIngame"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": false
+    }
+  }
+}

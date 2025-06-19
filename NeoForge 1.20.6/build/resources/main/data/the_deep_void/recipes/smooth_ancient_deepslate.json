@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "experience": 0.1,
+  "cookingtime": 120,
+  "ingredient": {
+    "item": "the_deep_void:ancient_deepslate"
+  },
+  "result": {
+    "id": "the_deep_void:smooth_ancient_deepslate"
+  }
+}

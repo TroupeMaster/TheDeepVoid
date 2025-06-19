@@ -1,0 +1,13 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": [
+    "the_deep_void:ashen_crags",
+    "the_deep_void:filled_graveyard"
+  ],
+  "spawners": {
+    "type": "the_deep_void:rotten_corpse",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

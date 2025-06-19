@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "the_deep_void:block/polished_ancient_deepslate_new",
+    "particle": "the_deep_void:block/polished_ancient_deepslate_new"
+  },
+  "render_type": "solid"
+}

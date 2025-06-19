@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:refined_bismuth"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:block_of_refined_bismuth",
+    "count": 1
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smelting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "FOOD",
+    "xpReward": 0.65,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smeltingInputStack": {
+      "value": "CUSTOM:BoneCrawlerEgg"
+    },
+    "smeltingReturnStack": {
+      "value": "CUSTOM:CookedCrawlerEgg"
+    },
+    "name": "cooked_crawler_egg",
+    "namespace": "mod"
+  }
+}

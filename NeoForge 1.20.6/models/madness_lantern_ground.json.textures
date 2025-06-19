@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "missing": "madness_lantern"
+      },
+      "name": "default"
+    }
+  }
+}

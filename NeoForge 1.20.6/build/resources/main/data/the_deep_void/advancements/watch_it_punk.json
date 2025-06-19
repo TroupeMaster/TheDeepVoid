@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "id": "the_deep_void:grim_scythe"
+    },
+    "title": {
+      "translate": "advancements.watch_it_punk.title"
+    },
+    "description": {
+      "translate": "advancements.watch_it_punk.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "watch_it_punk_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 30
+  },
+  "parent": "the_deep_void:hunter"
+}

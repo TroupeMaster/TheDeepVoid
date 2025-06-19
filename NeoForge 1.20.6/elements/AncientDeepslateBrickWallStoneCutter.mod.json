@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Stone cutting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "stoneCuttingInputStack": {
+      "value": "CUSTOM:AncientDeepslateBricks"
+    },
+    "stoneCuttingReturnStack": {
+      "value": "CUSTOM:AncientDeepslateBrickWall"
+    },
+    "name": "ancient_deepslate_brick_wall_stone_cutter",
+    "namespace": "mod"
+  }
+}

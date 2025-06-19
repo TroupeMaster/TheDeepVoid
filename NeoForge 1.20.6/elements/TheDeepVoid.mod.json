@@ -1,0 +1,11 @@
+{
+  "_fv": 66,
+  "_type": "tab",
+  "definition": {
+    "name": "The Deep Void",
+    "icon": {
+      "value": "CUSTOM:BlockOfBonePile"
+    },
+    "showSearch": false
+  }
+}

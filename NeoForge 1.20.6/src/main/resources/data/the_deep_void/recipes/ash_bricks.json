@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:ash_block"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:ash_bricks",
+    "count": 4
+  }
+}

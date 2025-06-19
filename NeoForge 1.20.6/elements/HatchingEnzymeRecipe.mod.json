@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "Items.HONEY_BOTTLE"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "CUSTOM:BoneMush"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "CUSTOM:BoneMush"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:HatchingEnzyme"
+    },
+    "name": "hatching_enzyme",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "_fv": 66,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Special",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "knife_glove",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "§4§l§kPRAY §c§lKnife Glove §4§l§kPRAY",
+    "specialInformation": {
+      "fixedValue": [
+        "§7Right click to throw multiple knives, which inflict either Poison II or Rot I, in random directions",
+        "§7Right click while sneaking to perform a backward jump"
+      ]
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "efficiency": 1.0,
+    "attackSpeed": 3.0,
+    "enchantability": 24,
+    "damageVsEntity": 8.0,
+    "usageCount": 0,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": true,
+    "blockDropsTier": "WOOD",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "KnifeGloveRightclicked"
+    }
+  }
+}

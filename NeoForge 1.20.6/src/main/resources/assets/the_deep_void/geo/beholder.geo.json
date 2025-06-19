@@ -1,0 +1,35 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.beholder",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "stem",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-1, 0, -1], "size": [2, 17, 2], "uv": [24, 14]},
+						{"origin": [-1.5, 15, -1.5], "size": [3, 3, 3], "uv": [8, 26]}
+					]
+				},
+				{
+					"name": "eye",
+					"parent": "stem",
+					"pivot": [0, 17, 0],
+					"cubes": [
+						{"origin": [-3.5, 21, -12], "size": [7, 7, 7], "uv": [0, 0]},
+						{"origin": [-3.5, 21, -5], "size": [7, 7, 5], "uv": [0, 14]},
+						{"origin": [-1, 17, -1], "size": [2, 10, 2], "pivot": [0, 17, 0], "rotation": [40, 0, 0], "uv": [0, 26]}
+					]
+				}
+			]
+		}
+	]
+}

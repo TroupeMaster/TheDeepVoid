@@ -1,0 +1,37 @@
+{
+  "_fv": 66,
+  "_type": "tool",
+  "definition": {
+    "toolType": "Sword",
+    "renderType": 0,
+    "blockingRenderType": 0,
+    "texture": "diamond_sword",
+    "customModelName": "Normal",
+    "blockingModelName": "Normal blocking",
+    "name": "§c§l§kFLESH §c§lAnimosity §c§l§kFLESH",
+    "specialInformation": {
+      "fixedValue": [
+        "§cThis form of Animosity doesn't deal extra damage",
+        "§7Right clicking will transform the sword back into Animosity"
+      ]
+    },
+    "creativeTabs": [],
+    "efficiency": 9.0,
+    "attackSpeed": 1.6,
+    "enchantability": 10,
+    "damageVsEntity": 7.0,
+    "usageCount": 0,
+    "glowCondition": {
+      "fixedValue": false
+    },
+    "repairItems": [],
+    "immuneToFire": true,
+    "blockDropsTier": "DIAMOND",
+    "blocksAffected": [],
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "onRightClickedInAir": {
+      "name": "AnimosityHiddenRightClick"
+    }
+  }
+}

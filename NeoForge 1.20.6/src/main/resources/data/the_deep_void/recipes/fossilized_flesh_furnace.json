@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "experience": 1.5,
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "the_deep_void:fossilized_flesh"
+  },
+  "result": {
+    "id": "the_deep_void:flesh_chunk"
+  }
+}

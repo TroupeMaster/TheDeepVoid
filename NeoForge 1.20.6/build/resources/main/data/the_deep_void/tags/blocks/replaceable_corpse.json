@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:corpse",
+    "the_deep_void:corpse_spawn",
+    "the_deep_void:corpse_spawn_graveyard",
+    "the_deep_void:covered_corpse",
+    "the_deep_void:covered_corpse_spawn",
+    "the_deep_void:laying_corpse",
+    "the_deep_void:laying_corpse_spawn"
+  ]
+}

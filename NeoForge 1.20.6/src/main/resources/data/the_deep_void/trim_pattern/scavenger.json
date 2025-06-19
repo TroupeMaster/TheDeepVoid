@@ -1,0 +1,7 @@
+{
+  "asset_id": "the_deep_void:scavenger",
+  "description": {
+    "translate": "trim_pattern.the_deep_void.scavenger"
+  },
+  "template_item": "the_deep_void:scavenger_armor_trim"
+}

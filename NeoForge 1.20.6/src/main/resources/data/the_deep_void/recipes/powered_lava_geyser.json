@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "aba",
+    "cdc",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:ancient_deepslate"
+    },
+    "b": {
+      "item": "the_deep_void:deepslate_lava_geyser"
+    },
+    "c": {
+      "item": "minecraft:redstone_torch"
+    },
+    "d": {
+      "item": "minecraft:lava_bucket"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:powered_lava_geyser",
+    "count": 1
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 4,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:BoneMarrow"
+      },
+      {
+        "value": "CUSTOM:BoneMarrow"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:BlockOfBonePile"
+      },
+      {
+        "value": "CUSTOM:BlockOfBonePile"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "CUSTOM:BlockOfBonePile"
+      },
+      {
+        "value": "CUSTOM:BlockOfBonePile"
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:MossyBonePile"
+    },
+    "name": "mossy_bone_pile",
+    "namespace": "mod"
+  }
+}

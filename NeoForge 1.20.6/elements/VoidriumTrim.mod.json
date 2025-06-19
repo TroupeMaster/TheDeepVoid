@@ -1,0 +1,42 @@
+{
+  "_fv": 66,
+  "_type": "trimmaterial",
+  "definition": {
+    "name": "Voidrium",
+    "item": {
+      "value": "CUSTOM:UmbriumGem"
+    },
+    "color1": {
+      "value": -2187287,
+      "falpha": 0.0
+    },
+    "color2": {
+      "value": -3645733,
+      "falpha": 0.0
+    },
+    "color3": {
+      "value": -7057729,
+      "falpha": 0.0
+    },
+    "color4": {
+      "value": -10802273,
+      "falpha": 0.0
+    },
+    "color5": {
+      "value": -12572787,
+      "falpha": 0.0
+    },
+    "color6": {
+      "value": -13426579,
+      "falpha": 0.0
+    },
+    "color7": {
+      "value": -14610351,
+      "falpha": 0.0
+    },
+    "color8": {
+      "value": -15593952,
+      "falpha": 0.0
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/red_eye_vine",
+  "textures": {
+    "all": "the_deep_void:block/red_eye_vine",
+    "particle": "the_deep_void:block/eye_vine_stem",
+    "0": "the_deep_void:block/red_eye_vine"
+  },
+  "render_type": "cutout"
+}

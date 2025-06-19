@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "the_deep_void:crawler_nest",
+  "features": "the_deep_void:rotting_corpse_spawn",
+  "step": "vegetal_decoration"
+}

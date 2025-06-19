@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "eye_shield_texture"
+      },
+      "name": "default"
+    }
+  }
+}

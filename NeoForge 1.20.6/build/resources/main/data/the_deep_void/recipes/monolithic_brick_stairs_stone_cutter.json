@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "the_deep_void:monolithic_bricks"
+  },
+  "result": {
+    "id": "the_deep_void:monolithic_brick_stairs"
+  }
+}

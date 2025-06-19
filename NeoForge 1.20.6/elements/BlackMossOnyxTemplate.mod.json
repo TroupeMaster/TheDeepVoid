@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:MournerHide"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
+      },
+      {
+        "value": "CUSTOM:MournerHide"
+      },
+      {
+        "value": "CUSTOM:CobbledAncientDeepslate"
+      },
+      {
+        "value": "CUSTOM:RefinedOnyx"
+      },
+      {
+        "value": "CUSTOM:CobbledAncientDeepslate"
+      },
+      {
+        "value": "CUSTOM:BlackMoss"
+      },
+      {
+        "value": "CUSTOM:BlackMoss"
+      },
+      {
+        "value": "CUSTOM:BlackMoss"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:SmithingTemplateOnyx"
+    },
+    "name": "black_moss_onyx_template",
+    "namespace": "mod"
+  }
+}

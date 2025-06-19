@@ -1,0 +1,36 @@
+{
+  "_fv": 66,
+  "_type": "structure",
+  "definition": {
+    "structure": "flesh_core_new",
+    "projection": "rigid",
+    "ignoredBlocks": [
+      {
+        "value": "Blocks.STRUCTURE_BLOCK"
+      },
+      {
+        "value": "Blocks.AIR"
+      }
+    ],
+    "spacing": 2,
+    "separation": 1,
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:GloomyDeathgrounds"
+      },
+      {
+        "value": "CUSTOM:StaringHills"
+      }
+    ],
+    "terrainAdaptation": "none",
+    "generationStep": "UNDERGROUND_STRUCTURES",
+    "surfaceDetectionType": "MOTION_BLOCKING",
+    "useStartHeight": true,
+    "startHeightProviderType": "BIASED_TO_BOTTOM",
+    "startHeightMin": -58,
+    "startHeightMax": 24,
+    "size": 1,
+    "maxDistanceFromCenter": 64,
+    "jigsawPools": []
+  }
+}

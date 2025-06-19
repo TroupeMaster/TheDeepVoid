@@ -1,0 +1,11 @@
+{
+  "_fv": 66,
+  "_type": "armortrim",
+  "definition": {
+    "name": "Sorrow",
+    "item": {
+      "value": "CUSTOM:SorrowArmorTrim"
+    },
+    "armorTextureFile": "sorrow_"
+  }
+}

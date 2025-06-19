@@ -1,0 +1,63 @@
+{
+  "display": {
+    "icon": {
+      "id": "the_deep_void:onyx"
+    },
+    "title": {
+      "translate": "advancements.shining_darkness_in_deepest_parts.title"
+    },
+    "description": {
+      "translate": "advancements.shining_darkness_in_deepest_parts.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "shining_darkness_in_deepest_parts_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_deep_void:onyx"
+            ],
+            "count": {
+              "min": 1,
+              "max": 9999
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "the_deep_void:onyx_smithing_template",
+      "the_deep_void:ferryman_lantern",
+      "the_deep_void:onyx_helmet",
+      "the_deep_void:onyx_chestplate",
+      "the_deep_void:onyx_leggings",
+      "the_deep_void:onyx_boots",
+      "the_deep_void:onyx_sword",
+      "the_deep_void:onyx_pickaxe",
+      "the_deep_void:onyx_axe",
+      "the_deep_void:onyx_shovel",
+      "the_deep_void:onyx_hoe",
+      "the_deep_void:block_of_onyx",
+      "the_deep_void:onyx",
+      "the_deep_void:refined_onyx",
+      "the_deep_void:onyx_needle",
+      "the_deep_void:glutton_block",
+      "the_deep_void:lavendite_smithing_upgrade",
+      "the_deep_void:rot_smithing_upgrade",
+      "the_deep_void:void_core_recipe",
+      "the_deep_void:void_dagger",
+      "the_deep_void:rotten_flare_gun",
+      "the_deep_void:black_moss_onyx_template"
+    ]
+  },
+  "parent": "the_deep_void:bone_bottom"
+}

@@ -1,0 +1,23 @@
+{
+  "_fv": 66,
+  "_type": "particle",
+  "definition": {
+    "texture": "soul_sweep",
+    "animate": false,
+    "frameDuration": 5,
+    "width": 0.2,
+    "height": 0.2,
+    "scale": {
+      "fixedValue": 18.5
+    },
+    "speedFactor": 1.0,
+    "gravity": 0.0,
+    "maxAge": 5,
+    "maxAgeDiff": 0,
+    "angularVelocity": 0.0,
+    "angularAcceleration": 0.0,
+    "canCollide": true,
+    "alwaysShow": false,
+    "renderType": "LIT"
+  }
+}

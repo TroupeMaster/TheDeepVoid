@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "the_deep_void:block/hard_flesh_slab"
+    },
+    "type=top": {
+      "model": "the_deep_void:block/hard_flesh_slab_top"
+    },
+    "type=double": {
+      "model": "the_deep_void:block/hard_flesh_slab_full"
+    }
+  }
+}

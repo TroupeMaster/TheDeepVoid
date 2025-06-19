@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:ancient_deepslate_brick_slab"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:chiseled_ancient_deepslate_bricks",
+    "count": 1
+  }
+}

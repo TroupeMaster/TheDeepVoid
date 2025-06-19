@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:cod",
+    "minecraft:salmon",
+    "minecraft:tropical_fish",
+    "minecraft:pufferfish",
+    "the_deep_void:bone_mush",
+    "minecraft:bone",
+    "minecraft:rotten_flesh",
+    "minecraft:porkchop",
+    "minecraft:beef",
+    "minecraft:chicken",
+    "minecraft:rabbit",
+    "minecraft:leather",
+    "minecraft:mutton",
+    "minecraft:beetroot",
+    "minecraft:sweet_berries",
+    "minecraft:glow_berries",
+    "minecraft:melon_slice",
+    "minecraft:sugar",
+    "minecraft:dried_kelp",
+    "minecraft:potato",
+    "minecraft:carrot",
+    "the_deep_void:bone_marrow",
+    "the_deep_void:goo_ball",
+    "the_deep_void:block_of_goo",
+    "the_deep_void:eye_vine_stem",
+    "the_deep_void:huge_eye_vine_stem"
+  ]
+}

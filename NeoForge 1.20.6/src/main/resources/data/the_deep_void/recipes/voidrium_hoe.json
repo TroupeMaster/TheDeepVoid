@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "ab",
+    " c",
+    " d"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:voidrium_gem"
+    },
+    "b": {
+      "item": "the_deep_void:refined_bismuth"
+    },
+    "c": {
+      "item": "the_deep_void:onyx_hoe"
+    },
+    "d": {
+      "item": "the_deep_void:sacred_cinnabar"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:voidrium_hoe",
+    "count": 1
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "display": {
+    "icon": {
+      "id": "the_deep_void:hexed_doll"
+    },
+    "title": {
+      "translate": "advancements.i_always_come_back.title"
+    },
+    "description": {
+      "translate": "advancements.i_always_come_back.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "i_always_come_back_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 50,
+    "recipes": [
+      "the_deep_void:void_effigy",
+      "the_deep_void:tombstone",
+      "the_deep_void:harvester_mask",
+      "the_deep_void:the_harvest",
+      "the_deep_void:voodoo_doll"
+    ]
+  },
+  "parent": "the_deep_void:weave_at_no_end"
+}

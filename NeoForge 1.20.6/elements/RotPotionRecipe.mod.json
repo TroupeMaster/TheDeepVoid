@@ -1,0 +1,25 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Brewing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "brewingInputStack": {
+      "value": "POTION:POISON"
+    },
+    "brewingIngredientStack": {
+      "value": "CUSTOM:RottenBone"
+    },
+    "brewingReturnStack": {
+      "value": "POTION:CUSTOM:RotPotion"
+    },
+    "name": "rot_potion",
+    "namespace": "mod"
+  }
+}

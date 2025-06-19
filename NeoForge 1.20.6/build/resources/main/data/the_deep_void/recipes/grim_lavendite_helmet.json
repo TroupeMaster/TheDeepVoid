@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "the_deep_void:smithing_template_grim"
+  },
+  "base": {
+    "item": "the_deep_void:lavendite_armor_helmet"
+  },
+  "addition": {
+    "item": "the_deep_void:grim_gem"
+  },
+  "result": {
+    "id": "the_deep_void:grim_lavendite_helmet"
+  }
+}

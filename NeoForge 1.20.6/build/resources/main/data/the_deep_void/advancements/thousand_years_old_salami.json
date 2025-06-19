@@ -1,0 +1,48 @@
+{
+  "display": {
+    "icon": {
+      "id": "the_deep_void:flesh_chunk"
+    },
+    "title": {
+      "translate": "advancements.thousand_years_old_salami.title"
+    },
+    "description": {
+      "translate": "advancements.thousand_years_old_salami.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "thousand_years_old_salami_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_deep_void:flesh_chunk"
+            ],
+            "count": {
+              "min": 1,
+              "max": 999
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "the_deep_void:hard_flesh_ingot",
+      "the_deep_void:hard_flesh_helmet",
+      "the_deep_void:hard_flesh_chestplate",
+      "the_deep_void:hard_flesh_leggings",
+      "the_deep_void:hard_flesh_boots",
+      "the_deep_void:hard_flesh_sword",
+      "the_deep_void:ambrosia"
+    ]
+  },
+  "parent": "the_deep_void:does_it_hate"
+}

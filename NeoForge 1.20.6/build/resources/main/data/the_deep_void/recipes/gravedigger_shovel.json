@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a",
+    "b",
+    "c"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:block_of_bone_pile"
+    },
+    "b": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "c": {
+      "item": "the_deep_void:refined_onyx"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:gravedigger_shovel",
+    "count": 1
+  }
+}

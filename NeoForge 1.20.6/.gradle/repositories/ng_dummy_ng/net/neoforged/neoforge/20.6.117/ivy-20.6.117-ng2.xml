@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ivy-module xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:NeoGradle="https://neoforged.net/neogradle/ivy-extra" xsi:noNamespaceSchemaLocation="http://ant.apache.org/ivy/schemas/ivy.xsd" version="2.0">
+  <info organisation="ng_dummy_ng.net.neoforged" module="neoforge" revision="20.6.117" status="release">
+    <license name="Minecraft EULA" url="https://www.minecraft.net/en-us/eula"/>
+  </info>
+  <dependencies>
+    <dependency org="net.neoforged.fancymodloader" name="earlydisplay" rev="3.0.45" transitive="false"/>
+    <dependency org="net.neoforged.fancymodloader" name="loader" rev="3.0.45" transitive="false"/>
+    <dependency org="net.neoforged" name="coremods" rev="7.0.3" transitive="false"/>
+    <dependency org="cpw.mods" name="modlauncher" rev="11.0.2" transitive="false"/>
+    <dependency org="cpw.mods" name="bootstraplauncher" rev="2.0.2" transitive="false"/>
+    <dependency org="cpw.mods" name="securejarhandler" rev="3.0.8" transitive="false"/>
+    <dependency org="net.neoforged.accesstransformers" name="at-modlauncher" rev="10.0.1" transitive="false"/>
+    <dependency org="net.neoforged" name="accesstransformers" rev="10.0.1" transitive="false"/>
+    <dependency org="org.openjdk.nashorn" name="nashorn-core" rev="15.4" transitive="false"/>
+    <dependency org="org.ow2.asm" name="asm-commons" rev="9.5" transitive="false"/>
+    <dependency org="net.neoforged" name="mergetool" rev="2.0.3" transitive="false">
+      <artifact name="mergetool" classifier="api" ext="jar"/>
+    </dependency>
+    <dependency org="org.ow2.asm" name="asm-util" rev="9.5" transitive="false"/>
+    <dependency org="org.ow2.asm" name="asm-analysis" rev="9.5" transitive="false"/>
+    <dependency org="org.ow2.asm" name="asm-tree" rev="9.5" transitive="false"/>
+    <dependency org="net.neoforged" name="bus" rev="8.0.1" transitive="false"/>
+    <dependency org="org.ow2.asm" name="asm" rev="9.5" transitive="false"/>
+    <dependency org="net.minecraftforge" name="unsafe" rev="0.2.0" transitive="false"/>
+    <dependency org="com.electronwill.night-config" name="toml" rev="3.6.4" transitive="false"/>
+    <dependency org="com.electronwill.night-config" name="core" rev="3.6.4" transitive="false"/>
+    <dependency org="net.neoforged" name="JarJarSelector" rev="0.4.1" transitive="false"/>
+    <dependency org="net.neoforged" name="JarJarMetadata" rev="0.4.1" transitive="false"/>
+    <dependency org="org.apache.maven" name="maven-artifact" rev="3.8.5" transitive="false"/>
+    <dependency org="net.jodah" name="typetools" rev="0.6.3" transitive="false"/>
+    <dependency org="net.minecrell" name="terminalconsoleappender" rev="1.2.0" transitive="false"/>
+    <dependency org="net.fabricmc" name="sponge-mixin" rev="0.13.4+mixin.0.8.5" transitive="false"/>
+    <dependency org="com.mojang" name="authlib" rev="6.0.54" transitive="false"/>
+    <dependency org="org.apache.commons" name="commons-compress" rev="1.26.0" transitive="false"/>
+    <dependency org="org.apache.commons" name="commons-lang3" rev="3.14.0" transitive="false"/>
+    <dependency org="com.mojang" name="logging" rev="1.2.7" transitive="false"/>
+    <dependency org="com.mojang" name="logging" rev="1.2.7" transitive="false"/>
+    <dependency org="org.apache.logging.log4j" name="log4j-slf4j2-impl" rev="2.22.1" transitive="false"/>
+    <dependency org="org.apache.logging.log4j" name="log4j-core" rev="2.22.1" transitive="false"/>
+    <dependency org="org.apache.logging.log4j" name="log4j-api" rev="2.22.1" transitive="false"/>
+    <dependency org="net.neoforged" name="neoform" rev="1.20.6-20240429.153634" transitive="false"/>
+    <dependency org="net.neoforged" name="JarJarFileSystems" rev="0.4.1" transitive="false"/>
+    <dependency org="io.github.llamalad7" name="mixinextras-neoforge" rev="0.3.5" transitive="false"/>
+    <dependency org="com.github.oshi" name="oshi-core" rev="6.4.10" transitive="false"/>
+    <dependency org="com.mojang" name="datafixerupper" rev="7.0.14" transitive="false"/>
+    <dependency org="com.mojang" name="text2speech" rev="1.17.9" transitive="false"/>
+    <dependency org="org.slf4j" name="slf4j-api" rev="2.0.9" transitive="false"/>
+    <dependency org="com.google.code.gson" name="gson" rev="2.10.1" transitive="false"/>
+    <dependency org="com.mojang" name="patchy" rev="2.2.10" transitive="false"/>
+    <dependency org="com.google.guava" name="guava" rev="32.1.2-jre" transitive="false"/>
+    <dependency org="com.google.guava" name="failureaccess" rev="1.0.1" transitive="false"/>
+    <dependency org="com.google.guava" name="listenablefuture" rev="9999.0-empty-to-avoid-conflict-with-guava" transitive="false"/>
+    <dependency org="com.google.code.findbugs" name="jsr305" rev="3.0.2" transitive="false"/>
+    <dependency org="org.checkerframework" name="checker-qual" rev="3.33.0" transitive="false"/>
+    <dependency org="com.google.errorprone" name="error_prone_annotations" rev="2.18.0" transitive="false"/>
+    <dependency org="com.google.j2objc" name="j2objc-annotations" rev="2.8" transitive="false"/>
+    <dependency org="commons-io" name="commons-io" rev="2.15.1" transitive="false"/>
+    <dependency org="net.sf.jopt-simple" name="jopt-simple" rev="5.0.4" transitive="false"/>
+    <dependency org="net.minecraftforge" name="srgutils" rev="0.4.15" transitive="false"/>
+    <dependency org="net.minecraftforge" name="srgutils" rev="0.4.15" transitive="false"/>
+    <dependency org="org.antlr" name="antlr4-runtime" rev="4.13.1" transitive="false"/>
+    <dependency org="org.jline" name="jline-reader" rev="3.12.1" transitive="false"/>
+    <dependency org="org.jline" name="jline-terminal" rev="3.12.1" transitive="false"/>
+    <dependency org="org.codehaus.plexus" name="plexus-utils" rev="3.3.0" transitive="false"/>
+    <dependency org="com.machinezoo.noexception" name="noexception" rev="1.7.1" transitive="false"/>
+    <dependency org="ng_dummy_ng.net.minecraft" name="client" rev="1.20.6" transitive="false">
+      <artifact name="client" classifier="client-extra" ext="jar"/>
+    </dependency>
+    <dependency org="com.ibm.icu" name="icu4j" rev="73.2" transitive="false"/>
+    <dependency org="com.mojang" name="blocklist" rev="1.0.10" transitive="false"/>
+    <dependency org="com.mojang" name="brigadier" rev="1.2.9" transitive="false"/>
+    <dependency org="org.apache.httpcomponents" name="httpclient" rev="4.5.13" transitive="false"/>
+    <dependency org="commons-codec" name="commons-codec" rev="1.16.0" transitive="false"/>
+    <dependency org="commons-logging" name="commons-logging" rev="1.2" transitive="false"/>
+    <dependency org="io.netty" name="netty-handler" rev="4.1.97.Final" transitive="false"/>
+    <dependency org="io.netty" name="netty-codec" rev="4.1.97.Final" transitive="false"/>
+    <dependency org="io.netty" name="netty-transport-classes-epoll" rev="4.1.97.Final" transitive="false"/>
+    <dependency org="io.netty" name="netty-transport-native-unix-common" rev="4.1.97.Final" transitive="false"/>
+    <dependency org="io.netty" name="netty-transport" rev="4.1.97.Final" transitive="false"/>
+    <dependency org="io.netty" name="netty-buffer" rev="4.1.97.Final" transitive="false"/>
+    <dependency org="io.netty" name="netty-resolver" rev="4.1.97.Final" transitive="false"/>
+    <dependency org="io.netty" name="netty-common" rev="4.1.97.Final" transitive="false"/>
+    <dependency org="it.unimi.dsi" name="fastutil" rev="8.5.12" transitive="false"/>
+    <dependency org="net.java.dev.jna" name="jna-platform" rev="5.14.0" transitive="false"/>
+    <dependency org="ca.weblite" name="java-objc-bridge" rev="1.1" transitive="false"/>
+    <dependency org="net.java.dev.jna" name="jna" rev="5.14.0" transitive="false"/>
+    <dependency org="org.apache.httpcomponents" name="httpcore" rev="4.4.16" transitive="false"/>
+    <dependency org="org.jcraft" name="jorbis" rev="0.0.17" transitive="false"/>
+    <dependency org="org.joml" name="joml" rev="1.10.5" transitive="false"/>
+    <dependency org="org.lwjgl" name="lwjgl-freetype" rev="3.3.3" transitive="false"/>
+    <dependency org="org.lwjgl" name="lwjgl-freetype" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-freetype" classifier="natives-windows" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-freetype" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-freetype" classifier="natives-windows-arm64" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-freetype" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-freetype" classifier="natives-windows-x86" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-glfw" rev="3.3.3" transitive="false"/>
+    <dependency org="org.lwjgl" name="lwjgl-glfw" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-glfw" classifier="natives-windows" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-glfw" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-glfw" classifier="natives-windows-arm64" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-glfw" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-glfw" classifier="natives-windows-x86" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-jemalloc" rev="3.3.3" transitive="false"/>
+    <dependency org="org.lwjgl" name="lwjgl-jemalloc" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-jemalloc" classifier="natives-windows" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-jemalloc" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-jemalloc" classifier="natives-windows-arm64" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-jemalloc" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-jemalloc" classifier="natives-windows-x86" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-openal" rev="3.3.3" transitive="false"/>
+    <dependency org="org.lwjgl" name="lwjgl-openal" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-openal" classifier="natives-windows" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-openal" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-openal" classifier="natives-windows-arm64" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-openal" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-openal" classifier="natives-windows-x86" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-opengl" rev="3.3.3" transitive="false"/>
+    <dependency org="org.lwjgl" name="lwjgl-opengl" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-opengl" classifier="natives-windows" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-opengl" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-opengl" classifier="natives-windows-arm64" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-opengl" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-opengl" classifier="natives-windows-x86" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-stb" rev="3.3.3" transitive="false"/>
+    <dependency org="org.lwjgl" name="lwjgl-stb" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-stb" classifier="natives-windows" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-stb" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-stb" classifier="natives-windows-arm64" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-stb" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-stb" classifier="natives-windows-x86" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-tinyfd" rev="3.3.3" transitive="false"/>
+    <dependency org="org.lwjgl" name="lwjgl-tinyfd" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-tinyfd" classifier="natives-windows" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-tinyfd" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-tinyfd" classifier="natives-windows-arm64" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl-tinyfd" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl-tinyfd" classifier="natives-windows-x86" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl" rev="3.3.3" transitive="false"/>
+    <dependency org="org.lwjgl" name="lwjgl" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl" classifier="natives-windows" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl" classifier="natives-windows-arm64" ext="jar"/>
+    </dependency>
+    <dependency org="org.lwjgl" name="lwjgl" rev="3.3.3" transitive="false">
+      <artifact name="lwjgl" classifier="natives-windows-x86" ext="jar"/>
+    </dependency>
+    <dependency org="org.lz4" name="lz4-java" rev="1.8.0" transitive="false"/>
+    <dependency org="org.jetbrains" name="annotations" rev="24.1.0" transitive="false"/>
+  </dependencies>
+</ivy-module>

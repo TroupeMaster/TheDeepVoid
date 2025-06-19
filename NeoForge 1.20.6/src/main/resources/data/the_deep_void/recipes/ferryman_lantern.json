@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aba",
+    "cdc",
+    "eee"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "b": {
+      "item": "the_deep_void:rotten_bone_block"
+    },
+    "c": {
+      "item": "the_deep_void:lavendite"
+    },
+    "d": {
+      "item": "minecraft:soul_torch"
+    },
+    "e": {
+      "item": "the_deep_void:onyx"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:ferryman_lantern",
+    "count": 2
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "_fv": 66,
+  "_type": "item",
+  "definition": {
+    "renderType": 0,
+    "texture": "void_pendant",
+    "customModelName": "Normal",
+    "customProperties": {},
+    "states": [],
+    "name": "Void Pendant",
+    "rarity": "UNCOMMON",
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "stackSize": 1,
+    "enchantability": 0,
+    "useDuration": -42,
+    "toolType": 1.0,
+    "damageCount": 3,
+    "recipeRemainder": {
+      "value": ""
+    },
+    "destroyAnyBlock": false,
+    "immuneToFire": false,
+    "stayInGridWhenCrafting": false,
+    "damageOnCrafting": false,
+    "enableMeleeDamage": false,
+    "damageVsEntity": 0.0,
+    "specialInformation": {
+      "fixedValue": [
+        "§9Once used:",
+        " §7Teleports you back to the Overworld",
+        " §7Use on a Void Core to link it to it."
+      ]
+    },
+    "glowCondition": {
+      "fixedValue": true,
+      "name": "VoidPendantHasItemGlowingEffect"
+    },
+    "guiBoundTo": "<NONE>",
+    "inventorySize": 9,
+    "inventoryStackSize": 64,
+    "onRightClickedInAir": {
+      "name": "VoidPendantPlayerFinishesUsingItem"
+    },
+    "onRightClickedOnBlock": {
+      "name": "VoidPendantRightclickedOnBlock"
+    },
+    "onItemInUseTick": {
+      "name": "VoidPendantItemInHandTick"
+    },
+    "enableRanged": false,
+    "shootConstantly": false,
+    "rangedItemChargesPower": false,
+    "projectile": {
+      "value": "Arrow"
+    },
+    "isFood": true,
+    "nutritionalValue": 0,
+    "saturation": 0.0,
+    "eatResultItem": {
+      "value": ""
+    },
+    "isMeat": false,
+    "isAlwaysEdible": true,
+    "animation": "spear"
+  }
+}

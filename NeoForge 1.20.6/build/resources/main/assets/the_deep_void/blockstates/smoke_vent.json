@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "the_deep_void:block/smoke_vent",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "the_deep_void:block/smoke_vent"
+    },
+    "axis=z": {
+      "model": "the_deep_void:block/smoke_vent",
+      "x": 90
+    }
+  }
+}

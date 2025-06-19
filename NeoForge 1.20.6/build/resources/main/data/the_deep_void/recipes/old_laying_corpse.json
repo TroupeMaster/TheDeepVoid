@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:laying_corpse"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:old_laying_corpse",
+    "count": 1
+  }
+}

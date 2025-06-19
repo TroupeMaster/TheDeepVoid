@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Root Blind",
+    "icon": "root_blind",
+    "color": {
+      "value": -13290701,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "mobEffectCategory": "HARMFUL",
+    "renderStatusInInventory": false,
+    "renderStatusInHUD": false,
+    "onActiveTick": {
+      "name": "RootBlindOnEffectActiveTick"
+    },
+    "onExpired": {
+      "name": "RootBlindEffectExpires"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+package net.minecraft.world.item;
+
+import com.mojang.serialization.Codec;
+import io.netty.buffer.ByteBuf;
+import java.util.function.IntFunction;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.codec.ByteBufCodecs;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.util.ByIdMap;
+import net.minecraft.util.StringRepresentable;
+
+public enum Rarity implements StringRepresentable, net.neoforged.neoforge.common.IExtensibleEnum {
+    COMMON(0, "common", ChatFormatting.WHITE),
+    UNCOMMON(1, "uncommon", ChatFormatting.YELLOW),
+    RARE(2, "rare", ChatFormatting.AQUA),
+    EPIC(3, "epic", ChatFormatting.LIGHT_PURPLE);
+
+    private static final java.util.Map<String, Rarity> BY_NAME = java.util.Arrays.stream(values()).collect(java.util.stream.Collectors.toMap(rarity -> rarity.name, rarity -> rarity));
+    public static final Codec<Rarity> CODEC = net.neoforged.neoforge.common.IExtensibleEnum.createCodecForExtensibleEnum(Rarity::values, Rarity::byName);
+    public static final IntFunction<Rarity> BY_ID = ByIdMap.continuous(p_335877_ -> p_335877_.id, values(), ByIdMap.OutOfBoundsStrategy.ZERO);
+    public static final StreamCodec<ByteBuf, Rarity> STREAM_CODEC = net.neoforged.neoforge.common.IExtensibleEnum.createStreamCodecForExtensibleEnum(Rarity::values);
+    private final int id;
+    private final String name;
+    private final ChatFormatting color;
+    private final java.util.function.UnaryOperator<net.minecraft.network.chat.Style> styleModifier;
+
+    private Rarity(int p_336096_, String p_335642_, ChatFormatting p_43028_) {
+        this.id = p_336096_;
+        this.name = p_335642_;
+        this.color = p_43028_;
+        this.styleModifier = style -> style.withColor(p_43028_);
+    }
+
+    Rarity(net.minecraft.resources.ResourceLocation serializedName, java.util.function.UnaryOperator<net.minecraft.network.chat.Style> styleModifier) {
+        this.id = 0;
+        this.name = java.util.Objects.requireNonNull(serializedName, "Modded Rarities must have a non-null serializedName").toString();
+        this.color = ChatFormatting.BLACK;
+        this.styleModifier = styleModifier;
+    }
+
+    Rarity(net.minecraft.resources.ResourceLocation serializedName, ChatFormatting color) {
+        this(0, java.util.Objects.requireNonNull(serializedName, "Modded Rarities must have a non-null serializedName").toString(), color);
+    }
+
+    /** @deprecated Forge: Use {@link #getStyleModifier()} */
+    @Deprecated
+    public ChatFormatting color() {
+        return this.color;
+    }
+
+    public java.util.function.UnaryOperator<net.minecraft.network.chat.Style> getStyleModifier() {
+        return this.styleModifier;
+    }
+
+    @Override
+    public String getSerializedName() {
+        return this.name;
+    }
+
+    @Override
+    @Deprecated
+    public void init() {
+        BY_NAME.put(this.name, this);
+    }
+
+    public static Rarity byName(String name) {
+        return BY_NAME.get(name);
+    }
+
+    public static Rarity create(String name, net.minecraft.resources.ResourceLocation serializedName, ChatFormatting color) {
+        throw new IllegalStateException("Enum not extended");
+    }
+
+    public static Rarity create(String name, net.minecraft.resources.ResourceLocation serializedName, java.util.function.UnaryOperator<net.minecraft.network.chat.Style> styleModifier) {
+        throw new IllegalStateException("Enum not extended");
+    }
+}

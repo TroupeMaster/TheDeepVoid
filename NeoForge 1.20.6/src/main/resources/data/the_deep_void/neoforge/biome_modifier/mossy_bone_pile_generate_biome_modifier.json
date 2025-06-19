@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "the_deep_void:forgotten_valley",
+    "the_deep_void:mourning_graveyard",
+    "the_deep_void:watching_undergrowth"
+  ],
+  "features": "the_deep_void:mossy_bone_pile_generate",
+  "step": "local_modifications"
+}

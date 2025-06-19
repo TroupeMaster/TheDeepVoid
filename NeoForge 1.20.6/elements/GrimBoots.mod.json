@@ -1,0 +1,28 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "CUSTOM:RottenBoneArmor.boots"
+    },
+    "smithingInputAdditionStack": {
+      "value": "CUSTOM:GrimGem"
+    },
+    "smithingInputTemplateStack": {
+      "value": "CUSTOM:SmithingTemplateGrim"
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:GrimRottenBone.boots"
+    },
+    "name": "grim_boots",
+    "namespace": "mod"
+  }
+}

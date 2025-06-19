@@ -1,0 +1,53 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:deepslate"
+    },
+    "title": {
+      "translate": "advancements.bone_bottom.title"
+    },
+    "description": {
+      "translate": "advancements.bone_bottom.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "bone_bottom_0": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "the_deep_void:deep_void"
+      }
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "the_deep_void:void_pendant",
+      "the_deep_void:bone_mush",
+      "the_deep_void:onyx",
+      "the_deep_void:corpse",
+      "the_deep_void:bone_pickaxe",
+      "the_deep_void:bone_axe",
+      "the_deep_void:bone_shovel",
+      "the_deep_void:bone_hoe",
+      "the_deep_void:bone_sword",
+      "the_deep_void:pile_of_bones",
+      "the_deep_void:block_of_bone_pile",
+      "the_deep_void:rotten_bone_helmet",
+      "the_deep_void:rotten_bone_chestplate",
+      "the_deep_void:rotten_bone_leggings",
+      "the_deep_void:rotten_bone_boots",
+      "the_deep_void:mossy_bone_pile",
+      "the_deep_void:mourner_hide_furnace",
+      "the_deep_void:mourner_hide_campfire",
+      "the_deep_void:mourner_hide_smoker",
+      "the_deep_void:stalker_treat",
+      "the_deep_void:powered_lava_geyser",
+      "the_deep_void:ferryman_lantern"
+    ]
+  },
+  "parent": "the_deep_void:the_deep_void_advancement"
+}

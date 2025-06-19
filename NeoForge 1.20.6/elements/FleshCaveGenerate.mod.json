@@ -1,0 +1,29 @@
+{
+  "_fv": 66,
+  "_type": "feature",
+  "definition": {
+    "skipPlacement": true,
+    "generationStep": "UNDERGROUND_DECORATION",
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:ForgottenValley"
+      },
+      {
+        "value": "CUSTOM:GrimCanopy"
+      },
+      {
+        "value": "CUSTOM:AshenCrags"
+      },
+      {
+        "value": "CUSTOM:MourningGraveyard"
+      },
+      {
+        "value": "CUSTOM:GloomyDeathgrounds"
+      },
+      {
+        "value": "CUSTOM:StaringHills"
+      }
+    ],
+    "featurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"feature_container\" deletable=\"false\" x=\"40\" y=\"40\"><value name=\"feature\"><block type=\"feature_custom_structure\"><field name=\"structure\">flesh_cave_air_struc</field><field name=\"x\">0</field><field name=\"y\">0</field><field name=\"z\">0</field><field name=\"random_rotation\">FALSE</field><field name=\"random_mirror\">FALSE</field><value name=\"ignored_blocks\"><block type=\"block_holderset_list\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"1\"></mutation><field name=\"block0\">Blocks.STRUCTURE_BLOCK</field></block></value></block></value><next><block type=\"placement_count\"><value name=\"count\"><block type=\"int_provider_constant\"><field name=\"value\">4</field></block></value><next><block type=\"placement_in_square\"><next><block type=\"placement_rarity\"><field name=\"rarity\">150</field><next><block type=\"placement_height_range\"><value name=\"height\"><block type=\"height_provider_biased_to_bottom\"><field name=\"inner\">2</field><value name=\"min\"><block type=\"vertical_anchor_absolute\"><field name=\"value\">-60</field></block></value><value name=\"max\"><block type=\"vertical_anchor_absolute\"><field name=\"value\">-5</field></block></value></block></value><next><block type=\"placement_environment_scan\"><field name=\"maxSteps\">5</field><field name=\"direction\">UP</field><value name=\"condition\"><block type=\"block_predicate_is_air\"></block></value></block></next></block></next></block></next></block></next></block></next></block></xml>"
+  }
+}

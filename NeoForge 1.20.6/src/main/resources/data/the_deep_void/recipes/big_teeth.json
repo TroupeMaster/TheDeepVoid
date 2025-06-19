@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "bbb"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:teeth_block"
+    },
+    "b": {
+      "item": "the_deep_void:flesh_block"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:big_teeth",
+    "count": 2
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "the_deep_void:forgotten_valley",
+    "the_deep_void:grim_canopy",
+    "the_deep_void:ashen_crags",
+    "the_deep_void:mourning_graveyard",
+    "the_deep_void:gloomy_deathgrounds",
+    "the_deep_void:watching_undergrowth",
+    "the_deep_void:crawler_nest",
+    "the_deep_void:filled_graveyard",
+    "the_deep_void:staring_hills"
+  ],
+  "features": "the_deep_void:rotten_marrow_pillar",
+  "step": "underground_decoration"
+}

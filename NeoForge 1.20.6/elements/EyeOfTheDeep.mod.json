@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "Items.COAL"
+      },
+      {
+        "value": "Items.QUARTZ"
+      },
+      {
+        "value": "Items.COAL"
+      },
+      {
+        "value": "Items.QUARTZ"
+      },
+      {
+        "value": "Items.ENDER_PEARL"
+      },
+      {
+        "value": "Items.QUARTZ"
+      },
+      {
+        "value": "Items.COAL"
+      },
+      {
+        "value": "Items.QUARTZ"
+      },
+      {
+        "value": "Items.COAL"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:ForgottenToken"
+    },
+    "name": "eye_of_the_deep",
+    "namespace": "mod"
+  }
+}

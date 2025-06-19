@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "experience": 1,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "the_deep_void:onyx_ore"
+  },
+  "result": {
+    "id": "the_deep_void:onyx"
+  }
+}

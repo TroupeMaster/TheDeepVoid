@@ -1,0 +1,6 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "the_deep_void:forgotten_valley",
+  "features": "the_deep_void:ancient_deepslate",
+  "step": "underground_ores"
+}

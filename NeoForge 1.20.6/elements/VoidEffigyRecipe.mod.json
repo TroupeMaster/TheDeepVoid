@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "BUILDING",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:RefinedOnyx"
+      },
+      {
+        "value": "CUSTOM:LiquidVoid.bucket"
+      },
+      {
+        "value": "CUSTOM:RefinedOnyx"
+      },
+      {
+        "value": "CUSTOM:SoulShard"
+      },
+      {
+        "value": "CUSTOM:ForgottenToken"
+      },
+      {
+        "value": "CUSTOM:SoulShard"
+      },
+      {
+        "value": "CUSTOM:AncientDeepslateBricks"
+      },
+      {
+        "value": "CUSTOM:UmbriumGem"
+      },
+      {
+        "value": "CUSTOM:AncientDeepslateBricks"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:VoidEffigy"
+    },
+    "name": "void_effigy",
+    "namespace": "mod"
+  }
+}

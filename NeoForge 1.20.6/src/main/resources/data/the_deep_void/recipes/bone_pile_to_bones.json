@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:block_of_bone_pile"
+    }
+  },
+  "result": {
+    "id": "minecraft:bone",
+    "count": 4
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/stalker_scythe_claw",
+  "textures": {
+    "0": "the_deep_void:block/stalker_scythe_claw_texture",
+    "particle": "the_deep_void:item/stalker_scythe_claw"
+  }
+}

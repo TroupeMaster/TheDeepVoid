@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bbb",
+    "ccc"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:bone_marrow"
+    },
+    "b": {
+      "item": "minecraft:bone"
+    },
+    "c": {
+      "item": "the_deep_void:bone_loaf"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:rotten_delight",
+    "count": 3
+  }
+}

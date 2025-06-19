@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "id": "the_deep_void:cinnabar_roll"
+    },
+    "title": {
+      "translate": "advancements.with_a_slight_taste_of_cinnamon.title"
+    },
+    "description": {
+      "translate": "advancements.with_a_slight_taste_of_cinnamon.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "with_a_slight_taste_of_cinnamon_0": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "the_deep_void:cinnabar_roll"
+          ]
+        }
+      }
+    }
+  },
+  "parent": "the_deep_void:it_wasnt_there_before"
+}

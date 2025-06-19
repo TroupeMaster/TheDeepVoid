@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:cinnabar"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:block_of_raw_cinnabar",
+    "count": 1
+  }
+}

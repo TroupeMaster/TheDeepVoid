@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smelting",
+  "category": "food",
+  "experience": 0.1,
+  "cookingtime": 34,
+  "ingredient": {
+    "item": "the_deep_void:mourner_hide"
+  },
+  "result": {
+    "id": "minecraft:leather"
+  }
+}

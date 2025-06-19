@@ -1,0 +1,99 @@
+{
+  "_fv": 66,
+  "_type": "plant",
+  "definition": {
+    "renderType": 2,
+    "texture": "peeping_growth",
+    "textureBottom": "",
+    "customModelName": "peeping_growth:default",
+    "itemTexture": "peeping_growth",
+    "particleTexture": "",
+    "tintType": "No tint",
+    "isItemTinted": false,
+    "plantType": "normal",
+    "suspiciousStewEffect": "SPEED",
+    "suspiciousStewDuration": 100,
+    "growapableSpawnType": "Cave",
+    "growapableMaxHeight": 3,
+    "customBoundingBox": true,
+    "disableOffset": false,
+    "boundingBoxes": [
+      {
+        "mx": 0.0,
+        "my": 0.0,
+        "mz": 0.0,
+        "Mx": 16.0,
+        "My": 16.0,
+        "Mz": 16.0,
+        "subtract": false
+      }
+    ],
+    "name": "Peeping Stem",
+    "specialInformation": {
+      "fixedValue": []
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "hardness": 0.0,
+    "resistance": 0.0,
+    "luminance": 4,
+    "unbreakable": false,
+    "isSolid": false,
+    "isCustomSoundType": true,
+    "soundOnStep": {
+      "value": "PLANT"
+    },
+    "breakSound": {
+      "value": "CUSTOM:flesh_block_step"
+    },
+    "stepSound": {
+      "value": "intentionally_empty"
+    },
+    "placeSound": {
+      "value": "CUSTOM:flesh_block_place"
+    },
+    "hitSound": {
+      "value": "intentionally_empty"
+    },
+    "fallSound": {
+      "value": "intentionally_empty"
+    },
+    "useLootTableForDrops": false,
+    "customDrop": {
+      "value": ""
+    },
+    "dropAmount": 1,
+    "forceTicking": false,
+    "emissiveRendering": false,
+    "hasTileEntity": false,
+    "isReplaceable": false,
+    "colorOnMap": "DEFAULT",
+    "creativePickItem": {
+      "value": ""
+    },
+    "offsetType": "XZ",
+    "aiPathNodeType": "DEFAULT",
+    "flammability": 0,
+    "fireSpreadSpeed": 0,
+    "jumpFactor": 1.0,
+    "speedFactor": 1.0,
+    "canBePlacedOn": [],
+    "isBonemealable": false,
+    "frequencyOnChunks": 4,
+    "generateFeature": true,
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:StaringHills"
+      },
+      {
+        "value": "CUSTOM:GloomyDeathgrounds"
+      }
+    ],
+    "generationType": "Flower",
+    "patchSize": 12,
+    "generateAtAnyHeight": false
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "the_deep_void:rooter_on"
+    },
+    "title": {
+      "translate": "advancements.doesnt_come_with_wifi.title"
+    },
+    "description": {
+      "translate": "advancements.doesnt_come_with_wifi.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "doesnt_come_with_wifi_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_deep_void:rooter"
+            ],
+            "count": {
+              "min": 1,
+              "max": 999
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "the_deep_void:bone_bottom"
+}

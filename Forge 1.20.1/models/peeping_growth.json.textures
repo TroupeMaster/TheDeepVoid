@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "peeping_growth"
+      },
+      "name": "default"
+    }
+  }
+}

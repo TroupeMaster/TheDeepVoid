@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "devourer_shield"
+      },
+      "name": "default"
+    }
+  }
+}

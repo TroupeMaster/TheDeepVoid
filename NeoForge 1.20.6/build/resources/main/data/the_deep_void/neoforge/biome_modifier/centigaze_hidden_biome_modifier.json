@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_spawns",
+  "biomes": "the_deep_void:windswept_hollow",
+  "spawners": {
+    "type": "the_deep_void:centigaze_hidden",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

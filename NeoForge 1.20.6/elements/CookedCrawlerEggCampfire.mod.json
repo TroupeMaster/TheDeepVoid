@@ -1,0 +1,22 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Campfire cooking",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "FOOD",
+    "xpReward": 0.65,
+    "cookingTime": 600,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "campfireCookingInputStack": {
+      "value": "CUSTOM:BoneCrawlerEgg"
+    },
+    "campfireCookingReturnStack": {
+      "value": "CUSTOM:CookedCrawlerEgg"
+    },
+    "name": "cooked_crawler_egg_campfire",
+    "namespace": "mod"
+  }
+}

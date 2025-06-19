@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": {
+      "id": "the_deep_void:flesh_block"
+    },
+    "title": {
+      "translate": "advancements.does_it_hate.title"
+    },
+    "description": {
+      "translate": "advancements.does_it_hate.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "does_it_hate_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 0,
+    "recipes": [
+      "the_deep_void:pustulent_flesh_block",
+      "the_deep_void:pus_sack",
+      "the_deep_void:teeth",
+      "the_deep_void:licker_hook"
+    ]
+  },
+  "parent": "the_deep_void:bone_bottom"
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:rotten_log"
+    },
+    "b": {
+      "item": "the_deep_void:forgotten_token"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:infested_rotten_log",
+    "count": 8
+  }
+}

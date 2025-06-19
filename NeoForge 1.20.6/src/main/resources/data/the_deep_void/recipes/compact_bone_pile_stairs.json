@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "a  ",
+    "aa ",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:compact_bone_pile"
+    }
+  },
+  "result": {
+    "id": "the_deep_void:compact_bone_pile_stairs",
+    "count": 4
+  }
+}

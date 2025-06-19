@@ -1,0 +1,12 @@
+{
+  "_fv": 66,
+  "_type": "damagetype",
+  "definition": {
+    "exhaustion": 0.1,
+    "scaling": "never",
+    "effects": "hurt",
+    "normalDeathMessage": "Someone was assassinated",
+    "itemDeathMessage": "Someone was assassinated",
+    "playerDeathMessage": "Someone was assassinated"
+  }
+}

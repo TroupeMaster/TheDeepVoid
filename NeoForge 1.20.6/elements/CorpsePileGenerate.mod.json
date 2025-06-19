@@ -1,0 +1,17 @@
+{
+  "_fv": 66,
+  "_type": "feature",
+  "definition": {
+    "skipPlacement": false,
+    "generationStep": "LOCAL_MODIFICATIONS",
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:FilledGraveyard"
+      },
+      {
+        "value": "CUSTOM:MourningGraveyard"
+      }
+    ],
+    "featurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"feature_container\" deletable=\"false\" x=\"40\" y=\"40\"><value name=\"feature\"><block type=\"feature_random_patch_simple\"><field name=\"tries\">128</field><field name=\"xzSpread\">16</field><field name=\"ySpread\">3</field><value name=\"block\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">CUSTOM:OldCorpsePile</field></block></value><value name=\"condition\"><block type=\"block_predicate_all_of\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"2\"></mutation><value name=\"condition0\"><block type=\"block_predicate_is_air\"></block></value><value name=\"condition1\"><block type=\"block_predicate_matching_blocks\"><field name=\"x\">0</field><field name=\"y\">-1</field><field name=\"z\">0</field><value name=\"blockSet\"><block type=\"block_holderset_list\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"7\"></mutation><field name=\"block0\">CUSTOM:BlockOfSkullPile</field><field name=\"block1\">CUSTOM:BlockOfBonePile</field><field name=\"block2\">CUSTOM:MossyBonePile</field><field name=\"block3\">CUSTOM:AncientDeepslate</field><field name=\"block4\">CUSTOM:CobbledAncientDeepslate</field><field name=\"block5\">Blocks.DEEPSLATE</field><field name=\"block6\">Blocks.COBBLED_DEEPSLATE</field></block></value></block></value></block></value></block></value><next><block type=\"placement_biome_filter\"><next><block type=\"placement_rarity\"><field name=\"rarity\">4</field><next><block type=\"placement_heightmap\"><field name=\"heightmap\">OCEAN_FLOOR_WG</field><next><block type=\"placement_in_square\"></block></next></block></next></block></next></block></next></block></xml>"
+  }
+}

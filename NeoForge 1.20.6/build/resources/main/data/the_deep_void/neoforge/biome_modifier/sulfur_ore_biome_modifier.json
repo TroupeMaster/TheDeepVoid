@@ -1,0 +1,9 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": [
+    "the_deep_void:ashen_crags",
+    "the_deep_void:windswept_hollow"
+  ],
+  "features": "the_deep_void:sulfur_ore",
+  "step": "underground_ores"
+}

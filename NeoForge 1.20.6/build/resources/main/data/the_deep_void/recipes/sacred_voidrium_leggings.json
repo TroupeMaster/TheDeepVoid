@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": [],
+  "base": {
+    "item": "the_deep_void:voidrium_leggings"
+  },
+  "addition": {
+    "item": "the_deep_void:soul_fused_ingot"
+  },
+  "result": {
+    "id": "the_deep_void:sacred_voidrium_leggings"
+  }
+}

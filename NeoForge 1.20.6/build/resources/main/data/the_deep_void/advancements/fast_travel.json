@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "id": "the_deep_void:void_core"
+    },
+    "title": {
+      "translate": "advancements.fast_travel.title"
+    },
+    "description": {
+      "translate": "advancements.fast_travel.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "fast_travel_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_deep_void:void_core"
+            ],
+            "count": {
+              "min": 1,
+              "max": 999
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "the_deep_void:shining_darkness_in_deepest_parts"
+}
