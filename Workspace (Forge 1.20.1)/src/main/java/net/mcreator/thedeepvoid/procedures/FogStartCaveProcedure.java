@@ -19,7 +19,6 @@ import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import javax.annotation.Nullable;
@@ -101,9 +100,9 @@ public class FogStartCaveProcedure {
 					setDistance(10, 20);
 					setShape(FogShape.SPHERE);
 				}
-				if (entity.getY() <= 40) {
-					if (!(entity instanceof LivingEntity _livEnt49 && _livEnt49.hasEffect(TheDeepVoidModMobEffects.HALLUCINATE.get())) || entity instanceof LivingEntity _livEnt50 && _livEnt50.hasEffect(MobEffects.NIGHT_VISION)) {
-						setDistance(60, 80);
+				if (entity.getY() <= 1) {
+					if (entity instanceof LivingEntity _livEnt49 && _livEnt49.hasEffect(MobEffects.NIGHT_VISION)) {
+						setDistance(5, 25);
 						setShape(FogShape.SPHERE);
 					}
 				}

@@ -38,6 +38,9 @@
       },
       {
         "value": "CUSTOM:GatheringGrounds"
+      },
+      {
+        "value": "CUSTOM:BefouledMarsh"
       }
     ],
     "worldGenType": "Normal world gen",

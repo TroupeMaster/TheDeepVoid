@@ -100,7 +100,7 @@
     "stepSound": {
       "value": ""
     },
-    "luminance": 8,
+    "luminance": 12,
     "unbreakable": false,
     "vanillaToolTier": "NONE",
     "isBonemealable": false,

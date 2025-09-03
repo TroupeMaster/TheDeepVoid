@@ -4,7 +4,7 @@
   "pattern": [
     " a ",
     "bcb",
-    "def"
+    "ded"
   ],
   "key": {
     "a": {
@@ -20,10 +20,7 @@
       "item": "the_deep_void:sacred_cinnabar"
     },
     "e": {
-      "item": "the_deep_void:block_of_voidrium"
-    },
-    "f": {
-      "item": "the_deep_void:hard_flesh_ingot"
+      "item": "the_deep_void:voidrium_gem"
     }
   },
   "result": {

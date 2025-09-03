@@ -14,7 +14,8 @@
         "§7Right click on an entity to pass your pain onto them, sacrificing your health based on a fifth of your opponent's current health",
         "§7Each hit makes the sword swing faster",
         "§7The Painful effect spreads to other targets when the victim dies"
-      ]
+      ],
+      "name": "SoulCleaverSpecialInformation"
     },
     "creativeTabs": [
       {

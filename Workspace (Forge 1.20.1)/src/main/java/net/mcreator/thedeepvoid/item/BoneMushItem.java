@@ -26,7 +26,7 @@ public class BoneMushItem extends Item {
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
-		BoneMushPlayerFinishesUsingItemProcedure.execute(entity);
+		BoneMushPlayerFinishesUsingItemProcedure.execute(entity, itemstack);
 		return retval;
 	}
 }

@@ -183,7 +183,7 @@ public class WeaverOfSoulsEntity extends Monster implements GeoEntity {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		WeaverOfSoulsOnEntityTickUpdateProcedure.execute(this.level(), this);
+		WeaverOfSoulsOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
 
@@ -223,7 +223,7 @@ public class WeaverOfSoulsEntity extends Monster implements GeoEntity {
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
 		builder = builder.add(Attributes.MAX_HEALTH, 620);
 		builder = builder.add(Attributes.ARMOR, 10);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 10);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 14);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 47);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 999);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 4);

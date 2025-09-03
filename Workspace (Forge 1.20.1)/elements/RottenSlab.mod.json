@@ -2,10 +2,10 @@
   "_fv": 66,
   "_type": "block",
   "definition": {
-    "texture": "petrified_planks",
-    "textureTop": "petrified_planks",
+    "texture": "rotten_planks_new",
+    "textureTop": "rotten_planks_new",
     "textureLeft": "rotten_log_side",
-    "textureFront": "petrified_planks",
+    "textureFront": "rotten_planks_new",
     "textureRight": "rotten_log_side",
     "textureBack": "rotten_log_side",
     "renderType": 11,

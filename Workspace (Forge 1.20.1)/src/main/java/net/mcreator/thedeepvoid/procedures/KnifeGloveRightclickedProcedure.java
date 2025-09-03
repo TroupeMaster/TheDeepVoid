@@ -25,7 +25,7 @@ public class KnifeGloveRightclickedProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof Player _player)
-			_player.getCooldowns().addCooldown(itemstack.getItem(), 3);
+			_player.getCooldowns().addCooldown(itemstack.getItem(), 4);
 		if (world instanceof Level _level) {
 			if (!_level.isClientSide()) {
 				_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.trident.throw")), SoundSource.PLAYERS, 1, (float) 1.6);
@@ -54,7 +54,7 @@ public class KnifeGloveRightclickedProcedure {
 							entityToSpawn.setSilent(true);
 							return entityToSpawn;
 						}
-					}.getArrow(projectileLevel, entity, 5, 0);
+					}.getArrow(projectileLevel, entity, 4, 0);
 					_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 					_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 5);
 					projectileLevel.addFreshEntity(_entityToSpawn);
@@ -74,7 +74,7 @@ public class KnifeGloveRightclickedProcedure {
 								entityToSpawn.setSilent(true);
 								return entityToSpawn;
 							}
-						}.getArrow(projectileLevel, entity, 5, 0);
+						}.getArrow(projectileLevel, entity, 4, 0);
 						_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 						_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 9);
 						projectileLevel.addFreshEntity(_entityToSpawn);
@@ -94,7 +94,7 @@ public class KnifeGloveRightclickedProcedure {
 									entityToSpawn.setSilent(true);
 									return entityToSpawn;
 								}
-							}.getArrow(projectileLevel, entity, 5, 0);
+							}.getArrow(projectileLevel, entity, 4, 0);
 							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 11);
 							projectileLevel.addFreshEntity(_entityToSpawn);
@@ -106,15 +106,16 @@ public class KnifeGloveRightclickedProcedure {
 						Level projectileLevel = _shootFrom.level();
 						if (!projectileLevel.isClientSide()) {
 							Projectile _entityToSpawn = new Object() {
-								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
+								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
 									AbstractArrow entityToSpawn = new PoisonKnifeEntity(TheDeepVoidModEntities.POISON_KNIFE.get(), level);
 									entityToSpawn.setOwner(shooter);
 									entityToSpawn.setBaseDamage(damage);
 									entityToSpawn.setKnockback(knockback);
 									entityToSpawn.setSilent(true);
+									entityToSpawn.setPierceLevel(piercing);
 									return entityToSpawn;
 								}
-							}.getArrow(projectileLevel, entity, 5, 0);
+							}.getArrow(projectileLevel, entity, (float) 3.5, 0, (byte) 1);
 							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 11);
 							projectileLevel.addFreshEntity(_entityToSpawn);
@@ -127,15 +128,16 @@ public class KnifeGloveRightclickedProcedure {
 					Level projectileLevel = _shootFrom.level();
 					if (!projectileLevel.isClientSide()) {
 						Projectile _entityToSpawn = new Object() {
-							public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
+							public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
 								AbstractArrow entityToSpawn = new PoisonKnifeEntity(TheDeepVoidModEntities.POISON_KNIFE.get(), level);
 								entityToSpawn.setOwner(shooter);
 								entityToSpawn.setBaseDamage(damage);
 								entityToSpawn.setKnockback(knockback);
 								entityToSpawn.setSilent(true);
+								entityToSpawn.setPierceLevel(piercing);
 								return entityToSpawn;
 							}
-						}.getArrow(projectileLevel, entity, 5, 0);
+						}.getArrow(projectileLevel, entity, (float) 3.5, 0, (byte) 1);
 						_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 						_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 9);
 						projectileLevel.addFreshEntity(_entityToSpawn);
@@ -155,7 +157,7 @@ public class KnifeGloveRightclickedProcedure {
 									entityToSpawn.setSilent(true);
 									return entityToSpawn;
 								}
-							}.getArrow(projectileLevel, entity, 5, 0);
+							}.getArrow(projectileLevel, entity, 4, 0);
 							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 11);
 							projectileLevel.addFreshEntity(_entityToSpawn);
@@ -167,15 +169,16 @@ public class KnifeGloveRightclickedProcedure {
 						Level projectileLevel = _shootFrom.level();
 						if (!projectileLevel.isClientSide()) {
 							Projectile _entityToSpawn = new Object() {
-								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
+								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
 									AbstractArrow entityToSpawn = new PoisonKnifeEntity(TheDeepVoidModEntities.POISON_KNIFE.get(), level);
 									entityToSpawn.setOwner(shooter);
 									entityToSpawn.setBaseDamage(damage);
 									entityToSpawn.setKnockback(knockback);
 									entityToSpawn.setSilent(true);
+									entityToSpawn.setPierceLevel(piercing);
 									return entityToSpawn;
 								}
-							}.getArrow(projectileLevel, entity, 5, 0);
+							}.getArrow(projectileLevel, entity, (float) 3.5, 0, (byte) 1);
 							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 11);
 							projectileLevel.addFreshEntity(_entityToSpawn);
@@ -189,15 +192,16 @@ public class KnifeGloveRightclickedProcedure {
 				Level projectileLevel = _shootFrom.level();
 				if (!projectileLevel.isClientSide()) {
 					Projectile _entityToSpawn = new Object() {
-						public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
+						public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
 							AbstractArrow entityToSpawn = new PoisonKnifeEntity(TheDeepVoidModEntities.POISON_KNIFE.get(), level);
 							entityToSpawn.setOwner(shooter);
 							entityToSpawn.setBaseDamage(damage);
 							entityToSpawn.setKnockback(knockback);
 							entityToSpawn.setSilent(true);
+							entityToSpawn.setPierceLevel(piercing);
 							return entityToSpawn;
 						}
-					}.getArrow(projectileLevel, entity, 5, 0);
+					}.getArrow(projectileLevel, entity, (float) 3.5, 0, (byte) 1);
 					_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 					_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 5);
 					projectileLevel.addFreshEntity(_entityToSpawn);
@@ -217,7 +221,7 @@ public class KnifeGloveRightclickedProcedure {
 								entityToSpawn.setSilent(true);
 								return entityToSpawn;
 							}
-						}.getArrow(projectileLevel, entity, 5, 0);
+						}.getArrow(projectileLevel, entity, 4, 0);
 						_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 						_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 9);
 						projectileLevel.addFreshEntity(_entityToSpawn);
@@ -237,7 +241,7 @@ public class KnifeGloveRightclickedProcedure {
 									entityToSpawn.setSilent(true);
 									return entityToSpawn;
 								}
-							}.getArrow(projectileLevel, entity, 5, 0);
+							}.getArrow(projectileLevel, entity, 4, 0);
 							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 11);
 							projectileLevel.addFreshEntity(_entityToSpawn);
@@ -249,15 +253,16 @@ public class KnifeGloveRightclickedProcedure {
 						Level projectileLevel = _shootFrom.level();
 						if (!projectileLevel.isClientSide()) {
 							Projectile _entityToSpawn = new Object() {
-								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
+								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
 									AbstractArrow entityToSpawn = new PoisonKnifeEntity(TheDeepVoidModEntities.POISON_KNIFE.get(), level);
 									entityToSpawn.setOwner(shooter);
 									entityToSpawn.setBaseDamage(damage);
 									entityToSpawn.setKnockback(knockback);
 									entityToSpawn.setSilent(true);
+									entityToSpawn.setPierceLevel(piercing);
 									return entityToSpawn;
 								}
-							}.getArrow(projectileLevel, entity, 5, 0);
+							}.getArrow(projectileLevel, entity, (float) 3.5, 0, (byte) 1);
 							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 11);
 							projectileLevel.addFreshEntity(_entityToSpawn);
@@ -270,15 +275,16 @@ public class KnifeGloveRightclickedProcedure {
 					Level projectileLevel = _shootFrom.level();
 					if (!projectileLevel.isClientSide()) {
 						Projectile _entityToSpawn = new Object() {
-							public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
+							public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
 								AbstractArrow entityToSpawn = new PoisonKnifeEntity(TheDeepVoidModEntities.POISON_KNIFE.get(), level);
 								entityToSpawn.setOwner(shooter);
 								entityToSpawn.setBaseDamage(damage);
 								entityToSpawn.setKnockback(knockback);
 								entityToSpawn.setSilent(true);
+								entityToSpawn.setPierceLevel(piercing);
 								return entityToSpawn;
 							}
-						}.getArrow(projectileLevel, entity, 5, 0);
+						}.getArrow(projectileLevel, entity, (float) 3.5, 0, (byte) 1);
 						_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 						_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 9);
 						projectileLevel.addFreshEntity(_entityToSpawn);
@@ -298,7 +304,7 @@ public class KnifeGloveRightclickedProcedure {
 									entityToSpawn.setSilent(true);
 									return entityToSpawn;
 								}
-							}.getArrow(projectileLevel, entity, 5, 0);
+							}.getArrow(projectileLevel, entity, 4, 0);
 							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 11);
 							projectileLevel.addFreshEntity(_entityToSpawn);
@@ -310,15 +316,16 @@ public class KnifeGloveRightclickedProcedure {
 						Level projectileLevel = _shootFrom.level();
 						if (!projectileLevel.isClientSide()) {
 							Projectile _entityToSpawn = new Object() {
-								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
+								public Projectile getArrow(Level level, Entity shooter, float damage, int knockback, byte piercing) {
 									AbstractArrow entityToSpawn = new PoisonKnifeEntity(TheDeepVoidModEntities.POISON_KNIFE.get(), level);
 									entityToSpawn.setOwner(shooter);
 									entityToSpawn.setBaseDamage(damage);
 									entityToSpawn.setKnockback(knockback);
 									entityToSpawn.setSilent(true);
+									entityToSpawn.setPierceLevel(piercing);
 									return entityToSpawn;
 								}
-							}.getArrow(projectileLevel, entity, 5, 0);
+							}.getArrow(projectileLevel, entity, (float) 3.5, 0, (byte) 1);
 							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.4, 11);
 							projectileLevel.addFreshEntity(_entityToSpawn);

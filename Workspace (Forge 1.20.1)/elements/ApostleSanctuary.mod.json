@@ -13,7 +13,7 @@
     "separation": 50,
     "restrictionBiomes": [
       {
-        "value": "#mod:is_deep_void"
+        "value": "#mod:apostle_biomes"
       }
     ],
     "terrainAdaptation": "beard_thin",

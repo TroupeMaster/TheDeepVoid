@@ -17,11 +17,11 @@ public class LavenditeShovelItem extends ShovelItem {
 			}
 
 			public float getSpeed() {
-				return 60f;
+				return 40f;
 			}
 
 			public float getAttackDamageBonus() {
-				return 3.5f;
+				return 1.5f;
 			}
 
 			public int getLevel() {

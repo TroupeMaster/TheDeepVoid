@@ -50,12 +50,12 @@ public abstract class FleshArmorItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 10f;
+				return 2f;
 			}
 
 			@Override
 			public float getKnockbackResistance() {
-				return 3.4f;
+				return 0.4f;
 			}
 		}, type, properties);
 	}

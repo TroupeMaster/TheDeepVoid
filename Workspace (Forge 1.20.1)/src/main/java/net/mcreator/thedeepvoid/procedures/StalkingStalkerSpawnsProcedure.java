@@ -29,7 +29,6 @@ import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.WatchingStalkerEntity;
-import net.mcreator.thedeepvoid.entity.StalkingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
@@ -161,75 +160,6 @@ public class StalkingStalkerSpawnsProcedure {
 										capability.stalkWatcherCount = _setval;
 										capability.syncPlayerVariables(entity);
 									});
-								}
-							}
-							if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerCount >= (double) DeepVoidConfigConfiguration.STALKERSPAWNTIMER.get()
-									/ 3) {
-								if (!world.getEntitiesOfClass(StalkingStalkerEntity.class, AABB.ofSize(new Vec3(x, y, z), 100, 100, 100), e -> true).isEmpty() == false
-										&& !world.getEntitiesOfClass(StalkerEntity.class, AABB.ofSize(new Vec3(x, y, z), 200, 200, 200), e -> true).isEmpty() == false) {
-									if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).stalkingCount >= 200
-											+ (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).randomStalkerValue) {
-										{
-											double _setval = 0;
-											entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-												capability.stalkingCount = _setval;
-												capability.syncPlayerVariables(entity);
-											});
-										}
-										TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnX = entity.getX() + Mth.nextInt(RandomSource.create(), -60, 60);
-										TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
-										TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnZ = entity.getZ() + Mth.nextInt(RandomSource.create(), -60, 60);
-										TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
-										if (!(!world
-												.getEntitiesOfClass(Player.class,
-														AABB.ofSize(new Vec3(TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnX, (entity.getY()), TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnZ), 40, 40, 40), e -> true)
-												.isEmpty())) {
-											if (world instanceof ServerLevel _level) {
-												Entity entityToSpawn = TheDeepVoidModEntities.STALKING_STALKER.get().spawn(_level,
-														BlockPos.containing(TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnX, entity.getY(), TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnZ), MobSpawnType.MOB_SUMMONED);
-												if (entityToSpawn != null) {
-													entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-												}
-											}
-											{
-												final Vec3 _center = new Vec3(TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnX, (entity.getY()), TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnZ);
-												List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream()
-														.sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-												for (Entity entityiterator : _entfound) {
-													if (entityiterator instanceof StalkingStalkerEntity) {
-														if (entityiterator instanceof StalkingStalkerEntity) {
-															((StalkingStalkerEntity) entityiterator).setAnimation("animation.stalker_digOut");
-														}
-														if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-															_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 75, 99, false, false));
-														if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-															_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 75, 99, false, false));
-														if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-															_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 75, 99, false, false));
-													}
-												}
-											}
-										} else if (!world
-												.getEntitiesOfClass(Player.class,
-														AABB.ofSize(new Vec3(TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnX, (entity.getY()), TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnZ), 20, 20, 20), e -> true)
-												.isEmpty()) {
-											{
-												double _setval = 180;
-												entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-													capability.stalkingCount = _setval;
-													capability.syncPlayerVariables(entity);
-												});
-											}
-										}
-									} else {
-										{
-											double _setval = (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).stalkingCount + 1;
-											entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-												capability.stalkingCount = _setval;
-												capability.syncPlayerVariables(entity);
-											});
-										}
-									}
 								}
 							}
 						}

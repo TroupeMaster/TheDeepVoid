@@ -124,6 +124,40 @@
             "varname": "OldHoleStructure",
             "enablecomment": true,
             "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 1,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": -64.0,
+            "textDefault": "",
+            "comment": "At which Y level should the structure in the Overworld generate (this needs to be at the deepest layer where bedrock generates)",
+            "vardisplay": "HoleStructureY",
+            "varname": "HoleStructureY",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "If crumbling bedrock should generate in the overworld",
+            "vardisplay": "CrumblingBedrockGenerate",
+            "varname": "CrumblingBedrockGenerate",
+            "enablecomment": true,
+            "stringlist": []
           }
         ]
       },
@@ -372,6 +406,40 @@
             "varname": "Darkness",
             "enablecomment": true,
             "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "Should players be teleported to the top of the dimension when falling in the void in the Deep Void",
+            "vardisplay": "DeepVoidTp",
+            "varname": "DeepVoidTp",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 1,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "Should players be able to mine Primordial Stone with the Shatterbone Pickaxe",
+            "vardisplay": "AllowMiningPrimordialStone",
+            "varname": "AllowMiningPrimordialStone",
+            "enablecomment": true,
+            "stringlist": []
           }
         ]
       },
@@ -392,57 +460,6 @@
             "comment": "When a player dies, they get sent to the Deep Void",
             "vardisplay": "Hell",
             "varname": "Hell",
-            "enablecomment": true,
-            "stringlist": []
-          },
-          {
-            "item": {
-              "value": ""
-            },
-            "silkTouchMode": 0,
-            "block": {
-              "value": ""
-            },
-            "logicField": 1,
-            "numberField": 0.0,
-            "textDefault": "",
-            "comment": "The Stalker can spawn in the overworld",
-            "vardisplay": "Stalked",
-            "varname": "Stalked",
-            "enablecomment": true,
-            "stringlist": []
-          },
-          {
-            "item": {
-              "value": ""
-            },
-            "silkTouchMode": 0,
-            "block": {
-              "value": ""
-            },
-            "logicField": 1,
-            "numberField": 0.0,
-            "textDefault": "",
-            "comment": "Corpses fall from the sky in the overworld",
-            "vardisplay": "CorpseRain",
-            "varname": "CorpseRain",
-            "enablecomment": true,
-            "stringlist": []
-          },
-          {
-            "item": {
-              "value": ""
-            },
-            "silkTouchMode": 0,
-            "block": {
-              "value": ""
-            },
-            "logicField": 1,
-            "numberField": 0.0,
-            "textDefault": "",
-            "comment": "Darkness engulfs everything",
-            "vardisplay": "CreepingDarkness",
-            "varname": "CreepingDarkness",
             "enablecomment": true,
             "stringlist": []
           },

@@ -8,8 +8,10 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
+import net.mcreator.thedeepvoid.procedures.LavenditeSwordSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
 import java.util.List;
@@ -26,7 +28,7 @@ public class LavenditeSwordItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 4f;
+				return 1f;
 			}
 
 			public int getLevel() {
@@ -46,6 +48,7 @@ public class LavenditeSwordItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Explodes into shards when broken"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(LavenditeSwordSpecialInformationProcedure.execute()));
 	}
 }

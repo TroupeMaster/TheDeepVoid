@@ -12,9 +12,10 @@
     "specialInformation": {
       "fixedValue": [
         "§7A tombstone with a 3 hit combo. When the wielder successfully performs the combo, all mobs around the target including itself will be inflicted with Doom.",
-        "§7When a victim is Doomed, a tombstone will fall on their head, dealing 25% of their health in damage.",
+        "§7When a victim is Doomed, a tombstone will fall on their head, dealing 16 damage that ignores armor.",
         "§7The Tombstone needs to be almost fully charged in order to deal damage."
-      ]
+      ],
+      "name": "TombstoneSpecialInformation"
     },
     "creativeTabs": [
       {
@@ -24,7 +25,7 @@
     "efficiency": 12.0,
     "attackSpeed": 0.7999999999999999,
     "enchantability": 0,
-    "damageVsEntity": 18.0,
+    "damageVsEntity": 16.0,
     "usageCount": 0,
     "glowCondition": {
       "fixedValue": false

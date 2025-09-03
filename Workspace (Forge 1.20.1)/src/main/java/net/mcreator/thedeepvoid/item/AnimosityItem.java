@@ -9,10 +9,12 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.network.chat.Component;
 
+import net.mcreator.thedeepvoid.procedures.AnimositySpecialInformationProcedure;
 import net.mcreator.thedeepvoid.procedures.AnimosityRightclickedProcedure;
 
 import java.util.List;
@@ -56,9 +58,7 @@ public class AnimosityItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77The first hit on an entity deals 2x more damage, 2.5x for players. This resets if the player dies"));
-		list.add(Component.literal("\u00A77Deals 1.5x more damage to players"));
-		list.add(Component.literal("\u00A77Hides the name of both the killer and the victim"));
-		list.add(Component.literal("\u00A77Right clicking will transform the sword into a fake diamond sword"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(AnimositySpecialInformationProcedure.execute()));
 	}
 }

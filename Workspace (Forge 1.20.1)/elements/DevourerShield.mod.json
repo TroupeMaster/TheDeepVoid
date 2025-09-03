@@ -12,7 +12,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7Brings all foes near the wielder when held up"
-      ]
+      ],
+      "name": "DevourerShieldSpecialInformation"
     },
     "creativeTabs": [
       {

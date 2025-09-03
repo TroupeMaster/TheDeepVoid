@@ -29,15 +29,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "§7Grim Upgrade",
-        "",
-        "§7Applies to:",
-        " §9Rotten Bone Armor",
-        " §9Crawler Armor",
-        "",
-        "§2Enhanced resistance in darkness / Attacks inflict Rot I"
-      ]
+      "fixedValue": []
     },
     "glowCondition": {
       "fixedValue": false

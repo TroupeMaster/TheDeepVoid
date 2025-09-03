@@ -98,7 +98,8 @@
     ],
     "name": "Ferryman's Lantern",
     "specialInformation": {
-      "fixedValue": []
+      "fixedValue": [],
+      "name": "FerrymanLanternSpecialInformation"
     },
     "hardness": 3.5,
     "resistance": 3.5,

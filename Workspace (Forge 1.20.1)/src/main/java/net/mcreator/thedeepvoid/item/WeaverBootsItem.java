@@ -29,7 +29,7 @@ public abstract class WeaverBootsItem extends ArmorItem {
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{3, 0, 0, 0}[type.getSlot().getIndex()];
+				return new int[]{4, 0, 0, 0}[type.getSlot().getIndex()];
 			}
 
 			@Override

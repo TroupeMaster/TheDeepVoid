@@ -12,7 +12,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7Break bone related blocks instantly"
-      ]
+      ],
+      "name": "GravediggerShovelSpecialInformation"
     },
     "creativeTabs": [
       {

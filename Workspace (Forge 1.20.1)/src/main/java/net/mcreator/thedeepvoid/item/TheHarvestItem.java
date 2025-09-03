@@ -9,8 +9,10 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
+import net.mcreator.thedeepvoid.procedures.TheHarvestSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.procedures.TheHarvestRightclickedProcedure;
 
 import java.util.List;
@@ -54,7 +56,7 @@ public class TheHarvestItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Hitting a foe with the scythe will create a soul slash, damaging any mob nearby and giving them the Hexed effect."));
-		list.add(Component.literal("\u00A77When attacking a foe that has Hexed, one more level will be added as well as two additional seconds."));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(TheHarvestSpecialInformationProcedure.execute()));
 	}
 }

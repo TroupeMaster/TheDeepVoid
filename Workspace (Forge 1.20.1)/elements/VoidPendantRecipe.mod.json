@@ -12,31 +12,31 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "Items.BONE"
+        "value": "CUSTOM:RottenBone"
       },
       {
-        "value": "Blocks.COBBLED_DEEPSLATE"
+        "value": "CUSTOM:MournerHide"
       },
       {
-        "value": ""
+        "value": "CUSTOM:RottenBone"
       },
       {
-        "value": "CUSTOM:BoneMarrow"
+        "value": "CUSTOM:MournerHide"
       },
       {
-        "value": "Items.BONE"
+        "value": "CUSTOM:Onyx"
       },
       {
-        "value": ""
+        "value": "CUSTOM:MournerHide"
       },
       {
-        "value": ""
+        "value": "CUSTOM:RottenBone"
       },
       {
-        "value": ""
+        "value": "CUSTOM:MournerHide"
       },
       {
-        "value": ""
+        "value": "CUSTOM:RottenBone"
       }
     ],
     "recipeReturnStack": {

@@ -26,6 +26,7 @@ import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -40,7 +41,6 @@ import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
-import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -53,6 +53,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.procedures.ForsakenOnInitialEntitySpawnProcedure;
 import net.mcreator.thedeepvoid.procedures.ForsakenOnEntityTickUpdateProcedure;
+import net.mcreator.thedeepvoid.procedures.ForsakenNaturalEntitySpawningConditionProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 import javax.annotation.Nullable;
@@ -102,17 +103,18 @@ public class ForsakenEntity extends Monster implements GeoEntity {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.4, false) {
+		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, LightEntity.class, (float) 16, 1.2, 1.4));
+		this.goalSelector.addGoal(2, new MeleeAttackGoal(this, 1.4, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return 9;
 			}
 		});
-		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 1));
-		this.targetSelector.addGoal(3, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(5, new FloatGoal(this));
-		this.goalSelector.addGoal(6, new LookAtPlayerGoal(this, Player.class, (float) 45));
+		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
+		this.targetSelector.addGoal(4, new HurtByTargetGoal(this));
+		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(6, new FloatGoal(this));
+		this.goalSelector.addGoal(7, new LookAtPlayerGoal(this, Player.class, (float) 45));
 	}
 
 	@Override
@@ -175,8 +177,12 @@ public class ForsakenEntity extends Monster implements GeoEntity {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(TheDeepVoidModEntities.FORSAKEN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-				(entityType, world, reason, pos, random) -> (world.getDifficulty() != Difficulty.PEACEFUL && Monster.isDarkEnoughToSpawn(world, pos, random) && Mob.checkMobSpawnRules(entityType, world, reason, pos, random)));
+		SpawnPlacements.register(TheDeepVoidModEntities.FORSAKEN.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
+			int x = pos.getX();
+			int y = pos.getY();
+			int z = pos.getZ();
+			return ForsakenNaturalEntitySpawningConditionProcedure.execute(world, x, y, z);
+		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

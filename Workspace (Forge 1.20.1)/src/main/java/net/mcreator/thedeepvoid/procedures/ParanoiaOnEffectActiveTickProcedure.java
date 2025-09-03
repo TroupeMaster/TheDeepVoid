@@ -2,6 +2,7 @@ package net.mcreator.thedeepvoid.procedures;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.network.chat.Component;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
@@ -24,7 +25,8 @@ public class ParanoiaOnEffectActiveTickProcedure {
 				Entity _ent = entity;
 				if (!_ent.level().isClientSide() && _ent.getServer() != null) {
 					_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "/title @s title {\"bold\":true,\"color\":\"red\",\"text\":\"SEEK LIGHT\"}");
+							_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent),
+							("/title @s title {\"bold\":true,\"color\":\"red\",\"text\":\"" + "" + Component.translatable("text.the_deep_void.seek_light").getString() + "\"}"));
 				}
 			}
 		}

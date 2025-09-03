@@ -38,6 +38,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
@@ -55,6 +56,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.mcreator.thedeepvoid.procedures.StalkerSpawnsProcedure;
 import net.mcreator.thedeepvoid.procedures.StalkerOnInitialEntitySpawnProcedure;
 import net.mcreator.thedeepvoid.procedures.StalkerEntityDiesProcedure;
+import net.mcreator.thedeepvoid.procedures.StalkerBoundingBoxScaleProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
@@ -88,7 +90,7 @@ public class StalkerEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "stalker_animated");
+		this.entityData.define(TEXTURE, "stalkernew");
 	}
 
 	public void setTexture(String texture) {
@@ -214,7 +216,12 @@ public class StalkerEntity extends Monster implements GeoEntity {
 
 	@Override
 	public EntityDimensions getDimensions(Pose p_33597_) {
-		return super.getDimensions(p_33597_).scale((float) 1);
+		Entity entity = this;
+		Level world = this.level();
+		double x = this.getX();
+		double y = entity.getY();
+		double z = entity.getZ();
+		return super.getDimensions(p_33597_).scale((float) StalkerBoundingBoxScaleProcedure.execute(entity));
 	}
 
 	public static void init() {
@@ -223,9 +230,9 @@ public class StalkerEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.4);
-		builder = builder.add(Attributes.MAX_HEALTH, 480);
+		builder = builder.add(Attributes.MAX_HEALTH, 500);
 		builder = builder.add(Attributes.ARMOR, 10);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 5);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 6);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 100);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 5);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 0.8);
@@ -236,8 +243,11 @@ public class StalkerEntity extends Monster implements GeoEntity {
 		if (this.animationprocedure.equals("empty")) {
 			if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))
 
-			) {
-				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalker_walk"));
+					&& !this.isAggressive()) {
+				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalker_aggressive"));
+			}
+			if (this.isAggressive() && event.isMoving()) {
+				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalker_aggressive"));
 			}
 			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalker_idle"));
 		}

@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "structure",
   "definition": {
-    "structure": "cult_ruins1",
+    "structure": "cult_ruins1_new",
     "projection": "terrain_matching",
     "ignoredBlocks": [
       {

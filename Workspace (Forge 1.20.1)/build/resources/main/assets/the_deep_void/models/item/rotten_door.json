@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "the_deep_void:item/rotten_door_item"
+    "layer0": "the_deep_void:item/rotten_door_item_new"
   },
   "render_type": "translucent"
 }

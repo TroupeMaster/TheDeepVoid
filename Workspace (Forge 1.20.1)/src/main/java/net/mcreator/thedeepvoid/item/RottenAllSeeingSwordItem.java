@@ -14,6 +14,7 @@ import net.minecraft.network.chat.Component;
 
 import net.mcreator.thedeepvoid.procedures.RottenWoodenSwordToolInHandTickProcedure;
 import net.mcreator.thedeepvoid.procedures.RottenWoodenSwordLivingEntityIsHitWithToolProcedure;
+import net.mcreator.thedeepvoid.procedures.AllSeeingSwordSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
 import java.util.List;
@@ -57,8 +58,8 @@ public class RottenAllSeeingSwordItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Right click on an entity to pass your pain onto them, sacrificing your health based on a quarter of your opponent's current health and some durability"));
-		list.add(Component.literal("\u00A77Each hit makes the sword swing faster"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(AllSeeingSwordSpecialInformationProcedure.execute()));
 	}
 
 	@Override

@@ -31,7 +31,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7Flings shadow daggers out of your enemies, dealing damage. The daggers then home onto the nearest foe, healing the caster"
-      ]
+      ],
+      "name": "ForbiddenTomeSpecialInformation"
     },
     "glowCondition": {
       "fixedValue": false

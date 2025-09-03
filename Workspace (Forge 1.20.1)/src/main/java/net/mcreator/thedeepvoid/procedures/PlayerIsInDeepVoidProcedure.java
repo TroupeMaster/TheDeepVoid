@@ -45,14 +45,13 @@ public class PlayerIsInDeepVoidProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		//These are some functions that activate every tick for the player, which have general uses
-		if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) {//When under y=1, give the player Hallucinate
+		if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) {
 			if (DeepVoidConfigConfiguration.PLAYERHALLUCINATES.get() == true) {
 				if (entity.getY() <= 1 && (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.HALLUCINATE.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.HALLUCINATE.get()).getDuration() : 0) <= 8) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.HALLUCINATE.get(), 140, 0, false, false));
 				}
-			} //If higher than y=0, decrease the Nightmare Count
+			}
 			if (y > 0) {
 				if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).NightmareCount >= 10) {
 					{
@@ -63,7 +62,7 @@ public class PlayerIsInDeepVoidProcedure {
 						});
 					}
 				}
-			} //When under y=20, increase the chance of a ''Cave Tremble'' to happen. Reset to 0 if not successful
+			}
 			if (y <= 20) {
 				if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).cave_tremble >= 10000) {
 					{
@@ -94,18 +93,17 @@ public class PlayerIsInDeepVoidProcedure {
 					}
 				}
 			}
-		} //If the player is outside the Deep Void, set the ''StalkerSpawn'' variable to false
-		if (((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) == false) {
-			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerSpawn == true) {
-				{
-					boolean _setval = false;
-					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.StalkerSpawn = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
+		}
+		if (((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) == false
+				&& (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerSpawn == true) {
+			{
+				boolean _setval = false;
+				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.StalkerSpawn = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
-		} //When higher than y=20, randomly spawn a falling corpse if the biome can spawn those
+		}
 		if (world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:falling_corpse_spawn"))) && y >= 40) {
 			if (DeepVoidConfigConfiguration.SPAWNFALLINGCORPSE.get() == true) {
 				if ((entity instanceof LivingEntity _livEnt14 && _livEnt14.hasEffect(TheDeepVoidModMobEffects.LURKER_HEAD_NEAR.get())) == false) {
@@ -120,7 +118,7 @@ public class PlayerIsInDeepVoidProcedure {
 					}
 				}
 			}
-		} //Reset all Stalker Variables if the Stalker despawns (StalkerDespawned=true)
+		}
 		if (TheDeepVoidModVariables.MapVariables.get(world).StalkerDespawned == true) {
 			TheDeepVoidModVariables.MapVariables.get(world).StalkerDespawned = false;
 			TheDeepVoidModVariables.MapVariables.get(world).syncData(world);

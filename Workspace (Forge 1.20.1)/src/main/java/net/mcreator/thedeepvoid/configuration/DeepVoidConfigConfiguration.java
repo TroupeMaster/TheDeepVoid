@@ -12,6 +12,8 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Boolean> DEEPVOIDFOG;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> STOPACTIVEBLOCKGENERATION;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> OLDHOLESTRUCTURE;
+	public static final ForgeConfigSpec.ConfigValue<Double> HOLESTRUCTUREY;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> CRUMBLINGBEDROCKGENERATE;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> SPAWNABDUCTORS;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> SPAWNFALLINGCORPSE;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> PLACECORPSEONIMPACT;
@@ -26,10 +28,9 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Boolean> PLAYERHALLUCINATES;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> STALKERBREAKSBLOCKS;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> DARKNESS;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> DEEPVOIDTP;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> ALLOWMININGPRIMORDIALSTONE;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> HELL;
-	public static final ForgeConfigSpec.ConfigValue<Boolean> STALKED;
-	public static final ForgeConfigSpec.ConfigValue<Boolean> CORPSERAIN;
-	public static final ForgeConfigSpec.ConfigValue<Boolean> CREEPINGDARKNESS;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> ENDLESSABYSS;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> PURGATORY;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> GIVETORCHES;
@@ -45,6 +46,8 @@ public class DeepVoidConfigConfiguration {
 		STOPACTIVEBLOCKGENERATION = BUILDER.comment("If blocks under specific biomes should generate plants on top of them to make the cave biome (this depends on random tick speed). If the server lags a lot, set this to true")
 				.define("StopActiveBlockGeneration", false);
 		OLDHOLESTRUCTURE = BUILDER.comment("If the old structure with the hole to the void should generate in the overworld instead of the new version").define("OldHoleStructure", false);
+		HOLESTRUCTUREY = BUILDER.comment("At which Y level should the structure in the Overworld generate (this needs to be at the deepest layer where bedrock generates)").define("HoleStructureY", (double) -64);
+		CRUMBLINGBEDROCKGENERATE = BUILDER.comment("If crumbling bedrock should generate in the overworld").define("CrumblingBedrockGenerate", true);
 		BUILDER.pop();
 		BUILDER.push("Spawns");
 		SPAWNABDUCTORS = BUILDER.comment("Whether Abductors will spawn in the Overworld or not").define("SpawnAbductors", true);
@@ -63,12 +66,11 @@ public class DeepVoidConfigConfiguration {
 		PLAYERHALLUCINATES = BUILDER.comment("If players should hallucinate below y=1 or not").define("PlayerHallucinates", true);
 		STALKERBREAKSBLOCKS = BUILDER.comment("Should the Stalker be able to break certain blocks").define("StalkerBreaksBlocks", true);
 		DARKNESS = BUILDER.comment("If Darkness should attack the Player below y=0 while still keeping Hallucinate").define("Darkness", true);
+		DEEPVOIDTP = BUILDER.comment("Should players be teleported to the top of the dimension when falling in the void in the Deep Void").define("DeepVoidTp", true);
+		ALLOWMININGPRIMORDIALSTONE = BUILDER.comment("Should players be able to mine Primordial Stone with the Shatterbone Pickaxe").define("AllowMiningPrimordialStone", false);
 		BUILDER.pop();
 		BUILDER.push("Gameplay Changes");
 		HELL = BUILDER.comment("When a player dies, they get sent to the Deep Void").define("Hell", false);
-		STALKED = BUILDER.comment("The Stalker can spawn in the overworld").define("Stalked", false);
-		CORPSERAIN = BUILDER.comment("Corpses fall from the sky in the overworld").define("CorpseRain", false);
-		CREEPINGDARKNESS = BUILDER.comment("Darkness engulfs everything").define("CreepingDarkness", false);
 		ENDLESSABYSS = BUILDER.comment("The player spawns in the Deep Void").define("EndlessAbyss", false);
 		PURGATORY = BUILDER.comment("Like Hell, but when the player dies in the Deep Void, they stay in the Deep Void").define("Purgatory", false);
 		GIVETORCHES = BUILDER.comment("If torches should be given to players that respawn in the Deep Void (through Hell or Purgatory)").define("GiveTorches", true);

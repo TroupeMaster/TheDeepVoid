@@ -1,0 +1,41 @@
+{
+  "_fv": 66,
+  "_type": "feature",
+  "definition": {
+    "skipPlacement": false,
+    "generationStep": "SURFACE_STRUCTURES",
+    "restrictionBiomes": [
+      {
+        "value": "CUSTOM:AshenCrags"
+      },
+      {
+        "value": "CUSTOM:BefouledMarsh"
+      },
+      {
+        "value": "CUSTOM:DriftingMonoliths"
+      },
+      {
+        "value": "CUSTOM:FilledGraveyard"
+      },
+      {
+        "value": "CUSTOM:ForgottenValley"
+      },
+      {
+        "value": "CUSTOM:GatheringGrounds"
+      },
+      {
+        "value": "CUSTOM:GrimCanopy"
+      },
+      {
+        "value": "CUSTOM:MourningGraveyard"
+      },
+      {
+        "value": "CUSTOM:WatchingUndergrowth"
+      },
+      {
+        "value": "CUSTOM:WindsweptHollow"
+      }
+    ],
+    "featurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"feature_container\" deletable=\"false\" x=\"40\" y=\"40\"><value name=\"feature\"><block type=\"feature_random_patch_simple\" inline=\"false\"><field name=\"tries\">16</field><field name=\"xzSpread\">8</field><field name=\"ySpread\">3</field><value name=\"block\"><block type=\"state_provider_weighted\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"2\"></mutation><field name=\"weight0\">2</field><field name=\"weight1\">1</field><value name=\"entry0\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">CUSTOM:AncientPot</field></block></value><value name=\"entry1\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">CUSTOM:AncientUrns</field></block></value></block></value><value name=\"condition\"><block type=\"block_predicate_all_of\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"2\"></mutation><value name=\"condition0\"><block type=\"block_predicate_is_air\"></block></value><value name=\"condition1\"><block type=\"block_predicate_solid\"><field name=\"x\">0</field><field name=\"y\">-1</field><field name=\"z\">0</field></block></value></block></value></block></value><next><block type=\"placement_rarity\"><field name=\"rarity\">100</field><next><block type=\"placement_in_square\"><next><block type=\"placement_heightmap\"><field name=\"heightmap\">MOTION_BLOCKING</field><next><block type=\"placement_biome_filter\"></block></next></block></next></block></next></block></next></block></xml>"
+  }
+}

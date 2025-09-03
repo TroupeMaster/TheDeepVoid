@@ -2,10 +2,10 @@
   "_fv": 66,
   "_type": "block",
   "definition": {
-    "texture": "polished_monolithic_stone",
-    "textureTop": "polished_monolithic_stone",
+    "texture": "polished_monolithic_new",
+    "textureTop": "polished_monolithic_new",
     "textureLeft": "",
-    "textureFront": "polished_monolithic_stone",
+    "textureFront": "polished_monolithic_new",
     "textureRight": "",
     "textureBack": "",
     "renderType": 11,

@@ -4,8 +4,8 @@
   "definition": {
     "mobName": "Watching Stalker",
     "mobLabel": "",
-    "mobModelTexture": "stalking_stalker_texture_new.png",
-    "mobModelGlowTexture": "stalker_animated_eyes.png",
+    "mobModelTexture": "stalkernew.png",
+    "mobModelGlowTexture": "stalkernew_eyes.png",
     "visualScale": {
       "fixedValue": 1.0
     },
@@ -14,7 +14,7 @@
     },
     "entityDataEntries": [],
     "modelWidth": 0.6,
-    "modelHeight": 1.8,
+    "modelHeight": 3.3000000000000003,
     "modelShadowSize": 0.5,
     "mountedYOffset": 0.0,
     "stepHeight": 0.6,
@@ -112,9 +112,9 @@
     "hasAI": true,
     "aiBase": "(none)",
     "aixml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"aitasks_container\" deletable=\"false\" x=\"40\" y=\"40\"><next><block type=\"watch_closest_entity\"><field name=\"entity\">EntityPlayer</field><field name=\"radius\">200</field><field name=\"condition\">null,null</field></block></next></block></xml>",
-    "model": "stalker.geo.json",
-    "groupName": "headPart",
-    "animation1": "animation.stalker_slowIdle",
+    "model": "stalkernew.geo.json",
+    "groupName": "head",
+    "animation1": "animation.stalker_idle",
     "animation2": "",
     "animation3": "",
     "animation4": "",

@@ -13,6 +13,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.thedeepvoid.procedures.TombstoneToolInInventoryTickProcedure;
+import net.mcreator.thedeepvoid.procedures.TombstoneSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.procedures.TombstoneLivingEntityIsHitWithToolProcedure;
 import net.mcreator.thedeepvoid.procedures.TombstoneInHandTickProcedure;
 
@@ -30,7 +31,7 @@ public class TombstoneItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 14f;
+				return 12f;
 			}
 
 			public int getLevel() {
@@ -57,9 +58,8 @@ public class TombstoneItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77A tombstone with a 3 hit combo. When the wielder successfully performs the combo, all mobs around the target including itself will be inflicted with Doom."));
-		list.add(Component.literal("\u00A77When a victim is Doomed, a tombstone will fall on their head, dealing 25% of their health in damage."));
-		list.add(Component.literal("\u00A77The Tombstone needs to be almost fully charged in order to deal damage."));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(TombstoneSpecialInformationProcedure.execute()));
 	}
 
 	@Override

@@ -29,11 +29,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "§7Summons a loyal rideable Eyekin",
-        "§7Press the Mount Fly key to fly with the Eyekin",
-        "§7Right click on a Eyekin to despawn it"
-      ]
+      "fixedValue": []
     },
     "glowCondition": {
       "fixedValue": false

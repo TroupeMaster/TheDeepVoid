@@ -32,6 +32,8 @@ import net.mcreator.thedeepvoid.entity.ShadowEntity;
 import net.mcreator.thedeepvoid.entity.RootedCloneEntity;
 import net.mcreator.thedeepvoid.entity.MultipleEyesEntity;
 import net.mcreator.thedeepvoid.entity.LightEntity;
+import net.mcreator.thedeepvoid.entity.LastingShadowHandEntity;
+import net.mcreator.thedeepvoid.entity.HookEndEntity;
 import net.mcreator.thedeepvoid.entity.HandSpawnEntity;
 import net.mcreator.thedeepvoid.entity.FourEyesEntity;
 import net.mcreator.thedeepvoid.entity.DeathMawHiddenEntity;
@@ -204,7 +206,7 @@ public class LightAttackedProcedure {
 				}
 			}
 		}
-		if (sourceentity instanceof ShadowHandEntity) {
+		if (sourceentity instanceof ShadowHandEntity || sourceentity instanceof LastingShadowHandEntity) {
 			if (entity instanceof Player) {
 				if (!world.getEntitiesOfClass(WeaverOfSoulsEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()) {
 					if (((Entity) world.getEntitiesOfClass(WeaverOfSoulsEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).stream().sorted(new Object() {
@@ -214,6 +216,13 @@ public class LightAttackedProcedure {
 					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof Mob _entity)
 						_entity.getNavigation().moveTo((entity.getX()), (entity.getY()), (entity.getZ()), 1.2);
 				}
+			}
+		}
+		if (entity instanceof HookEndEntity) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			} else if (event != null && event.hasResult()) {
+				event.setResult(Event.Result.DENY);
 			}
 		}
 	}

@@ -7,6 +7,9 @@
     "keyBindingCategoryKey": "gameplay",
     "onKeyPressed": {
       "name": "ArmorAbilityOnKeyPressed"
+    },
+    "onKeyReleased": {
+      "name": "ArmorAbilityOnKeyReleased"
     }
   }
 }

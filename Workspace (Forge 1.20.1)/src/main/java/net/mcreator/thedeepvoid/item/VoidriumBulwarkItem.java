@@ -14,6 +14,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.thedeepvoid.procedures.VoidriumBulwarkToolInInventoryTickProcedure;
+import net.mcreator.thedeepvoid.procedures.VoidriumBulwarkSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.procedures.VoidriumBulwarkRightclickedProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
@@ -39,13 +40,8 @@ public class VoidriumBulwarkItem extends ShieldItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79The Deep Void"));
-		list.add(Component.literal("\u00A77Enemies that hit the shield take damage"));
-		list.add(Component.literal("\u00A77Right click at the right moment to parry an attack, gaining Strength II for a short time and stunning foes"));
-		list.add(Component.literal(""));
-		list.add(Component.literal("\u00A77When in Main Hand:"));
-		list.add(Component.literal(" \u00A72 4 Attack Damage"));
-		list.add(Component.literal(" \u00A72 4 Attack Speed"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(VoidriumBulwarkSpecialInformationProcedure.execute()));
 	}
 
 	@Override

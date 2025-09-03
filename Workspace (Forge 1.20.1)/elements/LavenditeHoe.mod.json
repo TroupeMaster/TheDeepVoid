@@ -17,7 +17,7 @@
         "value": "CUSTOM:TheDeepVoid"
       }
     ],
-    "efficiency": 60.0,
+    "efficiency": 40.0,
     "attackSpeed": 3.0,
     "enchantability": 22,
     "damageVsEntity": 1.0,

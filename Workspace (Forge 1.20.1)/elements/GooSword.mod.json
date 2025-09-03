@@ -12,7 +12,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7Rotting foes get poisoned with Poison II"
-      ]
+      ],
+      "name": "GooSwordSpecialInformation"
     },
     "creativeTabs": [
       {

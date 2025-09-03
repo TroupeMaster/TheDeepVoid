@@ -55,7 +55,7 @@ public class HivemindTreasureBagRightClickProcedure {
 				_level.addFreshEntity(entityToSpawn);
 			}
 		}
-		for (int index3 = 0; index3 < 3; index3++) {
+		for (int index3 = 0; index3 < 6; index3++) {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.FLESH_BONE.get()));
 				entityToSpawn.setPickUpDelay(10);
@@ -63,23 +63,15 @@ public class HivemindTreasureBagRightClickProcedure {
 				_level.addFreshEntity(entityToSpawn);
 			}
 		}
-		for (int index4 = 0; index4 < 1; index4++) {
+		for (int index4 = 0; index4 < 2; index4++) {
 			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.AMBROSIA.get()));
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.GOLDEN_APPLE));
 				entityToSpawn.setPickUpDelay(10);
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);
 			}
 		}
-		for (int index5 = 0; index5 < 2; index5++) {
-			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.ENCHANTED_GOLDEN_APPLE));
-				entityToSpawn.setPickUpDelay(10);
-				entityToSpawn.setUnlimitedLifetime();
-				_level.addFreshEntity(entityToSpawn);
-			}
-		}
-		if (TheDeepVoidModVariables.MapVariables.get(world).apostleFightCount >= 2) {
+		if (TheDeepVoidModVariables.MapVariables.get(world).hivemindFightCount >= 2) {
 			if (entity instanceof ServerPlayer _player) {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:i_always_come_back"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);

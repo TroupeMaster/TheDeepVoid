@@ -12,7 +12,8 @@
     "specialInformation": {
       "fixedValue": [
         "§9Explodes into shards when broken"
-      ]
+      ],
+      "name": "LavenditeSwordSpecialInformation"
     },
     "creativeTabs": [
       {
@@ -22,7 +23,7 @@
     "efficiency": 60.0,
     "attackSpeed": 3.0,
     "enchantability": 22,
-    "damageVsEntity": 8.0,
+    "damageVsEntity": 5.0,
     "usageCount": 12,
     "glowCondition": {
       "fixedValue": false

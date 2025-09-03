@@ -1,10 +1,6 @@
 package net.mcreator.thedeepvoid.procedures;
 
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.living.LivingEvent;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
@@ -21,20 +17,8 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
 
-import javax.annotation.Nullable;
-
-@Mod.EventBusSubscriber
 public class FallenWeaverBossMusicProcedure {
-	@SubscribeEvent
-	public static void onEntityTick(LivingEvent.LivingTickEvent event) {
-		execute(event, event.getEntity().level(), event.getEntity());
-	}
-
 	public static void execute(LevelAccessor world, Entity entity) {
-		execute(null, world, entity);
-	}
-
-	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		if (entity instanceof WeaverOfSoulsEntity) {

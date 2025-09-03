@@ -25,7 +25,7 @@ public abstract class RottenBoneArmorItem extends ArmorItem {
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{3, 5, 6, 3}[type.getSlot().getIndex()];
+				return new int[]{2, 4, 5, 2}[type.getSlot().getIndex()];
 			}
 
 			@Override

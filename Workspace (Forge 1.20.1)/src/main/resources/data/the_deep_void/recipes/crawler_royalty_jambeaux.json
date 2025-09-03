@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:bone_crawler_molt_piece"
+    },
+    "b": {
+      "item": "the_deep_void:grim_crawler_leggings"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:crawler_royalty_leggings",
+    "count": 1
+  }
+}

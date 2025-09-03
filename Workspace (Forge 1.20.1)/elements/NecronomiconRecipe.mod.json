@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "EQUIPMENT",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:FleshBone"
+      },
+      {
+        "value": "CUSTOM:FleshBone"
+      },
+      {
+        "value": "CUSTOM:FleshBone"
+      },
+      {
+        "value": "CUSTOM:FleshBlock"
+      },
+      {
+        "value": "Items.BOOK"
+      },
+      {
+        "value": "CUSTOM:FleshBlock"
+      },
+      {
+        "value": "CUSTOM:FleshChunk"
+      },
+      {
+        "value": "CUSTOM:FleshChunk"
+      },
+      {
+        "value": "CUSTOM:FleshChunk"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Necronomicon"
+    },
+    "name": "necronomicon",
+    "namespace": "mod"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:befouled_marsh",
+  "features": "the_deep_void:void_stem_marsh",
+  "step": "vegetal_decoration"
+}

@@ -10,6 +10,9 @@
     "textureLeggings": "ancient_leggings",
     "enableBoots": true,
     "textureBoots": "ancient_boots",
+    "onBodyTick": {
+      "name": "AllSeeingFullArmor"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:TheDeepVoid"
@@ -85,10 +88,10 @@
       "fixedValue": false
     },
     "maxDamage": 20,
-    "damageValueHelmet": 2,
+    "damageValueHelmet": 3,
     "damageValueBody": 6,
     "damageValueLeggings": 6,
-    "damageValueBoots": 2,
+    "damageValueBoots": 3,
     "enchantability": 10,
     "toughness": 0.5,
     "knockbackResistance": 0.0,

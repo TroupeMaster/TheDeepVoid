@@ -13,7 +13,8 @@
       "fixedValue": [
         "§7Right click with the dagger to attack. Deals more damage after attacking with the dagger in the main-hand",
         "§7Inflicts rot on hit (right click)"
-      ]
+      ],
+      "name": "OffHandVoidDaggerSpecialInformation"
     },
     "creativeTabs": [],
     "efficiency": 8.0,

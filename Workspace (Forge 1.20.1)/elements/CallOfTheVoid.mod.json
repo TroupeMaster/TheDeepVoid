@@ -12,6 +12,9 @@
     "mobEffectCategory": "HARMFUL",
     "renderStatusInInventory": true,
     "renderStatusInHUD": true,
+    "onActiveTick": {
+      "name": "CallOfTheVoidOnEffectActiveTick"
+    },
     "onExpired": {
       "name": "CallOfTheVoidEffectExpires"
     }

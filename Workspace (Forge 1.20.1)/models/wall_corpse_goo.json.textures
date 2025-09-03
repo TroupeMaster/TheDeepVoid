@@ -2,7 +2,7 @@
   "mappings": {
     "default": {
       "map": {
-        "0": "rotting_corpse_goo"
+        "0": "rotting_corpse_new"
       },
       "name": "default"
     }

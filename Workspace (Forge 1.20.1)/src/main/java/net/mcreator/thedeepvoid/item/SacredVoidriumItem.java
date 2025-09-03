@@ -31,7 +31,7 @@ public abstract class SacredVoidriumItem extends ArmorItem {
 
 			@Override
 			public int getDefenseForType(ArmorItem.Type type) {
-				return new int[]{10, 12, 14, 10}[type.getSlot().getIndex()];
+				return new int[]{6, 7, 9, 6}[type.getSlot().getIndex()];
 			}
 
 			@Override
@@ -56,7 +56,7 @@ public abstract class SacredVoidriumItem extends ArmorItem {
 
 			@Override
 			public float getToughness() {
-				return 5.2f;
+				return 3.25f;
 			}
 
 			@Override

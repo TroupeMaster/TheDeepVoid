@@ -140,4 +140,12 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> HIVEMIND_HURT = REGISTRY.register("hivemind_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hivemind_hurt")));
 	public static final RegistryObject<SoundEvent> HIVEMIND_SCREAM = REGISTRY.register("hivemind_scream", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hivemind_scream")));
 	public static final RegistryObject<SoundEvent> EYEKIN_WING_FLAP = REGISTRY.register("eyekin_wing_flap", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "eyekin_wing_flap")));
+	public static final RegistryObject<SoundEvent> PRIMORDIAL_CRAWLER_AMBIENT = REGISTRY.register("primordial_crawler_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "primordial_crawler_ambient")));
+	public static final RegistryObject<SoundEvent> PRIMORDIAL_CRAWLER_HURT = REGISTRY.register("primordial_crawler_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "primordial_crawler_hurt")));
+	public static final RegistryObject<SoundEvent> PRIMORDIAL_CRAWLER_DEATH = REGISTRY.register("primordial_crawler_death", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "primordial_crawler_death")));
+	public static final RegistryObject<SoundEvent> PRIMORDIAL_CRAWLER_SPIT = REGISTRY.register("primordial_crawler_spit", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "primordial_crawler_spit")));
+	public static final RegistryObject<SoundEvent> PRIMORDIAL_CRAWLER_IMPACT = REGISTRY.register("primordial_crawler_impact", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "primordial_crawler_impact")));
+	public static final RegistryObject<SoundEvent> THE_HAUNT = REGISTRY.register("the_haunt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "the_haunt")));
+	public static final RegistryObject<SoundEvent> SENTIENT_CHAINSAW_USE = REGISTRY.register("sentient_chainsaw_use", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "sentient_chainsaw_use")));
+	public static final RegistryObject<SoundEvent> FLESHY_EXPLOSION = REGISTRY.register("fleshy_explosion", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "fleshy_explosion")));
 }

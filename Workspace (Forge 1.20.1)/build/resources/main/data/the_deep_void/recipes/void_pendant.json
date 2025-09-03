@@ -2,18 +2,19 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    "ab",
-    "ca"
+    "aba",
+    "bcb",
+    "aba"
   ],
   "key": {
     "a": {
-      "item": "minecraft:bone"
+      "item": "the_deep_void:rotten_bone"
     },
     "b": {
-      "item": "minecraft:cobbled_deepslate"
+      "item": "the_deep_void:mourner_hide"
     },
     "c": {
-      "item": "the_deep_void:bone_marrow"
+      "item": "the_deep_void:onyx"
     }
   },
   "result": {

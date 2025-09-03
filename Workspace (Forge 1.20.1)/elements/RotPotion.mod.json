@@ -11,7 +11,7 @@
         "effect": {
           "value": "CUSTOM:Rot"
         },
-        "duration": 240,
+        "duration": 460,
         "amplifier": 0,
         "ambient": false,
         "showParticles": true

@@ -14,6 +14,7 @@ import net.minecraft.network.chat.Component;
 
 import net.mcreator.thedeepvoid.procedures.VoidDaggerToolInInventoryTickProcedure;
 import net.mcreator.thedeepvoid.procedures.VoidDaggerToolInHandTickProcedure;
+import net.mcreator.thedeepvoid.procedures.VoidDaggerSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.procedures.VoidDaggerLivingEntityIsHitWithToolProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
@@ -58,8 +59,8 @@ public class VoidDaggerItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Puts a second dagger in the wielder's off-hand"));
-		list.add(Component.literal("\u00A77Inflicts Wither on hit"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(VoidDaggerSpecialInformationProcedure.execute()));
 	}
 
 	@Override

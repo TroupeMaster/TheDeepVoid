@@ -36,9 +36,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
-import net.mcreator.thedeepvoid.entity.RottenLickerHookEntity;
 import net.mcreator.thedeepvoid.entity.PusBallProjectileEntity;
-import net.mcreator.thedeepvoid.entity.LickerHookTongueEntity;
 import net.mcreator.thedeepvoid.entity.LavenditeShardProjEntity;
 import net.mcreator.thedeepvoid.entity.FlareEntity;
 import net.mcreator.thedeepvoid.entity.BoneBallProjectileEntity;
@@ -71,9 +69,9 @@ public class LavenditeArmorProcedureProcedure {
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.LAVENDITE_ARMOR_LEGGINGS.get()
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.LAVENDITE_ARMOR_BOOTS.get()) {
 			if (immediatesourceentity instanceof Arrow || immediatesourceentity instanceof SpectralArrow || immediatesourceentity instanceof DragonFireball || immediatesourceentity instanceof LargeFireball
-					|| immediatesourceentity instanceof FireworkRocketEntity || immediatesourceentity instanceof SmallFireball || immediatesourceentity instanceof RottenLickerHookEntity || immediatesourceentity instanceof FlareEntity
-					|| immediatesourceentity instanceof LickerHookTongueEntity || immediatesourceentity instanceof PusBallProjectileEntity || immediatesourceentity instanceof ThrownEgg || immediatesourceentity instanceof Snowball
-					|| immediatesourceentity instanceof ShulkerBullet || immediatesourceentity instanceof ThrownEnderpearl || immediatesourceentity instanceof BoneBallProjectileEntity || immediatesourceentity instanceof LavenditeShardProjEntity) {
+					|| immediatesourceentity instanceof FireworkRocketEntity || immediatesourceentity instanceof SmallFireball || immediatesourceentity instanceof FlareEntity || immediatesourceentity instanceof PusBallProjectileEntity
+					|| immediatesourceentity instanceof ThrownEgg || immediatesourceentity instanceof Snowball || immediatesourceentity instanceof ShulkerBullet || immediatesourceentity instanceof ThrownEnderpearl
+					|| immediatesourceentity instanceof BoneBallProjectileEntity || immediatesourceentity instanceof LavenditeShardProjEntity) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				} else if (event != null && event.hasResult()) {
@@ -93,9 +91,9 @@ public class LavenditeArmorProcedureProcedure {
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GRIM_LAVENDITE_LEGGINGS.get()
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GRIM_LAVENDITE_BOOTS.get()) {
 			if (immediatesourceentity instanceof Arrow || immediatesourceentity instanceof SpectralArrow || immediatesourceentity instanceof DragonFireball || immediatesourceentity instanceof LargeFireball
-					|| immediatesourceentity instanceof FireworkRocketEntity || immediatesourceentity instanceof SmallFireball || immediatesourceentity instanceof RottenLickerHookEntity || immediatesourceentity instanceof FlareEntity
-					|| immediatesourceentity instanceof LickerHookTongueEntity || immediatesourceentity instanceof PusBallProjectileEntity || immediatesourceentity instanceof ThrownEgg || immediatesourceentity instanceof Snowball
-					|| immediatesourceentity instanceof ShulkerBullet || immediatesourceentity instanceof ThrownEnderpearl || immediatesourceentity instanceof BoneBallProjectileEntity || immediatesourceentity instanceof LavenditeShardProjEntity) {
+					|| immediatesourceentity instanceof FireworkRocketEntity || immediatesourceentity instanceof SmallFireball || immediatesourceentity instanceof FlareEntity || immediatesourceentity instanceof PusBallProjectileEntity
+					|| immediatesourceentity instanceof ThrownEgg || immediatesourceentity instanceof Snowball || immediatesourceentity instanceof ShulkerBullet || immediatesourceentity instanceof ThrownEnderpearl
+					|| immediatesourceentity instanceof BoneBallProjectileEntity || immediatesourceentity instanceof LavenditeShardProjEntity) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				} else if (event != null && event.hasResult()) {
@@ -122,19 +120,12 @@ public class LavenditeArmorProcedureProcedure {
 				if (Math.random() < 0.8) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")), SoundSource.PLAYERS, 1, (float) 0.7);
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("enchant.thorns.hit")), SoundSource.NEUTRAL, 1, (float) 0.7);
 						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")), SoundSource.PLAYERS, 1, (float) 0.7, false);
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("enchant.thorns.hit")), SoundSource.NEUTRAL, 1, (float) 0.7, false);
 						}
 					}
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("enchant.thorns.hit")), SoundSource.PLAYERS, 1, (float) 0.7);
-						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("enchant.thorns.hit")), SoundSource.PLAYERS, 1, (float) 0.7, false);
-						}
-					}
-					sourceentity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), entity), (float) amount);
+					sourceentity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), entity), (float) Math.ceil(amount / 5));
 					world.addParticle((SimpleParticleType) (TheDeepVoidModParticleTypes.PENTAGRAM.get()), (sourceentity.getX()), (sourceentity.getY() + 1), (sourceentity.getZ()), 0, 0, 0);
 				}
 			}
@@ -145,19 +136,12 @@ public class LavenditeArmorProcedureProcedure {
 				if (Math.random() < 0.8) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")), SoundSource.PLAYERS, 1, (float) 0.7);
-						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.enderman.teleport")), SoundSource.PLAYERS, 1, (float) 0.7, false);
-						}
-					}
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("enchant.thorns.hit")), SoundSource.PLAYERS, 1, (float) 0.7);
 						} else {
 							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("enchant.thorns.hit")), SoundSource.PLAYERS, 1, (float) 0.7, false);
 						}
 					}
-					sourceentity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), entity), (float) amount);
+					sourceentity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), entity), (float) Math.ceil(amount / 4));
 					world.addParticle((SimpleParticleType) (TheDeepVoidModParticleTypes.PENTAGRAM.get()), (sourceentity.getX()), (sourceentity.getY() + 1), (sourceentity.getZ()), 0, 0, 0);
 				}
 			}

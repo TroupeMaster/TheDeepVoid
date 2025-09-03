@@ -29,6 +29,9 @@
       },
       {
         "value": "CUSTOM:FilledGraveyard"
+      },
+      {
+        "value": "CUSTOM:BefouledMarsh"
       }
     ],
     "terrainAdaptation": "none",

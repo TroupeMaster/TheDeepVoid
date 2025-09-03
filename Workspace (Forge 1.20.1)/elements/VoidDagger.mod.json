@@ -13,7 +13,8 @@
       "fixedValue": [
         "§7Puts a second dagger in the wielder's off-hand",
         "§7Inflicts Wither on hit"
-      ]
+      ],
+      "name": "VoidDaggerSpecialInformation"
     },
     "creativeTabs": [
       {

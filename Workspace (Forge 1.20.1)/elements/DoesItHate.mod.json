@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Does It Hate ?",
+    "achievementName": "Does It Hate?",
     "achievementDescription": "Find a flesh cave or the Gloomy Deathgrounds",
     "achievementIcon": {
       "value": "CUSTOM:FleshBlock"

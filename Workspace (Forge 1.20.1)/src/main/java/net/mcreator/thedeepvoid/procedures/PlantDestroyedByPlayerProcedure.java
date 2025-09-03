@@ -141,6 +141,13 @@ public class PlantDestroyedByPlayerProcedure {
 					_level.addFreshEntity(entityToSpawn);
 				}
 			}
+			if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == TheDeepVoidModBlocks.VOID_STEM.get()) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModBlocks.VOID_STEM.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
+			}
 		}
 	}
 }

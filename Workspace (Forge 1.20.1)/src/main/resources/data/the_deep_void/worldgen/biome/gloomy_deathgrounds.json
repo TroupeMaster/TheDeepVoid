@@ -1,6 +1,6 @@
 {
   "has_precipitation": false,
-  "temperature": 1.6,
+  "temperature": 2,
   "downfall": 0,
   "effects": {
     "ambient_sound": "the_deep_void:heartbeat_ambient",

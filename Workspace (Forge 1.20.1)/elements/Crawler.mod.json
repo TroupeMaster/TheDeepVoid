@@ -10,6 +10,9 @@
     "textureLeggings": "crawler_leggings",
     "enableBoots": true,
     "textureBoots": "crawler_boots",
+    "onBodyTick": {
+      "name": "CrawlerFullArmor"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:TheDeepVoid"

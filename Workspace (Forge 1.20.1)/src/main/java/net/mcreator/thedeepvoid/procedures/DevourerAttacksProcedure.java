@@ -10,6 +10,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
 
+import net.mcreator.thedeepvoid.entity.SummonedDevourerEntity;
 import net.mcreator.thedeepvoid.entity.DevourerEntity;
 
 import javax.annotation.Nullable;
@@ -30,7 +31,7 @@ public class DevourerAttacksProcedure {
 	private static void execute(@Nullable Event event, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if ((entity instanceof Player || entity instanceof ServerPlayer) && sourceentity instanceof DevourerEntity) {
+		if ((entity instanceof Player || entity instanceof ServerPlayer) && (sourceentity instanceof DevourerEntity || sourceentity instanceof SummonedDevourerEntity)) {
 			entity.setDeltaMovement(new Vec3(((sourceentity.getX() - entity.getX()) * 0.5), ((sourceentity.getY() - entity.getY()) * 0.5), ((sourceentity.getZ() - entity.getZ()) * 0.5)));
 		}
 	}

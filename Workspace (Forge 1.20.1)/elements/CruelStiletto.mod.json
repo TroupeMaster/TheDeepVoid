@@ -12,7 +12,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7Sends foes flying, giving speed to the wielder"
-      ]
+      ],
+      "name": "CruelStilettoSpecialInformation"
     },
     "creativeTabs": [
       {

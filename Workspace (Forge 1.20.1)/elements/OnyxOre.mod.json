@@ -127,37 +127,7 @@
     "generateFeature": true,
     "restrictionBiomes": [
       {
-        "value": "CUSTOM:ForgottenValley"
-      },
-      {
-        "value": "CUSTOM:GrimCanopy"
-      },
-      {
-        "value": "CUSTOM:AshenCrags"
-      },
-      {
-        "value": "CUSTOM:MourningGraveyard"
-      },
-      {
-        "value": "CUSTOM:WindsweptHollow"
-      },
-      {
-        "value": "CUSTOM:DriftingMonoliths"
-      },
-      {
-        "value": "CUSTOM:WatchingUndergrowth"
-      },
-      {
-        "value": "CUSTOM:CrawlerNest"
-      },
-      {
-        "value": "CUSTOM:StaringHills"
-      },
-      {
-        "value": "CUSTOM:FilledGraveyard"
-      },
-      {
-        "value": "CUSTOM:GatheringGrounds"
+        "value": "#mod:is_deep_void"
       }
     ],
     "blocksToReplace": [
@@ -175,6 +145,6 @@
     "frequencyPerChunks": 5,
     "frequencyOnChunk": 8,
     "minGenerateHeight": -64,
-    "maxGenerateHeight": 16
+    "maxGenerateHeight": 38
   }
 }

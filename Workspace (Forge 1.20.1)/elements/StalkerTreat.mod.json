@@ -29,12 +29,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "§9Upon right clicking",
-        " §7deters the Stalker and stops it from coming for a short period of time",
-        "§9Upon right clicking while crouching",
-        " §7Throws the treat to distract the Stalker"
-      ]
+      "fixedValue": []
     },
     "glowCondition": {
       "fixedValue": false

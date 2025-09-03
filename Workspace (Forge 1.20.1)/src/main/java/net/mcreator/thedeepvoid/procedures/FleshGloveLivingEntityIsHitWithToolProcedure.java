@@ -12,7 +12,7 @@ public class FleshGloveLivingEntityIsHitWithToolProcedure {
 			return;
 		if (!(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TheDeepVoidModMobEffects.LACERATION.get()))) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.LACERATION.get(), 20, 0));
+				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.LACERATION.get(), 80, 0));
 		}
 	}
 }

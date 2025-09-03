@@ -24,6 +24,15 @@ public class BlassMassKillDisplayProcedure {
 				}
 				return false;
 			}
+		}.checkGamemode(entity)) && !(new Object() {
+			public boolean checkGamemode(Entity _ent) {
+				if (_ent instanceof ServerPlayer _serverPlayer) {
+					return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+				} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+					return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+				}
+				return false;
+			}
 		}.checkGamemode(entity)) && world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) <= 1 && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) == 0) {
 			return true;
 		}

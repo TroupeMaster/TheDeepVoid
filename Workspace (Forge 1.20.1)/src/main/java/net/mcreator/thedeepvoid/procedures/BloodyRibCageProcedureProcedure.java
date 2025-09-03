@@ -1,10 +1,5 @@
 package net.mcreator.thedeepvoid.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.living.LivingEvent;
-
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
@@ -19,21 +14,10 @@ import net.minecraft.core.registries.Registries;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
+import net.mcreator.thedeepvoid.entity.HookEndEntity;
 
-import javax.annotation.Nullable;
-
-@Mod.EventBusSubscriber
 public class BloodyRibCageProcedureProcedure {
-	@SubscribeEvent
-	public static void onEntityTick(LivingEvent.LivingTickEvent event) {
-		execute(event, event.getEntity().level(), event.getEntity());
-	}
-
 	public static void execute(LevelAccessor world, Entity entity) {
-		execute(null, world, entity);
-	}
-
-	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
@@ -47,6 +31,48 @@ public class BloodyRibCageProcedureProcedure {
 							} catch (Exception e) {
 								e.printStackTrace();
 							}
+						}
+					}
+				}
+			}
+			if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof HookEndEntity) {
+				if (entity instanceof Mob) {
+					try {
+						((Mob) entity).setTarget(null);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			}
+			if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:crawler_armor_wont_attack")))) {
+				if (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.CRAWLER_HELMET.get()
+						&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)
+								.getItem() == TheDeepVoidModItems.CRAWLER_CHESTPLATE.get()
+						&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)
+								.getItem() == TheDeepVoidModItems.CRAWLER_LEGGINGS.get()
+						&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.CRAWLER_BOOTS
+								.get()
+						|| ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY)
+								.getItem() == TheDeepVoidModItems.GRIM_CRAWLER_HELMET.get()
+								&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)
+										.getItem() == TheDeepVoidModItems.GRIM_CRAWLER_CHESTPLATE.get()
+								&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)
+										.getItem() == TheDeepVoidModItems.GRIM_CRAWLER_LEGGINGS.get()
+								&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY)
+										.getItem() == TheDeepVoidModItems.GRIM_CRAWLER_BOOTS.get()
+						|| ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY)
+								.getItem() == TheDeepVoidModItems.CRAWLER_ROYALTY_HELMET.get()
+								&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)
+										.getItem() == TheDeepVoidModItems.CRAWLER_ROYALTY_CHESTPLATE.get()
+								&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY)
+										.getItem() == TheDeepVoidModItems.CRAWLER_ROYALTY_LEGGINGS.get()
+								&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY)
+										.getItem() == TheDeepVoidModItems.CRAWLER_ROYALTY_BOOTS.get()) {
+					if (entity instanceof Mob) {
+						try {
+							((Mob) entity).setTarget(null);
+						} catch (Exception e) {
+							e.printStackTrace();
 						}
 					}
 				}

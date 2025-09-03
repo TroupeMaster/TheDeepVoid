@@ -90,8 +90,8 @@
     "damageValueLeggings": 5,
     "damageValueBoots": 4,
     "enchantability": 32,
-    "toughness": 10.0,
-    "knockbackResistance": 3.4,
+    "toughness": 2.0,
+    "knockbackResistance": 0.4,
     "equipSound": {
       "value": "item.armor.equip_netherite"
     },

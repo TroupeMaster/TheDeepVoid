@@ -39,6 +39,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
@@ -53,6 +54,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.procedures.StalkingStalkerSolidBoundingBoxConditionProcedure;
 import net.mcreator.thedeepvoid.procedures.StalkingStalkerOnInitialEntitySpawnProcedure;
 import net.mcreator.thedeepvoid.procedures.StalkerFollowsPlayerProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
@@ -87,7 +89,7 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "stalker_animated");
+		this.entityData.define(TEXTURE, "stalkernew");
 	}
 
 	public void setTexture(String texture) {
@@ -112,7 +114,7 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 		this.goalSelector.addGoal(4, new FloatGoal(this));
 		this.goalSelector.addGoal(5, new RandomStrollGoal(this, 1));
 		this.targetSelector.addGoal(6, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(7, new MeleeAttackGoal(this, 1.4, true) {
+		this.goalSelector.addGoal(7, new MeleeAttackGoal(this, 1.2, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
 				return 9;
@@ -208,7 +210,12 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 
 	@Override
 	public EntityDimensions getDimensions(Pose p_33597_) {
-		return super.getDimensions(p_33597_).scale((float) 1);
+		Entity entity = this;
+		Level world = this.level();
+		double x = this.getX();
+		double y = entity.getY();
+		double z = entity.getZ();
+		return super.getDimensions(p_33597_).scale((float) StalkingStalkerSolidBoundingBoxConditionProcedure.execute(entity));
 	}
 
 	public static void init() {
@@ -216,7 +223,7 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.2);
 		builder = builder.add(Attributes.MAX_HEALTH, 480);
 		builder = builder.add(Attributes.ARMOR, 10);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
@@ -230,10 +237,13 @@ public class StalkingStalkerEntity extends Monster implements GeoEntity {
 		if (this.animationprocedure.equals("empty")) {
 			if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))
 
-			) {
+					&& !this.isAggressive()) {
 				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalker_walk"));
 			}
-			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalker_slowIdle"));
+			if (this.isAggressive() && event.isMoving()) {
+				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalker_aggressive"));
+			}
+			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalker_idleCrouch"));
 		}
 		return PlayState.STOP;
 	}

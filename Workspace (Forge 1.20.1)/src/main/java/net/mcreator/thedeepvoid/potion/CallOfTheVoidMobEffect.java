@@ -6,11 +6,17 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffect;
 
+import net.mcreator.thedeepvoid.procedures.CallOfTheVoidOnEffectActiveTickProcedure;
 import net.mcreator.thedeepvoid.procedures.CallOfTheVoidEffectExpiresProcedure;
 
 public class CallOfTheVoidMobEffect extends MobEffect {
 	public CallOfTheVoidMobEffect() {
 		super(MobEffectCategory.HARMFUL, -1);
+	}
+
+	@Override
+	public void applyEffectTick(LivingEntity entity, int amplifier) {
+		CallOfTheVoidOnEffectActiveTickProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity);
 	}
 
 	@Override

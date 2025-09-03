@@ -12,7 +12,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7Deals double damage each 3 hit"
-      ]
+      ],
+      "name": "VoidriumSwordSpecialInformation"
     },
     "creativeTabs": [
       {
@@ -20,9 +21,9 @@
       }
     ],
     "efficiency": 34.0,
-    "attackSpeed": 1.6,
+    "attackSpeed": 1.5999999999999999,
     "enchantability": 20,
-    "damageVsEntity": 8.0,
+    "damageVsEntity": 7.0,
     "usageCount": 3461,
     "glowCondition": {
       "fixedValue": false

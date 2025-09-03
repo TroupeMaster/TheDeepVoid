@@ -12,7 +12,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7Can crack Bedrock and extract Voidrium Ore"
-      ]
+      ],
+      "name": "ReinforcedPickaxeSpecialInformation"
     },
     "creativeTabs": [
       {

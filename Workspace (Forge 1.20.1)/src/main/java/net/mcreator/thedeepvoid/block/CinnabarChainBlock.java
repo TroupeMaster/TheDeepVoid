@@ -56,24 +56,24 @@ public class CinnabarChainBlock extends Block implements SimpleWaterloggedBlock 
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return switch (state.getValue(FACING)) {
 			default -> switch (state.getValue(FACE)) {
-				case FLOOR -> box(7, 0, 7, 9, 16, 9);
-				case WALL -> box(7, 7, 0, 9, 9, 16);
-				case CEILING -> box(7, 0, 7, 9, 16, 9);
+				case FLOOR -> box(6, 0, 6, 10, 16, 10);
+				case WALL -> box(6, 6, 0, 10, 10, 16);
+				case CEILING -> box(6, 0, 6, 10, 16, 10);
 			};
 			case NORTH -> switch (state.getValue(FACE)) {
-				case FLOOR -> box(7, 0, 7, 9, 16, 9);
-				case WALL -> box(7, 7, 0, 9, 9, 16);
-				case CEILING -> box(7, 0, 7, 9, 16, 9);
+				case FLOOR -> box(6, 0, 6, 10, 16, 10);
+				case WALL -> box(6, 6, 0, 10, 10, 16);
+				case CEILING -> box(6, 0, 6, 10, 16, 10);
 			};
 			case EAST -> switch (state.getValue(FACE)) {
-				case FLOOR -> box(7, 0, 7, 9, 16, 9);
-				case WALL -> box(0, 7, 7, 16, 9, 9);
-				case CEILING -> box(7, 0, 7, 9, 16, 9);
+				case FLOOR -> box(6, 0, 6, 10, 16, 10);
+				case WALL -> box(0, 6, 6, 16, 10, 10);
+				case CEILING -> box(6, 0, 6, 10, 16, 10);
 			};
 			case WEST -> switch (state.getValue(FACE)) {
-				case FLOOR -> box(7, 0, 7, 9, 16, 9);
-				case WALL -> box(0, 7, 7, 16, 9, 9);
-				case CEILING -> box(7, 0, 7, 9, 16, 9);
+				case FLOOR -> box(6, 0, 6, 10, 16, 10);
+				case WALL -> box(0, 6, 6, 16, 10, 10);
+				case CEILING -> box(6, 0, 6, 10, 16, 10);
 			};
 		};
 	}

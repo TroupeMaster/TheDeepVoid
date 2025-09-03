@@ -5,7 +5,8 @@
     "the_deep_void:mourning_graveyard",
     "the_deep_void:watching_undergrowth",
     "the_deep_void:filled_graveyard",
-    "the_deep_void:gathering_grounds"
+    "the_deep_void:gathering_grounds",
+    "the_deep_void:befouled_marsh"
   ],
   "features": "the_deep_void:cave_growth",
   "step": "vegetal_decoration"

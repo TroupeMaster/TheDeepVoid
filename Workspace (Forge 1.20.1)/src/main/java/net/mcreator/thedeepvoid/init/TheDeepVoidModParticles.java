@@ -10,11 +10,15 @@ import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.mcreator.thedeepvoid.client.particle.SoulSweepParticle;
+import net.mcreator.thedeepvoid.client.particle.SoulHookLineParticle;
 import net.mcreator.thedeepvoid.client.particle.ShadeDropParticle;
+import net.mcreator.thedeepvoid.client.particle.RedGreatSlashParticle;
 import net.mcreator.thedeepvoid.client.particle.PusSporeParticle;
 import net.mcreator.thedeepvoid.client.particle.PentagramParticle;
 import net.mcreator.thedeepvoid.client.particle.LickerTongueParticle;
+import net.mcreator.thedeepvoid.client.particle.HookLineParticle;
 import net.mcreator.thedeepvoid.client.particle.GrimSweepParticle;
+import net.mcreator.thedeepvoid.client.particle.GrimHookLineParticle;
 import net.mcreator.thedeepvoid.client.particle.GoldBloodParticle;
 import net.mcreator.thedeepvoid.client.particle.FlyParticle;
 import net.mcreator.thedeepvoid.client.particle.FlameOfSpiteParticle;
@@ -44,5 +48,9 @@ public class TheDeepVoidModParticles {
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.BLACK_TENTACLE.get(), BlackTentacleParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.SOUL_SWEEP.get(), SoulSweepParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.GOLD_BLOOD.get(), GoldBloodParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.HOOK_LINE.get(), HookLineParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.GRIM_HOOK_LINE.get(), GrimHookLineParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.SOUL_HOOK_LINE.get(), SoulHookLineParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.RED_GREAT_SLASH.get(), RedGreatSlashParticle::provider);
 	}
 }

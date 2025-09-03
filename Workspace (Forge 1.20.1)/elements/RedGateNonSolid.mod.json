@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "block",
   "definition": {
-    "texture": "red_gate",
+    "texture": "red_gate_passable",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",

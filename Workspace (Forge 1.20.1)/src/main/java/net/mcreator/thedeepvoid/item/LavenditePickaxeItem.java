@@ -17,11 +17,11 @@ public class LavenditePickaxeItem extends PickaxeItem {
 			}
 
 			public float getSpeed() {
-				return 60f;
+				return 40f;
 			}
 
 			public float getAttackDamageBonus() {
-				return 3f;
+				return 1f;
 			}
 
 			public int getLevel() {

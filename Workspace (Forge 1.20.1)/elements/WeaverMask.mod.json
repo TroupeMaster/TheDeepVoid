@@ -10,6 +10,9 @@
     "textureLeggings": "",
     "enableBoots": false,
     "textureBoots": "",
+    "onHelmetTick": {
+      "name": "WeaverMaskTick"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:TheDeepVoid"
@@ -85,12 +88,12 @@
       "fixedValue": false
     },
     "maxDamage": 0,
-    "damageValueHelmet": 3,
+    "damageValueHelmet": 4,
     "damageValueBody": 0,
     "damageValueLeggings": 0,
     "damageValueBoots": 0,
     "enchantability": 45,
-    "toughness": 0.2,
+    "toughness": 0.5,
     "knockbackResistance": 0.1,
     "equipSound": {
       "value": "block.soul_sand.place"

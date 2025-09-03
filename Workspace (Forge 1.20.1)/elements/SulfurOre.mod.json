@@ -140,6 +140,9 @@
       },
       {
         "value": "CUSTOM:WindsweptHollow"
+      },
+      {
+        "value": "CUSTOM:BefouledMarsh"
       }
     ],
     "blocksToReplace": [

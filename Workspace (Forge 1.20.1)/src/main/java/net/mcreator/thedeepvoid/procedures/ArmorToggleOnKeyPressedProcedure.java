@@ -19,7 +19,7 @@ public class ArmorToggleOnKeyPressedProcedure {
 				});
 			}
 			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("Special Ability Inactive"), true);
+				_player.displayClientMessage(Component.literal((Component.translatable("key.the_deep_void.armor_toggle.msg_inactive").getString())), true);
 		} else if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).armorToggle == true) {
 			{
 				boolean _setval = false;
@@ -29,7 +29,7 @@ public class ArmorToggleOnKeyPressedProcedure {
 				});
 			}
 			if (entity instanceof Player _player && !_player.level().isClientSide())
-				_player.displayClientMessage(Component.literal("Special Ability Active"), true);
+				_player.displayClientMessage(Component.literal((Component.translatable("key.the_deep_void.armor_toggle.msg_active").getString())), true);
 		}
 	}
 }

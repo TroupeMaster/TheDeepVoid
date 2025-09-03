@@ -7,6 +7,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.GameType;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
@@ -173,7 +174,7 @@ public class StalkerFollowsPlayerProcedure {
 						if (entity.getPersistentData().getBoolean("deep_void:despawning") == false) {
 							entity.getPersistentData().putBoolean("deep_void:despawning", true);
 							if (entity instanceof StalkingStalkerEntity) {
-								((StalkingStalkerEntity) entity).setAnimation("animation.stalker_digHide");
+								((StalkingStalkerEntity) entity).setAnimation("animation.stalker_hide");
 							}
 							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 99, false, false));
@@ -313,7 +314,7 @@ public class StalkerFollowsPlayerProcedure {
 						if (entity.getPersistentData().getBoolean("deep_void:despawning") == false) {
 							entity.getPersistentData().putBoolean("deep_void:despawning", true);
 							if (entity instanceof StalkingStalkerEntity) {
-								((StalkingStalkerEntity) entity).setAnimation("animation.stalker_digHide");
+								((StalkingStalkerEntity) entity).setAnimation("animation.stalker_hide");
 							}
 							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 99, false, false));
@@ -427,7 +428,7 @@ public class StalkerFollowsPlayerProcedure {
 					if (entity.getPersistentData().getBoolean("deep_void:despawning") == false) {
 						entity.getPersistentData().putBoolean("deep_void:despawning", true);
 						if (entity instanceof StalkingStalkerEntity) {
-							((StalkingStalkerEntity) entity).setAnimation("animation.stalker_digHide");
+							((StalkingStalkerEntity) entity).setAnimation("animation.stalker_hide");
 						}
 						{
 							final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
@@ -549,7 +550,7 @@ public class StalkerFollowsPlayerProcedure {
 				}
 				entity.getPersistentData().putBoolean("deep_void:despawning", true);
 				if (entity instanceof StalkingStalkerEntity) {
-					((StalkingStalkerEntity) entity).setAnimation("animation.stalker_digHide");
+					((StalkingStalkerEntity) entity).setAnimation("animation.stalker_hide");
 				}
 				{
 					final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
@@ -571,6 +572,58 @@ public class StalkerFollowsPlayerProcedure {
 					if (!entity.level().isClientSide())
 						entity.discard();
 				});
+			}
+		}
+		if (!world.getBlockState(
+				BlockPos.containing(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(),
+						entity.getY(), entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()))
+				.canOcclude()
+				&& !world
+						.getBlockState(
+								BlockPos.containing(
+										entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(),
+										entity.getY() + 1,
+										entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
+												.getZ()))
+						.canOcclude()
+				&& world.getBlockState(
+						BlockPos.containing(
+								entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(), entity
+										.getY() + 2,
+								entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()))
+						.canOcclude()
+				|| !world
+						.getBlockState(
+								BlockPos.containing(
+										entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(),
+										entity.getY(),
+										entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
+												.getZ()))
+						.canOcclude()
+						&& !world
+								.getBlockState(BlockPos.containing(
+										entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(),
+										entity.getY() + 1,
+										entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
+												.getZ()))
+								.canOcclude()
+						&& !world.getBlockState(BlockPos.containing(
+								entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(),
+								entity.getY() + 2,
+								entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()))
+								.canOcclude()
+						&& world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() + 2, entity.getZ())).canOcclude()
+				|| !world.getBlockState(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())).canOcclude() && !world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() + 1, entity.getZ())).canOcclude()
+						&& world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() + 2, entity.getZ())).canOcclude()) {
+			if (entity instanceof StalkingStalkerEntity) {
+				((StalkingStalkerEntity) entity).setAnimation("animation.stalker_crouch");
+			}
+			if (entity.getPersistentData().getBoolean("deep_void:crouching") == false) {
+				entity.getPersistentData().putBoolean("deep_void:crouching", true);
+			}
+		} else {
+			if (entity.getPersistentData().getBoolean("deep_void:crouching") == true) {
+				entity.getPersistentData().putBoolean("deep_void:crouching", false);
 			}
 		}
 	}

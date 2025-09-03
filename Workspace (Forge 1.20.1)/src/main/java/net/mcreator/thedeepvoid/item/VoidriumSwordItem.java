@@ -9,8 +9,10 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
+import net.mcreator.thedeepvoid.procedures.VoidriumSwordSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.procedures.VoidriumSwordLivingEntityIsHitWithToolProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
@@ -28,7 +30,7 @@ public class VoidriumSwordItem extends SwordItem {
 			}
 
 			public float getAttackDamageBonus() {
-				return 4f;
+				return 3f;
 			}
 
 			public int getLevel() {
@@ -55,6 +57,7 @@ public class VoidriumSwordItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Deals double damage each 3 hit"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(VoidriumSwordSpecialInformationProcedure.execute()));
 	}
 }

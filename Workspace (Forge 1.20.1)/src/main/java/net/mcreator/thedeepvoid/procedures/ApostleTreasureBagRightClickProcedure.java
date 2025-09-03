@@ -47,9 +47,9 @@ public class ApostleTreasureBagRightClickProcedure {
 				_level.addFreshEntity(entityToSpawn);
 			}
 		}
-		for (int index2 = 0; index2 < 2; index2++) {
+		for (int index2 = 0; index2 < 8; index2++) {
 			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.SOUL_SHARD.get()));
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.SACRED_CINNABAR.get()));
 				entityToSpawn.setPickUpDelay(10);
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);
@@ -57,11 +57,17 @@ public class ApostleTreasureBagRightClickProcedure {
 		}
 		for (int index3 = 0; index3 < 2; index3++) {
 			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.ENCHANTED_GOLDEN_APPLE));
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.GOLDEN_APPLE));
 				entityToSpawn.setPickUpDelay(10);
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);
 			}
+		}
+		if (world instanceof ServerLevel _level) {
+			ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.HEXED_DOLL.get()));
+			entityToSpawn.setPickUpDelay(10);
+			entityToSpawn.setUnlimitedLifetime();
+			_level.addFreshEntity(entityToSpawn);
 		}
 		if (Math.random() < 0.5) {
 			if (world instanceof ServerLevel _level) {

@@ -19,6 +19,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.thedeepvoid.procedures.ShadestormUsedProcedure;
+import net.mcreator.thedeepvoid.procedures.ShadestormSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.entity.BigShadeArrowEntity;
 
 import java.util.List;
@@ -41,8 +42,8 @@ public class ShadestormItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Fires a flury of arrows that applies Combo to the victim"));
-		list.add(Component.literal("\u00A77When shot, fire a huge arrow that deals extra damage in a AOE if the target has the effect Combo"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(ShadestormSpecialInformationProcedure.execute()));
 	}
 
 	@Override

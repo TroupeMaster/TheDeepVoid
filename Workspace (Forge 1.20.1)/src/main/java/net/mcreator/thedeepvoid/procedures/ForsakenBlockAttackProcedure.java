@@ -38,9 +38,7 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.ShadeArrowEntity;
-import net.mcreator.thedeepvoid.entity.RottenLickerHookEntity;
 import net.mcreator.thedeepvoid.entity.PusBallProjectileEntity;
-import net.mcreator.thedeepvoid.entity.LickerHookTongueEntity;
 import net.mcreator.thedeepvoid.entity.LavenditeShardProjEntity;
 import net.mcreator.thedeepvoid.entity.ForsakenEntity;
 import net.mcreator.thedeepvoid.entity.FlareEntity;
@@ -130,10 +128,10 @@ public class ForsakenBlockAttackProcedure {
 						});
 					}
 					if (immediatesourceentity instanceof Arrow || immediatesourceentity instanceof SpectralArrow || immediatesourceentity instanceof DragonFireball || immediatesourceentity instanceof LargeFireball
-							|| immediatesourceentity instanceof FireworkRocketEntity || immediatesourceentity instanceof SmallFireball || immediatesourceentity instanceof RottenLickerHookEntity || immediatesourceentity instanceof FlareEntity
-							|| immediatesourceentity instanceof LickerHookTongueEntity || immediatesourceentity instanceof PusBallProjectileEntity || immediatesourceentity instanceof ThrownEgg || immediatesourceentity instanceof Snowball
-							|| immediatesourceentity instanceof ShulkerBullet || immediatesourceentity instanceof ThrownEnderpearl || immediatesourceentity instanceof BoneBallProjectileEntity
-							|| immediatesourceentity instanceof LavenditeShardProjEntity || immediatesourceentity instanceof ShadeArrowEntity || immediatesourceentity instanceof BigShadeArrowEntity) {
+							|| immediatesourceentity instanceof FireworkRocketEntity || immediatesourceentity instanceof SmallFireball || immediatesourceentity instanceof FlareEntity || immediatesourceentity instanceof PusBallProjectileEntity
+							|| immediatesourceentity instanceof ThrownEgg || immediatesourceentity instanceof Snowball || immediatesourceentity instanceof ShulkerBullet || immediatesourceentity instanceof ThrownEnderpearl
+							|| immediatesourceentity instanceof BoneBallProjectileEntity || immediatesourceentity instanceof LavenditeShardProjEntity || immediatesourceentity instanceof ShadeArrowEntity
+							|| immediatesourceentity instanceof BigShadeArrowEntity) {
 						if (!(sourceentity == null)) {
 							immediatesourceentity
 									.setDeltaMovement(new Vec3(((immediatesourceentity.getX() - sourceentity.getX()) * 2), ((immediatesourceentity.getY() - (sourceentity.getY() + 2)) * 2), ((immediatesourceentity.getZ() - sourceentity.getZ()) * 2)));
@@ -160,7 +158,7 @@ public class ForsakenBlockAttackProcedure {
 			}
 		}
 		if (sourceentity instanceof ForsakenEntity) {
-			if (!((entity instanceof LivingEntity _entUseItem61 ? _entUseItem61.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)) {
+			if (!((entity instanceof LivingEntity _entUseItem59 ? _entUseItem59.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)) {
 				TheDeepVoidMod.queueServerWork(8, () -> {
 					if (entity instanceof LivingEntity _entity)
 						_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) - 1));

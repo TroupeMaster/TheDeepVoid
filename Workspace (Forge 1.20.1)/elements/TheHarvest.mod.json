@@ -13,7 +13,8 @@
       "fixedValue": [
         "§7Hitting a foe with the scythe will create a soul slash, damaging any mob nearby and giving them the Hexed effect.",
         "§7When attacking a foe that has Hexed, one more level will be added as well as two additional seconds."
-      ]
+      ],
+      "name": "TheHarvestSpecialInformation"
     },
     "creativeTabs": [
       {

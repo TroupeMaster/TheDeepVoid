@@ -59,23 +59,19 @@ public class ChainedWeaverEntityIsHurtProcedure {
 					}
 					if (entity.getPersistentData().getDouble("deep_void:chainBreak") == 2) {
 						if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lTo weave, to provide vessels.. \u00A7c\u00A7l\u00A7kGOD"), false);
+							_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.weaver_of_souls.hurt1").getString())), false);
 					}
-					if (entity.getPersistentData().getDouble("deep_void:chainBreak") == 4) {
+					if (entity.getPersistentData().getDouble("deep_void:chainBreak") == 5) {
 						if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lIsn't it a wonderful thing, god.. \u00A7c\u00A7l\u00A7kGOD"), false);
+							_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.weaver_of_souls.hurt2").getString())), false);
 					}
-					if (entity.getPersistentData().getDouble("deep_void:chainBreak") == 6) {
+					if (entity.getPersistentData().getDouble("deep_void:chainBreak") == 7) {
 						if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lTo ascend, to make one with the Void.. \u00A7c\u00A7l\u00A7kGOD"), false);
-					}
-					if (entity.getPersistentData().getDouble("deep_void:chainBreak") == 8) {
-						if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lRedemption awaits all.. \u00A7c\u00A7l\u00A7kGOD"), false);
+							_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.weaver_of_souls.hurt3").getString())), false);
 					}
 					if (entity.getPersistentData().getDouble("deep_void:chainBreak") == 9) {
 						if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-							_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lIt's time. \u00A7c\u00A7l\u00A7kGOD"), false);
+							_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.weaver_of_souls.hurt4").getString())), false);
 					}
 				}
 			}

@@ -12,7 +12,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7On each swing of the sickle, dash toward the nearest foe"
-      ]
+      ],
+      "name": "ReapingHookSpecialInformation"
     },
     "creativeTabs": [
       {

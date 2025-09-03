@@ -18,7 +18,6 @@ import net.minecraft.core.registries.Registries;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.entity.VoidDwellerEntity;
-import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import javax.annotation.Nullable;
 
@@ -42,7 +41,7 @@ public class PlayerLooksAtVoidDwellerProcedure {
 		if (entity == null)
 			return;
 		double distance = 0;
-		if (!world.getEntitiesOfClass(VoidDwellerEntity.class, AABB.ofSize(new Vec3(x, y, z), 250, 250, 250), e -> true).isEmpty()) {
+		if (!world.getEntitiesOfClass(VoidDwellerEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {
 			distance = 1;
 			for (int index0 = 0; index0 < 20; index0++) {
 				{
@@ -67,16 +66,14 @@ public class PlayerLooksAtVoidDwellerProcedure {
 				distance = distance + 1;
 			}
 		}
-		if (DeepVoidConfigConfiguration.STALKED.get() == false) {
-			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerCount > 0
-					&& !((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void")))) {
-				{
-					double _setval = 0;
-					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.StalkerCount = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
+		if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerCount > 0
+				&& !((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void")))) {
+			{
+				double _setval = 0;
+				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.StalkerCount = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 	}

@@ -17,7 +17,7 @@ public class LavenditeHoeItem extends HoeItem {
 			}
 
 			public float getSpeed() {
-				return 60f;
+				return 40f;
 			}
 
 			public float getAttackDamageBonus() {

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    " a ",
+    "aba",
+    "b b"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:cobbled_ancient_deepslate"
+    },
+    "b": {
+      "item": "minecraft:brick"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:ancient_urns",
+    "count": 1
+  }
+}

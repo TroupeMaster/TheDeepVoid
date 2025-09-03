@@ -1,0 +1,10 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "particle": "the_deep_void:block/polished_lavendite_block",
+    "bottom": "the_deep_void:block/polished_lavendite_block",
+    "top": "the_deep_void:block/polished_lavendite_block",
+    "side": "the_deep_void:block/polished_lavendite_block"
+  },
+  "render_type": "solid"
+}

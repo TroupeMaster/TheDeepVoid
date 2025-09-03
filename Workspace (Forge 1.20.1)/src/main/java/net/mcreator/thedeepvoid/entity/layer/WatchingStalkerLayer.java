@@ -15,7 +15,7 @@ import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
 public class WatchingStalkerLayer extends GeoRenderLayer<WatchingStalkerEntity> {
-	private static final ResourceLocation LAYER = new ResourceLocation("the_deep_void", "textures/entities/stalker_animated_eyes.png");
+	private static final ResourceLocation LAYER = new ResourceLocation("the_deep_void", "textures/entities/stalkernew_eyes.png");
 
 	public WatchingStalkerLayer(GeoRenderer<WatchingStalkerEntity> entityRenderer) {
 		super(entityRenderer);

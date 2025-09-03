@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Got Your... Eye ?",
+    "achievementName": "Got Your... Eye?",
     "achievementDescription": "Get a void lens from a void watcher to fuse it with a spyglass in a smithing table",
     "achievementIcon": {
       "value": "CUSTOM:VoidLens"

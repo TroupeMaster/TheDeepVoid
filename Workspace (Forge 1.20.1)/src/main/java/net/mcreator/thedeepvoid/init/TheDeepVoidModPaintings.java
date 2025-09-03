@@ -26,4 +26,5 @@ public class TheDeepVoidModPaintings {
 	public static final RegistryObject<PaintingVariant> THREATENING = REGISTRY.register("threatening", () -> new PaintingVariant(32, 32));
 	public static final RegistryObject<PaintingVariant> THE_DEEP_VOID_MOD = REGISTRY.register("the_deep_void_mod", () -> new PaintingVariant(400, 400));
 	public static final RegistryObject<PaintingVariant> CHAINED_UP = REGISTRY.register("chained_up", () -> new PaintingVariant(48, 32));
+	public static final RegistryObject<PaintingVariant> DEVOURER_ENCOUNTER = REGISTRY.register("devourer_encounter", () -> new PaintingVariant(64, 64));
 }

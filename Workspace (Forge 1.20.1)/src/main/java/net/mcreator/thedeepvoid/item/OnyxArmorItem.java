@@ -15,6 +15,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
 
+import net.mcreator.thedeepvoid.procedures.OnyxFullArmorProcedure;
 import net.mcreator.thedeepvoid.procedures.OnyxArmorHelmetTickEventProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
@@ -98,7 +99,7 @@ public abstract class OnyxArmorItem extends ArmorItem {
 		public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 			super.inventoryTick(itemstack, world, entity, slot, selected);
 			if (entity instanceof Player player && Iterables.contains(player.getArmorSlots(), itemstack)) {
-				OnyxArmorHelmetTickEventProcedure.execute(entity);
+				OnyxFullArmorProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
 			}
 		}
 	}

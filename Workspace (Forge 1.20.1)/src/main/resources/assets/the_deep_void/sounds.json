@@ -1123,5 +1123,77 @@
         "stream": false
       }
     ]
+  },
+  "primordial_crawler_ambient": {
+    "subtitle": "subtitles.primordial_crawler_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:primordial_crawler_ambientnew",
+        "stream": false
+      }
+    ]
+  },
+  "primordial_crawler_hurt": {
+    "subtitle": "subtitles.primordial_crawler_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:primordial_crawler_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "primordial_crawler_death": {
+    "subtitle": "subtitles.primordial_crawler_death",
+    "sounds": [
+      {
+        "name": "the_deep_void:primordial_crawler_death",
+        "stream": false
+      }
+    ]
+  },
+  "primordial_crawler_spit": {
+    "subtitle": "subtitles.primordial_crawler_spit",
+    "sounds": [
+      {
+        "name": "the_deep_void:primordial_crawler_spit",
+        "stream": false
+      }
+    ]
+  },
+  "primordial_crawler_impact": {
+    "subtitle": "subtitles.primordial_crawler_impact",
+    "sounds": [
+      {
+        "name": "the_deep_void:primordial_crawler_impact",
+        "stream": false
+      }
+    ]
+  },
+  "the_haunt": {
+    "subtitle": "subtitles.the_haunt",
+    "sounds": [
+      {
+        "name": "the_deep_void:the-haunt-phase-spiders-battle-_fanmade-d_d-soundtrack_",
+        "stream": true
+      }
+    ]
+  },
+  "sentient_chainsaw_use": {
+    "subtitle": "subtitles.sentient_chainsaw_use",
+    "sounds": [
+      {
+        "name": "the_deep_void:sentient_chainsaw_new",
+        "stream": false
+      }
+    ]
+  },
+  "fleshy_explosion": {
+    "subtitle": "subtitles.fleshy_explosion",
+    "sounds": [
+      {
+        "name": "the_deep_void:fleshy_explosion",
+        "stream": false
+      }
+    ]
   }
 }

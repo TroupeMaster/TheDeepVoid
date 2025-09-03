@@ -1,0 +1,10 @@
+{
+  "mappings": {
+    "default": {
+      "map": {
+        "0": "stalker_claw_new"
+      },
+      "name": "default"
+    }
+  }
+}

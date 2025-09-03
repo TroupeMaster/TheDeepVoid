@@ -1,0 +1,95 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 4,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "bipedBody",
+					"pivot": [0, 24, 0]
+				},
+				{
+					"name": "armorBody",
+					"parent": "bipedBody",
+					"pivot": [0, 19, 2]
+				},
+				{
+					"name": "spine",
+					"parent": "armorBody",
+					"pivot": [0, 19, 2]
+				},
+				{
+					"name": "left_wing",
+					"parent": "spine",
+					"pivot": [0, 19, 2],
+					"cubes": [
+						{"origin": [0, 8, 2], "size": [0, 20, 12], "uv": [7, 7]}
+					]
+				},
+				{
+					"name": "far_left_wing",
+					"parent": "left_wing",
+					"pivot": [0, 19, 14],
+					"cubes": [
+						{"origin": [0, 8, 14], "size": [0, 20, 9], "uv": [20, 32]}
+					]
+				},
+				{
+					"name": "right_wing",
+					"parent": "spine",
+					"pivot": [0, 19, 2],
+					"cubes": [
+						{"origin": [0, 8, 2], "size": [0, 20, 12], "uv": [7, 7], "mirror": true}
+					]
+				},
+				{
+					"name": "far_right_wing",
+					"parent": "right_wing",
+					"pivot": [0, 19, 14],
+					"cubes": [
+						{"origin": [0, 8, 14], "size": [0, 20, 9], "uv": [20, 32], "mirror": true}
+					]
+				},
+				{
+					"name": "left_small_wing",
+					"parent": "spine",
+					"pivot": [0, 9, 2],
+					"cubes": [
+						{"origin": [0, 3, 2], "size": [0, 20, 12], "uv": [7, 7]}
+					]
+				},
+				{
+					"name": "far_left_wing2",
+					"parent": "left_small_wing",
+					"pivot": [0, 14, 14],
+					"cubes": [
+						{"origin": [0, 3, 14], "size": [0, 20, 9], "uv": [20, 32]}
+					]
+				},
+				{
+					"name": "right_small_wing",
+					"parent": "spine",
+					"pivot": [0, 9, 2],
+					"cubes": [
+						{"origin": [0, 3, 2], "size": [0, 20, 12], "uv": [7, 7], "mirror": true}
+					]
+				},
+				{
+					"name": "far_right_wing2",
+					"parent": "right_small_wing",
+					"pivot": [0, 14, 14],
+					"cubes": [
+						{"origin": [0, 3, 14], "size": [0, 20, 9], "uv": [20, 32], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}

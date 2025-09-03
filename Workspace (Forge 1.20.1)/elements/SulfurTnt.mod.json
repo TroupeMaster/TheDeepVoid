@@ -127,6 +127,9 @@
     "onDestroyedByExplosion": {
       "name": "SulfurTntBlockDestroyedByExplosion"
     },
+    "onRedstoneOn": {
+      "name": "SulfurTntRedstone"
+    },
     "generateFeature": false,
     "restrictionBiomes": [],
     "blocksToReplace": [

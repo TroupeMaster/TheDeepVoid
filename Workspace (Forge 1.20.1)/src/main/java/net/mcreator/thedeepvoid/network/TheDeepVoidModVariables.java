@@ -95,6 +95,9 @@ public class TheDeepVoidModVariables {
 			clone.stalkWatcherCount = original.stalkWatcherCount;
 			clone.noGravity = original.noGravity;
 			clone.teleportToVoid = original.teleportToVoid;
+			clone.hiveCallX = original.hiveCallX;
+			clone.hiveCallY = original.hiveCallY;
+			clone.hiveCallZ = original.hiveCallZ;
 			if (!event.isWasDeath()) {
 				clone.playerX = original.playerX;
 				clone.playerY = original.playerY;
@@ -146,6 +149,13 @@ public class TheDeepVoidModVariables {
 				clone.attackedByAnimosity = original.attackedByAnimosity;
 				clone.eyekinCooldown = original.eyekinCooldown;
 				clone.eyekinDash = original.eyekinDash;
+				clone.wingFlapSound = original.wingFlapSound;
+				clone.hookX = original.hookX;
+				clone.hookY = original.hookY;
+				clone.hookZ = original.hookZ;
+				clone.hooked = original.hooked;
+				clone.voidriumTeleport = original.voidriumTeleport;
+				clone.noEscape = original.noEscape;
 			}
 		}
 
@@ -216,6 +226,8 @@ public class TheDeepVoidModVariables {
 		public boolean overwritten = false;
 		public boolean surfaceOverwritten = false;
 		public double apostleFightCount = 0;
+		public double hivemindFightCount = 0;
+		public double primordialcrawlerFightCount = 0;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -233,6 +245,8 @@ public class TheDeepVoidModVariables {
 			overwritten = nbt.getBoolean("overwritten");
 			surfaceOverwritten = nbt.getBoolean("surfaceOverwritten");
 			apostleFightCount = nbt.getDouble("apostleFightCount");
+			hivemindFightCount = nbt.getDouble("hivemindFightCount");
+			primordialcrawlerFightCount = nbt.getDouble("primordialcrawlerFightCount");
 		}
 
 		@Override
@@ -246,6 +260,8 @@ public class TheDeepVoidModVariables {
 			nbt.putBoolean("overwritten", overwritten);
 			nbt.putBoolean("surfaceOverwritten", surfaceOverwritten);
 			nbt.putDouble("apostleFightCount", apostleFightCount);
+			nbt.putDouble("hivemindFightCount", hivemindFightCount);
+			nbt.putDouble("primordialcrawlerFightCount", primordialcrawlerFightCount);
 			return nbt;
 		}
 
@@ -411,6 +427,16 @@ public class TheDeepVoidModVariables {
 		public boolean attackedByAnimosity = false;
 		public double eyekinCooldown = 0;
 		public double eyekinDash = 0;
+		public double wingFlapSound = 0;
+		public double hookX = 0;
+		public double hookY = 0;
+		public double hookZ = 0;
+		public boolean hooked = false;
+		public double voidriumTeleport = 0;
+		public boolean noEscape = false;
+		public double hiveCallX = 0;
+		public double hiveCallY = 0;
+		public double hiveCallZ = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -492,6 +518,16 @@ public class TheDeepVoidModVariables {
 			nbt.putBoolean("attackedByAnimosity", attackedByAnimosity);
 			nbt.putDouble("eyekinCooldown", eyekinCooldown);
 			nbt.putDouble("eyekinDash", eyekinDash);
+			nbt.putDouble("wingFlapSound", wingFlapSound);
+			nbt.putDouble("hookX", hookX);
+			nbt.putDouble("hookY", hookY);
+			nbt.putDouble("hookZ", hookZ);
+			nbt.putBoolean("hooked", hooked);
+			nbt.putDouble("voidriumTeleport", voidriumTeleport);
+			nbt.putBoolean("noEscape", noEscape);
+			nbt.putDouble("hiveCallX", hiveCallX);
+			nbt.putDouble("hiveCallY", hiveCallY);
+			nbt.putDouble("hiveCallZ", hiveCallZ);
 			return nbt;
 		}
 
@@ -570,6 +606,16 @@ public class TheDeepVoidModVariables {
 			attackedByAnimosity = nbt.getBoolean("attackedByAnimosity");
 			eyekinCooldown = nbt.getDouble("eyekinCooldown");
 			eyekinDash = nbt.getDouble("eyekinDash");
+			wingFlapSound = nbt.getDouble("wingFlapSound");
+			hookX = nbt.getDouble("hookX");
+			hookY = nbt.getDouble("hookY");
+			hookZ = nbt.getDouble("hookZ");
+			hooked = nbt.getBoolean("hooked");
+			voidriumTeleport = nbt.getDouble("voidriumTeleport");
+			noEscape = nbt.getBoolean("noEscape");
+			hiveCallX = nbt.getDouble("hiveCallX");
+			hiveCallY = nbt.getDouble("hiveCallY");
+			hiveCallZ = nbt.getDouble("hiveCallZ");
 		}
 	}
 
@@ -667,6 +713,16 @@ public class TheDeepVoidModVariables {
 					variables.attackedByAnimosity = message.data.attackedByAnimosity;
 					variables.eyekinCooldown = message.data.eyekinCooldown;
 					variables.eyekinDash = message.data.eyekinDash;
+					variables.wingFlapSound = message.data.wingFlapSound;
+					variables.hookX = message.data.hookX;
+					variables.hookY = message.data.hookY;
+					variables.hookZ = message.data.hookZ;
+					variables.hooked = message.data.hooked;
+					variables.voidriumTeleport = message.data.voidriumTeleport;
+					variables.noEscape = message.data.noEscape;
+					variables.hiveCallX = message.data.hiveCallX;
+					variables.hiveCallY = message.data.hiveCallY;
+					variables.hiveCallZ = message.data.hiveCallZ;
 				}
 			});
 			context.setPacketHandled(true);

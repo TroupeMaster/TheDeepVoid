@@ -1,12 +1,5 @@
 package net.mcreator.thedeepvoid.procedures;
 
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.eventbus.api.Event;
-import net.minecraftforge.event.entity.player.ItemTooltipEvent;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.api.distmarker.Dist;
-
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -16,23 +9,10 @@ import net.minecraft.client.gui.screens.Screen;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
-import javax.annotation.Nullable;
-
 import java.util.List;
 
-@Mod.EventBusSubscriber
 public class ArmorTooltipsPartTwoProcedure {
-	@OnlyIn(Dist.CLIENT)
-	@SubscribeEvent
-	public static void onItemTooltip(ItemTooltipEvent event) {
-		execute(event, event.getEntity(), event.getItemStack(), event.getToolTip());
-	}
-
 	public static void execute(Entity entity, ItemStack itemstack, List<Component> tooltip) {
-		execute(null, entity, itemstack, tooltip);
-	}
-
-	private static void execute(@Nullable Event event, Entity entity, ItemStack itemstack, List<Component> tooltip) {
 		if (entity == null || tooltip == null)
 			return;
 		if (itemstack.getItem() == TheDeepVoidModItems.HARVESTER_MASK_HELMET.get()) {
@@ -61,6 +41,27 @@ public class ArmorTooltipsPartTwoProcedure {
 					tooltip.add(Component.literal("\u00A77Full Armor:"));
 					tooltip.add(Component.literal(" \u00A79-Slowly withers away the soul of nearby victims"));
 				}
+			}
+		}
+		if (itemstack.getItem() == TheDeepVoidModItems.SOUL_WINGS_CHESTPLATE.get() || itemstack.getItem() == TheDeepVoidModItems.SOUL_WINGS_FLY_CHESTPLATE.get()) {
+			if (Screen.hasShiftDown()) {
+				tooltip.add(Component.literal("\u00A77On Armor Ability key pressed:"));
+				tooltip.add(Component.literal(" \u00A79-Fly vertically rapidly, but with bad horizontal speed"));
+				tooltip.add(Component.literal(" \u00A79-Sneak while flying to fly straight upward with less speed"));
+				tooltip.add(Component.literal("\u00A77When worn:"));
+				tooltip.add(Component.literal(" \u00A79-Negates fall damage"));
+			} else {
+				tooltip.add(Component.literal("\u00A76Press Shift to show abilities"));
+			}
+		}
+		if (itemstack.getItem() == TheDeepVoidModItems.BLOODY_RIB_CAGE_CHESTPLATE.get()) {
+			if (Screen.hasShiftDown()) {
+				tooltip.add(Component.literal("\u00A77When worn:"));
+				tooltip.add(Component.literal(" \u00A79-Fleshkin won't attack the wearer"));
+				tooltip.add(Component.literal(" \u00A79-Grants immunity to Poison and Nausea"));
+				tooltip.add(Component.literal(" \u00A79-Teeth won't damage the wearer, teeth trap won't activate and pus sacks won't explode"));
+			} else {
+				tooltip.add(Component.literal("\u00A76Press Shift to show abilities"));
 			}
 		}
 	}

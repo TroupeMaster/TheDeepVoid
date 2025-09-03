@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Watch It, Punk !",
+    "achievementName": "Watch It, Punk!",
     "achievementDescription": "Mercilessly slaughter a Stalker or a Nightmare with its own weapon",
     "achievementIcon": {
       "value": "CUSTOM:GrimScythe"

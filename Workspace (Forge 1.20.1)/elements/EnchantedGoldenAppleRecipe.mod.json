@@ -14,10 +14,10 @@
       "value": "Items.GOLDEN_APPLE#0"
     },
     "smithingInputAdditionStack": {
-      "value": "CUSTOM:BlockOfRefinedBismuth"
+      "value": "CUSTOM:UmbriumGem"
     },
     "smithingInputTemplateStack": {
-      "value": ""
+      "value": "CUSTOM:SmithingTemplateOnyx"
     },
     "smithingReturnStack": {
       "value": "Items.GOLDEN_APPLE#1"

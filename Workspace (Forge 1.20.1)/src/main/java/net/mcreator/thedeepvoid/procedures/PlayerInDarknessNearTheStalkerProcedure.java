@@ -99,7 +99,7 @@ public class PlayerInDarknessNearTheStalkerProcedure {
 									for (Entity entityiterator : _entfound) {
 										if (entityiterator instanceof StalkingStalkerEntity) {
 											if (entityiterator instanceof StalkingStalkerEntity) {
-												((StalkingStalkerEntity) entityiterator).setAnimation("animation.stalker_digHide");
+												((StalkingStalkerEntity) entityiterator).setAnimation("animation.stalker_hide");
 											}
 											if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 												_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 45, 99, false, false));
@@ -114,7 +114,7 @@ public class PlayerInDarknessNearTheStalkerProcedure {
 										}
 										if (entityiterator instanceof WatchingStalkerEntity) {
 											if (entityiterator instanceof WatchingStalkerEntity) {
-												((WatchingStalkerEntity) entityiterator).setAnimation("animation.stalker_digHide");
+												((WatchingStalkerEntity) entityiterator).setAnimation("animation.stalker_hide");
 											}
 											if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 												_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 45, 99, false, false));

@@ -93,7 +93,6 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.ONYX_NEEDLE.get());
 				tabData.accept(TheDeepVoidModItems.LICKER_HOOK.get());
 				tabData.accept(TheDeepVoidModItems.BLOODY_TONGUE.get());
-				tabData.accept(TheDeepVoidModItems.ROTTEN_TONGUE_HOOK.get());
 				tabData.accept(TheDeepVoidModItems.VOID_CLOAK_CHESTPLATE.get());
 				tabData.accept(TheDeepVoidModItems.VOID_MATTER.get());
 				tabData.accept(TheDeepVoidModBlocks.HANGING_MARROW.get().asItem());
@@ -144,8 +143,6 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.SCAVENGER_ARMOR_TRIM.get());
 				tabData.accept(TheDeepVoidModItems.DEVOURER_TENDRIL.get());
 				tabData.accept(TheDeepVoidModItems.DEVOURER_SHIELD.get());
-				tabData.accept(TheDeepVoidModItems.DEVOURER_HOOK.get());
-				tabData.accept(TheDeepVoidModItems.LAVENDITE_DEVOURER_HOOK.get());
 				tabData.accept(TheDeepVoidModItems.CHASMS_MUSIC_DISC.get());
 				tabData.accept(TheDeepVoidModItems.AMALGAM_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModBlocks.VOID_ROOTS.get().asItem());
@@ -561,6 +558,33 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModBlocks.PURPLE_EYE_VINE.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.BIG_BROWN_EYE.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.BIG_PURPLE_EYE.get().asItem());
+				tabData.accept(TheDeepVoidModItems.SOUL_WINGS_CHESTPLATE.get());
+				tabData.accept(TheDeepVoidModItems.PRIMORDIAL_CRAWLER_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.PRIMORDIAL_CRAWLER_TREASURE_BAG.get());
+				tabData.accept(TheDeepVoidModItems.THE_HAUNT.get());
+				tabData.accept(TheDeepVoidModItems.SLEEPING_PRIMORDIAL_CRAWLER_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.GRIM_LICKER_HOOK.get());
+				tabData.accept(TheDeepVoidModItems.VENGEFUL_LICKER_HOOK.get());
+				tabData.accept(TheDeepVoidModItems.BONE_CRAWLER_MOLT_PIECE.get());
+				tabData.accept(TheDeepVoidModItems.PRESERVER_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModBlocks.VOID_BLOSSOM.get().asItem());
+				tabData.accept(TheDeepVoidModItems.SENTIENT_CHAINSAW.get());
+				tabData.accept(TheDeepVoidModItems.CRAWLER_ROYALTY_HELMET.get());
+				tabData.accept(TheDeepVoidModItems.CRAWLER_ROYALTY_CHESTPLATE.get());
+				tabData.accept(TheDeepVoidModItems.CRAWLER_ROYALTY_LEGGINGS.get());
+				tabData.accept(TheDeepVoidModItems.CRAWLER_ROYALTY_BOOTS.get());
+				tabData.accept(TheDeepVoidModBlocks.LURKER_SHRINE.get().asItem());
+				tabData.accept(TheDeepVoidModItems.CLAW_BLADE.get());
+				tabData.accept(TheDeepVoidModItems.CALL_UPON_THE_HIVE.get());
+				tabData.accept(TheDeepVoidModItems.GIANT_BONE_CRAWLER_EGG_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModBlocks.POLISHED_LAVENDITE_BLOCK.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.POLISHED_LAVENDITE_STAIRS.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.POLISHED_LAVENDITE_SLAB.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.VOID_STEM.get().asItem());
+				tabData.accept(TheDeepVoidModItems.VOID_TENTACLE_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.NECRONOMICON.get());
+				tabData.accept(TheDeepVoidModBlocks.ANCIENT_POT_BLOCK.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.ANCIENT_URNS.get().asItem());
 			})
 
 					.build());

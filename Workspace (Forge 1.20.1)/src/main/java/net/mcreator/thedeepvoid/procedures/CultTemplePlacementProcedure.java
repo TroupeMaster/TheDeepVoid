@@ -37,14 +37,16 @@ public class CultTemplePlacementProcedure {
 				if (world instanceof ServerLevel _serverworld) {
 					StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("the_deep_void", "void_cult_temple"));
 					if (template != null) {
-						template.placeInWorld(_serverworld, new BlockPos(-8, -64, -8), new BlockPos(-8, -64, -8), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random, 3);
+						template.placeInWorld(_serverworld, BlockPos.containing(-8, (double) DeepVoidConfigConfiguration.HOLESTRUCTUREY.get(), -8), BlockPos.containing(-8, (double) DeepVoidConfigConfiguration.HOLESTRUCTUREY.get(), -8),
+								new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random, 3);
 					}
 				}
 			} else {
 				if (world instanceof ServerLevel _serverworld) {
 					StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("the_deep_void", "void_temple_new"));
 					if (template != null) {
-						template.placeInWorld(_serverworld, new BlockPos(-12, -64, -12), new BlockPos(-12, -64, -12), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random, 3);
+						template.placeInWorld(_serverworld, BlockPos.containing(-12, (double) DeepVoidConfigConfiguration.HOLESTRUCTUREY.get(), -12), BlockPos.containing(-12, (double) DeepVoidConfigConfiguration.HOLESTRUCTUREY.get(), -12),
+								new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random, 3);
 					}
 				}
 			}
@@ -52,11 +54,11 @@ public class CultTemplePlacementProcedure {
 			TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
 			if (DeepVoidConfigConfiguration.OLDHOLESTRUCTURE.get() == true) {
 				TheDeepVoidMod.queueServerWork(20, () -> {
-					world.setBlock(new BlockPos(-8, -63, -8), Blocks.AIR.defaultBlockState(), 3);
+					world.setBlock(BlockPos.containing(-8, (double) DeepVoidConfigConfiguration.HOLESTRUCTUREY.get() + 1, -8), Blocks.AIR.defaultBlockState(), 3);
 				});
 			} else {
 				TheDeepVoidMod.queueServerWork(20, () -> {
-					world.setBlock(new BlockPos(-8, -63, -12), Blocks.AIR.defaultBlockState(), 3);
+					world.setBlock(BlockPos.containing(-8, (double) DeepVoidConfigConfiguration.HOLESTRUCTUREY.get() + 1, -12), Blocks.AIR.defaultBlockState(), 3);
 				});
 			}
 		}

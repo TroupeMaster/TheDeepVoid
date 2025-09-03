@@ -81,9 +81,9 @@ public class HeresyRightclickedProcedure {
 										entityToSpawn.setPierceLevel(piercing);
 										return entityToSpawn;
 									}
-								}.getArrow(projectileLevel, entity, 12, 0, (byte) 1);
+								}.getArrow(projectileLevel, entity, 20, 0, (byte) 1);
 								_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.2, 8);
+								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 1.1, 8);
 								projectileLevel.addFreshEntity(_entityToSpawn);
 							}
 						}
@@ -104,7 +104,7 @@ public class HeresyRightclickedProcedure {
 									}
 								}.getArrow(projectileLevel, entity, 25, 0, (byte) 1);
 								_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 1, 12);
+								_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 0.8, 12);
 								projectileLevel.addFreshEntity(_entityToSpawn);
 							}
 						}
@@ -128,9 +128,9 @@ public class HeresyRightclickedProcedure {
 									entityToSpawn.setPierceLevel(piercing);
 									return entityToSpawn;
 								}
-							}.getArrow(projectileLevel, entity, (float) 1.5, 0, (byte) 4);
+							}.getArrow(projectileLevel, entity, (float) 2.5, 0, (byte) 4);
 							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 4.2, 0);
+							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 5, 0);
 							projectileLevel.addFreshEntity(_entityToSpawn);
 						}
 					}
@@ -149,7 +149,7 @@ public class HeresyRightclickedProcedure {
 									entityToSpawn.setPierceLevel(piercing);
 									return entityToSpawn;
 								}
-							}.getArrow(projectileLevel, entity, 3, 0, (byte) 3);
+							}.getArrow(projectileLevel, entity, 4, 0, (byte) 3);
 							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 4, 1);
 							projectileLevel.addFreshEntity(_entityToSpawn);
@@ -173,7 +173,7 @@ public class HeresyRightclickedProcedure {
 											entityToSpawn.setPierceLevel(piercing);
 											return entityToSpawn;
 										}
-									}.getArrow(projectileLevel, entity, 2, 0, (byte) 2);
+									}.getArrow(projectileLevel, entity, 3, 0, (byte) 2);
 									_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
 									_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 0.8, 10);
 									projectileLevel.addFreshEntity(_entityToSpawn);
@@ -218,10 +218,10 @@ public class HeresyRightclickedProcedure {
 			TheDeepVoidMod.queueServerWork(10, () -> {
 				if (itemstack.getOrCreateTag().getDouble("deep_void:rounds") == -1) {
 					if (entity instanceof LivingEntity _entity)
-						_entity.setHealth((float) Math.ceil((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) - ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 35) / 100));
+						_entity.setHealth((float) Math.ceil((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) - ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 45) / 100));
 				} else {
 					if (entity instanceof LivingEntity _entity)
-						_entity.setHealth((float) Math.ceil((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) - ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 25) / 100));
+						_entity.setHealth((float) Math.ceil((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) - ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 30) / 100));
 				}
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {

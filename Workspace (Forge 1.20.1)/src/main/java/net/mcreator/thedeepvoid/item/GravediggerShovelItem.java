@@ -11,9 +11,11 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.procedures.GravediggerShovelSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.procedures.GravediggerShovelBlockDestroyedWithToolProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
@@ -58,6 +60,7 @@ public class GravediggerShovelItem extends ShovelItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Break bone related blocks instantly"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(GravediggerShovelSpecialInformationProcedure.execute()));
 	}
 }

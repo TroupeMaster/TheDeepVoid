@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:lavendite"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:polished_lavendite_block",
+    "count": 1
+  }
+}

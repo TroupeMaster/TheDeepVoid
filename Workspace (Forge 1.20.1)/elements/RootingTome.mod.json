@@ -31,7 +31,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7Roots all foes around the caster"
-      ]
+      ],
+      "name": "RootingTomeSpecialInformation"
     },
     "glowCondition": {
       "fixedValue": false

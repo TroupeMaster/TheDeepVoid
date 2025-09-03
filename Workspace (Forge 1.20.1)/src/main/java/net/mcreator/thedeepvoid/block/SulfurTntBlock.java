@@ -11,6 +11,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.procedures.SulfurTntRedstoneProcedure;
 import net.mcreator.thedeepvoid.procedures.SulfurTntBlockDestroyedByExplosionProcedure;
 import net.mcreator.thedeepvoid.procedures.SulfurTntBlockChangesProcedure;
 
@@ -32,6 +33,9 @@ public class SulfurTntBlock extends Block {
 	@Override
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
+		if (world.getBestNeighborSignal(pos) > 0) {
+			SulfurTntRedstoneProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
+		}
 		SulfurTntBlockChangesProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 

@@ -21,22 +21,22 @@
         "value": "CUSTOM:MournerHide"
       },
       {
-        "value": "CUSTOM:SacredCinnabar"
+        "value": "CUSTOM:AncientOnyx"
+      },
+      {
+        "value": "CUSTOM:MournerHide"
+      },
+      {
+        "value": "CUSTOM:AncientOnyx"
+      },
+      {
+        "value": "CUSTOM:BlackMoss"
       },
       {
         "value": "CUSTOM:UmbriumGem"
       },
       {
-        "value": "CUSTOM:SacredCinnabar"
-      },
-      {
-        "value": "CUSTOM:SoulFusedIngot"
-      },
-      {
-        "value": "CUSTOM:UmbriumGem"
-      },
-      {
-        "value": "CUSTOM:SoulFusedIngot"
+        "value": "CUSTOM:BlackMoss"
       }
     ],
     "recipeReturnStack": {

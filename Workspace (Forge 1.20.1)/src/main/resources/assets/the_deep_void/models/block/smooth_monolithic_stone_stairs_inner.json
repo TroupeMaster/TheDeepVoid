@@ -1,10 +1,10 @@
 {
   "parent": "block/inner_stairs",
   "textures": {
-    "particle": "the_deep_void:block/polished_monolithic_stone",
-    "bottom": "the_deep_void:block/polished_monolithic_stone",
-    "top": "the_deep_void:block/polished_monolithic_stone",
-    "side": "the_deep_void:block/polished_monolithic_stone"
+    "particle": "the_deep_void:block/polished_monolithic_new",
+    "bottom": "the_deep_void:block/polished_monolithic_new",
+    "top": "the_deep_void:block/polished_monolithic_new",
+    "side": "the_deep_void:block/polished_monolithic_new"
   },
   "render_type": "solid"
 }

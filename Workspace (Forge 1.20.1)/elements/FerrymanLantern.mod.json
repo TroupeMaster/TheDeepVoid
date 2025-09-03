@@ -100,7 +100,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7The creatures aren't interested in breaking this lantern"
-      ]
+      ],
+      "name": "FerrymanLanternSpecialInformation"
     },
     "hardness": 3.5,
     "resistance": 3.5,

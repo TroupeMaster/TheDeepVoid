@@ -8,7 +8,10 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
+
+import net.mcreator.thedeepvoid.procedures.SoulCleaverSpecialInformationProcedure;
 
 import java.util.List;
 
@@ -44,8 +47,7 @@ public class SoulCleaverItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Right click on an entity to pass your pain onto them, sacrificing your health based on a fifth of your opponent's current health"));
-		list.add(Component.literal("\u00A77Each hit makes the sword swing faster"));
-		list.add(Component.literal("\u00A77The Painful effect spreads to other targets when the victim dies"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(SoulCleaverSpecialInformationProcedure.execute()));
 	}
 }

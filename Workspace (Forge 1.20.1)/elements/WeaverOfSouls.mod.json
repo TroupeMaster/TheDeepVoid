@@ -55,7 +55,7 @@
     },
     "mobBehaviourType": "Mob",
     "mobCreatureType": "UNDEFINED",
-    "attackStrength": 10,
+    "attackStrength": 14,
     "attackKnockback": 4.0,
     "knockbackResistance": 999.0,
     "movementSpeed": 0.3,

@@ -37,7 +37,7 @@ public class StalkerScytheClawItem extends AxeItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(TheDeepVoidModItems.ROTTEN_BONE.get()));
 			}
-		}, 1, -3f, new Item.Properties().fireResistant());
+		}, 1, -2.8f, new Item.Properties().fireResistant());
 	}
 
 	@Override

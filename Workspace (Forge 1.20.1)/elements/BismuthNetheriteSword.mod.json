@@ -12,7 +12,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7The wielder gains more XP"
-      ]
+      ],
+      "name": "BismuthNetheriteSwordSpecialInformation"
     },
     "creativeTabs": [
       {

@@ -104,7 +104,7 @@ public class ApostleOfCatastropheEntity extends Monster implements GeoEntity {
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
-				return 7.84;
+				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
 			}
 		});
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
@@ -144,7 +144,7 @@ public class ApostleOfCatastropheEntity extends Monster implements GeoEntity {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		ApostleOfCatastropheOnInitialEntitySpawnProcedure.execute(this.getX(), this.getY(), this.getZ(), this);
+		ApostleOfCatastropheOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
 		return retval;
 	}
 
@@ -202,9 +202,9 @@ public class ApostleOfCatastropheEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 500);
+		builder = builder.add(Attributes.MAX_HEALTH, 800);
 		builder = builder.add(Attributes.ARMOR, 14);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 10);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 74);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 999);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 0.1);
@@ -227,24 +227,6 @@ public class ApostleOfCatastropheEntity extends Monster implements GeoEntity {
 			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.apostle_idle"));
 		}
 		return PlayState.STOP;
-	}
-
-	private PlayState attackingPredicate(AnimationState event) {
-		double d1 = this.getX() - this.xOld;
-		double d0 = this.getZ() - this.zOld;
-		float velocity = (float) Math.sqrt(d1 * d1 + d0 * d0);
-		if (getAttackAnim(event.getPartialTick()) > 0f && !this.swinging) {
-			this.swinging = true;
-			this.lastSwing = level().getGameTime();
-		}
-		if (this.swinging && this.lastSwing + 7L <= level().getGameTime()) {
-			this.swinging = false;
-		}
-		if (this.swinging && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
-			event.getController().forceAnimationReset();
-			return event.setAndContinue(RawAnimation.begin().thenPlay("animation.apostle_melee"));
-		}
-		return PlayState.CONTINUE;
 	}
 
 	String prevAnim = "empty";
@@ -286,7 +268,6 @@ public class ApostleOfCatastropheEntity extends Monster implements GeoEntity {
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar data) {
 		data.add(new AnimationController<>(this, "movement", 4, this::movementPredicate));
-		data.add(new AnimationController<>(this, "attacking", 4, this::attackingPredicate));
 		data.add(new AnimationController<>(this, "procedure", 4, this::procedurePredicate));
 	}
 

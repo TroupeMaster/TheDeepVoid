@@ -22,13 +22,19 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.procedures.FerrymanLanternSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.procedures.FerrymanLanternHangedNeighbourBlockChangesProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
+
+import java.util.List;
 
 public class FerrymanLanternHangedBlock extends Block implements SimpleWaterloggedBlock {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -36,6 +42,13 @@ public class FerrymanLanternHangedBlock extends Block implements SimpleWaterlogg
 	public FerrymanLanternHangedBlock() {
 		super(BlockBehaviour.Properties.of().sound(SoundType.LANTERN).strength(3.5f).lightLevel(s -> 12).requiresCorrectToolForDrops().noOcclusion().pushReaction(PushReaction.DESTROY).isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
+	}
+
+	@Override
+	public void appendHoverText(ItemStack itemstack, BlockGetter level, List<Component> list, TooltipFlag flag) {
+		super.appendHoverText(itemstack, level, list, flag);
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(FerrymanLanternSpecialInformationProcedure.execute()));
 	}
 
 	@Override

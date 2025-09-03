@@ -13,7 +13,6 @@ import software.bernie.geckolib.animatable.GeoItem;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemDisplayContext;
@@ -22,7 +21,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.network.chat.Component;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.player.LocalPlayer;
 
@@ -30,7 +28,6 @@ import net.mcreator.thedeepvoid.procedures.HeresyRightclickedProcedure;
 import net.mcreator.thedeepvoid.item.renderer.HeresyItemRenderer;
 
 import java.util.function.Consumer;
-import java.util.List;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 
@@ -111,17 +108,6 @@ public class HeresyItem extends Item implements GeoItem {
 	@Override
 	public AnimatableInstanceCache getAnimatableInstanceCache() {
 		return this.cache;
-	}
-
-	@Override
-	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
-		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Right click to shoot a Blood Shot, a bullet made from blood, which goes in a straight line and pierces. On hit, applies Blood Boil"));
-		list.add(Component.literal("\u00A77When the chamber is full, the bullet will split into 5 fragment, which are slower, as well as the main bullet"));
-		list.add(Component.literal("\u00A77When the chamber is full, sneak to fire all 7 bullets at once with higher damage but with less range and pierce. Uses 35% of current health when reloading"));
-		list.add(Component.literal("\u00A77When the chamber is empty, right click to sacrifice 25% of current health to create new bullets"));
-		list.add(Component.literal("\u00A77If, when reloading, the shooter has Absorption, Golden Blood Shots will be created instead. They shoot further but with less damage."));
-		list.add(Component.literal("\u00A77 Capacity: 7 bullets"));
 	}
 
 	@Override

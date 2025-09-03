@@ -247,10 +247,10 @@ public class SwarmerEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.4);
-		builder = builder.add(Attributes.MAX_HEALTH, 15);
+		builder = builder.add(Attributes.MAX_HEALTH, 12);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 2);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 24);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 20);
 		builder = builder.add(Attributes.FLYING_SPEED, 0.4);
 		return builder;
 	}

@@ -144,7 +144,7 @@ public class HiveBrainEntity extends Monster implements GeoEntity {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		HiveBrainEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
+		HiveBrainEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), source.getEntity());
 	}
 
 	@Override

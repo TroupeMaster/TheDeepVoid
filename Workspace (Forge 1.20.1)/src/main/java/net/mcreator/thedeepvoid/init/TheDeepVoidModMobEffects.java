@@ -14,6 +14,7 @@ import net.mcreator.thedeepvoid.potion.WeaverCurseMobEffect;
 import net.mcreator.thedeepvoid.potion.VoidriumMarkMobEffect;
 import net.mcreator.thedeepvoid.potion.VoidBlessingMobEffect;
 import net.mcreator.thedeepvoid.potion.TrembleMobEffect;
+import net.mcreator.thedeepvoid.potion.TheHauntMusicMobEffect;
 import net.mcreator.thedeepvoid.potion.TerrifiedMobEffect;
 import net.mcreator.thedeepvoid.potion.StareMobEffect;
 import net.mcreator.thedeepvoid.potion.SinsAndSinnersMusicMobEffect;
@@ -80,4 +81,5 @@ public class TheDeepVoidModMobEffects {
 	public static final RegistryObject<MobEffect> CHAINSAW_MUSIC = REGISTRY.register("chainsaw_music", () -> new ChainsawMusicMobEffect());
 	public static final RegistryObject<MobEffect> BLOOD_BOIL = REGISTRY.register("blood_boil", () -> new BloodBoilMobEffect());
 	public static final RegistryObject<MobEffect> PITCH_BLACK_MUSIC = REGISTRY.register("pitch_black_music", () -> new PitchBlackMusicMobEffect());
+	public static final RegistryObject<MobEffect> THE_HAUNT_MUSIC = REGISTRY.register("the_haunt_music", () -> new TheHauntMusicMobEffect());
 }

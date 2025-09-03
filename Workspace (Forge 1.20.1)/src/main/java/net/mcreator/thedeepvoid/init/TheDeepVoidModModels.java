@@ -50,6 +50,7 @@ import net.mcreator.thedeepvoid.client.model.Modelhunter;
 import net.mcreator.thedeepvoid.client.model.Modelhallucination_new;
 import net.mcreator.thedeepvoid.client.model.Modelgravekeeper;
 import net.mcreator.thedeepvoid.client.model.Modelgoo_spitter;
+import net.mcreator.thedeepvoid.client.model.Modelgiant_crawler_egg;
 import net.mcreator.thedeepvoid.client.model.Modelfool_eater_rework;
 import net.mcreator.thedeepvoid.client.model.Modelfool_eater_new;
 import net.mcreator.thedeepvoid.client.model.Modelflesh_cube;
@@ -63,6 +64,7 @@ import net.mcreator.thedeepvoid.client.model.Modeldark_throw_knife;
 import net.mcreator.thedeepvoid.client.model.Modelcharred_walker;
 import net.mcreator.thedeepvoid.client.model.Modelbone_crawler_remodeled;
 import net.mcreator.thedeepvoid.client.model.Modelbone_crawler;
+import net.mcreator.thedeepvoid.client.model.Modelblock_projectile;
 import net.mcreator.thedeepvoid.client.model.Modelblind_prophet;
 import net.mcreator.thedeepvoid.client.model.Modelbig_shade_arrow;
 import net.mcreator.thedeepvoid.client.model.Modelbeholder;
@@ -78,6 +80,7 @@ import net.mcreator.thedeepvoid.client.model.Modelabducter;
 public class TheDeepVoidModModels {
 	@SubscribeEvent
 	public static void registerLayerDefinitions(EntityRenderersEvent.RegisterLayerDefinitions event) {
+		event.registerLayerDefinition(Modelblock_projectile.LAYER_LOCATION, Modelblock_projectile::createBodyLayer);
 		event.registerLayerDefinition(Modelthrown_soul_seeker.LAYER_LOCATION, Modelthrown_soul_seeker::createBodyLayer);
 		event.registerLayerDefinition(Modeloverseer.LAYER_LOCATION, Modeloverseer::createBodyLayer);
 		event.registerLayerDefinition(Modeloverseer_bigpillar.LAYER_LOCATION, Modeloverseer_bigpillar::createBodyLayer);
@@ -107,6 +110,7 @@ public class TheDeepVoidModModels {
 		event.registerLayerDefinition(Modelsmall_flesh_cube.LAYER_LOCATION, Modelsmall_flesh_cube::createBodyLayer);
 		event.registerLayerDefinition(Modellurker.LAYER_LOCATION, Modellurker::createBodyLayer);
 		event.registerLayerDefinition(Modelhallucination_new.LAYER_LOCATION, Modelhallucination_new::createBodyLayer);
+		event.registerLayerDefinition(Modelgiant_crawler_egg.LAYER_LOCATION, Modelgiant_crawler_egg::createBodyLayer);
 		event.registerLayerDefinition(Modelspore_spewer.LAYER_LOCATION, Modelspore_spewer::createBodyLayer);
 		event.registerLayerDefinition(Modelstalker2.LAYER_LOCATION, Modelstalker2::createBodyLayer);
 		event.registerLayerDefinition(Modelmother_bone_crawler.LAYER_LOCATION, Modelmother_bone_crawler::createBodyLayer);

@@ -1,6 +1,6 @@
 {
   "has_precipitation": false,
-  "temperature": -0.5,
+  "temperature": 2,
   "downfall": 0,
   "effects": {
     "ambient_sound": "ambient.basalt_deltas.loop",

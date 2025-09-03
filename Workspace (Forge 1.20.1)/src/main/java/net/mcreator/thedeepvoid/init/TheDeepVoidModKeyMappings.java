@@ -36,6 +36,11 @@ public class TheDeepVoidModKeyMappings {
 			if (isDownOld != isDown && isDown) {
 				TheDeepVoidMod.PACKET_HANDLER.sendToServer(new ArmorAbilityMessage(0, 0));
 				ArmorAbilityMessage.pressAction(Minecraft.getInstance().player, 0, 0);
+				ARMOR_ABILITY_LASTPRESS = System.currentTimeMillis();
+			} else if (isDownOld != isDown && !isDown) {
+				int dt = (int) (System.currentTimeMillis() - ARMOR_ABILITY_LASTPRESS);
+				TheDeepVoidMod.PACKET_HANDLER.sendToServer(new ArmorAbilityMessage(1, dt));
+				ArmorAbilityMessage.pressAction(Minecraft.getInstance().player, 1, dt);
 			}
 			isDownOld = isDown;
 		}
@@ -146,6 +151,7 @@ public class TheDeepVoidModKeyMappings {
 			isDownOld = isDown;
 		}
 	};
+	private static long ARMOR_ABILITY_LASTPRESS = 0;
 	private static long MOUNT_UP_LASTPRESS = 0;
 	private static long MOUNT_DOWN_LASTPRESS = 0;
 	private static long MOUNT_DASH_LASTPRESS = 0;

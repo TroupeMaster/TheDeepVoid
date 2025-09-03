@@ -1,10 +1,10 @@
 {
   "parent": "block/stairs",
   "textures": {
-    "particle": "the_deep_void:block/petrified_planks",
-    "bottom": "the_deep_void:block/petrified_planks",
-    "top": "the_deep_void:block/petrified_planks",
-    "side": "the_deep_void:block/petrified_planks"
+    "particle": "the_deep_void:block/rotten_planks_new",
+    "bottom": "the_deep_void:block/rotten_planks_new",
+    "top": "the_deep_void:block/rotten_planks_new",
+    "side": "the_deep_void:block/rotten_planks_new"
   },
   "render_type": "solid"
 }

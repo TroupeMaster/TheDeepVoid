@@ -29,15 +29,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "§7Rot Upgrade",
-        "",
-        "§7Applies to:",
-        " §9Any sword / Licker Hook",
-        "",
-        "§2Attacks apply Rot",
-        "§4The user is given Wither when holding a Rotten Item"
-      ]
+      "fixedValue": []
     },
     "glowCondition": {
       "fixedValue": false
@@ -45,6 +37,9 @@
     "guiBoundTo": "<NONE>",
     "inventorySize": 9,
     "inventoryStackSize": 64,
+    "onRightClickedInAir": {
+      "name": "SmithingTemplateRotRightclicked"
+    },
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,

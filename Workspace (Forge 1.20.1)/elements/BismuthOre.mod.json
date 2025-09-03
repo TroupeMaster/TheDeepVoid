@@ -134,6 +134,9 @@
       },
       {
         "value": "CUSTOM:WatchingUndergrowth"
+      },
+      {
+        "value": "CUSTOM:BefouledMarsh"
       }
     ],
     "blocksToReplace": [

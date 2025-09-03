@@ -17,11 +17,11 @@ public class LavenditeAxeItem extends AxeItem {
 			}
 
 			public float getSpeed() {
-				return 60f;
+				return 40f;
 			}
 
 			public float getAttackDamageBonus() {
-				return 8f;
+				return 4f;
 			}
 
 			public int getLevel() {

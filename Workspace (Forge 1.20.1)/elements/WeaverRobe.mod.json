@@ -10,6 +10,9 @@
     "textureLeggings": "",
     "enableBoots": false,
     "textureBoots": "",
+    "onBodyTick": {
+      "name": "WeaverArmorFull"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:TheDeepVoid"
@@ -86,7 +89,7 @@
     },
     "maxDamage": 0,
     "damageValueHelmet": 0,
-    "damageValueBody": 4,
+    "damageValueBody": 5,
     "damageValueLeggings": 0,
     "damageValueBoots": 0,
     "enchantability": 45,

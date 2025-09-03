@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Is It Amethyst ?",
+    "achievementName": "Is It Amethyst?",
     "achievementDescription": "Obtain lavendite",
     "achievementIcon": {
       "value": "CUSTOM:Lavendite"

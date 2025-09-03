@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "the_deep_void:block/chiseled_ancient_deepslate_bricks",
-    "particle": "the_deep_void:block/chiseled_ancient_deepslate_bricks"
+    "all": "the_deep_void:block/chiseled_ancient_deepslate_new",
+    "particle": "the_deep_void:block/chiseled_ancient_deepslate_new"
   },
   "render_type": "solid"
 }

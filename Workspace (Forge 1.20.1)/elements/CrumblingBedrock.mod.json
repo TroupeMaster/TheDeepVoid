@@ -124,7 +124,7 @@
     "onEntityWalksOn": {
       "name": "CrumblingDeepslateEntityWalksOnTheBlock"
     },
-    "generateFeature": true,
+    "generateFeature": false,
     "restrictionBiomes": [
       {
         "value": "#minecraft:is_overworld"
@@ -138,7 +138,7 @@
     "generationShape": "UNIFORM",
     "frequencyPerChunks": 1,
     "frequencyOnChunk": 24,
-    "minGenerateHeight": -70,
+    "minGenerateHeight": -64,
     "maxGenerateHeight": -60
   }
 }

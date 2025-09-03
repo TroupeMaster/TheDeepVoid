@@ -52,7 +52,7 @@ public class TheHarvestRightclickedProcedure {
 			for (Entity entityiterator : _entfound) {
 				if (entityiterator instanceof LivingEntity && !(entityiterator == sourceentity)) {
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy"))), sourceentity),
-							5);
+							4);
 					if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.HEXED.get(),
 								(int) ((entityiterator instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.HEXED.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.HEXED.get()).getDuration() : 0) + 40),

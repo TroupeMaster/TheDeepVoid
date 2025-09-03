@@ -5,16 +5,24 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 public class TeethTrapEntityWalksOnTheBlockProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z) {
-		if (world.getBlockState(BlockPos.containing(x, y + 1, z)).canOcclude() == false && ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == TheDeepVoidModBlocks.TEETH_TRAP_BLOCK.get()) == false) {
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
+			return;
+		if (world.getBlockState(BlockPos.containing(x, y + 1, z)).canOcclude() == false && ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == TheDeepVoidModBlocks.TEETH_TRAP_BLOCK.get()) == false
+				&& !((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BLOODY_RIB_CAGE_CHESTPLATE.get())) {
 			world.setBlock(BlockPos.containing(x, y + 1, z), TheDeepVoidModBlocks.TEETH_TRAP_BLOCK.get().defaultBlockState(), 3);
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {

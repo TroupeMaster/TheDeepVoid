@@ -18,7 +18,7 @@
     "enchantability": 0,
     "useDuration": 0,
     "toolType": 1.0,
-    "damageCount": 200,
+    "damageCount": 0,
     "recipeRemainder": {
       "value": ""
     },
@@ -29,10 +29,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "§9Upon right clicking",
-        " §7Dash in any direction, pushing foes away"
-      ]
+      "fixedValue": []
     },
     "glowCondition": {
       "fixedValue": false
@@ -42,6 +39,9 @@
     "inventoryStackSize": 64,
     "onRightClickedInAir": {
       "name": "LickerHookRightclicked"
+    },
+    "onEntitySwing": {
+      "name": "LickerHookSwing"
     },
     "enableRanged": false,
     "shootConstantly": false,

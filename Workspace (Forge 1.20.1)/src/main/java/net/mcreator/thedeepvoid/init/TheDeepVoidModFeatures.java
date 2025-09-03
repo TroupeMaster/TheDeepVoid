@@ -19,6 +19,7 @@ import net.mcreator.thedeepvoid.world.features.FleshBlockGenerateNormalFeature;
 import net.mcreator.thedeepvoid.world.features.FleshBlobsGenerateFeature;
 import net.mcreator.thedeepvoid.world.features.DesolateSoilGenerateNormalFeature;
 import net.mcreator.thedeepvoid.world.features.DesolateSoilGenerateFeature;
+import net.mcreator.thedeepvoid.world.features.CrumblingBedrockGenerateFeature;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 @Mod.EventBusSubscriber
@@ -32,4 +33,5 @@ public class TheDeepVoidModFeatures {
 	public static final RegistryObject<Feature<?>> DESOLATE_SOIL_GENERATE_NORMAL = REGISTRY.register("desolate_soil_generate_normal", DesolateSoilGenerateNormalFeature::new);
 	public static final RegistryObject<Feature<?>> ROTTEN_MOSS_GENERATE_NORMAL = REGISTRY.register("rotten_moss_generate_normal", RottenMossGenerateNormalFeature::new);
 	public static final RegistryObject<Feature<?>> FLESH_BLOCK_GENERATE_NORMAL = REGISTRY.register("flesh_block_generate_normal", FleshBlockGenerateNormalFeature::new);
+	public static final RegistryObject<Feature<?>> CRUMBLING_BEDROCK_GENERATE = REGISTRY.register("crumbling_bedrock_generate", CrumblingBedrockGenerateFeature::new);
 }

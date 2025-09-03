@@ -35,9 +35,7 @@
     ],
     "name": "Hanged Lurker Head",
     "specialInformation": {
-      "fixedValue": [
-        "§7Corpses will stop falling near the head"
-      ]
+      "fixedValue": []
     },
     "hardness": 1.0,
     "resistance": 1.0,

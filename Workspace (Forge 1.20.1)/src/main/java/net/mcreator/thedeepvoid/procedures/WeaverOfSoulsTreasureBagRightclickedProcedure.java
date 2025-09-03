@@ -55,9 +55,9 @@ public class WeaverOfSoulsTreasureBagRightclickedProcedure {
 				_level.addFreshEntity(entityToSpawn);
 			}
 		}
-		for (int index3 = 0; index3 < 8; index3++) {
+		for (int index3 = 0; index3 < 4; index3++) {
 			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.SACRED_CINNABAR.get()));
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.SOUL_SHARD.get()));
 				entityToSpawn.setPickUpDelay(10);
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);
@@ -65,7 +65,7 @@ public class WeaverOfSoulsTreasureBagRightclickedProcedure {
 		}
 		for (int index4 = 0; index4 < 2; index4++) {
 			if (world instanceof ServerLevel _level) {
-				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.ENCHANTED_GOLDEN_APPLE));
+				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(Items.GOLDEN_APPLE));
 				entityToSpawn.setPickUpDelay(10);
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);

@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "achievement",
   "definition": {
-    "achievementName": "Break 'em Bones !",
+    "achievementName": "Break 'em Bones!",
     "achievementDescription": "Craft a Gravedigger's Shovel to destroy bones",
     "achievementIcon": {
       "value": "CUSTOM:GravediggerShovel"

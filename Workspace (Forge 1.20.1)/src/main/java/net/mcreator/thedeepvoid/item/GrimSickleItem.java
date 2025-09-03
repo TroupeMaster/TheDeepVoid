@@ -9,8 +9,10 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
+import net.mcreator.thedeepvoid.procedures.ReapingHookSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.procedures.ReapingHookEntitySwingsItemProcedure;
 import net.mcreator.thedeepvoid.procedures.GrimSickleHitProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
@@ -56,7 +58,8 @@ public class GrimSickleItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77On each swing of the sickle, dash toward the nearest foe"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(ReapingHookSpecialInformationProcedure.execute()));
 	}
 
 	@Override

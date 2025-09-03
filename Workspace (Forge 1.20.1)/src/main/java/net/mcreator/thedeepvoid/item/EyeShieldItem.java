@@ -7,8 +7,10 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
+import net.mcreator.thedeepvoid.procedures.EyeShieldSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
@@ -28,6 +30,7 @@ public class EyeShieldItem extends ShieldItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Paralizes every foe in front of the wielder when blocking an attack"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(EyeShieldSpecialInformationProcedure.execute()));
 	}
 }

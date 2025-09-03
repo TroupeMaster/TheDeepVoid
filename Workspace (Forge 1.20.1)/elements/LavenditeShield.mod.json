@@ -12,7 +12,8 @@
     "specialInformation": {
       "fixedValue": [
         "§9Flings attackers into the air when blocking"
-      ]
+      ],
+      "name": "LavenditeShieldSpecialInformation"
     },
     "creativeTabs": [
       {

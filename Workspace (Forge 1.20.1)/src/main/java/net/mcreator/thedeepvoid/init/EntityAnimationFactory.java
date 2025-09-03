@@ -7,16 +7,19 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
 import net.mcreator.thedeepvoid.entity.WatchingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.WandererEntity;
+import net.mcreator.thedeepvoid.entity.VoidTentacleEntity;
 import net.mcreator.thedeepvoid.entity.VoidDwellerEntity;
 import net.mcreator.thedeepvoid.entity.TamedMotherBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.TamedBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.TamedAlphaBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.SwarmerEntity;
 import net.mcreator.thedeepvoid.entity.SummonedShadowHandEntity;
+import net.mcreator.thedeepvoid.entity.SummonedDevourerEntity;
 import net.mcreator.thedeepvoid.entity.StalkingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
 import net.mcreator.thedeepvoid.entity.SporeSpewerEntity;
 import net.mcreator.thedeepvoid.entity.SmallFleshCubeEntity;
+import net.mcreator.thedeepvoid.entity.SleepingPrimordialCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.ShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.ShadowEntity;
 import net.mcreator.thedeepvoid.entity.SeekerEntity;
@@ -28,6 +31,8 @@ import net.mcreator.thedeepvoid.entity.RootedCloneEntity;
 import net.mcreator.thedeepvoid.entity.RoamerEntity;
 import net.mcreator.thedeepvoid.entity.RideableFlyingEyekinEntity;
 import net.mcreator.thedeepvoid.entity.RideableEyekinEntity;
+import net.mcreator.thedeepvoid.entity.PrimordialCrawlerEntity;
+import net.mcreator.thedeepvoid.entity.PreserverEntity;
 import net.mcreator.thedeepvoid.entity.OverseerEntity;
 import net.mcreator.thedeepvoid.entity.NightmareEntity;
 import net.mcreator.thedeepvoid.entity.MuzzledDeathVultureEntity;
@@ -37,6 +42,7 @@ import net.mcreator.thedeepvoid.entity.MotherBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
 import net.mcreator.thedeepvoid.entity.LurkerEntity;
 import net.mcreator.thedeepvoid.entity.LickerEntity;
+import net.mcreator.thedeepvoid.entity.LastingShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.IdlingApostleEntity;
 import net.mcreator.thedeepvoid.entity.HiveBrainEntity;
 import net.mcreator.thedeepvoid.entity.HallucinationEntity;
@@ -540,6 +546,48 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof RideableFlyingEyekinEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof PrimordialCrawlerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof SleepingPrimordialCrawlerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof PreserverEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof LastingShadowHandEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof VoidTentacleEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof SummonedDevourerEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

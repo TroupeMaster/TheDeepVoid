@@ -1,0 +1,103 @@
+{
+  "_fv": 66,
+  "_type": "armor",
+  "definition": {
+    "enableHelmet": true,
+    "textureHelmet": "royalty_helm",
+    "enableBody": true,
+    "textureBody": "royalty_shell",
+    "enableLeggings": true,
+    "textureLeggings": "royalty_jambeau",
+    "enableBoots": true,
+    "textureBoots": "royalty_moccasins",
+    "onBodyTick": {
+      "name": "CrawlerRoyaltyFullArmor"
+    },
+    "creativeTabs": [
+      {
+        "value": "CUSTOM:TheDeepVoid"
+      }
+    ],
+    "armorTextureFile": "royalty_",
+    "helmetName": "§7§l§kBug §7§lCrawler Royalty Helm §7§l§kBug",
+    "bodyName": "§7§l§kBug §7§lCrawler Royalty Shell §7§l§kBug",
+    "leggingsName": "§7§l§kBug §7§lCrawler Royalty Jambeaux §7§l§kBug",
+    "bootsName": "§7§l§kBug §7§lCrawler Royalty Moccasins §7§l§kBug",
+    "helmetSpecialInformation": {
+      "fixedValue": []
+    },
+    "bodySpecialInformation": {
+      "fixedValue": []
+    },
+    "leggingsSpecialInformation": {
+      "fixedValue": []
+    },
+    "bootsSpecialInformation": {
+      "fixedValue": []
+    },
+    "helmetModelName": "Default",
+    "helmetModelPart": "Helmet",
+    "helmetModelTexture": "From armor",
+    "bodyModelName": "Default",
+    "bodyModelPart": "Body",
+    "armsModelPartL": "Arms L",
+    "armsModelPartR": "Arms R",
+    "bodyModelTexture": "From armor",
+    "leggingsModelName": "Default",
+    "leggingsModelPartL": "Leggings L",
+    "leggingsModelPartR": "Leggings R",
+    "leggingsModelTexture": "From armor",
+    "bootsModelName": "Default",
+    "bootsModelPartL": "Boots L",
+    "bootsModelPartR": "Boots R",
+    "bootsModelTexture": "From armor",
+    "helmetItemRenderType": 0,
+    "helmetItemCustomModelName": "Normal",
+    "bodyItemRenderType": 0,
+    "bodyItemCustomModelName": "Normal",
+    "leggingsItemRenderType": 0,
+    "leggingsItemCustomModelName": "Normal",
+    "bootsItemRenderType": 0,
+    "bootsItemCustomModelName": "Normal",
+    "helmetImmuneToFire": false,
+    "bodyImmuneToFire": false,
+    "leggingsImmuneToFire": false,
+    "bootsImmuneToFire": false,
+    "helmetGlowCondition": {
+      "fixedValue": false
+    },
+    "bodyGlowCondition": {
+      "fixedValue": false
+    },
+    "leggingsGlowCondition": {
+      "fixedValue": false
+    },
+    "bootsGlowCondition": {
+      "fixedValue": false
+    },
+    "helmetPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bodyPiglinNeutral": {
+      "fixedValue": false
+    },
+    "leggingsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "bootsPiglinNeutral": {
+      "fixedValue": false
+    },
+    "maxDamage": 0,
+    "damageValueHelmet": 5,
+    "damageValueBody": 8,
+    "damageValueLeggings": 7,
+    "damageValueBoots": 4,
+    "enchantability": 32,
+    "toughness": 1.8,
+    "knockbackResistance": 0.30000000000000004,
+    "equipSound": {
+      "value": "CUSTOM:primordial_crawler_ambient"
+    },
+    "repairItems": []
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/void_stem",
+  "textures": {
+    "all": "the_deep_void:block/void_stem",
+    "particle": "the_deep_void:block/void_stem",
+    "0": "the_deep_void:block/void_stem"
+  },
+  "render_type": "cutout"
+}

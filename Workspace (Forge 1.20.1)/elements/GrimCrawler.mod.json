@@ -10,6 +10,9 @@
     "textureLeggings": "grim_crawler_leggings",
     "enableBoots": true,
     "textureBoots": "grim_crawler_boots",
+    "onBodyTick": {
+      "name": "GrimCrawlerFullArmor"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:TheDeepVoid"

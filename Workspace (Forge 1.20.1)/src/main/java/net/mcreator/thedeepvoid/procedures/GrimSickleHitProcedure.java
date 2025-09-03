@@ -12,7 +12,7 @@ public class GrimSickleHitProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 10, 3));
+			_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 20, 2));
 		if (Math.random() < 0.4) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 140, 1));

@@ -98,6 +98,9 @@
       },
       {
         "value": "CUSTOM:AshBlock"
+      },
+      {
+        "value": "CUSTOM:VoidBlossom"
       }
     ],
     "isBonemealable": false,
@@ -115,6 +118,9 @@
       },
       {
         "value": "CUSTOM:GatheringGrounds"
+      },
+      {
+        "value": "CUSTOM:BefouledMarsh"
       }
     ],
     "generationType": "Grass",

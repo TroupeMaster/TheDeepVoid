@@ -11,11 +11,11 @@ public class SoulOrbRightClickedOnEntityProcedure {
 		if (sourceentity instanceof Player) {
 			if (!sourceentity.isVehicle()) {
 				if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7b\u00A7l\u00A7kSOUL \u00A7b\u00A7lBring me to the receptacle. \u00A7b\u00A7l\u00A7kSOUL"), true);
+					_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.soul_orb.line1").getString())), true);
 				entity.startRiding(sourceentity);
 			} else {
 				if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal("\u00A7b\u00A7l\u00A7kSOUL \u00A7b\u00A7lYou cannot take me, make space. \u00A7b\u00A7l\u00A7kSOUL"), true);
+					_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.soul_orb.line2").getString())), true);
 			}
 		}
 	}

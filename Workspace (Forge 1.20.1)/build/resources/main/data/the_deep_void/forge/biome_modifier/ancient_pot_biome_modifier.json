@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#the_deep_void:is_deep_void",
+  "features": "the_deep_void:ancient_pot",
+  "step": "vegetal_decoration"
+}

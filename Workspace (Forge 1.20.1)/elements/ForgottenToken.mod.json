@@ -31,7 +31,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7Locates any Abductor nearby and when under y=0, tells how close the Nightmare is to spawn"
-      ]
+      ],
+      "name": "ForgottenTokenSpecialInformation"
     },
     "glowCondition": {
       "fixedValue": false

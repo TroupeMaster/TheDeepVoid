@@ -15,5 +15,5 @@ import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 public class TheDeepVoidModPotions {
 	public static final DeferredRegister<Potion> REGISTRY = DeferredRegister.create(ForgeRegistries.POTIONS, TheDeepVoidMod.MODID);
-	public static final RegistryObject<Potion> ROT_POTION = REGISTRY.register("rot_potion", () -> new Potion(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 240, 0, false, true)));
+	public static final RegistryObject<Potion> ROT_POTION = REGISTRY.register("rot_potion", () -> new Potion(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 460, 0, false, true)));
 }

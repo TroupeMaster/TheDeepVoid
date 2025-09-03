@@ -26,7 +26,7 @@ public class BoneLoafItem extends Item {
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
-		BoneLoafEatingProcedure.execute(entity);
+		BoneLoafEatingProcedure.execute(entity, itemstack);
 		return retval;
 	}
 }

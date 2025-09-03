@@ -4,7 +4,7 @@
   "definition": {
     "renderType": 0,
     "texture": "heresy",
-    "name": "§4§l§kPRAY §c§lHeresy §4§l§kPRAY",
+    "name": "§4§l§kPray §c§lHeresy §4§l§kPray",
     "idle": "animation.heresy_idle",
     "rarity": "COMMON",
     "displaySettings": "heresy.json",
@@ -33,14 +33,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "§7Right click to shoot a Blood Shot, a bullet made from blood, which goes in a straight line and pierces. On hit, applies Blood Boil",
-        "§7When the chamber is full, the bullet will split into 5 fragment, which are slower, as well as the main bullet",
-        "§7When the chamber is full, sneak to fire all 7 bullets at once with higher damage but with less range and pierce. Uses 35% of current health when reloading",
-        "§7When the chamber is empty, right click to sacrifice 25% of current health to create new bullets",
-        "§7If, when reloading, the shooter has Absorption, Golden Blood Shots will be created instead. They shoot further but with less damage.",
-        "§7 Capacity: 7 bullets"
-      ]
+      "fixedValue": []
     },
     "hasGlow": false,
     "guiBoundTo": "<NONE>",

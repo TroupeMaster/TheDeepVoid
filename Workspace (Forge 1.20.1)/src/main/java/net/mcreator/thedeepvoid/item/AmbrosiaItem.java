@@ -26,7 +26,7 @@ public class AmbrosiaItem extends Item {
 		double x = entity.getX();
 		double y = entity.getY();
 		double z = entity.getZ();
-		AmbrosiaPlayerFinishesUsingItemProcedure.execute(entity, itemstack);
+		AmbrosiaPlayerFinishesUsingItemProcedure.execute(entity);
 		return retval;
 	}
 }

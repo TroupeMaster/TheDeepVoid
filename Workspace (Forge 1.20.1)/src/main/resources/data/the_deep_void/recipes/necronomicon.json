@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "ddd"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:flesh_bone"
+    },
+    "b": {
+      "item": "the_deep_void:flesh_block"
+    },
+    "c": {
+      "item": "minecraft:book"
+    },
+    "d": {
+      "item": "the_deep_void:flesh_chunk"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:necronomicon",
+    "count": 1
+  }
+}

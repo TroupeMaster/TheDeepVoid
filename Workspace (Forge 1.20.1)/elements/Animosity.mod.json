@@ -8,14 +8,15 @@
     "texture": "animosity",
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
-    "name": "§c§l§kFLESH §c§lAnimosity §c§l§kFLESH",
+    "name": "§c§l§kFlesh §c§lAnimosity §c§l§kFlesh",
     "specialInformation": {
       "fixedValue": [
         "§7The first hit on an entity deals 2x more damage, 2.5x for players. This resets if the player dies",
         "§7Deals 1.5x more damage to players",
         "§7Hides the name of both the killer and the victim",
         "§7Right clicking will transform the sword into a fake diamond sword"
-      ]
+      ],
+      "name": "AnimositySpecialInformation"
     },
     "creativeTabs": [
       {

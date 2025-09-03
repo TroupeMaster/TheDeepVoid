@@ -12,7 +12,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7Inflicts Laceration on hit, increasing the damage dealt each hit"
-      ]
+      ],
+      "name": "FleshGloveSpecialInformation"
     },
     "creativeTabs": [
       {
@@ -22,7 +23,7 @@
     "efficiency": 20.0,
     "attackSpeed": 20.0,
     "enchantability": 20,
-    "damageVsEntity": 4.0,
+    "damageVsEntity": 3.0,
     "usageCount": 2031,
     "glowCondition": {
       "fixedValue": false

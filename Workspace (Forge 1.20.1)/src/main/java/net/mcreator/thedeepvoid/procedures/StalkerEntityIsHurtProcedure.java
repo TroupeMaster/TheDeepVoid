@@ -47,5 +47,11 @@ public class StalkerEntityIsHurtProcedure {
 				}
 			}
 		}
+		if (sourceentity instanceof StalkerEntity) {
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 3) {
+				if (entity instanceof LivingEntity _entity)
+					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) - 2));
+			}
+		}
 	}
 }

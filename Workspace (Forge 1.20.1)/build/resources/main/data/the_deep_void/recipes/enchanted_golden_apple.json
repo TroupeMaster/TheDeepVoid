@@ -1,11 +1,13 @@
 {
   "type": "minecraft:smithing_transform",
-  "template": [],
+  "template": {
+    "item": "the_deep_void:smithing_template_onyx"
+  },
   "base": {
     "item": "minecraft:golden_apple"
   },
   "addition": {
-    "item": "the_deep_void:block_of_refined_bismuth"
+    "item": "the_deep_void:voidrium_gem"
   },
   "result": {
     "item": "minecraft:enchanted_golden_apple"

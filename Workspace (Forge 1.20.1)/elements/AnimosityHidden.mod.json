@@ -8,12 +8,13 @@
     "texture": "diamond_sword",
     "customModelName": "Normal",
     "blockingModelName": "Normal blocking",
-    "name": "§c§l§kFLESH §c§lAnimosity §c§l§kFLESH",
+    "name": "§c§l§kFlesh §c§lAnimosity §c§l§kFlesh",
     "specialInformation": {
       "fixedValue": [
         "§cThis form of Animosity doesn't deal extra damage",
         "§7Right clicking will transform the sword back into Animosity"
-      ]
+      ],
+      "name": "AnimosityHiddenSpecialInformation"
     },
     "creativeTabs": [],
     "efficiency": 9.0,

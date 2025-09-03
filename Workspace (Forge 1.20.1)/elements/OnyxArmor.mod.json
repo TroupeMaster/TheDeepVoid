@@ -14,7 +14,7 @@
       "name": "OnyxArmorHelmetTickEvent"
     },
     "onBodyTick": {
-      "name": "OnyxArmorHelmetTickEvent"
+      "name": "OnyxFullArmor"
     },
     "onLeggingsTick": {
       "name": "OnyxArmorHelmetTickEvent"

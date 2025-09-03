@@ -29,14 +29,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "§7Sorrow Armor Trim",
-        "",
-        "§7Applies to:",
-        " §9Armor",
-        "§7Ingredients:",
-        " §9Ingot & Crystals"
-      ]
+      "fixedValue": []
     },
     "glowCondition": {
       "fixedValue": false

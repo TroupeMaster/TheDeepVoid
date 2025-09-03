@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "the_deep_void:item/lavendite_upgrade"
+    "layer0": "the_deep_void:item/lavendite_upgrade_new"
   }
 }

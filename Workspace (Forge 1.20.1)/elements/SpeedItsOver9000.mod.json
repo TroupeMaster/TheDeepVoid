@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "achievement",
   "definition": {
-    "achievementName": "It's Over 9000 !!",
+    "achievementName": "It's Over 9000!!",
     "achievementDescription": "Upgrade a sword with the Lavendite Smithing Upgrade",
     "achievementIcon": {
       "value": "CUSTOM:SmithingTemplateLavendite"

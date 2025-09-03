@@ -94,7 +94,7 @@ public class StalkingStalkerAttackedProcedure {
 											1.5);
 						TheDeepVoidMod.queueServerWork(45, () -> {
 							if (entity instanceof StalkingStalkerEntity) {
-								((StalkingStalkerEntity) entity).setAnimation("animation.stalker_digHide");
+								((StalkingStalkerEntity) entity).setAnimation("animation.stalker_hide");
 							}
 							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 99, false, false));
@@ -144,7 +144,7 @@ public class StalkingStalkerAttackedProcedure {
 												1.5);
 							TheDeepVoidMod.queueServerWork(45, () -> {
 								if (sourceentity instanceof StalkingStalkerEntity) {
-									((StalkingStalkerEntity) sourceentity).setAnimation("animation.stalker_digHide");
+									((StalkingStalkerEntity) sourceentity).setAnimation("animation.stalker_hide");
 								}
 								if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 									_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 99, false, false));

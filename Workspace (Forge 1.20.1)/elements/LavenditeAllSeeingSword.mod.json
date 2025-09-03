@@ -13,7 +13,8 @@
       "fixedValue": [
         "§7Right click on an entity to pass your pain onto them, sacrificing your health based on a quarter of your opponent's current health and some durability",
         "§7Each hit makes the sword swing faster"
-      ]
+      ],
+      "name": "AllSeeingSwordSpecialInformation"
     },
     "creativeTabs": [
       {

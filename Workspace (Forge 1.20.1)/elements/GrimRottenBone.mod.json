@@ -10,6 +10,9 @@
     "textureLeggings": "grim_leggings",
     "enableBoots": true,
     "textureBoots": "grim_boots",
+    "onBodyTick": {
+      "name": "GrimRottenFullArmor"
+    },
     "creativeTabs": [
       {
         "value": "CUSTOM:TheDeepVoid"

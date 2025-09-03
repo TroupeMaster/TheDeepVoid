@@ -129,18 +129,20 @@ public class IfPlayerFallsInVoidProcedure {
 				}
 			}
 		}
-		if (entity.getY() < -70) {
-			if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) {
-				{
-					Entity _ent = entity;
-					_ent.teleportTo(x, 300, z);
-					if (_ent instanceof ServerPlayer _serverPlayer)
-						_serverPlayer.connection.teleport(x, 300, z, _ent.getYRot(), _ent.getXRot());
+		if (DeepVoidConfigConfiguration.DEEPVOIDTP.get() == true) {
+			if (entity.getY() < -70) {
+				if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) {
+					{
+						Entity _ent = entity;
+						_ent.teleportTo(x, 300, z);
+						if (_ent instanceof ServerPlayer _serverPlayer)
+							_serverPlayer.connection.teleport(x, 300, z, _ent.getYRot(), _ent.getXRot());
+					}
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VOID_BLESSING.get(), 280, 0, false, false));
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 60, 0, false, false));
 				}
-				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VOID_BLESSING.get(), 280, 0, false, false));
-				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 60, 0, false, false));
 			}
 		}
 	}

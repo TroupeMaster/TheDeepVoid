@@ -1,9 +1,11 @@
 {
-  "­title": {
-    "­text": "The Deep Void",
-    "­color": "­dark_purple"
+  "title": {
+    "text": "The Deep Void",
+    "bold": true,
+    "color": "dark_purple"
   },
   "tip": {
-    "text": "Eyeballs are tastier than you'd think ! If that's not your idea of delight, you may like a good ol' bone mush."
+    "text": "Eyeballs are tastier than you'd think. If that's not your idea of delight, you may like a good ol' bone mush.",
+    "bold": false
   }
 }

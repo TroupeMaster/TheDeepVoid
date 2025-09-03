@@ -6,6 +6,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,6 +18,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
@@ -30,37 +32,39 @@ public class StalkerOnInitialEntitySpawnProcedure {
 		if (entity == null)
 			return;
 		if (entity.isInWall()) {
-			{
-				Entity _ent = entity;
-				_ent.teleportTo(x, (y + 2), z);
-				if (_ent instanceof ServerPlayer _serverPlayer)
-					_serverPlayer.connection.teleport(x, (y + 2), z, _ent.getYRot(), _ent.getXRot());
+			if (entity.getPersistentData().getDouble("deep_void:spawned") > 0) {
+				{
+					Entity _ent = entity;
+					_ent.teleportTo(x, (y + 2), z);
+					if (_ent instanceof ServerPlayer _serverPlayer)
+						_serverPlayer.connection.teleport(x, (y + 2), z, _ent.getYRot(), _ent.getXRot());
+				}
 			}
+		}
+		if (entity.getPersistentData().getDouble("deep_void:spawned") > 0) {
+			entity.getPersistentData().putDouble("deep_void:spawned", (entity.getPersistentData().getDouble("deep_void:spawned") - 1));
 		}
 		if (entity.getPersistentData().getDouble("Heartbeat") == 45) {
 			entity.getPersistentData().putDouble("Heartbeat", 0);
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.warden.heartbeat")), SoundSource.HOSTILE, 3, 1);
+				} else {
+					_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.warden.heartbeat")), SoundSource.HOSTILE, 3, 1, false);
+				}
+			}
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.HOSTILE, 3, 1);
+				} else {
+					_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.HOSTILE, 3, 1, false);
+				}
+			}
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(65 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
 					if (entityiterator instanceof Player) {
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.warden.heartbeat")),
-										SoundSource.PLAYERS, 1, 1);
-							} else {
-								_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.warden.heartbeat")), SoundSource.PLAYERS, 1, 1,
-										false);
-							}
-						}
-						if (world instanceof Level _level) {
-							if (!_level.isClientSide()) {
-								_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.PLAYERS,
-										1, 1);
-							} else {
-								_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.PLAYERS, 1, 1, false);
-							}
-						}
 						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.DARKNESS, 200, 1, false, false));
 					}
@@ -69,7 +73,7 @@ public class StalkerOnInitialEntitySpawnProcedure {
 		} else {
 			entity.getPersistentData().putDouble("Heartbeat", (entity.getPersistentData().getDouble("Heartbeat") + 1));
 		}
-		if (entity instanceof LivingEntity _livEnt17 && _livEnt17.hasEffect(MobEffects.GLOWING)) {
+		if (entity instanceof LivingEntity _livEnt21 && _livEnt21.hasEffect(MobEffects.GLOWING)) {
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeEffect(MobEffects.GLOWING);
 		}
@@ -82,10 +86,9 @@ public class StalkerOnInitialEntitySpawnProcedure {
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 0, false, false));
 		}
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
-			if (entity.getPersistentData().getDouble("voidCallCooldown") >= 540) {
-				if (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() < entity.getY() - 1 || (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() > entity.getY() + 1)
-						&& world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude()
-						&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _livEnt39 && _livEnt39.hasEffect(TheDeepVoidModMobEffects.CALL_OF_THE_VOID.get())) == false) {
+			if (entity.getPersistentData().getDouble("voidCallCooldown") >= 500) {
+				if (world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude()
+						&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _livEnt37 && _livEnt37.hasEffect(TheDeepVoidModMobEffects.CALL_OF_THE_VOID.get())) == false) {
 					if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.CALL_OF_THE_VOID.get(), 420, 0));
 				}
@@ -93,7 +96,65 @@ public class StalkerOnInitialEntitySpawnProcedure {
 				entity.getPersistentData().putDouble("voidCallCooldown", (entity.getPersistentData().getDouble("voidCallCooldown") + 1));
 			}
 		}
-		TheDeepVoidMod.queueServerWork(2800, () -> {
+		if (!world.getBlockState(
+				BlockPos.containing(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(),
+						entity.getY(), entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()))
+				.canOcclude()
+				&& !world
+						.getBlockState(
+								BlockPos.containing(
+										entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(),
+										entity.getY() + 1,
+										entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
+												.getZ()))
+						.canOcclude()
+				&& world.getBlockState(
+						BlockPos.containing(
+								entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(), entity
+										.getY() + 2,
+								entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()))
+						.canOcclude()
+				|| !world
+						.getBlockState(
+								BlockPos.containing(
+										entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(),
+										entity.getY(),
+										entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
+												.getZ()))
+						.canOcclude()
+						&& !world
+								.getBlockState(BlockPos.containing(
+										entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(),
+										entity.getY() + 1,
+										entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos()
+												.getZ()))
+								.canOcclude()
+						&& !world.getBlockState(BlockPos.containing(
+								entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(),
+								entity.getY() + 2,
+								entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()))
+								.canOcclude()
+						&& world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() + 2, entity.getZ())).canOcclude()
+				|| !world.getBlockState(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())).canOcclude() && !world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() + 1, entity.getZ())).canOcclude()
+						&& world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() + 2, entity.getZ())).canOcclude()) {
+			if (entity instanceof StalkerEntity) {
+				((StalkerEntity) entity).setAnimation("animation.stalker_crouchFast");
+			}
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 1, false, false));
+			if (entity.getPersistentData().getBoolean("deep_void:crouching") == false) {
+				entity.getPersistentData().putBoolean("deep_void:crouching", true);
+			}
+		} else {
+			if (entity.getPersistentData().getBoolean("deep_void:crouching") == true) {
+				TheDeepVoidMod.queueServerWork(15, () -> {
+					if (entity.getPersistentData().getBoolean("deep_void:crouching") == true) {
+						entity.getPersistentData().putBoolean("deep_void:crouching", false);
+					}
+				});
+			}
+		}
+		TheDeepVoidMod.queueServerWork(12000, () -> {
 			if (entity instanceof StalkerEntity) {
 				((StalkerEntity) entity).setAnimation("animation.stalker_digHide");
 			}
@@ -106,6 +167,8 @@ public class StalkerOnInitialEntitySpawnProcedure {
 			TheDeepVoidMod.queueServerWork(35, () -> {
 				if (!entity.level().isClientSide())
 					entity.discard();
+				TheDeepVoidModVariables.MapVariables.get(world).StalkerDespawned = true;
+				TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
 			});
 		});
 	}

@@ -33,6 +33,7 @@
     "the_deep_void:rotting_wall_corpse",
     "the_deep_void:block_of_rotten_bone_pile",
     "the_deep_void:ground_bones",
-    "the_deep_void:ground_bones_plant"
+    "the_deep_void:ground_bones_plant",
+    "#the_deep_void:bone_block"
   ]
 }

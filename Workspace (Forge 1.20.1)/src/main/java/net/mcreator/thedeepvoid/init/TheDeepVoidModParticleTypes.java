@@ -30,4 +30,8 @@ public class TheDeepVoidModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> BLACK_TENTACLE = REGISTRY.register("black_tentacle", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> SOUL_SWEEP = REGISTRY.register("soul_sweep", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> GOLD_BLOOD = REGISTRY.register("gold_blood", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> HOOK_LINE = REGISTRY.register("hook_line", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> GRIM_HOOK_LINE = REGISTRY.register("grim_hook_line", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> SOUL_HOOK_LINE = REGISTRY.register("soul_hook_line", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> RED_GREAT_SLASH = REGISTRY.register("red_great_slash", () -> new SimpleParticleType(true));
 }

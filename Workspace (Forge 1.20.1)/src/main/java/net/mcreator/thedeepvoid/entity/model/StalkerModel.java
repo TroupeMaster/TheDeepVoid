@@ -14,12 +14,12 @@ import net.mcreator.thedeepvoid.entity.StalkerEntity;
 public class StalkerModel extends GeoModel<StalkerEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(StalkerEntity entity) {
-		return new ResourceLocation("the_deep_void", "animations/stalker.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/stalkernew.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(StalkerEntity entity) {
-		return new ResourceLocation("the_deep_void", "geo/stalker.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/stalkernew.geo.json");
 	}
 
 	@Override
@@ -29,7 +29,7 @@ public class StalkerModel extends GeoModel<StalkerEntity> {
 
 	@Override
 	public void setCustomAnimations(StalkerEntity animatable, long instanceId, AnimationState animationState) {
-		CoreGeoBone head = getAnimationProcessor().getBone("headPart");
+		CoreGeoBone head = getAnimationProcessor().getBone("head");
 		if (head != null) {
 			EntityModelData entityData = (EntityModelData) animationState.getData(DataTickets.ENTITY_MODEL_DATA);
 			head.setRotX(entityData.headPitch() * Mth.DEG_TO_RAD);

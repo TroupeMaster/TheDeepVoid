@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "block",
   "definition": {
-    "texture": "lavendite_ore",
+    "texture": "lavendite_ore_new",
     "textureTop": "",
     "textureLeft": "",
     "textureFront": "",
@@ -37,8 +37,8 @@
     "specialInformation": {
       "fixedValue": []
     },
-    "hardness": 4.5,
-    "resistance": 6.0,
+    "hardness": 2.0,
+    "resistance": 4.0,
     "hasGravity": false,
     "isWaterloggable": false,
     "creativeTabs": [
@@ -81,24 +81,24 @@
     "jumpFactor": 1.0,
     "reactionToPushing": "NORMAL",
     "isNotColidable": false,
-    "isCustomSoundType": false,
+    "isCustomSoundType": true,
     "soundOnStep": {
       "value": "DEEPSLATE"
     },
     "breakSound": {
-      "value": ""
+      "value": "block.amethyst_block.break"
     },
     "fallSound": {
-      "value": ""
+      "value": "block.deepslate.fall"
     },
     "hitSound": {
-      "value": ""
+      "value": "block.deepslate.hit"
     },
     "placeSound": {
-      "value": ""
+      "value": "block.amethyst_block.place"
     },
     "stepSound": {
-      "value": ""
+      "value": "block.amethyst_block.step"
     },
     "luminance": 0,
     "unbreakable": false,
@@ -127,37 +127,7 @@
     "generateFeature": true,
     "restrictionBiomes": [
       {
-        "value": "CUSTOM:ForgottenValley"
-      },
-      {
-        "value": "CUSTOM:GrimCanopy"
-      },
-      {
-        "value": "CUSTOM:AshenCrags"
-      },
-      {
-        "value": "CUSTOM:MourningGraveyard"
-      },
-      {
-        "value": "CUSTOM:WindsweptHollow"
-      },
-      {
-        "value": "CUSTOM:DriftingMonoliths"
-      },
-      {
-        "value": "CUSTOM:WatchingUndergrowth"
-      },
-      {
-        "value": "CUSTOM:CrawlerNest"
-      },
-      {
-        "value": "CUSTOM:StaringHills"
-      },
-      {
-        "value": "CUSTOM:FilledGraveyard"
-      },
-      {
-        "value": "CUSTOM:GatheringGrounds"
+        "value": "#mod:is_deep_void"
       }
     ],
     "blocksToReplace": [
@@ -175,6 +145,6 @@
     "frequencyPerChunks": 6,
     "frequencyOnChunk": 6,
     "minGenerateHeight": -64,
-    "maxGenerateHeight": 18
+    "maxGenerateHeight": 45
   }
 }

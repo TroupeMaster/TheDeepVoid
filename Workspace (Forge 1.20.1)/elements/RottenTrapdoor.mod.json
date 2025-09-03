@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "block",
   "definition": {
-    "texture": "rotten_trapdoor",
+    "texture": "rotten_trapdoor_new",
     "textureTop": "rotten_door_top",
     "textureLeft": "rotten_log_side",
     "textureFront": "rotten_log_side",

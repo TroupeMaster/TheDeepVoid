@@ -40,7 +40,7 @@ public class HarvesterMaskHitProcedure {
 					if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(
 								new MobEffectInstance(MobEffects.ABSORPTION, 500, (int) ((sourceentity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.ABSORPTION) ? _livEnt.getEffect(MobEffects.ABSORPTION).getAmplifier() : 0)
-										+ Math.floor(entity.getPersistentData().getDouble("deep_void:hexedBuildUp") / 25)), false, false));
+										+ Math.floor(entity.getPersistentData().getDouble("deep_void:hexedBuildUp") / 45)), false, false));
 					if (entity instanceof LivingEntity _entity)
 						_entity.removeEffect(TheDeepVoidModMobEffects.HEXED.get());
 				}

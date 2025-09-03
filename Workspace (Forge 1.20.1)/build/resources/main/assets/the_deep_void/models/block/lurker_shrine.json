@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/lurker_shrine",
+  "textures": {
+    "all": "the_deep_void:block/lurker_shrine",
+    "particle": "the_deep_void:block/lurker_shrine",
+    "0": "the_deep_void:block/lurker_shrine"
+  },
+  "render_type": "cutout"
+}

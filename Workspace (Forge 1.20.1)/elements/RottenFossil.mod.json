@@ -131,6 +131,9 @@
       },
       {
         "value": "CUSTOM:FilledGraveyard"
+      },
+      {
+        "value": "CUSTOM:BefouledMarsh"
       }
     ],
     "blocksToReplace": [

@@ -13,10 +13,12 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.network.chat.Component;
 
+import net.mcreator.thedeepvoid.procedures.GrimScytheSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.procedures.GrimScytheRightclickedProcedure;
 import net.mcreator.thedeepvoid.procedures.GrimScytheLivingEntityIsHitWithToolProcedure;
 import net.mcreator.thedeepvoid.procedures.GrimScytheHasItemGlowingEffectProcedure;
@@ -70,8 +72,8 @@ public class GrimScytheItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Each hit repeats itself, dealing 6 damage in a AOE and spawning additional XP orbs"));
-		list.add(Component.literal("\u00A77Killing a foe fuels the scythe with their soul. At 5 souls, right click to throw the scythe. The thrown scythe steals the soul of foes and their lifeforce"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(GrimScytheSpecialInformationProcedure.execute()));
 	}
 
 	@Override

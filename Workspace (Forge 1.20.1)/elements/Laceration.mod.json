@@ -11,6 +11,9 @@
     "isInstant": false,
     "mobEffectCategory": "HARMFUL",
     "renderStatusInInventory": true,
-    "renderStatusInHUD": true
+    "renderStatusInHUD": true,
+    "onExpired": {
+      "name": "LacerationEffectExpires"
+    }
   }
 }

@@ -19,7 +19,7 @@ import java.util.Comparator;
 
 public class VoidriumGlassOnTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.BEACON) {
+		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.BEACON && world.canSeeSkyFromBelowWater(BlockPos.containing(x, y, z))) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();

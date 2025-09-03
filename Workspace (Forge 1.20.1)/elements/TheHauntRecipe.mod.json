@@ -1,0 +1,48 @@
+{
+  "_fv": 66,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "recipeRetstackSize": 1,
+    "group": "",
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "recipeSlots": [
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "Blocks.COBBLED_DEEPSLATE"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "CUSTOM:BoneCrawlerMoltPiece"
+      },
+      {
+        "value": "CUSTOM:Onyx"
+      },
+      {
+        "value": "CUSTOM:BoneCrawlerMoltPiece"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      },
+      {
+        "value": "Blocks.COBBLED_DEEPSLATE"
+      },
+      {
+        "value": "CUSTOM:GooBall"
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:TheHaunt"
+    },
+    "name": "the_haunt",
+    "namespace": "mod"
+  }
+}

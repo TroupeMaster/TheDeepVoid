@@ -20,6 +20,9 @@
     "the_deep_void:covered_bone_pile",
     "the_deep_void:block_of_rotten_bone_pile",
     "minecraft:bone_block",
-    "the_deep_void:fleshy_bone_block"
+    "the_deep_void:fleshy_bone_block",
+    "the_deep_void:fleshy_rotten_bone_block",
+    "the_deep_void:fleshy_old_bone_block",
+    "the_deep_void:old_bone_block"
   ]
 }

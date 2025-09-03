@@ -2,7 +2,7 @@
   "_fv": 66,
   "_type": "achievement",
   "definition": {
-    "achievementName": "It's Alive !",
+    "achievementName": "It's Alive!",
     "achievementDescription": "Build your very own overseer by using an eye of the deep on monolithic stone",
     "achievementIcon": {
       "value": "CUSTOM:Seer"

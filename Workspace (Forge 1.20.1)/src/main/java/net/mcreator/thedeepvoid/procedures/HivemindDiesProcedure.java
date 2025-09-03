@@ -64,23 +64,9 @@ public class HivemindDiesProcedure {
 			TheDeepVoidMod.queueServerWork(30, () -> {
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:flesh_block_step")), SoundSource.HOSTILE, 2, 1);
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fleshy_explosion")), SoundSource.HOSTILE, 2, (float) 0.9);
 					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:flesh_block_step")), SoundSource.HOSTILE, 2, 1, false);
-					}
-				}
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:flesh")), SoundSource.HOSTILE, 2, 1);
-					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:flesh")), SoundSource.HOSTILE, 2, 1, false);
-					}
-				}
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:flesh_block_place")), SoundSource.HOSTILE, 2, 1);
-					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:flesh_block_place")), SoundSource.HOSTILE, 2, 1, false);
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fleshy_explosion")), SoundSource.HOSTILE, 2, (float) 0.9, false);
 					}
 				}
 				if (world instanceof ServerLevel _level)
@@ -100,7 +86,7 @@ public class HivemindDiesProcedure {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
 				}
-				TheDeepVoidModVariables.MapVariables.get(world).apostleFightCount = TheDeepVoidModVariables.MapVariables.get(world).apostleFightCount + 1;
+				TheDeepVoidModVariables.MapVariables.get(world).hivemindFightCount = TheDeepVoidModVariables.MapVariables.get(world).hivemindFightCount + 1;
 				TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
 				{
 					final Vec3 _center = new Vec3(x, y, z);
@@ -112,8 +98,8 @@ public class HivemindDiesProcedure {
 								_setstack.setCount(1);
 								ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 							}
-							if (!(entityiterator instanceof ServerPlayer _plr26 && _plr26.level() instanceof ServerLevel
-									&& _plr26.getAdvancements().getOrStartProgress(_plr26.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:in_flesh_and_bones"))).isDone())) {
+							if (!(entityiterator instanceof ServerPlayer _plr24 && _plr24.level() instanceof ServerLevel
+									&& _plr24.getAdvancements().getOrStartProgress(_plr24.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:in_flesh_and_bones"))).isDone())) {
 								if (entityiterator instanceof ServerPlayer _player) {
 									Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:in_flesh_and_bones"));
 									AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);

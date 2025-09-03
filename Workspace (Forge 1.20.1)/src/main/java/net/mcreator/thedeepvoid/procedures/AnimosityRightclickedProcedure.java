@@ -18,18 +18,35 @@ public class AnimosityRightclickedProcedure {
 			_player.getCooldowns().addCooldown(TheDeepVoidModItems.ANIMOSITY.get(), 40);
 		if (entity instanceof Player _player)
 			_player.getCooldowns().addCooldown(TheDeepVoidModItems.ANIMOSITY_HIDDEN.get(), 40);
-		data = (itemstack.copy());
-		if (entity instanceof LivingEntity _entity) {
-			ItemStack _setstack = new ItemStack(TheDeepVoidModItems.ANIMOSITY_HIDDEN.get()).copy();
-			_setstack.setCount(1);
-			_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
-			if (_entity instanceof Player _player)
-				_player.getInventory().setChanged();
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == itemstack.getItem()) {
+			data = (itemstack.copy());
+			if (entity instanceof LivingEntity _entity) {
+				ItemStack _setstack = new ItemStack(TheDeepVoidModItems.ANIMOSITY_HIDDEN.get()).copy();
+				_setstack.setCount(1);
+				_entity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+				if (_entity instanceof Player _player)
+					_player.getInventory().setChanged();
+			}
+			{
+				CompoundTag _nbtTag = data.getTag();
+				if (_nbtTag != null)
+					(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).setTag(_nbtTag.copy());
+			}
 		}
-		{
-			CompoundTag _nbtTag = data.getTag();
-			if (_nbtTag != null)
-				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).setTag(_nbtTag.copy());
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == itemstack.getItem()) {
+			data = (itemstack.copy());
+			if (entity instanceof LivingEntity _entity) {
+				ItemStack _setstack = new ItemStack(TheDeepVoidModItems.ANIMOSITY_HIDDEN.get()).copy();
+				_setstack.setCount(1);
+				_entity.setItemInHand(InteractionHand.OFF_HAND, _setstack);
+				if (_entity instanceof Player _player)
+					_player.getInventory().setChanged();
+			}
+			{
+				CompoundTag _nbtTag = data.getTag();
+				if (_nbtTag != null)
+					(entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).setTag(_nbtTag.copy());
+			}
 		}
 	}
 }

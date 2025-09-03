@@ -80,20 +80,7 @@
     "fireSpreadSpeed": 0,
     "jumpFactor": 1.0,
     "speedFactor": 1.0,
-    "canBePlacedOn": [
-      {
-        "value": "Blocks.DEEPSLATE"
-      },
-      {
-        "value": "CUSTOM:CobbledAncientDeepslate"
-      },
-      {
-        "value": "CUSTOM:AncientDeepslate"
-      },
-      {
-        "value": "Blocks.COBBLED_DEEPSLATE"
-      }
-    ],
+    "canBePlacedOn": [],
     "isBonemealable": false,
     "frequencyOnChunks": 15,
     "generateFeature": true,
@@ -112,6 +99,9 @@
       },
       {
         "value": "CUSTOM:GatheringGrounds"
+      },
+      {
+        "value": "CUSTOM:BefouledMarsh"
       }
     ],
     "generationType": "Grass",

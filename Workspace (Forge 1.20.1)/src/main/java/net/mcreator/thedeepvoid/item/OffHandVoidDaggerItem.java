@@ -12,6 +12,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.thedeepvoid.procedures.VoidDaggerToolInInventoryTickProcedure;
+import net.mcreator.thedeepvoid.procedures.OffHandVoidDaggerSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
 import java.util.List;
@@ -48,8 +49,8 @@ public class OffHandVoidDaggerItem extends SwordItem {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Right click with the dagger to attack. Deals more damage after attacking with the dagger in the main-hand"));
-		list.add(Component.literal("\u00A77Inflicts rot on hit (right click)"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(OffHandVoidDaggerSpecialInformationProcedure.execute()));
 	}
 
 	@Override

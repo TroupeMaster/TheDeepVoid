@@ -12,22 +12,22 @@
     "recipeShapeless": false,
     "recipeSlots": [
       {
-        "value": "CUSTOM:FleshBlock"
+        "value": "CUSTOM:FleshChunk"
       },
       {
         "value": "CUSTOM:FleshBlock"
       },
       {
-        "value": "CUSTOM:FleshBlock"
+        "value": "CUSTOM:FleshChunk"
+      },
+      {
+        "value": "CUSTOM:RottenBone"
       },
       {
         "value": "CUSTOM:FleshBone"
       },
       {
-        "value": "CUSTOM:FleshBone"
-      },
-      {
-        "value": "CUSTOM:FleshBone"
+        "value": "CUSTOM:RottenBone"
       },
       {
         "value": "CUSTOM:RottenBone"

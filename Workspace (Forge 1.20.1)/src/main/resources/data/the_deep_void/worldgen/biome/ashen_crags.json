@@ -1,6 +1,6 @@
 {
   "has_precipitation": false,
-  "temperature": 1.2,
+  "temperature": 2,
   "downfall": 0,
   "effects": {
     "ambient_sound": "ambient.soul_sand_valley.loop",

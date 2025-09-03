@@ -98,6 +98,9 @@
       },
       {
         "value": "CUSTOM:AshBlock"
+      },
+      {
+        "value": "CUSTOM:VoidBlossom"
       }
     ],
     "isBonemealable": false,

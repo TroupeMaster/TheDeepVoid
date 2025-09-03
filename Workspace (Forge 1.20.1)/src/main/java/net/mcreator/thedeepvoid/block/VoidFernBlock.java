@@ -31,7 +31,7 @@ public class VoidFernBlock extends FlowerBlock {
 	@Override
 	public boolean mayPlaceOn(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
 		return groundState.is(TheDeepVoidModBlocks.ANCIENT_DEEPSLATE.get()) || groundState.is(Blocks.COBBLED_DEEPSLATE) || groundState.is(Blocks.DEEPSLATE) || groundState.is(TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get())
-				|| groundState.is(TheDeepVoidModBlocks.MOSSY_BONE_PILE.get()) || groundState.is(TheDeepVoidModBlocks.ASH_BLOCK.get());
+				|| groundState.is(TheDeepVoidModBlocks.MOSSY_BONE_PILE.get()) || groundState.is(TheDeepVoidModBlocks.ASH_BLOCK.get()) || groundState.is(TheDeepVoidModBlocks.VOID_BLOSSOM.get());
 	}
 
 	@Override

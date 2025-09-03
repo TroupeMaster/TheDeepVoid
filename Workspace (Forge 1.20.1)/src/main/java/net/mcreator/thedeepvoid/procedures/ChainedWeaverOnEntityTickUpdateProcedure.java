@@ -79,7 +79,7 @@ public class ChainedWeaverOnEntityTickUpdateProcedure {
 						if (entityiterator instanceof Player) {
 							if (Math.random() < 0.25) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lThe Void is accepting, the Void embraces all, shows us the path.. \u00A7c\u00A7l\u00A7kGOD"), true);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.weaver_of_souls.ambient1").getString())), true);
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
 										_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY() + 1.4, entityiterator.getZ()),
@@ -91,7 +91,7 @@ public class ChainedWeaverOnEntityTickUpdateProcedure {
 								}
 							} else if (Math.random() < 0.25) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lGet me out of these chains.. \u00A7c\u00A7l\u00A7kGOD"), true);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.weaver_of_souls.ambient2").getString())), true);
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
 										_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY() + 1.4, entityiterator.getZ()),
@@ -103,7 +103,7 @@ public class ChainedWeaverOnEntityTickUpdateProcedure {
 								}
 							} else if (Math.random() < 0.25) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lA Vessel granted for the unascended.. \u00A7c\u00A7l\u00A7kGOD"), true);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.weaver_of_souls.ambient3").getString())), true);
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
 										_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY() + 1.4, entityiterator.getZ()),
@@ -115,7 +115,7 @@ public class ChainedWeaverOnEntityTickUpdateProcedure {
 								}
 							} else if (Math.random() < 0.25) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lA Vessel to make one with the Void.. \u00A7c\u00A7l\u00A7kGOD"), true);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.weaver_of_souls.ambient4").getString())), true);
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
 										_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY() + 1.4, entityiterator.getZ()),
@@ -127,7 +127,7 @@ public class ChainedWeaverOnEntityTickUpdateProcedure {
 								}
 							} else {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7c\u00A7l\u00A7kGOD \u00A7c\u00A7lGet me out of these chains.. \u00A7c\u00A7l\u00A7kGOD"), true);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.weaver_of_souls.ambient1").getString())), true);
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
 										_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY() + 1.4, entityiterator.getZ()),

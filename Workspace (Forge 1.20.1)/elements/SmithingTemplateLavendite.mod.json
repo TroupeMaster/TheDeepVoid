@@ -3,7 +3,7 @@
   "_type": "item",
   "definition": {
     "renderType": 0,
-    "texture": "lavendite_upgrade",
+    "texture": "lavendite_upgrade_new",
     "customModelName": "Normal",
     "customProperties": {},
     "states": [],
@@ -29,15 +29,7 @@
     "enableMeleeDamage": false,
     "damageVsEntity": 0.0,
     "specialInformation": {
-      "fixedValue": [
-        "§7Lavendite Upgrade",
-        "",
-        "§7Applies to:",
-        " §9Any sword / Shield / Devourer Hook",
-        "",
-        "§2+5 Attack Speed",
-        "§2-1 Attack Damage"
-      ]
+      "fixedValue": []
     },
     "glowCondition": {
       "fixedValue": false

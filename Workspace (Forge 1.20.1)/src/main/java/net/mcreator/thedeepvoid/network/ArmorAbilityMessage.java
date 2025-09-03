@@ -10,6 +10,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.network.FriendlyByteBuf;
 
+import net.mcreator.thedeepvoid.procedures.ArmorAbilityOnKeyReleasedProcedure;
 import net.mcreator.thedeepvoid.procedures.ArmorAbilityOnKeyPressedProcedure;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
@@ -53,6 +54,10 @@ public class ArmorAbilityMessage {
 		if (type == 0) {
 
 			ArmorAbilityOnKeyPressedProcedure.execute(world, x, y, z, entity);
+		}
+		if (type == 1) {
+
+			ArmorAbilityOnKeyReleasedProcedure.execute(entity);
 		}
 	}
 

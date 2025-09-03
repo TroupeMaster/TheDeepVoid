@@ -31,7 +31,8 @@
     "specialInformation": {
       "fixedValue": [
         "§7Supplies regular arrows endlessly"
-      ]
+      ],
+      "name": "EndlessQuiverSpecialInformation"
     },
     "glowCondition": {
       "fixedValue": false

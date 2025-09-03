@@ -8,9 +8,6 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 
-import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
-import net.mcreator.thedeepvoid.TheDeepVoidMod;
-
 import java.util.Comparator;
 
 public class StalkerSpawnsProcedure {
@@ -24,11 +21,6 @@ public class StalkerSpawnsProcedure {
 		}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _ent)
 			_entity.setTarget(_ent);
 		entity.getPersistentData().putDouble("voidCallCooldown", 540);
-		TheDeepVoidMod.queueServerWork(5400, () -> {
-			if (!entity.level().isClientSide())
-				entity.discard();
-			TheDeepVoidModVariables.MapVariables.get(world).StalkerDespawned = true;
-			TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
-		});
+		entity.getPersistentData().putDouble("deep_void:spawned", 200);
 	}
 }

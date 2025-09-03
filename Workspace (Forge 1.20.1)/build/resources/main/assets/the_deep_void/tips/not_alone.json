@@ -1,9 +1,11 @@
 {
-  "­title": {
-    "­text": "The Deep Void",
-    "­color": "­dark_purple"
+  "title": {
+    "text": "The Deep Void",
+    "bold": true,
+    "color": "dark_purple"
   },
   "tip": {
-    "text": "If you feel like you're being stalked, it's because you probably are. Maybe it just wants to become friends ! :D"
+    "text": "If you feel like you're being stalked, it's because you probably are. Maybe it just wants to become friends! :D",
+    "bold": false
   }
 }

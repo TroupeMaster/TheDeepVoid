@@ -106,6 +106,15 @@
     "raidCelebrationSound": {
       "value": ""
     },
+    "whenMobDies": {
+      "name": "IdlingApostleEntityIsHurt"
+    },
+    "whenMobIsHurt": {
+      "name": "IdlingApostleEntityIsHurt"
+    },
+    "onRightClickedOn": {
+      "name": "IdlingApostleRightClickedOnEntity"
+    },
     "onMobTickUpdate": {
       "name": "IdlingApostleOnEntityTickUpdate"
     },

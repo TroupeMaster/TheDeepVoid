@@ -69,7 +69,7 @@ public class WatchingStalkerEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "stalking_stalker_texture_new");
+		this.entityData.define(TEXTURE, "stalkernew");
 	}
 
 	public void setTexture(String texture) {
@@ -180,7 +180,7 @@ public class WatchingStalkerEntity extends Monster implements GeoEntity {
 
 	private PlayState movementPredicate(AnimationState event) {
 		if (this.animationprocedure.equals("empty")) {
-			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalker_slowIdle"));
+			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.stalker_idle"));
 		}
 		return PlayState.STOP;
 	}

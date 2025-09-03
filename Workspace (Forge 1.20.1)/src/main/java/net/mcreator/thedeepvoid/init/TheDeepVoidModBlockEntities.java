@@ -18,6 +18,7 @@ import net.mcreator.thedeepvoid.block.entity.GluttonBlockBlockEntity;
 import net.mcreator.thedeepvoid.block.entity.DeepslateSarcophagusBlockEntity;
 import net.mcreator.thedeepvoid.block.entity.DeepslateSarcophagusBlockBlockEntity;
 import net.mcreator.thedeepvoid.block.entity.BoneCrawlerEggBlockEntity;
+import net.mcreator.thedeepvoid.block.entity.AncientPotBlockBlockEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 public class TheDeepVoidModBlockEntities {
@@ -29,6 +30,7 @@ public class TheDeepVoidModBlockEntities {
 	public static final RegistryObject<BlockEntityType<?>> VOIDRIUM_GLASS = register("voidrium_glass", TheDeepVoidModBlocks.VOIDRIUM_GLASS, VoidriumGlassBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> SOUL_ORB_PILLAR = register("soul_orb_pillar", TheDeepVoidModBlocks.SOUL_ORB_PILLAR, SoulOrbPillarBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> SOUL_FORGE = register("soul_forge", TheDeepVoidModBlocks.SOUL_FORGE, SoulForgeBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> ANCIENT_POT_BLOCK = register("ancient_pot_block", TheDeepVoidModBlocks.ANCIENT_POT_BLOCK, AncientPotBlockBlockEntity::new);
 
 	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		return REGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));

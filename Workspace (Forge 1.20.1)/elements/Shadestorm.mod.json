@@ -32,7 +32,8 @@
       "fixedValue": [
         "§7Fires a flury of arrows that applies Combo to the victim",
         "§7When shot, fire a huge arrow that deals extra damage in a AOE if the target has the effect Combo"
-      ]
+      ],
+      "name": "ShadestormSpecialInformation"
     },
     "glowCondition": {
       "fixedValue": false

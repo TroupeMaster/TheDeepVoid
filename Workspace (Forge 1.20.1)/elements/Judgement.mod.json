@@ -14,7 +14,8 @@
         "§7Executes entities in front of the wielder if their health is below 25%",
         "§7Right click to teleport dash, dealing damage to foes in the wielder's path",
         "§7Deals half of the damage to nearby foes when swinging the sword at full charge"
-      ]
+      ],
+      "name": "JudgementSpecialInformation"
     },
     "creativeTabs": [
       {

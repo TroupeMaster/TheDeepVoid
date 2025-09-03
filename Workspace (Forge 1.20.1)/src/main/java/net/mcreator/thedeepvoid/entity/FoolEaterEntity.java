@@ -99,7 +99,7 @@ public class FoolEaterEntity extends Monster implements GeoEntity {
 		});
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
 		this.goalSelector.addGoal(3, new FloatGoal(this));
-		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, Player.class, false, false));
+		this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, Player.class, false, true));
 	}
 
 	@Override
@@ -163,11 +163,11 @@ public class FoolEaterEntity extends Monster implements GeoEntity {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 250);
-		builder = builder.add(Attributes.ARMOR, 4);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 12);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 8);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.28);
+		builder = builder.add(Attributes.MAX_HEALTH, 60);
+		builder = builder.add(Attributes.ARMOR, 2);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 10);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 24);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 999);
 		builder = builder.add(Attributes.ATTACK_KNOCKBACK, 0.1);
 		return builder;
