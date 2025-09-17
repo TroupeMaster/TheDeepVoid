@@ -1,0 +1,14 @@
+{
+  "_fv": 66,
+  "_type": "feature",
+  "definition": {
+    "skipPlacement": false,
+    "generationStep": "SURFACE_STRUCTURES",
+    "restrictionBiomes": [
+      {
+        "value": "#mod:hunter_forest_biome"
+      }
+    ],
+    "featurexml": "<xml xmlns=\"https://developers.google.com/blockly/xml\"><block type=\"feature_container\" deletable=\"false\" x=\"40\" y=\"40\"><value name=\"feature\"><block type=\"feature_custom_structure\"><field name=\"structure\">hunter_cabin</field><field name=\"x\">0</field><field name=\"y\">-5</field><field name=\"z\">0</field><field name=\"random_rotation\">TRUE</field><field name=\"random_mirror\">TRUE</field><value name=\"ignored_blocks\"><block type=\"block_holderset_list\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"1\"></mutation><field name=\"block0\">Blocks.STRUCTURE_BLOCK</field></block></value></block></value><next><block type=\"placement_in_square\"><next><block type=\"placement_rarity\"><field name=\"rarity\">500</field><next><block type=\"placement_heightmap\"><field name=\"heightmap\">MOTION_BLOCKING_NO_LEAVES</field><next><block type=\"placement_block_predicate_filter\"><value name=\"condition\"><block type=\"block_predicate_is_air\"></block></value><next><block type=\"placement_block_survival_filter\"><value name=\"block\"><block type=\"blockstate_selector\"><mutation xmlns=\"http://www.w3.org/1999/xhtml\" inputs=\"0\"></mutation><field name=\"block\">Blocks.SAPLING#0</field></block></value></block></next></block></next></block></next></block></next></block></next></block></xml>"
+  }
+}

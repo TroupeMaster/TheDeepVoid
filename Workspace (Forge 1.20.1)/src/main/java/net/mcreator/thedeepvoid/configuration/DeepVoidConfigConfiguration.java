@@ -20,6 +20,8 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Boolean> STALKERSPAWNS;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> STALKINGSTALKERSPAWNS;
 	public static final ForgeConfigSpec.ConfigValue<Double> STALKERSPAWNTIMER;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> SPAWNMASKEDHUNTERS;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> SPAWNBONECAGES;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> SEEKLIGHTWARNING;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> DESTROYLIGHTSOURCES;
 	public static final ForgeConfigSpec.ConfigValue<Double> VOIDBLESSINGTIMER;
@@ -47,7 +49,7 @@ public class DeepVoidConfigConfiguration {
 				.define("StopActiveBlockGeneration", false);
 		OLDHOLESTRUCTURE = BUILDER.comment("If the old structure with the hole to the void should generate in the overworld instead of the new version").define("OldHoleStructure", false);
 		HOLESTRUCTUREY = BUILDER.comment("At which Y level should the structure in the Overworld generate (this needs to be at the deepest layer where bedrock generates)").define("HoleStructureY", (double) -64);
-		CRUMBLINGBEDROCKGENERATE = BUILDER.comment("If crumbling bedrock should generate in the overworld").define("CrumblingBedrockGenerate", true);
+		CRUMBLINGBEDROCKGENERATE = BUILDER.comment("If crumbling bedrock should generate in the overworld").define("CrumblingBedrockGenerate", false);
 		BUILDER.pop();
 		BUILDER.push("Spawns");
 		SPAWNABDUCTORS = BUILDER.comment("Whether Abductors will spawn in the Overworld or not").define("SpawnAbductors", true);
@@ -56,6 +58,8 @@ public class DeepVoidConfigConfiguration {
 		STALKERSPAWNS = BUILDER.comment("If the Stalker should spawn or not").define("StalkerSpawns", true);
 		STALKINGSTALKERSPAWNS = BUILDER.comment("If Stalking Stalkers should spawn or not").define("StalkingStalkerSpawns", true);
 		STALKERSPAWNTIMER = BUILDER.comment("The time it takes for the Stalker to spawn in ticks (Default = 1,200 ticks)").define("StalkerSpawnTimer", (double) 1200);
+		SPAWNMASKEDHUNTERS = BUILDER.comment("Whether Masked Hunters will spawn in the Overworld or not").define("SpawnMaskedHunters", true);
+		SPAWNBONECAGES = BUILDER.comment("If Bone Cages should be placed by Masked Hunters").define("SpawnMaskedHunters", true);
 		BUILDER.pop();
 		BUILDER.push("Misc");
 		SEEKLIGHTWARNING = BUILDER.comment("Whether the ''Seek Light'' warning should appear when the Stalker is close or not (Happens only one time)").define("SeekLightWarning", true);

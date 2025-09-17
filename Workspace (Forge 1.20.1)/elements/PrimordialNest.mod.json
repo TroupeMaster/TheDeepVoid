@@ -21,8 +21,8 @@
     "surfaceDetectionType": "WORLD_SURFACE_WG",
     "useStartHeight": true,
     "startHeightProviderType": "UNIFORM",
-    "startHeightMin": -25,
-    "startHeightMax": 40,
+    "startHeightMin": 5,
+    "startHeightMax": 45,
     "size": 1,
     "maxDistanceFromCenter": 64,
     "jigsawPools": []

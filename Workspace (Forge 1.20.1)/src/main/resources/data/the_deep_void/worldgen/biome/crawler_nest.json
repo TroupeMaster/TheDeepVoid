@@ -12,7 +12,7 @@
       "sound": "the_deep_void:from_within_monst3r_music",
       "min_delay": 12000,
       "max_delay": 24000,
-      "replace_current_music": true
+      "replace_current_music": false
     },
     "particle": {
       "options": {

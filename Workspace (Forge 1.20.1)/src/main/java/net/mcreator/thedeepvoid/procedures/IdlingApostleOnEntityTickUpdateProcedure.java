@@ -19,10 +19,10 @@ public class IdlingApostleOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		entity.setDeltaMovement(new Vec3(0, 0, 0));
-		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 35, 35, 35), e -> true).isEmpty()) {
+		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 150, 150, 150), e -> true).isEmpty()) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(35 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(150 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
 					if (entityiterator instanceof Player) {
 						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -33,7 +33,7 @@ public class IdlingApostleOnEntityTickUpdateProcedure {
 		}
 		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {
 			if (entity.getPersistentData().getBoolean("deep_void:talking") == false) {
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") >= 620) {
+				if (entity.getPersistentData().getDouble("deep_void:psalmCount") >= 940) {
 					entity.getPersistentData().putDouble("deep_void:psalmCount", 0);
 				} else {
 					entity.getPersistentData().putDouble("deep_void:psalmCount", (entity.getPersistentData().getDouble("deep_void:psalmCount") + 1));

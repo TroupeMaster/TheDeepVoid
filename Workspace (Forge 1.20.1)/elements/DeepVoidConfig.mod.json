@@ -150,7 +150,7 @@
             "block": {
               "value": ""
             },
-            "logicField": 0,
+            "logicField": 1,
             "numberField": 0.0,
             "textDefault": "",
             "comment": "If crumbling bedrock should generate in the overworld",
@@ -263,6 +263,40 @@
             "comment": "The time it takes for the Stalker to spawn in ticks (Default = 1,200 ticks)",
             "vardisplay": "StalkerSpawnTimer",
             "varname": "StalkerSpawnTimer",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "Whether Masked Hunters will spawn in the Overworld or not",
+            "vardisplay": "SpawnMaskedHunters",
+            "varname": "SpawnMaskedHunters",
+            "enablecomment": true,
+            "stringlist": []
+          },
+          {
+            "item": {
+              "value": ""
+            },
+            "silkTouchMode": 0,
+            "block": {
+              "value": ""
+            },
+            "logicField": 0,
+            "numberField": 0.0,
+            "textDefault": "",
+            "comment": "If Bone Cages should be placed by Masked Hunters",
+            "vardisplay": "SpawnMaskedHunters",
+            "varname": "SpawnBoneCages",
             "enablecomment": true,
             "stringlist": []
           }

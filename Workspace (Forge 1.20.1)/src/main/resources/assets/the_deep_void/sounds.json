@@ -1195,5 +1195,50 @@
         "stream": false
       }
     ]
+  },
+  "whisper_forest_loop": {
+    "subtitle": "subtitles.whisper_forest_loop",
+    "sounds": [
+      {
+        "name": "the_deep_void:whisper_forest_loop",
+        "stream": false
+      }
+    ]
+  },
+  "bone_cage_activate": {
+    "subtitle": "subtitles.bone_cage_activate",
+    "sounds": [
+      {
+        "name": "the_deep_void:bone_cage_activate",
+        "stream": false
+      }
+    ]
+  },
+  "masked_hunter_scream1": {
+    "subtitle": "subtitles.masked_hunter_scream1",
+    "sounds": [
+      {
+        "name": "the_deep_void:masked_hunter_scream1",
+        "stream": false
+      }
+    ]
+  },
+  "masked_hunter_scream2": {
+    "subtitle": "subtitles.masked_hunter_scream2",
+    "sounds": [
+      {
+        "name": "the_deep_void:masked_hunter_scream2",
+        "stream": false
+      }
+    ]
+  },
+  "crows_fly": {
+    "subtitle": "subtitles.crows_fly",
+    "sounds": [
+      {
+        "name": "the_deep_void:crows_flying_away",
+        "stream": false
+      }
+    ]
   }
 }

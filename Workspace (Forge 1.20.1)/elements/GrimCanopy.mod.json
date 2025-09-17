@@ -33,7 +33,7 @@
       "falpha": 0.0
     },
     "ambientSound": {
-      "value": "ambient.soul_sand_valley.loop"
+      "value": "CUSTOM:whisper_forest_loop"
     },
     "additionsSound": {
       "value": ""

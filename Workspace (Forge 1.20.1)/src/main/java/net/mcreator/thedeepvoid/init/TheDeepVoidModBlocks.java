@@ -220,6 +220,7 @@ import net.mcreator.thedeepvoid.block.DeadFerrymanBlock;
 import net.mcreator.thedeepvoid.block.CutRottenBoneBlockStairsBlock;
 import net.mcreator.thedeepvoid.block.CutRottenBoneBlockSlabBlock;
 import net.mcreator.thedeepvoid.block.CutRottenBoneBlockBlock;
+import net.mcreator.thedeepvoid.block.CrumblingMonolithicStoneBlock;
 import net.mcreator.thedeepvoid.block.CrumblingDeepslateBlock;
 import net.mcreator.thedeepvoid.block.CrumblingBedrockBlock;
 import net.mcreator.thedeepvoid.block.CrackedBedrockStairsBlock;
@@ -257,6 +258,7 @@ import net.mcreator.thedeepvoid.block.CarrionBlock;
 import net.mcreator.thedeepvoid.block.CanopyRottenGrassBlock;
 import net.mcreator.thedeepvoid.block.CanopyBoneMarrowBlock;
 import net.mcreator.thedeepvoid.block.BrownEyeVineBlock;
+import net.mcreator.thedeepvoid.block.BoneSpikesBlock;
 import net.mcreator.thedeepvoid.block.BonePileBricksBlock;
 import net.mcreator.thedeepvoid.block.BonePileBrickWallBlock;
 import net.mcreator.thedeepvoid.block.BonePileBrickStairsBlock;
@@ -642,6 +644,8 @@ public class TheDeepVoidModBlocks {
 	public static final RegistryObject<Block> ANCIENT_POT = REGISTRY.register("ancient_pot", () -> new AncientPotBlock());
 	public static final RegistryObject<Block> ANCIENT_URNS = REGISTRY.register("ancient_urns", () -> new AncientUrnsBlock());
 	public static final RegistryObject<Block> ANCIENT_URNS_GENERATE = REGISTRY.register("ancient_urns_generate", () -> new AncientUrnsGenerateBlock());
+	public static final RegistryObject<Block> CRUMBLING_MONOLITHIC_STONE = REGISTRY.register("crumbling_monolithic_stone", () -> new CrumblingMonolithicStoneBlock());
+	public static final RegistryObject<Block> BONE_SPIKES = REGISTRY.register("bone_spikes", () -> new BoneSpikesBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

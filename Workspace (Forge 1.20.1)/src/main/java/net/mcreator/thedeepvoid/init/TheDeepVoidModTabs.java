@@ -585,6 +585,16 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.NECRONOMICON.get());
 				tabData.accept(TheDeepVoidModBlocks.ANCIENT_POT_BLOCK.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.ANCIENT_URNS.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.CRUMBLING_MONOLITHIC_STONE.get().asItem());
+				tabData.accept(TheDeepVoidModItems.MASKED_HUNTER_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.BONE_CAGE_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModBlocks.BONE_SPIKES.get().asItem());
+				tabData.accept(TheDeepVoidModItems.GIANT_BONE_SPIKE_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.HUNTER_HIDE.get());
+				tabData.accept(TheDeepVoidModItems.HUNTERS_HELMET.get());
+				tabData.accept(TheDeepVoidModItems.HUNTERS_CHESTPLATE.get());
+				tabData.accept(TheDeepVoidModItems.HUNTERS_LEGGINGS.get());
+				tabData.accept(TheDeepVoidModItems.HUNTERS_BOOTS.get());
 			})
 
 					.build());

@@ -9,10 +9,10 @@
   "start_height": {
     "type": "minecraft:uniform",
     "min_inclusive": {
-      "absolute": -25
+      "absolute": 5
     },
     "max_inclusive": {
-      "absolute": 40
+      "absolute": 45
     }
   },
   "biomes": "the_deep_void:crawler_nest",

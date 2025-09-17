@@ -37,13 +37,6 @@ public class InfestedRottenRootsTickProcedure {
 				}
 				world.setBlock(_bp, _bs, 3);
 			}
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.chorus_flower.death")), SoundSource.BLOCKS, (float) 1.4, (float) 0.8);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.chorus_flower.death")), SoundSource.BLOCKS, (float) 1.4, (float) 0.8, false);
-				}
-			}
 		}
 		if (world instanceof Level _level) {
 			if (!_level.isClientSide()) {

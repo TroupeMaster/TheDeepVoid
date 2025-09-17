@@ -58,6 +58,7 @@ import net.mcreator.thedeepvoid.client.renderer.MultipleEyesRenderer;
 import net.mcreator.thedeepvoid.client.renderer.MournerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.MotherBoneCrawlerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.MisanthropicHivemindRenderer;
+import net.mcreator.thedeepvoid.client.renderer.MaskedHunterRenderer;
 import net.mcreator.thedeepvoid.client.renderer.LurkerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.LightRenderer;
 import net.mcreator.thedeepvoid.client.renderer.LickerRenderer;
@@ -71,6 +72,7 @@ import net.mcreator.thedeepvoid.client.renderer.GravekeeperRenderer;
 import net.mcreator.thedeepvoid.client.renderer.GoreExpectoratorRenderer;
 import net.mcreator.thedeepvoid.client.renderer.GooSpitterRenderer;
 import net.mcreator.thedeepvoid.client.renderer.GooBlockRenderer;
+import net.mcreator.thedeepvoid.client.renderer.GiantBoneSpikeRenderer;
 import net.mcreator.thedeepvoid.client.renderer.GiantBoneCrawlerEggRenderer;
 import net.mcreator.thedeepvoid.client.renderer.GhostlyNightmareRenderer;
 import net.mcreator.thedeepvoid.client.renderer.GhostRenderer;
@@ -100,6 +102,8 @@ import net.mcreator.thedeepvoid.client.renderer.BuiltOverseerPillarRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BuiltBigOverseerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BuiltBigOverseerPillarRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BoneCrawlerRenderer;
+import net.mcreator.thedeepvoid.client.renderer.BoneCageRenderer;
+import net.mcreator.thedeepvoid.client.renderer.BoneCageClosedRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BigShadeArrowRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BigOverseerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BigEyeRenderer;
@@ -227,5 +231,9 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.GIANT_BONE_CRAWLER_EGG.get(), GiantBoneCrawlerEggRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.VOID_TENTACLE.get(), VoidTentacleRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.SUMMONED_DEVOURER.get(), SummonedDevourerRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.MASKED_HUNTER.get(), MaskedHunterRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.BONE_CAGE.get(), BoneCageRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.BONE_CAGE_CLOSED.get(), BoneCageClosedRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.GIANT_BONE_SPIKE.get(), GiantBoneSpikeRenderer::new);
 	}
 }

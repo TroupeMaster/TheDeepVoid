@@ -11,7 +11,7 @@
     },
     "igniteFire": false,
     "power": 1.4000000000000001,
-    "damage": 4.5,
+    "damage": 4.3,
     "knockback": 1,
     "entityModel": "Modelbig_shade_arrow",
     "customModelTexture": "big_shade_arrow.png",

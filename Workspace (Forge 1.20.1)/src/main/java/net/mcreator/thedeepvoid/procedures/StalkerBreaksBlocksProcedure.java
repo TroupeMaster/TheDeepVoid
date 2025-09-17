@@ -14,6 +14,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
+import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import javax.annotation.Nullable;
@@ -33,7 +34,7 @@ public class StalkerBreaksBlocksProcedure {
 		if (entity == null)
 			return;
 		if (DeepVoidConfigConfiguration.STALKERBREAKSBLOCKS.get() == true) {
-			if (entity instanceof StalkerEntity) {
+			if (entity instanceof StalkerEntity || entity instanceof MaskedHunterEntity) {
 				if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 					if (entity.getPersistentData().getDouble("deep_void:break_block") >= 10) {
 						entity.getPersistentData().putDouble("deep_void:break_block", 0);

@@ -46,6 +46,7 @@ import net.mcreator.thedeepvoid.client.model.Modelmother_bone_crawler;
 import net.mcreator.thedeepvoid.client.model.Modellurker;
 import net.mcreator.thedeepvoid.client.model.Modellighthead;
 import net.mcreator.thedeepvoid.client.model.Modellicker;
+import net.mcreator.thedeepvoid.client.model.Modelhunter_mask;
 import net.mcreator.thedeepvoid.client.model.Modelhunter;
 import net.mcreator.thedeepvoid.client.model.Modelhallucination_new;
 import net.mcreator.thedeepvoid.client.model.Modelgravekeeper;
@@ -139,6 +140,7 @@ public class TheDeepVoidModModels {
 		event.registerLayerDefinition(Modelbone_crawler_remodeled.LAYER_LOCATION, Modelbone_crawler_remodeled::createBodyLayer);
 		event.registerLayerDefinition(Modeloverseer_inactive.LAYER_LOCATION, Modeloverseer_inactive::createBodyLayer);
 		event.registerLayerDefinition(Modelfool_eater_new.LAYER_LOCATION, Modelfool_eater_new::createBodyLayer);
+		event.registerLayerDefinition(Modelhunter_mask.LAYER_LOCATION, Modelhunter_mask::createBodyLayer);
 		event.registerLayerDefinition(Modelroamer.LAYER_LOCATION, Modelroamer::createBodyLayer);
 		event.registerLayerDefinition(Modelcharred_walker.LAYER_LOCATION, Modelcharred_walker::createBodyLayer);
 		event.registerLayerDefinition(Modelsulfur_tnt.LAYER_LOCATION, Modelsulfur_tnt::createBodyLayer);

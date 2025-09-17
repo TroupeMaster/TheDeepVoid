@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/bone_spikes",
+  "textures": {
+    "all": "the_deep_void:block/bone_spikes",
+    "particle": "the_deep_void:block/rotten_bone_block_new",
+    "0": "the_deep_void:block/bone_spikes"
+  },
+  "render_type": "cutout"
+}

@@ -2,6 +2,9 @@
   "feature": "the_deep_void:eye_trunk_undergrowth",
   "placement": [
     {
+      "type": "minecraft:biome"
+    },
+    {
       "type": "minecraft:in_square"
     },
     {
@@ -25,9 +28,17 @@
         "predicates": [
           {
             "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          },
+          {
+            "type": "minecraft:matching_blocks",
             "blocks": [
               "the_deep_void:ancient_deepslate",
-              "the_deep_void:block_of_bone_pile"
+              "the_deep_void:block_of_bone_pile",
+              "the_deep_void:cobbled_ancient_deepslate",
+              "the_deep_void:block_of_skull_pile",
+              "minecraft:deepslate",
+              "minecraft:cobbled_deepslate"
             ],
             "offset": [
               0,
@@ -36,11 +47,7 @@
             ]
           },
           {
-            "type": "minecraft:matching_blocks",
-            "blocks": [
-              "the_deep_void:ancient_deepslate",
-              "the_deep_void:block_of_bone_pile"
-            ],
+            "type": "minecraft:solid",
             "offset": [
               2,
               -1,
@@ -48,11 +55,7 @@
             ]
           },
           {
-            "type": "minecraft:matching_blocks",
-            "blocks": [
-              "the_deep_void:ancient_deepslate",
-              "the_deep_void:block_of_bone_pile"
-            ],
+            "type": "minecraft:solid",
             "offset": [
               -2,
               -1,
@@ -60,11 +63,7 @@
             ]
           },
           {
-            "type": "minecraft:matching_blocks",
-            "blocks": [
-              "the_deep_void:ancient_deepslate",
-              "the_deep_void:block_of_bone_pile"
-            ],
+            "type": "minecraft:solid",
             "offset": [
               0,
               -1,
@@ -72,11 +71,7 @@
             ]
           },
           {
-            "type": "minecraft:matching_blocks",
-            "blocks": [
-              "the_deep_void:ancient_deepslate",
-              "the_deep_void:block_of_bone_pile"
-            ],
+            "type": "minecraft:solid",
             "offset": [
               0,
               -1,
@@ -85,9 +80,6 @@
           }
         ]
       }
-    },
-    {
-      "type": "minecraft:biome"
     }
   ]
 }

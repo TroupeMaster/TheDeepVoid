@@ -156,6 +156,7 @@ public class TheDeepVoidModVariables {
 				clone.hooked = original.hooked;
 				clone.voidriumTeleport = original.voidriumTeleport;
 				clone.noEscape = original.noEscape;
+				clone.hunterArmorAbility = original.hunterArmorAbility;
 			}
 		}
 
@@ -437,6 +438,7 @@ public class TheDeepVoidModVariables {
 		public double hiveCallX = 0;
 		public double hiveCallY = 0;
 		public double hiveCallZ = 0;
+		public double hunterArmorAbility = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -528,6 +530,7 @@ public class TheDeepVoidModVariables {
 			nbt.putDouble("hiveCallX", hiveCallX);
 			nbt.putDouble("hiveCallY", hiveCallY);
 			nbt.putDouble("hiveCallZ", hiveCallZ);
+			nbt.putDouble("hunterArmorAbility", hunterArmorAbility);
 			return nbt;
 		}
 
@@ -616,6 +619,7 @@ public class TheDeepVoidModVariables {
 			hiveCallX = nbt.getDouble("hiveCallX");
 			hiveCallY = nbt.getDouble("hiveCallY");
 			hiveCallZ = nbt.getDouble("hiveCallZ");
+			hunterArmorAbility = nbt.getDouble("hunterArmorAbility");
 		}
 	}
 
@@ -723,6 +727,7 @@ public class TheDeepVoidModVariables {
 					variables.hiveCallX = message.data.hiveCallX;
 					variables.hiveCallY = message.data.hiveCallY;
 					variables.hiveCallZ = message.data.hiveCallZ;
+					variables.hunterArmorAbility = message.data.hunterArmorAbility;
 				}
 			});
 			context.setPacketHandled(true);

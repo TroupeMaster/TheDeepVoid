@@ -2,6 +2,10 @@
   "feature": "the_deep_void:crumbling_bedrock_generate",
   "placement": [
     {
+      "type": "minecraft:rarity_filter",
+      "chance": 5
+    },
+    {
       "type": "minecraft:in_square"
     },
     {

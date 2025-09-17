@@ -67,6 +67,7 @@ import net.mcreator.thedeepvoid.entity.MultipleEyesEntity;
 import net.mcreator.thedeepvoid.entity.MournerEntity;
 import net.mcreator.thedeepvoid.entity.MotherBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
+import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
 import net.mcreator.thedeepvoid.entity.LurkerEntity;
 import net.mcreator.thedeepvoid.entity.LightEntity;
 import net.mcreator.thedeepvoid.entity.LickerEntity;
@@ -84,6 +85,7 @@ import net.mcreator.thedeepvoid.entity.GoreExpectoratorEntity;
 import net.mcreator.thedeepvoid.entity.GooSpitterEntity;
 import net.mcreator.thedeepvoid.entity.GooBlockEntity;
 import net.mcreator.thedeepvoid.entity.GoldenBloodshotEntity;
+import net.mcreator.thedeepvoid.entity.GiantBoneSpikeEntity;
 import net.mcreator.thedeepvoid.entity.GiantBoneCrawlerEggEntity;
 import net.mcreator.thedeepvoid.entity.GhostlyNightmareEntity;
 import net.mcreator.thedeepvoid.entity.GhostEntity;
@@ -114,6 +116,8 @@ import net.mcreator.thedeepvoid.entity.BuiltOverseerEntity;
 import net.mcreator.thedeepvoid.entity.BuiltBigOverseerPillarEntity;
 import net.mcreator.thedeepvoid.entity.BuiltBigOverseerEntity;
 import net.mcreator.thedeepvoid.entity.BoneCrawlerEntity;
+import net.mcreator.thedeepvoid.entity.BoneCageEntity;
+import net.mcreator.thedeepvoid.entity.BoneCageClosedEntity;
 import net.mcreator.thedeepvoid.entity.BoneBallProjectileEntity;
 import net.mcreator.thedeepvoid.entity.BloodshotEntity;
 import net.mcreator.thedeepvoid.entity.BloodSpitEntity;
@@ -475,6 +479,20 @@ public class TheDeepVoidModEntities {
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(VoidTentacleEntity::new).fireImmune().sized(0.8f, 5f));
 	public static final RegistryObject<EntityType<SummonedDevourerEntity>> SUMMONED_DEVOURER = register("summoned_devourer", EntityType.Builder.<SummonedDevourerEntity>of(SummonedDevourerEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(SummonedDevourerEntity::new).fireImmune().sized(0.8f, 2.9f));
+	public static final RegistryObject<EntityType<MaskedHunterEntity>> MASKED_HUNTER = register("masked_hunter",
+			EntityType.Builder.<MaskedHunterEntity>of(MaskedHunterEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(84).setUpdateInterval(3).setCustomClientFactory(MaskedHunterEntity::new)
+
+					.sized(1.95f, 1.95f));
+	public static final RegistryObject<EntityType<BoneCageEntity>> BONE_CAGE = register("bone_cage",
+			EntityType.Builder.<BoneCageEntity>of(BoneCageEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(BoneCageEntity::new)
+
+					.sized(0.9f, 0.1f));
+	public static final RegistryObject<EntityType<BoneCageClosedEntity>> BONE_CAGE_CLOSED = register("bone_cage_closed",
+			EntityType.Builder.<BoneCageClosedEntity>of(BoneCageClosedEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(BoneCageClosedEntity::new)
+
+					.sized(0.9f, 1.8f));
+	public static final RegistryObject<EntityType<GiantBoneSpikeEntity>> GIANT_BONE_SPIKE = register("giant_bone_spike", EntityType.Builder.<GiantBoneSpikeEntity>of(GiantBoneSpikeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(GiantBoneSpikeEntity::new).fireImmune().sized(0.6f, 1.4f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -575,6 +593,10 @@ public class TheDeepVoidModEntities {
 			GiantBoneCrawlerEggEntity.init();
 			VoidTentacleEntity.init();
 			SummonedDevourerEntity.init();
+			MaskedHunterEntity.init();
+			BoneCageEntity.init();
+			BoneCageClosedEntity.init();
+			GiantBoneSpikeEntity.init();
 		});
 	}
 
@@ -672,5 +694,9 @@ public class TheDeepVoidModEntities {
 		event.put(GIANT_BONE_CRAWLER_EGG.get(), GiantBoneCrawlerEggEntity.createAttributes().build());
 		event.put(VOID_TENTACLE.get(), VoidTentacleEntity.createAttributes().build());
 		event.put(SUMMONED_DEVOURER.get(), SummonedDevourerEntity.createAttributes().build());
+		event.put(MASKED_HUNTER.get(), MaskedHunterEntity.createAttributes().build());
+		event.put(BONE_CAGE.get(), BoneCageEntity.createAttributes().build());
+		event.put(BONE_CAGE_CLOSED.get(), BoneCageClosedEntity.createAttributes().build());
+		event.put(GIANT_BONE_SPIKE.get(), GiantBoneSpikeEntity.createAttributes().build());
 	}
 }

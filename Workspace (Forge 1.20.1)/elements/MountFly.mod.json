@@ -3,7 +3,7 @@
   "_type": "keybind",
   "definition": {
     "triggerKey": "SPACE",
-    "keyBindingName": "Mount Fly",
+    "keyBindingName": "Mount Fly/Double Jump",
     "keyBindingCategoryKey": "movement",
     "onKeyPressed": {
       "name": "MountFlyOnKeyPressed"

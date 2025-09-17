@@ -136,6 +136,8 @@ import net.mcreator.thedeepvoid.item.LavenditeAllSeeingSwordItem;
 import net.mcreator.thedeepvoid.item.KnifeGloveItem;
 import net.mcreator.thedeepvoid.item.JumpBoostNeedleItem;
 import net.mcreator.thedeepvoid.item.JudgementItem;
+import net.mcreator.thedeepvoid.item.HuntersItem;
+import net.mcreator.thedeepvoid.item.HunterHideItem;
 import net.mcreator.thedeepvoid.item.HexedNeedleItem;
 import net.mcreator.thedeepvoid.item.HexedDollItem;
 import net.mcreator.thedeepvoid.item.HeresyItem;
@@ -843,6 +845,16 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> ANCIENT_POT = block(TheDeepVoidModBlocks.ANCIENT_POT);
 	public static final RegistryObject<Item> ANCIENT_URNS = block(TheDeepVoidModBlocks.ANCIENT_URNS);
 	public static final RegistryObject<Item> ANCIENT_URNS_GENERATE = block(TheDeepVoidModBlocks.ANCIENT_URNS_GENERATE);
+	public static final RegistryObject<Item> CRUMBLING_MONOLITHIC_STONE = block(TheDeepVoidModBlocks.CRUMBLING_MONOLITHIC_STONE);
+	public static final RegistryObject<Item> MASKED_HUNTER_SPAWN_EGG = REGISTRY.register("masked_hunter_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.MASKED_HUNTER, -15592942, -14606306, new Item.Properties()));
+	public static final RegistryObject<Item> BONE_CAGE_SPAWN_EGG = REGISTRY.register("bone_cage_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.BONE_CAGE, -12106178, -13412304, new Item.Properties()));
+	public static final RegistryObject<Item> BONE_SPIKES = block(TheDeepVoidModBlocks.BONE_SPIKES);
+	public static final RegistryObject<Item> GIANT_BONE_SPIKE_SPAWN_EGG = REGISTRY.register("giant_bone_spike_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.GIANT_BONE_SPIKE, -15396077, -10461869, new Item.Properties()));
+	public static final RegistryObject<Item> HUNTER_HIDE = REGISTRY.register("hunter_hide", () -> new HunterHideItem());
+	public static final RegistryObject<Item> HUNTERS_HELMET = REGISTRY.register("hunters_helmet", () -> new HuntersItem.Helmet());
+	public static final RegistryObject<Item> HUNTERS_CHESTPLATE = REGISTRY.register("hunters_chestplate", () -> new HuntersItem.Chestplate());
+	public static final RegistryObject<Item> HUNTERS_LEGGINGS = REGISTRY.register("hunters_leggings", () -> new HuntersItem.Leggings());
+	public static final RegistryObject<Item> HUNTERS_BOOTS = REGISTRY.register("hunters_boots", () -> new HuntersItem.Boots());
 
 	// Start of user code block custom items
 	// End of user code block custom items

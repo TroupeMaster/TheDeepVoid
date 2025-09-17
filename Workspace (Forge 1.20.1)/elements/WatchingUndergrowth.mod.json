@@ -33,7 +33,7 @@
       "falpha": 0.0
     },
     "ambientSound": {
-      "value": "CUSTOM:undergrowth_creak"
+      "value": "CUSTOM:whisper_forest_loop"
     },
     "additionsSound": {
       "value": ""

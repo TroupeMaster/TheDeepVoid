@@ -148,4 +148,9 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> THE_HAUNT = REGISTRY.register("the_haunt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "the_haunt")));
 	public static final RegistryObject<SoundEvent> SENTIENT_CHAINSAW_USE = REGISTRY.register("sentient_chainsaw_use", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "sentient_chainsaw_use")));
 	public static final RegistryObject<SoundEvent> FLESHY_EXPLOSION = REGISTRY.register("fleshy_explosion", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "fleshy_explosion")));
+	public static final RegistryObject<SoundEvent> WHISPER_FOREST_LOOP = REGISTRY.register("whisper_forest_loop", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "whisper_forest_loop")));
+	public static final RegistryObject<SoundEvent> BONE_CAGE_ACTIVATE = REGISTRY.register("bone_cage_activate", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "bone_cage_activate")));
+	public static final RegistryObject<SoundEvent> MASKED_HUNTER_SCREAM1 = REGISTRY.register("masked_hunter_scream1", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "masked_hunter_scream1")));
+	public static final RegistryObject<SoundEvent> MASKED_HUNTER_SCREAM2 = REGISTRY.register("masked_hunter_scream2", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "masked_hunter_scream2")));
+	public static final RegistryObject<SoundEvent> CROWS_FLY = REGISTRY.register("crows_fly", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "crows_fly")));
 }

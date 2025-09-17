@@ -14,6 +14,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.entity.SulfurTntEntityEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import java.util.List;
@@ -47,19 +48,21 @@ public class SulfurTntEntityOnInitialEntitySpawnProcedure {
 			entity.getPersistentData().putDouble("fuse", 1);
 		});
 		TheDeepVoidMod.queueServerWork(80, () -> {
-			if (!entity.level().isClientSide())
-				entity.discard();
-			if (world instanceof Level _level && !_level.isClientSide())
-				_level.explode(null, (entity.getX()), (entity.getY()), (entity.getZ()), 12, Level.ExplosionInteraction.TNT);
-			{
-				final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(12 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-				for (Entity entityiterator : _entfound) {
-					if (entityiterator instanceof LivingEntity) {
-						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 260, 1));
-						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(MobEffects.POISON, 260, 1));
+			if (!world.getEntitiesOfClass(SulfurTntEntityEntity.class, AABB.ofSize(new Vec3(x, y, z), 2, 2, 2), e -> true).isEmpty()) {
+				if (!entity.level().isClientSide())
+					entity.discard();
+				if (world instanceof Level _level && !_level.isClientSide())
+					_level.explode(null, (entity.getX()), (entity.getY()), (entity.getZ()), 12, Level.ExplosionInteraction.TNT);
+				{
+					final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(12 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+					for (Entity entityiterator : _entfound) {
+						if (entityiterator instanceof LivingEntity && !(entityiterator instanceof SulfurTntEntityEntity)) {
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 260, 1));
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.POISON, 260, 1));
+						}
 					}
 				}
 			}

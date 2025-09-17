@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a a",
+    "aba",
+    "cdc"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:block_of_rotten_bone_pile"
+    },
+    "b": {
+      "item": "the_deep_void:refined_onyx"
+    },
+    "c": {
+      "item": "the_deep_void:hunter_hide"
+    },
+    "d": {
+      "item": "the_deep_void:block_of_bone_pile"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:hunters_chestplate",
+    "count": 1
+  }
+}
