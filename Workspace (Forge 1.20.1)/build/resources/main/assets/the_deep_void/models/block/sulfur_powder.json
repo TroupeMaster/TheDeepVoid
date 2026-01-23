@@ -1,9 +1,0 @@
-{
-  "parent": "the_deep_void:custom/sulfur_dust",
-  "textures": {
-    "all": "the_deep_void:block/sulfur_dust",
-    "particle": "the_deep_void:block/sulfur_dust",
-    "0": "the_deep_void:block/sulfur_dust"
-  },
-  "render_type": "cutout"
-}

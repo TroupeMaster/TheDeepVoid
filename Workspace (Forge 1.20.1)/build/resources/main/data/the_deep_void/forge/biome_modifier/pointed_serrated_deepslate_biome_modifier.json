@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#the_deep_void:is_deep_void",
-  "features": "the_deep_void:pointed_serrated_deepslate",
-  "step": "underground_structures"
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "the_deep_void:block/block_of_rotten_bone_pile",
-    "particle": "the_deep_void:block/block_of_rotten_bone_pile"
-  },
-  "render_type": "solid"
-}

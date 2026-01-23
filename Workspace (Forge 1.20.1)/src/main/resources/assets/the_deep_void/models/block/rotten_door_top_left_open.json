@@ -1,9 +1,0 @@
-{
-  "parent": "block/door_top_left_open",
-  "textures": {
-    "particle": "the_deep_void:block/rotten_door_top_new",
-    "bottom": "the_deep_void:block/rotten_door_top_new",
-    "top": "the_deep_void:block/rotten_door_bottom_new"
-  },
-  "render_type": "cutout"
-}

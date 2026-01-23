@@ -1,9 +1,0 @@
-{
-  "parent": "the_deep_void:custom/eye_vine",
-  "textures": {
-    "all": "the_deep_void:block/eye_vine_texture",
-    "particle": "the_deep_void:block/eye_vine_stem",
-    "0": "the_deep_void:block/eye_vine_texture"
-  },
-  "render_type": "cutout"
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "the_deep_void:block/onyx_ore",
-    "particle": "the_deep_void:block/onyx_ore"
-  },
-  "render_type": "solid"
-}

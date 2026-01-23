@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "the_deep_void:block/translucent_goo",
-    "particle": "the_deep_void:block/translucent_goo"
-  },
-  "render_type": "translucent"
-}

@@ -1,8 +1,0 @@
-{
-  "parent": "block/cross",
-  "textures": {
-    "cross": "the_deep_void:block/pus_flower_new",
-    "particle": "the_deep_void:block/pus_flower_new"
-  },
-  "render_type": "cutout"
-}

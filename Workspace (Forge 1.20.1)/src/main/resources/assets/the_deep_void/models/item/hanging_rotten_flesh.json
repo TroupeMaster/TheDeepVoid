@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "the_deep_void:item/hanging_flesh_item"
-  },
-  "render_type": "translucent"
-}

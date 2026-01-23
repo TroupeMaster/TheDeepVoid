@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "the_deep_void:item/goo_web"
-  },
-  "render_type": "translucent"
-}

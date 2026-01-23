@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "the_deep_void:befouled_marsh",
-  "features": "the_deep_void:marsh_tree_2",
-  "step": "local_modifications"
-}

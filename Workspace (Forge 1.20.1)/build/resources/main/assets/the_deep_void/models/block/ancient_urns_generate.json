@@ -1,9 +1,0 @@
-{
-  "parent": "the_deep_void:custom/ancient_urns",
-  "textures": {
-    "all": "the_deep_void:block/ancient_urns",
-    "particle": "the_deep_void:block/deepslate_bricks",
-    "0": "the_deep_void:block/ancient_urns"
-  },
-  "render_type": "cutout"
-}

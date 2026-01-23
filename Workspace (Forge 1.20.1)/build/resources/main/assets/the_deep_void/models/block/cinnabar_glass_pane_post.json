@@ -1,9 +1,0 @@
-{
-  "parent": "block/template_glass_pane_post",
-  "textures": {
-    "particle": "the_deep_void:block/cinnabar_glass",
-    "edge": "the_deep_void:block/cinnabar_glass",
-    "pane": "the_deep_void:block/cinnabar_glass"
-  },
-  "render_type": "cutout"
-}

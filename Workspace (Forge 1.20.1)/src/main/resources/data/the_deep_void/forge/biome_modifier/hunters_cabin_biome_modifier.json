@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#the_deep_void:hunter_forest_biome",
-  "features": "the_deep_void:hunters_cabin",
-  "step": "surface_structures"
-}

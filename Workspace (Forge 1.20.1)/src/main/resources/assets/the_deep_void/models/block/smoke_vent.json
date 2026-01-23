@@ -1,9 +1,0 @@
-{
-  "parent": "the_deep_void:custom/smoke_vent_new",
-  "textures": {
-    "all": "the_deep_void:block/smoke_vent_new",
-    "particle": "the_deep_void:block/smoke_vent_new",
-    "0": "the_deep_void:block/smoke_vent_new"
-  },
-  "render_type": "solid"
-}

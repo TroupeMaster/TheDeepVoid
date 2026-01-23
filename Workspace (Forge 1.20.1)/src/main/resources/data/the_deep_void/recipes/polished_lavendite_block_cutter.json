@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "count": 3,
-  "ingredient": {
-    "item": "the_deep_void:block_of_lavendite"
-  },
-  "result": "the_deep_void:polished_lavendite_block"
-}

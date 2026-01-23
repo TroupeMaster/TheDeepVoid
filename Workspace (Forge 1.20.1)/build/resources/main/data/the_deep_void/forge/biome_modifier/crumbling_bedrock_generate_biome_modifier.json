@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "#minecraft:is_overworld",
-  "features": "the_deep_void:crumbling_bedrock_generate",
-  "step": "underground_decoration"
-}

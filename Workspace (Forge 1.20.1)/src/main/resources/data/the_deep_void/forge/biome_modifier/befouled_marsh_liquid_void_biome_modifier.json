@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": "the_deep_void:befouled_marsh",
-  "features": "the_deep_void:befouled_marsh_liquid_void",
-  "step": "surface_structures"
-}

@@ -1,9 +1,0 @@
-{
-  "asset_name": "cinnabar_trim",
-  "description": {
-    "color": "#C5453A",
-    "translate": "trim_material.the_deep_void.cinnabar_trim"
-  },
-  "ingredient": "the_deep_void:refined_cinnabar",
-  "item_model_index": 0.0
-}

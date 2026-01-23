@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "the_deep_void:block/rotten_flesh_chunk",
-    "particle": "the_deep_void:block/rotten_flesh_chunk"
-  },
-  "render_type": "solid"
-}

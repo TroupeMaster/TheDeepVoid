@@ -1,9 +1,0 @@
-{
-  "parent": "the_deep_void:custom/soul_orb_pillar",
-  "textures": {
-    "all": "the_deep_void:block/soul_orb_pillar",
-    "particle": "the_deep_void:block/soul_orb_pillar",
-    "0": "the_deep_void:block/soul_orb_pillar"
-  },
-  "render_type": "solid"
-}

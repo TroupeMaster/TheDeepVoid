@@ -1,9 +1,0 @@
-{
-  "parent": "the_deep_void:custom/infested_log",
-  "textures": {
-    "all": "the_deep_void:block/eye_log_animated",
-    "particle": "the_deep_void:block/eye_log_animated",
-    "0": "the_deep_void:block/eye_log_animated"
-  },
-  "render_type": "cutout"
-}

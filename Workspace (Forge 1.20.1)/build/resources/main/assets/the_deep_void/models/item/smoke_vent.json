@@ -1,7 +1,0 @@
-{
-  "parent": "item/generated",
-  "textures": {
-    "layer0": "the_deep_void:item/smoke_vent_item"
-  },
-  "render_type": "translucent"
-}

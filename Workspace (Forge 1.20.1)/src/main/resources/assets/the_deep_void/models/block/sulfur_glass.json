@@ -1,8 +1,0 @@
-{
-  "parent": "block/cube_all",
-  "textures": {
-    "all": "the_deep_void:block/sulfur_glass",
-    "particle": "the_deep_void:block/sulfur_glass"
-  },
-  "render_type": "cutout"
-}

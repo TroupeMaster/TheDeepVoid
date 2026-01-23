@@ -1,9 +1,0 @@
-{
-  "parent": "the_deep_void:custom/jack_o_laying_corpse",
-  "textures": {
-    "all": "the_deep_void:block/block_of_bone_pile",
-    "particle": "the_deep_void:block/block_of_bone_pile",
-    "1": "the_deep_void:block/jack_o_corpse"
-  },
-  "render_type": "cutout"
-}
