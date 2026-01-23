@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/gray_candelabra",
+  "textures": {
+    "all": "the_deep_void:block/gray_candelabra",
+    "particle": "the_deep_void:block/gray_candelabra",
+    "0": "the_deep_void:block/gray_candelabra"
+  },
+  "render_type": "solid"
+}

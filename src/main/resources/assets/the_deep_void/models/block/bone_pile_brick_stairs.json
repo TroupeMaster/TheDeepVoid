@@ -1,0 +1,10 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "particle": "the_deep_void:block/bone_pile_bricks",
+    "bottom": "the_deep_void:block/bone_pile_bricks",
+    "top": "the_deep_void:block/bone_pile_bricks",
+    "side": "the_deep_void:block/bone_pile_bricks"
+  },
+  "render_type": "solid"
+}

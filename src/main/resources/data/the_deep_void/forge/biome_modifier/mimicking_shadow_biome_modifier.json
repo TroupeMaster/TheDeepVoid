@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "the_deep_void:misted_remnants",
+  "spawners": {
+    "type": "the_deep_void:mimicking_shadow",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

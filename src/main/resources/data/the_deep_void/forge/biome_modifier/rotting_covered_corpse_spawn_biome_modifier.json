@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:crawler_nest",
+  "features": "the_deep_void:rotting_covered_corpse_spawn",
+  "step": "vegetal_decoration"
+}

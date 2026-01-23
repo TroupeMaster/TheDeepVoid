@@ -1,0 +1,10 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.sawTrapOn_idle": {
+			"loop": true,
+			"animation_length": 0.0417
+		}
+	},
+	"geckolib_format_version": 2
+}

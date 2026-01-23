@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:solid_void"
+    },
+    "title": {
+      "translate": "advancements.fight_the_sun.title"
+    },
+    "description": {
+      "translate": "advancements.fight_the_sun.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "fight_the_sun_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "the_deep_void:nightmare_fuel"
+}

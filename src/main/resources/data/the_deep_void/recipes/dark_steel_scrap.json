@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "experience": 3,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "the_deep_void:dark_steel_deposit"
+  },
+  "result": "the_deep_void:dark_steel_scrap"
+}

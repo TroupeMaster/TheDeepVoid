@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:cobbled_ancient_deepslate"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:ancient_deepslate_wall",
+    "count": 6
+  }
+}

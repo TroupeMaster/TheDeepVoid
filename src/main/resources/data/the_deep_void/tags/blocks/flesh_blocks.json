@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:flesh_block",
+    "the_deep_void:pustulent_flesh_block",
+    "the_deep_void:eye_flesh_block",
+    "the_deep_void:porous_flesh",
+    "the_deep_void:gaping_porous_flesh",
+    "the_deep_void:messy_flesh"
+  ]
+}

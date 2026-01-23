@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a a",
+    "b b",
+    "c c"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:flesh_chunk"
+    },
+    "b": {
+      "item": "the_deep_void:hard_flesh_block"
+    },
+    "c": {
+      "item": "the_deep_void:ambrosial_flesh_chunk"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:ichor_strider_boots",
+    "count": 1
+  }
+}

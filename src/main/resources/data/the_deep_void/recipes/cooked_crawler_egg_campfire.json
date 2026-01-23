@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:campfire_cooking",
+  "category": "food",
+  "experience": 0.65,
+  "cookingtime": 600,
+  "ingredient": {
+    "item": "the_deep_void:bone_crawler_egg"
+  },
+  "result": "the_deep_void:cooked_crawler_egg"
+}

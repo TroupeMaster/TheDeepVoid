@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/dark_steel_chain",
+  "textures": {
+    "all": "the_deep_void:block/dark_steel_chain",
+    "particle": "the_deep_void:block/dark_steel_chain",
+    "0": "the_deep_void:block/dark_steel_chain"
+  },
+  "render_type": "cutout"
+}

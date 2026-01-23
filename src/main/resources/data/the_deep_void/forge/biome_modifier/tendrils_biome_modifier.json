@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#the_deep_void:flesh_biome",
+  "features": "the_deep_void:tendrils",
+  "step": "vegetal_decoration"
+}

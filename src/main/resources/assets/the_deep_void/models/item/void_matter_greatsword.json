@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/void_matter_greatsword",
+  "textures": {
+    "0": "the_deep_void:block/void_matter_greatsword",
+    "particle": "the_deep_void:item/dark_matter_greatsword"
+  }
+}

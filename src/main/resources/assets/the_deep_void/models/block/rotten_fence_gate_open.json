@@ -1,0 +1,8 @@
+{
+  "parent": "block/template_fence_gate_open",
+  "textures": {
+    "particle": "the_deep_void:block/rotten_planks_new",
+    "texture": "the_deep_void:block/rotten_planks_new"
+  },
+  "render_type": "solid"
+}

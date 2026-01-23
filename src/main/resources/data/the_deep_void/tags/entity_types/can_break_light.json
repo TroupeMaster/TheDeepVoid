@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:death_vulture",
+    "the_deep_void:mourner",
+    "the_deep_void:roamer",
+    "the_deep_void:rooted",
+    "the_deep_void:void_dweller",
+    "the_deep_void:void_tentacle",
+    "the_deep_void:gravekeeper",
+    "the_deep_void:bone_crawler",
+    "the_deep_void:centigaze",
+    "the_deep_void:alpha_bone_crawler",
+    "the_deep_void:bog_walker",
+    "the_deep_void:seeker",
+    "the_deep_void:voidborn_tentacles",
+    "the_deep_void:voidborn"
+  ]
+}

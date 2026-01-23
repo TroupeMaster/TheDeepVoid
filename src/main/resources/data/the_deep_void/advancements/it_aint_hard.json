@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:head_of_the_apostle"
+    },
+    "title": {
+      "translate": "advancements.it_aint_hard.title"
+    },
+    "description": {
+      "translate": "advancements.it_aint_hard.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "it_aint_hard_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 45
+  },
+  "parent": "the_deep_void:i_always_come_back"
+}

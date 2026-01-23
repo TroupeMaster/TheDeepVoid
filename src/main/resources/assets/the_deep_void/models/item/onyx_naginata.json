@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/onyx_naginata",
+  "textures": {
+    "0": "the_deep_void:block/onyx_naginata",
+    "particle": "the_deep_void:item/onyx_naginata"
+  }
+}

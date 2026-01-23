@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:dark_steel_scrap"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:block_of_dark_steel",
+    "count": 1
+  }
+}

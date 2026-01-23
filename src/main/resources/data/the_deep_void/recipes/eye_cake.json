@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "ddd"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:eyeball"
+    },
+    "b": {
+      "item": "minecraft:sugar"
+    },
+    "c": {
+      "item": "the_deep_void:bone_crawler_egg"
+    },
+    "d": {
+      "item": "the_deep_void:flesh_block"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:eye_cake",
+    "count": 1
+  }
+}

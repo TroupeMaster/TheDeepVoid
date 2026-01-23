@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:dark_steel_sword",
+    "the_deep_void:dark_steel_pickaxe",
+    "the_deep_void:dark_steel_axe",
+    "the_deep_void:dark_steel_shovel",
+    "the_deep_void:dark_steel_hoe"
+  ]
+}

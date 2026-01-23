@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:block_of_dark_steel"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:dark_steel_scrap",
+    "count": 9
+  }
+}

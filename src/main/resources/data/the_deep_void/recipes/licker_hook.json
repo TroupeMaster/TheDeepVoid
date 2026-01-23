@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "  a",
+    "baa",
+    "cb "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:bloody_tongue"
+    },
+    "b": {
+      "item": "the_deep_void:onyx"
+    },
+    "c": {
+      "item": "the_deep_void:rotten_bone"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:licker_hook",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/weaver_head",
+  "textures": {
+    "all": "the_deep_void:block/fallenweaver",
+    "particle": "the_deep_void:block/fallenweaver",
+    "0": "the_deep_void:block/fallenweaver"
+  },
+  "render_type": "cutout"
+}

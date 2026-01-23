@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:swords",
+    "#minecraft:pickaxes",
+    "#minecraft:axes",
+    "#minecraft:shovels",
+    "#minecraft:hoes",
+    "minecraft:shears",
+    "minecraft:flint_and_steel",
+    "the_deep_void:void_pendant",
+    "the_deep_void:forgotten_token",
+    "the_deep_void:onyx_flare_gun",
+    "the_deep_void:stalker_treat",
+    "#the_deep_void:hook",
+    "#the_deep_void:throwable",
+    "#the_deep_void:needles",
+    "the_deep_void:onyx_needle",
+    "the_deep_void:liquid_void_bucket",
+    "minecraft:bucket",
+    "minecraft:water_bucket",
+    "minecraft:lava_bucket",
+    "minecraft:milk_bucket"
+  ]
+}

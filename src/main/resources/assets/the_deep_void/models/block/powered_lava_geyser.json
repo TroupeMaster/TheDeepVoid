@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/deepslate",
+    "up": "the_deep_void:block/redstone_geyser_off",
+    "north": "the_deep_void:block/redstone_geyser_side_off",
+    "east": "the_deep_void:block/redstone_geyser_side_off",
+    "south": "the_deep_void:block/redstone_geyser_side_off",
+    "west": "the_deep_void:block/redstone_geyser_side_off",
+    "particle": "the_deep_void:block/deepslate"
+  },
+  "render_type": "solid"
+}

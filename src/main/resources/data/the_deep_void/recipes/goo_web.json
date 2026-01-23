@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aba",
+    "bbb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:goo_ball"
+    },
+    "b": {
+      "item": "the_deep_void:goo_cover_block"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:goo_web",
+    "count": 1
+  }
+}

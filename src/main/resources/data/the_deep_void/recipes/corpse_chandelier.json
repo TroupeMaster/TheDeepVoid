@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "b": {
+      "item": "the_deep_void:jack_o_corpse"
+    },
+    "c": {
+      "item": "minecraft:chain"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:corpse_chandelier",
+    "count": 1
+  }
+}

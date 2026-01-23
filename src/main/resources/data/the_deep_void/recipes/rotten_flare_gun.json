@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "ab ",
+    " ab",
+    " cd"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:refined_cinnabar"
+    },
+    "b": {
+      "item": "the_deep_void:black_moss"
+    },
+    "c": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "d": {
+      "item": "minecraft:flint_and_steel"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:onyx_flare_gun",
+    "count": 1
+  }
+}

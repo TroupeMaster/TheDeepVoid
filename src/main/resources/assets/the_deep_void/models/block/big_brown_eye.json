@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/flesh_block_new",
+    "up": "the_deep_void:block/big_brown_eye",
+    "north": "the_deep_void:block/big_eye_side",
+    "east": "the_deep_void:block/big_eye_side",
+    "south": "the_deep_void:block/big_eye_side",
+    "west": "the_deep_void:block/big_eye_side",
+    "particle": "the_deep_void:block/flesh_block_new"
+  },
+  "render_type": "solid"
+}

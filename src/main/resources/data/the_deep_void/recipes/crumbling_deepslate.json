@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "aaa",
+    "bbb"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:deepslate"
+    },
+    "b": {
+      "tag": "minecraft:sand"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:crumbling_deepslate",
+    "count": 6
+  }
+}

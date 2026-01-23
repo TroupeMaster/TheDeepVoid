@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "aaa",
+    "bcb",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:smooth_ancient_deepslate"
+    },
+    "b": {
+      "item": "minecraft:redstone_block"
+    },
+    "c": {
+      "item": "the_deep_void:void_filled_sponge"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:attractor",
+    "count": 1
+  }
+}

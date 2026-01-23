@@ -1,0 +1,34 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.darkSteelSaw_idle": {
+			"loop": true,
+			"animation_length": 0.5833,
+			"bones": {
+				"main": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, -2.5]
+						},
+						"0.1458": {
+							"vector": [89.89088, -2.49762, 2.50238]
+						},
+						"0.2917": {
+							"vector": [180, 2.5, 0]
+						},
+						"0.4375": {
+							"vector": [270, -2.5, -2.5]
+						},
+						"0.5833": {
+							"vector": [360, 0, 0]
+						}
+					},
+					"position": {
+						"vector": [0, -7, 0]
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

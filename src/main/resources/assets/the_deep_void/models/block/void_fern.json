@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "the_deep_void:block/void_fern",
+    "particle": "the_deep_void:block/void_fern"
+  },
+  "render_type": "cutout"
+}

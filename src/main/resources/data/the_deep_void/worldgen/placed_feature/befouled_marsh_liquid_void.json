@@ -1,0 +1,12 @@
+{
+  "feature": "the_deep_void:befouled_marsh_liquid_void",
+  "placement": [
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 14
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

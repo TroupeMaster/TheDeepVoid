@@ -1,0 +1,12 @@
+{
+  "type": "the_deep_void:glutton_block_jei_type",
+  "ingredients": [
+    {
+      "tag": "the_deep_void:glutton_tier1"
+    }
+  ],
+  "output": {
+    "item": "minecraft:lily_pad",
+    "count": 2
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "asset_name": "soul_trim",
+  "description": {
+    "color": "#46DBF6",
+    "translate": "trim_material.the_deep_void.soul_trim"
+  },
+  "ingredient": "the_deep_void:soul_shard",
+  "item_model_index": 0.0
+}

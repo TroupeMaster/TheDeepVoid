@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/flesh_blossom",
+  "textures": {
+    "all": "the_deep_void:block/flesh_blossom",
+    "particle": "the_deep_void:block/flesh_blossom",
+    "0": "the_deep_void:block/flesh_blossom"
+  },
+  "render_type": "cutout"
+}

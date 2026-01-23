@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:bone_needle",
+    "the_deep_void:regeneration_needle",
+    "the_deep_void:absorption_needle",
+    "the_deep_void:resistance_needle",
+    "the_deep_void:glowing_needle",
+    "the_deep_void:rot_needle",
+    "the_deep_void:jump_boost_needle",
+    "the_deep_void:hexed_needle",
+    "the_deep_void:fire_resistance_needle",
+    "the_deep_void:poison_needle",
+    "the_deep_void:speed_needle",
+    "the_deep_void:health_boost_needle",
+    "the_deep_void:wither_needle",
+    "the_deep_void:saturation_needle",
+    "the_deep_void:instant_damage_needle"
+  ]
+}

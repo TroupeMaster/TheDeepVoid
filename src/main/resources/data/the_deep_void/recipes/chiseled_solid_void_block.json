@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "a",
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:solid_void_slab"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:chiseled_solid_void_block",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "particle": "the_deep_void:block/melted_goo",
+    "bottom": "the_deep_void:block/melted_goo",
+    "top": "the_deep_void:block/melted_goo",
+    "side": "the_deep_void:block/melted_goo"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/lurker_head",
+  "textures": {
+    "all": "the_deep_void:block/lurker_head",
+    "particle": "the_deep_void:block/lurker_head",
+    "0": "the_deep_void:block/lurker_head"
+  },
+  "render_type": "solid"
+}

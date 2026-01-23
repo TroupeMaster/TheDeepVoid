@@ -1,0 +1,108 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "the_deep_void:item/nerves_of_steel"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "the_deep_void:nerves_of_steel_pulling": 0
+      },
+      "model": "the_deep_void:item/nerves_of_steel_0"
+    },
+    {
+      "predicate": {
+        "the_deep_void:nerves_of_steel_pulling": 0.01
+      },
+      "model": "the_deep_void:item/nerves_of_steel_1"
+    },
+    {
+      "predicate": {
+        "the_deep_void:nerves_of_steel_pulling": 0.75
+      },
+      "model": "the_deep_void:item/nerves_of_steel_2"
+    },
+    {
+      "predicate": {
+        "the_deep_void:nerves_of_steel_pulling": 1
+      },
+      "model": "the_deep_void:item/nerves_of_steel_3"
+    },
+    {
+      "predicate": {
+        "the_deep_void:nerves_of_steel_glow": 1
+      },
+      "model": "the_deep_void:item/nerves_of_steel_4"
+    }
+  ],
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        -80,
+        260,
+        -40
+      ],
+      "translation": [
+        -1,
+        -2,
+        2.5
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        -80,
+        -280,
+        40
+      ],
+      "translation": [
+        -1,
+        -2,
+        2.5
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        -90,
+        25
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        90,
+        -25
+      ],
+      "translation": [
+        1.13,
+        3.2,
+        1.13
+      ],
+      "scale": [
+        1,
+        1,
+        1
+      ]
+    }
+  }
+}

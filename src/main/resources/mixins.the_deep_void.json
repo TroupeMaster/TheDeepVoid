@@ -1,0 +1,9 @@
+{
+  "required": true,
+  "package": "net.mcreator.thedeepvoid.mixins",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "mixins.the_deep_void.refmap.json",
+  "mixins": [],
+  "client": [],
+  "minVersion": "0.8"
+}

@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:sacred_voidrium_chestplate"
+    },
+    "title": {
+      "translate": "advancements.i_am_become_death.title"
+    },
+    "description": {
+      "translate": "advancements.i_am_become_death.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "i_am_become_death_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "the_deep_void:cover_me_with_voidrium"
+}

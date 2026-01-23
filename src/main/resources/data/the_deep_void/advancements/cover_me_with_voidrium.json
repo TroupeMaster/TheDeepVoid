@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:voidrium_chestplate"
+    },
+    "title": {
+      "translate": "advancements.cover_me_with_voidrium.title"
+    },
+    "description": {
+      "translate": "advancements.cover_me_with_voidrium.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "cover_me_with_voidrium_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "the_deep_void:cover_me_with_onyx"
+}

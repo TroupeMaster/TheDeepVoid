@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aba",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:onyx"
+    },
+    "b": {
+      "item": "the_deep_void:dark_steel_scrap"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:dark_steel_bars",
+    "count": 24
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/penitent_dead_cage",
+  "textures": {
+    "all": "the_deep_void:block/penitent_cage",
+    "particle": "the_deep_void:block/penitent_cage",
+    "0": "the_deep_void:block/penitent_cage"
+  },
+  "render_type": "cutout"
+}

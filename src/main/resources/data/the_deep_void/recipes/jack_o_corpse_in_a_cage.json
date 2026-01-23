@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "the_deep_void:cage"
+    },
+    {
+      "item": "the_deep_void:jack_o_corpse"
+    }
+  ],
+  "result": {
+    "item": "the_deep_void:jack_o_corpse_in_a_cage",
+    "count": 1
+  }
+}

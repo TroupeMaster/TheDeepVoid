@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:voidfish",
+    "the_deep_void:rotfish",
+    "the_deep_void:bloodfin",
+    "the_deep_void:pusfish",
+    "the_deep_void:bloatfish",
+    "the_deep_void:eyefish",
+    "the_deep_void:lamprey"
+  ]
+}

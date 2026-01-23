@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/soul_orb_receptacle",
+  "textures": {
+    "all": "the_deep_void:block/soul_orb_receptacle",
+    "particle": "the_deep_void:block/soul_orb_generator",
+    "0": "the_deep_void:block/soul_orb_receptacle"
+  },
+  "render_type": "solid"
+}

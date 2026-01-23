@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/desolate_lichen_fruit",
+  "textures": {
+    "all": "the_deep_void:block/desolate_lichen_fruit",
+    "particle": "the_deep_void:block/desolate_lichen_fruit",
+    "0": "the_deep_void:block/desolate_lichen_fruit"
+  },
+  "render_type": "cutout"
+}

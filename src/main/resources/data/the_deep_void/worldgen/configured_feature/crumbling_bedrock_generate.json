@@ -1,0 +1,18 @@
+{
+  "type": "the_deep_void:crumbling_bedrock_generate",
+  "config": {
+    "size": 24,
+    "discard_chance_on_air_exposure": 0,
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "block_match",
+          "block": "minecraft:bedrock"
+        },
+        "state": {
+          "Name": "the_deep_void:crumbling_bedrock"
+        }
+      }
+    ]
+  }
+}

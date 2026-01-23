@@ -1,0 +1,12 @@
+{
+  "type": "the_deep_void:glutton_block_jei_type",
+  "ingredients": [
+    {
+      "tag": "the_deep_void:glutton_tier2"
+    }
+  ],
+  "output": {
+    "item": "minecraft:glowstone_dust",
+    "count": 2
+  }
+}

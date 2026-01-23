@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "the_deep_void:block/head_of_the_hivemind"
+    },
+    "facing=east": {
+      "model": "the_deep_void:block/head_of_the_hivemind",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "the_deep_void:block/head_of_the_hivemind",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "the_deep_void:block/head_of_the_hivemind",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "the_deep_void:glutton_block_jei_type",
+  "ingredients": [
+    {
+      "tag": "minecraft:soul_fire_base_blocks"
+    }
+  ],
+  "output": {
+    "item": "minecraft:nether_wart",
+    "count": 3
+  }
+}

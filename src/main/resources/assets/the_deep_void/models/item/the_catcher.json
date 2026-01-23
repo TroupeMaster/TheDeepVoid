@@ -1,0 +1,15 @@
+{
+  "parent": "the_deep_void:custom/catcher",
+  "textures": {
+    "0": "the_deep_void:block/the_catcher",
+    "particle": "the_deep_void:item/the_catcher"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "the_deep_void:the_catcher_state": 1
+      },
+      "model": "the_deep_void:item/the_catcher_0"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "a a",
+    "aba",
+    "ccc"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:deepslate"
+    },
+    "b": {
+      "item": "minecraft:fire_charge"
+    },
+    "c": {
+      "item": "the_deep_void:ancient_deepslate"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:deepslate_lava_geyser",
+    "count": 4
+  }
+}

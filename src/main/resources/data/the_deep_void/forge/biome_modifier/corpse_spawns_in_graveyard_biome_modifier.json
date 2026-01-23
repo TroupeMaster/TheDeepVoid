@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_deep_void:mourning_graveyard",
+    "the_deep_void:filled_graveyard"
+  ],
+  "features": "the_deep_void:corpse_spawns_in_graveyard",
+  "step": "surface_structures"
+}

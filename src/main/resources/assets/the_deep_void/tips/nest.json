@@ -1,0 +1,11 @@
+{
+  "title": {
+    "text": "The Deep Void",
+    "bold": true,
+    "color": "dark_purple"
+  },
+  "tip": {
+    "text": "Need Iron? Maybe Coal or even Emeralds for some reason? You should consider visiting the Nest.",
+    "bold": false
+  }
+}

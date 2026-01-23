@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "experience": 1.5,
+  "cookingtime": 100,
+  "ingredient": {
+    "item": "the_deep_void:bismuth_ore"
+  },
+  "result": "the_deep_void:bismuth"
+}

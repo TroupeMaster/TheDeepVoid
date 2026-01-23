@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:chain",
+    "the_deep_void:cinnabar_chain",
+    "the_deep_void:dark_steel_chain"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "asset_name": "grim_trim",
+  "description": {
+    "color": "#93A3C8",
+    "translate": "trim_material.the_deep_void.grim_trim"
+  },
+  "ingredient": "the_deep_void:grim_gem",
+  "item_model_index": 0.0
+}

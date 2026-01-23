@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "the_deep_void:block/ancient_deepslate_dart_trap"
+    },
+    "facing=east": {
+      "model": "the_deep_void:block/ancient_deepslate_dart_trap",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "the_deep_void:block/ancient_deepslate_dart_trap",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "the_deep_void:block/ancient_deepslate_dart_trap",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "the_deep_void:block/ancient_deepslate_dart_trap",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "the_deep_void:block/ancient_deepslate_dart_trap",
+      "x": 90
+    }
+  }
+}

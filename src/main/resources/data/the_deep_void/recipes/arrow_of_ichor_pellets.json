@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "  a",
+    "bc ",
+    "bb "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:bottle_of_ambrosia"
+    },
+    "b": {
+      "item": "minecraft:feather"
+    },
+    "c": {
+      "item": "the_deep_void:ambrosial_flesh_chunk"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:arrow_of_ichor_pellets",
+    "count": 4
+  }
+}

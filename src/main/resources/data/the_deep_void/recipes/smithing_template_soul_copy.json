@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cdc",
+    "aca"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:black_moss"
+    },
+    "b": {
+      "item": "the_deep_void:void_matter"
+    },
+    "c": {
+      "item": "the_deep_void:refined_onyx"
+    },
+    "d": {
+      "item": "the_deep_void:smithing_template_soul"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:smithing_template_soul",
+    "count": 2
+  }
+}

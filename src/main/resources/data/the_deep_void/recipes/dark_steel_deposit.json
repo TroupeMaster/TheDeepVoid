@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "the_deep_void:cobbled_ancient_deepslate"
+    },
+    {
+      "item": "the_deep_void:dark_steel_scrap"
+    }
+  ],
+  "result": {
+    "item": "the_deep_void:dark_steel_deposit",
+    "count": 1
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "blockstate=0": {
+      "model": "the_deep_void:block/glutton_block"
+    },
+    "blockstate=1": {
+      "model": "the_deep_void:block/glutton_block_states_blockstate_0"
+    }
+  }
+}

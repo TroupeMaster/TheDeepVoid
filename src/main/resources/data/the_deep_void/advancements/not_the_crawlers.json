@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:primordial_crawler_treasure_bag"
+    },
+    "title": {
+      "translate": "advancements.not_the_crawlers.title"
+    },
+    "description": {
+      "translate": "advancements.not_the_crawlers.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "not_the_crawlers_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "the_deep_void:creepy_crawlies"
+}

@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:iron_ingot",
+    "minecraft:gold_ingot",
+    "minecraft:glistering_melon_slice",
+    "minecraft:rabbit_foot",
+    "the_deep_void:stalker_treat",
+    "minecraft:golden_apple",
+    "minecraft:enchanted_golden_apple",
+    "the_deep_void:golden_eyeball",
+    "the_deep_void:ambrosia"
+  ]
+}

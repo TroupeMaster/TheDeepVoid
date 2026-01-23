@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "villager",
+    "iron_golem",
+    "the_deep_void:light",
+    "the_deep_void:cathedral_ghost"
+  ]
+}

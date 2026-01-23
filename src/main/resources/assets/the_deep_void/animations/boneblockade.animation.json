@@ -1,0 +1,60 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.boneBlockade_spawn": {
+			"animation_length": 0.5,
+			"bones": {
+				"main": {
+					"position": {
+						"0.0": {
+							"vector": [0, -49, 0]
+						},
+						"0.25": {
+							"vector": [0, -32, 0]
+						},
+						"0.375": {
+							"vector": [0, -32, 0]
+						},
+						"0.5": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.boneBlockade_despawn": {
+			"animation_length": 0.5,
+			"bones": {
+				"main": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, 0, 7.5]
+						},
+						"0.5": {
+							"vector": [15, 0, -12.5]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, -25, 0]
+						},
+						"0.5": {
+							"vector": [0, -49, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.boneBlockade_idle": {
+			"loop": true,
+			"animation_length": 0.0417
+		}
+	},
+	"geckolib_format_version": 2
+}

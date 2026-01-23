@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:scare_armor_trim",
+    "the_deep_void:scavenger_armor_trim",
+    "the_deep_void:sorrow_armor_trim",
+    "the_deep_void:gore_armor_trim"
+  ]
+}

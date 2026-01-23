@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "xz_spread": 16,
+    "y_spread": 1,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "the_deep_void:block_of_bone_pile"
+            }
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "the_deep_void:mossy_bone_pile"
+          }
+        }
+      ]
+    }
+  }
+}

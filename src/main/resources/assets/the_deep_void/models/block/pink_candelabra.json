@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/pink_candelabra",
+  "textures": {
+    "all": "the_deep_void:block/pink_candelabra",
+    "particle": "the_deep_void:block/pink_candelabra",
+    "0": "the_deep_void:block/pink_candelabra"
+  },
+  "render_type": "solid"
+}

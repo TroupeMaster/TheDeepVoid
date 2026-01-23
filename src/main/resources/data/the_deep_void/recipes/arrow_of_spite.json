@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "  a",
+    "bc ",
+    "bb "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:sacred_cinnabar"
+    },
+    "b": {
+      "item": "minecraft:feather"
+    },
+    "c": {
+      "item": "the_deep_void:refined_cinnabar"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:arrow_of_spite",
+    "count": 4
+  }
+}

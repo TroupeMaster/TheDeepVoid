@@ -1,0 +1,12 @@
+{
+  "type": "the_deep_void:glutton_block_jei_type",
+  "ingredients": [
+    {
+      "item": "minecraft:end_stone"
+    }
+  ],
+  "output": {
+    "item": "minecraft:blaze_rod",
+    "count": 1
+  }
+}

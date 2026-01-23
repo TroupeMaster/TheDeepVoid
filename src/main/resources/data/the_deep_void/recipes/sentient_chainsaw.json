@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " ab",
+    " bc",
+    "ddc"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:worm_tooth"
+    },
+    "b": {
+      "item": "the_deep_void:hard_flesh_ingot"
+    },
+    "c": {
+      "item": "the_deep_void:rotten_bone_block"
+    },
+    "d": {
+      "item": "the_deep_void:old_bone_block"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:sentient_chainsaw",
+    "count": 1
+  }
+}

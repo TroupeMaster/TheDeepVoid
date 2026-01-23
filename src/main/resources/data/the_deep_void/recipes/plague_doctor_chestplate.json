@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a a",
+    "bcb",
+    "dad"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:dark_steel_scrap"
+    },
+    "b": {
+      "item": "the_deep_void:flesh_block"
+    },
+    "c": {
+      "item": "minecraft:leather"
+    },
+    "d": {
+      "item": "the_deep_void:ambrosial_flesh_chunk"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:plague_doctor_chestplate",
+    "count": 1
+  }
+}

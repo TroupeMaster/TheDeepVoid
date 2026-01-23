@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_deep_void:gaol_of_heretics",
+    "the_deep_void:the_gaol"
+  ],
+  "features": "the_deep_void:gaol_paths",
+  "step": "local_modifications"
+}

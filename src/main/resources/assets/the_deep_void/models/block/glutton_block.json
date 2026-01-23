@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/glutton_block_bottom",
+    "up": "the_deep_void:block/glutton_block",
+    "north": "the_deep_void:block/glutton_block_side",
+    "east": "the_deep_void:block/glutton_block_side",
+    "south": "the_deep_void:block/glutton_block_side",
+    "west": "the_deep_void:block/glutton_block_side",
+    "particle": "the_deep_void:block/glutton_block_bottom"
+  },
+  "render_type": "solid"
+}

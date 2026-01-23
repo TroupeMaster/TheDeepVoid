@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:bone"
+    },
+    "b": {
+      "item": "the_deep_void:corpse"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:covered_corpse",
+    "count": 1
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/eye_lantern_roof",
+  "textures": {
+    "all": "the_deep_void:block/eye_lantern",
+    "particle": "the_deep_void:block/eye_lantern",
+    "0": "the_deep_void:block/eye_lantern"
+  },
+  "render_type": "cutout"
+}

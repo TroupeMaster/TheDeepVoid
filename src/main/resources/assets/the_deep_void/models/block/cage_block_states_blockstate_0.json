@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/cage_ground_open",
+  "textures": {
+    "all": "the_deep_void:block/cage",
+    "particle": "the_deep_void:block/cage",
+    "0": "the_deep_void:block/cage"
+  },
+  "render_type": "cutout"
+}

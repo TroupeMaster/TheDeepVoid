@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/hivewatchertrophy",
+  "textures": {
+    "all": "the_deep_void:block/hivewatchertrophy",
+    "particle": "the_deep_void:block/hivewatchertrophy",
+    "0": "the_deep_void:block/hivewatchertrophy"
+  },
+  "render_type": "cutout"
+}

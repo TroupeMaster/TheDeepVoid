@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "the_deep_void:bone_crawler_molt_piece"
+    },
+    {
+      "item": "the_deep_void:bone_crawler_molt_piece"
+    },
+    {
+      "item": "the_deep_void:fly_wing"
+    },
+    {
+      "item": "the_deep_void:fly_wing"
+    }
+  ],
+  "result": {
+    "item": "the_deep_void:fly_wings_chestplate",
+    "count": 1
+  }
+}

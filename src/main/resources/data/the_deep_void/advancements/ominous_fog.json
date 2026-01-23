@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:misted_remains"
+    },
+    "title": {
+      "translate": "advancements.ominous_fog.title"
+    },
+    "description": {
+      "translate": "advancements.ominous_fog.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "ominous_fog_0": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:misted_remnants"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "the_deep_void:bone_bottom"
+}

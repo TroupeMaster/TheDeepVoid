@@ -1,0 +1,8 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "the_deep_void:block/eye_vine_stem",
+    "particle": "the_deep_void:block/eye_vine_stem"
+  },
+  "render_type": "cutout"
+}

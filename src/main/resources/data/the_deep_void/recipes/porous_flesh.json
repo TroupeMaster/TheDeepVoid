@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "bbb",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:flesh_block"
+    },
+    "b": {
+      "item": "the_deep_void:tendrils"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:porous_flesh",
+    "count": 9
+  }
+}

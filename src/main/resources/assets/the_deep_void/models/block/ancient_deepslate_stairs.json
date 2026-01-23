@@ -1,0 +1,10 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "particle": "the_deep_void:block/ancient_deepslate",
+    "bottom": "the_deep_void:block/ancient_deepslate",
+    "top": "the_deep_void:block/ancient_deepslate",
+    "side": "the_deep_void:block/ancient_deepslate"
+  },
+  "render_type": "solid"
+}

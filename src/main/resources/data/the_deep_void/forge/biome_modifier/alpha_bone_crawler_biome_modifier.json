@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "the_deep_void:crawler_nest",
+    "the_deep_void:filled_graveyard"
+  ],
+  "spawners": {
+    "type": "the_deep_void:alpha_bone_crawler",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

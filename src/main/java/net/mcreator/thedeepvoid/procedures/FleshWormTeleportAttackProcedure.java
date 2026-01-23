@@ -1,0 +1,34 @@
+package net.mcreator.thedeepvoid.procedures;
+
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.Mob;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
+import net.minecraft.server.level.ServerPlayer;
+
+import net.mcreator.thedeepvoid.entity.FleshWormEntity;
+import net.mcreator.thedeepvoid.TheDeepVoidMod;
+
+public class FleshWormTeleportAttackProcedure {
+	public static void execute(LevelAccessor world, Entity entity) {
+		if (entity == null)
+			return;
+		if (entity instanceof FleshWormEntity) {
+			((FleshWormEntity) entity).setAnimation("animation.fleshWorm_teleport");
+		}
+		TheDeepVoidMod.queueServerWork(15, () -> {
+			if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
+				{
+					Entity _ent = entity;
+					_ent.teleportTo(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() + Mth.nextInt(RandomSource.create(), -15, 15)), ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
+							((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() + Mth.nextInt(RandomSource.create(), -15, 15)));
+					if (_ent instanceof ServerPlayer _serverPlayer)
+						_serverPlayer.connection.teleport(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() + Mth.nextInt(RandomSource.create(), -15, 15)),
+								((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()), ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() + Mth.nextInt(RandomSource.create(), -15, 15)),
+								_ent.getYRot(), _ent.getXRot());
+				}
+			}
+		});
+	}
+}

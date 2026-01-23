@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:bismuth_bricks"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:bismuth_brick_slab",
+    "count": 6
+  }
+}

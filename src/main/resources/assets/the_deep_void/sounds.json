@@ -1,0 +1,1640 @@
+{
+  "stalker_ambient": {
+    "subtitle": "subtitles.stalker_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:monster_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "distant_growl": {
+    "subtitle": "subtitles.distant_growl",
+    "sounds": [
+      {
+        "name": "the_deep_void:void_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "mourner_ambient": {
+    "subtitle": "subtitles.mourner_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:mourner_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "hallucination_ambient": {
+    "subtitle": "subtitles.hallucination_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:hallucination_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "hallucination_scream": {
+    "subtitle": "subtitles.hallucination_scream",
+    "sounds": [
+      {
+        "name": "the_deep_void:hallucination_scream",
+        "stream": false
+      }
+    ]
+  },
+  "void_cave_ambient": {
+    "subtitle": "subtitles.void_cave_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:cave_ambience",
+        "stream": false
+      }
+    ]
+  },
+  "lurker_ambient": {
+    "subtitle": "subtitles.lurker_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:lurker_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "lurker_hurt": {
+    "subtitle": "subtitles.lurker_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:lurker_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "lurker_death": {
+    "subtitle": "subtitles.lurker_death",
+    "sounds": [
+      {
+        "name": "the_deep_void:lurker_death",
+        "stream": false
+      }
+    ]
+  },
+  "bone_crack": {
+    "subtitle": "subtitles.bone_crack",
+    "sounds": [
+      {
+        "name": "the_deep_void:bones_cracking",
+        "stream": false
+      }
+    ]
+  },
+  "nightmare_ambient": {
+    "subtitle": "subtitles.nightmare_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:nightmare_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "nightmare_appear": {
+    "subtitle": "subtitles.nightmare_appear",
+    "sounds": [
+      {
+        "name": "the_deep_void:nightmare_angry",
+        "stream": false
+      }
+    ]
+  },
+  "nightmare_whispers": {
+    "subtitle": "subtitles.nightmare_whispers",
+    "sounds": [
+      {
+        "name": "the_deep_void:nightmare_whispers",
+        "stream": false
+      }
+    ]
+  },
+  "stab": {
+    "subtitle": "subtitles.stab",
+    "sounds": [
+      {
+        "name": "the_deep_void:179222__mixedupmoviestuff__knife-stab",
+        "stream": false
+      }
+    ]
+  },
+  "flesh_block_step": {
+    "subtitle": "subtitles.flesh_block_step",
+    "sounds": [
+      {
+        "name": "the_deep_void:flesh_block_step",
+        "stream": false
+      }
+    ]
+  },
+  "deep_rumble": {
+    "subtitle": "subtitles.deep_rumble",
+    "sounds": [
+      {
+        "name": "the_deep_void:deep_rumble",
+        "stream": false
+      }
+    ]
+  },
+  "falling_rocks": {
+    "subtitle": "subtitles.falling_rocks",
+    "sounds": [
+      {
+        "name": "the_deep_void:falling_rock",
+        "stream": false
+      }
+    ]
+  },
+  "lurking_monst3r_music": {
+    "subtitle": "subtitles.lurking_monst3r_music",
+    "sounds": [
+      {
+        "name": "the_deep_void:lurking-_-dark-ambient-horror-soundscape",
+        "stream": true
+      }
+    ]
+  },
+  "devourer_ambient": {
+    "subtitle": "subtitles.devourer_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:devourer_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "chasms_monst3r_music": {
+    "subtitle": "subtitles.chasms_monst3r_music",
+    "sounds": [
+      {
+        "name": "the_deep_void:utomp3.com-chasms-dark-ambient-horror-soundscape",
+        "stream": true
+      }
+    ]
+  },
+  "amalgam_step": {
+    "subtitle": "subtitles.amalgam_step",
+    "sounds": [
+      {
+        "name": "the_deep_void:amalgam_walk",
+        "stream": false
+      }
+    ]
+  },
+  "amalgam_ambient": {
+    "subtitle": "subtitles.amalgam_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:amalgam_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "distant_stalker": {
+    "subtitle": "subtitles.distant_stalker",
+    "sounds": [
+      {
+        "name": "the_deep_void:ambient2",
+        "stream": false
+      }
+    ]
+  },
+  "distant_stalker2": {
+    "subtitle": "subtitles.distant_stalker2",
+    "sounds": [
+      {
+        "name": "the_deep_void:ambient3",
+        "stream": false
+      }
+    ]
+  },
+  "stalker_hurt": {
+    "subtitle": "subtitles.stalker_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:stalker_hurt_new",
+        "stream": false
+      }
+    ]
+  },
+  "stalker_emerges_new": {
+    "subtitle": "subtitles.stalker_emerges_new",
+    "sounds": [
+      {
+        "name": "the_deep_void:stalker_emerges_new",
+        "stream": false
+      }
+    ]
+  },
+  "gravekeeper_ambient": {
+    "subtitle": "subtitles.gravekeeper_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:gravekeeper_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "gravekeeper_hurt": {
+    "subtitle": "subtitles.gravekeeper_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:gravekeeper_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "gravekeeper_death": {
+    "subtitle": "subtitles.gravekeeper_death",
+    "sounds": [
+      {
+        "name": "the_deep_void:gravekeeper_death",
+        "stream": false
+      }
+    ]
+  },
+  "roamer_ambient": {
+    "subtitle": "subtitles.roamer_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:roamer_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "roamer_hurt": {
+    "subtitle": "subtitles.roamer_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:roamer_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "roamer_death": {
+    "subtitle": "subtitles.roamer_death",
+    "sounds": [
+      {
+        "name": "the_deep_void:roamer_death",
+        "stream": false
+      }
+    ]
+  },
+  "heartbeat_ambient": {
+    "subtitle": "subtitles.heartbeat_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:heartbeat_ambience",
+        "stream": false
+      }
+    ]
+  },
+  "distant_monster": {
+    "subtitle": "subtitles.distant_monster",
+    "sounds": [
+      {
+        "name": "the_deep_void:distant_growling",
+        "stream": false
+      }
+    ]
+  },
+  "everhunger_ambient": {
+    "subtitle": "subtitles.everhunger_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:everhunger_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "everhunger_scream": {
+    "subtitle": "subtitles.everhunger_scream",
+    "sounds": [
+      {
+        "name": "the_deep_void:everhunger_scream",
+        "stream": false
+      }
+    ]
+  },
+  "everhunger_hurt": {
+    "subtitle": "subtitles.everhunger_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:everhunger_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "hallucination_attack": {
+    "subtitle": "subtitles.hallucination_attack",
+    "sounds": [
+      {
+        "name": "the_deep_void:hallucination_sigh",
+        "stream": false
+      }
+    ]
+  },
+  "stone_dragging": {
+    "subtitle": "subtitles.stone_dragging",
+    "sounds": [
+      {
+        "name": "the_deep_void:stone_sliding",
+        "stream": false
+      }
+    ]
+  },
+  "stone_impact": {
+    "subtitle": "subtitles.stone_impact",
+    "sounds": [
+      {
+        "name": "the_deep_void:stone_impact",
+        "stream": false
+      }
+    ]
+  },
+  "undergrowth_creak": {
+    "subtitle": "subtitles.undergrowth_creak",
+    "sounds": [
+      {
+        "name": "the_deep_void:undergrowth_creaking",
+        "stream": false
+      }
+    ]
+  },
+  "hunter_ambient": {
+    "subtitle": "subtitles.hunter_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:hunter_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "hunter_hurt": {
+    "subtitle": "subtitles.hunter_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:hunter_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "everhunger_chase": {
+    "subtitle": "subtitles.everhunger_chase",
+    "sounds": [
+      {
+        "name": "the_deep_void:everhunger_chase",
+        "stream": false
+      }
+    ]
+  },
+  "death_maw_hiding": {
+    "subtitle": "subtitles.death_maw_hiding",
+    "sounds": [
+      {
+        "name": "the_deep_void:death_maw_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "death_maw_hurt": {
+    "subtitle": "subtitles.death_maw_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:death_maw_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "death_maw_bite": {
+    "subtitle": "subtitles.death_maw_bite",
+    "sounds": [
+      {
+        "name": "the_deep_void:death_maw_bite",
+        "stream": false
+      }
+    ]
+  },
+  "death_maw_chase": {
+    "subtitle": "subtitles.death_maw_chase",
+    "sounds": [
+      {
+        "name": "the_deep_void:death_maw_chase_new",
+        "stream": false
+      }
+    ]
+  },
+  "void_cave_ambient_2": {
+    "subtitle": "subtitles.void_cave_ambient_2",
+    "sounds": [
+      {
+        "name": "the_deep_void:cave_ambient_2",
+        "stream": false
+      }
+    ]
+  },
+  "void_cave_ambient_3": {
+    "subtitle": "subtitles.void_cave_ambient_3",
+    "sounds": [
+      {
+        "name": "the_deep_void:cave_ambient_3",
+        "stream": false
+      }
+    ]
+  },
+  "fool_eater_hurt": {
+    "subtitle": "subtitles.fool_eater_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:fool_eater_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "fool_eater_ambient": {
+    "subtitle": "subtitles.fool_eater_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:fool_eater_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "fool_eater_targets": {
+    "subtitle": "subtitles.fool_eater_targets",
+    "sounds": [
+      {
+        "name": "the_deep_void:fool_eater_crack",
+        "stream": false
+      }
+    ]
+  },
+  "claws_slash": {
+    "subtitle": "subtitles.claws_slash",
+    "sounds": [
+      {
+        "name": "the_deep_void:claw_slash",
+        "stream": false
+      }
+    ]
+  },
+  "slow_whispers": {
+    "subtitle": "subtitles.slow_whispers",
+    "sounds": [
+      {
+        "name": "the_deep_void:slow_whisper",
+        "stream": false
+      }
+    ]
+  },
+  "slow_whispers_2": {
+    "subtitle": "subtitles.slow_whispers_2",
+    "sounds": [
+      {
+        "name": "the_deep_void:slow_whisper_2",
+        "stream": false
+      }
+    ]
+  },
+  "insects_crawling": {
+    "subtitle": "subtitles.insects_crawling",
+    "sounds": [
+      {
+        "name": "the_deep_void:bugs_crawling",
+        "stream": false
+      }
+    ]
+  },
+  "insect_cry_1": {
+    "subtitle": "subtitles.insect_cry_1",
+    "sounds": [
+      {
+        "name": "the_deep_void:insect_1",
+        "stream": false
+      }
+    ]
+  },
+  "insect_cry_2": {
+    "subtitle": "subtitles.insect_cry_2",
+    "sounds": [
+      {
+        "name": "the_deep_void:insect_2",
+        "stream": false
+      }
+    ]
+  },
+  "mother_crawler_ambient": {
+    "subtitle": "subtitles.mother_crawler_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:mother_crawler_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "mother_crawler_hurt": {
+    "subtitle": "subtitles.mother_crawler_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:mother_crawler_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "mother_crawler_death": {
+    "subtitle": "subtitles.mother_crawler_death",
+    "sounds": [
+      {
+        "name": "the_deep_void:mother_crawler_death",
+        "stream": false
+      }
+    ]
+  },
+  "death_vulture_ambient": {
+    "subtitle": "subtitles.death_vulture_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:death_vulture_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "death_vulture_hurt": {
+    "subtitle": "subtitles.death_vulture_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:death_vulture_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "riding_crop_hit": {
+    "subtitle": "subtitles.riding_crop_hit",
+    "sounds": [
+      {
+        "name": "the_deep_void:whip_crack",
+        "stream": false
+      }
+    ]
+  },
+  "crow_call": {
+    "subtitle": "subtitles.crow_call",
+    "sounds": [
+      {
+        "name": "the_deep_void:memory_of_raven",
+        "stream": false
+      }
+    ]
+  },
+  "soul_seeker_slash": {
+    "subtitle": "subtitles.soul_seeker_slash",
+    "sounds": [
+      {
+        "name": "the_deep_void:soul_seeker_slash",
+        "stream": false
+      }
+    ]
+  },
+  "sins_and_sinners": {
+    "subtitle": "subtitles.sins_and_sinners",
+    "sounds": [
+      {
+        "name": "the_deep_void:dark-fantasy-studio-sins-and-sinners-_royalty-free-horror-music_",
+        "stream": true
+      }
+    ]
+  },
+  "forsaken_barrens_ambient": {
+    "subtitle": "subtitles.forsaken_barrens_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:barrens_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "stalker_death": {
+    "subtitle": "subtitles.stalker_death",
+    "sounds": [
+      {
+        "name": "the_deep_void:stalker_death",
+        "stream": false
+      }
+    ]
+  },
+  "eyekin_ambient": {
+    "subtitle": "subtitles.eyekin_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:eyekin_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "eyekin_hurt": {
+    "subtitle": "subtitles.eyekin_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:eyekin_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "eyekin_death": {
+    "subtitle": "subtitles.eyekin_death",
+    "sounds": [
+      {
+        "name": "the_deep_void:eyekin_death",
+        "stream": false
+      }
+    ]
+  },
+  "eyekin_fly": {
+    "subtitle": "subtitles.eyekin_fly",
+    "sounds": [
+      {
+        "name": "the_deep_void:eyekin_fly",
+        "stream": false
+      }
+    ]
+  },
+  "abductor_ambient": {
+    "subtitle": "subtitles.abductor_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:abductor_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "centigaze_ambient": {
+    "subtitle": "subtitles.centigaze_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:centigaze_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "centigaze_hidden": {
+    "subtitle": "subtitles.centigaze_hidden",
+    "sounds": [
+      {
+        "name": "the_deep_void:centigaze_hidden",
+        "stream": false
+      }
+    ]
+  },
+  "weaver_ambient": {
+    "subtitle": "subtitles.weaver_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:weaver_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "weaver_hurt": {
+    "subtitle": "subtitles.weaver_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:weaver_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "ominous_murmurs": {
+    "subtitle": "subtitles.ominous_murmurs",
+    "sounds": [
+      {
+        "name": "the_deep_void:640093__roloxi__murmuring-1",
+        "stream": false
+      }
+    ]
+  },
+  "darkmare": {
+    "subtitle": "subtitles.darkmare",
+    "sounds": [
+      {
+        "name": "the_deep_void:darkmare-dark-fantasy-studio",
+        "stream": true
+      }
+    ]
+  },
+  "weaver_scream": {
+    "subtitle": "subtitles.weaver_scream",
+    "sounds": [
+      {
+        "name": "the_deep_void:weaver_scream",
+        "stream": false
+      }
+    ]
+  },
+  "weaver_scream_loud": {
+    "subtitle": "subtitles.weaver_scream_loud",
+    "sounds": [
+      {
+        "name": "the_deep_void:weaver_scream_loud",
+        "stream": false
+      }
+    ]
+  },
+  "tombstone_hit1": {
+    "subtitle": "subtitles.tombstone_hit1",
+    "sounds": [
+      {
+        "name": "the_deep_void:tombstone_hit1",
+        "stream": false
+      }
+    ]
+  },
+  "tombstone_hit2": {
+    "subtitle": "subtitles.tombstone_hit2",
+    "sounds": [
+      {
+        "name": "the_deep_void:tombstone_hit2",
+        "stream": false
+      }
+    ]
+  },
+  "tombstone_hit3": {
+    "subtitle": "subtitles.tombstone_hit3",
+    "sounds": [
+      {
+        "name": "the_deep_void:tombstone_hit3",
+        "stream": false
+      }
+    ]
+  },
+  "tombstone_mobhit1": {
+    "subtitle": "subtitles.tombstone_mobhit1",
+    "sounds": [
+      {
+        "name": "the_deep_void:tombstone_mobhit1",
+        "stream": false
+      }
+    ]
+  },
+  "tombstone_mobhit2": {
+    "subtitle": "subtitles.tombstone_mobhit2",
+    "sounds": [
+      {
+        "name": "the_deep_void:tombstone_mobhit2",
+        "stream": false
+      }
+    ]
+  },
+  "tombstone_mobhit3": {
+    "subtitle": "subtitles.tombstone_mobhit3",
+    "sounds": [
+      {
+        "name": "the_deep_void:tombstone_mobhit3",
+        "stream": false
+      }
+    ]
+  },
+  "from_within_monst3r_music": {
+    "subtitle": "subtitles.from_within_monst3r_music",
+    "sounds": [
+      {
+        "name": "the_deep_void:monst3r-music_-from-within--dark-ambient-horror-soundscape",
+        "stream": true
+      }
+    ]
+  },
+  "soul_passing_by": {
+    "subtitle": "subtitles.soul_passing_by",
+    "sounds": [
+      {
+        "name": "the_deep_void:soul_passing_by_new",
+        "stream": false
+      }
+    ]
+  },
+  "forsaken_ambient": {
+    "subtitle": "subtitles.forsaken_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:forsaken_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "forsaken_hurt": {
+    "subtitle": "subtitles.forsaken_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:forsaken_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "seeker_spawn": {
+    "subtitle": "subtitles.seeker_spawn",
+    "sounds": [
+      {
+        "name": "the_deep_void:seeker_spawn",
+        "stream": false
+      }
+    ]
+  },
+  "chainsaw": {
+    "subtitle": "subtitles.chainsaw",
+    "sounds": [
+      {
+        "name": "the_deep_void:dark-fantasy-studio-chainsaw_-no-copyright-music",
+        "stream": true
+      }
+    ]
+  },
+  "apostle_laugh": {
+    "subtitle": "subtitles.apostle_laugh",
+    "sounds": [
+      {
+        "name": "the_deep_void:apostle_laugh",
+        "stream": false
+      }
+    ]
+  },
+  "apostle_hysterical_laugh": {
+    "subtitle": "subtitles.apostle_hysterical_laugh",
+    "sounds": [
+      {
+        "name": "the_deep_void:apostle_hysterical_laugh",
+        "stream": false
+      }
+    ]
+  },
+  "decapitate": {
+    "subtitle": "subtitles.decapitate",
+    "sounds": [
+      {
+        "name": "the_deep_void:decapitate",
+        "stream": false
+      }
+    ]
+  },
+  "fog_appear": {
+    "subtitle": "subtitles.fog_appear",
+    "sounds": [
+      {
+        "name": "the_deep_void:fog_coming_new",
+        "stream": false
+      }
+    ]
+  },
+  "heresy_shoot": {
+    "subtitle": "subtitles.heresy_shoot",
+    "sounds": [
+      {
+        "name": "the_deep_void:heresy_shoot",
+        "stream": false
+      }
+    ]
+  },
+  "heresy_lever": {
+    "subtitle": "subtitles.heresy_lever",
+    "sounds": [
+      {
+        "name": "the_deep_void:heresy_lever",
+        "stream": false
+      }
+    ]
+  },
+  "heresy_shell_fall": {
+    "subtitle": "subtitles.heresy_shell_fall",
+    "sounds": [
+      {
+        "name": "the_deep_void:heresy_shell_fall",
+        "stream": false
+      }
+    ]
+  },
+  "flesh": {
+    "subtitle": "subtitles.flesh",
+    "sounds": [
+      {
+        "name": "the_deep_void:flesh",
+        "stream": false
+      }
+    ]
+  },
+  "flesh_block_place": {
+    "subtitle": "subtitles.flesh_block_place",
+    "sounds": [
+      {
+        "name": "the_deep_void:flesh_place",
+        "stream": false
+      }
+    ]
+  },
+  "pitch_black": {
+    "subtitle": "subtitles.pitch_black",
+    "sounds": [
+      {
+        "name": "the_deep_void:dark-fantasy-studio-pitch-black-_royalty-free-epic-horror-dark-ambient-music_-_1_",
+        "stream": true
+      }
+    ]
+  },
+  "hivemind_ambient": {
+    "subtitle": "subtitles.hivemind_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:hivemind_idle",
+        "stream": false
+      }
+    ]
+  },
+  "hivemind_hurt": {
+    "subtitle": "subtitles.hivemind_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:hivemind_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "hivemind_scream": {
+    "subtitle": "subtitles.hivemind_scream",
+    "sounds": [
+      {
+        "name": "the_deep_void:hivemind_scream_loud",
+        "stream": false
+      }
+    ]
+  },
+  "eyekin_wing_flap": {
+    "subtitle": "subtitles.eyekin_wing_flap",
+    "sounds": [
+      {
+        "name": "the_deep_void:eyekin_wing_flap",
+        "stream": false
+      }
+    ]
+  },
+  "primordial_crawler_ambient": {
+    "subtitle": "subtitles.primordial_crawler_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:primordial_crawler_ambientnew",
+        "stream": false
+      }
+    ]
+  },
+  "primordial_crawler_hurt": {
+    "subtitle": "subtitles.primordial_crawler_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:primordial_crawler_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "primordial_crawler_death": {
+    "subtitle": "subtitles.primordial_crawler_death",
+    "sounds": [
+      {
+        "name": "the_deep_void:primordial_crawler_death",
+        "stream": false
+      }
+    ]
+  },
+  "primordial_crawler_spit": {
+    "subtitle": "subtitles.primordial_crawler_spit",
+    "sounds": [
+      {
+        "name": "the_deep_void:primordial_crawler_spit",
+        "stream": false
+      }
+    ]
+  },
+  "primordial_crawler_impact": {
+    "subtitle": "subtitles.primordial_crawler_impact",
+    "sounds": [
+      {
+        "name": "the_deep_void:primordial_crawler_impact",
+        "stream": false
+      }
+    ]
+  },
+  "the_haunt": {
+    "subtitle": "subtitles.the_haunt",
+    "sounds": [
+      {
+        "name": "the_deep_void:the-haunt-phase-spiders-battle-_fanmade-d_d-soundtrack_",
+        "stream": true
+      }
+    ]
+  },
+  "sentient_chainsaw_use": {
+    "subtitle": "subtitles.sentient_chainsaw_use",
+    "sounds": [
+      {
+        "name": "the_deep_void:sentient_chainsaw_new",
+        "stream": false
+      }
+    ]
+  },
+  "fleshy_explosion": {
+    "subtitle": "subtitles.fleshy_explosion",
+    "sounds": [
+      {
+        "name": "the_deep_void:fleshy_explosion",
+        "stream": false
+      }
+    ]
+  },
+  "whisper_forest_loop": {
+    "subtitle": "subtitles.whisper_forest_loop",
+    "sounds": [
+      {
+        "name": "the_deep_void:whisper_forest_loop",
+        "stream": false
+      }
+    ]
+  },
+  "bone_cage_activate": {
+    "subtitle": "subtitles.bone_cage_activate",
+    "sounds": [
+      {
+        "name": "the_deep_void:bone_cage_activate",
+        "stream": false
+      }
+    ]
+  },
+  "masked_hunter_scream1": {
+    "subtitle": "subtitles.masked_hunter_scream1",
+    "sounds": [
+      {
+        "name": "the_deep_void:masked_hunter_scream1",
+        "stream": false
+      }
+    ]
+  },
+  "masked_hunter_scream2": {
+    "subtitle": "subtitles.masked_hunter_scream2",
+    "sounds": [
+      {
+        "name": "the_deep_void:masked_hunter_scream2",
+        "stream": false
+      }
+    ]
+  },
+  "crows_fly": {
+    "subtitle": "subtitles.crows_fly",
+    "sounds": [
+      {
+        "name": "the_deep_void:crows_flying_away",
+        "stream": false
+      }
+    ]
+  },
+  "quiet_slow_whisper": {
+    "subtitle": "subtitles.quiet_slow_whisper",
+    "sounds": [
+      {
+        "name": "the_deep_void:quiet_slow_whisper",
+        "stream": false
+      }
+    ]
+  },
+  "distant_creaking": {
+    "subtitle": "subtitles.distant_creaking",
+    "sounds": [
+      {
+        "name": "the_deep_void:distant_creaking_1",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:distant_creaking_2",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:distant_creaking_3",
+        "stream": false
+      }
+    ]
+  },
+  "distant_cracking": {
+    "subtitle": "subtitles.distant_cracking",
+    "sounds": [
+      {
+        "name": "the_deep_void:distant_cracking",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:distant_cracking_2",
+        "stream": false
+      }
+    ]
+  },
+  "misted_remnants_ambient": {
+    "subtitle": "subtitles.misted_remnants_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:distant_cracking",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:distant_cracking_2",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:distant_creaking_1",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:distant_creaking_2",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:distant_creaking_3",
+        "stream": false
+      }
+    ]
+  },
+  "stalker_screams": {
+    "subtitle": "subtitles.stalker_screams",
+    "sounds": [
+      {
+        "name": "the_deep_void:ambient2",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:ambient3",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:void_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "deep_void_cave_mood": {
+    "subtitle": "subtitles.deep_void_cave_mood",
+    "sounds": [
+      {
+        "name": "the_deep_void:cave_ambience",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:cave_ambient_2",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:cave_ambient_3",
+        "stream": false
+      }
+    ]
+  },
+  "void_cave_creature": {
+    "subtitle": "subtitles.void_cave_creature",
+    "sounds": [
+      {
+        "name": "the_deep_void:ghost_breathe",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:ghost_hey",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:mist_breath",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:watcher_behind_you",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:watcher_hey",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:watcher_i_see_you",
+        "stream": false
+      }
+    ]
+  },
+  "crawler_nest_additions": {
+    "subtitle": "subtitles.crawler_nest_additions",
+    "sounds": [
+      {
+        "name": "the_deep_void:insect_1",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:insect_2",
+        "stream": false
+      }
+    ]
+  },
+  "void_fly_ambient": {
+    "subtitle": "subtitles.void_fly_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:void_fly_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "staring_hills_additions": {
+    "subtitle": "subtitles.staring_hills_additions",
+    "sounds": [
+      {
+        "name": "the_deep_void:staring_hills_creature",
+        "stream": false
+      }
+    ]
+  },
+  "staring_hills_ambient": {
+    "subtitle": "subtitles.staring_hills_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:staring_hills_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "staring_hills_addition": {
+    "subtitle": "subtitles.staring_hills_addition",
+    "sounds": [
+      {
+        "name": "the_deep_void:staring_hills_creature2",
+        "stream": false
+      }
+    ]
+  },
+  "staring_hills_ambient_new": {
+    "subtitle": "subtitles.staring_hills_ambient_new",
+    "sounds": [
+      {
+        "name": "the_deep_void:staring_hills_ambient2",
+        "stream": false
+      }
+    ]
+  },
+  "drifting_monoliths_ambient": {
+    "subtitle": "subtitles.drifting_monoliths_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:drifting_monolith_ambient",
+        "stream": false
+      }
+    ]
+  },
+  "gathering_grounds_ambient": {
+    "subtitle": "subtitles.gathering_grounds_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:gathering_grounds_loop_new",
+        "stream": false
+      }
+    ]
+  },
+  "cage_open": {
+    "subtitle": "subtitles.cage_open",
+    "sounds": [
+      {
+        "name": "the_deep_void:cage_open",
+        "stream": false
+      }
+    ]
+  },
+  "swinging_cage": {
+    "subtitle": "subtitles.swinging_cage",
+    "sounds": [
+      {
+        "name": "the_deep_void:cage_swinging2",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:swinging_cage1",
+        "stream": false
+      }
+    ]
+  },
+  "gaol_of_heretics_loop": {
+    "subtitle": "subtitles.gaol_of_heretics_loop",
+    "sounds": [
+      {
+        "name": "the_deep_void:gaol_of_heretics_loop",
+        "stream": false
+      }
+    ]
+  },
+  "apostasy_reload": {
+    "subtitle": "subtitles.apostasy_reload",
+    "sounds": [
+      {
+        "name": "the_deep_void:apostasy_reload",
+        "stream": false
+      }
+    ]
+  },
+  "apostasy_shoot": {
+    "subtitle": "subtitles.apostasy_shoot",
+    "sounds": [
+      {
+        "name": "the_deep_void:apostasy_shoot1_new",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:apostasy_shoot2_new",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:apostasy_shoot3_new",
+        "stream": false
+      }
+    ]
+  },
+  "bonk": {
+    "subtitle": "subtitles.bonk",
+    "sounds": [
+      {
+        "name": "the_deep_void:bonk",
+        "stream": false
+      }
+    ]
+  },
+  "under_the_asylum": {
+    "subtitle": "subtitles.under_the_asylum",
+    "sounds": [
+      {
+        "name": "the_deep_void:under_the_asylum_ogg",
+        "stream": false
+      }
+    ]
+  },
+  "debilitated_fall": {
+    "subtitle": "subtitles.debilitated_fall",
+    "sounds": [
+      {
+        "name": "the_deep_void:debilitated_fall",
+        "stream": false
+      }
+    ]
+  },
+  "prison_guard_ambient": {
+    "subtitle": "subtitles.prison_guard_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:prisonguard_ambient1",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguard_ambient2",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguard_ambient3",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguardraw_ambient4",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguardraw_ambient5",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguardraw_ambient6",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguardraw_ambient7",
+        "stream": false
+      }
+    ]
+  },
+  "prison_guard_attack": {
+    "subtitle": "subtitles.prison_guard_attack",
+    "sounds": [
+      {
+        "name": "the_deep_void:prisonguard_attack1",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguard_attack2",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguard_attack3",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguard_attack4",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguard_attack5",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguard_attack7",
+        "stream": false
+      }
+    ]
+  },
+  "prison_guard_dodge": {
+    "subtitle": "subtitles.prison_guard_dodge",
+    "sounds": [
+      {
+        "name": "the_deep_void:prisonguard_move1",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguard_move3",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguard_move4",
+        "stream": false
+      }
+    ]
+  },
+  "prison_guard_death": {
+    "subtitle": "subtitles.prison_guard_death",
+    "sounds": [
+      {
+        "name": "the_deep_void:prisonguard_death1",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:prisonguard_death2",
+        "stream": false
+      }
+    ]
+  },
+  "the_harvest_soul_slash": {
+    "subtitle": "subtitles.the_harvest_soul_slash",
+    "sounds": [
+      {
+        "name": "the_deep_void:the_harvest_soul_slash",
+        "stream": false
+      }
+    ]
+  },
+  "rot_knight_swing_weak": {
+    "subtitle": "subtitles.rot_knight_swing_weak",
+    "sounds": [
+      {
+        "name": "the_deep_void:rotknightswing_weak1",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:rotknightswing_weak2",
+        "stream": false
+      }
+    ]
+  },
+  "rot_knight_swing_strong": {
+    "subtitle": "subtitles.rot_knight_swing_strong",
+    "sounds": [
+      {
+        "name": "the_deep_void:rotknightswing_strong1",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:rotknightswing_strong2",
+        "stream": false
+      }
+    ]
+  },
+  "dealing_with_the_devil": {
+    "subtitle": "subtitles.dealing_with_the_devil",
+    "sounds": [
+      {
+        "name": "the_deep_void:dealing_with_the_devil_ogg",
+        "stream": true
+      }
+    ]
+  },
+  "plague_doctor_mask_cheatdeath": {
+    "subtitle": "subtitles.plague_doctor_mask_cheatdeath",
+    "sounds": [
+      {
+        "name": "the_deep_void:plague_doctor_mask_break",
+        "stream": false
+      }
+    ]
+  },
+  "monsters_lair": {
+    "subtitle": "subtitles.monsters_lair",
+    "sounds": [
+      {
+        "name": "the_deep_void:free-music_-dark-horror-piano-_monster_s-lair_-scary-royalty-free-ambience",
+        "stream": true
+      }
+    ]
+  },
+  "wind_falling": {
+    "subtitle": "subtitles.wind_falling",
+    "sounds": [
+      {
+        "name": "the_deep_void:falling_wind",
+        "stream": false
+      }
+    ]
+  },
+  "bone_dunes_loop": {
+    "subtitle": "subtitles.bone_dunes_loop",
+    "sounds": [
+      {
+        "name": "the_deep_void:bone_dunes_loop",
+        "stream": false
+      }
+    ]
+  },
+  "bone_dunes_volcanic_loop": {
+    "subtitle": "subtitles.bone_dunes_volcanic_loop",
+    "sounds": [
+      {
+        "name": "the_deep_void:bone_dunes_volcanic_loop",
+        "stream": false
+      }
+    ]
+  },
+  "bone_dunes_windy_loop": {
+    "subtitle": "subtitles.bone_dunes_windy_loop",
+    "sounds": [
+      {
+        "name": "the_deep_void:bone_dunes_windy_loop",
+        "stream": false
+      }
+    ]
+  },
+  "misanthropy_shoot": {
+    "subtitle": "subtitles.misanthropy_shoot",
+    "sounds": [
+      {
+        "name": "the_deep_void:misanthropy_shoot",
+        "stream": false
+      }
+    ]
+  },
+  "flesh_worm_scream": {
+    "subtitle": "subtitles.flesh_worm_scream",
+    "sounds": [
+      {
+        "name": "the_deep_void:flesh_worm_growl",
+        "stream": false
+      }
+    ]
+  },
+  "nerves_of_steel_charge": {
+    "subtitle": "subtitles.nerves_of_steel_charge",
+    "sounds": [
+      {
+        "name": "the_deep_void:nerves_of_steel_charge",
+        "stream": false
+      }
+    ]
+  },
+  "parasite_enters_host": {
+    "subtitle": "subtitles.parasite_enters_host",
+    "sounds": [
+      {
+        "name": "the_deep_void:parasite_enters_host",
+        "stream": false
+      }
+    ]
+  },
+  "fly_ambient": {
+    "subtitle": "subtitles.fly_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:void_fly_living",
+        "stream": false
+      }
+    ]
+  },
+  "void_fly_hurt": {
+    "subtitle": "subtitles.void_fly_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:void_fly_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "player_heartbeat": {
+    "subtitle": "subtitles.player_heartbeat",
+    "sounds": [
+      {
+        "name": "the_deep_void:player_heartbeat",
+        "stream": false
+      }
+    ]
+  }
+}

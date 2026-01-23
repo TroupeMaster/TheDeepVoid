@@ -1,0 +1,94 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.tombstone_despawn": {
+			"animation_length": 1,
+			"bones": {
+				"main": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, 0, 2.5]
+						},
+						"0.5": {
+							"vector": [0, 0, 5]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, -14, 0]
+						},
+						"0.5": {
+							"vector": [0, -32, 0]
+						},
+						"0.75": {
+							"vector": [0, -48, 0]
+						},
+						"1.0": {
+							"vector": [0, -50, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.tombstone_fall": {
+			"animation_length": 1.1667,
+			"bones": {
+				"main": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 5]
+						},
+						"0.75": {
+							"vector": [0, 0, 2.5]
+						},
+						"0.9167": {
+							"vector": [0, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 66, 0]
+						},
+						"0.25": {
+							"vector": [0, 74, 0]
+						},
+						"0.5": {
+							"vector": [0, 82, 0]
+						},
+						"0.75": {
+							"vector": [0, 82, 0]
+						},
+						"0.8333": {
+							"vector": [0, 33, 0]
+						},
+						"0.9167": {
+							"vector": [0, 2, 0]
+						},
+						"1.1667": {
+							"vector": [0, 0, 0]
+						}
+					},
+					"scale": {
+						"0.0": {
+							"vector": [1, 0.1, 1]
+						},
+						"0.25": {
+							"vector": [1, 1, 1]
+						}
+					}
+				}
+			}
+		},
+		"animation.tombstone_idle": {
+			"loop": true,
+			"animation_length": 0.0417
+		}
+	},
+	"geckolib_format_version": 2
+}

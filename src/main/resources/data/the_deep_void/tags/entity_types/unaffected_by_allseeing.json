@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:abductor",
+    "the_deep_void:beholder",
+    "the_deep_void:everhunger",
+    "#the_deep_void:damneds",
+    "the_deep_void:ghostly_nightmare",
+    "the_deep_void:cathedral_ghost",
+    "the_deep_void:ghost",
+    "the_deep_void:hallucination",
+    "the_deep_void:nightmare",
+    "the_deep_void:void_dweller",
+    "#the_deep_void:overseer",
+    "#the_deep_void:stalker",
+    "the_deep_void:flesh_worm",
+    "the_deep_void:masked_hunter",
+    "the_deep_void:voidborn"
+  ]
+}

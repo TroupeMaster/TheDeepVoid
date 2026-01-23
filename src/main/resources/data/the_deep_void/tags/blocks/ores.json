@@ -1,0 +1,27 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:diamond_ores",
+    "#minecraft:emerald_ores",
+    "#minecraft:coal_ores",
+    "#minecraft:copper_ores",
+    "#minecraft:iron_ores",
+    "#minecraft:gold_ores",
+    "#minecraft:lapis_ores",
+    "#minecraft:redstone_ores",
+    "minecraft:nether_quartz_ore",
+    "minecraft:nether_gold_ore",
+    "minecraft:gilded_blackstone",
+    "the_deep_void:onyx_ore",
+    "the_deep_void:lavendite_ore",
+    "the_deep_void:bismuth_ore",
+    "the_deep_void:rotten_fossil",
+    "the_deep_void:sulfur_ore",
+    "the_deep_void:fossilized_flesh",
+    "the_deep_void:cinnabar_ore",
+    "the_deep_void:grim_soil",
+    "the_deep_void:voidrium_ore",
+    "the_deep_void:dark_steel_deposit",
+    "minecraft:ancient_debris"
+  ]
+}

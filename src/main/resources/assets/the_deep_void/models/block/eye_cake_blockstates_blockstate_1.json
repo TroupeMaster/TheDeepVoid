@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/eyecake2",
+  "textures": {
+    "all": "the_deep_void:block/eyecake",
+    "particle": "the_deep_void:block/eyecake",
+    "0": "the_deep_void:block/eyecake"
+  },
+  "render_type": "solid"
+}

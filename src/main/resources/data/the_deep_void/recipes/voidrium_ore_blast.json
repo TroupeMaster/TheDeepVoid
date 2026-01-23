@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:blasting",
+  "category": "blocks",
+  "experience": 2,
+  "cookingtime": 200,
+  "ingredient": {
+    "item": "the_deep_void:voidrium_ore"
+  },
+  "result": "the_deep_void:voidrium_gem"
+}

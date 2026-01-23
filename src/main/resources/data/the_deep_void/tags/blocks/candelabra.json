@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:candelabra",
+    "the_deep_void:black_candelabra",
+    "the_deep_void:blue_candelabra",
+    "the_deep_void:brown_candelabra",
+    "the_deep_void:cyan_candelabra",
+    "the_deep_void:gray_candelabra",
+    "the_deep_void:green_candelabra",
+    "the_deep_void:light_blue_candelabra",
+    "the_deep_void:light_gray_candelabra",
+    "the_deep_void:lime_candelabra",
+    "the_deep_void:magenta_candelabra",
+    "the_deep_void:orange_candelabra",
+    "the_deep_void:pink_candelabra",
+    "the_deep_void:purple_candelabra",
+    "the_deep_void:red_candelabra",
+    "the_deep_void:white_candelabra",
+    "the_deep_void:yellow_candelabra"
+  ]
+}

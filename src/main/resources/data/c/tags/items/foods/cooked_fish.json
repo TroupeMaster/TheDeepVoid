@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:cooked_voidfish",
+    "the_deep_void:cooked_rotfish",
+    "the_deep_void:cooked_bloodfin",
+    "the_deep_void:cooked_pusfish",
+    "the_deep_void:cooked_bloatfish",
+    "the_deep_void:cooked_eyefish",
+    "the_deep_void:cooked_lamprey"
+  ]
+}

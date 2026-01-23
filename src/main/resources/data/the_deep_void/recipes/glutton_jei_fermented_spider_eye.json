@@ -1,0 +1,12 @@
+{
+  "type": "the_deep_void:glutton_block_jei_type",
+  "ingredients": [
+    {
+      "tag": "the_deep_void:glutton_tier3"
+    }
+  ],
+  "output": {
+    "item": "minecraft:fermented_spider_eye",
+    "count": 1
+  }
+}

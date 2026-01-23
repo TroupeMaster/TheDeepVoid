@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "the_deep_void:smithing_template_lavendite"
+  },
+  "base": {
+    "item": "minecraft:diamond_sword"
+  },
+  "addition": {
+    "item": "the_deep_void:lavendite"
+  },
+  "result": {
+    "item": "the_deep_void:lavendite_diamond_sword"
+  }
+}

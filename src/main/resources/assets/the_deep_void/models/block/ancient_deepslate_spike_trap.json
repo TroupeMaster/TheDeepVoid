@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/polished_ancient_deepslate_new",
+    "up": "the_deep_void:block/deepslate_spike_trap",
+    "north": "the_deep_void:block/polished_ancient_deepslate_new",
+    "east": "the_deep_void:block/polished_ancient_deepslate_new",
+    "south": "the_deep_void:block/polished_ancient_deepslate_new",
+    "west": "the_deep_void:block/polished_ancient_deepslate_new",
+    "particle": "the_deep_void:block/polished_ancient_deepslate_new"
+  },
+  "render_type": "solid"
+}

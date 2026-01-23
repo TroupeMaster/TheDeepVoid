@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:grim_canopy",
+  "features": "the_deep_void:corpse_tree",
+  "step": "vegetal_decoration"
+}

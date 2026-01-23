@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/apostle_head",
+  "textures": {
+    "all": "the_deep_void:block/apostle",
+    "particle": "the_deep_void:block/apostle",
+    "0": "the_deep_void:block/apostle"
+  },
+  "render_type": "cutout"
+}

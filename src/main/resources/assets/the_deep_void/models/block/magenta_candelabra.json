@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/magenta_candelabra",
+  "textures": {
+    "all": "the_deep_void:block/magenta_candelabra",
+    "particle": "the_deep_void:block/magenta_candelabra",
+    "0": "the_deep_void:block/magenta_candelabra"
+  },
+  "render_type": "solid"
+}

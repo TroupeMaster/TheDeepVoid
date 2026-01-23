@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "the_deep_void:block/intertwined_black_moss",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "the_deep_void:block/intertwined_black_moss"
+    },
+    "axis=z": {
+      "model": "the_deep_void:block/intertwined_black_moss",
+      "x": 90
+    }
+  }
+}

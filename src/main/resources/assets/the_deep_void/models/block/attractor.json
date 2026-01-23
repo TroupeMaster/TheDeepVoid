@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/smooth_ancient_deepslate",
+    "up": "the_deep_void:block/smooth_ancient_deepslate",
+    "north": "the_deep_void:block/attractor_off",
+    "east": "the_deep_void:block/attractor_off",
+    "south": "the_deep_void:block/attractor_off",
+    "west": "the_deep_void:block/attractor_off",
+    "particle": "the_deep_void:block/smooth_ancient_deepslate"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "blockstate=0": {
+      "model": "the_deep_void:block/bismuth_lantern"
+    },
+    "blockstate=1": {
+      "model": "the_deep_void:block/bismuth_lantern_blockstates_blockstate_0"
+    }
+  }
+}

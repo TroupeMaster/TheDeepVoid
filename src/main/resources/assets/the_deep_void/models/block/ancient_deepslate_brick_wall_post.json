@@ -1,0 +1,8 @@
+{
+  "parent": "block/template_wall_post",
+  "textures": {
+    "wall": "the_deep_void:block/ancient_deepslate_bricks",
+    "particle": "the_deep_void:block/ancient_deepslate_bricks"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:gore_stems"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:eyeball",
+    "count": 3
+  }
+}

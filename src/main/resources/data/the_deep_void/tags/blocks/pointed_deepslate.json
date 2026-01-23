@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:deepslate_serrated_stalagmite_base",
+    "the_deep_void:deepslate_serrated_stalagmite_middle",
+    "the_deep_void:deepslate_serrated_stalagmite_frustum",
+    "the_deep_void:deepslate_serrated_stalagmite"
+  ]
+}

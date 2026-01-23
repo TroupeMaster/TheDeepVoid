@@ -1,0 +1,10 @@
+{
+  "parent": "block/stairs",
+  "textures": {
+    "particle": "the_deep_void:block/bedrock",
+    "bottom": "the_deep_void:block/bedrock",
+    "top": "the_deep_void:block/bedrock",
+    "side": "the_deep_void:block/bedrock"
+  },
+  "render_type": "solid"
+}

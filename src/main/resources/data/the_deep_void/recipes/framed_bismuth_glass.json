@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:bismuth_glass"
+    },
+    "b": {
+      "item": "the_deep_void:dark_steel_scrap"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:framed_bismuth_glass",
+    "count": 8
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:smooth_ancient_deepslate"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:smooth_ancient_deepslate_pressure_plate",
+    "count": 1
+  }
+}

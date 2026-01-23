@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/jack_corpse_sit_cage_hanging",
+  "textures": {
+    "all": "the_deep_void:block/jackocorpse_cage",
+    "particle": "the_deep_void:block/jackocorpse_cage",
+    "0": "the_deep_void:block/jackocorpse_cage"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:misted_bone"
+    },
+    "b": {
+      "item": "the_deep_void:smithing_template_hard_flesh"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:smithing_template_hard_flesh",
+    "count": 2
+  }
+}

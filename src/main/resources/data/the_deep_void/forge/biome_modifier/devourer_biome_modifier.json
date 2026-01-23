@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "the_deep_void:gloomy_deathgrounds",
+  "spawners": {
+    "type": "the_deep_void:devourer",
+    "weight": 3,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

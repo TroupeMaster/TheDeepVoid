@@ -1,0 +1,10 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "particle": "the_deep_void:block/cracked_bedrock",
+    "bottom": "the_deep_void:block/cracked_bedrock",
+    "top": "the_deep_void:block/cracked_bedrock",
+    "side": "the_deep_void:block/cracked_bedrock"
+  },
+  "render_type": "solid"
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/green_candlestick",
+  "textures": {
+    "all": "the_deep_void:block/green_candelabra",
+    "particle": "the_deep_void:block/green_candelabra",
+    "5": "the_deep_void:block/green_candelabra"
+  },
+  "render_type": "solid"
+}

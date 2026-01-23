@@ -1,0 +1,15 @@
+{
+  "type": "the_deep_void:soul_forge_jei_type",
+  "ingredients": [
+    {
+      "item": "the_deep_void:soul_shard"
+    },
+    {
+      "item": "minecraft:netherite_ingot"
+    }
+  ],
+  "output": {
+    "item": "the_deep_void:soul_fused_ingot",
+    "count": 1
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "a",
+    "b"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:orange_candle"
+    },
+    "b": {
+      "item": "the_deep_void:candelabra_foot"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:orange_candlestick",
+    "count": 1
+  }
+}

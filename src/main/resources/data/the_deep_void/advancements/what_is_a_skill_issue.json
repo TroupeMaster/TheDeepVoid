@@ -1,0 +1,100 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:head_of_the_weaver"
+    },
+    "title": {
+      "translate": "advancements.what_is_a_skill_issue.title"
+    },
+    "description": {
+      "translate": "advancements.what_is_a_skill_issue.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "what_is_a_skill_issue_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_deep_void:head_of_the_hivemind"
+            ],
+            "count": {
+              "min": 1,
+              "max": 999
+            }
+          }
+        ]
+      }
+    },
+    "what_is_a_skill_issue_1": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_deep_void:eye_of_the_hive_watcher"
+            ],
+            "count": {
+              "min": 1,
+              "max": 999
+            }
+          }
+        ]
+      }
+    },
+    "what_is_a_skill_issue_2": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_deep_void:head_of_the_primordial_crawler"
+            ],
+            "count": {
+              "min": 1,
+              "max": 999
+            }
+          }
+        ]
+      }
+    },
+    "what_is_a_skill_issue_3": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_deep_void:head_of_the_apostle"
+            ],
+            "count": {
+              "min": 1,
+              "max": 999
+            }
+          }
+        ]
+      }
+    },
+    "what_is_a_skill_issue_4": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_deep_void:head_of_the_weaver"
+            ],
+            "count": {
+              "min": 1,
+              "max": 999
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "the_deep_void:it_aint_hard"
+}

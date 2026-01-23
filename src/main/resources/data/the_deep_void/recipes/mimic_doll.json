@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "abc",
+    "bdb",
+    "eba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:diamond"
+    },
+    "b": {
+      "item": "the_deep_void:misted_bone"
+    },
+    "c": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "d": {
+      "item": "the_deep_void:hexed_doll"
+    },
+    "e": {
+      "item": "the_deep_void:rotten_bone"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:mimic_doll",
+    "count": 1
+  }
+}

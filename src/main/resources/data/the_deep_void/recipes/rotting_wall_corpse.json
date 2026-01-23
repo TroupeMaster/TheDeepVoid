@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:goo_ball"
+    },
+    "b": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "c": {
+      "item": "the_deep_void:wall_corpse"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:rotting_wall_corpse",
+    "count": 1
+  }
+}

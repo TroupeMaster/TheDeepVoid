@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:solid_void_block"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:solid_void_bricks",
+    "count": 4
+  }
+}

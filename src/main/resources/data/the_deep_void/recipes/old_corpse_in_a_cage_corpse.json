@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "the_deep_void:corpse_in_a_cage"
+    }
+  ],
+  "result": {
+    "item": "the_deep_void:old_corpse_in_a_cage",
+    "count": 1
+  }
+}

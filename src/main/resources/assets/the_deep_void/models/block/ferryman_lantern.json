@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/ferryman_lantern_ground",
+  "textures": {
+    "all": "the_deep_void:block/ferryman_lantern_texture",
+    "particle": "the_deep_void:block/ferryman_lantern_texture",
+    "0": "the_deep_void:block/ferryman_lantern_texture"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/old_corpse_sit_cage",
+  "textures": {
+    "all": "the_deep_void:block/old_corpse_cage",
+    "particle": "the_deep_void:block/old_corpse_cage",
+    "0": "the_deep_void:block/old_corpse_cage"
+  },
+  "render_type": "cutout"
+}

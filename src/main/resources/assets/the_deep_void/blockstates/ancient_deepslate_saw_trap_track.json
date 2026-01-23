@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "the_deep_void:block/ancient_deepslate_saw_trap_track"
+    },
+    "facing=east": {
+      "model": "the_deep_void:block/ancient_deepslate_saw_trap_track",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "the_deep_void:block/ancient_deepslate_saw_trap_track",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "the_deep_void:block/ancient_deepslate_saw_trap_track",
+      "y": 270
+    }
+  }
+}

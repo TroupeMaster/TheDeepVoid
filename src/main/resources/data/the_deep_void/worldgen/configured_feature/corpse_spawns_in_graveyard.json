@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "the_deep_void:old_corpse"
+          },
+          "weight": 1
+        },
+        {
+          "data": {
+            "Name": "the_deep_void:old_covered_corpse"
+          },
+          "weight": 1
+        },
+        {
+          "data": {
+            "Name": "the_deep_void:old_laying_corpse"
+          },
+          "weight": 1
+        }
+      ]
+    }
+  }
+}

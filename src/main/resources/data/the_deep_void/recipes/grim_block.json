@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:grim_gem"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:grim_block",
+    "count": 1
+  }
+}

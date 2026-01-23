@@ -1,0 +1,12 @@
+{
+  "type": "the_deep_void:treasure_bag_jei_type",
+  "ingredients": [
+    {
+      "item": "the_deep_void:primordial_crawler_treasure_bag"
+    }
+  ],
+  "output": {
+    "item": "the_deep_void:bone_crawler_molt_piece",
+    "count": 8
+  }
+}

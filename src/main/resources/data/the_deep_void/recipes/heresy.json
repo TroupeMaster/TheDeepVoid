@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aaa",
+    "abc",
+    "cd "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:sacred_cinnabar"
+    },
+    "b": {
+      "item": "the_deep_void:ancient_gun_part"
+    },
+    "c": {
+      "item": "the_deep_void:hard_flesh_ingot"
+    },
+    "d": {
+      "item": "the_deep_void:worm_tooth"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:heresy",
+    "count": 1
+  }
+}

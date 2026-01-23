@@ -1,0 +1,8 @@
+{
+  "parent": "block/template_glass_pane_noside",
+  "textures": {
+    "particle": "the_deep_void:block/framed_sulfur_glass",
+    "pane": "the_deep_void:block/framed_sulfur_glass"
+  },
+  "render_type": "cutout"
+}

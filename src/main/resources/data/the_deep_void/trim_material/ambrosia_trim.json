@@ -1,0 +1,9 @@
+{
+  "asset_name": "ambrosia_trim",
+  "description": {
+    "color": "#7E260B",
+    "translate": "trim_material.the_deep_void.ambrosia_trim"
+  },
+  "ingredient": "the_deep_void:ambrosial_flesh_chunk",
+  "item_model_index": 0.0
+}

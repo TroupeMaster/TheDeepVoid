@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:rotten_dart",
+    "the_deep_void:pus_ball",
+    "the_deep_void:sulfur_bomb",
+    "the_deep_void:greater_experience_bottle",
+    "the_deep_void:needlefish",
+    "minecraft:experience_bottle",
+    "minecraft:snowball",
+    "minecraft:egg"
+  ]
+}

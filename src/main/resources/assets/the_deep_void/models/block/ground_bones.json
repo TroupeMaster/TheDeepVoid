@@ -1,0 +1,8 @@
+{
+  "parent": "block/crop",
+  "textures": {
+    "crop": "the_deep_void:block/floor_bones",
+    "particle": "the_deep_void:block/floor_bones"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:dark_steel_scrap"
+    },
+    "title": {
+      "translate": "advancements.steel_but_dark.title"
+    },
+    "description": {
+      "translate": "advancements.steel_but_dark.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "steel_but_dark_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_deep_void:dark_steel_scrap"
+            ],
+            "count": {
+              "min": 1,
+              "max": 999
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "the_deep_void:ichor_or_ichor"
+}

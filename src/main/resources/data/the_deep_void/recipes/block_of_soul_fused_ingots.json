@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:soul_fused_ingot"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:block_of_soul_fused_ingots",
+    "count": 1
+  }
+}

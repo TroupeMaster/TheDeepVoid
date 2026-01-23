@@ -1,0 +1,26 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "the_deep_void:item/knife_glove_empty"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "the_deep_void:knives_glove_knife_glove_condition": 1
+      },
+      "model": "the_deep_void:item/knives_glove_0"
+    },
+    {
+      "predicate": {
+        "the_deep_void:knives_glove_knife_glove_condition": 2
+      },
+      "model": "the_deep_void:item/knives_glove_1"
+    },
+    {
+      "predicate": {
+        "the_deep_void:knives_glove_knife_glove_condition": 3
+      },
+      "model": "the_deep_void:item/knives_glove_2"
+    }
+  ]
+}

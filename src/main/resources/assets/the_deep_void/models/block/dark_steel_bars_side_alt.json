@@ -1,0 +1,9 @@
+{
+  "parent": "block/template_glass_pane_side_alt",
+  "textures": {
+    "particle": "the_deep_void:block/dark_steel_bars",
+    "edge": "the_deep_void:block/dark_steel_bars",
+    "pane": "the_deep_void:block/dark_steel_bars"
+  },
+  "render_type": "cutout_mipped"
+}

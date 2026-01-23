@@ -1,0 +1,9 @@
+{
+  "asset_name": "voidrium_trim",
+  "description": {
+    "color": "#5B2B9F",
+    "translate": "trim_material.the_deep_void.voidrium_trim"
+  },
+  "ingredient": "the_deep_void:voidrium_gem",
+  "item_model_index": 0.0
+}

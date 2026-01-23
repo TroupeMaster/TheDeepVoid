@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:misted_bone"
+    },
+    "b": {
+      "item": "the_deep_void:scavenger_armor_trim"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:scavenger_armor_trim",
+    "count": 2
+  }
+}

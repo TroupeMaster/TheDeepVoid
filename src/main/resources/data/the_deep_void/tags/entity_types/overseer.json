@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:big_overseer",
+    "the_deep_void:built_big_overseer",
+    "the_deep_void:built_big_overseer_pillar",
+    "the_deep_void:built_overseer",
+    "the_deep_void:built_overseer_pillar",
+    "the_deep_void:overseer",
+    "the_deep_void:overseer_big_pillar",
+    "the_deep_void:overseer_pillar"
+  ]
+}

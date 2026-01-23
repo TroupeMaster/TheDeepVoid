@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:hive_watcher_treasure_bag"
+    },
+    "title": {
+      "translate": "advancements.ommetaphobia.title"
+    },
+    "description": {
+      "translate": "advancements.ommetaphobia.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "ommetaphobia_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "the_deep_void:does_it_hate"
+}

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:gaol_of_heretics",
+  "features": "the_deep_void:dark_steel_rock",
+  "step": "surface_structures"
+}

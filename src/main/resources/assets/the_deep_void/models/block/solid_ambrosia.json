@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/solid_ambrosia_bottom",
+    "up": "the_deep_void:block/solid_ambrosia_top",
+    "north": "the_deep_void:block/solid_ambrosia",
+    "east": "the_deep_void:block/solid_ambrosia",
+    "south": "the_deep_void:block/solid_ambrosia",
+    "west": "the_deep_void:block/solid_ambrosia",
+    "particle": "the_deep_void:block/solid_ambrosia_bottom"
+  },
+  "render_type": "solid"
+}

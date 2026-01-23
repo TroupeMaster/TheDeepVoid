@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "the_deep_void:windswept_hollow",
+  "spawners": {
+    "type": "the_deep_void:void_dweller",
+    "weight": 4,
+    "minCount": 1,
+    "maxCount": 3
+  }
+}

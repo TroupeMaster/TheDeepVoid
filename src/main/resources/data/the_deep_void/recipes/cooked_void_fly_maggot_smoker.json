@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "experience": 0.1,
+  "cookingtime": 30,
+  "ingredient": {
+    "item": "the_deep_void:void_fly_maggot"
+  },
+  "result": "the_deep_void:cooked_void_fly_maggot"
+}

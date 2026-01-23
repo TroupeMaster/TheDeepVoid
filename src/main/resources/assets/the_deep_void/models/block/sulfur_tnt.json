@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/sulfur_tnt_bottom",
+    "up": "the_deep_void:block/sulfur_tnt_top",
+    "north": "the_deep_void:block/sulfur_tnt_side",
+    "east": "the_deep_void:block/sulfur_tnt_side",
+    "south": "the_deep_void:block/sulfur_tnt_side",
+    "west": "the_deep_void:block/sulfur_tnt_side",
+    "particle": "the_deep_void:block/sulfur_tnt_bottom"
+  },
+  "render_type": "solid"
+}

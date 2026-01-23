@@ -1,0 +1,12 @@
+{
+  "type": "the_deep_void:treasure_bag_jei_type",
+  "ingredients": [
+    {
+      "tag": "the_deep_void:treasure_bag"
+    }
+  ],
+  "output": {
+    "item": "the_deep_void:rusty_claws",
+    "count": 1
+  }
+}

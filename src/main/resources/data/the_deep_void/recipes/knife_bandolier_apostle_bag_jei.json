@@ -1,0 +1,12 @@
+{
+  "type": "the_deep_void:treasure_bag_jei_type",
+  "ingredients": [
+    {
+      "item": "the_deep_void:apostle_of_catastrophe_treasure_bag"
+    }
+  ],
+  "output": {
+    "item": "the_deep_void:knife_bandolier",
+    "count": 1
+  }
+}

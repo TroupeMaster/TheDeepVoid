@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "the_deep_void:block/rotten_fossil",
+    "particle": "the_deep_void:block/rotten_fossil"
+  },
+  "render_type": "solid"
+}

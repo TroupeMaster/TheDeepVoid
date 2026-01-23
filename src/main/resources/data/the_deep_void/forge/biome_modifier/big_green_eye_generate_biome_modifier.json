@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:staring_hills",
+  "features": "the_deep_void:big_green_eye_generate",
+  "step": "surface_structures"
+}

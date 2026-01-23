@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cbc",
+    " c "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:gold_ingot"
+    },
+    "b": {
+      "item": "the_deep_void:bottle_of_ambrosia"
+    },
+    "c": {
+      "item": "the_deep_void:flesh_chunk"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:ambrosia",
+    "count": 1
+  }
+}

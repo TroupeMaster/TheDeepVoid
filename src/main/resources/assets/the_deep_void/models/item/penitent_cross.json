@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/cross",
+  "textures": {
+    "0": "the_deep_void:block/cross",
+    "particle": "the_deep_void:item/bone_needle"
+  }
+}

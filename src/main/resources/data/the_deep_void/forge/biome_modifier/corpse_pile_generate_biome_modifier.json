@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_deep_void:filled_graveyard",
+    "the_deep_void:mourning_graveyard",
+    "the_deep_void:misted_remnants",
+    "the_deep_void:gaol_of_heretics",
+    "the_deep_void:the_gaol"
+  ],
+  "features": "the_deep_void:corpse_pile_generate",
+  "step": "local_modifications"
+}

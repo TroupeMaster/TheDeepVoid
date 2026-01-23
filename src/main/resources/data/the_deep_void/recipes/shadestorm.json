@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "abc",
+    "b d",
+    "cdd"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:grim_gem"
+    },
+    "b": {
+      "item": "the_deep_void:void_matter"
+    },
+    "c": {
+      "item": "the_deep_void:ancient_onyx"
+    },
+    "d": {
+      "item": "minecraft:string"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:shadestorm",
+    "count": 1
+  }
+}

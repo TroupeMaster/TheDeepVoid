@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:rotten_wood"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:rotten_roots",
+    "count": 6
+  }
+}

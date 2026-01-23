@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/bone_lichen",
+  "textures": {
+    "all": "the_deep_void:block/bone_lichen_texture",
+    "particle": "the_deep_void:block/bone_lichen_texture",
+    "0": "the_deep_void:block/bone_lichen_texture"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/bismuth_lantern_roof",
+  "textures": {
+    "all": "the_deep_void:block/bismuth_lantern",
+    "particle": "the_deep_void:block/bismuth_lantern",
+    "missing": "the_deep_void:block/bismuth_lantern"
+  },
+  "render_type": "cutout"
+}

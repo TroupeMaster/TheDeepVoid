@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "blockstate=0": {
+      "model": "the_deep_void:block/soul_orb_pillar"
+    },
+    "blockstate=1": {
+      "model": "the_deep_void:block/soul_orb_pillar_block_states_blockstate_0"
+    }
+  }
+}

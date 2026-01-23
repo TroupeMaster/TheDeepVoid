@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:block_of_bone_pile",
+    "the_deep_void:block_of_skull_pile",
+    "the_deep_void:covered_skull_pile",
+    "the_deep_void:covered_bone_pile",
+    "the_deep_void:mossy_bone_pile",
+    "the_deep_void:block_of_rotten_bone_pile"
+  ]
+}

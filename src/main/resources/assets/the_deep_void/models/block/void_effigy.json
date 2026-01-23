@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/void_effigy",
+  "textures": {
+    "all": "the_deep_void:block/void_effigy",
+    "particle": "the_deep_void:block/void_effigy",
+    "0": "the_deep_void:block/void_effigy"
+  },
+  "render_type": "solid"
+}

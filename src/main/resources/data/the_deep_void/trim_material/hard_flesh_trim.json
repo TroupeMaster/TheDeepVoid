@@ -1,0 +1,9 @@
+{
+  "asset_name": "hard_flesh_trim",
+  "description": {
+    "color": "#2E2D28",
+    "translate": "trim_material.the_deep_void.hard_flesh_trim"
+  },
+  "ingredient": "the_deep_void:hard_flesh_ingot",
+  "item_model_index": 0.0
+}

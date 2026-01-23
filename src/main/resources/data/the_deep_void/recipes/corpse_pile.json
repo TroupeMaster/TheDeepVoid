@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:corpse"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:corpse_pile",
+    "count": 1
+  }
+}

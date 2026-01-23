@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "the_deep_void:block/dark_steel_bars"
+  },
+  "render_type": "cutout_mipped"
+}

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aba",
+    "cac"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:pustulent_flesh_block"
+    },
+    "b": {
+      "item": "the_deep_void:pus_ball"
+    },
+    "c": {
+      "item": "the_deep_void:flesh_block"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:pus_sack",
+    "count": 2
+  }
+}

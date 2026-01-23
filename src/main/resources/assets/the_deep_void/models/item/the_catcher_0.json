@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/catcher_catches",
+  "textures": {
+    "0": "the_deep_void:block/the_catcher_catches",
+    "particle": "the_deep_void:item/the_catcher_catches"
+  }
+}

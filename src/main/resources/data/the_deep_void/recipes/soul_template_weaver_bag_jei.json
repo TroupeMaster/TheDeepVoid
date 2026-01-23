@@ -1,0 +1,12 @@
+{
+  "type": "the_deep_void:treasure_bag_jei_type",
+  "ingredients": [
+    {
+      "item": "the_deep_void:weaver_of_souls_treasure_bag"
+    }
+  ],
+  "output": {
+    "item": "the_deep_void:smithing_template_soul",
+    "count": 1
+  }
+}

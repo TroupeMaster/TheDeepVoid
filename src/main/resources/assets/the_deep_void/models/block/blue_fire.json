@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/blue_fire",
+  "textures": {
+    "all": "the_deep_void:block/blue_fire_fast",
+    "particle": "the_deep_void:block/invisible",
+    "0": "the_deep_void:block/blue_fire_fast"
+  },
+  "render_type": "cutout"
+}

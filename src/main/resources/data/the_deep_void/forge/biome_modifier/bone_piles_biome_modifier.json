@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_deep_void:mourning_graveyard",
+    "the_deep_void:filled_graveyard",
+    "the_deep_void:misted_remnants"
+  ],
+  "features": "the_deep_void:bone_piles",
+  "step": "surface_structures"
+}

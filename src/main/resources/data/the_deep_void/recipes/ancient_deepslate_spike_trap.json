@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "pattern": [
+    "aa",
+    "bb",
+    "bb"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:bone_spikes"
+    },
+    "b": {
+      "item": "the_deep_void:smooth_ancient_deepslate"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:ancient_deepslate_spike_trap",
+    "count": 4
+  }
+}

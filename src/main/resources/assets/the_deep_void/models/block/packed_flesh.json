@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "the_deep_void:block/solid_ambrosia_bottom",
+    "particle": "the_deep_void:block/solid_ambrosia_bottom"
+  },
+  "render_type": "solid"
+}

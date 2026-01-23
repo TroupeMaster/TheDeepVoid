@@ -1,0 +1,11 @@
+{
+  "title": {
+    "text": "The Deep Void",
+    "bold": true,
+    "color": "dark_purple"
+  },
+  "tip": {
+    "text": "The heartbeat of the Deathgrounds is kind of soothing, but be warned: the flesh takes all.",
+    "bold": false
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/fake_torch",
+  "textures": {
+    "all": "the_deep_void:block/torch",
+    "particle": "the_deep_void:block/torch",
+    "1": "the_deep_void:block/torch"
+  },
+  "render_type": "solid"
+}

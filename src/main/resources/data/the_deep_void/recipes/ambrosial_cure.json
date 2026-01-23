@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "the_deep_void:grimberry_juice"
+    },
+    {
+      "item": "the_deep_void:grimberry_juice"
+    },
+    {
+      "item": "the_deep_void:bottle_of_ambrosia"
+    },
+    {
+      "item": "the_deep_void:grimberry_juice"
+    },
+    {
+      "item": "the_deep_void:bottle_of_ambrosia"
+    },
+    {
+      "tag": "minecraft:small_flowers"
+    }
+  ],
+  "result": {
+    "item": "the_deep_void:ambrosial_cure",
+    "count": 2
+  }
+}

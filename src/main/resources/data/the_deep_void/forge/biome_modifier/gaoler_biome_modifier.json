@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "the_deep_void:gaol_of_heretics",
+  "spawners": {
+    "type": "the_deep_void:gaoler",
+    "weight": 1,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

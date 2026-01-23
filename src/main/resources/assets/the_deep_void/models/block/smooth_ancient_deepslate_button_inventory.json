@@ -1,0 +1,8 @@
+{
+  "parent": "block/button_inventory",
+  "textures": {
+    "particle": "the_deep_void:block/polished_ancient_deepslate_new",
+    "texture": "the_deep_void:block/polished_ancient_deepslate_new"
+  },
+  "render_type": "solid"
+}

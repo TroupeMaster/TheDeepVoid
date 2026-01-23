@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/cinnabar_lantern_roof",
+  "textures": {
+    "all": "the_deep_void:block/cinnabar_lantern",
+    "particle": "the_deep_void:block/cinnabar_lantern",
+    "0": "the_deep_void:block/cinnabar_lantern"
+  },
+  "render_type": "cutout"
+}

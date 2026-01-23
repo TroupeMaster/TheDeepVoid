@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:black_candle"
+    },
+    "b": {
+      "item": "the_deep_void:candelabra_foot"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:black_candelabra",
+    "count": 1
+  }
+}

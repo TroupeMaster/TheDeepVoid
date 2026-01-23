@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "the_deep_void:block/cracked_bedrock",
+    "particle": "the_deep_void:block/cracked_bedrock"
+  },
+  "render_type": "solid"
+}

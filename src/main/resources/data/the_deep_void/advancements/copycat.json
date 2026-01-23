@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:misted_heart"
+    },
+    "title": {
+      "translate": "advancements.copycat.title"
+    },
+    "description": {
+      "translate": "advancements.copycat.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "copycat_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "the_deep_void:ominous_fog"
+}

@@ -1,0 +1,26 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.flesh_cube",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "main",
+					"pivot": [0, 10, 0],
+					"cubes": [
+						{"origin": [-10, 0, -10], "size": [20, 20, 20], "uv": [0, 0]},
+						{"origin": [-14, 20, 0], "size": [28, 13, 0], "pivot": [0, 20, 0], "rotation": [0, -45, 0], "uv": [0, 53]},
+						{"origin": [-14, 20, 0], "size": [28, 13, 0], "pivot": [0, 20, 0], "rotation": [0, 45, 0], "uv": [0, 40]}
+					]
+				}
+			]
+		}
+	]
+}

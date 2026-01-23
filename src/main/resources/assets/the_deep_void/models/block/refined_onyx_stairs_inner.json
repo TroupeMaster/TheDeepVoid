@@ -1,0 +1,10 @@
+{
+  "parent": "block/inner_stairs",
+  "textures": {
+    "particle": "the_deep_void:block/block_of_refined_onyx",
+    "bottom": "the_deep_void:block/block_of_refined_onyx",
+    "top": "the_deep_void:block/block_of_refined_onyx",
+    "side": "the_deep_void:block/block_of_refined_onyx"
+  },
+  "render_type": "solid"
+}

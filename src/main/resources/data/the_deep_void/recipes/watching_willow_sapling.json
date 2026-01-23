@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aba",
+    "aca",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:hanging_marrow"
+    },
+    "b": {
+      "item": "the_deep_void:rotten_log"
+    },
+    "c": {
+      "item": "the_deep_void:infested_rotten_log"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:watching_willow_sapling",
+    "count": 2
+  }
+}

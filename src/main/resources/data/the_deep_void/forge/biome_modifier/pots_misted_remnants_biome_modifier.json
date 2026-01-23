@@ -1,0 +1,9 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_deep_void:misted_remnants",
+    "the_deep_void:gaol_of_heretics"
+  ],
+  "features": "the_deep_void:pots_misted_remnants",
+  "step": "surface_structures"
+}

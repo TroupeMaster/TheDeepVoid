@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:gloomy_deathgrounds",
+  "features": "the_deep_void:pus_flower",
+  "step": "vegetal_decoration"
+}

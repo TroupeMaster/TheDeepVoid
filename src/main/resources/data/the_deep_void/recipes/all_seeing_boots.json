@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a a",
+    "b b"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:seer"
+    },
+    "b": {
+      "item": "the_deep_void:refined_cinnabar"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:all_seeing_boots",
+    "count": 1
+  }
+}

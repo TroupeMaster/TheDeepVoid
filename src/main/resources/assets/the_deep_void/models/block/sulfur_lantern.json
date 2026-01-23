@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/sulfur_lantern_ground_new",
+  "textures": {
+    "all": "the_deep_void:block/sulfur_lantern",
+    "particle": "the_deep_void:block/sulfur_lantern",
+    "0": "the_deep_void:block/sulfur_lantern"
+  },
+  "render_type": "cutout"
+}

@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/corpse_dead_cage_hanging",
+  "textures": {
+    "all": "the_deep_void:block/corpse_cage",
+    "particle": "the_deep_void:block/corpse_cage",
+    "1": "the_deep_void:block/corpse_cage"
+  },
+  "render_type": "cutout"
+}

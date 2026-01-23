@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/golden_regurgitated_matter_top",
+    "up": "the_deep_void:block/golden_regurgitated_matter_top",
+    "north": "the_deep_void:block/golden_regurgitated_matter_side",
+    "east": "the_deep_void:block/golden_regurgitated_matter_side",
+    "south": "the_deep_void:block/golden_regurgitated_matter_side",
+    "west": "the_deep_void:block/golden_regurgitated_matter_side",
+    "particle": "the_deep_void:block/golden_regurgitated_matter_top"
+  },
+  "render_type": "solid"
+}

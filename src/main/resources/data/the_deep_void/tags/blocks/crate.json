@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:rotten_crate",
+    "the_deep_void:golden_rotten_crate",
+    "the_deep_void:flesh_crate",
+    "the_deep_void:golden_flesh_crate",
+    "the_deep_void:regurgitated_matter",
+    "the_deep_void:golden_regurgitated_matter"
+  ]
+}

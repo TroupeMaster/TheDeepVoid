@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "the_deep_void:gloomy_deathgrounds",
+  "spawners": {
+    "type": "the_deep_void:flesh_cube",
+    "weight": 4,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

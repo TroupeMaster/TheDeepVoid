@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "the_deep_void:block/red_gate_passable",
+    "up": "the_deep_void:block/red_gate_passable",
+    "north": "the_deep_void:block/red_gate_passable",
+    "east": "the_deep_void:block/red_gate_passable",
+    "south": "the_deep_void:block/red_gate_passable",
+    "west": "the_deep_void:block/red_gate_passable",
+    "particle": "the_deep_void:block/red_gate_passable"
+  },
+  "render_type": "translucent"
+}

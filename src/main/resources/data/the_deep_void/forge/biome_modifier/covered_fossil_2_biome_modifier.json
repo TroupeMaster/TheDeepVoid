@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:windswept_hollow",
+  "features": "the_deep_void:covered_fossil_2",
+  "step": "surface_structures"
+}

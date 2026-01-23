@@ -1,0 +1,36 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:soul_fused_ingot"
+    },
+    "title": {
+      "translate": "advancements.soul_fused_netherite.title"
+    },
+    "description": {
+      "translate": "advancements.soul_fused_netherite.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "soul_fused_netherite_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_deep_void:soul_fused_ingot"
+            ],
+            "count": {
+              "min": 1,
+              "max": 999
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "the_deep_void:unholy_psalmody"
+}

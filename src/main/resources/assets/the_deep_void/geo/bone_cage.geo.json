@@ -1,0 +1,61 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 3.5,
+				"visible_bounds_offset": [0, 1.25, 0]
+			},
+			"bones": [
+				{
+					"name": "main",
+					"pivot": [0, 0, 0]
+				},
+				{
+					"name": "base",
+					"parent": "main",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-7, 0, -7], "size": [14, 1, 14], "uv": [0, 0]}
+					]
+				},
+				{
+					"name": "wall0",
+					"parent": "base",
+					"pivot": [7, 1, 0],
+					"cubes": [
+						{"origin": [7, 1, -7], "size": [0, 24, 14], "uv": [0, 15]}
+					]
+				},
+				{
+					"name": "wall1",
+					"parent": "base",
+					"pivot": [-7, 1, 0],
+					"cubes": [
+						{"origin": [-7, 1, -7], "size": [0, 24, 14], "uv": [0, 15], "mirror": true}
+					]
+				},
+				{
+					"name": "wall2",
+					"parent": "base",
+					"pivot": [0, 1, 7],
+					"cubes": [
+						{"origin": [-7, 1, 7], "size": [14, 24, 0], "uv": [0, 29], "mirror": true}
+					]
+				},
+				{
+					"name": "wall3",
+					"parent": "base",
+					"pivot": [0, 1, -7],
+					"cubes": [
+						{"origin": [-7, 1, -7], "size": [14, 24, 0], "uv": [0, 29], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}

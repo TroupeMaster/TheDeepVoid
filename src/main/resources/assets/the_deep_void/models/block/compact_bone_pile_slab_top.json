@@ -1,0 +1,10 @@
+{
+  "parent": "block/slab_top",
+  "textures": {
+    "particle": "the_deep_void:block/huge_bone_bricks",
+    "bottom": "the_deep_void:block/huge_bone_bricks",
+    "top": "the_deep_void:block/huge_bone_bricks",
+    "side": "the_deep_void:block/huge_bone_bricks"
+  },
+  "render_type": "solid"
+}

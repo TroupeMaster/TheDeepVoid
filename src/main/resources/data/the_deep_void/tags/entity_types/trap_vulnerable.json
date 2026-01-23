@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:penitent",
+    "the_deep_void:gaoler",
+    "the_deep_void:prisoner",
+    "the_deep_void:prison_guard",
+    "the_deep_void:shank_prisoner"
+  ]
+}

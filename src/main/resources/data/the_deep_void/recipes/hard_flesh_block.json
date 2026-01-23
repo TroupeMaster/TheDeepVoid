@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "blocks",
+  "experience": 0.1,
+  "cookingtime": 160,
+  "ingredient": {
+    "item": "the_deep_void:flesh_block"
+  },
+  "result": "the_deep_void:hard_flesh_block"
+}
