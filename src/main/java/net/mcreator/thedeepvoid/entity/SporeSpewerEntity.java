@@ -55,6 +55,7 @@ public class SporeSpewerEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(SporeSpewerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(SporeSpewerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(SporeSpewerEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_spew = SynchedEntityData.defineId(SporeSpewerEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -78,6 +79,7 @@ public class SporeSpewerEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "spore_spewer_texture");
+		this.entityData.define(DATA_spew, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -141,6 +143,7 @@ public class SporeSpewerEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("Dataspew", this.entityData.get(DATA_spew));
 	}
 
 	@Override
@@ -148,6 +151,8 @@ public class SporeSpewerEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Dataspew"))
+			this.entityData.set(DATA_spew, compound.getInt("Dataspew"));
 	}
 
 	@Override

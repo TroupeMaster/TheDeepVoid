@@ -39,4 +39,17 @@ public class TheDeepVoidModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> AMBROSIA_DROPLET = REGISTRY.register("ambrosia_droplet", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> ICHOR_FLAME = REGISTRY.register("ichor_flame", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> LUNATIC_EYE = REGISTRY.register("lunatic_eye", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> BLACK_FLAME = REGISTRY.register("black_flame", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> ELDRITCH_EYE = REGISTRY.register("eldritch_eye", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> DARK_SWEEP = REGISTRY.register("dark_sweep", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> BITE = REGISTRY.register("bite", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> VOID_MATTER_CRIT = REGISTRY.register("void_matter_crit", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> VOID_MATTER_RESIDUE = REGISTRY.register("void_matter_residue", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> RED_SMOKE = REGISTRY.register("red_smoke", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> BRIGHT_SMOKE = REGISTRY.register("bright_smoke", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> XP_SMOKE = REGISTRY.register("xp_smoke", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> GOLDEN_SMOKE = REGISTRY.register("golden_smoke", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> SULFUR_SMOKE = REGISTRY.register("sulfur_smoke", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> VOIDRIUM_SMOKE = REGISTRY.register("voidrium_smoke", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> BLOOD_SMOKE = REGISTRY.register("blood_smoke", () -> new SimpleParticleType(true));
 }

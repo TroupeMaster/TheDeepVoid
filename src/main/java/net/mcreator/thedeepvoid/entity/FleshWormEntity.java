@@ -57,6 +57,11 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Boolean> DATA_teleporting = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_spawning = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_attackFromBelow = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_attackChance = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_sound = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -81,6 +86,11 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "fleshworm");
+		this.entityData.define(DATA_teleporting, false);
+		this.entityData.define(DATA_spawning, false);
+		this.entityData.define(DATA_attackFromBelow, false);
+		this.entityData.define(DATA_attackChance, 0);
+		this.entityData.define(DATA_sound, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -157,6 +167,11 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putBoolean("Datateleporting", this.entityData.get(DATA_teleporting));
+		compound.putBoolean("Dataspawning", this.entityData.get(DATA_spawning));
+		compound.putBoolean("DataattackFromBelow", this.entityData.get(DATA_attackFromBelow));
+		compound.putInt("DataattackChance", this.entityData.get(DATA_attackChance));
+		compound.putInt("Datasound", this.entityData.get(DATA_sound));
 	}
 
 	@Override
@@ -164,6 +179,16 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datateleporting"))
+			this.entityData.set(DATA_teleporting, compound.getBoolean("Datateleporting"));
+		if (compound.contains("Dataspawning"))
+			this.entityData.set(DATA_spawning, compound.getBoolean("Dataspawning"));
+		if (compound.contains("DataattackFromBelow"))
+			this.entityData.set(DATA_attackFromBelow, compound.getBoolean("DataattackFromBelow"));
+		if (compound.contains("DataattackChance"))
+			this.entityData.set(DATA_attackChance, compound.getInt("DataattackChance"));
+		if (compound.contains("Datasound"))
+			this.entityData.set(DATA_sound, compound.getInt("Datasound"));
 	}
 
 	@Override

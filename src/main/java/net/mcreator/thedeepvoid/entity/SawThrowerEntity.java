@@ -56,6 +56,10 @@ public class SawThrowerEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(SawThrowerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(SawThrowerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(SawThrowerEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_attackChance = SynchedEntityData.defineId(SawThrowerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_spinning = SynchedEntityData.defineId(SawThrowerEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_playerCount = SynchedEntityData.defineId(SawThrowerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_baseHealth = SynchedEntityData.defineId(SawThrowerEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -79,6 +83,10 @@ public class SawThrowerEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "saw_thrower");
+		this.entityData.define(DATA_attackChance, 0);
+		this.entityData.define(DATA_spinning, false);
+		this.entityData.define(DATA_playerCount, 0);
+		this.entityData.define(DATA_baseHealth, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -153,6 +161,10 @@ public class SawThrowerEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DataattackChance", this.entityData.get(DATA_attackChance));
+		compound.putBoolean("Dataspinning", this.entityData.get(DATA_spinning));
+		compound.putInt("DataplayerCount", this.entityData.get(DATA_playerCount));
+		compound.putInt("DatabaseHealth", this.entityData.get(DATA_baseHealth));
 	}
 
 	@Override
@@ -160,6 +172,14 @@ public class SawThrowerEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DataattackChance"))
+			this.entityData.set(DATA_attackChance, compound.getInt("DataattackChance"));
+		if (compound.contains("Dataspinning"))
+			this.entityData.set(DATA_spinning, compound.getBoolean("Dataspinning"));
+		if (compound.contains("DataplayerCount"))
+			this.entityData.set(DATA_playerCount, compound.getInt("DataplayerCount"));
+		if (compound.contains("DatabaseHealth"))
+			this.entityData.set(DATA_baseHealth, compound.getInt("DatabaseHealth"));
 	}
 
 	@Override

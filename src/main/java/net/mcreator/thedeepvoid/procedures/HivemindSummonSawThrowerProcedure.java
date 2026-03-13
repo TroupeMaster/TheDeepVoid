@@ -61,7 +61,8 @@ public class HivemindSummonSawThrowerProcedure {
 			}
 		}
 		if (Math.random() < 0.1) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", 0);
+			if (entity instanceof MisanthropicHivemindEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MisanthropicHivemindEntity.DATA_attackChance, 0);
 		}
 	}
 }

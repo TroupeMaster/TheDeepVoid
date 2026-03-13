@@ -33,9 +33,10 @@ public class DeathVultureTickUpdateProcedure {
 		if (entity == null)
 			return;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
-			if (entity.getPersistentData().getBoolean("deep_void:vultureAttack") == true) {
-				if (entity.getPersistentData().getDouble("deep_void:vultureCooldown") >= 60) {
-					entity.getPersistentData().putDouble("deep_void:vultureCooldown", 0);
+			if ((entity instanceof DeathVultureEntity _datEntL2 && _datEntL2.getEntityData().get(DeathVultureEntity.DATA_attack)) == true) {
+				if ((entity instanceof DeathVultureEntity _datEntI ? _datEntI.getEntityData().get(DeathVultureEntity.DATA_dash) : 0) >= 60) {
+					if (entity instanceof DeathVultureEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(DeathVultureEntity.DATA_dash, 0);
 					if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 26, 26, 26), e -> true).isEmpty() && !(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 6, 6, 6), e -> true).isEmpty())) {
 						if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 							if (entity instanceof DeathVultureEntity) {
@@ -62,19 +63,23 @@ public class DeathVultureTickUpdateProcedure {
 						}
 					}
 				} else {
-					entity.getPersistentData().putDouble("deep_void:vultureCooldown", (entity.getPersistentData().getDouble("deep_void:vultureCooldown") + 1));
+					if (entity instanceof DeathVultureEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(DeathVultureEntity.DATA_dash, (int) ((entity instanceof DeathVultureEntity _datEntI ? _datEntI.getEntityData().get(DeathVultureEntity.DATA_dash) : 0) + 1));
 				}
 			}
-			if (entity.getPersistentData().getBoolean("deep_void:vultureAttack") == false) {
+			if ((entity instanceof DeathVultureEntity _datEntL34 && _datEntL34.getEntityData().get(DeathVultureEntity.DATA_attack)) == false) {
 				if (Math.random() < 0.008) {
-					entity.getPersistentData().putBoolean("deep_void:vultureAttack", true);
-					entity.getPersistentData().putDouble("deep_void:vultureCooldown", 55);
+					if (entity instanceof DeathVultureEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(DeathVultureEntity.DATA_attack, true);
+					if (entity instanceof DeathVultureEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(DeathVultureEntity.DATA_dash, 55);
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(30 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof DeathVultureEntity) {
-								entityiterator.getPersistentData().putBoolean("deep_void:vultureAttack", true);
+								if (entityiterator instanceof DeathVultureEntity _datEntSetL)
+									_datEntSetL.getEntityData().set(DeathVultureEntity.DATA_attack, true);
 								if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 									if (entityiterator instanceof Mob _entity && (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _ent)
 										_entity.setTarget(_ent);
@@ -115,17 +120,20 @@ public class DeathVultureTickUpdateProcedure {
 						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 					}
 				}.compareDistOf(x, y, z)).findFirst().orElse(null))))) {
-					if (entity.getPersistentData().getBoolean("deep_void:vultureAttack") == false) {
-						entity.getPersistentData().putBoolean("deep_void:vultureAttack", true);
+					if ((entity instanceof DeathVultureEntity _datEntL52 && _datEntL52.getEntityData().get(DeathVultureEntity.DATA_attack)) == false) {
+						if (entity instanceof DeathVultureEntity _datEntSetL)
+							_datEntSetL.getEntityData().set(DeathVultureEntity.DATA_attack, true);
 						if (entity instanceof LivingEntity _entity)
 							_entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
-						entity.getPersistentData().putDouble("deep_void:vultureCooldown", 55);
+						if (entity instanceof DeathVultureEntity _datEntSetI)
+							_datEntSetI.getEntityData().set(DeathVultureEntity.DATA_dash, 55);
 						{
 							final Vec3 _center = new Vec3(x, y, z);
 							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(25 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 							for (Entity entityiterator : _entfound) {
 								if (entityiterator instanceof DeathVultureEntity) {
-									entityiterator.getPersistentData().putBoolean("deep_void:vultureAttack", true);
+									if (entityiterator instanceof DeathVultureEntity _datEntSetL)
+										_datEntSetL.getEntityData().set(DeathVultureEntity.DATA_attack, true);
 								}
 							}
 						}

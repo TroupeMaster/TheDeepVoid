@@ -2,6 +2,7 @@
 package net.mcreator.thedeepvoid.block;
 
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
@@ -18,7 +19,7 @@ import net.mcreator.thedeepvoid.procedures.UmbriumOreAdditionalHarvestConditionP
 
 public class UmbriumOreBlock extends Block {
 	public UmbriumOreBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE).strength(15f, 6f).requiresCorrectToolForDrops().pushReaction(PushReaction.BLOCK));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.DEEPSLATE).sound(SoundType.DEEPSLATE).strength(15f, 6f).requiresCorrectToolForDrops().pushReaction(PushReaction.BLOCK));
 	}
 
 	@Override

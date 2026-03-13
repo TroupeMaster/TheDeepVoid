@@ -16,6 +16,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.PusBallProjectileEntity;
+import net.mcreator.thedeepvoid.entity.GoreExpectoratorEntity;
 import net.mcreator.thedeepvoid.entity.BloodSpitEntity;
 
 public class GoreExpectoratorOnEntityTickUpdateProcedure {
@@ -23,8 +24,9 @@ public class GoreExpectoratorOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
-			if (entity.getPersistentData().getDouble("deep_void:cooldown") >= 10) {
-				entity.getPersistentData().putDouble("deep_void:cooldown", 0);
+			if ((entity instanceof GoreExpectoratorEntity _datEntI ? _datEntI.getEntityData().get(GoreExpectoratorEntity.DATA_shoot) : 0) >= 10) {
+				if (entity instanceof GoreExpectoratorEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(GoreExpectoratorEntity.DATA_shoot, 0);
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:flesh_block_step")), SoundSource.HOSTILE, 1,
@@ -75,7 +77,8 @@ public class GoreExpectoratorOnEntityTickUpdateProcedure {
 					}
 				}
 			} else {
-				entity.getPersistentData().putDouble("deep_void:cooldown", (entity.getPersistentData().getDouble("deep_void:cooldown") + 1));
+				if (entity instanceof GoreExpectoratorEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(GoreExpectoratorEntity.DATA_shoot, (int) ((entity instanceof GoreExpectoratorEntity _datEntI ? _datEntI.getEntityData().get(GoreExpectoratorEntity.DATA_shoot) : 0) + 1));
 			}
 		}
 	}

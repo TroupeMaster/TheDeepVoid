@@ -110,7 +110,7 @@ public class FlyWingsItem extends ArmorItem implements GeoItem {
 	@Override
 	public void onArmorTick(ItemStack itemstack, Level world, Player entity) {
 		if (itemstack.getItem() instanceof FlyWingsItem armor && armor.getType() == ArmorItem.Type.CHESTPLATE)
-			FlyWingsChestplateTouchGroundProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity);
+			FlyWingsChestplateTouchGroundProcedure.execute(entity);
 	}
 
 	private PlayState predicate(AnimationState event) {

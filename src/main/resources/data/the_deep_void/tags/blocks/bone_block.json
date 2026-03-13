@@ -23,6 +23,12 @@
     "the_deep_void:fleshy_bone_block",
     "the_deep_void:fleshy_rotten_bone_block",
     "the_deep_void:fleshy_old_bone_block",
-    "the_deep_void:old_bone_block"
+    "the_deep_void:old_bone_block",
+    "the_deep_void:block_of_bone_marrow",
+    "the_deep_void:block_of_rotten_bone_marrow",
+    "the_deep_void:block_of_marrow",
+    "the_deep_void:block_of_shattered_bone",
+    "the_deep_void:block_of_old_shattered_bone",
+    "the_deep_void:block_of_rotten_shattered_bone"
   ]
 }

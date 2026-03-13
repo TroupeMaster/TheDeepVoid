@@ -9,6 +9,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.network.chat.Component;
+import net.minecraft.client.gui.screens.Screen;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
@@ -32,8 +33,12 @@ public class MisanthropyDescriptionProcedure {
 		if (tooltip == null)
 			return;
 		if (itemstack.getItem() == TheDeepVoidModItems.MISANTHROPY.get()) {
-			tooltip.add(Component.literal((Component.translatable("item.the_deep_void.misanthropy.descr").getString())));
-			tooltip.add(Component.literal((Component.translatable("item.the_deep_void.misanthropy.capacity").getString())));
+			if (Screen.hasShiftDown()) {
+				tooltip.add(Component.literal((Component.translatable("item.the_deep_void.misanthropy.descr").getString())));
+				tooltip.add(Component.literal((Component.translatable("item.the_deep_void.misanthropy.capacity").getString())));
+			} else {
+				tooltip.add(Component.literal((Component.translatable("item.the_deep_void.weapon_tooltip.show").getString())));
+			}
 		}
 	}
 }

@@ -18,6 +18,7 @@ import net.minecraft.core.registries.Registries;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.entity.VoidDwellerEntity;
+import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import javax.annotation.Nullable;
 
@@ -60,7 +61,7 @@ public class PlayerLooksAtVoidDwellerProcedure {
 			}
 		}
 		if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).StalkerCount > 0
-				&& !((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void")))) {
+				&& !((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) && DeepVoidConfigConfiguration.STALKED.get() == false) {
 			{
 				double _setval = 0;
 				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

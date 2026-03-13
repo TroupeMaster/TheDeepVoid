@@ -18,8 +18,9 @@ public class SpawnBoneSpikesOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getPersistentData().getDouble("spawnSpike") <= 0) {
-			entity.getPersistentData().putDouble("spawnSpike", ((double) DeepVoidConfigConfiguration.HIVEWATCHERSPIKEFREQUENCY.get()));
+		if ((entity instanceof SpawnBoneSpikesEntity _datEntI ? _datEntI.getEntityData().get(SpawnBoneSpikesEntity.DATA_spawnSpike) : 0) <= 0) {
+			if (entity instanceof SpawnBoneSpikesEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(SpawnBoneSpikesEntity.DATA_spawnSpike, (int) (double) DeepVoidConfigConfiguration.HIVEWATCHERSPIKEFREQUENCY.get());
 			if (!(!world.getEntitiesOfClass(HiveWatcherEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 2, 2, 2), e -> true).isEmpty())) {
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = TheDeepVoidModEntities.BONE_BLOCKADE.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
@@ -29,7 +30,8 @@ public class SpawnBoneSpikesOnEntityTickUpdateProcedure {
 				}
 			}
 		} else {
-			entity.getPersistentData().putDouble("spawnSpike", (entity.getPersistentData().getDouble("spawnSpike") - 1));
+			if (entity instanceof SpawnBoneSpikesEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(SpawnBoneSpikesEntity.DATA_spawnSpike, (int) ((entity instanceof SpawnBoneSpikesEntity _datEntI ? _datEntI.getEntityData().get(SpawnBoneSpikesEntity.DATA_spawnSpike) : 0) - 1));
 		}
 		TheDeepVoidMod.queueServerWork((int) (double) DeepVoidConfigConfiguration.HIVEWATCHERSPIKEDURATION.get(), () -> {
 			if (!world.getEntitiesOfClass(SpawnBoneSpikesEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 1, 1, 1), e -> true).isEmpty()) {

@@ -20,7 +20,7 @@ import net.minecraft.core.BlockPos;
 
 public class TwistingSpineBlock extends SugarCaneBlock {
 	public TwistingSpineBlock() {
-		super(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().sound(SoundType.BONE_BLOCK).strength(0.8f, 1f).noCollission().offsetType(BlockBehaviour.OffsetType.NONE).pushReaction(PushReaction.DESTROY));
+		super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_LIGHT_GRAY).randomTicks().sound(SoundType.BONE_BLOCK).strength(0.8f, 1f).noCollission().offsetType(BlockBehaviour.OffsetType.NONE).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

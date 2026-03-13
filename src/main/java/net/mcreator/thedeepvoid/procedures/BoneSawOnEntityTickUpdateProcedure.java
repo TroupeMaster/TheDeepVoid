@@ -58,19 +58,16 @@ public class BoneSawOnEntityTickUpdateProcedure {
 		}
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles(ParticleTypes.LAVA, x, y, z, 2, 0.3, 1, 0.3, 0.1);
-		if (entity.getPersistentData().getBoolean("positiveX")) {
+		if ((entity instanceof BoneSawEntity _datEntL12 && _datEntL12.getEntityData().get(BoneSawEntity.DATA_positiveX)) == true) {
 			entity.setDeltaMovement(new Vec3(1, 0, 0));
 			entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3(1, y, z));
-		}
-		if (entity.getPersistentData().getBoolean("negativeX")) {
+		} else if ((entity instanceof BoneSawEntity _datEntL15 && _datEntL15.getEntityData().get(BoneSawEntity.DATA_negativeX)) == true) {
 			entity.setDeltaMovement(new Vec3((-1), 0, 0));
 			entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((-1), y, z));
-		}
-		if (entity.getPersistentData().getBoolean("positiveZ")) {
+		} else if ((entity instanceof BoneSawEntity _datEntL18 && _datEntL18.getEntityData().get(BoneSawEntity.DATA_positiveZ)) == true) {
 			entity.setDeltaMovement(new Vec3(0, 0, 1));
 			entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3(x, y, 1));
-		}
-		if (entity.getPersistentData().getBoolean("negativeZ")) {
+		} else if ((entity instanceof BoneSawEntity _datEntL21 && _datEntL21.getEntityData().get(BoneSawEntity.DATA_negativeZ)) == true) {
 			entity.setDeltaMovement(new Vec3(0, 0, (-1)));
 			entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3(x, y, (-1)));
 		}

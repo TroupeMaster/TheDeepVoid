@@ -22,7 +22,7 @@ public class ForsakenOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getPersistentData().getBoolean("deep_void:hide") == true) {
+		if ((entity instanceof ForsakenEntity _datEntL0 && _datEntL0.getEntityData().get(ForsakenEntity.DATA_hide)) == true) {
 			if (entity instanceof ForsakenEntity) {
 				((ForsakenEntity) entity).setAnimation("animation.forsaken_hide");
 			}
@@ -32,8 +32,9 @@ public class ForsakenOnEntityTickUpdateProcedure {
 				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 1, false, false));
 		}
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
-			if (entity.getPersistentData().getBoolean("deep_void:hide") == true) {
-				entity.getPersistentData().putBoolean("deep_void:hide", false);
+			if ((entity instanceof ForsakenEntity _datEntL6 && _datEntL6.getEntityData().get(ForsakenEntity.DATA_hide)) == true) {
+				if (entity instanceof ForsakenEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(ForsakenEntity.DATA_hide, false);
 				if (entity instanceof ForsakenEntity) {
 					((ForsakenEntity) entity).setAnimation("animation.forsaken_dig");
 				}

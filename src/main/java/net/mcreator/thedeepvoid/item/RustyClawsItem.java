@@ -44,7 +44,7 @@ public class RustyClawsItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(Items.IRON_INGOT));
 			}
-		}, 3, 21f, new Item.Properties().fireResistant());
+		}, 3, -2f, new Item.Properties().fireResistant());
 	}
 
 	@Override

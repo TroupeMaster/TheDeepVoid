@@ -10,8 +10,10 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.client.renderer.ItemInHandRenderer;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.thedeepvoid.item.PerilItem;
 import net.mcreator.thedeepvoid.item.MisanthropyItem;
 import net.mcreator.thedeepvoid.item.HeresyItem;
+import net.mcreator.thedeepvoid.item.EldritchMawItem;
 import net.mcreator.thedeepvoid.item.ApostasyItem;
 
 @Mod.EventBusSubscriber
@@ -87,6 +89,42 @@ public class ItemAnimationFactory {
 					event.player.getOffhandItem().getOrCreateTag().putString("geckoAnim", "");
 					if (event.player.level().isClientSide()) {
 						((MisanthropyItem) event.player.getOffhandItem().getItem()).animationprocedure = animation;
+					}
+				}
+			}
+			if (mainhandItem.getItem() instanceof EldritchMawItem animatable) {
+				animation = mainhandItem.getOrCreateTag().getString("geckoAnim");
+				if (!animation.isEmpty()) {
+					event.player.getMainHandItem().getOrCreateTag().putString("geckoAnim", "");
+					if (event.player.level().isClientSide()) {
+						((EldritchMawItem) event.player.getMainHandItem().getItem()).animationprocedure = animation;
+					}
+				}
+			}
+			if (offhandItem.getItem() instanceof EldritchMawItem animatable) {
+				animation = offhandItem.getOrCreateTag().getString("geckoAnim");
+				if (!animation.isEmpty()) {
+					event.player.getOffhandItem().getOrCreateTag().putString("geckoAnim", "");
+					if (event.player.level().isClientSide()) {
+						((EldritchMawItem) event.player.getOffhandItem().getItem()).animationprocedure = animation;
+					}
+				}
+			}
+			if (mainhandItem.getItem() instanceof PerilItem animatable) {
+				animation = mainhandItem.getOrCreateTag().getString("geckoAnim");
+				if (!animation.isEmpty()) {
+					event.player.getMainHandItem().getOrCreateTag().putString("geckoAnim", "");
+					if (event.player.level().isClientSide()) {
+						((PerilItem) event.player.getMainHandItem().getItem()).animationprocedure = animation;
+					}
+				}
+			}
+			if (offhandItem.getItem() instanceof PerilItem animatable) {
+				animation = offhandItem.getOrCreateTag().getString("geckoAnim");
+				if (!animation.isEmpty()) {
+					event.player.getOffhandItem().getOrCreateTag().putString("geckoAnim", "");
+					if (event.player.level().isClientSide()) {
+						((PerilItem) event.player.getOffhandItem().getItem()).animationprocedure = animation;
 					}
 				}
 			}

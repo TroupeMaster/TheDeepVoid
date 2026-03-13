@@ -20,6 +20,7 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
+import net.mcreator.thedeepvoid.entity.BoneCageEntity;
 
 import java.util.Comparator;
 
@@ -86,8 +87,9 @@ public class BoneCageOnEntityTickUpdateProcedure {
 			}
 		}
 		if (!world.getEntitiesOfClass(Animal.class, AABB.ofSize(new Vec3(x, y, z), 25, 25, 25), e -> true).isEmpty()) {
-			if (entity.getPersistentData().getDouble("lure") <= 0) {
-				entity.getPersistentData().putDouble("lure", 400);
+			if ((entity instanceof BoneCageEntity _datEntI ? _datEntI.getEntityData().get(BoneCageEntity.DATA_lure) : 0) <= 0) {
+				if (entity instanceof BoneCageEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(BoneCageEntity.DATA_lure, 400);
 				if (((Entity) world.getEntitiesOfClass(Animal.class, AABB.ofSize(new Vec3(x, y, z), 25, 25, 25), e -> true).stream().sorted(new Object() {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
@@ -95,12 +97,14 @@ public class BoneCageOnEntityTickUpdateProcedure {
 				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof Mob _entity)
 					_entity.getNavigation().moveTo(x, y, z, 1);
 			} else {
-				entity.getPersistentData().putDouble("lure", (entity.getPersistentData().getDouble("lure") - 1));
+				if (entity instanceof BoneCageEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(BoneCageEntity.DATA_lure, (int) ((entity instanceof BoneCageEntity _datEntI ? _datEntI.getEntityData().get(BoneCageEntity.DATA_lure) : 0) - 1));
 			}
 		}
 		if (!world.getEntitiesOfClass(Villager.class, AABB.ofSize(new Vec3(x, y, z), 25, 25, 25), e -> true).isEmpty()) {
-			if (entity.getPersistentData().getDouble("lure") <= 0) {
-				entity.getPersistentData().putDouble("lure", 400);
+			if ((entity instanceof BoneCageEntity _datEntI ? _datEntI.getEntityData().get(BoneCageEntity.DATA_lure) : 0) <= 0) {
+				if (entity instanceof BoneCageEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(BoneCageEntity.DATA_lure, 400);
 				if (((Entity) world.getEntitiesOfClass(Villager.class, AABB.ofSize(new Vec3(x, y, z), 25, 25, 25), e -> true).stream().sorted(new Object() {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
@@ -108,18 +112,20 @@ public class BoneCageOnEntityTickUpdateProcedure {
 				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof Mob _entity)
 					_entity.getNavigation().moveTo(x, y, z, 1);
 			} else {
-				entity.getPersistentData().putDouble("lure", (entity.getPersistentData().getDouble("lure") - 1));
+				if (entity instanceof BoneCageEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(BoneCageEntity.DATA_lure, (int) ((entity instanceof BoneCageEntity _datEntI ? _datEntI.getEntityData().get(BoneCageEntity.DATA_lure) : 0) - 1));
 			}
 		}
 		if (!world.getEntitiesOfClass(MaskedHunterEntity.class, AABB.ofSize(new Vec3(x, y, z), 5, 5, 5), e -> true).isEmpty() && (!world.getEntitiesOfClass(Animal.class, AABB.ofSize(new Vec3(x, y, z), 5, 5, 5), e -> true).isEmpty()
 				|| !world.getEntitiesOfClass(Villager.class, AABB.ofSize(new Vec3(x, y, z), 5, 5, 5), e -> true).isEmpty() || !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 5, 5, 5), e -> true).isEmpty())) {
 			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 999);
 		}
-		if (entity.getPersistentData().getDouble("despawn") >= 3400) {
+		if ((entity instanceof BoneCageEntity _datEntI ? _datEntI.getEntityData().get(BoneCageEntity.DATA_despawn) : 0) >= 3400) {
 			if (!entity.level().isClientSide())
 				entity.discard();
 		} else {
-			entity.getPersistentData().putDouble("despawn", (entity.getPersistentData().getDouble("despawn") + 1));
+			if (entity instanceof BoneCageEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(BoneCageEntity.DATA_despawn, (int) ((entity instanceof BoneCageEntity _datEntI ? _datEntI.getEntityData().get(BoneCageEntity.DATA_despawn) : 0) + 1));
 		}
 	}
 }

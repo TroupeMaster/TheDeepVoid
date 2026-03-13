@@ -53,7 +53,8 @@ public class ApostleOfCatastropheEntityIsHurtProcedure {
 				}
 			}
 		}
-		if (entity instanceof SawThrowerEntity && entity.getPersistentData().getBoolean("spinning") == true && !(immediatesourceentity == sourceentity) && !(sourceentity == null) && !(sourceentity == entity)) {
+		if (entity instanceof SawThrowerEntity && (entity instanceof SawThrowerEntity _datEntL14 && _datEntL14.getEntityData().get(SawThrowerEntity.DATA_spinning)) == true && !(immediatesourceentity == sourceentity) && !(sourceentity == null)
+				&& !(sourceentity == entity)) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
 			} else if (event != null && event.hasResult()) {
@@ -68,7 +69,8 @@ public class ApostleOfCatastropheEntityIsHurtProcedure {
 				}
 			}
 		}
-		if (entity instanceof HiveWatcherEntity && entity.getPersistentData().getBoolean("spinning") == true && !(immediatesourceentity == sourceentity) && !(sourceentity == null) && !(sourceentity == entity)) {
+		if (entity instanceof HiveWatcherEntity && (entity instanceof HiveWatcherEntity _datEntL27 && _datEntL27.getEntityData().get(HiveWatcherEntity.DATA_spinning)) == true && !(immediatesourceentity == sourceentity) && !(sourceentity == null)
+				&& !(sourceentity == entity)) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
 			} else if (event != null && event.hasResult()) {

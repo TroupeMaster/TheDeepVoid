@@ -9,6 +9,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.mcreator.thedeepvoid.client.model.Modelxray;
 import net.mcreator.thedeepvoid.client.model.Modelweaver;
 import net.mcreator.thedeepvoid.client.model.Modelwanderer;
 import net.mcreator.thedeepvoid.client.model.Modelvoid_guardian;
@@ -45,6 +46,7 @@ import net.mcreator.thedeepvoid.client.model.Modelnightmare_remodel;
 import net.mcreator.thedeepvoid.client.model.Modelmourner_remodel;
 import net.mcreator.thedeepvoid.client.model.Modelmourner;
 import net.mcreator.thedeepvoid.client.model.Modelmother_bone_crawler;
+import net.mcreator.thedeepvoid.client.model.ModelmarrowRoots;
 import net.mcreator.thedeepvoid.client.model.Modellurker;
 import net.mcreator.thedeepvoid.client.model.Modellighthead;
 import net.mcreator.thedeepvoid.client.model.Modellicker;
@@ -114,6 +116,7 @@ public class TheDeepVoidModModels {
 		event.registerLayerDefinition(Modelbone_crawler_remodeled.LAYER_LOCATION, Modelbone_crawler_remodeled::createBodyLayer);
 		event.registerLayerDefinition(Modeloverseer_inactive.LAYER_LOCATION, Modeloverseer_inactive::createBodyLayer);
 		event.registerLayerDefinition(Modelfool_eater_new.LAYER_LOCATION, Modelfool_eater_new::createBodyLayer);
+		event.registerLayerDefinition(Modelxray.LAYER_LOCATION, Modelxray::createBodyLayer);
 		event.registerLayerDefinition(Modelroamer.LAYER_LOCATION, Modelroamer::createBodyLayer);
 		event.registerLayerDefinition(Modelcharred_walker.LAYER_LOCATION, Modelcharred_walker::createBodyLayer);
 		event.registerLayerDefinition(Modelsulfur_tnt.LAYER_LOCATION, Modelsulfur_tnt::createBodyLayer);
@@ -153,6 +156,7 @@ public class TheDeepVoidModModels {
 		event.registerLayerDefinition(Modeloverseer_inactive_big.LAYER_LOCATION, Modeloverseer_inactive_big::createBodyLayer);
 		event.registerLayerDefinition(Modelhunter_mask.LAYER_LOCATION, Modelhunter_mask::createBodyLayer);
 		event.registerLayerDefinition(Modelflesh_cube.LAYER_LOCATION, Modelflesh_cube::createBodyLayer);
+		event.registerLayerDefinition(ModelmarrowRoots.LAYER_LOCATION, ModelmarrowRoots::createBodyLayer);
 		event.registerLayerDefinition(Modellicker.LAYER_LOCATION, Modellicker::createBodyLayer);
 	}
 }

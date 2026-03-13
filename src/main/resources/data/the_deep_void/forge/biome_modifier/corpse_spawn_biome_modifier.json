@@ -9,7 +9,8 @@
     "the_deep_void:watching_undergrowth",
     "the_deep_void:filled_graveyard",
     "the_deep_void:gathering_grounds",
-    "the_deep_void:misted_remnants"
+    "the_deep_void:misted_remnants",
+    "the_deep_void:deep_marrows"
   ],
   "features": "the_deep_void:corpse_spawn",
   "step": "vegetal_decoration"

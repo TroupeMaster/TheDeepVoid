@@ -24,8 +24,12 @@ import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.procedures.AmalgamOnEntityTickUpdateProcedure;
@@ -33,6 +37,9 @@ import net.mcreator.thedeepvoid.procedures.AmalgamNaturalEntitySpawningCondition
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 public class AmalgamEntity extends Monster {
+	public static final EntityDataAccessor<Integer> DATA_roar = SynchedEntityData.defineId(AmalgamEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_step = SynchedEntityData.defineId(AmalgamEntity.class, EntityDataSerializers.INT);
+
 	public AmalgamEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(TheDeepVoidModEntities.AMALGAM.get(), world);
 	}
@@ -47,6 +54,13 @@ public class AmalgamEntity extends Monster {
 	@Override
 	public Packet<ClientGamePacketListener> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_roar, 0);
+		this.entityData.define(DATA_step, 0);
 	}
 
 	@Override
@@ -92,6 +106,22 @@ public class AmalgamEntity extends Monster {
 		if (damagesource.is(DamageTypes.FALL))
 			return false;
 		return super.hurt(damagesource, amount);
+	}
+
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putInt("Dataroar", this.entityData.get(DATA_roar));
+		compound.putInt("Datastep", this.entityData.get(DATA_step));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("Dataroar"))
+			this.entityData.set(DATA_roar, compound.getInt("Dataroar"));
+		if (compound.contains("Datastep"))
+			this.entityData.set(DATA_step, compound.getInt("Datastep"));
 	}
 
 	@Override

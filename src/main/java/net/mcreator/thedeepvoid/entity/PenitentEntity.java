@@ -54,6 +54,9 @@ public class PenitentEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(PenitentEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(PenitentEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(PenitentEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_attackChance = SynchedEntityData.defineId(PenitentEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_pray = SynchedEntityData.defineId(PenitentEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_praying = SynchedEntityData.defineId(PenitentEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -77,6 +80,9 @@ public class PenitentEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "penitent");
+		this.entityData.define(DATA_attackChance, 0);
+		this.entityData.define(DATA_pray, 0);
+		this.entityData.define(DATA_praying, false);
 	}
 
 	public void setTexture(String texture) {
@@ -168,6 +174,9 @@ public class PenitentEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DataattackChance", this.entityData.get(DATA_attackChance));
+		compound.putInt("Datapray", this.entityData.get(DATA_pray));
+		compound.putBoolean("Datapraying", this.entityData.get(DATA_praying));
 	}
 
 	@Override
@@ -175,6 +184,12 @@ public class PenitentEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DataattackChance"))
+			this.entityData.set(DATA_attackChance, compound.getInt("DataattackChance"));
+		if (compound.contains("Datapray"))
+			this.entityData.set(DATA_pray, compound.getInt("Datapray"));
+		if (compound.contains("Datapraying"))
+			this.entityData.set(DATA_praying, compound.getBoolean("Datapraying"));
 	}
 
 	@Override

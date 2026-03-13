@@ -4,6 +4,7 @@ package net.mcreator.thedeepvoid.block;
 import net.minecraftforge.common.IPlantable;
 
 import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -26,7 +27,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class RottenMossActiveBlock extends Block implements BonemealableBlock {
 	public RottenMossActiveBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.MOSS).strength(0.2f, 0.5f).randomTicks());
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_LIGHT_GRAY).sound(SoundType.MOSS).strength(0.2f, 0.5f).randomTicks());
 	}
 
 	@Override

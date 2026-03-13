@@ -10,6 +10,7 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
+import net.mcreator.thedeepvoid.entity.IdlingApostleEntity;
 
 import java.util.List;
 import java.util.Comparator;
@@ -32,164 +33,154 @@ public class IdlingApostleOnEntityTickUpdateProcedure {
 			}
 		}
 		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {
-			if (entity.getPersistentData().getBoolean("deep_void:talking") == false) {
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") >= 940) {
-					entity.getPersistentData().putDouble("deep_void:psalmCount", 0);
+			if ((entity instanceof IdlingApostleEntity _datEntL6 && _datEntL6.getEntityData().get(IdlingApostleEntity.DATA_talking)) == false) {
+				if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) >= 940) {
+					if (entity instanceof IdlingApostleEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(IdlingApostleEntity.DATA_psalmCount, 0);
 				} else {
-					entity.getPersistentData().putDouble("deep_void:psalmCount", (entity.getPersistentData().getDouble("deep_void:psalmCount") + 1));
+					if (entity instanceof IdlingApostleEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(IdlingApostleEntity.DATA_psalmCount, (int) ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) + 1));
 				}
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") == 20) {
+				if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) == 20) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof Player) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cThe people of God,"), false);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.apostle.psalm1").getString())), false);
 							}
 						}
 					}
-				}
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") == 70) {
+				} else if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) == 70) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof Player) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cIn all thy benevolence and greatness,"), false);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.apostle.psalm2").getString())), false);
 							}
 						}
 					}
-				}
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") == 120) {
+				} else if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) == 120) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof Player) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cGuided to the right path."), false);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.apostle.psalm3").getString())), false);
 							}
 						}
 					}
-				}
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") == 170) {
+				} else if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) == 170) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof Player) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cThe Void embodies our very soul,"), false);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.apostle.psalm4").getString())), false);
 							}
 						}
 					}
-				}
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") == 220) {
+				} else if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) == 220) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof Player) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cEmbraces us with warmth and affection."), false);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.apostle.psalm5").getString())), false);
 							}
 						}
 					}
-				}
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") == 270) {
+				} else if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) == 270) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof Player) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cShows us the true beauty of thy splendor."), false);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.apostle.psalm6").getString())), false);
 							}
 						}
 					}
-				}
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") == 320) {
+				} else if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) == 320) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof Player) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cThe Void,"), false);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.apostle.psalm7").getString())), false);
 							}
 						}
 					}
-				}
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") == 370) {
+				} else if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) == 370) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof Player) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cRepresentation of God's kindness,"), false);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.apostle.psalm8").getString())), false);
 							}
 						}
 					}
-				}
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") == 420) {
+				} else if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) == 420) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof Player) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cMay all know of thy sympathy,"), false);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.apostle.psalm9").getString())), false);
 							}
 						}
 					}
-				}
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") == 470) {
+				} else if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) == 470) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof Player) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cThine understanding,"), false);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.apostle.psalm10").getString())), false);
 							}
 						}
 					}
-				}
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") == 520) {
+				} else if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) == 520) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof Player) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cThy mercifulness."), false);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.apostle.psalm11").getString())), false);
 							}
 						}
 					}
-				}
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") == 570) {
+				} else if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) == 570) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof Player) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cWe unite under thy flag,"), false);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.apostle.psalm12").getString())), false);
 							}
 						}
 					}
-				}
-				if (entity.getPersistentData().getDouble("deep_void:psalmCount") == 620) {
+				} else if ((entity instanceof IdlingApostleEntity _datEntI ? _datEntI.getEntityData().get(IdlingApostleEntity.DATA_psalmCount) : 0) == 620) {
 					{
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof Player) {
 								if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-									_player.displayClientMessage(Component.literal("\u00A7cGod."), false);
+									_player.displayClientMessage(Component.literal((Component.translatable("text.the_deep_void.apostle.psalm13").getString())), false);
 							}
 						}
 					}

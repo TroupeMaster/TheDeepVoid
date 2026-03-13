@@ -52,6 +52,7 @@ public class VoidbornTentaclesEntity extends PathfinderMob implements GeoEntity 
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(VoidbornTentaclesEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(VoidbornTentaclesEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(VoidbornTentaclesEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_count = SynchedEntityData.defineId(VoidbornTentaclesEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -75,6 +76,7 @@ public class VoidbornTentaclesEntity extends PathfinderMob implements GeoEntity 
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "voidborntentacles");
+		this.entityData.define(DATA_count, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -144,6 +146,7 @@ public class VoidbornTentaclesEntity extends PathfinderMob implements GeoEntity 
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("Datacount", this.entityData.get(DATA_count));
 	}
 
 	@Override
@@ -151,6 +154,8 @@ public class VoidbornTentaclesEntity extends PathfinderMob implements GeoEntity 
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datacount"))
+			this.entityData.set(DATA_count, compound.getInt("Datacount"));
 	}
 
 	@Override

@@ -131,7 +131,7 @@ public class FleshCubeEntity extends Monster implements GeoEntity {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		FleshCubeEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
+		FleshCubeEntityDiesProcedure.execute(this.level(), this);
 	}
 
 	@Override

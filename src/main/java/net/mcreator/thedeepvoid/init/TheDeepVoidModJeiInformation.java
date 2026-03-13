@@ -37,5 +37,8 @@ public class TheDeepVoidModJeiInformation implements IModPlugin {
 						new ItemStack(TheDeepVoidModItems.APOSTLE_OF_CATASTROPHE_TREASURE_BAG.get()), new ItemStack(TheDeepVoidModItems.WEAVER_OF_SOULS_TREASURE_BAG.get())),
 				VanillaTypes.ITEM_STACK, Component.translatable("jei.the_deep_void.treasure_bag_info"));
 		registration.addIngredientInfo(List.of(new ItemStack(TheDeepVoidModItems.FLY_WING_PIECE.get())), VanillaTypes.ITEM_STACK, Component.translatable("jei.the_deep_void.fly_wing_piece_info"));
+		registration.addIngredientInfo(List.of(new ItemStack(TheDeepVoidModItems.BLOOD_BOW.get())), VanillaTypes.ITEM_STACK, Component.translatable("jei.the_deep_void.blood_bow_info"));
+		registration.addIngredientInfo(List.of(new ItemStack(TheDeepVoidModItems.ROTTEN_TONGUE.get())), VanillaTypes.ITEM_STACK, Component.translatable("jei.the_deep_void.rotten_tongue_info"));
+		registration.addIngredientInfo(List.of(new ItemStack(TheDeepVoidModItems.FLESH_PARASITE.get())), VanillaTypes.ITEM_STACK, Component.translatable("jei.the_deep_void.flesh_parasite_info"));
 	}
 }

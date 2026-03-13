@@ -104,7 +104,8 @@ public class SoulOrbPillarOnBlockRightClickedProcedure {
 								List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(80 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 								for (Entity entityiterator : _entfound) {
 									if (entityiterator instanceof WeaverOfSoulsEntity) {
-										entityiterator.getPersistentData().putBoolean("deep_void:stunned", true);
+										if (entityiterator instanceof WeaverOfSoulsEntity _datEntSetL)
+											_datEntSetL.getEntityData().set(WeaverOfSoulsEntity.DATA_stunned, true);
 										if (world instanceof ServerLevel _level)
 											_level.sendParticles(ParticleTypes.SCULK_SOUL, (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 25, (Mth.nextDouble(RandomSource.create(), -0.1, 0.1)), 0.4,
 													(Mth.nextDouble(RandomSource.create(), -0.1, 0.1)), 0.1);

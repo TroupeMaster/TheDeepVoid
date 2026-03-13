@@ -23,7 +23,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 public class PeepingRootsBlock extends FlowerBlock {
 	public PeepingRootsBlock() {
 		super(() -> MobEffects.MOVEMENT_SPEED, 100,
-				BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().sound(SoundType.BASALT).strength(1.5f, 1f).noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+				BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).randomTicks().sound(SoundType.BASALT).strength(1.5f, 1f).noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

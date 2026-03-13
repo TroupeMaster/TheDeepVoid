@@ -52,6 +52,13 @@ public class JudgementItem extends SwordItem {
 	}
 
 	@Override
+	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
+		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
+		JudgementEntitySwingsItemProcedure.execute(entity.level(), entity, sourceentity);
+		return retval;
+	}
+
+	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
 		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
 		JudgementRightclickedProcedure.execute(world, entity, ar.getObject());
@@ -63,12 +70,5 @@ public class JudgementItem extends SwordItem {
 		super.appendHoverText(itemstack, level, list, flag);
 		Entity entity = itemstack.getEntityRepresentation();
 		list.add(Component.literal(JudgementSpecialInformationProcedure.execute()));
-	}
-
-	@Override
-	public boolean onEntitySwing(ItemStack itemstack, LivingEntity entity) {
-		boolean retval = super.onEntitySwing(itemstack, entity);
-		JudgementEntitySwingsItemProcedure.execute(entity.level(), entity);
-		return retval;
 	}
 }

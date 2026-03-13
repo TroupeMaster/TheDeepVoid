@@ -1,0 +1,68 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.soulSeeker_idle": {
+			"loop": true,
+			"animation_length": 0.0417,
+			"bones": {
+				"soul_seeker_voided": {
+					"rotation": {
+						"vector": [0, 0, 0]
+					},
+					"position": {
+						"vector": [0, 0, 0]
+					}
+				}
+			}
+		},
+		"animation.soulSeeker_slash": {
+			"animation_length": 2,
+			"bones": {
+				"soul_seeker_voided": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, 0, -90]
+						},
+						"0.5": {
+							"vector": [0, 90, -90],
+							"easing": "easeInExpo"
+						},
+						"1.0": {
+							"vector": [0, 90, -90],
+							"easing": "easeInExpo"
+						},
+						"1.125": {
+							"vector": [0, -135, -90],
+							"easing": "easeInExpo"
+						},
+						"2.0": {
+							"vector": [0, 0, 0],
+							"easing": "easeInExpo"
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.25": {
+							"vector": [0, 0.25, 0]
+						},
+						"0.5": {
+							"vector": [0, 0.25, 0]
+						},
+						"1.0": {
+							"vector": [0, 0.25, 0]
+						},
+						"2.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		}
+	},
+	"geckolib_format_version": 2
+}

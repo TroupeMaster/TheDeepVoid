@@ -46,6 +46,10 @@ public class BoneSawEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(BoneSawEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(BoneSawEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(BoneSawEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Boolean> DATA_positiveX = SynchedEntityData.defineId(BoneSawEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_negativeX = SynchedEntityData.defineId(BoneSawEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_positiveZ = SynchedEntityData.defineId(BoneSawEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_negativeZ = SynchedEntityData.defineId(BoneSawEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -69,6 +73,10 @@ public class BoneSawEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "bonesaw");
+		this.entityData.define(DATA_positiveX, false);
+		this.entityData.define(DATA_negativeX, false);
+		this.entityData.define(DATA_positiveZ, false);
+		this.entityData.define(DATA_negativeZ, false);
 	}
 
 	public void setTexture(String texture) {
@@ -142,6 +150,10 @@ public class BoneSawEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putBoolean("DatapositiveX", this.entityData.get(DATA_positiveX));
+		compound.putBoolean("DatanegativeX", this.entityData.get(DATA_negativeX));
+		compound.putBoolean("DatapositiveZ", this.entityData.get(DATA_positiveZ));
+		compound.putBoolean("DatanegativeZ", this.entityData.get(DATA_negativeZ));
 	}
 
 	@Override
@@ -149,6 +161,14 @@ public class BoneSawEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DatapositiveX"))
+			this.entityData.set(DATA_positiveX, compound.getBoolean("DatapositiveX"));
+		if (compound.contains("DatanegativeX"))
+			this.entityData.set(DATA_negativeX, compound.getBoolean("DatanegativeX"));
+		if (compound.contains("DatapositiveZ"))
+			this.entityData.set(DATA_positiveZ, compound.getBoolean("DatapositiveZ"));
+		if (compound.contains("DatanegativeZ"))
+			this.entityData.set(DATA_negativeZ, compound.getBoolean("DatanegativeZ"));
 	}
 
 	@Override

@@ -20,7 +20,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 public class AshenVoidFernBlock extends FlowerBlock {
 	public AshenVoidFernBlock() {
 		super(() -> MobEffects.MOVEMENT_SPEED, 100,
-				BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.TWISTING_VINES).strength(0.5f, 0.5f).noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+				BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).sound(SoundType.TWISTING_VINES).strength(0.5f, 0.5f).noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

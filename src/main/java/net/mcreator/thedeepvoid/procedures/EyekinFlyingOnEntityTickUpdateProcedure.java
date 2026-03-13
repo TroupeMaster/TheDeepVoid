@@ -10,6 +10,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
+import net.mcreator.thedeepvoid.entity.EyekinFlyingEntity;
 import net.mcreator.thedeepvoid.entity.EyekinEntity;
 
 import java.util.List;
@@ -39,13 +40,15 @@ public class EyekinFlyingOnEntityTickUpdateProcedure {
 			if (!entity.level().isClientSide())
 				entity.discard();
 		}
-		if (entity.getPersistentData().getDouble("deep_void:flyingChance") >= 240) {
-			entity.getPersistentData().putDouble("deep_void:flyingChance", 0);
+		if ((entity instanceof EyekinFlyingEntity _datEntI ? _datEntI.getEntityData().get(EyekinFlyingEntity.DATA_flyChance) : 0) >= 240) {
+			if (entity instanceof EyekinFlyingEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(EyekinFlyingEntity.DATA_flyChance, 0);
 			if (Math.random() < 0.1) {
 				entity.setDeltaMovement(new Vec3(0, (-0.4), 0));
 			}
 		} else {
-			entity.getPersistentData().putDouble("deep_void:flyingChance", (entity.getPersistentData().getDouble("deep_void:flyingChance") + 1));
+			if (entity instanceof EyekinFlyingEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(EyekinFlyingEntity.DATA_flyChance, (int) ((entity instanceof EyekinFlyingEntity _datEntI ? _datEntI.getEntityData().get(EyekinFlyingEntity.DATA_flyChance) : 0) + 1));
 		}
 	}
 }

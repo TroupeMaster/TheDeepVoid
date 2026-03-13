@@ -1,6 +1,9 @@
 {
   "type": "forge:add_features",
-  "biomes": "the_deep_void:filled_graveyard",
+  "biomes": [
+    "the_deep_void:filled_graveyard",
+    "the_deep_void:deep_marrows"
+  ],
   "features": "the_deep_void:rotten_bone_pile_generate",
   "step": "local_modifications"
 }

@@ -1,6 +1,7 @@
 
 package net.mcreator.thedeepvoid.block;
 
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,7 +22,7 @@ import net.mcreator.thedeepvoid.procedures.BlockOfBonePileOnBoneMealSuccessProce
 
 public class MistedRemainsBlock extends Block implements BonemealableBlock {
 	public MistedRemainsBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHER_ORE).strength(0.8f, 8f).requiresCorrectToolForDrops().speedFactor(0.7f).jumpFactor(0.9f));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_LIGHT_GRAY).sound(SoundType.NETHER_ORE).strength(0.8f, 8f).requiresCorrectToolForDrops().speedFactor(0.7f).jumpFactor(0.9f));
 	}
 
 	@Override

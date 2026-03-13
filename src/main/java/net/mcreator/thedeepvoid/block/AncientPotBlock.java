@@ -50,7 +50,10 @@ public class AncientPotBlock extends FlowerBlock {
 			additionalCondition = AncientPotAdditionalPlacinggrowthConditionProcedure.execute(y);
 		}
 		return (groundState.is(Blocks.DEEPSLATE) || groundState.is(Blocks.TUFF) || groundState.is(TheDeepVoidModBlocks.ANCIENT_DEEPSLATE.get()) || groundState.is(TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get())
-				|| groundState.is(TheDeepVoidModBlocks.MOSSY_BONE_PILE.get()) || groundState.is(TheDeepVoidModBlocks.BLOCK_OF_SKULL_PILE.get())) && additionalCondition;
+				|| groundState.is(TheDeepVoidModBlocks.MOSSY_BONE_PILE.get()) || groundState.is(TheDeepVoidModBlocks.BLOCK_OF_SKULL_PILE.get()) || groundState.is(TheDeepVoidModBlocks.COBBLED_ANCIENT_DEEPSLATE.get())
+				|| groundState.is(TheDeepVoidModBlocks.ANCIENT_DEEPSLATE_BRICKS.get()) || groundState.is(TheDeepVoidModBlocks.SMOOTH_ANCIENT_DEEPSLATE.get()) || groundState.is(TheDeepVoidModBlocks.CRUMBLING_DEEPSLATE.get())
+				|| groundState.is(TheDeepVoidModBlocks.CRACKED_ANCIENT_DEEPSLATE_BRICKS.get()) || groundState.is(TheDeepVoidModBlocks.ROTTEN_ANCIENT_DEEPSLATE_BRICKS.get()) || groundState.is(TheDeepVoidModBlocks.INSCRIBED_ANCIENT_DEEPSLATE.get())
+				|| groundState.is(TheDeepVoidModBlocks.CHISELED_ANCIENT_DEEPSLATE_BRICKS.get())) && additionalCondition;
 	}
 
 	@Override

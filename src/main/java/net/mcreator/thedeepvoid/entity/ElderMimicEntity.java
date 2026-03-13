@@ -28,6 +28,9 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
@@ -41,6 +44,10 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import javax.annotation.Nullable;
 
 public class ElderMimicEntity extends Monster {
+	public static final EntityDataAccessor<Integer> DATA_attackChance = SynchedEntityData.defineId(ElderMimicEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_playerCount = SynchedEntityData.defineId(ElderMimicEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_baseHealth = SynchedEntityData.defineId(ElderMimicEntity.class, EntityDataSerializers.INT);
+
 	public ElderMimicEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(TheDeepVoidModEntities.ELDER_MIMIC.get(), world);
 	}
@@ -56,6 +63,14 @@ public class ElderMimicEntity extends Monster {
 	@Override
 	public Packet<ClientGamePacketListener> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_attackChance, 0);
+		this.entityData.define(DATA_playerCount, 0);
+		this.entityData.define(DATA_baseHealth, 0);
 	}
 
 	@Override
@@ -124,6 +139,25 @@ public class ElderMimicEntity extends Monster {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		ElderMimicPlayerCountProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
 		return retval;
+	}
+
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putInt("DataattackChance", this.entityData.get(DATA_attackChance));
+		compound.putInt("DataplayerCount", this.entityData.get(DATA_playerCount));
+		compound.putInt("DatabaseHealth", this.entityData.get(DATA_baseHealth));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("DataattackChance"))
+			this.entityData.set(DATA_attackChance, compound.getInt("DataattackChance"));
+		if (compound.contains("DataplayerCount"))
+			this.entityData.set(DATA_playerCount, compound.getInt("DataplayerCount"));
+		if (compound.contains("DatabaseHealth"))
+			this.entityData.set(DATA_baseHealth, compound.getInt("DatabaseHealth"));
 	}
 
 	@Override

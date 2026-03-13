@@ -2,6 +2,9 @@
   "feature": "the_deep_void:bone_piles",
   "placement": [
     {
+      "type": "minecraft:biome"
+    },
+    {
       "type": "minecraft:in_square"
     },
     {
@@ -29,7 +32,10 @@
           },
           {
             "type": "minecraft:matching_blocks",
-            "blocks": "the_deep_void:cobbled_ancient_deepslate",
+            "blocks": [
+              "the_deep_void:cobbled_ancient_deepslate",
+              "the_deep_void:block_of_bone_pile"
+            ],
             "offset": [
               2,
               -1,
@@ -38,7 +44,10 @@
           },
           {
             "type": "minecraft:matching_blocks",
-            "blocks": "the_deep_void:cobbled_ancient_deepslate",
+            "blocks": [
+              "the_deep_void:cobbled_ancient_deepslate",
+              "the_deep_void:block_of_bone_pile"
+            ],
             "offset": [
               -2,
               -1,
@@ -47,7 +56,10 @@
           },
           {
             "type": "minecraft:matching_blocks",
-            "blocks": "the_deep_void:cobbled_ancient_deepslate",
+            "blocks": [
+              "the_deep_void:cobbled_ancient_deepslate",
+              "the_deep_void:block_of_bone_pile"
+            ],
             "offset": [
               0,
               -1,
@@ -56,7 +68,10 @@
           },
           {
             "type": "minecraft:matching_blocks",
-            "blocks": "the_deep_void:cobbled_ancient_deepslate",
+            "blocks": [
+              "the_deep_void:cobbled_ancient_deepslate",
+              "the_deep_void:block_of_bone_pile"
+            ],
             "offset": [
               0,
               -1,

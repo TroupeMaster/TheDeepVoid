@@ -1,0 +1,42 @@
+{
+  "type": "minecraft:ore",
+  "config": {
+    "size": 4,
+    "discard_chance_on_air_exposure": 0,
+    "targets": [
+      {
+        "target": {
+          "predicate_type": "blockstate_match",
+          "block_state": {
+            "Name": "the_deep_void:flesh_block"
+          }
+        },
+        "state": {
+          "Name": "the_deep_void:flesh_bloodstone_ore"
+        }
+      },
+      {
+        "target": {
+          "predicate_type": "blockstate_match",
+          "block_state": {
+            "Name": "the_deep_void:porous_flesh"
+          }
+        },
+        "state": {
+          "Name": "the_deep_void:flesh_bloodstone_ore"
+        }
+      },
+      {
+        "target": {
+          "predicate_type": "blockstate_match",
+          "block_state": {
+            "Name": "the_deep_void:gaping_porous_flesh"
+          }
+        },
+        "state": {
+          "Name": "the_deep_void:flesh_bloodstone_ore"
+        }
+      }
+    ]
+  }
+}

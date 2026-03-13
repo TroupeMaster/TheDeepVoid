@@ -9,6 +9,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
+import net.mcreator.thedeepvoid.entity.PrimordialBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import java.util.List;
@@ -22,13 +23,18 @@ public class PrimordialCrawlerInitialSpawnProcedure {
 		if (DeepVoidConfigConfiguration.DOBOSSHPSCALING.get() == true) {
 			if (world.players().size() > 1) {
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
-					entity.getPersistentData().putDouble("playerCount", (entity.getPersistentData().getDouble("playerCount") + 1));
+					if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_playerCount,
+								(int) ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_playerCount) : 0) + 1));
 				}
 			}
-			if (entity.getPersistentData().getDouble("playerCount") > 1) {
-				entity.getPersistentData().putDouble("baseHealth", ((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).getBaseValue());
+			if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_playerCount) : 0) > 1) {
+				if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_baseHealth, (int) ((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).getBaseValue());
 				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
-						.setBaseValue((entity.getPersistentData().getDouble("baseHealth") + entity.getPersistentData().getDouble("baseHealth") * 0.35 * entity.getPersistentData().getDouble("playerCount")));
+						.setBaseValue(((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_baseHealth) : 0)
+								+ (entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_baseHealth) : 0) * 0.35
+										* (entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_playerCount) : 0)));
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 			}

@@ -10,6 +10,12 @@
       "offset": 8,
       "block_search_extent": 2
     },
+    "music": {
+      "sound": "intentionally_empty",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": true
+    },
     "particle": {
       "options": {
         "type": "white_ash"

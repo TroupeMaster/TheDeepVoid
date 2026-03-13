@@ -50,6 +50,8 @@ public class AbductorEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(AbductorEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(AbductorEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(AbductorEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Boolean> DATA_playerAbducted = SynchedEntityData.defineId(AbductorEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_stare = SynchedEntityData.defineId(AbductorEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -74,6 +76,8 @@ public class AbductorEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "abductor");
+		this.entityData.define(DATA_playerAbducted, false);
+		this.entityData.define(DATA_stare, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -138,6 +142,8 @@ public class AbductorEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putBoolean("DataplayerAbducted", this.entityData.get(DATA_playerAbducted));
+		compound.putInt("Datastare", this.entityData.get(DATA_stare));
 	}
 
 	@Override
@@ -145,6 +151,10 @@ public class AbductorEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DataplayerAbducted"))
+			this.entityData.set(DATA_playerAbducted, compound.getBoolean("DataplayerAbducted"));
+		if (compound.contains("Datastare"))
+			this.entityData.set(DATA_stare, compound.getInt("Datastare"));
 	}
 
 	@Override

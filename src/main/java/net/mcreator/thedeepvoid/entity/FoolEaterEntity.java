@@ -50,6 +50,7 @@ public class FoolEaterEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(FoolEaterEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(FoolEaterEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(FoolEaterEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Boolean> DATA_cracked = SynchedEntityData.defineId(FoolEaterEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -73,6 +74,7 @@ public class FoolEaterEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "fool_eater_newer");
+		this.entityData.define(DATA_cracked, false);
 	}
 
 	public void setTexture(String texture) {
@@ -126,6 +128,7 @@ public class FoolEaterEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putBoolean("Datacracked", this.entityData.get(DATA_cracked));
 	}
 
 	@Override
@@ -133,6 +136,8 @@ public class FoolEaterEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datacracked"))
+			this.entityData.set(DATA_cracked, compound.getBoolean("Datacracked"));
 	}
 
 	@Override

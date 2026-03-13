@@ -45,6 +45,8 @@ public class ThumperEntityEntity extends PathfinderMob implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(ThumperEntityEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(ThumperEntityEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(ThumperEntityEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_sound = SynchedEntityData.defineId(ThumperEntityEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_summon = SynchedEntityData.defineId(ThumperEntityEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -69,6 +71,8 @@ public class ThumperEntityEntity extends PathfinderMob implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "thumper");
+		this.entityData.define(DATA_sound, 0);
+		this.entityData.define(DATA_summon, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -135,6 +139,8 @@ public class ThumperEntityEntity extends PathfinderMob implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("Datasound", this.entityData.get(DATA_sound));
+		compound.putInt("Datasummon", this.entityData.get(DATA_summon));
 	}
 
 	@Override
@@ -142,6 +148,10 @@ public class ThumperEntityEntity extends PathfinderMob implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datasound"))
+			this.entityData.set(DATA_sound, compound.getInt("Datasound"));
+		if (compound.contains("Datasummon"))
+			this.entityData.set(DATA_summon, compound.getInt("Datasummon"));
 	}
 
 	@Override

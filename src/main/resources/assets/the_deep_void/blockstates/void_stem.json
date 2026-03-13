@@ -1,7 +1,10 @@
 {
   "variants": {
-    "": {
+    "blockstate=0": {
       "model": "the_deep_void:block/void_stem"
+    },
+    "blockstate=1": {
+      "model": "the_deep_void:block/void_stem_blockstates_blockstate_0"
     }
   }
 }

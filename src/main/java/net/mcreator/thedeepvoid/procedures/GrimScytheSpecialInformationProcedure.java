@@ -1,9 +1,13 @@
 package net.mcreator.thedeepvoid.procedures;
 
 import net.minecraft.network.chat.Component;
+import net.minecraft.client.gui.screens.Screen;
 
 public class GrimScytheSpecialInformationProcedure {
 	public static String execute() {
-		return Component.translatable("item.the_deep_void.grim_scythe.descr").getString();
+		if (Screen.hasShiftDown()) {
+			return Component.translatable("item.the_deep_void.grim_scythe.descr").getString();
+		}
+		return Component.translatable("item.the_deep_void.weapon_tooltip.show").getString();
 	}
 }

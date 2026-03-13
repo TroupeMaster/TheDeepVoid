@@ -5,8 +5,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.GameType;
@@ -26,12 +24,8 @@ import net.minecraft.client.Minecraft;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
-import net.mcreator.thedeepvoid.entity.SulfurTntEntityEntity;
 
 import javax.annotation.Nullable;
-
-import java.util.List;
-import java.util.Comparator;
 
 @Mod.EventBusSubscriber
 public class SulfurTntOnBlockRightClickedProcedure {
@@ -76,16 +70,7 @@ public class SulfurTntOnBlockRightClickedProcedure {
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = TheDeepVoidModEntities.SULFUR_TNT_ENTITY.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-					}
-				}
-				{
-					final Vec3 _center = new Vec3(x, y, z);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(1 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-					for (Entity entityiterator : _entfound) {
-						if (entityiterator instanceof SulfurTntEntityEntity) {
-							entityiterator.setDeltaMovement(new Vec3((Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5)), 0.2, (Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5))));
-						}
+						entityToSpawn.setDeltaMovement((Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5)), 0.2, (Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5)));
 					}
 				}
 			} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == Items.FLINT_AND_STEEL) {
@@ -114,16 +99,7 @@ public class SulfurTntOnBlockRightClickedProcedure {
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = TheDeepVoidModEntities.SULFUR_TNT_ENTITY.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-					}
-				}
-				{
-					final Vec3 _center = new Vec3(x, y, z);
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(1 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-					for (Entity entityiterator : _entfound) {
-						if (entityiterator instanceof SulfurTntEntityEntity) {
-							entityiterator.setDeltaMovement(new Vec3((Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5)), 0.2, (Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5))));
-						}
+						entityToSpawn.setDeltaMovement((Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5)), 0.2, (Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5)));
 					}
 				}
 			} else {
@@ -147,16 +123,7 @@ public class SulfurTntOnBlockRightClickedProcedure {
 					if (world instanceof ServerLevel _level) {
 						Entity entityToSpawn = TheDeepVoidModEntities.SULFUR_TNT_ENTITY.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 						if (entityToSpawn != null) {
-							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-						}
-					}
-					{
-						final Vec3 _center = new Vec3(x, y, z);
-						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(1 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-						for (Entity entityiterator : _entfound) {
-							if (entityiterator instanceof SulfurTntEntityEntity) {
-								entityiterator.setDeltaMovement(new Vec3((Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5)), 0.2, (Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5))));
-							}
+							entityToSpawn.setDeltaMovement((Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5)), 0.2, (Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5)));
 						}
 					}
 				} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == Items.FIRE_CHARGE) {
@@ -179,16 +146,7 @@ public class SulfurTntOnBlockRightClickedProcedure {
 					if (world instanceof ServerLevel _level) {
 						Entity entityToSpawn = TheDeepVoidModEntities.SULFUR_TNT_ENTITY.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 						if (entityToSpawn != null) {
-							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-						}
-					}
-					{
-						final Vec3 _center = new Vec3(x, y, z);
-						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(1 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-						for (Entity entityiterator : _entfound) {
-							if (entityiterator instanceof SulfurTntEntityEntity) {
-								entityiterator.setDeltaMovement(new Vec3((Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5)), 0.2, (Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5))));
-							}
+							entityToSpawn.setDeltaMovement((Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5)), 0.2, (Mth.nextInt(RandomSource.create(), (int) (-0.5), (int) 0.5)));
 						}
 					}
 				}

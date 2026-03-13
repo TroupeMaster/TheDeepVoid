@@ -11,7 +11,8 @@
     "the_deep_void:befouled_marsh",
     "the_deep_void:misted_remnants",
     "the_deep_void:gaol_of_heretics",
-    "the_deep_void:the_gaol"
+    "the_deep_void:the_gaol",
+    "the_deep_void:deep_marrows"
   ],
   "features": "the_deep_void:rotten_grass",
   "step": "vegetal_decoration"

@@ -27,7 +27,7 @@ import net.mcreator.thedeepvoid.procedures.DesolateLichenOnBoneMealSuccessProced
 public class DesolateLichenBlock extends FlowerBlock implements BonemealableBlock {
 	public DesolateLichenBlock() {
 		super(() -> MobEffects.MOVEMENT_SPEED, 100,
-				BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().sound(SoundType.ROOTS).instabreak().noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.NONE).pushReaction(PushReaction.DESTROY));
+				BlockBehaviour.Properties.of().mapColor(MapColor.WARPED_STEM).randomTicks().sound(SoundType.ROOTS).instabreak().noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.NONE).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

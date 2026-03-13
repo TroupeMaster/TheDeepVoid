@@ -33,8 +33,9 @@ public class ApostleNoPlayersProcedure {
 			return;
 		if (entity instanceof ApostleOfCatastropheEntity) {
 			if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty())) {
-				if (entity.getPersistentData().getBoolean("deep_void:fog") == true) {
-					entity.getPersistentData().putBoolean("deep_void:fog", false);
+				if ((entity instanceof ApostleOfCatastropheEntity _datEntL2 && _datEntL2.getEntityData().get(ApostleOfCatastropheEntity.DATA_fog)) == true) {
+					if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_fog, false);
 				}
 				if (!entity.level().isClientSide())
 					entity.discard();

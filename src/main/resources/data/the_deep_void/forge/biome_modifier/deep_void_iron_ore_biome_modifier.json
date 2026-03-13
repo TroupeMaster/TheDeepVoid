@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_deep_void:ashen_crags",
+    "the_deep_void:windswept_hollow",
+    "the_deep_void:misted_remnants",
+    "the_deep_void:deep_marrows"
+  ],
+  "features": "the_deep_void:deep_void_iron_ore",
+  "step": "underground_ores"
+}

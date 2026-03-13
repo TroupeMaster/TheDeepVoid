@@ -6,10 +6,14 @@ import net.minecraftforge.fluids.ForgeFlowingFluid;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.particles.ParticleOptions;
+import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.procedures.LiquidVoidCheckBelowProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModFluids;
@@ -27,6 +31,11 @@ public abstract class LiquidVoidFluid extends ForgeFlowingFluid {
 	@Override
 	public ParticleOptions getDripParticle() {
 		return (SimpleParticleType) (TheDeepVoidModParticleTypes.DARK_TEAR.get());
+	}
+
+	@Override
+	protected void beforeDestroyingBlock(LevelAccessor world, BlockPos pos, BlockState blockstate) {
+		LiquidVoidCheckBelowProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
 	public static class Source extends LiquidVoidFluid {

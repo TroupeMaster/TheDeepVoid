@@ -41,6 +41,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.procedures.SleepingPrimordialCrawlerOnEntityTickUpdateProcedure;
 import net.mcreator.thedeepvoid.procedures.SleepingPrimordialCrawlerEntityIsHurtProcedure;
 import net.mcreator.thedeepvoid.procedures.PrimordialCrawlerSolidBoundingBoxConditionProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
@@ -190,6 +191,7 @@ public class SleepingPrimordialCrawlerEntity extends Monster implements GeoEntit
 	@Override
 	public void baseTick() {
 		super.baseTick();
+		SleepingPrimordialCrawlerOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
 

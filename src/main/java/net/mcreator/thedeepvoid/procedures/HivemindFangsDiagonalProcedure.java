@@ -22,8 +22,6 @@ public class HivemindFangsDiagonalProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double randomX = 0;
-		double randomZ = 0;
 		if (world instanceof Level _level) {
 			if (!_level.isClientSide()) {
 				_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:hivemind_scream")), SoundSource.HOSTILE, 2, 1);
@@ -138,7 +136,8 @@ public class HivemindFangsDiagonalProcedure {
 				}
 			}
 		});
-		if (!(!world.getEntitiesOfClass(HivemindTentaclesEntity.class, AABB.ofSize(new Vec3(x, y, z), 20, 20, 20), e -> true).isEmpty()) && entity.getPersistentData().getDouble("fleshTentaclesCooldown") <= 0) {
+		if (!(!world.getEntitiesOfClass(HivemindTentaclesEntity.class, AABB.ofSize(new Vec3(x, y, z), 20, 20, 20), e -> true).isEmpty())
+				&& (entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_fleshTentaclesCooldown) : 0) <= 0) {
 			if (world instanceof ServerLevel _level) {
 				Entity entityToSpawn = TheDeepVoidModEntities.HIVEMIND_TENTACLES.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 				if (entityToSpawn != null) {

@@ -26,7 +26,6 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.OverseerPillarEntity;
 import net.mcreator.thedeepvoid.entity.OverseerEntity;
 import net.mcreator.thedeepvoid.entity.OverseerBigPillarEntity;
-import net.mcreator.thedeepvoid.entity.HallucinationEntity;
 import net.mcreator.thedeepvoid.entity.BigOverseerEntity;
 import net.mcreator.thedeepvoid.entity.AmalgamEntity;
 
@@ -240,64 +239,6 @@ public class PlayerLooksAtStalkingProcedure {
 				}
 			}
 		}
-		if (!world.getEntitiesOfClass(HallucinationEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {
-			if (!(new Object() {
-				public boolean checkGamemode(Entity _ent) {
-					if (_ent instanceof ServerPlayer _serverPlayer) {
-						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
-					} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
-						return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
-								&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
-					}
-					return false;
-				}
-			}.checkGamemode(entity)) && !(new Object() {
-				public boolean checkGamemode(Entity _ent) {
-					if (_ent instanceof ServerPlayer _serverPlayer) {
-						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.SPECTATOR;
-					} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
-						return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
-								&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.SPECTATOR;
-					}
-					return false;
-				}
-			}.checkGamemode(entity))) {
-				distance = 1;
-				for (int index4 = 0; index4 < 40; index4++) {
-					{
-						final Vec3 _center = new Vec3((entity.getX() + entity.getLookAngle().x * distance), (entity.getY() + entity.getLookAngle().y * distance), (entity.getZ() + entity.getLookAngle().z * distance));
-						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-						for (Entity entityiterator : _entfound) {
-							if (entityiterator instanceof HallucinationEntity) {
-								if (entityiterator.getPersistentData().getBoolean("deep_void:shy") == true) {
-									if (entityiterator.getPersistentData().getBoolean("deep_void:running") == false) {
-										if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-											_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 99, false, false));
-									} else {
-										if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-											_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 3, false, false));
-									}
-									if (Math.random() < 0.01) {
-										entityiterator.getPersistentData().putBoolean("deep_void:running", true);
-									}
-								}
-								if (entityiterator.getPersistentData().getBoolean("deep_void:dont_look") == true) {
-									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-										_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 2, false, false));
-									if (entityiterator instanceof LivingEntity _entity)
-										_entity.removeEffect(MobEffects.MOVEMENT_SLOWDOWN);
-								}
-								if (entityiterator.getPersistentData().getBoolean("deep_void:agressive") == true) {
-									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-										_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.LOOKING.get(), 5, 0, false, false));
-								}
-							}
-						}
-					}
-					distance = distance + 1;
-				}
-			}
-		}
 		if (!world.getEntitiesOfClass(AmalgamEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {
 			if (!(new Object() {
 				public boolean checkGamemode(Entity _ent) {
@@ -321,7 +262,7 @@ public class PlayerLooksAtStalkingProcedure {
 				}
 			}.checkGamemode(entity))) {
 				distance = 1;
-				for (int index5 = 0; index5 < 40; index5++) {
+				for (int index4 = 0; index4 < 40; index4++) {
 					{
 						final Vec3 _center = new Vec3((entity.getX() + entity.getLookAngle().x * distance), (entity.getY() + entity.getLookAngle().y * distance), (entity.getZ() + entity.getLookAngle().z * distance));
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(8 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();

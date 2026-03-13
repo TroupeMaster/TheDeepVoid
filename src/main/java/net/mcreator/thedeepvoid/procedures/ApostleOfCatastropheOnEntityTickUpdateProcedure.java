@@ -49,65 +49,46 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double playerDashX = 0;
-		double playerDashZ = 0;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", (entity.getPersistentData().getDouble("deep_void:attackChance") + 1));
+			if (entity instanceof ApostleOfCatastropheEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(ApostleOfCatastropheEntity.DATA_attackChance, (int) ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_attackChance) : 0) + 1));
 			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / (double) DeepVoidConfigConfiguration.APOSTLESECONDPHASE.get()) {
-				if (entity.getPersistentData().getBoolean("apostleSetSecondPhase") == false) {
-					entity.getPersistentData().putBoolean("apostleSetSecondPhase", true);
-					entity.getPersistentData().putDouble("deep_void:attackChance", 520);
+				if ((entity instanceof ApostleOfCatastropheEntity _datEntL8 && _datEntL8.getEntityData().get(ApostleOfCatastropheEntity.DATA_apostleSetSecondPhase)) == false) {
+					if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_apostleSetSecondPhase, true);
+					if (entity instanceof ApostleOfCatastropheEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(ApostleOfCatastropheEntity.DATA_attackChance, 520);
 				}
-				entity.getPersistentData().putDouble("deep_void:attackChance", (entity.getPersistentData().getDouble("deep_void:attackChance") + 1));
+				if (entity instanceof ApostleOfCatastropheEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(ApostleOfCatastropheEntity.DATA_attackChance, (int) ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_attackChance) : 0) + 1));
 			}
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 40) {
+		if ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_attackChance) : 0) == 40) {
 			ApostleTeleportProcedure.execute(world, y, entity);
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 120) {
+		} else if ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_attackChance) : 0) == 120) {
 			ApostleTriShootProcedure.execute(world, y, entity);
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 180) {
+		} else if ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_attackChance) : 0) == 180) {
 			ApostleSlashProcedure.execute(world, entity);
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 240
+		} else if ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_attackChance) : 0) == 240
 				&& (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / (double) DeepVoidConfigConfiguration.APOSTLESECONDPHASE.get() && Math.random() < 0.6) {
-			if (entity instanceof ApostleOfCatastropheEntity) {
-				((ApostleOfCatastropheEntity) entity).setAnimation("animation.apostle_block");
-			}
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.place")), SoundSource.HOSTILE, 3, (float) 1.8);
-				} else {
-					_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.place")), SoundSource.HOSTILE, 3, (float) 1.8, false);
-				}
-			}
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 15, 99, false, false));
-			entity.getPersistentData().putBoolean("parry", true);
-			TheDeepVoidMod.queueServerWork(15, () -> {
-				entity.getPersistentData().putBoolean("parry", false);
-			});
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 280) {
+			ApostleParryProcedure.execute(world, entity);
+		} else if ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_attackChance) : 0) == 280) {
 			ApostleBackJumpShootProcedure.execute(world, entity);
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 340) {
+		} else if ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_attackChance) : 0) == 340) {
 			ApostleSpinProcedure.execute(world, entity);
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 420) {
+		} else if ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_attackChance) : 0) == 420) {
 			ApostleGrabProcedure.execute(world, x, y, z, entity);
+		} else if ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_attackChance) : 0) >= 520) {
+			if (entity instanceof ApostleOfCatastropheEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(ApostleOfCatastropheEntity.DATA_attackChance, 0);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") >= 520) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", 0);
-		}
-		if (entity.getPersistentData().getBoolean("deep_void:spinning") == true) {
+		if ((entity instanceof ApostleOfCatastropheEntity _datEntL25 && _datEntL25.getEntityData().get(ApostleOfCatastropheEntity.DATA_spinning)) == true) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
 					if (entityiterator instanceof Player) {
-						if ((entityiterator instanceof LivingEntity _entUseItem36 ? _entUseItem36.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
+						if ((entityiterator instanceof LivingEntity _entUseItem27 ? _entUseItem27.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {
 									_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.shield.block")),
@@ -118,14 +99,14 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 								}
 							}
 							{
-								ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem42 ? _entUseItem42.getUseItem() : ItemStack.EMPTY);
+								ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem33 ? _entUseItem33.getUseItem() : ItemStack.EMPTY);
 								if (_ist.hurt(1, RandomSource.create(), null)) {
 									_ist.shrink(1);
 									_ist.setDamageValue(0);
 								}
 							}
 							if (entityiterator instanceof Player _player)
-								_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem44 ? _entUseItem44.getUseItem() : ItemStack.EMPTY).getItem(), 100);
+								_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem35 ? _entUseItem35.getUseItem() : ItemStack.EMPTY).getItem(), 100);
 						} else {
 							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity), (float) (double) DeepVoidConfigConfiguration.APOSTLESPIN.get());
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -194,11 +175,13 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 				}
 			}
 			TheDeepVoidMod.queueServerWork(75, () -> {
-				entity.getPersistentData().putBoolean("deep_void:spinning", false);
+				if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_spinning, false);
 			});
-		} else if (entity.getPersistentData().getBoolean("deep_void:spinning") == false) {
-			if (entity.getPersistentData().getDouble("deep_void:laughChance") == 20) {
-				entity.getPersistentData().putDouble("deep_void:laughChance", 0);
+		} else if ((entity instanceof ApostleOfCatastropheEntity _datEntL76 && _datEntL76.getEntityData().get(ApostleOfCatastropheEntity.DATA_spinning)) == false) {
+			if ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_laughChance) : 0) == 20) {
+				if (entity instanceof ApostleOfCatastropheEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(ApostleOfCatastropheEntity.DATA_laughChance, 0);
 				if (Math.random() < 0.04) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
@@ -267,10 +250,11 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 					}
 				}
 			} else {
-				entity.getPersistentData().putDouble("deep_void:laughChance", (entity.getPersistentData().getDouble("deep_void:laughChance") + 1));
+				if (entity instanceof ApostleOfCatastropheEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(ApostleOfCatastropheEntity.DATA_laughChance, (int) ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_laughChance) : 0) + 1));
 			}
 		}
-		if (entity.getPersistentData().getBoolean("deep_void:noEscape") == true) {
+		if ((entity instanceof ApostleOfCatastropheEntity _datEntL106 && _datEntL106.getEntityData().get(ApostleOfCatastropheEntity.DATA_noEscape)) == true) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 99, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -288,9 +272,10 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 				}
 			}
 		}
-		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty())) {
-			if (entity.getPersistentData().getBoolean("deep_void:fog") == true) {
-				entity.getPersistentData().putBoolean("deep_void:fog", false);
+		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()) && DeepVoidConfigConfiguration.BOSSIDLES.get() == true) {
+			if ((entity instanceof ApostleOfCatastropheEntity _datEntL115 && _datEntL115.getEntityData().get(ApostleOfCatastropheEntity.DATA_fog)) == true) {
+				if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_fog, false);
 			}
 			if (!entity.level().isClientSide())
 				entity.discard();

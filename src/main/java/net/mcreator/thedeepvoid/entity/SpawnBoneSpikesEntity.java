@@ -25,6 +25,9 @@ import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
@@ -37,6 +40,8 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import javax.annotation.Nullable;
 
 public class SpawnBoneSpikesEntity extends Monster {
+	public static final EntityDataAccessor<Integer> DATA_spawnSpike = SynchedEntityData.defineId(SpawnBoneSpikesEntity.class, EntityDataSerializers.INT);
+
 	public SpawnBoneSpikesEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(TheDeepVoidModEntities.SPAWN_BONE_SPIKES.get(), world);
 	}
@@ -51,6 +56,12 @@ public class SpawnBoneSpikesEntity extends Monster {
 	@Override
 	public Packet<ClientGamePacketListener> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_spawnSpike, 0);
 	}
 
 	@Override
@@ -130,6 +141,19 @@ public class SpawnBoneSpikesEntity extends Monster {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		SpawnBoneSpikesOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
 		return retval;
+	}
+
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putInt("DataspawnSpike", this.entityData.get(DATA_spawnSpike));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("DataspawnSpike"))
+			this.entityData.set(DATA_spawnSpike, compound.getInt("DataspawnSpike"));
 	}
 
 	@Override

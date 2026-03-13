@@ -37,8 +37,6 @@ public class PrimordialCrawlerDigProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double randomX = 0;
-		double randomZ = 0;
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 99, false, false));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -115,10 +113,12 @@ public class PrimordialCrawlerDigProcedure {
 			}
 		});
 		TheDeepVoidMod.queueServerWork(30, () -> {
-			entity.getPersistentData().putBoolean("deep_void:digging", true);
+			if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_digging, true);
 		});
 		if (Math.random() < 0.1) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", 0);
+			if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_attackChance, 0);
 		}
 	}
 }

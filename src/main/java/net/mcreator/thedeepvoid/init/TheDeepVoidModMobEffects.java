@@ -36,6 +36,7 @@ import net.mcreator.thedeepvoid.potion.HeavyMobEffect;
 import net.mcreator.thedeepvoid.potion.HallucinateMobEffect;
 import net.mcreator.thedeepvoid.potion.GoldenBloodMobEffect;
 import net.mcreator.thedeepvoid.potion.FixationMobEffect;
+import net.mcreator.thedeepvoid.potion.ExperiencedMobEffect;
 import net.mcreator.thedeepvoid.potion.DoomMobEffect;
 import net.mcreator.thedeepvoid.potion.DistractedMobEffect;
 import net.mcreator.thedeepvoid.potion.DecompositionMobEffect;
@@ -49,6 +50,7 @@ import net.mcreator.thedeepvoid.potion.BrokenArmorMobEffect;
 import net.mcreator.thedeepvoid.potion.BlossomMobEffect;
 import net.mcreator.thedeepvoid.potion.BloodBoilMobEffect;
 import net.mcreator.thedeepvoid.potion.AmbrosiaWithdrawalMobEffect;
+import net.mcreator.thedeepvoid.potion.AbyssalMarkMobEffect;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 public class TheDeepVoidModMobEffects {
@@ -92,4 +94,6 @@ public class TheDeepVoidModMobEffects {
 	public static final RegistryObject<MobEffect> CRATE_MAGNET = REGISTRY.register("crate_magnet", () -> new CrateMagnetMobEffect());
 	public static final RegistryObject<MobEffect> PARASITIZED = REGISTRY.register("parasitized", () -> new ParasitizedMobEffect());
 	public static final RegistryObject<MobEffect> CREATURE_REPELLENT = REGISTRY.register("creature_repellent", () -> new CreatureRepellentMobEffect());
+	public static final RegistryObject<MobEffect> ABYSSAL_MARK = REGISTRY.register("abyssal_mark", () -> new AbyssalMarkMobEffect());
+	public static final RegistryObject<MobEffect> EXPERIENCED = REGISTRY.register("experienced", () -> new ExperiencedMobEffect());
 }

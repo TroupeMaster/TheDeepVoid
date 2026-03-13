@@ -33,11 +33,12 @@ public class BloodyRibCageArmorDescriptionProcedure {
 		if (tooltip == null)
 			return;
 		if (itemstack.getItem() == TheDeepVoidModItems.BLOODY_RIB_CAGE_CHESTPLATE.get()) {
+			tooltip.add(Component.literal(""));
 			if (Screen.hasShiftDown()) {
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.rib_cage.when_worn").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.rib_cage.worn1").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.rib_cage.worn2").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.rib_cage.worn3").getString())));
+				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.rib_cage.when_worn").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.rib_cage.worn1").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.rib_cage.worn2").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.rib_cage.worn3").getString())));
 			} else {
 				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.press_shift").getString())));
 			}

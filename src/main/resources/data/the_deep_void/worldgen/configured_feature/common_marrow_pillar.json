@@ -1,0 +1,12 @@
+{
+  "type": "the_deep_void:structure_feature",
+  "config": {
+    "structure": "the_deep_void:marrow_pillar",
+    "random_rotation": true,
+    "random_mirror": true,
+    "ignored_blocks": [
+      "minecraft:structure_block",
+      "minecraft:air"
+    ]
+  }
+}

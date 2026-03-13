@@ -13,7 +13,8 @@
   "biomes": [
     "the_deep_void:filled_graveyard",
     "the_deep_void:gathering_grounds",
-    "the_deep_void:misted_remnants"
+    "the_deep_void:misted_remnants",
+    "the_deep_void:deep_marrows"
   ],
   "use_expansion_hack": false
 }

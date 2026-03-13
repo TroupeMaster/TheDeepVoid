@@ -7,13 +7,15 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
+import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
 
 public class MaskedHunterPlaceTrapProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getPersistentData().getDouble("placeTrap") <= 0) {
-			entity.getPersistentData().putDouble("placeTrap", 400);
+		if ((entity instanceof MaskedHunterEntity _datEntI ? _datEntI.getEntityData().get(MaskedHunterEntity.DATA_placeTrap) : 0) <= 0) {
+			if (entity instanceof MaskedHunterEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MaskedHunterEntity.DATA_placeTrap, 400);
 			if (world instanceof ServerLevel _level) {
 				Entity entityToSpawn = TheDeepVoidModEntities.BONE_CAGE.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 				if (entityToSpawn != null) {
@@ -21,7 +23,8 @@ public class MaskedHunterPlaceTrapProcedure {
 				}
 			}
 		} else {
-			entity.getPersistentData().putDouble("placeTrap", (entity.getPersistentData().getDouble("placeTrap") - 1));
+			if (entity instanceof MaskedHunterEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MaskedHunterEntity.DATA_placeTrap, (int) ((entity instanceof MaskedHunterEntity _datEntI ? _datEntI.getEntityData().get(MaskedHunterEntity.DATA_placeTrap) : 0) - 1));
 		}
 	}
 }

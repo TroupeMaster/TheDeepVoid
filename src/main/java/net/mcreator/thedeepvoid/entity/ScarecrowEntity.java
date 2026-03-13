@@ -52,6 +52,7 @@ public class ScarecrowEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(ScarecrowEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(ScarecrowEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(ScarecrowEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_call = SynchedEntityData.defineId(ScarecrowEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -75,6 +76,7 @@ public class ScarecrowEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "scarecrow");
+		this.entityData.define(DATA_call, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -129,6 +131,7 @@ public class ScarecrowEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("Datacall", this.entityData.get(DATA_call));
 	}
 
 	@Override
@@ -136,6 +139,8 @@ public class ScarecrowEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datacall"))
+			this.entityData.set(DATA_call, compound.getInt("Datacall"));
 	}
 
 	@Override

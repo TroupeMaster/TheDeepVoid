@@ -18,12 +18,14 @@ public class ApostleSpinProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		double playerDashX = 0;
-		double playerDashZ = 0;
+		if (entity instanceof ApostleOfCatastropheEntity) {
+			((ApostleOfCatastropheEntity) entity).setAnimation("empty");
+		}
 		if (entity instanceof ApostleOfCatastropheEntity) {
 			((ApostleOfCatastropheEntity) entity).setAnimation("animation.apostle_spin");
 		}
-		entity.getPersistentData().putBoolean("deep_void:spinning", true);
+		if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+			_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_spinning, true);
 		if (world instanceof Level _level) {
 			if (!_level.isClientSide()) {
 				_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:apostle_hysterical_laugh")), SoundSource.HOSTILE, 4, 1);

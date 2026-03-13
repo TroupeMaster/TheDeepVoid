@@ -66,6 +66,8 @@ public class TamedBoneCrawlerEntity extends TamableAnimal implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(TamedBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(TamedBoneCrawlerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(TamedBoneCrawlerEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_growthMother = SynchedEntityData.defineId(TamedBoneCrawlerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_growthAlpha = SynchedEntityData.defineId(TamedBoneCrawlerEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -90,6 +92,8 @@ public class TamedBoneCrawlerEntity extends TamableAnimal implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "bone_crawler_remodeled");
+		this.entityData.define(DATA_growthMother, 0);
+		this.entityData.define(DATA_growthAlpha, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -149,6 +153,8 @@ public class TamedBoneCrawlerEntity extends TamableAnimal implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DatagrowthMother", this.entityData.get(DATA_growthMother));
+		compound.putInt("DatagrowthAlpha", this.entityData.get(DATA_growthAlpha));
 	}
 
 	@Override
@@ -156,6 +162,10 @@ public class TamedBoneCrawlerEntity extends TamableAnimal implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DatagrowthMother"))
+			this.entityData.set(DATA_growthMother, compound.getInt("DatagrowthMother"));
+		if (compound.contains("DatagrowthAlpha"))
+			this.entityData.set(DATA_growthAlpha, compound.getInt("DatagrowthAlpha"));
 	}
 
 	@Override

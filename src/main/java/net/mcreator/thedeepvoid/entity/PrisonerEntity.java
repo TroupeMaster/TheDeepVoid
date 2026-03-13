@@ -46,6 +46,8 @@ public class PrisonerEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(PrisonerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(PrisonerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(PrisonerEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_attackChance = SynchedEntityData.defineId(PrisonerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_ram = SynchedEntityData.defineId(PrisonerEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -70,6 +72,8 @@ public class PrisonerEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "penitent_new");
+		this.entityData.define(DATA_attackChance, 0);
+		this.entityData.define(DATA_ram, false);
 	}
 
 	public void setTexture(String texture) {
@@ -123,6 +127,8 @@ public class PrisonerEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DataattackChance", this.entityData.get(DATA_attackChance));
+		compound.putBoolean("Dataram", this.entityData.get(DATA_ram));
 	}
 
 	@Override
@@ -130,6 +136,10 @@ public class PrisonerEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DataattackChance"))
+			this.entityData.set(DATA_attackChance, compound.getInt("DataattackChance"));
+		if (compound.contains("Dataram"))
+			this.entityData.set(DATA_ram, compound.getBoolean("Dataram"));
 	}
 
 	@Override

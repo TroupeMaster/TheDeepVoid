@@ -21,6 +21,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.entity.EverhungerEntity;
+import net.mcreator.thedeepvoid.entity.BeholderEntity;
 
 import java.util.Comparator;
 
@@ -37,8 +38,9 @@ public class BeholderOnEntityTickUpdateProcedure {
 							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 						}
 					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BLOODY_RIB_CAGE_CHESTPLATE.get())) {
-						if (entity.getPersistentData().getDouble("deep_void_call") <= 0) {
-							entity.getPersistentData().putDouble("deep_void_call", 480);
+						if ((entity instanceof BeholderEntity _datEntI ? _datEntI.getEntityData().get(BeholderEntity.DATA_call) : 0) <= 0) {
+							if (entity instanceof BeholderEntity _datEntSetI)
+								_datEntSetI.getEntityData().set(BeholderEntity.DATA_call, 480);
 							if (((Entity) world.getEntitiesOfClass(EverhungerEntity.class, AABB.ofSize(new Vec3(x, y, z), 400, 400, 400), e -> true).stream().sorted(new Object() {
 								Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 									return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
@@ -141,8 +143,9 @@ public class BeholderOnEntityTickUpdateProcedure {
 				}
 			}
 		}
-		if (entity.getPersistentData().getDouble("deep_void_call") > 0) {
-			entity.getPersistentData().putDouble("deep_void_call", (entity.getPersistentData().getDouble("deep_void_call") - 1));
+		if ((entity instanceof BeholderEntity _datEntI ? _datEntI.getEntityData().get(BeholderEntity.DATA_call) : 0) > 0) {
+			if (entity instanceof BeholderEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(BeholderEntity.DATA_call, (int) ((entity instanceof BeholderEntity _datEntI ? _datEntI.getEntityData().get(BeholderEntity.DATA_call) : 0) - 1));
 		}
 	}
 }

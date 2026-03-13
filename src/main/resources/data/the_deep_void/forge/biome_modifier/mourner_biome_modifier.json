@@ -6,7 +6,8 @@
     "the_deep_void:ashen_crags",
     "the_deep_void:mourning_graveyard",
     "the_deep_void:filled_graveyard",
-    "the_deep_void:gaol_of_heretics"
+    "the_deep_void:gaol_of_heretics",
+    "the_deep_void:deep_marrows"
   ],
   "spawners": {
     "type": "the_deep_void:mourner",

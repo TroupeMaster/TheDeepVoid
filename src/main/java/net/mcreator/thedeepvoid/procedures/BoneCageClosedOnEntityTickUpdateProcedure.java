@@ -19,6 +19,7 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
+import net.mcreator.thedeepvoid.entity.BoneCageClosedEntity;
 
 import java.util.List;
 import java.util.Comparator;
@@ -68,8 +69,9 @@ public class BoneCageClosedOnEntityTickUpdateProcedure {
 		}
 		if (!world.getEntitiesOfClass(MaskedHunterEntity.class, AABB.ofSize(new Vec3(x, y, z), 240, 240, 240), e -> true).isEmpty()
 				&& !(!world.getEntitiesOfClass(MaskedHunterEntity.class, AABB.ofSize(new Vec3(x, y, z), 15, 15, 15), e -> true).isEmpty())) {
-			if (entity.getPersistentData().getDouble("findPath") >= 400) {
-				entity.getPersistentData().putDouble("findPath", 0);
+			if ((entity instanceof BoneCageClosedEntity _datEntI ? _datEntI.getEntityData().get(BoneCageClosedEntity.DATA_findPath) : 0) >= 400) {
+				if (entity instanceof BoneCageClosedEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(BoneCageClosedEntity.DATA_findPath, 0);
 				if ((((Entity) world.getEntitiesOfClass(MaskedHunterEntity.class, AABB.ofSize(new Vec3(x, y, z), 240, 240, 240), e -> true).stream().sorted(new Object() {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
@@ -117,7 +119,8 @@ public class BoneCageClosedOnEntityTickUpdateProcedure {
 					}
 				}
 			} else {
-				entity.getPersistentData().putDouble("findPath", (entity.getPersistentData().getDouble("findPath") + 1));
+				if (entity instanceof BoneCageClosedEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(BoneCageClosedEntity.DATA_findPath, (int) ((entity instanceof BoneCageClosedEntity _datEntI ? _datEntI.getEntityData().get(BoneCageClosedEntity.DATA_findPath) : 0) + 1));
 			}
 		}
 		if (!world.getEntitiesOfClass(MaskedHunterEntity.class, AABB.ofSize(new Vec3(x, y, z), 5, 5, 5), e -> true).isEmpty() && (!world.getEntitiesOfClass(Animal.class, AABB.ofSize(new Vec3(x, y, z), 5, 5, 5), e -> true).isEmpty()
@@ -128,11 +131,13 @@ public class BoneCageClosedOnEntityTickUpdateProcedure {
 				&& !(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 5, 5, 5), e -> true).isEmpty())) {
 			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 999);
 		}
-		if (entity.getPersistentData().getDouble("despawn") >= 600) {
-			entity.getPersistentData().putDouble("despawn", 0);
+		if ((entity instanceof BoneCageClosedEntity _datEntI ? _datEntI.getEntityData().get(BoneCageClosedEntity.DATA_despawn) : 0) >= 600) {
+			if (entity instanceof BoneCageClosedEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(BoneCageClosedEntity.DATA_despawn, 0);
 			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)), 999);
 		} else {
-			entity.getPersistentData().putDouble("despawn", (entity.getPersistentData().getDouble("despawn") + 1));
+			if (entity instanceof BoneCageClosedEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(BoneCageClosedEntity.DATA_despawn, (int) ((entity instanceof BoneCageClosedEntity _datEntI ? _datEntI.getEntityData().get(BoneCageClosedEntity.DATA_despawn) : 0) + 1));
 		}
 	}
 }

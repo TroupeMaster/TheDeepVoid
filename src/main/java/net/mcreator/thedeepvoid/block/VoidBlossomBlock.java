@@ -1,6 +1,7 @@
 
 package net.mcreator.thedeepvoid.block;
 
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -19,7 +20,7 @@ import net.mcreator.thedeepvoid.procedures.VoidBlossomBoneMealSuccessConditionPr
 
 public class VoidBlossomBlock extends Block implements BonemealableBlock {
 	public VoidBlossomBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE).strength(3f, 6f).requiresCorrectToolForDrops());
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.TERRACOTTA_BLACK).sound(SoundType.DEEPSLATE).strength(3f, 6f).requiresCorrectToolForDrops());
 	}
 
 	@Override

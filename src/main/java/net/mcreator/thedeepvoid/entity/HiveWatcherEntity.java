@@ -57,6 +57,16 @@ public class HiveWatcherEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(HiveWatcherEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(HiveWatcherEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(HiveWatcherEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_attackChance = SynchedEntityData.defineId(HiveWatcherEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_damageX = SynchedEntityData.defineId(HiveWatcherEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_damageZ = SynchedEntityData.defineId(HiveWatcherEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_spinning = SynchedEntityData.defineId(HiveWatcherEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_spawnBlockade = SynchedEntityData.defineId(HiveWatcherEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_playerCount = SynchedEntityData.defineId(HiveWatcherEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_baseHealth = SynchedEntityData.defineId(HiveWatcherEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_dying = SynchedEntityData.defineId(HiveWatcherEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_positive = SynchedEntityData.defineId(HiveWatcherEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_positive2 = SynchedEntityData.defineId(HiveWatcherEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -82,6 +92,16 @@ public class HiveWatcherEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "hivewatcher");
+		this.entityData.define(DATA_attackChance, 0);
+		this.entityData.define(DATA_damageX, false);
+		this.entityData.define(DATA_damageZ, false);
+		this.entityData.define(DATA_spinning, false);
+		this.entityData.define(DATA_spawnBlockade, false);
+		this.entityData.define(DATA_playerCount, 0);
+		this.entityData.define(DATA_baseHealth, 0);
+		this.entityData.define(DATA_dying, false);
+		this.entityData.define(DATA_positive, false);
+		this.entityData.define(DATA_positive2, false);
 	}
 
 	public void setTexture(String texture) {
@@ -174,6 +194,16 @@ public class HiveWatcherEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DataattackChance", this.entityData.get(DATA_attackChance));
+		compound.putBoolean("DatadamageX", this.entityData.get(DATA_damageX));
+		compound.putBoolean("DatadamageZ", this.entityData.get(DATA_damageZ));
+		compound.putBoolean("Dataspinning", this.entityData.get(DATA_spinning));
+		compound.putBoolean("DataspawnBlockade", this.entityData.get(DATA_spawnBlockade));
+		compound.putInt("DataplayerCount", this.entityData.get(DATA_playerCount));
+		compound.putInt("DatabaseHealth", this.entityData.get(DATA_baseHealth));
+		compound.putBoolean("Datadying", this.entityData.get(DATA_dying));
+		compound.putBoolean("Datapositive", this.entityData.get(DATA_positive));
+		compound.putBoolean("Datapositive2", this.entityData.get(DATA_positive2));
 	}
 
 	@Override
@@ -181,6 +211,26 @@ public class HiveWatcherEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DataattackChance"))
+			this.entityData.set(DATA_attackChance, compound.getInt("DataattackChance"));
+		if (compound.contains("DatadamageX"))
+			this.entityData.set(DATA_damageX, compound.getBoolean("DatadamageX"));
+		if (compound.contains("DatadamageZ"))
+			this.entityData.set(DATA_damageZ, compound.getBoolean("DatadamageZ"));
+		if (compound.contains("Dataspinning"))
+			this.entityData.set(DATA_spinning, compound.getBoolean("Dataspinning"));
+		if (compound.contains("DataspawnBlockade"))
+			this.entityData.set(DATA_spawnBlockade, compound.getBoolean("DataspawnBlockade"));
+		if (compound.contains("DataplayerCount"))
+			this.entityData.set(DATA_playerCount, compound.getInt("DataplayerCount"));
+		if (compound.contains("DatabaseHealth"))
+			this.entityData.set(DATA_baseHealth, compound.getInt("DatabaseHealth"));
+		if (compound.contains("Datadying"))
+			this.entityData.set(DATA_dying, compound.getBoolean("Datadying"));
+		if (compound.contains("Datapositive"))
+			this.entityData.set(DATA_positive, compound.getBoolean("Datapositive"));
+		if (compound.contains("Datapositive2"))
+			this.entityData.set(DATA_positive2, compound.getBoolean("Datapositive2"));
 	}
 
 	@Override

@@ -18,9 +18,9 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.network.chat.Component;
 
+import net.mcreator.thedeepvoid.procedures.SoulSeekerRightclickedProcedure;
+import net.mcreator.thedeepvoid.procedures.SoulSeekerHitProcedure;
 import net.mcreator.thedeepvoid.procedures.GrimScytheSpecialInformationProcedure;
-import net.mcreator.thedeepvoid.procedures.GrimScytheRightclickedProcedure;
-import net.mcreator.thedeepvoid.procedures.GrimScytheLivingEntityIsHitWithToolProcedure;
 import net.mcreator.thedeepvoid.procedures.GrimScytheHasItemGlowingEffectProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
@@ -30,7 +30,7 @@ public class GrimScytheItem extends SwordItem {
 	public GrimScytheItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 1561;
+				return 2031;
 			}
 
 			public float getSpeed() {
@@ -50,22 +50,22 @@ public class GrimScytheItem extends SwordItem {
 			}
 
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(TheDeepVoidModItems.GRIM_GEM.get()), new ItemStack(TheDeepVoidModItems.REFINED_ONYX.get()));
+				return Ingredient.of(new ItemStack(TheDeepVoidModItems.DARK_STEEL_SCRAP.get()));
 			}
-		}, 3, -2.8f, new Item.Properties());
+		}, 3, -2.6f, new Item.Properties().fireResistant());
 	}
 
 	@Override
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
-		GrimScytheLivingEntityIsHitWithToolProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity, sourceentity);
+		SoulSeekerHitProcedure.execute(entity.level(), entity, sourceentity, itemstack);
 		return retval;
 	}
 
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
 		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-		GrimScytheRightclickedProcedure.execute(world, entity, ar.getObject());
+		SoulSeekerRightclickedProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity, ar.getObject());
 		return ar;
 	}
 

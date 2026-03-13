@@ -10,6 +10,12 @@
     "the_deep_void:cinnabar_ore",
     "the_deep_void:grim_soil",
     "the_deep_void:dark_steel_deposit",
-    "the_deep_void:rotten_fossil"
+    "the_deep_void:rotten_fossil",
+    "the_deep_void:deep_void_iron_ore",
+    "the_deep_void:deep_void_copper_ore",
+    "the_deep_void:deep_void_lapis_lazuli_ore",
+    "the_deep_void:deep_void_redstone_ore",
+    "the_deep_void:deep_void_diamond_ore",
+    "the_deep_void:deep_void_gold_ore"
   ]
 }

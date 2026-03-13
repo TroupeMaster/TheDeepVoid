@@ -48,8 +48,9 @@ public class PrimordialCrawlerFallsProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof PrimordialBoneCrawlerEntity && entity.getPersistentData().getBoolean("primordialCrawlerFall") == true) {
-			entity.getPersistentData().putBoolean("primordialCrawlerFall", false);
+		if (entity instanceof PrimordialBoneCrawlerEntity && (entity instanceof PrimordialBoneCrawlerEntity _datEntL1 && _datEntL1.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_primordialCrawlerFall)) == true) {
+			if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_primordialCrawlerFall, false);
 			if (world instanceof Level _level && !_level.isClientSide())
 				_level.explode(null, x, y, z, 0, Level.ExplosionInteraction.MOB);
 			{

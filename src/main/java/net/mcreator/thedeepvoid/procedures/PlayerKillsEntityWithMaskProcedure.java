@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
@@ -16,6 +17,8 @@ import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
 import javax.annotation.Nullable;
+
+import java.util.UUID;
 
 @Mod.EventBusSubscriber
 public class PlayerKillsEntityWithMaskProcedure {
@@ -34,7 +37,8 @@ public class PlayerKillsEntityWithMaskProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if ((sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.WEAVER_MASK_HELMET.get()) {
-			if ((sourceentity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.HEALTH_BOOST) ? _livEnt.getEffect(MobEffects.HEALTH_BOOST).getAmplifier() : 0) < 9) {
+			if ((sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).healthBoostLevel < 5 && ((LivingEntity) entity)
+					.getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).getValue() > ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).getValue()) {
 				{
 					double _setval = (sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).healthBoostLevel + 1;
 					sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -49,11 +53,11 @@ public class PlayerKillsEntityWithMaskProcedure {
 						capability.syncPlayerVariables(sourceentity);
 					});
 				}
-				if (sourceentity instanceof LivingEntity _entity)
-					_entity.removeEffect(MobEffects.HEALTH_BOOST);
-				if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, (int) Double.POSITIVE_INFINITY,
-							(int) (sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).healthBoostLevel, false, false));
+				((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).removeModifier(UUID.fromString("a2a1826b-7829-42ed-986e-984ebf45427b"));
+				if (!(((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).hasModifier((new AttributeModifier(UUID.fromString("a2a1826b-7829-42ed-986e-984ebf45427b"), "weaverMaskHealth",
+						(4 * (sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).healthBoostLevel), AttributeModifier.Operation.ADDITION)))))
+					((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).addTransientModifier((new AttributeModifier(UUID.fromString("a2a1826b-7829-42ed-986e-984ebf45427b"), "weaverMaskHealth",
+							(4 * (sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).healthBoostLevel), AttributeModifier.Operation.ADDITION)));
 				if (sourceentity instanceof LivingEntity _entity)
 					_entity.setHealth((float) (sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).healthMask);
 			} else {
@@ -66,8 +70,7 @@ public class PlayerKillsEntityWithMaskProcedure {
 			}
 		}
 		if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).healthBoostLevel > 0) {
-			if (entity instanceof LivingEntity _entity)
-				_entity.removeEffect(MobEffects.HEALTH_BOOST);
+			((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).removeModifier(UUID.fromString("a2a1826b-7829-42ed-986e-984ebf45427b"));
 			{
 				double _setval = 0;
 				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

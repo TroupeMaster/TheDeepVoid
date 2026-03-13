@@ -55,6 +55,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.thedeepvoid.procedures.PrimordialCrawlerSolidBoundingBoxConditionProcedure;
 import net.mcreator.thedeepvoid.procedures.PrimordialCrawlerInitialSpawnProcedure;
 import net.mcreator.thedeepvoid.procedures.PrimordialCrawlerDiesProcedure;
+import net.mcreator.thedeepvoid.procedures.PrimordialBoneCrawlerPlayerCollidesProcedure;
 import net.mcreator.thedeepvoid.procedures.CrawlerTickUpdateProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
@@ -64,6 +65,14 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Boolean> DATA_dying = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_digging = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_attackChance = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_primordialCrawlerFall = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_playerCount = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_baseHealth = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_diggingCount = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_dashing = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -89,6 +98,14 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "primordial_crawler");
+		this.entityData.define(DATA_dying, false);
+		this.entityData.define(DATA_digging, false);
+		this.entityData.define(DATA_attackChance, 0);
+		this.entityData.define(DATA_primordialCrawlerFall, false);
+		this.entityData.define(DATA_playerCount, 0);
+		this.entityData.define(DATA_baseHealth, 0);
+		this.entityData.define(DATA_diggingCount, 0);
+		this.entityData.define(DATA_dashing, false);
 	}
 
 	public void setTexture(String texture) {
@@ -194,6 +211,14 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putBoolean("Datadying", this.entityData.get(DATA_dying));
+		compound.putBoolean("Datadigging", this.entityData.get(DATA_digging));
+		compound.putInt("DataattackChance", this.entityData.get(DATA_attackChance));
+		compound.putBoolean("DataprimordialCrawlerFall", this.entityData.get(DATA_primordialCrawlerFall));
+		compound.putInt("DataplayerCount", this.entityData.get(DATA_playerCount));
+		compound.putInt("DatabaseHealth", this.entityData.get(DATA_baseHealth));
+		compound.putInt("DatadiggingCount", this.entityData.get(DATA_diggingCount));
+		compound.putBoolean("Datadashing", this.entityData.get(DATA_dashing));
 	}
 
 	@Override
@@ -201,6 +226,22 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datadying"))
+			this.entityData.set(DATA_dying, compound.getBoolean("Datadying"));
+		if (compound.contains("Datadigging"))
+			this.entityData.set(DATA_digging, compound.getBoolean("Datadigging"));
+		if (compound.contains("DataattackChance"))
+			this.entityData.set(DATA_attackChance, compound.getInt("DataattackChance"));
+		if (compound.contains("DataprimordialCrawlerFall"))
+			this.entityData.set(DATA_primordialCrawlerFall, compound.getBoolean("DataprimordialCrawlerFall"));
+		if (compound.contains("DataplayerCount"))
+			this.entityData.set(DATA_playerCount, compound.getInt("DataplayerCount"));
+		if (compound.contains("DatabaseHealth"))
+			this.entityData.set(DATA_baseHealth, compound.getInt("DatabaseHealth"));
+		if (compound.contains("DatadiggingCount"))
+			this.entityData.set(DATA_diggingCount, compound.getInt("DatadiggingCount"));
+		if (compound.contains("Datadashing"))
+			this.entityData.set(DATA_dashing, compound.getBoolean("Datadashing"));
 	}
 
 	@Override
@@ -213,6 +254,12 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 	@Override
 	public EntityDimensions getDimensions(Pose p_33597_) {
 		return super.getDimensions(p_33597_).scale((float) 1);
+	}
+
+	@Override
+	public void playerTouch(Player sourceentity) {
+		super.playerTouch(sourceentity);
+		PrimordialBoneCrawlerPlayerCollidesProcedure.execute(this.level(), this, sourceentity);
 	}
 
 	@Override

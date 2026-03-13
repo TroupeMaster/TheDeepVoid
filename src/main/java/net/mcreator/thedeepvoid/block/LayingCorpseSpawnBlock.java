@@ -29,7 +29,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class LayingCorpseSpawnBlock extends FlowerBlock {
 	public LayingCorpseSpawnBlock() {
-		super(() -> MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.BONE_BLOCK).strength(0.6f, 1f).noCollission().offsetType(BlockBehaviour.OffsetType.NONE).pushReaction(PushReaction.DESTROY));
+		super(() -> MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of().mapColor(MapColor.SAND).sound(SoundType.BONE_BLOCK).strength(0.6f, 1f).noCollission().offsetType(BlockBehaviour.OffsetType.NONE).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

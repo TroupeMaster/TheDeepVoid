@@ -14,12 +14,14 @@ public class FleshWormTeleportProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		entity.getPersistentData().putBoolean("teleporting", true);
+		if (entity instanceof FleshWormEntity _datEntSetL)
+			_datEntSetL.getEntityData().set(FleshWormEntity.DATA_teleporting, true);
 		if (entity instanceof FleshWormEntity) {
 			((FleshWormEntity) entity).setAnimation("animation.fleshWorm_teleport");
 		}
 		TheDeepVoidMod.queueServerWork(15, () -> {
-			entity.getPersistentData().putBoolean("teleporting", false);
+			if (entity instanceof FleshWormEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(FleshWormEntity.DATA_teleporting, false);
 			if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 				{
 					Entity _ent = entity;

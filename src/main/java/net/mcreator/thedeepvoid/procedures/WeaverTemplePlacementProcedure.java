@@ -19,7 +19,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
-import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import javax.annotation.Nullable;
@@ -36,28 +35,19 @@ public class WeaverTemplePlacementProcedure {
 	}
 
 	private static void execute(@Nullable Event event, LevelAccessor world) {
-		if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) {
-			if (DeepVoidConfigConfiguration.OVERWRITEWITHSEPULCHER.get() == true && TheDeepVoidModVariables.MapVariables.get(world).WeaverTemplePlaced == true) {
-				if (TheDeepVoidModVariables.MapVariables.get(world).overwritten == false) {
-					TheDeepVoidModVariables.MapVariables.get(world).overwritten = true;
-					TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
-					TheDeepVoidModVariables.MapVariables.get(world).WeaverTemplePlaced = false;
-					TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
+		if ((world instanceof Level _lvl ? _lvl.dimension() : (world instanceof WorldGenLevel _wgl ? _wgl.getLevel().dimension() : Level.OVERWORLD)) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))
+				&& TheDeepVoidModVariables.MapVariables.get(world).WeaverTemplePlaced == false) {
+			if (world instanceof ServerLevel _serverworld) {
+				StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("the_deep_void", "weaver_sepulcher_nogates"));
+				if (template != null) {
+					template.placeInWorld(_serverworld, new BlockPos(-40, 1, -40), new BlockPos(-40, 1, -40), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random, 3);
 				}
 			}
-			if (TheDeepVoidModVariables.MapVariables.get(world).WeaverTemplePlaced == false) {
-				if (world instanceof ServerLevel _serverworld) {
-					StructureTemplate template = _serverworld.getStructureManager().getOrCreate(new ResourceLocation("the_deep_void", "weaver_sepulcher_2"));
-					if (template != null) {
-						template.placeInWorld(_serverworld, new BlockPos(-40, 1, -40), new BlockPos(-40, 1, -40), new StructurePlaceSettings().setRotation(Rotation.NONE).setMirror(Mirror.NONE).setIgnoreEntities(false), _serverworld.random, 3);
-					}
-				}
-				TheDeepVoidModVariables.MapVariables.get(world).WeaverTemplePlaced = true;
-				TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
-				TheDeepVoidMod.queueServerWork(20, () -> {
-					world.setBlock(new BlockPos(-40, 1, -40), Blocks.AIR.defaultBlockState(), 3);
-				});
-			}
+			TheDeepVoidModVariables.MapVariables.get(world).WeaverTemplePlaced = true;
+			TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
+			TheDeepVoidMod.queueServerWork(20, () -> {
+				world.setBlock(new BlockPos(-40, 1, -40), Blocks.AIR.defaultBlockState(), 3);
+			});
 		}
 	}
 }

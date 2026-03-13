@@ -15,7 +15,7 @@ import net.minecraft.core.BlockPos;
 public class BoneMarrowBlock extends FlowerBlock {
 	public BoneMarrowBlock() {
 		super(() -> MobEffects.BLINDNESS, 100,
-				BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.BONE_BLOCK).strength(0.2f, 0.5f).noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+				BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).sound(SoundType.BONE_BLOCK).strength(0.2f, 0.5f).noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

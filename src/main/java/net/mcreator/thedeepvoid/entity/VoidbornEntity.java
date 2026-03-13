@@ -55,6 +55,14 @@ public class VoidbornEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(VoidbornEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(VoidbornEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(VoidbornEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_spawnTentacles = SynchedEntityData.defineId(VoidbornEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_hitCooldown = SynchedEntityData.defineId(VoidbornEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_hit = SynchedEntityData.defineId(VoidbornEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_cancelClose = SynchedEntityData.defineId(VoidbornEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_heartbeat = SynchedEntityData.defineId(VoidbornEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_crouch = SynchedEntityData.defineId(VoidbornEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_cancelCrouch = SynchedEntityData.defineId(VoidbornEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_crouching = SynchedEntityData.defineId(VoidbornEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -79,6 +87,14 @@ public class VoidbornEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "cavenightmare");
+		this.entityData.define(DATA_spawnTentacles, 0);
+		this.entityData.define(DATA_hitCooldown, 0);
+		this.entityData.define(DATA_hit, 0);
+		this.entityData.define(DATA_cancelClose, false);
+		this.entityData.define(DATA_heartbeat, 0);
+		this.entityData.define(DATA_crouch, false);
+		this.entityData.define(DATA_cancelCrouch, false);
+		this.entityData.define(DATA_crouching, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -166,6 +182,14 @@ public class VoidbornEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DataspawnTentacles", this.entityData.get(DATA_spawnTentacles));
+		compound.putInt("DatahitCooldown", this.entityData.get(DATA_hitCooldown));
+		compound.putInt("Datahit", this.entityData.get(DATA_hit));
+		compound.putBoolean("DatacancelClose", this.entityData.get(DATA_cancelClose));
+		compound.putInt("Dataheartbeat", this.entityData.get(DATA_heartbeat));
+		compound.putBoolean("Datacrouch", this.entityData.get(DATA_crouch));
+		compound.putBoolean("DatacancelCrouch", this.entityData.get(DATA_cancelCrouch));
+		compound.putInt("Datacrouching", this.entityData.get(DATA_crouching));
 	}
 
 	@Override
@@ -173,6 +197,22 @@ public class VoidbornEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DataspawnTentacles"))
+			this.entityData.set(DATA_spawnTentacles, compound.getInt("DataspawnTentacles"));
+		if (compound.contains("DatahitCooldown"))
+			this.entityData.set(DATA_hitCooldown, compound.getInt("DatahitCooldown"));
+		if (compound.contains("Datahit"))
+			this.entityData.set(DATA_hit, compound.getInt("Datahit"));
+		if (compound.contains("DatacancelClose"))
+			this.entityData.set(DATA_cancelClose, compound.getBoolean("DatacancelClose"));
+		if (compound.contains("Dataheartbeat"))
+			this.entityData.set(DATA_heartbeat, compound.getInt("Dataheartbeat"));
+		if (compound.contains("Datacrouch"))
+			this.entityData.set(DATA_crouch, compound.getBoolean("Datacrouch"));
+		if (compound.contains("DatacancelCrouch"))
+			this.entityData.set(DATA_cancelCrouch, compound.getBoolean("DatacancelCrouch"));
+		if (compound.contains("Datacrouching"))
+			this.entityData.set(DATA_crouching, compound.getInt("Datacrouching"));
 	}
 
 	@Override

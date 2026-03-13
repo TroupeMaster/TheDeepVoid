@@ -18,6 +18,7 @@ import net.minecraft.commands.CommandSource;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
+import net.mcreator.thedeepvoid.entity.HiveWatcherEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
@@ -30,15 +31,17 @@ public class HiveWatcherTickUpdateProcedure {
 			return;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
 			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / (double) DeepVoidConfigConfiguration.HIVEWATCHERSECONDPHASE.get()) {
-				entity.getPersistentData().putDouble("deep_void:attackChance", (entity.getPersistentData().getDouble("deep_void:attackChance") + 2));
+				if (entity instanceof HiveWatcherEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(HiveWatcherEntity.DATA_attackChance, (int) ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) + 2));
 			} else {
-				entity.getPersistentData().putDouble("deep_void:attackChance", (entity.getPersistentData().getDouble("deep_void:attackChance") + 1));
+				if (entity instanceof HiveWatcherEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(HiveWatcherEntity.DATA_attackChance, (int) ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) + 1));
 			}
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 40) {
+		if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) == 40) {
 			HiveWatcherMoveInXProcedure.execute(world, entity);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 78) {
+		if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) == 78) {
 			if (Math.random() < (double) DeepVoidConfigConfiguration.HIVEWATCHERFANGSSPAWN.get()) {
 				HiveWatcherHiveFangsProcedure.execute(world, entity);
 			}
@@ -51,19 +54,24 @@ public class HiveWatcherTickUpdateProcedure {
 				}
 			}
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 80) {
-			entity.getPersistentData().putBoolean("damageX", false);
-			entity.getPersistentData().putBoolean("damageZ", false);
+		if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) == 80) {
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_damageX, false);
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_damageZ, false);
 			entity.getPersistentData().putDouble("speedBuildUp", 0);
-			entity.getPersistentData().putBoolean("spinning", true);
-			entity.getPersistentData().putBoolean("spawnBlockade", false);
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_spinning, true);
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_spawnBlockade, false);
 			HiveWatcherSpinProcedure.execute(world, x, y, z, entity);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 100) {
-			entity.getPersistentData().putBoolean("spinning", false);
+		if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) == 100) {
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_spinning, false);
 			HiveWatcherMoveInZProcedure.execute(world, entity);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 138) {
+		if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) == 138) {
 			if (Math.random() < (double) DeepVoidConfigConfiguration.HIVEWATCHERFANGSSPAWN.get()) {
 				HiveWatcherHiveFangsProcedure.execute(world, entity);
 			}
@@ -76,19 +84,24 @@ public class HiveWatcherTickUpdateProcedure {
 				}
 			}
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 140) {
-			entity.getPersistentData().putBoolean("damageX", false);
-			entity.getPersistentData().putBoolean("damageZ", false);
+		if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) == 140) {
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_damageX, false);
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_damageZ, false);
 			entity.getPersistentData().putDouble("speedBuildUp", 0);
-			entity.getPersistentData().putBoolean("spinning", true);
-			entity.getPersistentData().putBoolean("spawnBlockade", false);
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_spinning, true);
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_spawnBlockade, false);
 			HiveWatcherSpinProcedure.execute(world, x, y, z, entity);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 160) {
-			entity.getPersistentData().putBoolean("spinning", false);
+		if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) == 160) {
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_spinning, false);
 			HiveWatcherMoveInDiagonalProcedure.execute(world, entity);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 198) {
+		if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) == 198) {
 			if (Math.random() < (double) DeepVoidConfigConfiguration.HIVEWATCHERFANGSSPAWN.get()) {
 				HiveWatcherHiveFangsProcedure.execute(world, entity);
 			}
@@ -101,28 +114,37 @@ public class HiveWatcherTickUpdateProcedure {
 				}
 			}
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 200) {
-			entity.getPersistentData().putBoolean("damageX", false);
-			entity.getPersistentData().putBoolean("damageZ", false);
+		if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) == 200) {
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_damageX, false);
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_damageZ, false);
 			entity.getPersistentData().putDouble("speedBuildUp", 0);
-			entity.getPersistentData().putBoolean("spinning", true);
-			entity.getPersistentData().putBoolean("spawnBlockade", false);
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_spinning, true);
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_spawnBlockade, false);
 			HiveWatcherSpinProcedure.execute(world, x, y, z, entity);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") >= 220) {
-			entity.getPersistentData().putBoolean("spinning", false);
-			entity.getPersistentData().putDouble("deep_void:attackChance", 0);
+		if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) >= 220) {
+			if (entity instanceof HiveWatcherEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_spinning, false);
+			if (entity instanceof HiveWatcherEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HiveWatcherEntity.DATA_attackChance, 0);
 		}
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
-			if (entity.getPersistentData().getBoolean("damageX") == true && entity.getPersistentData().getBoolean("damageZ") == false) {
+			if ((entity instanceof HiveWatcherEntity _datEntL58 && _datEntL58.getEntityData().get(HiveWatcherEntity.DATA_damageX)) == true
+					&& (entity instanceof HiveWatcherEntity _datEntL59 && _datEntL59.getEntityData().get(HiveWatcherEntity.DATA_damageZ)) == false) {
 				HiveWatcherWhileMovingXProcedure.execute(world, x, y, z, entity);
-			} else if (entity.getPersistentData().getBoolean("damageZ") == true && entity.getPersistentData().getBoolean("damageX") == false) {
+			} else if ((entity instanceof HiveWatcherEntity _datEntL60 && _datEntL60.getEntityData().get(HiveWatcherEntity.DATA_damageZ)) == true
+					&& (entity instanceof HiveWatcherEntity _datEntL61 && _datEntL61.getEntityData().get(HiveWatcherEntity.DATA_damageX)) == false) {
 				HiveWatcherWhileMovingZProcedure.execute(world, x, y, z, entity);
-			} else if (entity.getPersistentData().getBoolean("damageX") == true && entity.getPersistentData().getBoolean("damageZ") == true) {
+			} else if ((entity instanceof HiveWatcherEntity _datEntL62 && _datEntL62.getEntityData().get(HiveWatcherEntity.DATA_damageX)) == true
+					&& (entity instanceof HiveWatcherEntity _datEntL63 && _datEntL63.getEntityData().get(HiveWatcherEntity.DATA_damageZ)) == true) {
 				HiveWatcherWhileMovingDiagonalProcedure.execute(world, x, y, z, entity);
 			}
 		}
-		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty())) {
+		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()) && DeepVoidConfigConfiguration.BOSSIDLES.get() == true) {
 			if (!entity.level().isClientSide())
 				entity.discard();
 			if (world instanceof ServerLevel _level) {

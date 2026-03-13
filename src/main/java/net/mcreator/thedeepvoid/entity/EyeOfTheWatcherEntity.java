@@ -163,7 +163,7 @@ public class EyeOfTheWatcherEntity extends Monster implements GeoEntity {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		HiveBrainOnEntityTickUpdateProcedure.execute(this);
+		HiveBrainOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
 

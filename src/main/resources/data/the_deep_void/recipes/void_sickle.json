@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "the_deep_void:smithing_template_dark_steel"
+  },
+  "base": {
+    "item": "the_deep_void:grim_sickle"
+  },
+  "addition": {
+    "item": "the_deep_void:void_matter"
+  },
+  "result": {
+    "item": "the_deep_void:void_sickle"
+  }
+}

@@ -29,7 +29,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 public class TeethBlock extends FlowerBlock {
 	public TeethBlock() {
 		super(() -> MobEffects.MOVEMENT_SPEED, 100,
-				BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.BONE_BLOCK).strength(0.5f, 0.5f).noCollission().offsetType(BlockBehaviour.OffsetType.NONE).pushReaction(PushReaction.DESTROY));
+				BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).sound(SoundType.BONE_BLOCK).strength(0.5f, 0.5f).noCollission().offsetType(BlockBehaviour.OffsetType.NONE).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

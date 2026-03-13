@@ -21,6 +21,9 @@ import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.DifficultyInstance;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
@@ -32,6 +35,10 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import javax.annotation.Nullable;
 
 public class SulfurTntEntityEntity extends Monster {
+	public static final EntityDataAccessor<Integer> DATA_tick = SynchedEntityData.defineId(SulfurTntEntityEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_explode = SynchedEntityData.defineId(SulfurTntEntityEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_fuse = SynchedEntityData.defineId(SulfurTntEntityEntity.class, EntityDataSerializers.INT);
+
 	public SulfurTntEntityEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(TheDeepVoidModEntities.SULFUR_TNT_ENTITY.get(), world);
 	}
@@ -47,6 +54,14 @@ public class SulfurTntEntityEntity extends Monster {
 	@Override
 	public Packet<ClientGamePacketListener> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_tick, 0);
+		this.entityData.define(DATA_explode, 0);
+		this.entityData.define(DATA_fuse, 0);
 	}
 
 	@Override
@@ -109,8 +124,27 @@ public class SulfurTntEntityEntity extends Monster {
 	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
-		SulfurTntEntityOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ(), this);
+		SulfurTntEntityOnInitialEntitySpawnProcedure.execute(world, this.getX(), this.getY(), this.getZ());
 		return retval;
+	}
+
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putInt("Datatick", this.entityData.get(DATA_tick));
+		compound.putInt("Dataexplode", this.entityData.get(DATA_explode));
+		compound.putInt("Datafuse", this.entityData.get(DATA_fuse));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("Datatick"))
+			this.entityData.set(DATA_tick, compound.getInt("Datatick"));
+		if (compound.contains("Dataexplode"))
+			this.entityData.set(DATA_explode, compound.getInt("Dataexplode"));
+		if (compound.contains("Datafuse"))
+			this.entityData.set(DATA_fuse, compound.getInt("Datafuse"));
 	}
 
 	@Override

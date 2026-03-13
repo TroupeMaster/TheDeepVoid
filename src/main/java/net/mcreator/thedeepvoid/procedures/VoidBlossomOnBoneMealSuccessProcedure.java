@@ -16,5 +16,41 @@ public class VoidBlossomOnBoneMealSuccessProcedure {
 		} else {
 			world.setBlock(BlockPos.containing(x, y + 1, z), TheDeepVoidModBlocks.VOID_FERN.get().defaultBlockState(), 3);
 		}
+		if (world.isEmptyBlock(BlockPos.containing(x + 1, y + 1, z))) {
+			if (Math.random() < 0.33) {
+				world.setBlock(BlockPos.containing(x + 1, y + 1, z), TheDeepVoidModBlocks.VOID_ROSE.get().defaultBlockState(), 3);
+			} else if (Math.random() < 0.33) {
+				world.setBlock(BlockPos.containing(x + 1, y + 1, z), TheDeepVoidModBlocks.VOID_FERN.get().defaultBlockState(), 3);
+			} else if (Math.random() < 0.33) {
+				world.setBlock(BlockPos.containing(x + 1, y + 1, z), TheDeepVoidModBlocks.VOID_STEM.get().defaultBlockState(), 3);
+			}
+		}
+		if (world.isEmptyBlock(BlockPos.containing(x - 1, y + 1, z))) {
+			if (Math.random() < 0.33) {
+				world.setBlock(BlockPos.containing(x - 1, y + 1, z), TheDeepVoidModBlocks.VOID_ROSE.get().defaultBlockState(), 3);
+			} else if (Math.random() < 0.33) {
+				world.setBlock(BlockPos.containing(x - 1, y + 1, z), TheDeepVoidModBlocks.VOID_FERN.get().defaultBlockState(), 3);
+			} else if (Math.random() < 0.33) {
+				world.setBlock(BlockPos.containing(x - 1, y + 1, z), TheDeepVoidModBlocks.VOID_STEM.get().defaultBlockState(), 3);
+			}
+		}
+		if (world.isEmptyBlock(BlockPos.containing(x, y + 1, z + 1))) {
+			if (Math.random() < 0.33) {
+				world.setBlock(BlockPos.containing(x, y + 1, z + 1), TheDeepVoidModBlocks.VOID_ROSE.get().defaultBlockState(), 3);
+			} else if (Math.random() < 0.33) {
+				world.setBlock(BlockPos.containing(x, y + 1, z + 1), TheDeepVoidModBlocks.VOID_FERN.get().defaultBlockState(), 3);
+			} else if (Math.random() < 0.33) {
+				world.setBlock(BlockPos.containing(x, y + 1, z + 1), TheDeepVoidModBlocks.VOID_STEM.get().defaultBlockState(), 3);
+			}
+		}
+		if (world.isEmptyBlock(BlockPos.containing(x, y + 1, z - 1))) {
+			if (Math.random() < 0.33) {
+				world.setBlock(BlockPos.containing(x, y + 1, z - 1), TheDeepVoidModBlocks.VOID_ROSE.get().defaultBlockState(), 3);
+			} else if (Math.random() < 0.33) {
+				world.setBlock(BlockPos.containing(x, y + 1, z - 1), TheDeepVoidModBlocks.VOID_FERN.get().defaultBlockState(), 3);
+			} else if (Math.random() < 0.33) {
+				world.setBlock(BlockPos.containing(x, y + 1, z - 1), TheDeepVoidModBlocks.VOID_STEM.get().defaultBlockState(), 3);
+			}
+		}
 	}
 }

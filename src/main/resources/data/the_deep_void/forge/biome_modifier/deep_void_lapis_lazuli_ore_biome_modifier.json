@@ -1,0 +1,15 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_deep_void:befouled_marsh",
+    "the_deep_void:crawler_nest",
+    "the_deep_void:drifting_monoliths",
+    "the_deep_void:gloomy_deathgrounds",
+    "the_deep_void:staring_hills",
+    "the_deep_void:gathering_grounds",
+    "the_deep_void:gaol_of_heretics",
+    "the_deep_void:deep_marrows"
+  ],
+  "features": "the_deep_void:deep_void_lapis_lazuli_ore",
+  "step": "underground_ores"
+}

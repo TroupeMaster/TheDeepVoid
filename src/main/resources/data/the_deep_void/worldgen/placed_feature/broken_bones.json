@@ -1,0 +1,30 @@
+{
+  "feature": "the_deep_void:broken_bones",
+  "placement": [
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 3
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:random_offset",
+      "xz_spread": 0,
+      "y_spread": {
+        "type": "uniform",
+        "value": {
+          "min_inclusive": -4,
+          "max_inclusive": 0
+        }
+      }
+    }
+  ]
+}

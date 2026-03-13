@@ -50,6 +50,8 @@ public class BoneCageEntity extends PathfinderMob implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(BoneCageEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(BoneCageEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(BoneCageEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_lure = SynchedEntityData.defineId(BoneCageEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_despawn = SynchedEntityData.defineId(BoneCageEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -74,6 +76,8 @@ public class BoneCageEntity extends PathfinderMob implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "bone_cage_hidden");
+		this.entityData.define(DATA_lure, 0);
+		this.entityData.define(DATA_despawn, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -153,6 +157,8 @@ public class BoneCageEntity extends PathfinderMob implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("Datalure", this.entityData.get(DATA_lure));
+		compound.putInt("Datadespawn", this.entityData.get(DATA_despawn));
 	}
 
 	@Override
@@ -160,6 +166,10 @@ public class BoneCageEntity extends PathfinderMob implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datalure"))
+			this.entityData.set(DATA_lure, compound.getInt("Datalure"));
+		if (compound.contains("Datadespawn"))
+			this.entityData.set(DATA_despawn, compound.getInt("Datadespawn"));
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 {
-  "parent": "the_deep_void:custom/soul_seeker_scythe",
+  "parent": "the_deep_void:custom/soulseekernew",
   "textures": {
-    "0": "the_deep_void:block/soul_seeker",
-    "particle": "the_deep_void:item/grim_scythe"
+    "0": "the_deep_void:block/soul_seeker_voided",
+    "particle": "the_deep_void:item/soul_seeker_voided"
   }
 }

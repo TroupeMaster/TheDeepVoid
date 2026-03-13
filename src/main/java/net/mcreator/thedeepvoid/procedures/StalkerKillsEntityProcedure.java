@@ -13,7 +13,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.thedeepvoid.entity.StalkingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
@@ -35,7 +34,7 @@ public class StalkerKillsEntityProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity sourceentity) {
 		if (sourceentity == null)
 			return;
-		if (sourceentity instanceof StalkerEntity || sourceentity instanceof StalkingStalkerEntity) {
+		if (sourceentity instanceof StalkerEntity) {
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.eat")), SoundSource.HOSTILE, (float) 1.4,

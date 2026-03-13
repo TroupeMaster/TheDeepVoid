@@ -15,7 +15,7 @@ import net.minecraft.core.BlockPos;
 public class CaveGrowthBlock extends FlowerBlock {
 	public CaveGrowthBlock() {
 		super(() -> MobEffects.MOVEMENT_SPEED, 100,
-				BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.NETHER_SPROUTS).strength(0.5f, 0.5f).noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+				BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).sound(SoundType.NETHER_SPROUTS).strength(0.5f, 0.5f).noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

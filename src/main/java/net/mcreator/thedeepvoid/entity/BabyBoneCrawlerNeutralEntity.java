@@ -54,6 +54,7 @@ public class BabyBoneCrawlerNeutralEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(BabyBoneCrawlerNeutralEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(BabyBoneCrawlerNeutralEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(BabyBoneCrawlerNeutralEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_growth = SynchedEntityData.defineId(BabyBoneCrawlerNeutralEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -78,6 +79,7 @@ public class BabyBoneCrawlerNeutralEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "baby_bone_crawler");
+		this.entityData.define(DATA_growth, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -134,6 +136,7 @@ public class BabyBoneCrawlerNeutralEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("Datagrowth", this.entityData.get(DATA_growth));
 	}
 
 	@Override
@@ -141,6 +144,8 @@ public class BabyBoneCrawlerNeutralEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datagrowth"))
+			this.entityData.set(DATA_growth, compound.getInt("Datagrowth"));
 	}
 
 	@Override

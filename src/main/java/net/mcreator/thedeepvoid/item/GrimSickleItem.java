@@ -45,7 +45,7 @@ public class GrimSickleItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(TheDeepVoidModItems.GRIM_GEM.get()));
 			}
-		}, 3, 8f, new Item.Properties());
+		}, 3, 0f, new Item.Properties());
 	}
 
 	@Override

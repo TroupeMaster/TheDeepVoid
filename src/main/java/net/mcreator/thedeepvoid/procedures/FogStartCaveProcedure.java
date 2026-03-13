@@ -7,7 +7,9 @@ import net.minecraftforge.client.event.ViewportEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
@@ -17,6 +19,8 @@ import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
+import net.mcreator.thedeepvoid.entity.ApostleOfCatastropheEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import javax.annotation.Nullable;
@@ -64,63 +68,77 @@ public class FogStartCaveProcedure {
 			return;
 		if (DeepVoidConfigConfiguration.DEEPVOIDFOG.get() == true) {
 			if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) {
-				if (entity.getY() <= 40 && entity.getY() > 36) {
+				if (entity.getY() <= 40 && entity.getY() >= 1) {
+					setShape(FogShape.SPHERE);
+				}
+				if (entity.getY() <= 40 && entity.getY() > 38) {
 					setDistance(100, 120);
-					setShape(FogShape.SPHERE);
-				} else if (entity.getY() <= 36 && entity.getY() > 32) {
+				} else if (entity.getY() <= 38 && entity.getY() > 36) {
+					setDistance(95, 115);
+				} else if (entity.getY() <= 36 && entity.getY() > 34) {
 					setDistance(90, 110);
-					setShape(FogShape.SPHERE);
-				} else if (entity.getY() <= 32 && entity.getY() > 28) {
+				} else if (entity.getY() <= 34 && entity.getY() > 32) {
+					setDistance(85, 105);
+				} else if (entity.getY() <= 32 && entity.getY() > 30) {
 					setDistance(80, 100);
-					setShape(FogShape.SPHERE);
-				} else if (entity.getY() <= 28 && entity.getY() > 24) {
+				} else if (entity.getY() <= 30 && entity.getY() > 28) {
+					setDistance(75, 95);
+				} else if (entity.getY() <= 28 && entity.getY() > 26) {
 					setDistance(70, 90);
-					setShape(FogShape.SPHERE);
-				} else if (entity.getY() <= 24 && entity.getY() > 20) {
+				} else if (entity.getY() <= 26 && entity.getY() > 24) {
+					setDistance(65, 85);
+				} else if (entity.getY() <= 24 && entity.getY() > 22) {
 					setDistance(60, 80);
-					setShape(FogShape.SPHERE);
-				} else if (entity.getY() <= 20 && entity.getY() > 16) {
-					setDistance(50, 70);
-					setShape(FogShape.SPHERE);
-				} else if (entity.getY() <= 16 && entity.getY() > 12) {
-					setDistance(40, 60);
-					setShape(FogShape.SPHERE);
-				} else if (entity.getY() <= 12 && entity.getY() > 8) {
-					setDistance(30, 50);
-					setShape(FogShape.SPHERE);
-				} else if (entity.getY() <= 8 && entity.getY() > 4) {
-					setDistance(20, 40);
-					setShape(FogShape.SPHERE);
-				} else if (entity.getY() <= 4 && entity.getY() > 3) {
-					setDistance(15, 30);
-					setShape(FogShape.SPHERE);
-				} else if (entity.getY() <= 3 && entity.getY() >= 1) {
+				} else if (entity.getY() <= 22 && entity.getY() > 20) {
+					setDistance(55, 75);
+				} else if (entity.getY() <= 20 && entity.getY() > 18) {
+					setDistance(50, 75);
+				} else if (entity.getY() <= 18 && entity.getY() > 16) {
+					setDistance(45, 70);
+				} else if (entity.getY() <= 16 && entity.getY() > 14) {
+					setDistance(40, 65);
+				} else if (entity.getY() <= 14 && entity.getY() > 12) {
+					setDistance(35, 60);
+				} else if (entity.getY() <= 12 && entity.getY() > 10) {
+					setDistance(30, 55);
+				} else if (entity.getY() <= 10 && entity.getY() > 8) {
+					setDistance(25, 50);
+				} else if (entity.getY() <= 8 && entity.getY() > 6) {
+					setDistance(20, 45);
+				} else if (entity.getY() <= 6 && entity.getY() > 4) {
+					setDistance(15, 40);
+				} else if (entity.getY() <= 4 && entity.getY() > 2) {
+					setDistance(10, 35);
+				} else if (entity.getY() == 3) {
+					setDistance(10, 30);
+				} else if (entity.getY() == 2) {
+					setDistance(10, 25);
+				} else if (entity.getY() <= 1 && !(entity instanceof LivingEntity _livEnt69 && _livEnt69.hasEffect(TheDeepVoidModMobEffects.HALLUCINATE.get()))) {
 					setDistance(10, 20);
-					setShape(FogShape.SPHERE);
 				}
 			}
 			if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:gloomy_deathgrounds")) || world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:staring_hills"))) {
-				if (entity.getY() > 40) {
+				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleOfCatastropheEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
 					setDistance(80, 180);
 					setShape(FogShape.CYLINDER);
 				}
 			} else if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:grim_canopy"))) {
-				if (entity.getY() > 40) {
+				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleOfCatastropheEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
 					setDistance(50, 120);
 					setShape(FogShape.CYLINDER);
 				}
 			} else if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:watching_undergrowth"))) {
-				if (entity.getY() > 40) {
+				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleOfCatastropheEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
 					setDistance(5, 80);
 					setShape(FogShape.CYLINDER);
 				}
 			} else if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:crawler_nest"))) {
-				if (entity.getY() > 40) {
+				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleOfCatastropheEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
 					setDistance(35, 100);
 					setShape(FogShape.CYLINDER);
 				}
 			} else if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:gaol_of_heretics"))) {
-				if (entity.getY() > 40) {
+				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleOfCatastropheEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
 					setDistance(50, 120);
 					setShape(FogShape.CYLINDER);
 				}

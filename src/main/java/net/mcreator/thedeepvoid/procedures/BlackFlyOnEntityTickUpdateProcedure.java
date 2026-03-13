@@ -22,15 +22,17 @@ public class BlackFlyOnEntityTickUpdateProcedure {
 		if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 1, entity.getZ())).canOcclude() && !((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 			entity.setDeltaMovement(new Vec3((entity.getDeltaMovement().x()), 0.1, (entity.getDeltaMovement().z())));
 		}
-		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && entity.getPersistentData().getBoolean("noAgro") == true) {
-			entity.getPersistentData().putBoolean("noAgro", false);
+		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof BlackFlyEntity _datEntL23 && _datEntL23.getEntityData().get(BlackFlyEntity.DATA_noAgro)) == true) {
+			if (entity instanceof BlackFlyEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(BlackFlyEntity.DATA_noAgro, false);
 			if (entity instanceof BlackFlyEntity) {
 				((BlackFlyEntity) entity).setAnimation("empty");
 			}
 		}
 		if (!world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() - 0.2, entity.getZ())).canOcclude() && (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null
-				&& entity.getPersistentData().getBoolean("stopAnimation") == false) {
-			entity.getPersistentData().putBoolean("stopAnimation", true);
+				&& (entity instanceof BlackFlyEntity _datEntL32 && _datEntL32.getEntityData().get(BlackFlyEntity.DATA_stopAnimation)) == false) {
+			if (entity instanceof BlackFlyEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(BlackFlyEntity.DATA_stopAnimation, true);
 			if (entity instanceof BlackFlyEntity) {
 				((BlackFlyEntity) entity).setAnimation("empty");
 			}
@@ -41,11 +43,13 @@ public class BlackFlyOnEntityTickUpdateProcedure {
 			}
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 99, false, false));
-			if (entity.getPersistentData().getBoolean("noAgro") == false) {
-				entity.getPersistentData().putBoolean("noAgro", true);
+			if ((entity instanceof BlackFlyEntity _datEntL43 && _datEntL43.getEntityData().get(BlackFlyEntity.DATA_noAgro)) == false) {
+				if (entity instanceof BlackFlyEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(BlackFlyEntity.DATA_noAgro, true);
 			}
-			if (entity.getPersistentData().getBoolean("stopAnimation") == true) {
-				entity.getPersistentData().putBoolean("stopAnimation", false);
+			if ((entity instanceof BlackFlyEntity _datEntL45 && _datEntL45.getEntityData().get(BlackFlyEntity.DATA_stopAnimation)) == true) {
+				if (entity instanceof BlackFlyEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(BlackFlyEntity.DATA_stopAnimation, false);
 			}
 		}
 	}

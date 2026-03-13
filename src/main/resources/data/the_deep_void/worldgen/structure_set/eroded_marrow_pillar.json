@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "the_deep_void:eroded_marrow_pillar",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 2,
+    "separation": 0,
+    "salt": 1535305526
+  }
+}

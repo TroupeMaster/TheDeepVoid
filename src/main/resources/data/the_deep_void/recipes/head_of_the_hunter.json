@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "bbb",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "b": {
+      "item": "the_deep_void:hunter_hide"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:head_of_the_hunter",
+    "count": 1
+  }
+}

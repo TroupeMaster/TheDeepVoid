@@ -20,6 +20,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.entity.HiveWatcherEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import java.util.List;
@@ -66,7 +67,7 @@ public class HiveWatcherWhileMovingXProcedure {
 		}
 		entity.getPersistentData().putDouble("speedBuildUp",
 				(entity.getPersistentData().getDouble("speedBuildUp") + ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 2 ? 0.07 : 0.02)));
-		if (entity.getPersistentData().getBoolean("positive") == true) {
+		if ((entity instanceof HiveWatcherEntity _datEntL24 && _datEntL24.getEntityData().get(HiveWatcherEntity.DATA_positive)) == true) {
 			entity.setDeltaMovement(new Vec3((entity.getPersistentData().getDouble("speedBuildUp")), (-1), 0));
 		} else {
 			entity.setDeltaMovement(new Vec3((entity.getPersistentData().getDouble("speedBuildUp") * (-1)), (-1), 0));

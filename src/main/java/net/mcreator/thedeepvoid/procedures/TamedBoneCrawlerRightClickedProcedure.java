@@ -28,6 +28,7 @@ import net.minecraft.client.Minecraft;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.TamedMotherBoneCrawlerEntity;
+import net.mcreator.thedeepvoid.entity.TamedBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.TamedAlphaBoneCrawlerEntity;
 
 import java.util.Comparator;
@@ -100,12 +101,13 @@ public class TamedBoneCrawlerRightClickedProcedure {
 					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.bite")), SoundSource.HOSTILE, 1, (float) 1.6, false);
 				}
 			}
-			entity.getPersistentData().putDouble("growthMother", (entity.getPersistentData().getDouble("growthMother") + 1));
+			if (entity instanceof TamedBoneCrawlerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(TamedBoneCrawlerEntity.DATA_growthMother, (int) ((entity instanceof TamedBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(TamedBoneCrawlerEntity.DATA_growthMother) : 0) + 1));
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.HEART, x, y, z, 2, 0.1, 0.1, 0.1, 0.1);
 			if (entity instanceof LivingEntity _entity)
 				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 2));
-			if (entity.getPersistentData().getDouble("growthMother") >= 128) {
+			if ((entity instanceof TamedBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(TamedBoneCrawlerEntity.DATA_growthMother) : 0) >= 128) {
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:insect_cry_1")), SoundSource.HOSTILE, 1, (float) 0.8);
@@ -161,12 +163,13 @@ public class TamedBoneCrawlerRightClickedProcedure {
 					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.bite")), SoundSource.HOSTILE, 1, (float) 1.6, false);
 				}
 			}
-			entity.getPersistentData().putDouble("growthAlpha", (entity.getPersistentData().getDouble("growthAlpha") + 1));
+			if (entity instanceof TamedBoneCrawlerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(TamedBoneCrawlerEntity.DATA_growthAlpha, (int) ((entity instanceof TamedBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(TamedBoneCrawlerEntity.DATA_growthAlpha) : 0) + 1));
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.HEART, x, y, z, 2, 0.1, 0.1, 0.1, 0.1);
 			if (entity instanceof LivingEntity _entity)
 				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 2));
-			if (entity.getPersistentData().getDouble("growthAlpha") >= 128) {
+			if ((entity instanceof TamedBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(TamedBoneCrawlerEntity.DATA_growthAlpha) : 0) >= 128) {
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:insect_cry_1")), SoundSource.HOSTILE, 1, (float) 0.8);

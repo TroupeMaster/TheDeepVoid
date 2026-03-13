@@ -1,6 +1,8 @@
 
 package net.mcreator.thedeepvoid.block;
 
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
@@ -10,7 +12,7 @@ import net.minecraft.core.BlockPos;
 
 public class AshBlockBlock extends Block {
 	public AshBlockBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.SOUL_SOIL).strength(1f, 0f));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_BLACK).sound(SoundType.SOUL_SOIL).strength(1f, 0f));
 	}
 
 	@Override

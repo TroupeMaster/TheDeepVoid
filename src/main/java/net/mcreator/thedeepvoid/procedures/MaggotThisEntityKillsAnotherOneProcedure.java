@@ -19,6 +19,7 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
+import net.mcreator.thedeepvoid.entity.MaggotEntity;
 import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerNeutralEntity;
 import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerEntity;
 
@@ -27,8 +28,9 @@ public class MaggotThisEntityKillsAnotherOneProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof BabyBoneCrawlerEntity || entity instanceof BabyBoneCrawlerNeutralEntity) {
-			entity.getPersistentData().putDouble("killed", (entity.getPersistentData().getDouble("killed") + 1));
-			if (entity.getPersistentData().getDouble("killed") >= 2) {
+			if (entity instanceof MaggotEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MaggotEntity.DATA_killed, (int) ((entity instanceof MaggotEntity _datEntI ? _datEntI.getEntityData().get(MaggotEntity.DATA_killed) : 0) + 1));
+			if ((entity instanceof MaggotEntity _datEntI ? _datEntI.getEntityData().get(MaggotEntity.DATA_killed) : 0) >= 2) {
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fleshy_explosion")), SoundSource.HOSTILE, 1,

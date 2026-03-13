@@ -2,5 +2,5 @@
   "type": "forge:add_features",
   "biomes": "#the_deep_void:flesh_biome",
   "features": "the_deep_void:hard_flesh_node",
-  "step": "surface_structures"
+  "step": "local_modifications"
 }

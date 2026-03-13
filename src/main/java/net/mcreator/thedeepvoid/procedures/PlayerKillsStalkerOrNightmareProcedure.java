@@ -20,8 +20,8 @@ import net.minecraft.advancements.Advancement;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEnchantments;
+import net.mcreator.thedeepvoid.entity.VoidbornEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
-import net.mcreator.thedeepvoid.entity.NightmareEntity;
 
 import javax.annotation.Nullable;
 
@@ -42,7 +42,7 @@ public class PlayerKillsStalkerOrNightmareProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (sourceentity instanceof Player) {
-			if (entity instanceof StalkerEntity || entity instanceof NightmareEntity) {
+			if (entity instanceof StalkerEntity || entity instanceof VoidbornEntity) {
 				if (sourceentity instanceof ServerPlayer _player) {
 					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:hunter"));
 					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
@@ -61,7 +61,7 @@ public class PlayerKillsStalkerOrNightmareProcedure {
 							_player.getAdvancements().award(_adv, criteria);
 					}
 				}
-			} else if (entity instanceof NightmareEntity && ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GRIM_SCYTHE.get()
+			} else if (entity instanceof VoidbornEntity && ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GRIM_SCYTHE.get()
 					|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.CRUEL_STILETTO.get()
 					|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SHADESTORM.get()
 					|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VOID_MATTER_GREATSWORD.get())) {

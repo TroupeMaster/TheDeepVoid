@@ -22,7 +22,7 @@ import net.minecraft.core.BlockPos;
 
 public class PeepingStemBlock extends FlowerBlock {
 	public PeepingStemBlock() {
-		super(() -> MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT)
+		super(() -> MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of().mapColor(MapColor.NETHER)
 				.sound(new ForgeSoundType(1.0f, 1.0f, () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:flesh_block_step")), () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("intentionally_empty")),
 						() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:flesh_block_place")), () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("intentionally_empty")),
 						() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("intentionally_empty"))))

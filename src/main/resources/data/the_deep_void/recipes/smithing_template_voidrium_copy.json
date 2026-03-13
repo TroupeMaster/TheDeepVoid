@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "cdc",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:onyx"
+    },
+    "b": {
+      "item": "the_deep_void:smithing_template_voidrium"
+    },
+    "c": {
+      "item": "the_deep_void:refined_onyx"
+    },
+    "d": {
+      "item": "the_deep_void:ancient_deepslate"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:smithing_template_voidrium",
+    "count": 2
+  }
+}

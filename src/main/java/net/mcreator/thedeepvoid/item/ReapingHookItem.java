@@ -45,7 +45,7 @@ public class ReapingHookItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(TheDeepVoidModItems.ROTTEN_BONE.get()));
 			}
-		}, 3, 6f, new Item.Properties());
+		}, 3, 0f, new Item.Properties());
 	}
 
 	@Override

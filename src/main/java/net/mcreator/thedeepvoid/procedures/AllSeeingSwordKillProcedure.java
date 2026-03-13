@@ -33,9 +33,7 @@ public class AllSeeingSwordKillProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (entity instanceof LivingEntity && sourceentity instanceof LivingEntity) {
-			if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ALL_SEEING_SWORD.get()
-					|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.LAVENDITE_ALL_SEEING_SWORD.get()
-					|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ROTTEN_ALL_SEEING_SWORD.get()) {
+			if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ALL_SEEING_SWORD.get()) {
 				if (Math.random() < 0.5) {
 					if (amount >= 5) {
 						{

@@ -41,8 +41,6 @@ public class PrimordialCrawlerWhileDiggingProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double randomX = 0;
-		double randomZ = 0;
 		world.levelEvent(2001, BlockPos.containing(x, y, z), Block.getId(TheDeepVoidModBlocks.BLOCK_OF_GOO.get().defaultBlockState()));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 5, 0, false, false));
@@ -52,9 +50,11 @@ public class PrimordialCrawlerWhileDiggingProcedure {
 			_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 5, 99, false, false));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 5, 5, false, false));
-		if (entity.getPersistentData().getDouble("deep_void:diggingCount") >= 70) {
-			entity.getPersistentData().putBoolean("deep_void:digging", false);
-			entity.getPersistentData().putDouble("deep_void:diggingCount", 0);
+		if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_diggingCount) : 0) >= 70) {
+			if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_digging, false);
+			if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_diggingCount, 0);
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 99, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -142,11 +142,13 @@ public class PrimordialCrawlerWhileDiggingProcedure {
 						}
 					}
 					entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entity.getYRot() + 180)) * 1), 0.9, (Math.cos(Math.toRadians(entity.getYRot())) * 1)));
-					entity.getPersistentData().putBoolean("primordialCrawlerFall", true);
+					if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_primordialCrawlerFall, true);
 				}
 			});
 		} else {
-			entity.getPersistentData().putDouble("deep_void:diggingCount", (entity.getPersistentData().getDouble("deep_void:diggingCount") + 1));
+			if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_diggingCount, (int) ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_diggingCount) : 0) + 1));
 		}
 	}
 }

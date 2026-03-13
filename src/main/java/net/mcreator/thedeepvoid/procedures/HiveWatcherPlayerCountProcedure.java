@@ -42,13 +42,17 @@ public class HiveWatcherPlayerCountProcedure {
 		if (DeepVoidConfigConfiguration.DOBOSSHPSCALING.get() == true) {
 			if (world.players().size() > 1) {
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
-					entity.getPersistentData().putDouble("playerCount", (entity.getPersistentData().getDouble("playerCount") + 1));
+					if (entity instanceof HiveWatcherEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(HiveWatcherEntity.DATA_playerCount, (int) ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_playerCount) : 0) + 1));
 				}
 			}
-			if (entity.getPersistentData().getDouble("playerCount") > 1) {
-				entity.getPersistentData().putDouble("baseHealth", ((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).getBaseValue());
+			if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_playerCount) : 0) > 1) {
+				if (entity instanceof HiveWatcherEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(HiveWatcherEntity.DATA_baseHealth, (int) ((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).getBaseValue());
 				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
-						.setBaseValue((entity.getPersistentData().getDouble("baseHealth") + entity.getPersistentData().getDouble("baseHealth") * 0.35 * entity.getPersistentData().getDouble("playerCount")));
+						.setBaseValue(((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_baseHealth) : 0)
+								+ (entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_baseHealth) : 0) * 0.35
+										* (entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_playerCount) : 0)));
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 			}

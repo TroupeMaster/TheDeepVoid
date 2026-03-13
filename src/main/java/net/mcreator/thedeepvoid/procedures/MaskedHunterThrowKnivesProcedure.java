@@ -36,9 +36,10 @@ public class MaskedHunterThrowKnivesProcedure {
 				&& !((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(MobEffects.POISON))
 				&& (!world.getEntitiesOfClass(Animal.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty() || !world.getEntitiesOfClass(Villager.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty()
 						|| !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty())) {
-			if (entity.getPersistentData().getDouble("shoot") >= 200) {
+			if ((entity instanceof MaskedHunterEntity _datEntI ? _datEntI.getEntityData().get(MaskedHunterEntity.DATA_shoot) : 0) >= 200) {
 				if (Math.random() < 0.02) {
-					entity.getPersistentData().putDouble("shoot", 0);
+					if (entity instanceof MaskedHunterEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(MaskedHunterEntity.DATA_shoot, 0);
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 9, 99, false, false));
 					if (entity instanceof MaskedHunterEntity) {
@@ -97,7 +98,8 @@ public class MaskedHunterThrowKnivesProcedure {
 					});
 				}
 			} else {
-				entity.getPersistentData().putDouble("shoot", (entity.getPersistentData().getDouble("shoot") + 1));
+				if (entity instanceof MaskedHunterEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(MaskedHunterEntity.DATA_shoot, (int) ((entity instanceof MaskedHunterEntity _datEntI ? _datEntI.getEntityData().get(MaskedHunterEntity.DATA_shoot) : 0) + 1));
 			}
 		}
 	}

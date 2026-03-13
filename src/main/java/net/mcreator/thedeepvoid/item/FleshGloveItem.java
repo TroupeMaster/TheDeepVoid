@@ -44,7 +44,7 @@ public class FleshGloveItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(TheDeepVoidModItems.FLESH_CHUNK.get()));
 			}
-		}, 3, 16f, new Item.Properties().fireResistant());
+		}, 3, -1.6f, new Item.Properties().fireResistant());
 	}
 
 	@Override

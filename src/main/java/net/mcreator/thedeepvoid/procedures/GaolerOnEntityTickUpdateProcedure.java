@@ -31,10 +31,11 @@ public class GaolerOnEntityTickUpdateProcedure {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)) && entity.getPersistentData().getDouble("attackChance") <= 0) {
+				}.compareDistOf(x, y, z)).findFirst().orElse(null)) && (entity instanceof GaolerEntity _datEntI ? _datEntI.getEntityData().get(GaolerEntity.DATA_attackChance) : 0) <= 0) {
 					if (!(!world.getEntitiesOfClass(PlayerCageEntity.class, AABB.ofSize(new Vec3(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()),
 							((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()), ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ())), 4, 4, 4), e -> true).isEmpty())) {
-						entity.getPersistentData().putDouble("attackChance", 200);
+						if (entity instanceof GaolerEntity _datEntSetI)
+							_datEntSetI.getEntityData().set(GaolerEntity.DATA_attackChance, 200);
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 99, false, false));
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -46,7 +47,7 @@ public class GaolerOnEntityTickUpdateProcedure {
 							if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
 								{
 									final Vec3 _center = new Vec3(x, y, z);
-									List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
+									List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
 											.toList();
 									for (Entity entityiterator : _entfound) {
 										if (entityiterator == (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)) {
@@ -62,8 +63,9 @@ public class GaolerOnEntityTickUpdateProcedure {
 							}
 						});
 					}
-				} else if (entity.getPersistentData().getDouble("attackChance") > 0) {
-					entity.getPersistentData().putDouble("attackChance", (entity.getPersistentData().getDouble("attackChance") - 1));
+				} else if ((entity instanceof GaolerEntity _datEntI ? _datEntI.getEntityData().get(GaolerEntity.DATA_attackChance) : 0) > 0) {
+					if (entity instanceof GaolerEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(GaolerEntity.DATA_attackChance, (int) ((entity instanceof GaolerEntity _datEntI ? _datEntI.getEntityData().get(GaolerEntity.DATA_attackChance) : 0) - 1));
 				}
 			}
 		}

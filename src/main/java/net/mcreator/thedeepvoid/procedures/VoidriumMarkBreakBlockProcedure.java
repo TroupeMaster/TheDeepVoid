@@ -14,6 +14,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
 
@@ -56,11 +57,13 @@ public class VoidriumMarkBreakBlockProcedure {
 						} else if (event != null && event.hasResult()) {
 							event.setResult(Event.Result.DENY);
 						}
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal(("\u00A7c" + Component.translatable("effect.the_deep_void.weaver_curse.warn").getString())), true);
 					}
 				}
 			}
 			if (DeepVoidConfigConfiguration.CURSEDISALLOWMININGPLACING.get() == true) {
-				if (entity instanceof LivingEntity _livEnt7 && _livEnt7.hasEffect(TheDeepVoidModMobEffects.WEAVER_CURSE.get())) {
+				if (entity instanceof LivingEntity _livEnt9 && _livEnt9.hasEffect(TheDeepVoidModMobEffects.WEAVER_CURSE.get())) {
 					if (!(new Object() {
 						public boolean checkGamemode(Entity _ent) {
 							if (_ent instanceof ServerPlayer _serverPlayer) {
@@ -77,6 +80,8 @@ public class VoidriumMarkBreakBlockProcedure {
 						} else if (event != null && event.hasResult()) {
 							event.setResult(Event.Result.DENY);
 						}
+						if (entity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal(("\u00A7c" + Component.translatable("effect.the_deep_void.weaver_curse.warn").getString())), true);
 					}
 				}
 			}

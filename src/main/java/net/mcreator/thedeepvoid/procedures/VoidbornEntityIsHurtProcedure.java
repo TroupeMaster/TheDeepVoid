@@ -31,6 +31,7 @@ import net.minecraft.advancements.Advancement;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEnchantments;
+import net.mcreator.thedeepvoid.entity.VoidbornEntity;
 import net.mcreator.thedeepvoid.entity.LightEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
@@ -39,9 +40,10 @@ public class VoidbornEntityIsHurtProcedure {
 		if (entity == null || immediatesourceentity == null || sourceentity == null)
 			return;
 		if (immediatesourceentity instanceof Player && !world.getEntitiesOfClass(LightEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 8, 8, 8), e -> true).isEmpty()
-				&& entity.getPersistentData().getDouble("hitCooldown") <= 0) {
-			entity.getPersistentData().putDouble("hit", (entity.getPersistentData().getDouble("hit")
-					+ (EnchantmentHelper.getItemEnchantmentLevel(TheDeepVoidModEnchantments.RADIANCE.get(), (immediatesourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0 ? 2 : 1)));
+				&& (entity instanceof VoidbornEntity _datEntI ? _datEntI.getEntityData().get(VoidbornEntity.DATA_hitCooldown) : 0) <= 0) {
+			if (entity instanceof VoidbornEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(VoidbornEntity.DATA_hit, (int) ((entity instanceof VoidbornEntity _datEntI ? _datEntI.getEntityData().get(VoidbornEntity.DATA_hit) : 0)
+						+ (EnchantmentHelper.getItemEnchantmentLevel(TheDeepVoidModEnchantments.RADIANCE.get(), (immediatesourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0 ? 2 : 1)));
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 0, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -57,7 +59,8 @@ public class VoidbornEntityIsHurtProcedure {
 					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt")), SoundSource.HOSTILE, 1, (float) Mth.nextDouble(RandomSource.create(), 0.4, 0.5), false);
 				}
 			}
-			entity.getPersistentData().putDouble("hitCooldown", ((double) DeepVoidConfigConfiguration.VOIDBORNHITCOOLDOWN.get()));
+			if (entity instanceof VoidbornEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(VoidbornEntity.DATA_hitCooldown, (int) (double) DeepVoidConfigConfiguration.VOIDBORNHITCOOLDOWN.get());
 			if (Math.random() < 0.2) {
 				if (!world.getBlockState(BlockPos.containing(sourceentity.level()
 						.clip(new ClipContext(sourceentity.getEyePosition(1f), sourceentity.getEyePosition(1f).add(sourceentity.getViewVector(1f).scale((-5))), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, sourceentity)).getBlockPos().getX(),
@@ -113,8 +116,9 @@ public class VoidbornEntityIsHurtProcedure {
 				}
 			}
 		}
-		if (entity.getPersistentData().getDouble("hit") >= (double) DeepVoidConfigConfiguration.VOIDBORNHEALTH.get()) {
-			entity.getPersistentData().putDouble("hit", (-99));
+		if ((entity instanceof VoidbornEntity _datEntI ? _datEntI.getEntityData().get(VoidbornEntity.DATA_hit) : 0) >= (double) DeepVoidConfigConfiguration.VOIDBORNHEALTH.get()) {
+			if (entity instanceof VoidbornEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(VoidbornEntity.DATA_hit, -99);
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.SQUID_INK, (entity.getX()), (entity.getY() + 4), (entity.getZ()), 25, 0, (-1), 0, 0.2);
 			if (world instanceof ServerLevel _level)

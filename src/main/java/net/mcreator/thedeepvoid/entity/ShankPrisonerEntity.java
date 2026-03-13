@@ -39,7 +39,6 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
-import net.mcreator.thedeepvoid.procedures.ShankPrisonerOnEntityTickUpdateProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 public class ShankPrisonerEntity extends Monster implements GeoEntity {
@@ -135,7 +134,6 @@ public class ShankPrisonerEntity extends Monster implements GeoEntity {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		ShankPrisonerOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
 

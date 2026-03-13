@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:deep_void_lapis_lazuli_ore",
+    "the_deep_void:deep_void_copper_ore",
+    "the_deep_void:deep_void_iron_ore"
+  ]
+}

@@ -8,6 +8,8 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 
+import net.mcreator.thedeepvoid.entity.StalkerEntity;
+
 import java.util.Comparator;
 
 public class StalkerSpawnsProcedure {
@@ -20,7 +22,9 @@ public class StalkerSpawnsProcedure {
 			}
 		}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _ent)
 			_entity.setTarget(_ent);
-		entity.getPersistentData().putDouble("voidCallCooldown", 540);
-		entity.getPersistentData().putDouble("deep_void:spawned", 200);
+		if (entity instanceof StalkerEntity _datEntSetI)
+			_datEntSetI.getEntityData().set(StalkerEntity.DATA_voidCallCooldown, 540);
+		if (entity instanceof StalkerEntity _datEntSetI)
+			_datEntSetI.getEntityData().set(StalkerEntity.DATA_spawned, 200);
 	}
 }

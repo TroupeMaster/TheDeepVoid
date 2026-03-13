@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/voidmatterscythe",
+  "textures": {
+    "0": "the_deep_void:block/dark_matter_scythe",
+    "particle": "the_deep_void:item/dark_matter_scythe"
+  }
+}

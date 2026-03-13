@@ -32,7 +32,7 @@ public class WeaverAttackedProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (entity instanceof WeaverOfSoulsEntity) {
-			if (entity.getPersistentData().getBoolean("deep_void:stunned") == false) {
+			if ((entity instanceof WeaverOfSoulsEntity _datEntL1 && _datEntL1.getEntityData().get(WeaverOfSoulsEntity.DATA_stunned)) == false) {
 				if (!(new Object() {
 					public boolean checkGamemode(Entity _ent) {
 						if (_ent instanceof ServerPlayer _serverPlayer) {

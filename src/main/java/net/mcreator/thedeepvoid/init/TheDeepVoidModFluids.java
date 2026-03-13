@@ -18,12 +18,15 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 
 import net.mcreator.thedeepvoid.fluid.LiquidVoidFluid;
+import net.mcreator.thedeepvoid.fluid.LiquidIchorFluid;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 public class TheDeepVoidModFluids {
 	public static final DeferredRegister<Fluid> REGISTRY = DeferredRegister.create(ForgeRegistries.FLUIDS, TheDeepVoidMod.MODID);
 	public static final RegistryObject<FlowingFluid> LIQUID_VOID = REGISTRY.register("liquid_void", () -> new LiquidVoidFluid.Source());
 	public static final RegistryObject<FlowingFluid> FLOWING_LIQUID_VOID = REGISTRY.register("flowing_liquid_void", () -> new LiquidVoidFluid.Flowing());
+	public static final RegistryObject<FlowingFluid> LIQUID_ICHOR = REGISTRY.register("liquid_ichor", () -> new LiquidIchorFluid.Source());
+	public static final RegistryObject<FlowingFluid> FLOWING_LIQUID_ICHOR = REGISTRY.register("flowing_liquid_ichor", () -> new LiquidIchorFluid.Flowing());
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class FluidsClientSideHandler {
@@ -31,6 +34,8 @@ public class TheDeepVoidModFluids {
 		public static void clientSetup(FMLClientSetupEvent event) {
 			ItemBlockRenderTypes.setRenderLayer(LIQUID_VOID.get(), RenderType.translucent());
 			ItemBlockRenderTypes.setRenderLayer(FLOWING_LIQUID_VOID.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(LIQUID_ICHOR.get(), RenderType.translucent());
+			ItemBlockRenderTypes.setRenderLayer(FLOWING_LIQUID_ICHOR.get(), RenderType.translucent());
 		}
 	}
 }

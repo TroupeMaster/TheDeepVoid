@@ -36,8 +36,6 @@ public class ApostleTeleportProcedure {
 	public static void execute(LevelAccessor world, double y, Entity entity) {
 		if (entity == null)
 			return;
-		double playerDashX = 0;
-		double playerDashZ = 0;
 		if (entity instanceof ApostleOfCatastropheEntity) {
 			((ApostleOfCatastropheEntity) entity).setAnimation("animation.apostle_teleport");
 		}
@@ -58,76 +56,81 @@ public class ApostleTeleportProcedure {
 					}
 				}
 				if (Math.random() < 0.4) {
-					{
-						Entity _ent = entity;
-						_ent.teleportTo(
-								((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
-										.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
-												(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f).add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale(4)),
-												ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
-										.getBlockPos().getX()),
-								((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
-								((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
-										.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
-												(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f).add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale(4)),
-												ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
-										.getBlockPos().getZ()));
-						if (_ent instanceof ServerPlayer _serverPlayer)
-							_serverPlayer.connection
-									.teleport(
-											((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
-													.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
-															(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f)
-																	.add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale(4)),
-															ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
-													.getBlockPos().getX()),
-											((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
-											((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
-													.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
-															(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f)
-																	.add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale(4)),
-															ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
-													.getBlockPos().getZ()),
-											_ent.getYRot(), _ent.getXRot());
+					if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
+						{
+							Entity _ent = entity;
+							_ent.teleportTo(
+									((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
+											.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
+													(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f).add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale(4)),
+													ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
+											.getBlockPos().getX()),
+									((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
+									((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
+											.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
+													(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f).add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale(4)),
+													ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
+											.getBlockPos().getZ()));
+							if (_ent instanceof ServerPlayer _serverPlayer)
+								_serverPlayer.connection
+										.teleport(
+												((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
+														.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
+																(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f)
+																		.add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale(4)),
+																ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
+														.getBlockPos().getX()),
+												((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
+												((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
+														.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
+																(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f)
+																		.add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale(4)),
+																ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
+														.getBlockPos().getZ()),
+												_ent.getYRot(), _ent.getXRot());
+						}
 					}
 				} else {
-					{
-						Entity _ent = entity;
-						_ent.teleportTo(
-								((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
-										.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
-												(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f).add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale((-5))),
-												ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
-										.getBlockPos().getX()),
-								((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
-								((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
-										.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
-												(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f).add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale((-5))),
-												ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
-										.getBlockPos().getZ()));
-						if (_ent instanceof ServerPlayer _serverPlayer)
-							_serverPlayer.connection
-									.teleport(
-											((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
-													.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
-															(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f)
-																	.add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale((-5))),
-															ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
-													.getBlockPos().getX()),
-											((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
-											((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
-													.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
-															(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f)
-																	.add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale((-5))),
-															ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
-													.getBlockPos().getZ()),
-											_ent.getYRot(), _ent.getXRot());
+					if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
+						{
+							Entity _ent = entity;
+							_ent.teleportTo(
+									((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
+											.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
+													(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f).add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale((-5))),
+													ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
+											.getBlockPos().getX()),
+									((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
+									((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
+											.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
+													(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f).add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale((-5))),
+													ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
+											.getBlockPos().getZ()));
+							if (_ent instanceof ServerPlayer _serverPlayer)
+								_serverPlayer.connection
+										.teleport(
+												((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
+														.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
+																(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f)
+																		.add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale((-5))),
+																ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
+														.getBlockPos().getX()),
+												((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
+												((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).level()
+														.clip(new ClipContext((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f),
+																(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getEyePosition(1f)
+																		.add((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getViewVector(1f).scale((-5))),
+																ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)))
+														.getBlockPos().getZ()),
+												_ent.getYRot(), _ent.getXRot());
+						}
 					}
 				}
 			}
 		});
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 2
-				&& !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 3.5, 3.5, 3.5), e -> true).isEmpty()) {
+				&& !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 3.5, 3.5, 3.5), e -> true).isEmpty()
+				&& !((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:apostle_laugh")), SoundSource.HOSTILE, 2, (float) 0.8);
@@ -159,7 +162,7 @@ public class ApostleTeleportProcedure {
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (entityiterator instanceof Player) {
-							if ((entityiterator instanceof LivingEntity _entUseItem67 ? _entUseItem67.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
+							if ((entityiterator instanceof LivingEntity _entUseItem73 ? _entUseItem73.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
 								if (world instanceof Level _level) {
 									if (!_level.isClientSide()) {
 										_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.shield.block")),
@@ -170,14 +173,14 @@ public class ApostleTeleportProcedure {
 									}
 								}
 								{
-									ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem73 ? _entUseItem73.getUseItem() : ItemStack.EMPTY);
+									ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem79 ? _entUseItem79.getUseItem() : ItemStack.EMPTY);
 									if (_ist.hurt(5, RandomSource.create(), null)) {
 										_ist.shrink(1);
 										_ist.setDamageValue(0);
 									}
 								}
 								if (entityiterator instanceof Player _player)
-									_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem75 ? _entUseItem75.getUseItem() : ItemStack.EMPTY).getItem(), 20);
+									_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem81 ? _entUseItem81.getUseItem() : ItemStack.EMPTY).getItem(), 20);
 							} else {
 								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity),
 										(float) (double) DeepVoidConfigConfiguration.APOSTLETELEPORTMELEE.get());
@@ -197,7 +200,8 @@ public class ApostleTeleportProcedure {
 			});
 		}
 		if (Math.random() < 0.1) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", 0);
+			if (entity instanceof ApostleOfCatastropheEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(ApostleOfCatastropheEntity.DATA_attackChance, 0);
 		}
 	}
 }

@@ -28,8 +28,6 @@ public class ApostleBackJumpShootProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		double playerDashX = 0;
-		double playerDashZ = 0;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 			entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getYRot() + 180)) * 1.6), 0.6,
 					(Math.cos(Math.toRadians((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getYRot())) * 1.6)));
@@ -37,14 +35,16 @@ public class ApostleBackJumpShootProcedure {
 		if (entity instanceof ApostleOfCatastropheEntity) {
 			((ApostleOfCatastropheEntity) entity).setAnimation("animation.apostle_shoot");
 		}
-		entity.getPersistentData().putBoolean("deep_void:shooting", true);
+		if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+			_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_shooting, true);
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 15, 99, false, false));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 15, 99, false, false));
 		TheDeepVoidMod.queueServerWork(11, () -> {
 			if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
-				entity.getPersistentData().putBoolean("deep_void:shooting", false);
+				if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_shooting, false);
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.trident.throw")), SoundSource.HOSTILE, 2, (float) 1.8);
@@ -174,7 +174,8 @@ public class ApostleBackJumpShootProcedure {
 			});
 		}
 		if (Math.random() < 0.1) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", 0);
+			if (entity instanceof ApostleOfCatastropheEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(ApostleOfCatastropheEntity.DATA_attackChance, 0);
 		}
 	}
 }

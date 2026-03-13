@@ -42,7 +42,7 @@ public class CruelStilettoItem extends SwordItem {
 			}
 
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(TheDeepVoidModItems.REFINED_ONYX.get()), new ItemStack(TheDeepVoidModItems.VOID_MATTER.get()));
+				return Ingredient.of(new ItemStack(TheDeepVoidModItems.VOID_MATTER.get()));
 			}
 		}, 3, -1f, new Item.Properties().fireResistant());
 	}

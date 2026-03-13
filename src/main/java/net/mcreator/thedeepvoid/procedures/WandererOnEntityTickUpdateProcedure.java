@@ -37,20 +37,23 @@ public class WandererOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		if (DeepVoidConfigConfiguration.WANDERERCENTERPATHING.get() == true) {
-			if (entity.getPersistentData().getDouble("findPath") <= 0) {
-				entity.getPersistentData().putDouble("findPath", 200);
+			if ((entity instanceof WandererEntity _datEntI ? _datEntI.getEntityData().get(WandererEntity.DATA_findPath) : 0) <= 0) {
+				if (entity instanceof WandererEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(WandererEntity.DATA_findPath, 200);
 				if (entity instanceof Mob _entity)
 					_entity.getNavigation().moveTo(0, y, 0, 1);
 			} else {
-				entity.getPersistentData().putDouble("findPath", (entity.getPersistentData().getDouble("findPath") - 1));
+				if (entity instanceof WandererEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(WandererEntity.DATA_findPath, (int) ((entity instanceof WandererEntity _datEntI ? _datEntI.getEntityData().get(WandererEntity.DATA_findPath) : 0) - 1));
 			}
 		}
 		{
 			final Vec3 _center = new Vec3(x, y, z);
 			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 			for (Entity entityiterator : _entfound) {
-				if (entityiterator instanceof WandererEntity && !(entityiterator == entity) && entity.getPersistentData().getBoolean("encounter") == false) {
-					entity.getPersistentData().putBoolean("encounter", true);
+				if (entityiterator instanceof WandererEntity && !(entityiterator == entity) && (entity instanceof WandererEntity _datEntL8 && _datEntL8.getEntityData().get(WandererEntity.DATA_encounter)) == false) {
+					if (entity instanceof WandererEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(WandererEntity.DATA_encounter, true);
 					if (entity instanceof WandererEntity) {
 						((WandererEntity) entity).setAnimation("animation.wanderer_die");
 					}
@@ -83,8 +86,9 @@ public class WandererOnEntityTickUpdateProcedure {
 						world.levelEvent(2001, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), Block.getId(TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get().defaultBlockState()));
 						world.levelEvent(2001, BlockPos.containing(entity.getX(), entity.getY() + 1, entity.getZ()), Block.getId(TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get().defaultBlockState()));
 						world.levelEvent(2001, BlockPos.containing(entity.getX(), entity.getY() + 1.5, entity.getZ()), Block.getId(TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get().defaultBlockState()));
-						if (entity.getPersistentData().getBoolean("dropped_moss") == false) {
-							entity.getPersistentData().putBoolean("dropped_moss", true);
+						if ((entity instanceof WandererEntity _datEntL60 && _datEntL60.getEntityData().get(WandererEntity.DATA_dropMoss)) == false) {
+							if (entity instanceof WandererEntity _datEntSetL)
+								_datEntSetL.getEntityData().set(WandererEntity.DATA_dropMoss, true);
 							for (int index0 = 0; index0 < (int) Mth.nextDouble(RandomSource.create(), 1, 3); index0++) {
 								if (world instanceof ServerLevel _level) {
 									ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.BLACK_MOSS.get()));

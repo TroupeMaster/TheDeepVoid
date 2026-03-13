@@ -26,8 +26,12 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.network.syncher.EntityDataSerializers;
+import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
+import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.thedeepvoid.procedures.MimicOnEntityTickUpdateProcedure;
 import net.mcreator.thedeepvoid.procedures.MimicNaturalEntitySpawningConditionProcedure;
@@ -36,6 +40,8 @@ import net.mcreator.thedeepvoid.procedures.MimicEntityDiesProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 public class MimicEntity extends Monster {
+	public static final EntityDataAccessor<Boolean> DATA_canMove = SynchedEntityData.defineId(MimicEntity.class, EntityDataSerializers.BOOLEAN);
+
 	public MimicEntity(PlayMessages.SpawnEntity packet, Level world) {
 		this(TheDeepVoidModEntities.MIMIC.get(), world);
 	}
@@ -50,6 +56,12 @@ public class MimicEntity extends Monster {
 	@Override
 	public Packet<ClientGamePacketListener> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
+	}
+
+	@Override
+	protected void defineSynchedData() {
+		super.defineSynchedData();
+		this.entityData.define(DATA_canMove, false);
 	}
 
 	@Override
@@ -106,6 +118,19 @@ public class MimicEntity extends Monster {
 	public void die(DamageSource source) {
 		super.die(source);
 		MimicEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
+	}
+
+	@Override
+	public void addAdditionalSaveData(CompoundTag compound) {
+		super.addAdditionalSaveData(compound);
+		compound.putBoolean("DatacanMove", this.entityData.get(DATA_canMove));
+	}
+
+	@Override
+	public void readAdditionalSaveData(CompoundTag compound) {
+		super.readAdditionalSaveData(compound);
+		if (compound.contains("DatacanMove"))
+			this.entityData.set(DATA_canMove, compound.getBoolean("DatacanMove"));
 	}
 
 	@Override

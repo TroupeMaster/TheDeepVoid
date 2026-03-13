@@ -18,7 +18,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.ChainedWeaverEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
@@ -32,9 +31,10 @@ public class ChainedWeaverOnEntityTickUpdateProcedure {
 			return;
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 5, 99, false, false));
-		if (entity.getPersistentData().getBoolean("deep_void:free") == true) {
-			if (entity.getPersistentData().getBoolean("deep_void:playingAnimation") == false) {
-				entity.getPersistentData().putBoolean("deep_void:playingAnimation", true);
+		if ((entity instanceof ChainedWeaverEntity _datEntL1 && _datEntL1.getEntityData().get(ChainedWeaverEntity.DATA_free)) == true) {
+			if ((entity instanceof ChainedWeaverEntity _datEntL2 && _datEntL2.getEntityData().get(ChainedWeaverEntity.DATA_playingAnimation)) == false) {
+				if (entity instanceof ChainedWeaverEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(ChainedWeaverEntity.DATA_playingAnimation, true);
 				if (entity instanceof ChainedWeaverEntity) {
 					((ChainedWeaverEntity) entity).setAnimation("animation.chainedWeaver_getOut");
 				}
@@ -57,7 +57,7 @@ public class ChainedWeaverOnEntityTickUpdateProcedure {
 				});
 			}
 		}
-		if (entity.getPersistentData().getBoolean("deep_void:playingAnimation") == true) {
+		if ((entity instanceof ChainedWeaverEntity _datEntL9 && _datEntL9.getEntityData().get(ChainedWeaverEntity.DATA_playingAnimation)) == true) {
 			if (Math.random() < 0.02) {
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
@@ -69,9 +69,12 @@ public class ChainedWeaverOnEntityTickUpdateProcedure {
 			}
 		}
 		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 55, 55, 55), e -> true).isEmpty()) {
-			if (entity.getPersistentData().getBoolean("deep_void:message") == false && entity.getPersistentData().getBoolean("deep_void:talking") == false) {
-				entity.getPersistentData().putBoolean("deep_void:message", true);
-				entity.getPersistentData().putDouble("deep_void:messageCount", 200);
+			if ((entity instanceof ChainedWeaverEntity _datEntL12 && _datEntL12.getEntityData().get(ChainedWeaverEntity.DATA_message)) == false
+					&& (entity instanceof ChainedWeaverEntity _datEntL13 && _datEntL13.getEntityData().get(ChainedWeaverEntity.DATA_talking)) == false) {
+				if (entity instanceof ChainedWeaverEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(ChainedWeaverEntity.DATA_message, true);
+				if (entity instanceof ChainedWeaverEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(ChainedWeaverEntity.DATA_messageCount, 200);
 				{
 					final Vec3 _center = new Vec3(x, y, z);
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(55 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
@@ -142,23 +145,15 @@ public class ChainedWeaverOnEntityTickUpdateProcedure {
 					}
 				}
 			}
-			{
-				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(45 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-				for (Entity entityiterator : _entfound) {
-					if (entityiterator instanceof Player) {
-						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.WEAVER_CURSE.get(), 5, 0, false, false));
-					}
-				}
-			}
 		}
-		if (entity.getPersistentData().getBoolean("deep_void:message") == true) {
-			if (entity.getPersistentData().getDouble("deep_void:messageCount") > 0) {
-				entity.getPersistentData().putDouble("deep_void:messageCount", (entity.getPersistentData().getDouble("deep_void:messageCount") - 1));
+		if ((entity instanceof ChainedWeaverEntity _datEntL48 && _datEntL48.getEntityData().get(ChainedWeaverEntity.DATA_message)) == true) {
+			if ((entity instanceof ChainedWeaverEntity _datEntI ? _datEntI.getEntityData().get(ChainedWeaverEntity.DATA_messageCount) : 0) > 0) {
+				if (entity instanceof ChainedWeaverEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(ChainedWeaverEntity.DATA_messageCount, (int) ((entity instanceof ChainedWeaverEntity _datEntI ? _datEntI.getEntityData().get(ChainedWeaverEntity.DATA_messageCount) : 0) - 1));
 			}
-			if (entity.getPersistentData().getDouble("deep_void:messageCount") <= 0) {
-				entity.getPersistentData().putBoolean("deep_void:message", false);
+			if ((entity instanceof ChainedWeaverEntity _datEntI ? _datEntI.getEntityData().get(ChainedWeaverEntity.DATA_messageCount) : 0) <= 0) {
+				if (entity instanceof ChainedWeaverEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(ChainedWeaverEntity.DATA_message, false);
 			}
 		}
 		entity.setDeltaMovement(new Vec3(0, 0, 0));

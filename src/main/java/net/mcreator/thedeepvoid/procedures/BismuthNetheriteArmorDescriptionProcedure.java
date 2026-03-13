@@ -41,9 +41,10 @@ public class BismuthNetheriteArmorDescriptionProcedure {
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BISMUTH_NETHERITE_CHESTPLATE.get()
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BISMUTH_NETHERITE_LEGGINGS.get()
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BISMUTH_NETHERITE_BOOTS.get()) {
+			tooltip.add(Component.literal(""));
 			if (Screen.hasShiftDown()) {
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.bismuth_netherite.when_worn").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.bismuth_netherite.worn").getString())));
+				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.when_worn").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.bismuth_netherite.worn").getString())));
 			} else {
 				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.press_shift").getString())));
 			}

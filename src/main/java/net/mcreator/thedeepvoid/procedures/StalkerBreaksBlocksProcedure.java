@@ -9,13 +9,12 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.TagKey;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.thedeepvoid.entity.VoidbornEntity;
-import net.mcreator.thedeepvoid.entity.StalkerEntity;
-import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import javax.annotation.Nullable;
@@ -35,7 +34,7 @@ public class StalkerBreaksBlocksProcedure {
 		if (entity == null)
 			return;
 		if (DeepVoidConfigConfiguration.STALKERBREAKSBLOCKS.get() == true) {
-			if (entity instanceof StalkerEntity || entity instanceof MaskedHunterEntity || entity instanceof VoidbornEntity) {
+			if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:can_break_blocks")))) {
 				if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 					if (entity.getPersistentData().getDouble("deep_void:break_block") >= 10) {
 						entity.getPersistentData().putDouble("deep_void:break_block", 0);

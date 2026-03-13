@@ -22,7 +22,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class CanopyRottenGrassBlock extends DoublePlantBlock {
 	public CanopyRottenGrassBlock() {
-		super(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.ROOTS).strength(0.5f, 0f).noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+		super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).sound(SoundType.ROOTS).strength(0.5f, 0f).noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

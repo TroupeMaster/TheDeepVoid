@@ -25,6 +25,7 @@ import net.minecraft.client.Minecraft;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.entity.SwarmerEntity;
+import net.mcreator.thedeepvoid.entity.ScarecrowEntity;
 import net.mcreator.thedeepvoid.entity.EyekinFlyingEntity;
 import net.mcreator.thedeepvoid.entity.EyekinEntity;
 
@@ -35,7 +36,6 @@ public class ScarecrowOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double distance = 0;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 			if (!world.getEntitiesOfClass(SwarmerEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty() || !world.getEntitiesOfClass(EyekinEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()
 					|| !world.getEntitiesOfClass(EyekinFlyingEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()) {
@@ -78,18 +78,20 @@ public class ScarecrowOnEntityTickUpdateProcedure {
 							}
 							return false;
 						}
-					}.checkGamemode(entityiterator))) {
+					}.checkGamemode(entityiterator)) && entityiterator == (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)) {
 						if (!((entityiterator instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BLOODY_RIB_CAGE_CHESTPLATE.get())) {
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.FIXATION.get(), 5, 0, false, false));
-							entity.getPersistentData().putDouble("deep_void:crowCall", (entity.getPersistentData().getDouble("deep_void:crowCall") + 1));
+							if (entity instanceof ScarecrowEntity _datEntSetI)
+								_datEntSetI.getEntityData().set(ScarecrowEntity.DATA_call, (int) ((entity instanceof ScarecrowEntity _datEntI ? _datEntI.getEntityData().get(ScarecrowEntity.DATA_call) : 0) + 1));
 						}
 					}
 				}
 			}
 		}
-		if (entity.getPersistentData().getDouble("deep_void:crowCall") >= 5) {
-			entity.getPersistentData().putDouble("deep_void:crowCall", (Mth.nextInt(RandomSource.create(), 0, 2)));
+		if ((entity instanceof ScarecrowEntity _datEntI ? _datEntI.getEntityData().get(ScarecrowEntity.DATA_call) : 0) >= 5) {
+			if (entity instanceof ScarecrowEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(ScarecrowEntity.DATA_call, Mth.nextInt(RandomSource.create(), 0, 2));
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(x + Mth.nextInt(RandomSource.create(), -15, 15), y + Mth.nextInt(RandomSource.create(), -2, 2), z + Mth.nextInt(RandomSource.create(), -15, 15)),

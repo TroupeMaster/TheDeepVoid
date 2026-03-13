@@ -1,27 +1,15 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "pattern": [
-    "aba",
-    "aca",
-    "dad"
-  ],
-  "key": {
-    "a": {
-      "item": "the_deep_void:voidrium_gem"
-    },
-    "b": {
-      "item": "the_deep_void:sacred_cinnabar"
-    },
-    "c": {
-      "item": "the_deep_void:dark_steel_onyx_chestplate"
-    },
-    "d": {
-      "item": "the_deep_void:refined_bismuth"
-    }
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "the_deep_void:smithing_template_voidrium"
+  },
+  "base": {
+    "item": "the_deep_void:dark_steel_onyx_chestplate"
+  },
+  "addition": {
+    "item": "the_deep_void:voidrium_alloy"
   },
   "result": {
-    "item": "the_deep_void:voidrium_chestplate",
-    "count": 1
+    "item": "the_deep_void:voidrium_chestplate"
   }
 }

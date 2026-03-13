@@ -34,23 +34,21 @@ public class FoolEaterAttackTargetProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity sourceentity) {
 		if (sourceentity == null)
 			return;
-		if (sourceentity instanceof FoolEaterEntity) {
-			if (!((sourceentity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
-				if (sourceentity.getPersistentData().getBoolean("deep_void:cracked") == false) {
-					sourceentity.getPersistentData().putBoolean("deep_void:cracked", true);
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fool_eater_targets")),
-									SoundSource.HOSTILE, 2, (float) 0.8);
-						} else {
-							_level.playLocalSound((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fool_eater_targets")), SoundSource.HOSTILE, 2,
-									(float) 0.8, false);
-						}
-					}
-					sourceentity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3(((sourceentity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()),
-							((sourceentity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()), ((sourceentity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ())));
+		if (sourceentity instanceof FoolEaterEntity && !((sourceentity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)
+				&& (sourceentity instanceof FoolEaterEntity _datEntL3 && _datEntL3.getEntityData().get(FoolEaterEntity.DATA_cracked)) == false) {
+			if (sourceentity instanceof FoolEaterEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(FoolEaterEntity.DATA_cracked, true);
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fool_eater_targets")), SoundSource.HOSTILE, 2,
+							(float) 0.8);
+				} else {
+					_level.playLocalSound((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fool_eater_targets")), SoundSource.HOSTILE, 2, (float) 0.8,
+							false);
 				}
 			}
+			sourceentity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3(((sourceentity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()), ((sourceentity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()),
+					((sourceentity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ())));
 		}
 	}
 }

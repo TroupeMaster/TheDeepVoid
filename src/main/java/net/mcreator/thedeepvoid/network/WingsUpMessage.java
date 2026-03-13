@@ -53,7 +53,7 @@ public class WingsUpMessage {
 			return;
 		if (type == 0) {
 
-			WingsUpOnKeyPressedProcedure.execute(world, x, y, z, entity);
+			WingsUpOnKeyPressedProcedure.execute(entity);
 		}
 		if (type == 1) {
 

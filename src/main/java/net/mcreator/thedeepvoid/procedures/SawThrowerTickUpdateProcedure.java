@@ -40,12 +40,11 @@ public class SawThrowerTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double randomX = 0;
-		double randomZ = 0;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", (entity.getPersistentData().getDouble("deep_void:attackChance") + 1));
+			if (entity instanceof SawThrowerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(SawThrowerEntity.DATA_attackChance, (int) ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) + 1));
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 60) {
+		if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 60) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 99, false, false));
 			if (entity instanceof SawThrowerEntity) {
@@ -71,13 +70,13 @@ public class SawThrowerTickUpdateProcedure {
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (entityiterator instanceof BoneSawEntity) {
-							entityiterator.getPersistentData().putBoolean("positiveZ", true);
+							if (entityiterator instanceof BoneSawEntity _datEntSetL)
+								_datEntSetL.getEntityData().set(BoneSawEntity.DATA_positiveZ, true);
 						}
 					}
 				}
 			});
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 100) {
+		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 100) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 99, false, false));
 			if (entity instanceof SawThrowerEntity) {
@@ -103,18 +102,19 @@ public class SawThrowerTickUpdateProcedure {
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (entityiterator instanceof BoneSawEntity) {
-							entityiterator.getPersistentData().putBoolean("negativeZ", true);
+							if (entityiterator instanceof BoneSawEntity _datEntSetL)
+								_datEntSetL.getEntityData().set(BoneSawEntity.DATA_negativeZ, true);
 						}
 					}
 				}
 			});
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 200) {
+		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 200) {
 			if (entity instanceof SawThrowerEntity) {
 				((SawThrowerEntity) entity).setAnimation("animation.sawThrower_spin");
 			}
 			TheDeepVoidMod.queueServerWork(10, () -> {
-				entity.getPersistentData().putBoolean("spinning", true);
+				if (entity instanceof SawThrowerEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(SawThrowerEntity.DATA_spinning, true);
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 1, false, false));
 				if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 30, 30, 30), e -> true).isEmpty()) {
@@ -135,10 +135,10 @@ public class SawThrowerTickUpdateProcedure {
 				}
 			});
 			TheDeepVoidMod.queueServerWork(30, () -> {
-				entity.getPersistentData().putBoolean("spinning", false);
+				if (entity instanceof SawThrowerEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(SawThrowerEntity.DATA_spinning, false);
 			});
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 300) {
+		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 300) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 99, false, false));
 			if (entity instanceof SawThrowerEntity) {
@@ -164,13 +164,13 @@ public class SawThrowerTickUpdateProcedure {
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (entityiterator instanceof BoneSawEntity) {
-							entityiterator.getPersistentData().putBoolean("positiveX", true);
+							if (entityiterator instanceof BoneSawEntity _datEntSetL)
+								_datEntSetL.getEntityData().set(BoneSawEntity.DATA_positiveX, true);
 						}
 					}
 				}
 			});
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 340) {
+		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 340) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 99, false, false));
 			if (entity instanceof SawThrowerEntity) {
@@ -196,18 +196,19 @@ public class SawThrowerTickUpdateProcedure {
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (entityiterator instanceof BoneSawEntity) {
-							entityiterator.getPersistentData().putBoolean("negativeX", true);
+							if (entityiterator instanceof BoneSawEntity _datEntSetL)
+								_datEntSetL.getEntityData().set(BoneSawEntity.DATA_negativeX, true);
 						}
 					}
 				}
 			});
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 380) {
+		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 380) {
 			if (entity instanceof SawThrowerEntity) {
 				((SawThrowerEntity) entity).setAnimation("animation.sawThrower_spin");
 			}
 			TheDeepVoidMod.queueServerWork(10, () -> {
-				entity.getPersistentData().putBoolean("spinning", true);
+				if (entity instanceof SawThrowerEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(SawThrowerEntity.DATA_spinning, true);
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 1, false, false));
 				if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 30, 30, 30), e -> true).isEmpty()) {
@@ -228,10 +229,10 @@ public class SawThrowerTickUpdateProcedure {
 				}
 			});
 			TheDeepVoidMod.queueServerWork(30, () -> {
-				entity.getPersistentData().putBoolean("spinning", false);
+				if (entity instanceof SawThrowerEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(SawThrowerEntity.DATA_spinning, false);
 			});
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 440) {
+		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 440) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 99, false, false));
 			if (entity instanceof SawThrowerEntity) {
@@ -276,11 +277,11 @@ public class SawThrowerTickUpdateProcedure {
 					((SawThrowerEntity) entity).setAnimation("animation.sawThrower_out");
 				}
 			});
+		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) >= 560) {
+			if (entity instanceof SawThrowerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(SawThrowerEntity.DATA_attackChance, 0);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") >= 560) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", 0);
-		}
-		if (entity.getPersistentData().getBoolean("spinning") == true) {
+		if ((entity instanceof SawThrowerEntity _datEntL91 && _datEntL91.getEntityData().get(SawThrowerEntity.DATA_spinning)) == true) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();

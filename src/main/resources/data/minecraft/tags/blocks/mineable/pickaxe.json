@@ -1,6 +1,15 @@
 {
   "replace": false,
   "values": [
+    "the_deep_void:block_of_bloodstone",
+    "the_deep_void:bloodstone_ore",
+    "the_deep_void:crystallized_ichor",
+    "the_deep_void:deep_void_gold_ore",
+    "the_deep_void:deep_void_diamond_ore",
+    "the_deep_void:deep_void_redstone_ore",
+    "the_deep_void:deep_void_lapis_lazuli_ore",
+    "the_deep_void:deep_void_copper_ore",
+    "the_deep_void:deep_void_iron_ore",
     "the_deep_void:madness_lantern",
     "the_deep_void:cinnabar_lantern",
     "the_deep_void:framed_cinnabar_glass_pane",
@@ -112,6 +121,7 @@
     "the_deep_void:bismuth_bricks",
     "the_deep_void:block_of_raw_cinnabar",
     "the_deep_void:cinnabar_chain",
+    "the_deep_void:block_of_rotten_bone_pile",
     "the_deep_void:voidrium_glass",
     "the_deep_void:corpse_chandelier",
     "the_deep_void:crumbling_bedrock",

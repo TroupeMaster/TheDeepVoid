@@ -59,6 +59,13 @@ public class MisanthropicHivemindEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_playerCount = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_baseHealth = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_dying = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_attackChance = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_sawThrowerCooldown = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_skullSmasherCooldown = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_fleshTentaclesCooldown = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -84,6 +91,13 @@ public class MisanthropicHivemindEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "misanthropic_hivemind");
+		this.entityData.define(DATA_playerCount, 0);
+		this.entityData.define(DATA_baseHealth, 0);
+		this.entityData.define(DATA_dying, false);
+		this.entityData.define(DATA_attackChance, 0);
+		this.entityData.define(DATA_sawThrowerCooldown, 0);
+		this.entityData.define(DATA_skullSmasherCooldown, 0);
+		this.entityData.define(DATA_fleshTentaclesCooldown, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -168,6 +182,13 @@ public class MisanthropicHivemindEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DataplayerCount", this.entityData.get(DATA_playerCount));
+		compound.putInt("DatabaseHealth", this.entityData.get(DATA_baseHealth));
+		compound.putBoolean("Datadying", this.entityData.get(DATA_dying));
+		compound.putInt("DataattackChance", this.entityData.get(DATA_attackChance));
+		compound.putInt("DatasawThrowerCooldown", this.entityData.get(DATA_sawThrowerCooldown));
+		compound.putInt("DataskullSmasherCooldown", this.entityData.get(DATA_skullSmasherCooldown));
+		compound.putInt("DatafleshTentaclesCooldown", this.entityData.get(DATA_fleshTentaclesCooldown));
 	}
 
 	@Override
@@ -175,6 +196,20 @@ public class MisanthropicHivemindEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DataplayerCount"))
+			this.entityData.set(DATA_playerCount, compound.getInt("DataplayerCount"));
+		if (compound.contains("DatabaseHealth"))
+			this.entityData.set(DATA_baseHealth, compound.getInt("DatabaseHealth"));
+		if (compound.contains("Datadying"))
+			this.entityData.set(DATA_dying, compound.getBoolean("Datadying"));
+		if (compound.contains("DataattackChance"))
+			this.entityData.set(DATA_attackChance, compound.getInt("DataattackChance"));
+		if (compound.contains("DatasawThrowerCooldown"))
+			this.entityData.set(DATA_sawThrowerCooldown, compound.getInt("DatasawThrowerCooldown"));
+		if (compound.contains("DataskullSmasherCooldown"))
+			this.entityData.set(DATA_skullSmasherCooldown, compound.getInt("DataskullSmasherCooldown"));
+		if (compound.contains("DatafleshTentaclesCooldown"))
+			this.entityData.set(DATA_fleshTentaclesCooldown, compound.getInt("DatafleshTentaclesCooldown"));
 	}
 
 	@Override

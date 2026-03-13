@@ -38,8 +38,9 @@ public class PrisonGuardOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 8, 8, 8), e -> true).isEmpty() && !((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)
-				&& entity.getPersistentData().getDouble("attackCooldown") <= 0) {
-			entity.getPersistentData().putDouble("attackCooldown", 50);
+				&& (entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_attackChance) : 0) <= 0) {
+			if (entity instanceof PrisonGuardEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrisonGuardEntity.DATA_attackChance, 50);
 			if (entity instanceof PrisonGuardEntity) {
 				((PrisonGuardEntity) entity).setAnimation("animation.prisonGuard_lunge");
 			}
@@ -69,7 +70,7 @@ public class PrisonGuardOnEntityTickUpdateProcedure {
 				}
 			});
 		}
-		if (entity.getPersistentData().getDouble("pushCooldown") <= 0 && !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
+		if ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_push) : 0) <= 0 && !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
 			if (!(new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayer _serverPlayer) {
@@ -99,7 +100,8 @@ public class PrisonGuardOnEntityTickUpdateProcedure {
 					return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 				}
 			}.compareDistOf(x, y, z)).findFirst().orElse(null))))) {
-				entity.getPersistentData().putDouble("pushCooldown", 240);
+				if (entity instanceof PrisonGuardEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(PrisonGuardEntity.DATA_push, 240);
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 99, false, false));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -151,7 +153,8 @@ public class PrisonGuardOnEntityTickUpdateProcedure {
 					}
 				});
 			}
-		} else if (entity.getPersistentData().getDouble("jumpCooldown") <= 0 && entity.getPersistentData().getDouble("pushCooldown") > 0 && !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 8, 8, 8), e -> true).isEmpty()) {
+		} else if ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_jump) : 0) <= 0
+				&& (entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_push) : 0) > 0 && !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 8, 8, 8), e -> true).isEmpty()) {
 			if (!(new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayer _serverPlayer) {
@@ -181,7 +184,8 @@ public class PrisonGuardOnEntityTickUpdateProcedure {
 					return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 				}
 			}.compareDistOf(x, y, z)).findFirst().orElse(null))))) {
-				entity.getPersistentData().putDouble("jumpCooldown", 300);
+				if (entity instanceof PrisonGuardEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(PrisonGuardEntity.DATA_jump, 300);
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 99, false, false));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -210,8 +214,9 @@ public class PrisonGuardOnEntityTickUpdateProcedure {
 					}
 				});
 			}
-		} else if (entity.getPersistentData().getDouble("rollCooldown") <= 0 && entity.getPersistentData().getDouble("pushCooldown") > 0 && entity.getPersistentData().getDouble("jumpCooldown") > 0
-				&& !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
+		} else if ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_roll) : 0) <= 0
+				&& (entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_push) : 0) > 0
+				&& (entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_jump) : 0) > 0 && !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
 			if (!(new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayer _serverPlayer) {
@@ -241,7 +246,8 @@ public class PrisonGuardOnEntityTickUpdateProcedure {
 					return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 				}
 			}.compareDistOf(x, y, z)).findFirst().orElse(null))))) {
-				entity.getPersistentData().putDouble("rollCooldown", 200);
+				if (entity instanceof PrisonGuardEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(PrisonGuardEntity.DATA_roll, 200);
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 20, 99, false, false));
 				if (entity instanceof PrisonGuardEntity) {
@@ -267,7 +273,7 @@ public class PrisonGuardOnEntityTickUpdateProcedure {
 				});
 			}
 		}
-		if (entity.getPersistentData().getDouble("shieldCooldown") <= 0 && !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 7, 7, 7), e -> true).isEmpty()) {
+		if ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_shield) : 0) <= 0 && !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 7, 7, 7), e -> true).isEmpty()) {
 			if (((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 7, 7, 7), e -> true).stream().sorted(new Object() {
 				Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 					return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
@@ -299,7 +305,8 @@ public class PrisonGuardOnEntityTickUpdateProcedure {
 								? _plrCldRem108.getCooldowns()
 										.getCooldownPercent(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entUseItem107 ? _entUseItem107.getUseItem() : ItemStack.EMPTY).getItem(), 0f) * 100
 								: 0) == 0) {
-							entity.getPersistentData().putDouble("shieldCooldown", 400);
+							if (entity instanceof PrisonGuardEntity _datEntSetI)
+								_datEntSetI.getEntityData().set(PrisonGuardEntity.DATA_shield, 400);
 							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 99, false, false));
 							if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -332,20 +339,25 @@ public class PrisonGuardOnEntityTickUpdateProcedure {
 				}
 			}
 		}
-		if (entity.getPersistentData().getDouble("pushCooldown") > 0) {
-			entity.getPersistentData().putDouble("pushCooldown", (entity.getPersistentData().getDouble("pushCooldown") - 1));
+		if ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_push) : 0) > 0) {
+			if (entity instanceof PrisonGuardEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrisonGuardEntity.DATA_push, (int) ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_push) : 0) - 1));
 		}
-		if (entity.getPersistentData().getDouble("jumpCooldown") > 0) {
-			entity.getPersistentData().putDouble("jumpCooldown", (entity.getPersistentData().getDouble("jumpCooldown") - 1));
+		if ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_jump) : 0) > 0) {
+			if (entity instanceof PrisonGuardEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrisonGuardEntity.DATA_jump, (int) ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_jump) : 0) - 1));
 		}
-		if (entity.getPersistentData().getDouble("rollCooldown") > 0) {
-			entity.getPersistentData().putDouble("rollCooldown", (entity.getPersistentData().getDouble("rollCooldown") - 1));
+		if ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_roll) : 0) > 0) {
+			if (entity instanceof PrisonGuardEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrisonGuardEntity.DATA_roll, (int) ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_roll) : 0) - 1));
 		}
-		if (entity.getPersistentData().getDouble("shieldCooldown") > 0) {
-			entity.getPersistentData().putDouble("shieldCooldown", (entity.getPersistentData().getDouble("shieldCooldown") - 1));
+		if ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_shield) : 0) > 0) {
+			if (entity instanceof PrisonGuardEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrisonGuardEntity.DATA_shield, (int) ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_shield) : 0) - 1));
 		}
-		if (entity.getPersistentData().getDouble("attackCooldown") > 0) {
-			entity.getPersistentData().putDouble("attackCooldown", (entity.getPersistentData().getDouble("attackCooldown") - 1));
+		if ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_attackChance) : 0) > 0) {
+			if (entity instanceof PrisonGuardEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrisonGuardEntity.DATA_attackChance, (int) ((entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_attackChance) : 0) - 1));
 		}
 	}
 }

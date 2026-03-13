@@ -1,10 +1,7 @@
 {
   "variants": {
-    "blockstate=0": {
+    "": {
       "model": "the_deep_void:block/solid_ambrosia"
-    },
-    "blockstate=1": {
-      "model": "the_deep_void:block/solid_ambrosia_blockstate_blockstate_0"
     }
   }
 }

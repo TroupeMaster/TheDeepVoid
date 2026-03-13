@@ -25,6 +25,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.thedeepvoid.entity.MimicEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import java.util.Comparator;
@@ -33,10 +34,8 @@ public class MimicOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double randomX = 0;
-		double randomZ = 0;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
-			if (entity.getPersistentData().getBoolean("canMove") == false) {
+			if ((entity instanceof MimicEntity _datEntL2 && _datEntL2.getEntityData().get(MimicEntity.DATA_canMove)) == false) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 99, false, false));
 				if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty()) {
@@ -84,7 +83,8 @@ public class MimicOnEntityTickUpdateProcedure {
 							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 						}
 					}.compareDistOf(x, y, z)).findFirst().orElse(null))))) {
-						entity.getPersistentData().putBoolean("canMove", true);
+						if (entity instanceof MimicEntity _datEntSetL)
+							_datEntSetL.getEntityData().set(MimicEntity.DATA_canMove, true);
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 40, 2, false, false));
 					}

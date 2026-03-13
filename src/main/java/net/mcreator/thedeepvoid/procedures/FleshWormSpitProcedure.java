@@ -26,7 +26,8 @@ public class FleshWormSpitProcedure {
 		if (entity instanceof FleshWormEntity) {
 			((FleshWormEntity) entity).setAnimation("animation.fleshWorm_spit");
 		}
-		entity.getPersistentData().putBoolean("teleporting", true);
+		if (entity instanceof FleshWormEntity _datEntSetL)
+			_datEntSetL.getEntityData().set(FleshWormEntity.DATA_teleporting, true);
 		TheDeepVoidMod.queueServerWork(25, () -> {
 			for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), 4, 15); index0++) {
 				{
@@ -156,7 +157,8 @@ public class FleshWormSpitProcedure {
 			}
 		});
 		TheDeepVoidMod.queueServerWork(50, () -> {
-			entity.getPersistentData().putBoolean("teleporting", false);
+			if (entity instanceof FleshWormEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(FleshWormEntity.DATA_teleporting, false);
 		});
 	}
 }

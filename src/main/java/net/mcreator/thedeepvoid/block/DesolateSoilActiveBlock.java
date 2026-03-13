@@ -4,6 +4,8 @@ package net.mcreator.thedeepvoid.block;
 import net.minecraftforge.common.IPlantable;
 
 import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
@@ -24,7 +26,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class DesolateSoilActiveBlock extends Block {
 	public DesolateSoilActiveBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.SOUL_SOIL).strength(1.5f).randomTicks());
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.TERRACOTTA_LIGHT_BLUE).sound(SoundType.SOUL_SOIL).strength(1.5f).randomTicks());
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "the_deep_void:item/shadestorm_animated"
+    "layer0": "the_deep_void:item/dark_matter_bow_animated"
   },
   "display": {
     "thirdperson_righthand": {

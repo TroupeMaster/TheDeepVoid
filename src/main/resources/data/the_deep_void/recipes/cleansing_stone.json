@@ -1,0 +1,34 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "the_deep_void:ancient_deepslate"
+    },
+    {
+      "item": "the_deep_void:ancient_deepslate"
+    },
+    {
+      "item": "the_deep_void:ancient_deepslate"
+    },
+    {
+      "item": "the_deep_void:ancient_deepslate"
+    },
+    {
+      "item": "minecraft:lapis_lazuli"
+    },
+    {
+      "item": "minecraft:lapis_lazuli"
+    },
+    {
+      "item": "minecraft:lapis_lazuli"
+    },
+    {
+      "item": "minecraft:lapis_lazuli"
+    }
+  ],
+  "result": {
+    "item": "the_deep_void:cleansing_stone",
+    "count": 1
+  }
+}

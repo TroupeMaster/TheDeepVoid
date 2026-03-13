@@ -19,6 +19,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.procedures.NecrosedSkinBackpackPlaceItemConditionProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMenus;
 
 import java.util.function.Supplier;
@@ -79,111 +80,291 @@ public class NecrosedSkinBackpackGUIMenu extends AbstractContainerMenu implement
 		}
 		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 8, 16) {
 			private final int slot = 0;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(1, this.addSlot(new SlotItemHandler(internal, 1, 26, 16) {
 			private final int slot = 1;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(2, this.addSlot(new SlotItemHandler(internal, 2, 44, 16) {
 			private final int slot = 2;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(3, this.addSlot(new SlotItemHandler(internal, 3, 62, 16) {
 			private final int slot = 3;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(4, this.addSlot(new SlotItemHandler(internal, 4, 80, 16) {
 			private final int slot = 4;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(5, this.addSlot(new SlotItemHandler(internal, 5, 98, 16) {
 			private final int slot = 5;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(6, this.addSlot(new SlotItemHandler(internal, 6, 116, 16) {
 			private final int slot = 6;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(7, this.addSlot(new SlotItemHandler(internal, 7, 134, 16) {
 			private final int slot = 7;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(8, this.addSlot(new SlotItemHandler(internal, 8, 152, 16) {
 			private final int slot = 8;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(9, this.addSlot(new SlotItemHandler(internal, 9, 8, 34) {
 			private final int slot = 9;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(10, this.addSlot(new SlotItemHandler(internal, 10, 26, 34) {
 			private final int slot = 10;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(11, this.addSlot(new SlotItemHandler(internal, 11, 44, 34) {
 			private final int slot = 11;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(12, this.addSlot(new SlotItemHandler(internal, 12, 62, 34) {
 			private final int slot = 12;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(13, this.addSlot(new SlotItemHandler(internal, 13, 80, 34) {
 			private final int slot = 13;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(14, this.addSlot(new SlotItemHandler(internal, 14, 98, 34) {
 			private final int slot = 14;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(15, this.addSlot(new SlotItemHandler(internal, 15, 116, 34) {
 			private final int slot = 15;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(16, this.addSlot(new SlotItemHandler(internal, 16, 134, 34) {
 			private final int slot = 16;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(17, this.addSlot(new SlotItemHandler(internal, 17, 152, 34) {
 			private final int slot = 17;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(18, this.addSlot(new SlotItemHandler(internal, 18, 8, 52) {
 			private final int slot = 18;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(19, this.addSlot(new SlotItemHandler(internal, 19, 26, 52) {
 			private final int slot = 19;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(20, this.addSlot(new SlotItemHandler(internal, 20, 44, 52) {
 			private final int slot = 20;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(21, this.addSlot(new SlotItemHandler(internal, 21, 62, 52) {
 			private final int slot = 21;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(22, this.addSlot(new SlotItemHandler(internal, 22, 80, 52) {
 			private final int slot = 22;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(23, this.addSlot(new SlotItemHandler(internal, 23, 98, 52) {
 			private final int slot = 23;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(24, this.addSlot(new SlotItemHandler(internal, 24, 116, 52) {
 			private final int slot = 24;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(25, this.addSlot(new SlotItemHandler(internal, 25, 134, 52) {
 			private final int slot = 25;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(26, this.addSlot(new SlotItemHandler(internal, 26, 152, 52) {
 			private final int slot = 26;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(27, this.addSlot(new SlotItemHandler(internal, 27, 8, 70) {
 			private final int slot = 27;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(28, this.addSlot(new SlotItemHandler(internal, 28, 26, 70) {
 			private final int slot = 28;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(29, this.addSlot(new SlotItemHandler(internal, 29, 44, 70) {
 			private final int slot = 29;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(30, this.addSlot(new SlotItemHandler(internal, 30, 62, 70) {
 			private final int slot = 30;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(31, this.addSlot(new SlotItemHandler(internal, 31, 80, 70) {
 			private final int slot = 31;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(32, this.addSlot(new SlotItemHandler(internal, 32, 98, 70) {
 			private final int slot = 32;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(33, this.addSlot(new SlotItemHandler(internal, 33, 116, 70) {
 			private final int slot = 33;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(34, this.addSlot(new SlotItemHandler(internal, 34, 134, 70) {
 			private final int slot = 34;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		this.customSlots.put(35, this.addSlot(new SlotItemHandler(internal, 35, 152, 70) {
 			private final int slot = 35;
+
+			@Override
+			public boolean mayPlace(ItemStack itemstack) {
+				return !NecrosedSkinBackpackPlaceItemConditionProcedure.execute(itemstack);
+			}
 		}));
 		for (int si = 0; si < 3; ++si)
 			for (int sj = 0; sj < 9; ++sj)

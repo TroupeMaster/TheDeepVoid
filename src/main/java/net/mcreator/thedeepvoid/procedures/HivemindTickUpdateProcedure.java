@@ -18,6 +18,8 @@ import net.minecraft.commands.CommandSource;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
+import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
+import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import java.util.List;
@@ -27,40 +29,48 @@ public class HivemindTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double randomX = 0;
-		double randomZ = 0;
 		entity.setDeltaMovement(new Vec3(0, 0, 0));
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", (entity.getPersistentData().getDouble("deep_void:attackChance") + 1));
+			if (entity instanceof MisanthropicHivemindEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MisanthropicHivemindEntity.DATA_attackChance, (int) ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_attackChance) : 0) + 1));
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 40) {
+		if ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_attackChance) : 0) == 40) {
 			HivemindFangsCrossProcedure.execute(world, entity);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 140 && entity.getPersistentData().getDouble("sawThrowerCooldown") <= 0) {
+		if ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_attackChance) : 0) == 140
+				&& (entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_sawThrowerCooldown) : 0) <= 0) {
 			HivemindSummonSawThrowerProcedure.execute(world, x, y, z, entity);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 220) {
+		if ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_attackChance) : 0) == 220) {
 			HivemindFangsDiagonalProcedure.execute(world, x, y, z, entity);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 300 && entity.getPersistentData().getDouble("skullSmasherCooldown") <= 0) {
+		if ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_attackChance) : 0) == 300
+				&& (entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_skullSmasherCooldown) : 0) <= 0) {
 			HivemindSummonSmasherProcedure.execute(world, x, y, z, entity);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 360) {
+		if ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_attackChance) : 0) == 360) {
 			HivemindHealProcedure.execute(world, x, y, z, entity);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 400) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", 0);
+		if ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_attackChance) : 0) == 400) {
+			if (entity instanceof MisanthropicHivemindEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MisanthropicHivemindEntity.DATA_attackChance, 0);
 		}
-		if (entity.getPersistentData().getDouble("sawThrowerCooldown") > 0) {
-			entity.getPersistentData().putDouble("sawThrowerCooldown", (entity.getPersistentData().getDouble("sawThrowerCooldown") - 1));
+		if ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_sawThrowerCooldown) : 0) > 0) {
+			if (entity instanceof MisanthropicHivemindEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MisanthropicHivemindEntity.DATA_sawThrowerCooldown,
+						(int) ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_sawThrowerCooldown) : 0) - 1));
 		}
-		if (entity.getPersistentData().getDouble("skullSmasherCooldown") > 0) {
-			entity.getPersistentData().putDouble("skullSmasherCooldown", (entity.getPersistentData().getDouble("skullSmasherCooldown") - 1));
+		if ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_skullSmasherCooldown) : 0) > 0) {
+			if (entity instanceof MisanthropicHivemindEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MisanthropicHivemindEntity.DATA_skullSmasherCooldown,
+						(int) ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_skullSmasherCooldown) : 0) - 1));
 		}
-		if (entity.getPersistentData().getDouble("fleshTentaclesCooldown") > 0) {
-			entity.getPersistentData().putDouble("fleshTentaclesCooldown", (entity.getPersistentData().getDouble("fleshTentaclesCooldown") - 1));
+		if ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_fleshTentaclesCooldown) : 0) > 0) {
+			if (entity instanceof MisanthropicHivemindEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MisanthropicHivemindEntity.DATA_fleshTentaclesCooldown,
+						(int) ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_fleshTentaclesCooldown) : 0) - 1));
 		}
-		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty())) {
+		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()) && DeepVoidConfigConfiguration.BOSSIDLES.get() == true) {
 			if (!entity.level().isClientSide())
 				entity.discard();
 			if (world instanceof ServerLevel _level) {

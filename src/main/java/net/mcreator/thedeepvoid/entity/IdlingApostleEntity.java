@@ -51,6 +51,9 @@ public class IdlingApostleEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(IdlingApostleEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(IdlingApostleEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(IdlingApostleEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Boolean> DATA_talking = SynchedEntityData.defineId(IdlingApostleEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_psalmCount = SynchedEntityData.defineId(IdlingApostleEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_apostleDiscuss = SynchedEntityData.defineId(IdlingApostleEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -75,6 +78,9 @@ public class IdlingApostleEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "apostle");
+		this.entityData.define(DATA_talking, false);
+		this.entityData.define(DATA_psalmCount, 0);
+		this.entityData.define(DATA_apostleDiscuss, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -160,6 +166,9 @@ public class IdlingApostleEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putBoolean("Datatalking", this.entityData.get(DATA_talking));
+		compound.putInt("DatapsalmCount", this.entityData.get(DATA_psalmCount));
+		compound.putInt("DataapostleDiscuss", this.entityData.get(DATA_apostleDiscuss));
 	}
 
 	@Override
@@ -167,6 +176,12 @@ public class IdlingApostleEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datatalking"))
+			this.entityData.set(DATA_talking, compound.getBoolean("Datatalking"));
+		if (compound.contains("DatapsalmCount"))
+			this.entityData.set(DATA_psalmCount, compound.getInt("DatapsalmCount"));
+		if (compound.contains("DataapostleDiscuss"))
+			this.entityData.set(DATA_apostleDiscuss, compound.getInt("DataapostleDiscuss"));
 	}
 
 	@Override

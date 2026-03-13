@@ -39,8 +39,9 @@ public class PrisonerOnEntityTickUpdateProcedure {
 				Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 					return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 				}
-			}.compareDistOf(x, y, z)).findFirst().orElse(null)) && entity.getPersistentData().getDouble("attackCooldown") <= 0) {
-				entity.getPersistentData().putDouble("attackCooldown", 100);
+			}.compareDistOf(x, y, z)).findFirst().orElse(null)) && (entity instanceof PrisonerEntity _datEntI ? _datEntI.getEntityData().get(PrisonerEntity.DATA_attackChance) : 0) <= 0) {
+				if (entity instanceof PrisonerEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(PrisonerEntity.DATA_attackChance, 100);
 				if (Math.random() < 0.5) {
 					if (entity instanceof PrisonerEntity) {
 						((PrisonerEntity) entity).setAnimation("animation.prisoner_attack");
@@ -98,7 +99,8 @@ public class PrisonerOnEntityTickUpdateProcedure {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 15, 99, false, false));
 					TheDeepVoidMod.queueServerWork(15, () -> {
-						entity.getPersistentData().putBoolean("ram", true);
+						if (entity instanceof PrisonerEntity _datEntSetL)
+							_datEntSetL.getEntityData().set(PrisonerEntity.DATA_ram, true);
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 25, 3, false, false));
 						if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
@@ -108,7 +110,8 @@ public class PrisonerOnEntityTickUpdateProcedure {
 						}
 					});
 					TheDeepVoidMod.queueServerWork(40, () -> {
-						entity.getPersistentData().putBoolean("ram", false);
+						if (entity instanceof PrisonerEntity _datEntSetL)
+							_datEntSetL.getEntityData().set(PrisonerEntity.DATA_ram, false);
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 10, 99, false, false));
 						{
@@ -147,10 +150,11 @@ public class PrisonerOnEntityTickUpdateProcedure {
 				}
 			}
 		}
-		if (entity.getPersistentData().getDouble("attackCooldown") > 0) {
-			entity.getPersistentData().putDouble("attackCooldown", (entity.getPersistentData().getDouble("attackCooldown") - 1));
+		if ((entity instanceof PrisonerEntity _datEntI ? _datEntI.getEntityData().get(PrisonerEntity.DATA_attackChance) : 0) > 0) {
+			if (entity instanceof PrisonerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrisonerEntity.DATA_attackChance, (int) ((entity instanceof PrisonerEntity _datEntI ? _datEntI.getEntityData().get(PrisonerEntity.DATA_attackChance) : 0) - 1));
 		}
-		if (entity.getPersistentData().getBoolean("ram") == true) {
+		if ((entity instanceof PrisonerEntity _datEntL71 && _datEntL71.getEntityData().get(PrisonerEntity.DATA_ram)) == true) {
 			{
 				final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();

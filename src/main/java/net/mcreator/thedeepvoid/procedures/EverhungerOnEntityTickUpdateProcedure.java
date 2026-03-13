@@ -12,13 +12,15 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.thedeepvoid.entity.EverhungerEntity;
+
 import java.util.Comparator;
 
 public class EverhungerOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getPersistentData().getBoolean("deep_void_alert") == false) {
+		if ((entity instanceof EverhungerEntity _datEntL0 && _datEntL0.getEntityData().get(EverhungerEntity.DATA_alert)) == false) {
 			if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) {
 				if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 8, 8, 8), e -> true).isEmpty()) {
 					if ((((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 8, 8, 8), e -> true).stream().sorted(new Object() {
@@ -83,11 +85,13 @@ public class EverhungerOnEntityTickUpdateProcedure {
 					}
 				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _ent)
 					_entity.setTarget(_ent);
-				entity.getPersistentData().putBoolean("deep_void_alert", true);
+				if (entity instanceof EverhungerEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(EverhungerEntity.DATA_alert, true);
 			}
 		}
 		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 500, 500, 500), e -> true).isEmpty())) {
-			entity.getPersistentData().putBoolean("deep_void_alert", false);
+			if (entity instanceof EverhungerEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(EverhungerEntity.DATA_alert, false);
 		}
 	}
 }

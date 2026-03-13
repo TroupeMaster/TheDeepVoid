@@ -5,6 +5,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.common.util.ForgeSoundType;
 
 import net.minecraft.world.phys.HitResult;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.Block;
@@ -21,7 +23,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class ActiveFleshBlockBlock extends Block {
 	public ActiveFleshBlockBlock() {
-		super(BlockBehaviour.Properties.of()
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.NETHER)
 				.sound(new ForgeSoundType(1.0f, 1.0f, () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.slime_block.break")), () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:flesh_block_step")),
 						() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:flesh_block_place")), () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.slime_block.hit")),
 						() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wet_grass.fall"))))

@@ -55,7 +55,7 @@ public class PreserverOnEntityTickUpdateProcedure {
 				world.setBlock(_bp, _bs, 3);
 			}
 		}
-		if (entity.getPersistentData().getBoolean("deep_void:cling") == true) {
+		if ((entity instanceof PreserverEntity _datEntL12 && _datEntL12.getEntityData().get(PreserverEntity.DATA_cling)) == true) {
 			if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 				entity.setNoGravity(true);
 				{

@@ -17,6 +17,7 @@ import net.mcreator.thedeepvoid.enchantment.NecrosedEnchantment;
 import net.mcreator.thedeepvoid.enchantment.CurseOfSorrowEnchantment;
 import net.mcreator.thedeepvoid.enchantment.CurseOfGodsBloodEnchantment;
 import net.mcreator.thedeepvoid.enchantment.CrateCatcherEnchantment;
+import net.mcreator.thedeepvoid.enchantment.ConservationEnchantment;
 import net.mcreator.thedeepvoid.enchantment.BoneWalkerEnchantment;
 import net.mcreator.thedeepvoid.enchantment.BaitEnchantment;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
@@ -32,4 +33,5 @@ public class TheDeepVoidModEnchantments {
 	public static final RegistryObject<Enchantment> CURSE_OF_GODS_BLOOD = REGISTRY.register("curse_of_gods_blood", () -> new CurseOfGodsBloodEnchantment());
 	public static final RegistryObject<Enchantment> BAIT = REGISTRY.register("bait", () -> new BaitEnchantment());
 	public static final RegistryObject<Enchantment> RADIANCE = REGISTRY.register("radiance", () -> new RadianceEnchantment());
+	public static final RegistryObject<Enchantment> CONSERVATION = REGISTRY.register("conservation", () -> new ConservationEnchantment());
 }

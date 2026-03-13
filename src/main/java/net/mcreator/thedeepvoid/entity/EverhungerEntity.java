@@ -54,6 +54,7 @@ public class EverhungerEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(EverhungerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(EverhungerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(EverhungerEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Boolean> DATA_alert = SynchedEntityData.defineId(EverhungerEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -70,7 +71,7 @@ public class EverhungerEntity extends Monster implements GeoEntity {
 		setNoAi(false);
 		setMaxUpStep(0.6f);
 		setPersistenceRequired();
-		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(TheDeepVoidModItems.FLESH_GLOVE.get()));
+		this.setItemSlot(EquipmentSlot.MAINHAND, new ItemStack(TheDeepVoidModItems.EVERHUNGRY_FLESH_GLOVE.get()));
 	}
 
 	@Override
@@ -79,6 +80,7 @@ public class EverhungerEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "everhungernew");
+		this.entityData.define(DATA_alert, false);
 	}
 
 	public void setTexture(String texture) {
@@ -144,6 +146,7 @@ public class EverhungerEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putBoolean("Dataalert", this.entityData.get(DATA_alert));
 	}
 
 	@Override
@@ -151,12 +154,14 @@ public class EverhungerEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Dataalert"))
+			this.entityData.set(DATA_alert, compound.getBoolean("Dataalert"));
 	}
 
 	@Override
 	public void awardKillScore(Entity entity, int score, DamageSource damageSource) {
 		super.awardKillScore(entity, score, damageSource);
-		EverhungerThisEntityKillsAnotherOneProcedure.execute(entity);
+		EverhungerThisEntityKillsAnotherOneProcedure.execute(this);
 	}
 
 	@Override

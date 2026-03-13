@@ -26,8 +26,9 @@ public class GiantBoneSpikeOnEntityTickUpdateProcedure {
 			if (!entity.level().isClientSide())
 				entity.discard();
 		}
-		if (entity.getPersistentData().getDouble("despawn") >= 200) {
-			entity.getPersistentData().putDouble("despawn", 0);
+		if ((entity instanceof GiantBoneSpikeEntity _datEntI ? _datEntI.getEntityData().get(GiantBoneSpikeEntity.DATA_despawn) : 0) >= 200) {
+			if (entity instanceof GiantBoneSpikeEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(GiantBoneSpikeEntity.DATA_despawn, 0);
 			if (entity instanceof GiantBoneSpikeEntity) {
 				((GiantBoneSpikeEntity) entity).setAnimation("animation.giantSpike_despawn");
 			}
@@ -36,11 +37,13 @@ public class GiantBoneSpikeOnEntityTickUpdateProcedure {
 					entity.discard();
 			});
 		} else {
-			entity.getPersistentData().putDouble("despawn", (entity.getPersistentData().getDouble("despawn") + 1));
+			if (entity instanceof GiantBoneSpikeEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(GiantBoneSpikeEntity.DATA_despawn, (int) ((entity instanceof GiantBoneSpikeEntity _datEntI ? _datEntI.getEntityData().get(GiantBoneSpikeEntity.DATA_despawn) : 0) + 1));
 		}
 		if (!world.getEntitiesOfClass(MaskedHunterEntity.class, AABB.ofSize(new Vec3(x, y, z), 1.5, 1.5, 1.5), e -> true).isEmpty()) {
-			if (entity.getPersistentData().getDouble("despawn") < 200) {
-				entity.getPersistentData().putDouble("despawn", 200);
+			if ((entity instanceof GiantBoneSpikeEntity _datEntI ? _datEntI.getEntityData().get(GiantBoneSpikeEntity.DATA_despawn) : 0) < 200) {
+				if (entity instanceof GiantBoneSpikeEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(GiantBoneSpikeEntity.DATA_despawn, 200);
 			}
 		}
 	}

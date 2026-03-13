@@ -19,7 +19,7 @@ import net.mcreator.thedeepvoid.procedures.RottenGrassPlantDestroyedByPlayerProc
 
 public class RottenGrassBlock extends DoublePlantBlock {
 	public RottenGrassBlock() {
-		super(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.ROOTS).strength(0.5f, 0f).noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+		super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).sound(SoundType.ROOTS).strength(0.5f, 0f).noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

@@ -12,14 +12,12 @@ public class GrimSickleHitProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 20, 2));
+			_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 20, 1));
 		if (Math.random() < 0.4) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 140, 1));
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 140, 0));
+				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 140, 0));
 			if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 80, 2));
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 80, 1));
 		}
 	}
 }

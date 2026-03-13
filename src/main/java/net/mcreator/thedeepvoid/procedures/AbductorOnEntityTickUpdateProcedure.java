@@ -52,10 +52,12 @@ public class AbductorOnEntityTickUpdateProcedure {
 			}
 		}
 		if (entity.isVehicle()) {
-			entity.getPersistentData().putBoolean("playerAbducted", true);
+			if (entity instanceof AbductorEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(AbductorEntity.DATA_playerAbducted, true);
 		}
-		if (entity.getPersistentData().getBoolean("playerAbducted") == true) {
-			entity.getPersistentData().putBoolean("playerAbducted", false);
+		if ((entity instanceof AbductorEntity _datEntL9 && _datEntL9.getEntityData().get(AbductorEntity.DATA_playerAbducted)) == true) {
+			if (entity instanceof AbductorEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(AbductorEntity.DATA_playerAbducted, false);
 			TheDeepVoidMod.queueServerWork(60, () -> {
 				if ((entity instanceof LivingEntity _livEnt11 && _livEnt11.hasEffect(MobEffects.INVISIBILITY)) == false) {
 					{
@@ -110,8 +112,9 @@ public class AbductorOnEntityTickUpdateProcedure {
 				}
 			});
 		}
-		if (entity.getPersistentData().getDouble("deep_void:stare") >= 40) {
-			entity.getPersistentData().putDouble("deep_void:stare", 0);
+		if ((entity instanceof AbductorEntity _datEntI ? _datEntI.getEntityData().get(AbductorEntity.DATA_stare) : 0) >= 40) {
+			if (entity instanceof AbductorEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(AbductorEntity.DATA_stare, 0);
 			if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 8, 8, 8), e -> true).isEmpty()) {
 				if (!(((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 8, 8, 8), e -> true).stream().sorted(new Object() {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
@@ -153,7 +156,8 @@ public class AbductorOnEntityTickUpdateProcedure {
 				}
 			}
 		} else {
-			entity.getPersistentData().putDouble("deep_void:stare", (entity.getPersistentData().getDouble("deep_void:stare") + 1));
+			if (entity instanceof AbductorEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(AbductorEntity.DATA_stare, (int) ((entity instanceof AbductorEntity _datEntI ? _datEntI.getEntityData().get(AbductorEntity.DATA_stare) : 0) + 1));
 		}
 	}
 }

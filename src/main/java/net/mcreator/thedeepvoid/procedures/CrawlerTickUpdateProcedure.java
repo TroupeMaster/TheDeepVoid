@@ -26,6 +26,8 @@ import net.minecraft.commands.CommandSource;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
+import net.mcreator.thedeepvoid.entity.PrimordialBoneCrawlerEntity;
+import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import java.util.List;
@@ -35,27 +37,24 @@ public class CrawlerTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double randomX = 0;
-		double randomZ = 0;
-		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0 && entity.getPersistentData().getBoolean("deep_void:digging") == false) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", (entity.getPersistentData().getDouble("deep_void:attackChance") + 1));
+		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0
+				&& (entity instanceof PrimordialBoneCrawlerEntity _datEntL3 && _datEntL3.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_digging)) == false) {
+			if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_attackChance, (int) ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) + 1));
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 60) {
+		if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) == 60) {
 			PrimordialCrawlerSlamProcedure.execute(world, entity);
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 180) {
+		} else if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) == 180) {
 			PrimordialCrawlerSpitProcedure.execute(world, entity);
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 260) {
+		} else if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) == 260) {
 			PrimordialCrawlerDigProcedure.execute(world, x, y, z, entity);
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 330) {
+		} else if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) == 330) {
 			PrimordialCrawlerDashProcedure.execute(world, x, y, z, entity);
+		} else if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) >= 370) {
+			if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_attackChance, 0);
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 370) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", 0);
-		}
-		if (entity.getPersistentData().getBoolean("deep_void:digging") == true) {
+		if ((entity instanceof PrimordialBoneCrawlerEntity _datEntL12 && _datEntL12.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_digging)) == true) {
 			PrimordialCrawlerWhileDiggingProcedure.execute(world, x, y, z, entity);
 		}
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
@@ -82,7 +81,7 @@ public class CrawlerTickUpdateProcedure {
 			}
 		}
 		WeaverBossMusicProcedure.execute(world, x, y, z, entity);
-		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty())) {
+		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()) && DeepVoidConfigConfiguration.BOSSIDLES.get() == true) {
 			if (!entity.level().isClientSide())
 				entity.discard();
 			if (world instanceof ServerLevel _level) {

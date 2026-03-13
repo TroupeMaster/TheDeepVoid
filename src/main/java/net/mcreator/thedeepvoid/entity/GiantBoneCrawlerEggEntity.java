@@ -113,7 +113,7 @@ public class GiantBoneCrawlerEggEntity extends PathfinderMob {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		GiantBoneCrawlerEggOnEntityTickUpdateProcedure.execute(this.getY(), this.getZ(), this);
+		GiantBoneCrawlerEggOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

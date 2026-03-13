@@ -34,8 +34,9 @@ public class SporeSpewerOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 8, 8, 8), e -> true).isEmpty() && !((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
-			if (entity.getPersistentData().getDouble("deep_void:spew") >= 40) {
-				entity.getPersistentData().putDouble("deep_void:spew", 0);
+			if ((entity instanceof SporeSpewerEntity _datEntI ? _datEntI.getEntityData().get(SporeSpewerEntity.DATA_spew) : 0) >= 40) {
+				if (entity instanceof SporeSpewerEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(SporeSpewerEntity.DATA_spew, 0);
 				if (entity instanceof SporeSpewerEntity) {
 					((SporeSpewerEntity) entity).setAnimation("animation.sporeSpewer_spew");
 				}
@@ -66,7 +67,8 @@ public class SporeSpewerOnEntityTickUpdateProcedure {
 					}
 				});
 			} else {
-				entity.getPersistentData().putDouble("deep_void:spew", (entity.getPersistentData().getDouble("deep_void:spew") + 1));
+				if (entity instanceof SporeSpewerEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(SporeSpewerEntity.DATA_spew, (int) ((entity instanceof SporeSpewerEntity _datEntI ? _datEntI.getEntityData().get(SporeSpewerEntity.DATA_spew) : 0) + 1));
 			}
 		}
 	}

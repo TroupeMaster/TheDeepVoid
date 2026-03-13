@@ -6,6 +6,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.tags.TagKey;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
@@ -41,8 +42,14 @@ public class AnxietyMaximumProcedureProcedure {
 						}
 						return false;
 					}
-				}.checkGamemode(entity)) && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:stalker_safe"))) && world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0) {
-			return true;
+				}.checkGamemode(entity)) && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:stalker_safe")))) {
+			if ((world.getBlockState(BlockPos.containing(x, y - 0.5, z))).is(BlockTags.create(new ResourceLocation("the_deep_void:light_cannot_reach")))) {
+				if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y + 1, z)) == 0) {
+					return true;
+				}
+			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0) {
+				return true;
+			}
 		}
 		return false;
 	}

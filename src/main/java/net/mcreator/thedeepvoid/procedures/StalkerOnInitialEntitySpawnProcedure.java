@@ -35,7 +35,7 @@ public class StalkerOnInitialEntitySpawnProcedure {
 		if (entity == null)
 			return;
 		if (entity.isInWall()) {
-			if (entity.getPersistentData().getDouble("deep_void:spawned") > 0) {
+			if ((entity instanceof StalkerEntity _datEntI ? _datEntI.getEntityData().get(StalkerEntity.DATA_spawned) : 0) > 0) {
 				{
 					Entity _ent = entity;
 					_ent.teleportTo(x, (y + 2), z);
@@ -44,11 +44,13 @@ public class StalkerOnInitialEntitySpawnProcedure {
 				}
 			}
 		}
-		if (entity.getPersistentData().getDouble("deep_void:spawned") > 0) {
-			entity.getPersistentData().putDouble("deep_void:spawned", (entity.getPersistentData().getDouble("deep_void:spawned") - 1));
+		if ((entity instanceof StalkerEntity _datEntI ? _datEntI.getEntityData().get(StalkerEntity.DATA_spawned) : 0) > 0) {
+			if (entity instanceof StalkerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(StalkerEntity.DATA_spawned, (int) ((entity instanceof StalkerEntity _datEntI ? _datEntI.getEntityData().get(StalkerEntity.DATA_spawned) : 0) - 1));
 		}
-		if (entity.getPersistentData().getDouble("Heartbeat") == 45) {
-			entity.getPersistentData().putDouble("Heartbeat", 0);
+		if ((entity instanceof StalkerEntity _datEntI ? _datEntI.getEntityData().get(StalkerEntity.DATA_heartbeat) : 0) == 45) {
+			if (entity instanceof StalkerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(StalkerEntity.DATA_heartbeat, 0);
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.warden.heartbeat")), SoundSource.HOSTILE, 3, 1);
@@ -74,7 +76,8 @@ public class StalkerOnInitialEntitySpawnProcedure {
 				}
 			}
 		} else {
-			entity.getPersistentData().putDouble("Heartbeat", (entity.getPersistentData().getDouble("Heartbeat") + 1));
+			if (entity instanceof StalkerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(StalkerEntity.DATA_heartbeat, (int) ((entity instanceof StalkerEntity _datEntI ? _datEntI.getEntityData().get(StalkerEntity.DATA_heartbeat) : 0) + 1));
 		}
 		if (entity instanceof LivingEntity _livEnt21 && _livEnt21.hasEffect(MobEffects.GLOWING)) {
 			if (entity instanceof LivingEntity _entity)
@@ -89,14 +92,15 @@ public class StalkerOnInitialEntitySpawnProcedure {
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 0, false, false));
 		}
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
-			if (entity.getPersistentData().getDouble("voidCallCooldown") >= 500) {
+			if ((entity instanceof StalkerEntity _datEntI ? _datEntI.getEntityData().get(StalkerEntity.DATA_voidCallCooldown) : 0) >= 500) {
 				if (world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude()
 						&& ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _livEnt37 && _livEnt37.hasEffect(TheDeepVoidModMobEffects.CALL_OF_THE_VOID.get())) == false) {
 					if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.CALL_OF_THE_VOID.get(), 420, 0));
 				}
 			} else {
-				entity.getPersistentData().putDouble("voidCallCooldown", (entity.getPersistentData().getDouble("voidCallCooldown") + 1));
+				if (entity instanceof StalkerEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(StalkerEntity.DATA_voidCallCooldown, (int) ((entity instanceof StalkerEntity _datEntI ? _datEntI.getEntityData().get(StalkerEntity.DATA_voidCallCooldown) : 0) + 1));
 			}
 		}
 		if (!world.getBlockState(
@@ -145,18 +149,21 @@ public class StalkerOnInitialEntitySpawnProcedure {
 			}
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 1, false, false));
-			if (entity.getPersistentData().getBoolean("deep_void:crouching") == false) {
-				entity.getPersistentData().putBoolean("deep_void:crouching", true);
+			if ((entity instanceof StalkerEntity _datEntL84 && _datEntL84.getEntityData().get(StalkerEntity.DATA_crouching)) == false) {
+				if (entity instanceof StalkerEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(StalkerEntity.DATA_crouching, true);
 			}
 		} else {
-			if (entity.getPersistentData().getBoolean("deep_void:crouching") == true) {
+			if ((entity instanceof StalkerEntity _datEntL86 && _datEntL86.getEntityData().get(StalkerEntity.DATA_crouching)) == true) {
 				TheDeepVoidMod.queueServerWork(15, () -> {
-					entity.getPersistentData().putBoolean("deep_void:crouching", false);
+					if (entity instanceof StalkerEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(StalkerEntity.DATA_crouching, false);
 				});
 			}
 		}
-		if (entity.getPersistentData().getBoolean("deep_void:crouching") == true && !world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() + 1, entity.getZ())).canOcclude()) {
-			entity.getPersistentData().putBoolean("deep_void:crouching", false);
+		if ((entity instanceof StalkerEntity _datEntL89 && _datEntL89.getEntityData().get(StalkerEntity.DATA_crouching)) == true && !world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() + 1, entity.getZ())).canOcclude()) {
+			if (entity instanceof StalkerEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(StalkerEntity.DATA_crouching, false);
 		}
 		TheDeepVoidMod.queueServerWork((int) (double) DeepVoidConfigConfiguration.STALKERDESPAWNTIMER.get(), () -> {
 			if (entity instanceof StalkerEntity) {
@@ -189,8 +196,9 @@ public class StalkerOnInitialEntitySpawnProcedure {
 					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 40, 99, false, false));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, 99, false, false));
-				if (entity.getPersistentData().getBoolean("soundAngry") == false) {
-					entity.getPersistentData().putBoolean("soundAngry", true);
+				if ((entity instanceof StalkerEntity _datEntL118 && _datEntL118.getEntityData().get(StalkerEntity.DATA_soundAngry)) == false) {
+					if (entity instanceof StalkerEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(StalkerEntity.DATA_soundAngry, true);
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:stalker_ambient")), SoundSource.HOSTILE, 8, (float) 0.6);

@@ -47,7 +47,7 @@ public class PlayerIsInDeepVoidProcedure {
 			return;
 		if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) {
 			if (DeepVoidConfigConfiguration.PLAYERHALLUCINATES.get() == true) {
-				if (entity.getY() <= 1 && (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.HALLUCINATE.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.HALLUCINATE.get()).getDuration() : 0) <= 8) {
+				if (entity.getY() < 1 && (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.HALLUCINATE.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.HALLUCINATE.get()).getDuration() : 0) <= 8) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.HALLUCINATE.get(), 140, 0, false, false));
 				}

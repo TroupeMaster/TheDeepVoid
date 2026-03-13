@@ -54,6 +54,8 @@ public class MaggotEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(MaggotEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(MaggotEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(MaggotEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_growth = SynchedEntityData.defineId(MaggotEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_killed = SynchedEntityData.defineId(MaggotEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -77,6 +79,8 @@ public class MaggotEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "void_fly_maggot");
+		this.entityData.define(DATA_growth, 0);
+		this.entityData.define(DATA_killed, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -136,6 +140,8 @@ public class MaggotEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("Datagrowth", this.entityData.get(DATA_growth));
+		compound.putInt("Datakilled", this.entityData.get(DATA_killed));
 	}
 
 	@Override
@@ -143,6 +149,10 @@ public class MaggotEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datagrowth"))
+			this.entityData.set(DATA_growth, compound.getInt("Datagrowth"));
+		if (compound.contains("Datakilled"))
+			this.entityData.set(DATA_killed, compound.getInt("Datakilled"));
 	}
 
 	@Override

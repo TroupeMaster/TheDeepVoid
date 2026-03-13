@@ -19,7 +19,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 public class AmbrosiaStrandsBlock extends FlowerBlock {
 	public AmbrosiaStrandsBlock() {
 		super(() -> MobEffects.MOVEMENT_SPEED, 100,
-				BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.SCULK_VEIN).instabreak().lightLevel(s -> 1).noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+				BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).sound(SoundType.SCULK_VEIN).instabreak().lightLevel(s -> 1).noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

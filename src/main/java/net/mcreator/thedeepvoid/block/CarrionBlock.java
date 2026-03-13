@@ -3,6 +3,8 @@ package net.mcreator.thedeepvoid.block;
 
 import net.minecraftforge.common.IPlantable;
 
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.BlockState;
@@ -21,7 +23,7 @@ public class CarrionBlock extends Block {
 	public static final DirectionProperty FACING = HorizontalDirectionalBlock.FACING;
 
 	public CarrionBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.BONE_BLOCK).strength(0.5f, 6f).speedFactor(0.6f).jumpFactor(0.9f));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.CRIMSON_HYPHAE).sound(SoundType.BONE_BLOCK).strength(0.5f, 6f).speedFactor(0.6f).jumpFactor(0.9f));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH));
 	}
 

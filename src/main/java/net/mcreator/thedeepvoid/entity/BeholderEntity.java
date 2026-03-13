@@ -46,6 +46,7 @@ public class BeholderEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(BeholderEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(BeholderEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(BeholderEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_call = SynchedEntityData.defineId(BeholderEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -69,6 +70,7 @@ public class BeholderEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "beholder");
+		this.entityData.define(DATA_call, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -115,6 +117,7 @@ public class BeholderEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("Datacall", this.entityData.get(DATA_call));
 	}
 
 	@Override
@@ -122,6 +125,8 @@ public class BeholderEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datacall"))
+			this.entityData.set(DATA_call, compound.getInt("Datacall"));
 	}
 
 	@Override

@@ -18,7 +18,8 @@ public class SkullSmasherEntityDiesProcedure {
 			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 			for (Entity entityiterator : _entfound) {
 				if (entityiterator instanceof MisanthropicHivemindEntity) {
-					entityiterator.getPersistentData().putDouble("skullSmasherCooldown", ((double) DeepVoidConfigConfiguration.SMASHERCOOLDOWN.get()));
+					if (entityiterator instanceof MisanthropicHivemindEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(MisanthropicHivemindEntity.DATA_skullSmasherCooldown, (int) (double) DeepVoidConfigConfiguration.SMASHERCOOLDOWN.get());
 				}
 			}
 		}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aab",
+    "abb",
+    "ab "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:fleshy_rotten_bone_block"
+    },
+    "b": {
+      "item": "the_deep_void:bloodstone"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:bloodthirsty_claws",
+    "count": 1
+  }
+}

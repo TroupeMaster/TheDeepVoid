@@ -40,13 +40,14 @@ public class CultArmorDescriptionProcedure {
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.CULT_CHESTPLATE.get()
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.CULT_LEGGINGS.get()
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.CULT_BOOTS.get()) {
+			tooltip.add(Component.literal(""));
 			if (Screen.hasShiftDown()) {
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.cult.when_worn").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.cult.worn1").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.cult.worn2").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.cult.worn3").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.cult.when_attacked").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.cult.attacked").getString())));
+				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.cult.when_worn").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.cult.worn1").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.cult.worn2").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.cult.worn3").getString())));
+				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.cult.when_attacked").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.cult.attacked").getString())));
 			} else {
 				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.press_shift").getString())));
 			}

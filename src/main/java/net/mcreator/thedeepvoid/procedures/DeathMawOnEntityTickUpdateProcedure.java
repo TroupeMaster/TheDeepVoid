@@ -12,14 +12,17 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.entity.DeathMawEntity;
+
 public class DeathMawOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 			if (!entity.isVehicle()) {
-				if (entity.getPersistentData().getDouble("deep_void:chase_timer") >= 35) {
-					entity.getPersistentData().putDouble("deep_void:chase_timer", 0);
+				if ((entity instanceof DeathMawEntity _datEntI ? _datEntI.getEntityData().get(DeathMawEntity.DATA_chase) : 0) >= 35) {
+					if (entity instanceof DeathMawEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(DeathMawEntity.DATA_chase, 0);
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:death_maw_chase")), SoundSource.HOSTILE, (float) 1.8,
@@ -30,7 +33,8 @@ public class DeathMawOnEntityTickUpdateProcedure {
 						}
 					}
 				} else {
-					entity.getPersistentData().putDouble("deep_void:chase_timer", (entity.getPersistentData().getDouble("deep_void:chase_timer") + 1));
+					if (entity instanceof DeathMawEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(DeathMawEntity.DATA_chase, (int) ((entity instanceof DeathMawEntity _datEntI ? _datEntI.getEntityData().get(DeathMawEntity.DATA_chase) : 0) + 1));
 				}
 			}
 		}

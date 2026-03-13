@@ -21,7 +21,7 @@ public class VoidbornTentaclesOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		entity.setDeltaMovement(new Vec3(0, 0, 0));
-		if (entity.getPersistentData().getDouble("count") == 200 && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
+		if ((entity instanceof VoidbornTentaclesEntity _datEntI ? _datEntI.getEntityData().get(VoidbornTentaclesEntity.DATA_count) : 0) == 200 && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
 			if (entity instanceof VoidbornTentaclesEntity) {
 				((VoidbornTentaclesEntity) entity).setAnimation("animation.voidbornTentacles_removeLight");
 			}
@@ -39,7 +39,8 @@ public class VoidbornTentaclesOnEntityTickUpdateProcedure {
 					entity.discard();
 			});
 		} else {
-			entity.getPersistentData().putDouble("count", (entity.getPersistentData().getDouble("count") + 1));
+			if (entity instanceof VoidbornTentaclesEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(VoidbornTentaclesEntity.DATA_count, (int) ((entity instanceof VoidbornTentaclesEntity _datEntI ? _datEntI.getEntityData().get(VoidbornTentaclesEntity.DATA_count) : 0) + 1));
 		}
 	}
 }

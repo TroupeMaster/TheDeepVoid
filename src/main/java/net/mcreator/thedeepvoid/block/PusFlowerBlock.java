@@ -16,7 +16,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class PusFlowerBlock extends FlowerBlock {
 	public PusFlowerBlock() {
-		super(() -> MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.SCULK_VEIN).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+		super(() -> MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).sound(SoundType.SCULK_VEIN).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

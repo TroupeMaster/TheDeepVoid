@@ -1,7 +1,7 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "the_deep_void:item/shadestorm0"
+    "layer0": "the_deep_void:item/dark_matter_bow_0"
   },
   "overrides": [
     {

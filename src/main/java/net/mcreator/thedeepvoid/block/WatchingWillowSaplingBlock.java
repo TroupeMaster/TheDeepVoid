@@ -22,7 +22,8 @@ import net.mcreator.thedeepvoid.procedures.WatchingWillowSaplingOnTickUpdateProc
 
 public class WatchingWillowSaplingBlock extends FlowerBlock implements BonemealableBlock {
 	public WatchingWillowSaplingBlock() {
-		super(() -> MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().sound(SoundType.SCULK).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+		super(() -> MobEffects.MOVEMENT_SPEED, 100,
+				BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).randomTicks().sound(SoundType.SCULK).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

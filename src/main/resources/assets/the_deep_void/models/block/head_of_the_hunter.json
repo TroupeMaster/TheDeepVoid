@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/hunter_head",
+  "textures": {
+    "all": "the_deep_void:block/hunter_head",
+    "particle": "the_deep_void:block/hunter_head",
+    "0": "the_deep_void:block/hunter_head"
+  },
+  "render_type": "cutout"
+}

@@ -54,6 +54,7 @@ public class GiantBoneSpikeEntity extends PathfinderMob implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(GiantBoneSpikeEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(GiantBoneSpikeEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(GiantBoneSpikeEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_despawn = SynchedEntityData.defineId(GiantBoneSpikeEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -77,6 +78,7 @@ public class GiantBoneSpikeEntity extends PathfinderMob implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "giant_spike");
+		this.entityData.define(DATA_despawn, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -166,6 +168,7 @@ public class GiantBoneSpikeEntity extends PathfinderMob implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("Datadespawn", this.entityData.get(DATA_despawn));
 	}
 
 	@Override
@@ -173,6 +176,8 @@ public class GiantBoneSpikeEntity extends PathfinderMob implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datadespawn"))
+			this.entityData.set(DATA_despawn, compound.getInt("Datadespawn"));
 	}
 
 	@Override

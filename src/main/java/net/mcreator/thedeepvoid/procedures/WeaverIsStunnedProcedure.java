@@ -21,7 +21,7 @@ public class WeaverIsStunnedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getPersistentData().getBoolean("deep_void:stunned") == true) {
+		if ((entity instanceof WeaverOfSoulsEntity _datEntL0 && _datEntL0.getEntityData().get(WeaverOfSoulsEntity.DATA_stunned)) == true) {
 			if (entity instanceof WeaverOfSoulsEntity) {
 				((WeaverOfSoulsEntity) entity).setAnimation("animation.fallenWeaver_stun");
 			}
@@ -31,9 +31,11 @@ public class WeaverIsStunnedProcedure {
 				_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 5, 99, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 5, 0, false, false));
-			if (entity.getPersistentData().getDouble("deep_void:stunCount") >= 200) {
-				entity.getPersistentData().putBoolean("deep_void:stunned", false);
-				entity.getPersistentData().putDouble("deep_void:stunCount", 0);
+			if ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_stunCount) : 0) >= 200) {
+				if (entity instanceof WeaverOfSoulsEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(WeaverOfSoulsEntity.DATA_stunned, false);
+				if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_stunCount, 0);
 				if (entity instanceof WeaverOfSoulsEntity) {
 					((WeaverOfSoulsEntity) entity).setAnimation("animation.fallenWeaver_attack");
 				}
@@ -52,7 +54,8 @@ public class WeaverIsStunnedProcedure {
 					}
 				}
 			} else {
-				entity.getPersistentData().putDouble("deep_void:stunCount", (entity.getPersistentData().getDouble("deep_void:stunCount") + 1));
+				if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_stunCount, (int) ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_stunCount) : 0) + 1));
 			}
 		} else {
 			if (entity instanceof WeaverOfSoulsEntity) {

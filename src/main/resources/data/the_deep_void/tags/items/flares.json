@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:red_flare",
+    "the_deep_void:bright_flare",
+    "the_deep_void:bismuth_flare",
+    "the_deep_void:golden_flare",
+    "the_deep_void:sulfur_flare",
+    "the_deep_void:voidrium_flare",
+    "the_deep_void:flesh_flare"
+  ]
+}

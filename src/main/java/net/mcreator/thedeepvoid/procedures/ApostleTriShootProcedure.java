@@ -29,12 +29,11 @@ public class ApostleTriShootProcedure {
 	public static void execute(LevelAccessor world, double y, Entity entity) {
 		if (entity == null)
 			return;
-		double playerDashX = 0;
-		double playerDashZ = 0;
 		if (entity instanceof ApostleOfCatastropheEntity) {
 			((ApostleOfCatastropheEntity) entity).setAnimation("animation.apostle_shoot");
 		}
-		entity.getPersistentData().putBoolean("deep_void:shooting", true);
+		if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+			_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_shooting, true);
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 15, 99, false, false));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -43,7 +42,8 @@ public class ApostleTriShootProcedure {
 			entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()), y, ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ())));
 		}
 		TheDeepVoidMod.queueServerWork(11, () -> {
-			entity.getPersistentData().putBoolean("deep_void:shooting", false);
+			if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_shooting, false);
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.trident.throw")), SoundSource.HOSTILE, 2, (float) 1.8);
@@ -98,7 +98,8 @@ public class ApostleTriShootProcedure {
 			}
 		});
 		if (Math.random() < 0.1) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", 0);
+			if (entity instanceof ApostleOfCatastropheEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(ApostleOfCatastropheEntity.DATA_attackChance, 0);
 		}
 	}
 }

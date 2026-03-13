@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/rottengrowth",
+  "textures": {
+    "all": "the_deep_void:block/rottengrowth",
+    "particle": "the_deep_void:block/rottengrowth",
+    "0": "the_deep_void:block/rottengrowth"
+  },
+  "render_type": "cutout"
+}

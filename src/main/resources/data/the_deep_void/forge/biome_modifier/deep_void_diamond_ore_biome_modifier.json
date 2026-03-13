@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_deep_void:gloomy_deathgrounds",
+    "the_deep_void:staring_hills",
+    "the_deep_void:ashen_crags",
+    "the_deep_void:windswept_hollow",
+    "the_deep_void:deep_marrows"
+  ],
+  "features": "the_deep_void:deep_void_diamond_ore",
+  "step": "underground_ores"
+}

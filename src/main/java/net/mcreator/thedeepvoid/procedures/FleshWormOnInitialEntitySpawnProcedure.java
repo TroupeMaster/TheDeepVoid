@@ -31,7 +31,8 @@ public class FleshWormOnInitialEntitySpawnProcedure {
 		if (entity instanceof FleshWormEntity) {
 			((FleshWormEntity) entity).setAnimation("animation.fleshWorm_spawn");
 		}
-		entity.getPersistentData().putBoolean("spawning", true);
+		if (entity instanceof FleshWormEntity _datEntSetL)
+			_datEntSetL.getEntityData().set(FleshWormEntity.DATA_spawning, true);
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 75, 99, false, false));
 		TheDeepVoidMod.queueServerWork(25, () -> {
@@ -64,7 +65,8 @@ public class FleshWormOnInitialEntitySpawnProcedure {
 			}
 		});
 		TheDeepVoidMod.queueServerWork(75, () -> {
-			entity.getPersistentData().putBoolean("spawning", false);
+			if (entity instanceof FleshWormEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(FleshWormEntity.DATA_spawning, false);
 		});
 	}
 }

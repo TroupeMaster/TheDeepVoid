@@ -11,7 +11,7 @@ public class RottenWoodenSwordToolInHandTickProcedure {
 			return;
 		if ((entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(MobEffects.WITHER)) == false) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 100, 0));
+				_entity.addEffect(new MobEffectInstance(MobEffects.WITHER, 40, 0));
 		}
 	}
 }

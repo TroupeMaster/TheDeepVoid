@@ -19,7 +19,6 @@ import net.mcreator.thedeepvoid.entity.SwarmerEntity;
 import net.mcreator.thedeepvoid.entity.SummonedShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.SummonedHiveFangsEntity;
 import net.mcreator.thedeepvoid.entity.SummonedDevourerEntity;
-import net.mcreator.thedeepvoid.entity.StalkingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
 import net.mcreator.thedeepvoid.entity.SporeSpewerEntity;
 import net.mcreator.thedeepvoid.entity.SmallFleshCubeEntity;
@@ -27,7 +26,6 @@ import net.mcreator.thedeepvoid.entity.SleepingPrimordialCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.SkullSmasherEntity;
 import net.mcreator.thedeepvoid.entity.ShankPrisonerEntity;
 import net.mcreator.thedeepvoid.entity.ShadowHandEntity;
-import net.mcreator.thedeepvoid.entity.ShadowEntity;
 import net.mcreator.thedeepvoid.entity.SeekerEntity;
 import net.mcreator.thedeepvoid.entity.ScarecrowEntity;
 import net.mcreator.thedeepvoid.entity.SawThrowerEntity;
@@ -44,7 +42,6 @@ import net.mcreator.thedeepvoid.entity.PrimordialBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.PreserverEntity;
 import net.mcreator.thedeepvoid.entity.PenitentEntity;
 import net.mcreator.thedeepvoid.entity.OverseerEntity;
-import net.mcreator.thedeepvoid.entity.NightmareEntity;
 import net.mcreator.thedeepvoid.entity.MuzzledDeathVultureEntity;
 import net.mcreator.thedeepvoid.entity.MultipleEyesEntity;
 import net.mcreator.thedeepvoid.entity.MournerEntity;
@@ -56,12 +53,13 @@ import net.mcreator.thedeepvoid.entity.LurkerEntity;
 import net.mcreator.thedeepvoid.entity.LickerEntity;
 import net.mcreator.thedeepvoid.entity.LastingShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.IdlingApostleEntity;
+import net.mcreator.thedeepvoid.entity.HollowedEntity;
 import net.mcreator.thedeepvoid.entity.HivemindTentaclesEntity;
 import net.mcreator.thedeepvoid.entity.HiveWatcherEntity;
 import net.mcreator.thedeepvoid.entity.HiveFangsEntity;
 import net.mcreator.thedeepvoid.entity.HiveBrainEntity;
-import net.mcreator.thedeepvoid.entity.HallucinationEntity;
 import net.mcreator.thedeepvoid.entity.GravekeeperEntity;
+import net.mcreator.thedeepvoid.entity.GoreLurkerEntity;
 import net.mcreator.thedeepvoid.entity.GoreExpectoratorEntity;
 import net.mcreator.thedeepvoid.entity.GooSpitterEntity;
 import net.mcreator.thedeepvoid.entity.GiantShadowHandEntity;
@@ -133,13 +131,6 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof TamedBoneCrawlerEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof HallucinationEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");
@@ -384,13 +375,6 @@ public class EntityAnimationFactory {
 					syncable.animationprocedure = animation;
 				}
 			}
-			if (event.getEntity() instanceof NightmareEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
 			if (event.getEntity() instanceof BigOverseerEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
@@ -413,20 +397,6 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof CentigazeHiddenEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof StalkingStalkerEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof ShadowEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");
@@ -812,6 +782,20 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof VoidbornTentaclesEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof GoreLurkerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof HollowedEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

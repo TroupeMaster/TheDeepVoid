@@ -1,0 +1,82 @@
+package net.mcreator.thedeepvoid.procedures;
+
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.Event;
+import net.minecraftforge.event.ItemAttributeModifierEvent;
+import net.minecraftforge.common.ForgeMod;
+
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.EquipmentSlot;
+
+import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
+import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
+
+import javax.annotation.Nullable;
+
+import java.util.UUID;
+
+@Mod.EventBusSubscriber
+public class SetItemAttributesProcedure {
+	@SubscribeEvent
+	public static void addAttributeModifier(ItemAttributeModifierEvent event) {
+		execute(event, event.getItemStack());
+	}
+
+	public static void execute(ItemStack itemstack) {
+		execute(null, itemstack);
+	}
+
+	private static void execute(@Nullable Event event, ItemStack itemstack) {
+		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.MAINHAND) {
+			if (itemstack.getItem() == TheDeepVoidModItems.ONYX_NAGINATA.get()) {
+				_event.addModifier(ForgeMod.ENTITY_REACH.get(),
+						(new AttributeModifier(UUID.fromString("c2d764d5-1e7e-4f13-8e8a-5a6d073a2b9d"), "naginataReach", ((double) DeepVoidConfigConfiguration.ONYXNAGINATAREACHADDITION.get()), AttributeModifier.Operation.ADDITION)));
+			}
+			if (itemstack.getItem() == TheDeepVoidModItems.PENITENT_CROSS.get()) {
+				_event.addModifier(ForgeMod.ENTITY_REACH.get(),
+						(new AttributeModifier(UUID.fromString("1d949c6f-0aa0-4cb1-b4d1-0da21d149162"), "crossReach", ((double) DeepVoidConfigConfiguration.PENITENTCROSSREACHADDITION.get()), AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_KNOCKBACK, (new AttributeModifier(UUID.fromString("daa20447-a292-4a1f-be0b-5a1d395597bc"), "crossKnockback", 1.3, AttributeModifier.Operation.ADDITION)));
+			}
+			if (itemstack.getItem() == TheDeepVoidModItems.KNIVES_GLOVE.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_SPEED, (new AttributeModifier(UUID.fromString("77b8b253-e87d-4b69-a7eb-83208a542bda"), "knifeGloveSpeed", 0.4, AttributeModifier.Operation.ADDITION)));
+			}
+		}
+		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.HEAD) {
+			if (itemstack.getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_HELMET.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH,
+						(new AttributeModifier(UUID.fromString("aa5c1f7d-57c5-4cf4-bc5a-a33220af9855"), "bloodstoneHelmetHealth", (-1.5), AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("e3e28def-8ac7-4786-bf1b-9c40b2adbe13"), "bloodstoneHelmetSpeed", 0.005, AttributeModifier.Operation.ADDITION)));
+			}
+		}
+		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.CHEST) {
+			if (itemstack.getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_CHESTPLATE.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH,
+						(new AttributeModifier(UUID.fromString("a9a9f5bc-1598-48bf-b126-576cd3e43583"), "bloodstoneChestplateHealth", (-1.5), AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("3d44d829-1981-4ce1-ad8d-0b61f55544e3"), "bloodstoneChestplateSpeed", 0.01, AttributeModifier.Operation.ADDITION)));
+			}
+		}
+		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.LEGS) {
+			if (itemstack.getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_LEGGINGS.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH,
+						(new AttributeModifier(UUID.fromString("086d99dd-744f-4f1b-b221-0498a2e55ae2"), "bloodstoneLeggingsHealth", (-1.5), AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("01d34c3f-48cc-4963-ae79-18fd27890ea1"), "bloodstoneLeggingsSpeed", 0.01, AttributeModifier.Operation.ADDITION)));
+			}
+		}
+		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.FEET) {
+			if (itemstack.getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_BOOTS.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH,
+						(new AttributeModifier(UUID.fromString("d6e38656-aace-4147-bf0e-0a95c42bb0f1"), "bloodstoneBootsHealth", (-1.5), AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("5efe39a4-375f-4a75-a4f6-55d7f2aaf10f"), "bloodstoneBootsSpeed", 0.005, AttributeModifier.Operation.ADDITION)));
+			}
+			if (itemstack.getItem() == TheDeepVoidModItems.HUNTERS_BOOTS.get()) {
+				_event.addModifier(ForgeMod.STEP_HEIGHT_ADDITION.get(), (new AttributeModifier(UUID.fromString("905f3797-a937-48a0-89e0-7492943a9219"), "hunterStepHeight", 0.4, AttributeModifier.Operation.ADDITION)));
+			}
+		}
+	}
+}

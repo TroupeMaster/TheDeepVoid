@@ -11,8 +11,6 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.GameType;
-import net.minecraft.world.item.ShieldItem;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.projectile.ThrownEnderpearl;
 import net.minecraft.world.entity.projectile.ThrownEgg;
 import net.minecraft.world.entity.projectile.SpectralArrow;
@@ -155,14 +153,6 @@ public class ForsakenBlockAttackProcedure {
 						_entity.setTarget(_ent);
 					entity.getPersistentData().putBoolean("deep_void:hide", false);
 				}
-			}
-		}
-		if (sourceentity instanceof ForsakenEntity) {
-			if (!((entity instanceof LivingEntity _entUseItem59 ? _entUseItem59.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)) {
-				TheDeepVoidMod.queueServerWork(8, () -> {
-					if (entity instanceof LivingEntity _entity)
-						_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) - 1));
-				});
 			}
 		}
 	}

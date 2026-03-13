@@ -20,6 +20,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
+import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
 import net.mcreator.thedeepvoid.entity.BoneCageEntity;
 import net.mcreator.thedeepvoid.entity.BoneCageClosedEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
@@ -45,11 +46,13 @@ public class MaskedHunterOnEntityTickUpdateProcedure {
 			MaskedHunterThrowKnivesProcedure.execute(world, x, y, z, entity);
 			MaskedHunterSpawnSpikesProcedure.execute(world, entity);
 		}
-		if (entity.getPersistentData().getDouble("screamAmbient") >= (double) DeepVoidConfigConfiguration.MASKEDHUNTERSCREAMCOOLDOWN.get()) {
-			entity.getPersistentData().putDouble("screamAmbient", 0);
-			entity.getPersistentData().putDouble("randomScreamAmbient", (Mth.nextInt(RandomSource.create(), 1, 2)));
+		if ((entity instanceof MaskedHunterEntity _datEntI ? _datEntI.getEntityData().get(MaskedHunterEntity.DATA_screamAmbient) : 0) >= (double) DeepVoidConfigConfiguration.MASKEDHUNTERSCREAMCOOLDOWN.get()) {
+			if (entity instanceof MaskedHunterEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MaskedHunterEntity.DATA_screamAmbient, 0);
+			if (entity instanceof MaskedHunterEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MaskedHunterEntity.DATA_randomScreamAmbient, Mth.nextInt(RandomSource.create(), 1, 2));
 			if (Math.random() < (double) DeepVoidConfigConfiguration.MASKEDHUNTERSCREAMCHANCE.get()) {
-				if (entity.getPersistentData().getDouble("randomScreamAmbient") == 1) {
+				if ((entity instanceof MaskedHunterEntity _datEntI ? _datEntI.getEntityData().get(MaskedHunterEntity.DATA_randomScreamAmbient) : 0) == 1) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:masked_hunter_scream1")), SoundSource.HOSTILE,
@@ -70,7 +73,7 @@ public class MaskedHunterOnEntityTickUpdateProcedure {
 							}
 						}
 					}
-				} else if (entity.getPersistentData().getDouble("randomScreamAmbient") == 2) {
+				} else if ((entity instanceof MaskedHunterEntity _datEntI ? _datEntI.getEntityData().get(MaskedHunterEntity.DATA_randomScreamAmbient) : 0) == 2) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:masked_hunter_scream2")), SoundSource.HOSTILE,
@@ -94,7 +97,8 @@ public class MaskedHunterOnEntityTickUpdateProcedure {
 				}
 			}
 		} else {
-			entity.getPersistentData().putDouble("screamAmbient", (entity.getPersistentData().getDouble("screamAmbient") + 1));
+			if (entity instanceof MaskedHunterEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MaskedHunterEntity.DATA_screamAmbient, (int) ((entity instanceof MaskedHunterEntity _datEntI ? _datEntI.getEntityData().get(MaskedHunterEntity.DATA_screamAmbient) : 0) + 1));
 		}
 		if (entity instanceof LivingEntity _livEnt61 && _livEnt61.hasEffect(TheDeepVoidModMobEffects.ROT.get()) || entity instanceof LivingEntity _livEnt62 && _livEnt62.hasEffect(MobEffects.POISON)) {
 			if (entity instanceof LivingEntity _entity)

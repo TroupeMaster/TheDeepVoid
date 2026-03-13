@@ -9,17 +9,12 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.util.RandomSource;
-import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
-import net.minecraft.advancements.AdvancementProgress;
-import net.minecraft.advancements.Advancement;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
@@ -43,43 +38,7 @@ public class PlayerInGloomyDeathgroundsProcedure {
 		if (entity == null)
 			return;
 		double pos = 0;
-		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:gloomy_deathgrounds"))) {
-			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).deathgrounds_ambience >= 700) {
-				{
-					double _setval = 0;
-					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.deathgrounds_ambience = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "playsound the_deep_void:distant_monster ambient @s ~ ~ ~ 10 1 0.5");
-					}
-				}
-			} else {
-				{
-					double _setval = (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).deathgrounds_ambience + 1;
-					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.deathgrounds_ambience = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-			}
-			if (!(entity instanceof ServerPlayer _plr2 && _plr2.level() instanceof ServerLevel
-					&& _plr2.getAdvancements().getOrStartProgress(_plr2.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:does_it_hate"))).isDone())) {
-				if (entity instanceof ServerPlayer _player) {
-					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:does_it_hate"));
-					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-					if (!_ap.isDone()) {
-						for (String criteria : _ap.getRemainingCriteria())
-							_player.getAdvancements().award(_adv, criteria);
-					}
-				}
-			}
-		} else if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:gathering_grounds"))) {
+		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:gathering_grounds"))) {
 			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).gatheringAmbience >= 400) {
 				{
 					double _setval = 0;
@@ -281,46 +240,6 @@ public class PlayerInGloomyDeathgroundsProcedure {
 						capability.nestAmbience = _setval;
 						capability.syncPlayerVariables(entity);
 					});
-				}
-			}
-		} else if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:staring_hills"))) {
-			if (TheDeepVoidModVariables.MapVariables.get(world).breathingHillsAmbience >= 700) {
-				TheDeepVoidModVariables.MapVariables.get(world).breathingHillsAmbience = Mth.nextInt(RandomSource.create(), -100, 100);
-				TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "playsound the_deep_void:staring_hills_addition ambient @s ~ ~ ~ 10 1 0.5");
-					}
-				}
-			} else {
-				TheDeepVoidModVariables.MapVariables.get(world).breathingHillsAmbience = TheDeepVoidModVariables.MapVariables.get(world).breathingHillsAmbience + 1;
-				TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
-			}
-			if (TheDeepVoidModVariables.MapVariables.get(world).breathingHillsHeart >= 15) {
-				TheDeepVoidModVariables.MapVariables.get(world).breathingHillsHeart = 0;
-				TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
-				{
-					Entity _ent = entity;
-					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "playsound the_deep_void:heartbeat_ambient ambient @s ~ ~ ~ 1 1 0.5");
-					}
-				}
-			} else {
-				TheDeepVoidModVariables.MapVariables.get(world).breathingHillsHeart = TheDeepVoidModVariables.MapVariables.get(world).breathingHillsHeart + 1;
-				TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
-			}
-			if (!(entity instanceof ServerPlayer _plr35 && _plr35.level() instanceof ServerLevel
-					&& _plr35.getAdvancements().getOrStartProgress(_plr35.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:does_it_hate"))).isDone())) {
-				if (entity instanceof ServerPlayer _player) {
-					Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:does_it_hate"));
-					AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-					if (!_ap.isDone()) {
-						for (String criteria : _ap.getRemainingCriteria())
-							_player.getAdvancements().award(_adv, criteria);
-					}
 				}
 			}
 		} else if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:gaol_of_heretics")) || world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:the_gaol"))) {

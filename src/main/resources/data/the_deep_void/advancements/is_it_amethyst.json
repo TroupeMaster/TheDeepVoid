@@ -32,24 +32,5 @@
       }
     }
   },
-  "rewards": {
-    "experience": 0,
-    "recipes": [
-      "the_deep_void:lavendite_iron_sword",
-      "the_deep_void:lavendite_diamond_sword",
-      "the_deep_void:lavendite_netherite_sword",
-      "the_deep_void:lavendite_onyx_sword",
-      "the_deep_void:lavendite_smithing_upgrade",
-      "the_deep_void:lavendite_bone_sword",
-      "the_deep_void:lavendite_golden_sword",
-      "the_deep_void:lavendite_stone_sword",
-      "the_deep_void:lavendite_wooden_sword",
-      "the_deep_void:lavendite_shield",
-      "the_deep_void:block_of_lavendite",
-      "the_deep_void:block_of_lavendite_to_ore",
-      "the_deep_void:lavendite_diamond_sword_netherite",
-      "the_deep_void:lavendite_bone_sword_onyx"
-    ]
-  },
   "parent": "the_deep_void:bone_bottom"
 }

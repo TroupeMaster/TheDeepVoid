@@ -35,13 +35,14 @@ public class PenitentOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 8, 8, 8), e -> true).isEmpty()
-				&& !(entity instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(MobEffects.WEAKNESS)) && entity.getPersistentData().getDouble("attackChance") <= 0) {
+				&& !(entity instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(MobEffects.WEAKNESS)) && (entity instanceof PenitentEntity _datEntI ? _datEntI.getEntityData().get(PenitentEntity.DATA_attackChance) : 0) <= 0) {
 			if (((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 8, 8, 8), e -> true).stream().sorted(new Object() {
 				Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 					return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 				}
 			}.compareDistOf(x, y, z)).findFirst().orElse(null)) == (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)) {
-				entity.getPersistentData().putDouble("attackChance", 300);
+				if (entity instanceof PenitentEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(PenitentEntity.DATA_attackChance, 300);
 				if (entity instanceof PenitentEntity) {
 					((PenitentEntity) entity).setAnimation("animation.penitent_slash");
 				}
@@ -50,10 +51,10 @@ public class PenitentOnEntityTickUpdateProcedure {
 				TheDeepVoidMod.queueServerWork(50, () -> {
 					{
 						final Vec3 _center = new Vec3(
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(2)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
+								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()),
 								(entity.getY()),
-								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(2)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()));
-						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+								(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.COLLIDER, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()));
+						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator instanceof LivingEntity && !(entityiterator == entity)) {
 								if ((entityiterator instanceof LivingEntity _entUseItem16 ? _entUseItem16.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
@@ -99,25 +100,31 @@ public class PenitentOnEntityTickUpdateProcedure {
 				});
 			}
 		}
-		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && entity.getPersistentData().getDouble("attackChance") > 0) {
-			entity.getPersistentData().putDouble("attackChance", (entity.getPersistentData().getDouble("attackChance") - 1));
+		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof PenitentEntity _datEntI ? _datEntI.getEntityData().get(PenitentEntity.DATA_attackChance) : 0) > 0) {
+			if (entity instanceof PenitentEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PenitentEntity.DATA_attackChance, (int) ((entity instanceof PenitentEntity _datEntI ? _datEntI.getEntityData().get(PenitentEntity.DATA_attackChance) : 0) - 1));
 		}
-		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null && !(entity instanceof LivingEntity _livEnt44 && _livEnt44.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) && entity.getPersistentData().getDouble("pray") <= 0) {
-			entity.getPersistentData().putDouble("pray", 600);
+		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null && !(entity instanceof LivingEntity _livEnt44 && _livEnt44.hasEffect(MobEffects.MOVEMENT_SLOWDOWN))
+				&& (entity instanceof PenitentEntity _datEntI ? _datEntI.getEntityData().get(PenitentEntity.DATA_pray) : 0) <= 0) {
+			if (entity instanceof PenitentEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PenitentEntity.DATA_pray, 600);
 			if (Math.random() < 0.2) {
 				if (entity instanceof PenitentEntity) {
 					((PenitentEntity) entity).setAnimation("animation.penitent_pray");
 				}
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 90, 99, false, false));
-				entity.getPersistentData().putBoolean("praying", true);
+				if (entity instanceof PenitentEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(PenitentEntity.DATA_praying, true);
 				TheDeepVoidMod.queueServerWork(90, () -> {
-					entity.getPersistentData().putBoolean("praying", false);
+					if (entity instanceof PenitentEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(PenitentEntity.DATA_praying, false);
 				});
 			}
 		}
-		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null && entity.getPersistentData().getDouble("pray") > 0) {
-			entity.getPersistentData().putDouble("pray", (entity.getPersistentData().getDouble("pray") - 1));
+		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null && (entity instanceof PenitentEntity _datEntI ? _datEntI.getEntityData().get(PenitentEntity.DATA_pray) : 0) > 0) {
+			if (entity instanceof PenitentEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PenitentEntity.DATA_pray, (int) ((entity instanceof PenitentEntity _datEntI ? _datEntI.getEntityData().get(PenitentEntity.DATA_pray) : 0) - 1));
 		}
 	}
 }

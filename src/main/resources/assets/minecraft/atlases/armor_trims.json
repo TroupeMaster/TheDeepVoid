@@ -70,7 +70,8 @@
         "grim_trim": "trims/color_palettes/grim_trim",
         "dark_steel_trim": "trims/color_palettes/dark_steel_trim",
         "hard_flesh_trim": "trims/color_palettes/hard_flesh_trim",
-        "ambrosia_trim": "trims/color_palettes/ambrosia_trim"
+        "ambrosia_trim": "trims/color_palettes/ambrosia_trim",
+        "bloodstone_trim": "trims/color_palettes/bloodstone_trim"
       }
     }
   ]

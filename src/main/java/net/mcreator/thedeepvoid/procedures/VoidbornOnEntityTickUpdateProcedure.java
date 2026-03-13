@@ -86,24 +86,27 @@ public class VoidbornOnEntityTickUpdateProcedure {
 		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 100, 100, 100), e -> true).isEmpty()) {
 			VoidbornHeartbeatProcedure.execute(world, x, y, z, entity);
 		}
-		if (entity.getPersistentData().getDouble("spawnTentacles") >= 200) {
-			entity.getPersistentData().putDouble("spawnTentacles", 0);
+		if ((entity instanceof VoidbornEntity _datEntI ? _datEntI.getEntityData().get(VoidbornEntity.DATA_spawnTentacles) : 0) >= 200) {
+			if (entity instanceof VoidbornEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(VoidbornEntity.DATA_spawnTentacles, 0);
 			VoidbornSpawnTentaclesProcedure.execute(world, entity);
 		} else {
-			entity.getPersistentData().putDouble("spawnTentacles", (entity.getPersistentData().getDouble("spawnTentacles") + 1));
+			if (entity instanceof VoidbornEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(VoidbornEntity.DATA_spawnTentacles, (int) ((entity instanceof VoidbornEntity _datEntI ? _datEntI.getEntityData().get(VoidbornEntity.DATA_spawnTentacles) : 0) + 1));
 		}
-		if (entity.getPersistentData().getDouble("hitCooldown") > 0) {
-			entity.getPersistentData().putDouble("hitCooldown", (entity.getPersistentData().getDouble("hitCooldown") - 1));
+		if ((entity instanceof VoidbornEntity _datEntI ? _datEntI.getEntityData().get(VoidbornEntity.DATA_hitCooldown) : 0) > 0) {
+			if (entity instanceof VoidbornEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(VoidbornEntity.DATA_hitCooldown, (int) ((entity instanceof VoidbornEntity _datEntI ? _datEntI.getEntityData().get(VoidbornEntity.DATA_hitCooldown) : 0) - 1));
 		}
 		if (world.getMaxLocalRawBrightness(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())) > 0
 				&& !world.getEntitiesOfClass(LightEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 10, 10, 10), e -> true).isEmpty()
 				&& !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 10, 10, 10), e -> true).isEmpty()
-				&& !(entity instanceof LivingEntity _livEnt43 && _livEnt43.hasEffect(MobEffects.INVISIBILITY)) && entity.getPersistentData().getDouble("hit") < 12) {
+				&& !(entity instanceof LivingEntity _livEnt43 && _livEnt43.hasEffect(MobEffects.INVISIBILITY)) && (entity instanceof VoidbornEntity _datEntI ? _datEntI.getEntityData().get(VoidbornEntity.DATA_hit) : 0) < 12) {
 			TheDeepVoidMod.queueServerWork(25, () -> {
 				if (world.getMaxLocalRawBrightness(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())) > 0
 						&& !world.getEntitiesOfClass(LightEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 10, 10, 10), e -> true).isEmpty()
 						&& !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 10, 10, 10), e -> true).isEmpty()
-						&& !(entity instanceof LivingEntity _livEnt57 && _livEnt57.hasEffect(MobEffects.INVISIBILITY)) && entity.getPersistentData().getDouble("hit") < 12) {
+						&& !(entity instanceof LivingEntity _livEnt57 && _livEnt57.hasEffect(MobEffects.INVISIBILITY)) && (entity instanceof VoidbornEntity _datEntI ? _datEntI.getEntityData().get(VoidbornEntity.DATA_hit) : 0) < 12) {
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles(ParticleTypes.SQUID_INK, x, (y + 4), z, 25, 0, (-1), 0, 0.2);
 					if (world instanceof ServerLevel _level)
@@ -130,16 +133,18 @@ public class VoidbornOnEntityTickUpdateProcedure {
 				if (entity instanceof VoidbornEntity) {
 					((VoidbornEntity) entity).setAnimation("animation.caveNightmare_walkClose");
 				}
-				if (entity.getPersistentData().getBoolean("cancelClose") == false) {
-					entity.getPersistentData().putBoolean("cancelClose", true);
+				if ((entity instanceof VoidbornEntity _datEntL70 && _datEntL70.getEntityData().get(VoidbornEntity.DATA_cancelClose)) == false) {
+					if (entity instanceof VoidbornEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(VoidbornEntity.DATA_cancelClose, true);
 				}
 			} else {
-				if (entity.getPersistentData().getBoolean("cancelClose") == true) {
+				if ((entity instanceof VoidbornEntity _datEntL72 && _datEntL72.getEntityData().get(VoidbornEntity.DATA_cancelClose)) == true) {
 					TheDeepVoidMod.queueServerWork(6, () -> {
 						if (entity instanceof VoidbornEntity) {
 							((VoidbornEntity) entity).setAnimation("empty");
 						}
-						entity.getPersistentData().putBoolean("cancelClose", false);
+						if (entity instanceof VoidbornEntity _datEntSetL)
+							_datEntSetL.getEntityData().set(VoidbornEntity.DATA_cancelClose, false);
 					});
 				}
 			}

@@ -18,6 +18,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
+import net.mcreator.thedeepvoid.entity.AmalgamEntity;
 
 import java.util.List;
 import java.util.Comparator;
@@ -26,10 +27,9 @@ public class AmalgamOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double roar = 0;
-		double step = 0;
-		if (entity.getPersistentData().getDouble("deep_void:amalgamRoar") >= 100) {
-			entity.getPersistentData().putDouble("deep_void:amalgamRoar", 0);
+		if ((entity instanceof AmalgamEntity _datEntI ? _datEntI.getEntityData().get(AmalgamEntity.DATA_roar) : 0) >= 100) {
+			if (entity instanceof AmalgamEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(AmalgamEntity.DATA_roar, 0);
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:amalgam_ambient")), SoundSource.HOSTILE, 4,
@@ -40,11 +40,13 @@ public class AmalgamOnEntityTickUpdateProcedure {
 				}
 			}
 		} else {
-			entity.getPersistentData().putDouble("deep_void:amalgamRoar", (entity.getPersistentData().getDouble("deep_void:amalgamRoar") + 1));
+			if (entity instanceof AmalgamEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(AmalgamEntity.DATA_roar, (int) ((entity instanceof AmalgamEntity _datEntI ? _datEntI.getEntityData().get(AmalgamEntity.DATA_roar) : 0) + 1));
 		}
 		if (entity.getDeltaMovement().x() != 0 && entity.getDeltaMovement().z() != 0) {
-			if (entity.getPersistentData().getDouble("deep_void:amalgamStep") >= 5) {
-				entity.getPersistentData().putDouble("deep_void:amalgamStep", 0);
+			if ((entity instanceof AmalgamEntity _datEntI ? _datEntI.getEntityData().get(AmalgamEntity.DATA_step) : 0) >= 5) {
+				if (entity instanceof AmalgamEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(AmalgamEntity.DATA_step, 0);
 				if (!(entity instanceof LivingEntity _livEnt13 && _livEnt13.hasEffect(MobEffects.MOVEMENT_SLOWDOWN))) {
 					if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 30, 30, 30), e -> true).isEmpty()) {
 						if (world instanceof Level _level) {
@@ -67,7 +69,8 @@ public class AmalgamOnEntityTickUpdateProcedure {
 					}
 				}
 			} else {
-				entity.getPersistentData().putDouble("deep_void:amalgamStep", (entity.getPersistentData().getDouble("deep_void:amalgamStep") + 1));
+				if (entity instanceof AmalgamEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(AmalgamEntity.DATA_step, (int) ((entity instanceof AmalgamEntity _datEntI ? _datEntI.getEntityData().get(AmalgamEntity.DATA_step) : 0) + 1));
 			}
 		}
 	}

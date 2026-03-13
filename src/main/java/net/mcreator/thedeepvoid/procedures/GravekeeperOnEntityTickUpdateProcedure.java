@@ -74,11 +74,12 @@ public class GravekeeperOnEntityTickUpdateProcedure {
 				}
 			});
 		}
-		if (entity.getPersistentData().getDouble("deep_void:gravekeeperCooldown") >= 100) {
-			entity.getPersistentData().putDouble("deep_void:gravekeeperCooldown", 0);
+		if ((entity instanceof GravekeeperEntity _datEntI ? _datEntI.getEntityData().get(GravekeeperEntity.DATA_dash) : 0) >= 100) {
+			if (entity instanceof GravekeeperEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(GravekeeperEntity.DATA_dash, 0);
 			if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 				if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 8, 8, 8), e -> true).isEmpty() == false) {
-					if (world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude()) {
+					if (entity.onGround()) {
 						if (entity instanceof GravekeeperEntity) {
 							((GravekeeperEntity) entity).setAnimation("animation.gravekeeper_dash");
 						}
@@ -103,7 +104,8 @@ public class GravekeeperOnEntityTickUpdateProcedure {
 				}
 			}
 		} else {
-			entity.getPersistentData().putDouble("deep_void:gravekeeperCooldown", (entity.getPersistentData().getDouble("deep_void:gravekeeperCooldown") + 1));
+			if (entity instanceof GravekeeperEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(GravekeeperEntity.DATA_dash, (int) ((entity instanceof GravekeeperEntity _datEntI ? _datEntI.getEntityData().get(GravekeeperEntity.DATA_dash) : 0) + 1));
 		}
 	}
 }

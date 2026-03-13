@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "the_deep_void:deep_marrows",
+  "features": "the_deep_void:common_marrow_pillar",
+  "step": "underground_decoration"
+}

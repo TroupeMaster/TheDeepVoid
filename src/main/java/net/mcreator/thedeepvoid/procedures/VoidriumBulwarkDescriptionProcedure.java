@@ -9,6 +9,7 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.network.chat.Component;
+import net.minecraft.client.gui.screens.Screen;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
@@ -32,7 +33,11 @@ public class VoidriumBulwarkDescriptionProcedure {
 		if (tooltip == null)
 			return;
 		if (itemstack.getItem() == TheDeepVoidModItems.VOIDRIUM_BULWARK.get()) {
-			tooltip.add(Component.literal((Component.translatable("item.the_deep_void.voidrium_bulwark.descr").getString())));
+			if (Screen.hasShiftDown()) {
+				tooltip.add(Component.literal((Component.translatable("item.the_deep_void.voidrium_bulwark.descr").getString())));
+			} else {
+				tooltip.add(Component.literal((Component.translatable("item.the_deep_void.weapon_tooltip.show").getString())));
+			}
 			tooltip.add(Component.literal(" "));
 			tooltip.add(Component.literal((Component.translatable("item.the_deep_void.voidrium_bulwark.in_main_hand").getString())));
 			tooltip.add(Component.literal((Component.translatable("item.the_deep_void.voidrium_bulwark.attack_damage").getString())));

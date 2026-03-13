@@ -9,10 +9,16 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
+import net.mcreator.thedeepvoid.client.particle.XpSmokeParticle;
+import net.mcreator.thedeepvoid.client.particle.VoidriumSmokeParticle;
+import net.mcreator.thedeepvoid.client.particle.VoidMatterResidueParticle;
+import net.mcreator.thedeepvoid.client.particle.VoidMatterCritParticle;
+import net.mcreator.thedeepvoid.client.particle.SulfurSmokeParticle;
 import net.mcreator.thedeepvoid.client.particle.SoulSweepParticle;
 import net.mcreator.thedeepvoid.client.particle.SoulHookLineParticle;
 import net.mcreator.thedeepvoid.client.particle.SoulFusedBloodParticle;
 import net.mcreator.thedeepvoid.client.particle.ShadeDropParticle;
+import net.mcreator.thedeepvoid.client.particle.RedSmokeParticle;
 import net.mcreator.thedeepvoid.client.particle.RedGreatSlashParticle;
 import net.mcreator.thedeepvoid.client.particle.PusSporeParticle;
 import net.mcreator.thedeepvoid.client.particle.PentagramParticle;
@@ -23,15 +29,22 @@ import net.mcreator.thedeepvoid.client.particle.IchorFlameParticle;
 import net.mcreator.thedeepvoid.client.particle.HookLineParticle;
 import net.mcreator.thedeepvoid.client.particle.GrimSweepParticle;
 import net.mcreator.thedeepvoid.client.particle.GrimHookLineParticle;
+import net.mcreator.thedeepvoid.client.particle.GoldenSmokeParticle;
 import net.mcreator.thedeepvoid.client.particle.GoldBloodParticle;
 import net.mcreator.thedeepvoid.client.particle.FlyParticle;
 import net.mcreator.thedeepvoid.client.particle.FlameOfSpiteParticle;
 import net.mcreator.thedeepvoid.client.particle.EyeParticle;
+import net.mcreator.thedeepvoid.client.particle.EldritchEyeParticle;
 import net.mcreator.thedeepvoid.client.particle.DeepslatePebbleParticle;
 import net.mcreator.thedeepvoid.client.particle.DarkTearParticle;
+import net.mcreator.thedeepvoid.client.particle.DarkSweepParticle;
 import net.mcreator.thedeepvoid.client.particle.BrokenBoneParticle;
+import net.mcreator.thedeepvoid.client.particle.BrightSmokeParticle;
+import net.mcreator.thedeepvoid.client.particle.BloodSmokeParticle;
 import net.mcreator.thedeepvoid.client.particle.BloodParticle;
 import net.mcreator.thedeepvoid.client.particle.BlackTentacleParticle;
+import net.mcreator.thedeepvoid.client.particle.BlackFlameParticle;
+import net.mcreator.thedeepvoid.client.particle.BiteParticle;
 import net.mcreator.thedeepvoid.client.particle.AmbrosiaDropletParticle;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -62,5 +75,18 @@ public class TheDeepVoidModParticles {
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.AMBROSIA_DROPLET.get(), AmbrosiaDropletParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.ICHOR_FLAME.get(), IchorFlameParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.LUNATIC_EYE.get(), LunaticEyeParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.BLACK_FLAME.get(), BlackFlameParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.ELDRITCH_EYE.get(), EldritchEyeParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.DARK_SWEEP.get(), DarkSweepParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.BITE.get(), BiteParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.VOID_MATTER_CRIT.get(), VoidMatterCritParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.VOID_MATTER_RESIDUE.get(), VoidMatterResidueParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.RED_SMOKE.get(), RedSmokeParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.BRIGHT_SMOKE.get(), BrightSmokeParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.XP_SMOKE.get(), XpSmokeParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.GOLDEN_SMOKE.get(), GoldenSmokeParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.SULFUR_SMOKE.get(), SulfurSmokeParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.VOIDRIUM_SMOKE.get(), VoidriumSmokeParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.BLOOD_SMOKE.get(), BloodSmokeParticle::provider);
 	}
 }

@@ -4,7 +4,7 @@
   "pattern": [
     "aab",
     " cd",
-    "ed "
+    "cd "
   ],
   "key": {
     "a": {
@@ -14,13 +14,10 @@
       "item": "the_deep_void:smithing_template_soul"
     },
     "c": {
-      "item": "the_deep_void:grim_sickle"
+      "item": "the_deep_void:refined_onyx"
     },
     "d": {
       "item": "the_deep_void:liquid_void_bucket"
-    },
-    "e": {
-      "item": "the_deep_void:grim_scythe"
     }
   },
   "result": {

@@ -4,13 +4,14 @@
     "the_deep_void:sulfur_tnt_entity",
     "the_deep_void:rooted_clone",
     "the_deep_void:death_maw_hidden",
-    "the_deep_void:thrown_soul_seeker",
     "the_deep_void:shadow_hand",
     "the_deep_void:giant_shadow_hand",
     "the_deep_void:lasting_shadow_hand",
     "the_deep_void:summoned_shadow_hand",
     "the_deep_void:hand_spawn",
     "the_deep_void:hook_end",
-    "the_deep_void:dark_steel_saw"
+    "the_deep_void:dark_steel_saw",
+    "the_deep_void:marrow_roots",
+    "the_deep_void:xray"
   ]
 }

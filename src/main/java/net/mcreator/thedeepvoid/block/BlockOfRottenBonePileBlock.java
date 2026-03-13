@@ -3,6 +3,8 @@ package net.mcreator.thedeepvoid.block;
 
 import net.minecraftforge.common.IPlantable;
 
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
@@ -17,7 +19,7 @@ import net.mcreator.thedeepvoid.procedures.BlockOfBonePileEntityWalksOnTheBlockP
 
 public class BlockOfRottenBonePileBlock extends Block {
 	public BlockOfRottenBonePileBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.BONE_BLOCK).strength(0.8f, 8f));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_GRAY).sound(SoundType.BONE_BLOCK).strength(0.8f, 8f));
 	}
 
 	@Override

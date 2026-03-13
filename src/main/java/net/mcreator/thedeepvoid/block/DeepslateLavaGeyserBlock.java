@@ -1,6 +1,7 @@
 
 package net.mcreator.thedeepvoid.block;
 
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -15,7 +16,7 @@ import net.mcreator.thedeepvoid.procedures.DeepslateLavaGeyserOnTickUpdateProced
 
 public class DeepslateLavaGeyserBlock extends Block {
 	public DeepslateLavaGeyserBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.DEEPSLATE).strength(3f, 6f).requiresCorrectToolForDrops().randomTicks());
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.DEEPSLATE).sound(SoundType.DEEPSLATE).strength(3f, 6f).requiresCorrectToolForDrops().randomTicks());
 	}
 
 	@Override

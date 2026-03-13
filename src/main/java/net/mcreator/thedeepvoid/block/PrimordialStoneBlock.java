@@ -2,6 +2,7 @@
 package net.mcreator.thedeepvoid.block;
 
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -16,7 +17,7 @@ import net.mcreator.thedeepvoid.procedures.PrimordialStoneEntityWalksOnTheBlockP
 
 public class PrimordialStoneBlock extends Block {
 	public PrimordialStoneBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.NETHERRACK).strength(-1, 3600000).pushReaction(PushReaction.BLOCK));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.WARPED_HYPHAE).sound(SoundType.NETHERRACK).strength(-1, 3600000).pushReaction(PushReaction.BLOCK));
 	}
 
 	@Override

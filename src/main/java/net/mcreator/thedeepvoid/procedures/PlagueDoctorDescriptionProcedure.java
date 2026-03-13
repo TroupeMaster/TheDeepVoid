@@ -41,13 +41,14 @@ public class PlagueDoctorDescriptionProcedure {
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.PLAGUE_DOCTOR_CHESTPLATE.get()
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.PLAGUE_DOCTOR_LEGGINGS.get()
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.PLAGUE_DOCTOR_BOOTS.get()) {
+			tooltip.add(Component.literal(""));
 			if (Screen.hasShiftDown()) {
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.crawler.when_worn").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.plague.worn1").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.plague.worn2").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.plague.worn3").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.plague.uponDeath").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.plague.death1").getString())));
+				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.crawler.when_worn").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.plague.worn1").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.plague.worn2").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.plague.worn3").getString())));
+				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.plague.uponDeath").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.plague.death1").getString())));
 			} else {
 				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.press_shift").getString())));
 			}

@@ -1636,5 +1636,126 @@
         "stream": false
       }
     ]
+  },
+  "gloomy_deathgrounds_loop": {
+    "subtitle": "subtitles.gloomy_deathgrounds_loop",
+    "sounds": [
+      {
+        "name": "the_deep_void:gloomy_deathgrounds_loop4",
+        "stream": false
+      }
+    ]
+  },
+  "staring_hills_loop": {
+    "subtitle": "subtitles.staring_hills_loop",
+    "sounds": [
+      {
+        "name": "the_deep_void:staring_hills_loop",
+        "stream": false
+      }
+    ]
+  },
+  "eldritch_maw_shoot": {
+    "subtitle": "subtitles.eldritch_maw_shoot",
+    "sounds": [
+      {
+        "name": "the_deep_void:eldritchmaw_shoot",
+        "stream": false
+      }
+    ]
+  },
+  "eldritch_maw_pump": {
+    "subtitle": "subtitles.eldritch_maw_pump",
+    "sounds": [
+      {
+        "name": "the_deep_void:eldritch_maw_pump",
+        "stream": false
+      }
+    ]
+  },
+  "soul_seeker_call_abyss": {
+    "subtitle": "subtitles.soul_seeker_call_abyss",
+    "sounds": [
+      {
+        "name": "the_deep_void:soulseeker_hit",
+        "stream": false
+      }
+    ]
+  },
+  "doomsday": {
+    "subtitle": "subtitles.doomsday",
+    "sounds": [
+      {
+        "name": "the_deep_void:soulseeker_doomsday",
+        "stream": false
+      }
+    ]
+  },
+  "hollowed_scream": {
+    "subtitle": "subtitles.hollowed_scream",
+    "sounds": [
+      {
+        "name": "the_deep_void:hollowed_scream",
+        "stream": false
+      }
+    ]
+  },
+  "hollowed_responds": {
+    "subtitle": "subtitles.hollowed_responds",
+    "sounds": [
+      {
+        "name": "the_deep_void:hollowed_respond",
+        "stream": false
+      }
+    ]
+  },
+  "peril_cocking": {
+    "subtitle": "subtitles.peril_cocking",
+    "sounds": [
+      {
+        "name": "the_deep_void:peril_cock1",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:peril_cock2",
+        "stream": false
+      }
+    ]
+  },
+  "peril_hammer_hit": {
+    "subtitle": "subtitles.peril_hammer_hit",
+    "sounds": [
+      {
+        "name": "the_deep_void:peril_hammer_hit",
+        "stream": false
+      }
+    ]
+  },
+  "peril_shoot": {
+    "subtitle": "subtitles.peril_shoot",
+    "sounds": [
+      {
+        "name": "the_deep_void:peril_shoot",
+        "stream": false
+      }
+    ]
+  },
+  "peril_cylinder": {
+    "subtitle": "subtitles.peril_cylinder",
+    "sounds": [
+      {
+        "name": "the_deep_void:peril_chamber",
+        "stream": false
+      }
+    ]
+  },
+  "peril_shoot_new": {
+    "subtitle": "subtitles.peril_shoot_new",
+    "sounds": [
+      {
+        "name": "the_deep_void:peril_shoot_new",
+        "stream": false
+      }
+    ]
   }
 }

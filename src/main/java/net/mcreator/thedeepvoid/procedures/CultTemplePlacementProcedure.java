@@ -65,12 +65,5 @@ public class CultTemplePlacementProcedure {
 				}
 			}
 		}
-		if (TheDeepVoidModVariables.MapVariables.get(world).CultTemplePlaced == true && TheDeepVoidModVariables.MapVariables.get(world).surfaceOverwritten == false && DeepVoidConfigConfiguration.PLACECULTTEMPLE.get() == true
-				&& DeepVoidConfigConfiguration.OVERWRITEWITHTEMPLE.get() == true) {
-			TheDeepVoidModVariables.MapVariables.get(world).surfaceOverwritten = true;
-			TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
-			TheDeepVoidModVariables.MapVariables.get(world).CultTemplePlaced = false;
-			TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
-		}
 	}
 }

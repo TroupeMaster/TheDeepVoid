@@ -48,7 +48,7 @@ public class WeaverMaskAttackEntityProcedure {
 			if (!world.getBlockState(BlockPos.containing(
 					entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((-2))), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(), entity.getY(),
 					entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale((-2))), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())).canOcclude()) {
-				if ((sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).weaverRobeCooldown >= 4) {
+				if ((sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).weaverRobeCooldown >= 6) {
 					{
 						double _setval = 0;
 						sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -81,7 +81,7 @@ public class WeaverMaskAttackEntityProcedure {
 						}
 					}
 					if (sourceentity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 140, 1));
+						_entity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 100, 0));
 				} else {
 					{
 						double _setval = (sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).weaverRobeCooldown + 1;

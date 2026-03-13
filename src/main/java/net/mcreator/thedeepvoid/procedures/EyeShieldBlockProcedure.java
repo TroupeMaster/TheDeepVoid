@@ -21,7 +21,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
-import net.mcreator.thedeepvoid.entity.StalkingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
 
 import javax.annotation.Nullable;
@@ -55,7 +54,7 @@ public class EyeShieldBlockProcedure {
 							(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(2)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()));
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
-						if (entityiterator instanceof LivingEntity && !(entityiterator instanceof StalkerEntity) && !(entityiterator instanceof StalkingStalkerEntity) && !(entityiterator == entity)) {
+						if (entityiterator instanceof LivingEntity && !(entityiterator instanceof StalkerEntity) && !(entityiterator == entity)) {
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 3));
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())

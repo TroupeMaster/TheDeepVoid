@@ -20,7 +20,7 @@ import net.mcreator.thedeepvoid.procedures.CorpseBlossomOnTickUpdateProcedure;
 public class CorpseBlossomBlock extends FlowerBlock {
 	public CorpseBlossomBlock() {
 		super(() -> MobEffects.MOVEMENT_SPEED, 100,
-				BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().sound(SoundType.SCULK_VEIN).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+				BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PINK).randomTicks().sound(SoundType.SCULK_VEIN).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

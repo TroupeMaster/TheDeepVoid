@@ -33,9 +33,10 @@ public class FlyWingsDescriptionProcedure {
 		if (tooltip == null)
 			return;
 		if (itemstack.getItem() == TheDeepVoidModItems.FLY_WINGS_CHESTPLATE.get() || itemstack.getItem() == TheDeepVoidModItems.FLY_WINGS_FLY_CHESTPLATE.get()) {
+			tooltip.add(Component.literal(""));
 			if (Screen.hasShiftDown()) {
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.soul_wings.key_press").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.fly_wings.on_key_press1").getString())));
+				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.key_press").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.fly_wings.on_key_press1").getString())));
 			} else {
 				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.press_shift").getString())));
 			}

@@ -17,7 +17,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 public class TendrilsBlock extends FlowerBlock {
 	public TendrilsBlock() {
 		super(() -> MobEffects.MOVEMENT_SPEED, 100,
-				BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.SCULK_VEIN).instabreak().noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
+				BlockBehaviour.Properties.of().mapColor(MapColor.NETHER).sound(SoundType.SCULK_VEIN).instabreak().noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.XZ).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

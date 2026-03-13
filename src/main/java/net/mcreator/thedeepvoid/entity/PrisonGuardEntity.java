@@ -51,6 +51,11 @@ public class PrisonGuardEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(PrisonGuardEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(PrisonGuardEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(PrisonGuardEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_attackChance = SynchedEntityData.defineId(PrisonGuardEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_push = SynchedEntityData.defineId(PrisonGuardEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_jump = SynchedEntityData.defineId(PrisonGuardEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_roll = SynchedEntityData.defineId(PrisonGuardEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_shield = SynchedEntityData.defineId(PrisonGuardEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -75,6 +80,11 @@ public class PrisonGuardEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "prison_guard");
+		this.entityData.define(DATA_attackChance, 0);
+		this.entityData.define(DATA_push, 0);
+		this.entityData.define(DATA_jump, 0);
+		this.entityData.define(DATA_roll, 0);
+		this.entityData.define(DATA_shield, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -151,6 +161,11 @@ public class PrisonGuardEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DataattackChance", this.entityData.get(DATA_attackChance));
+		compound.putInt("Datapush", this.entityData.get(DATA_push));
+		compound.putInt("Datajump", this.entityData.get(DATA_jump));
+		compound.putInt("Dataroll", this.entityData.get(DATA_roll));
+		compound.putInt("Datashield", this.entityData.get(DATA_shield));
 	}
 
 	@Override
@@ -158,6 +173,16 @@ public class PrisonGuardEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DataattackChance"))
+			this.entityData.set(DATA_attackChance, compound.getInt("DataattackChance"));
+		if (compound.contains("Datapush"))
+			this.entityData.set(DATA_push, compound.getInt("Datapush"));
+		if (compound.contains("Datajump"))
+			this.entityData.set(DATA_jump, compound.getInt("Datajump"));
+		if (compound.contains("Dataroll"))
+			this.entityData.set(DATA_roll, compound.getInt("Dataroll"));
+		if (compound.contains("Datashield"))
+			this.entityData.set(DATA_shield, compound.getInt("Datashield"));
 	}
 
 	@Override

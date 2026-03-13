@@ -102,7 +102,7 @@
         {
           "type": "minecraft:item",
           "name": "the_deep_void:rusty_claws",
-          "weight": 5,
+          "weight": 8,
           "functions": [
             {
               "function": "set_count",
@@ -116,7 +116,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:air",
-          "weight": 95,
+          "weight": 92,
           "functions": [
             {
               "function": "set_count",

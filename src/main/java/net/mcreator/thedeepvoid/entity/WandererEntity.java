@@ -54,6 +54,9 @@ public class WandererEntity extends PathfinderMob implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(WandererEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(WandererEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(WandererEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_findPath = SynchedEntityData.defineId(WandererEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_encounter = SynchedEntityData.defineId(WandererEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_dropMoss = SynchedEntityData.defineId(WandererEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -77,6 +80,9 @@ public class WandererEntity extends PathfinderMob implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "wanderer_texture");
+		this.entityData.define(DATA_findPath, 0);
+		this.entityData.define(DATA_encounter, false);
+		this.entityData.define(DATA_dropMoss, false);
 	}
 
 	public void setTexture(String texture) {
@@ -142,6 +148,9 @@ public class WandererEntity extends PathfinderMob implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DatafindPath", this.entityData.get(DATA_findPath));
+		compound.putBoolean("Dataencounter", this.entityData.get(DATA_encounter));
+		compound.putBoolean("DatadropMoss", this.entityData.get(DATA_dropMoss));
 	}
 
 	@Override
@@ -149,6 +158,12 @@ public class WandererEntity extends PathfinderMob implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DatafindPath"))
+			this.entityData.set(DATA_findPath, compound.getInt("DatafindPath"));
+		if (compound.contains("Dataencounter"))
+			this.entityData.set(DATA_encounter, compound.getBoolean("Dataencounter"));
+		if (compound.contains("DatadropMoss"))
+			this.entityData.set(DATA_dropMoss, compound.getBoolean("DatadropMoss"));
 	}
 
 	@Override

@@ -12,6 +12,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.EyekinFlyingEntity;
+import net.mcreator.thedeepvoid.entity.EyekinEntity;
 
 import java.util.List;
 import java.util.Comparator;
@@ -21,8 +22,9 @@ public class EyekinOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) {
-			if (entity.getPersistentData().getDouble("deep_void:flyingChance") >= 240) {
-				entity.getPersistentData().putDouble("deep_void:flyingChance", 0);
+			if ((entity instanceof EyekinEntity _datEntI ? _datEntI.getEntityData().get(EyekinEntity.DATA_flyChance) : 0) >= 240) {
+				if (entity instanceof EyekinEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(EyekinEntity.DATA_flyChance, 0);
 				if (Math.random() < 0.1) {
 					if (world instanceof ServerLevel _level) {
 						Entity entityToSpawn = TheDeepVoidModEntities.EYEKIN_FLYING.get().spawn(_level, BlockPos.containing(x, y + 1, z), MobSpawnType.MOB_SUMMONED);
@@ -45,7 +47,8 @@ public class EyekinOnEntityTickUpdateProcedure {
 						entity.discard();
 				}
 			} else {
-				entity.getPersistentData().putDouble("deep_void:flyingChance", (entity.getPersistentData().getDouble("deep_void:flyingChance") + 1));
+				if (entity instanceof EyekinEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(EyekinEntity.DATA_flyChance, (int) ((entity instanceof EyekinEntity _datEntI ? _datEntI.getEntityData().get(EyekinEntity.DATA_flyChance) : 0) + 1));
 			}
 		}
 	}

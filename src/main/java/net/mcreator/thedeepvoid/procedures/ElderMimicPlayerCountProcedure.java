@@ -6,9 +6,10 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.network.chat.Component;
+
+import net.mcreator.thedeepvoid.entity.ElderMimicEntity;
+import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import java.util.List;
 import java.util.Comparator;
@@ -18,16 +19,23 @@ public class ElderMimicPlayerCountProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (world.players().size() > 1) {
-			for (Entity entityiterator : new ArrayList<>(world.players())) {
-				entity.getPersistentData().putDouble("deep_void:playerCount", (entity.getPersistentData().getDouble("deep_void:playerCount") + 1));
+		if (DeepVoidConfigConfiguration.DOBOSSHPSCALING.get() == true) {
+			if (world.players().size() > 1) {
+				for (Entity entityiterator : new ArrayList<>(world.players())) {
+					if (entity instanceof ElderMimicEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(ElderMimicEntity.DATA_playerCount, (int) ((entity instanceof ElderMimicEntity _datEntI ? _datEntI.getEntityData().get(ElderMimicEntity.DATA_playerCount) : 0) + 1));
+				}
 			}
-		}
-		if (entity.getPersistentData().getDouble("deep_void:playerCount") > 1) {
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.HEALTH_BOOST, (int) Double.POSITIVE_INFINITY, (int) (entity.getPersistentData().getDouble("deep_void:playerCount") * 10), false, false));
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.HEAL, 5, 200, false, false));
+			if ((entity instanceof ElderMimicEntity _datEntI ? _datEntI.getEntityData().get(ElderMimicEntity.DATA_playerCount) : 0) > 1) {
+				if (entity instanceof ElderMimicEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(ElderMimicEntity.DATA_baseHealth, (int) ((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).getBaseValue());
+				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
+						.setBaseValue(((entity instanceof ElderMimicEntity _datEntI ? _datEntI.getEntityData().get(ElderMimicEntity.DATA_baseHealth) : 0)
+								+ (entity instanceof ElderMimicEntity _datEntI ? _datEntI.getEntityData().get(ElderMimicEntity.DATA_baseHealth) : 0) * 0.35
+										* (entity instanceof ElderMimicEntity _datEntI ? _datEntI.getEntityData().get(ElderMimicEntity.DATA_playerCount) : 0)));
+				if (entity instanceof LivingEntity _entity)
+					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
+			}
 		}
 		{
 			final Vec3 _center = new Vec3(x, y, z);

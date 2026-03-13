@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "the_deep_void:ashen_crags",
+    "the_deep_void:crawler_nest",
+    "the_deep_void:forgotten_valley",
+    "the_deep_void:gloomy_deathgrounds",
+    "the_deep_void:staring_hills"
+  ],
+  "features": "the_deep_void:deep_void_redstone_ore",
+  "step": "underground_ores"
+}

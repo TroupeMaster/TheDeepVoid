@@ -68,11 +68,11 @@ public class BoneWalkerOnBootsProcedure {
 			if (!(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getModifier(UUID.fromString("9618d7a9-fb3b-497d-8faa-4e8aee6459ae")) != null)) {
 				if (!(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED)
 						.hasModifier((new AttributeModifier(UUID.fromString("9618d7a9-fb3b-497d-8faa-4e8aee6459ae"), "boneWalkerSpeed",
-								((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(TheDeepVoidModEnchantments.BONE_WALKER.get()) * 0.105 + 1.3),
+								((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(TheDeepVoidModEnchantments.BONE_WALKER.get()) * 0.105 + 1.18),
 								AttributeModifier.Operation.MULTIPLY_TOTAL)))))
 					((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED)
 							.addTransientModifier((new AttributeModifier(UUID.fromString("9618d7a9-fb3b-497d-8faa-4e8aee6459ae"), "boneWalkerSpeed",
-									((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(TheDeepVoidModEnchantments.BONE_WALKER.get()) * 0.105 + 1.3),
+									((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getEnchantmentLevel(TheDeepVoidModEnchantments.BONE_WALKER.get()) * 0.105 + 1.18),
 									AttributeModifier.Operation.MULTIPLY_TOTAL)));
 			}
 			if (Math.random() < 0.01 && !(new Object() {

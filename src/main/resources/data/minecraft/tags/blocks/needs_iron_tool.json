@@ -1,6 +1,12 @@
 {
   "replace": false,
   "values": [
+    "the_deep_void:flesh_bloodstone_ore",
+    "the_deep_void:block_of_bloodstone",
+    "the_deep_void:bloodstone_ore",
+    "the_deep_void:deep_void_gold_ore",
+    "the_deep_void:deep_void_diamond_ore",
+    "the_deep_void:deep_void_redstone_ore",
     "the_deep_void:fleshy_rotten_bone_block",
     "the_deep_void:block_of_raw_cinnabar",
     "the_deep_void:block_of_cinnabar",

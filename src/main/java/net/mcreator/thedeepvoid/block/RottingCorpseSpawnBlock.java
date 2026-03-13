@@ -28,7 +28,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 public class RottingCorpseSpawnBlock extends FlowerBlock {
 	public RottingCorpseSpawnBlock() {
 		super(() -> MobEffects.MOVEMENT_SPEED, 100,
-				BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks().sound(SoundType.BONE_BLOCK).strength(0.6f, 1f).noCollission().offsetType(BlockBehaviour.OffsetType.NONE).pushReaction(PushReaction.DESTROY));
+				BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_ORANGE).randomTicks().sound(SoundType.BONE_BLOCK).strength(0.6f, 1f).noCollission().offsetType(BlockBehaviour.OffsetType.NONE).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

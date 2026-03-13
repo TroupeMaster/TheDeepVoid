@@ -42,7 +42,7 @@ public class ClawBladeItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(TheDeepVoidModItems.BONE_CRAWLER_MOLT_PIECE.get()));
 			}
-		}, 3, -1f, new Item.Properties().fireResistant());
+		}, 3, -1.6f, new Item.Properties().fireResistant());
 	}
 
 	@Override

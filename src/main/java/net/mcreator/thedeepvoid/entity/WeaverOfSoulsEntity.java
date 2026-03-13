@@ -17,14 +17,7 @@ import net.minecraftforge.network.NetworkHooks;
 import net.minecraft.world.level.ServerLevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.ThrownPotion;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
-import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
-import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
-import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
-import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
-import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnGroupData;
@@ -32,7 +25,6 @@ import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.AreaEffectCloud;
@@ -61,6 +53,20 @@ public class WeaverOfSoulsEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Boolean> DATA_stunned = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_locate = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_scream = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_giantHand = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_murmurs = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_dying = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_stunCount = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_playerCount = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_baseHealth = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_blockade = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_handsCooldown = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_handWall = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_randomNumber = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_screamPlayed = SynchedEntityData.defineId(WeaverOfSoulsEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -86,6 +92,20 @@ public class WeaverOfSoulsEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "fallenweaver");
+		this.entityData.define(DATA_stunned, false);
+		this.entityData.define(DATA_locate, 0);
+		this.entityData.define(DATA_scream, 0);
+		this.entityData.define(DATA_giantHand, 0);
+		this.entityData.define(DATA_murmurs, 0);
+		this.entityData.define(DATA_dying, false);
+		this.entityData.define(DATA_stunCount, 0);
+		this.entityData.define(DATA_playerCount, 0);
+		this.entityData.define(DATA_baseHealth, 0);
+		this.entityData.define(DATA_blockade, false);
+		this.entityData.define(DATA_handsCooldown, 0);
+		this.entityData.define(DATA_handWall, 0);
+		this.entityData.define(DATA_randomNumber, 0);
+		this.entityData.define(DATA_screamPlayed, false);
 	}
 
 	public void setTexture(String texture) {
@@ -104,17 +124,7 @@ public class WeaverOfSoulsEntity extends Monster implements GeoEntity {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.8, false) {
-			@Override
-			protected double getAttackReachSqr(LivingEntity entity) {
-				return this.mob.getBbWidth() * this.mob.getBbWidth() + entity.getBbWidth();
-			}
-		});
-		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
-		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(5, new FloatGoal(this));
-		this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, Player.class, true, false));
+
 	}
 
 	@Override
@@ -178,6 +188,20 @@ public class WeaverOfSoulsEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putBoolean("Datastunned", this.entityData.get(DATA_stunned));
+		compound.putInt("Datalocate", this.entityData.get(DATA_locate));
+		compound.putInt("Datascream", this.entityData.get(DATA_scream));
+		compound.putInt("DatagiantHand", this.entityData.get(DATA_giantHand));
+		compound.putInt("Datamurmurs", this.entityData.get(DATA_murmurs));
+		compound.putBoolean("Datadying", this.entityData.get(DATA_dying));
+		compound.putInt("DatastunCount", this.entityData.get(DATA_stunCount));
+		compound.putInt("DataplayerCount", this.entityData.get(DATA_playerCount));
+		compound.putInt("DatabaseHealth", this.entityData.get(DATA_baseHealth));
+		compound.putBoolean("Datablockade", this.entityData.get(DATA_blockade));
+		compound.putInt("DatahandsCooldown", this.entityData.get(DATA_handsCooldown));
+		compound.putInt("DatahandWall", this.entityData.get(DATA_handWall));
+		compound.putInt("DatarandomNumber", this.entityData.get(DATA_randomNumber));
+		compound.putBoolean("DatascreamPlayed", this.entityData.get(DATA_screamPlayed));
 	}
 
 	@Override
@@ -185,6 +209,34 @@ public class WeaverOfSoulsEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datastunned"))
+			this.entityData.set(DATA_stunned, compound.getBoolean("Datastunned"));
+		if (compound.contains("Datalocate"))
+			this.entityData.set(DATA_locate, compound.getInt("Datalocate"));
+		if (compound.contains("Datascream"))
+			this.entityData.set(DATA_scream, compound.getInt("Datascream"));
+		if (compound.contains("DatagiantHand"))
+			this.entityData.set(DATA_giantHand, compound.getInt("DatagiantHand"));
+		if (compound.contains("Datamurmurs"))
+			this.entityData.set(DATA_murmurs, compound.getInt("Datamurmurs"));
+		if (compound.contains("Datadying"))
+			this.entityData.set(DATA_dying, compound.getBoolean("Datadying"));
+		if (compound.contains("DatastunCount"))
+			this.entityData.set(DATA_stunCount, compound.getInt("DatastunCount"));
+		if (compound.contains("DataplayerCount"))
+			this.entityData.set(DATA_playerCount, compound.getInt("DataplayerCount"));
+		if (compound.contains("DatabaseHealth"))
+			this.entityData.set(DATA_baseHealth, compound.getInt("DatabaseHealth"));
+		if (compound.contains("Datablockade"))
+			this.entityData.set(DATA_blockade, compound.getBoolean("Datablockade"));
+		if (compound.contains("DatahandsCooldown"))
+			this.entityData.set(DATA_handsCooldown, compound.getInt("DatahandsCooldown"));
+		if (compound.contains("DatahandWall"))
+			this.entityData.set(DATA_handWall, compound.getInt("DatahandWall"));
+		if (compound.contains("DatarandomNumber"))
+			this.entityData.set(DATA_randomNumber, compound.getInt("DatarandomNumber"));
+		if (compound.contains("DatascreamPlayed"))
+			this.entityData.set(DATA_screamPlayed, compound.getBoolean("DatascreamPlayed"));
 	}
 
 	@Override

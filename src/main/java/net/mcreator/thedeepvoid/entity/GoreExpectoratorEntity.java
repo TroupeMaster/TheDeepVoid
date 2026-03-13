@@ -56,6 +56,7 @@ public class GoreExpectoratorEntity extends Monster implements RangedAttackMob, 
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(GoreExpectoratorEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(GoreExpectoratorEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(GoreExpectoratorEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_shoot = SynchedEntityData.defineId(GoreExpectoratorEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -79,6 +80,7 @@ public class GoreExpectoratorEntity extends Monster implements RangedAttackMob, 
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "gore_spitter");
+		this.entityData.define(DATA_shoot, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -220,6 +222,7 @@ public class GoreExpectoratorEntity extends Monster implements RangedAttackMob, 
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("Datashoot", this.entityData.get(DATA_shoot));
 	}
 
 	@Override
@@ -227,6 +230,8 @@ public class GoreExpectoratorEntity extends Monster implements RangedAttackMob, 
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datashoot"))
+			this.entityData.set(DATA_shoot, compound.getInt("Datashoot"));
 	}
 
 	@Override

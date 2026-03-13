@@ -35,16 +35,16 @@ public class SkullSmasherTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double randomX = 0;
-		double randomZ = 0;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
 			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= Math.ceil((entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 2)) {
-				entity.getPersistentData().putDouble("deep_void:attackChance", (entity.getPersistentData().getDouble("deep_void:attackChance") + 2));
+				if (entity instanceof SkullSmasherEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(SkullSmasherEntity.DATA_attackChance, (int) ((entity instanceof SkullSmasherEntity _datEntI ? _datEntI.getEntityData().get(SkullSmasherEntity.DATA_attackChance) : 0) + 2));
 			} else {
-				entity.getPersistentData().putDouble("deep_void:attackChance", (entity.getPersistentData().getDouble("deep_void:attackChance") + 1));
+				if (entity instanceof SkullSmasherEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(SkullSmasherEntity.DATA_attackChance, (int) ((entity instanceof SkullSmasherEntity _datEntI ? _datEntI.getEntityData().get(SkullSmasherEntity.DATA_attackChance) : 0) + 1));
 			}
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 80) {
+		if ((entity instanceof SkullSmasherEntity _datEntI ? _datEntI.getEntityData().get(SkullSmasherEntity.DATA_attackChance) : 0) == 80) {
 			if (entity instanceof SkullSmasherEntity) {
 				((SkullSmasherEntity) entity).setAnimation("animation.skullSmasher_dash");
 			}
@@ -62,8 +62,7 @@ public class SkullSmasherTickUpdateProcedure {
 				}
 				entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entity.getYRot() + 180)) * 1.5), 0.25, (Math.cos(Math.toRadians(entity.getYRot())) * 1.5)));
 			});
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 106) {
+		} else if ((entity instanceof SkullSmasherEntity _datEntI ? _datEntI.getEntityData().get(SkullSmasherEntity.DATA_attackChance) : 0) == 106) {
 			if (entity instanceof SkullSmasherEntity) {
 				((SkullSmasherEntity) entity).setAnimation("animation.skullSmasher_slash");
 			}
@@ -74,9 +73,9 @@ public class SkullSmasherTickUpdateProcedure {
 				}
 				{
 					final Vec3 _center = new Vec3(
-							(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(2)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()), y,
-							(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(2)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()));
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+							(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()), y,
+							(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()));
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (entityiterator instanceof Player) {
 							if ((entityiterator instanceof LivingEntity _entUseItem39 ? _entUseItem39.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
@@ -118,8 +117,7 @@ public class SkullSmasherTickUpdateProcedure {
 					}
 				}
 			});
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") == 240) {
+		} else if ((entity instanceof SkullSmasherEntity _datEntI ? _datEntI.getEntityData().get(SkullSmasherEntity.DATA_attackChance) : 0) == 240) {
 			if (entity instanceof SkullSmasherEntity) {
 				((SkullSmasherEntity) entity).setAnimation("animation.skullSmasher_attack");
 			}
@@ -135,9 +133,9 @@ public class SkullSmasherTickUpdateProcedure {
 							Level.ExplosionInteraction.MOB);
 				{
 					final Vec3 _center = new Vec3(
-							(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(2)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()), y,
-							(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(2)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()));
-					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(8 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+							(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX()), y,
+							(entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ()));
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(7 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (entityiterator instanceof Player) {
 							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity), (float) (double) DeepVoidConfigConfiguration.SMASHEROVERHEAD.get());
@@ -158,9 +156,9 @@ public class SkullSmasherTickUpdateProcedure {
 					}
 				}
 			});
-		}
-		if (entity.getPersistentData().getDouble("deep_void:attackChance") >= 340) {
-			entity.getPersistentData().putDouble("deep_void:attackChance", 0);
+		} else if ((entity instanceof SkullSmasherEntity _datEntI ? _datEntI.getEntityData().get(SkullSmasherEntity.DATA_attackChance) : 0) >= 340) {
+			if (entity instanceof SkullSmasherEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(SkullSmasherEntity.DATA_attackChance, 0);
 		}
 	}
 }

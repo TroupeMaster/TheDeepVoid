@@ -4,13 +4,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.common.ForgeMod;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffects;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
@@ -44,13 +42,24 @@ public class PlayerTickUpdateMaskProcedure {
 						capability.syncPlayerVariables(entity);
 					});
 				}
-				if (entity instanceof LivingEntity _entity)
-					_entity.removeEffect(MobEffects.HEALTH_BOOST);
+				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).removeModifier(UUID.fromString("a2a1826b-7829-42ed-986e-984ebf45427b"));
 			}
 		}
-		if (!((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.HUNTERS_BOOTS.get())
-				&& ((LivingEntity) entity).getAttribute(ForgeMod.STEP_HEIGHT_ADDITION.get()).getModifier(UUID.fromString("43e58095-0a95-4141-9302-f24c6b94b456")) != null) {
-			((LivingEntity) entity).getAttribute(ForgeMod.STEP_HEIGHT_ADDITION.get()).removeModifier(UUID.fromString("43e58095-0a95-4141-9302-f24c6b94b456"));
+		if (!((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_HELMET.get())
+				&& entity.getPersistentData().getBoolean("bloodstoneEquipHelmet") == true) {
+			entity.getPersistentData().putBoolean("bloodstoneEquipHelmet", false);
+		}
+		if (!((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_CHESTPLATE.get())
+				&& entity.getPersistentData().getBoolean("bloodstoneEquipChest") == true) {
+			entity.getPersistentData().putBoolean("bloodstoneEquipChest", false);
+		}
+		if (!((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_LEGGINGS.get())
+				&& entity.getPersistentData().getBoolean("bloodstoneEquipLeggings") == true) {
+			entity.getPersistentData().putBoolean("bloodstoneEquipLeggings", false);
+		}
+		if (!((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_BOOTS.get())
+				&& entity.getPersistentData().getBoolean("bloodstoneEquipBoots") == true) {
+			entity.getPersistentData().putBoolean("bloodstoneEquipBoots", false);
 		}
 	}
 }

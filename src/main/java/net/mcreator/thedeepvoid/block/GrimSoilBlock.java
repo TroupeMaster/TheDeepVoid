@@ -3,6 +3,7 @@ package net.mcreator.thedeepvoid.block;
 
 import net.minecraftforge.common.IPlantable;
 
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -20,7 +21,7 @@ import net.mcreator.thedeepvoid.procedures.DesolateSoilEntityWalksOnBlockProcedu
 
 public class GrimSoilBlock extends Block {
 	public GrimSoilBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.SOUL_SOIL).strength(2f).requiresCorrectToolForDrops());
+		super(BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_LIGHT_BLUE).sound(SoundType.SOUL_SOIL).strength(2f).requiresCorrectToolForDrops());
 	}
 
 	@Override

@@ -30,7 +30,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 public class InfestedBoneCrawlerEggGenerateBlock extends FlowerBlock {
 	public InfestedBoneCrawlerEggGenerateBlock() {
 		super(() -> MobEffects.MOVEMENT_SPEED, 100,
-				BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).randomTicks()
+				BlockBehaviour.Properties.of().mapColor(MapColor.GLOW_LICHEN).randomTicks()
 						.sound(new ForgeSoundType(1.0f, 1.0f, () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.turtle.egg_break")), () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.stone.step")),
 								() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.stone.place")), () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.turtle.egg_crack")),
 								() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.stone.fall"))))

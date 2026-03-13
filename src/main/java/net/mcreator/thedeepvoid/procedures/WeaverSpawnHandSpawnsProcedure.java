@@ -50,7 +50,7 @@ public class WeaverSpawnHandSpawnsProcedure {
 				Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 					return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 				}
-			}.compareDistOf((entity.getX()), (entity.getY()), (entity.getZ()))).findFirst().orElse(null)))) && entity.getPersistentData().getBoolean("deep_void:stunned") == false) {
+			}.compareDistOf((entity.getX()), (entity.getY()), (entity.getZ()))).findFirst().orElse(null)))) && (entity instanceof WeaverOfSoulsEntity _datEntL14 && _datEntL14.getEntityData().get(WeaverOfSoulsEntity.DATA_stunned)) == false) {
 				if (!(!world.getEntitiesOfClass(WeaverOfSoulsEntity.class,
 						AABB.ofSize(new Vec3((((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 60, 60, 60), e -> true).stream().sorted(new Object() {
 							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
@@ -68,8 +68,9 @@ public class WeaverSpawnHandSpawnsProcedure {
 									}
 								}.compareDistOf((entity.getX()), (entity.getY()), (entity.getZ()))).findFirst().orElse(null)).getZ())), 10, 10, 10),
 						e -> true).isEmpty())) {
-					if (entity.getPersistentData().getDouble("deep_void:hands_cooldown") >= 140) {
-						entity.getPersistentData().putDouble("deep_void:hands_cooldown", 0);
+					if ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_handsCooldown) : 0) >= 140) {
+						if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
+							_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_handsCooldown, 0);
 						if (!(!world.getEntitiesOfClass(WeaverOfSoulsEntity.class,
 								AABB.ofSize(new Vec3((((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 60, 60, 60), e -> true).stream().sorted(new Object() {
 									Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
@@ -415,7 +416,8 @@ public class WeaverSpawnHandSpawnsProcedure {
 							}
 						}
 					} else {
-						entity.getPersistentData().putDouble("deep_void:hands_cooldown", (entity.getPersistentData().getDouble("deep_void:hands_cooldown") + 1));
+						if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
+							_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_handsCooldown, (int) ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_handsCooldown) : 0) + 1));
 					}
 				}
 			}

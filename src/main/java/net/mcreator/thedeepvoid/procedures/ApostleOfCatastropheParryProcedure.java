@@ -27,8 +27,9 @@ public class ApostleOfCatastropheParryProcedure {
 	public static boolean execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return false;
-		if (entity.getPersistentData().getBoolean("parry") == true) {
-			entity.getPersistentData().putBoolean("parry", false);
+		if ((entity instanceof ApostleOfCatastropheEntity _datEntL0 && _datEntL0.getEntityData().get(ApostleOfCatastropheEntity.DATA_parry)) == true) {
+			if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_parry, false);
 			if (entity instanceof ApostleOfCatastropheEntity) {
 				((ApostleOfCatastropheEntity) entity).setAnimation("empty");
 			}

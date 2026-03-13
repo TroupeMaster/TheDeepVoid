@@ -65,6 +65,11 @@ public class StalkerEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(StalkerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(StalkerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(StalkerEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_voidCallCooldown = SynchedEntityData.defineId(StalkerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_spawned = SynchedEntityData.defineId(StalkerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_heartbeat = SynchedEntityData.defineId(StalkerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_crouching = SynchedEntityData.defineId(StalkerEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_soundAngry = SynchedEntityData.defineId(StalkerEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -90,6 +95,11 @@ public class StalkerEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "stalkernew");
+		this.entityData.define(DATA_voidCallCooldown, 0);
+		this.entityData.define(DATA_spawned, 0);
+		this.entityData.define(DATA_heartbeat, 0);
+		this.entityData.define(DATA_crouching, false);
+		this.entityData.define(DATA_soundAngry, false);
 	}
 
 	public void setTexture(String texture) {
@@ -197,6 +207,11 @@ public class StalkerEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DatavoidCallCooldown", this.entityData.get(DATA_voidCallCooldown));
+		compound.putInt("Dataspawned", this.entityData.get(DATA_spawned));
+		compound.putInt("Dataheartbeat", this.entityData.get(DATA_heartbeat));
+		compound.putBoolean("Datacrouching", this.entityData.get(DATA_crouching));
+		compound.putBoolean("DatasoundAngry", this.entityData.get(DATA_soundAngry));
 	}
 
 	@Override
@@ -204,6 +219,16 @@ public class StalkerEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DatavoidCallCooldown"))
+			this.entityData.set(DATA_voidCallCooldown, compound.getInt("DatavoidCallCooldown"));
+		if (compound.contains("Dataspawned"))
+			this.entityData.set(DATA_spawned, compound.getInt("Dataspawned"));
+		if (compound.contains("Dataheartbeat"))
+			this.entityData.set(DATA_heartbeat, compound.getInt("Dataheartbeat"));
+		if (compound.contains("Datacrouching"))
+			this.entityData.set(DATA_crouching, compound.getBoolean("Datacrouching"));
+		if (compound.contains("DatasoundAngry"))
+			this.entityData.set(DATA_soundAngry, compound.getBoolean("DatasoundAngry"));
 	}
 
 	@Override

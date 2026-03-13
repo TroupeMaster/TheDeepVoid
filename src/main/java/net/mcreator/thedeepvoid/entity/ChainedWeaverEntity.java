@@ -52,6 +52,12 @@ public class ChainedWeaverEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(ChainedWeaverEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(ChainedWeaverEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(ChainedWeaverEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Boolean> DATA_free = SynchedEntityData.defineId(ChainedWeaverEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_chainBreak = SynchedEntityData.defineId(ChainedWeaverEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_playingAnimation = SynchedEntityData.defineId(ChainedWeaverEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_message = SynchedEntityData.defineId(ChainedWeaverEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_talking = SynchedEntityData.defineId(ChainedWeaverEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_messageCount = SynchedEntityData.defineId(ChainedWeaverEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -76,6 +82,12 @@ public class ChainedWeaverEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "chainedweaver");
+		this.entityData.define(DATA_free, false);
+		this.entityData.define(DATA_chainBreak, 0);
+		this.entityData.define(DATA_playingAnimation, false);
+		this.entityData.define(DATA_message, false);
+		this.entityData.define(DATA_talking, false);
+		this.entityData.define(DATA_messageCount, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -172,6 +184,12 @@ public class ChainedWeaverEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putBoolean("Datafree", this.entityData.get(DATA_free));
+		compound.putInt("DatachainBreak", this.entityData.get(DATA_chainBreak));
+		compound.putBoolean("DataplayingAnimation", this.entityData.get(DATA_playingAnimation));
+		compound.putBoolean("Datamessage", this.entityData.get(DATA_message));
+		compound.putBoolean("Datatalking", this.entityData.get(DATA_talking));
+		compound.putInt("DatamessageCount", this.entityData.get(DATA_messageCount));
 	}
 
 	@Override
@@ -179,6 +197,18 @@ public class ChainedWeaverEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datafree"))
+			this.entityData.set(DATA_free, compound.getBoolean("Datafree"));
+		if (compound.contains("DatachainBreak"))
+			this.entityData.set(DATA_chainBreak, compound.getInt("DatachainBreak"));
+		if (compound.contains("DataplayingAnimation"))
+			this.entityData.set(DATA_playingAnimation, compound.getBoolean("DataplayingAnimation"));
+		if (compound.contains("Datamessage"))
+			this.entityData.set(DATA_message, compound.getBoolean("Datamessage"));
+		if (compound.contains("Datatalking"))
+			this.entityData.set(DATA_talking, compound.getBoolean("Datatalking"));
+		if (compound.contains("DatamessageCount"))
+			this.entityData.set(DATA_messageCount, compound.getInt("DatamessageCount"));
 	}
 
 	@Override

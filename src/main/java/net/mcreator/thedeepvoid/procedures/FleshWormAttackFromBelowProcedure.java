@@ -11,7 +11,8 @@ public class FleshWormAttackFromBelowProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		entity.getPersistentData().putBoolean("attackFromBelow", true);
+		if (entity instanceof FleshWormEntity _datEntSetL)
+			_datEntSetL.getEntityData().set(FleshWormEntity.DATA_attackFromBelow, true);
 		if (entity instanceof FleshWormEntity) {
 			((FleshWormEntity) entity).setAnimation("animation.fleshWorm_attackFromBelow");
 		}
@@ -53,7 +54,8 @@ public class FleshWormAttackFromBelowProcedure {
 			}
 		});
 		TheDeepVoidMod.queueServerWork(50, () -> {
-			entity.getPersistentData().putBoolean("attackFromBelow", false);
+			if (entity instanceof FleshWormEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(FleshWormEntity.DATA_attackFromBelow, false);
 			FleshWormDamageInAoeProcedure.execute(world, entity);
 		});
 	}

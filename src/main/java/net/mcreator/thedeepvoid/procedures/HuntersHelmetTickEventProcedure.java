@@ -7,6 +7,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -22,6 +23,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 
+import java.util.UUID;
 import java.util.List;
 import java.util.Comparator;
 
@@ -30,8 +32,6 @@ public class HuntersHelmetTickEventProcedure {
 		if (entity == null)
 			return;
 		if (entity.isSprinting()) {
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 1, false, false));
 			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).armorToggle == false && itemstack.getOrCreateTag().getDouble("cooldownMask") <= 0) {
 				{
 					final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
@@ -54,7 +54,7 @@ public class HuntersHelmetTickEventProcedure {
 						}
 					}
 				}
-				if (entity instanceof LivingEntity _livEnt26 && _livEnt26.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
+				if (entity instanceof LivingEntity _livEnt25 && _livEnt25.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
 					entity.setSprinting(false);
 					if (itemstack.getOrCreateTag().getBoolean("playsound") == true) {
 						if (world instanceof Level _level) {
@@ -68,6 +68,14 @@ public class HuntersHelmetTickEventProcedure {
 					}
 				}
 			}
+			if (!(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getModifier(UUID.fromString("7b6cd0e5-5944-438f-8d85-b74e6b98f8d8")) != null)) {
+				if (!(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).hasModifier((new AttributeModifier(UUID.fromString("7b6cd0e5-5944-438f-8d85-b74e6b98f8d8"), "hunterSpeed",
+						(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getValue() * 0.2 * 2), AttributeModifier.Operation.ADDITION)))))
+					((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).addTransientModifier((new AttributeModifier(UUID.fromString("7b6cd0e5-5944-438f-8d85-b74e6b98f8d8"), "hunterSpeed",
+							(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getValue() * 0.2 * 2), AttributeModifier.Operation.ADDITION)));
+			}
+		} else if (!entity.isSprinting() && ((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).getModifier(UUID.fromString("7b6cd0e5-5944-438f-8d85-b74e6b98f8d8")) != null) {
+			((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED).removeModifier(UUID.fromString("7b6cd0e5-5944-438f-8d85-b74e6b98f8d8"));
 		}
 		if (itemstack.getOrCreateTag().getDouble("cooldownMask") > 0) {
 			itemstack.getOrCreateTag().putDouble("cooldownMask", (itemstack.getOrCreateTag().getDouble("cooldownMask") - 1));

@@ -38,80 +38,84 @@ public class ApostleDiesProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof ApostleOfCatastropheEntity) {
-			((ApostleOfCatastropheEntity) entity).setAnimation("empty");
-		}
-		if (entity instanceof ApostleOfCatastropheEntity) {
-			((ApostleOfCatastropheEntity) entity).setAnimation("animation.apostle_death");
-		}
-		TheDeepVoidMod.queueServerWork(38, () -> {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:bone_crack")), SoundSource.HOSTILE, 2, (float) 0.6);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:bone_crack")), SoundSource.HOSTILE, 2, (float) 0.6, false);
-				}
+		if ((entity instanceof ApostleOfCatastropheEntity _datEntL0 && _datEntL0.getEntityData().get(ApostleOfCatastropheEntity.DATA_dying)) == false) {
+			if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_dying, true);
+			if (entity instanceof ApostleOfCatastropheEntity) {
+				((ApostleOfCatastropheEntity) entity).setAnimation("empty");
 			}
-		});
-		TheDeepVoidMod.queueServerWork(41, () -> {
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:decapitate")), SoundSource.HOSTILE, 2, 1);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:decapitate")), SoundSource.HOSTILE, 2, 1, false);
-				}
+			if (entity instanceof ApostleOfCatastropheEntity) {
+				((ApostleOfCatastropheEntity) entity).setAnimation("animation.apostle_death");
 			}
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.BLOOD.get()), (entity.getX()), (entity.getY() + 1.8), (entity.getZ()), 40, 0, 0.12, 0, 0.1);
-		});
-		TheDeepVoidMod.queueServerWork(50, () -> {
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.BLOOD.get()), (entity.getX()), (entity.getY() + 1.8), (entity.getZ()), 40, 0, 0.12, 0, 0.1);
-		});
-		TheDeepVoidMod.queueServerWork(85, () -> {
-			TheDeepVoidModVariables.MapVariables.get(world).apostleFightCount = TheDeepVoidModVariables.MapVariables.get(world).apostleFightCount + 1;
-			TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.FLAME_OF_SPITE.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 40, 0, 0.1, 0, 0.1);
-			{
-				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-				for (Entity entityiterator : _entfound) {
-					if (entityiterator instanceof Player) {
-						if (entityiterator instanceof Player _player) {
-							ItemStack _setstack = new ItemStack(TheDeepVoidModItems.APOSTLE_OF_CATASTROPHE_TREASURE_BAG.get()).copy();
-							_setstack.setCount(1);
-							ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-						}
-						if (!(entityiterator instanceof ServerPlayer _plr21 && _plr21.level() instanceof ServerLevel
-								&& _plr21.getAdvancements().getOrStartProgress(_plr21.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:unholy_psalmody"))).isDone())) {
-							if (entityiterator instanceof ServerPlayer _player) {
-								Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:unholy_psalmody"));
-								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-								if (!_ap.isDone()) {
-									for (String criteria : _ap.getRemainingCriteria())
-										_player.getAdvancements().award(_adv, criteria);
+			TheDeepVoidMod.queueServerWork(38, () -> {
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:bone_crack")), SoundSource.HOSTILE, 2, (float) 0.6);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:bone_crack")), SoundSource.HOSTILE, 2, (float) 0.6, false);
+					}
+				}
+			});
+			TheDeepVoidMod.queueServerWork(41, () -> {
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:decapitate")), SoundSource.HOSTILE, 2, 1);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:decapitate")), SoundSource.HOSTILE, 2, 1, false);
+					}
+				}
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.BLOOD.get()), (entity.getX()), (entity.getY() + 1.8), (entity.getZ()), 40, 0, 0.12, 0, 0.1);
+			});
+			TheDeepVoidMod.queueServerWork(50, () -> {
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.BLOOD.get()), (entity.getX()), (entity.getY() + 1.8), (entity.getZ()), 40, 0, 0.12, 0, 0.1);
+			});
+			TheDeepVoidMod.queueServerWork(85, () -> {
+				TheDeepVoidModVariables.MapVariables.get(world).apostleFightCount = TheDeepVoidModVariables.MapVariables.get(world).apostleFightCount + 1;
+				TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.FLAME_OF_SPITE.get()), (entity.getX()), (entity.getY()), (entity.getZ()), 40, 0, 0.1, 0, 0.1);
+				{
+					final Vec3 _center = new Vec3(x, y, z);
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+					for (Entity entityiterator : _entfound) {
+						if (entityiterator instanceof Player) {
+							if (entityiterator instanceof Player _player) {
+								ItemStack _setstack = new ItemStack(TheDeepVoidModItems.APOSTLE_OF_CATASTROPHE_TREASURE_BAG.get()).copy();
+								_setstack.setCount(1);
+								ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+							}
+							if (!(entityiterator instanceof ServerPlayer _plr23 && _plr23.level() instanceof ServerLevel
+									&& _plr23.getAdvancements().getOrStartProgress(_plr23.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:unholy_psalmody"))).isDone())) {
+								if (entityiterator instanceof ServerPlayer _player) {
+									Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:unholy_psalmody"));
+									AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+									if (!_ap.isDone()) {
+										for (String criteria : _ap.getRemainingCriteria())
+											_player.getAdvancements().award(_adv, criteria);
+									}
 								}
 							}
 						}
 					}
 				}
-			}
-		});
-		TheDeepVoidMod.queueServerWork(100, () -> {
-			world.setBlock(BlockPos.containing(entity.getPersistentData().getDouble("deep_void:forgeX"), entity.getPersistentData().getDouble("deep_void:forgeY"), entity.getPersistentData().getDouble("deep_void:forgeZ")),
-					TheDeepVoidModBlocks.SOUL_FORGE.get().defaultBlockState(), 3);
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.SCULK_SOUL, (entity.getPersistentData().getDouble("deep_void:forgeX")), (entity.getPersistentData().getDouble("deep_void:forgeY")), (entity.getPersistentData().getDouble("deep_void:forgeZ")), 20,
-						0.4, 0.4, 0.4, 0.1);
-		});
-		if (world instanceof ServerLevel _level)
-			_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
-					"stopsound @a record the_deep_void:chainsaw");
-		TheDeepVoidMod.queueServerWork(20, () -> {
+			});
+			TheDeepVoidMod.queueServerWork(100, () -> {
+				world.setBlock(BlockPos.containing(entity.getPersistentData().getDouble("deep_void:forgeX"), entity.getPersistentData().getDouble("deep_void:forgeY"), entity.getPersistentData().getDouble("deep_void:forgeZ")),
+						TheDeepVoidModBlocks.SOUL_FORGE.get().defaultBlockState(), 3);
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.SCULK_SOUL, (entity.getPersistentData().getDouble("deep_void:forgeX")), (entity.getPersistentData().getDouble("deep_void:forgeY")), (entity.getPersistentData().getDouble("deep_void:forgeZ")), 20,
+							0.4, 0.4, 0.4, 0.1);
+			});
 			if (world instanceof ServerLevel _level)
 				_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 						"stopsound @a record the_deep_void:chainsaw");
-		});
+			TheDeepVoidMod.queueServerWork(20, () -> {
+				if (world instanceof ServerLevel _level)
+					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+							"stopsound @a record the_deep_void:chainsaw");
+			});
+		}
 	}
 }

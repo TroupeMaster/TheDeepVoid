@@ -226,7 +226,8 @@ public class PrimordialCrawlerSpitProcedure {
 						}
 					}
 					entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entity.getYRot() + 180)) * 1), 0.8, (Math.cos(Math.toRadians(entity.getYRot())) * 1)));
-					entity.getPersistentData().putBoolean("primordialCrawlerFall", true);
+					if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_primordialCrawlerFall, true);
 				}
 			});
 		}

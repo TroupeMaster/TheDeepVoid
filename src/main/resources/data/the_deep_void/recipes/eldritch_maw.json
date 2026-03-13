@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "acd",
+    "de "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:refined_onyx"
+    },
+    "b": {
+      "item": "the_deep_void:voided_heart"
+    },
+    "c": {
+      "item": "the_deep_void:ancient_gun_part"
+    },
+    "d": {
+      "item": "the_deep_void:soul_shard"
+    },
+    "e": {
+      "item": "the_deep_void:worm_tooth"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:eldritch_maw",
+    "count": 1
+  }
+}

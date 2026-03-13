@@ -13,7 +13,7 @@ import net.mcreator.thedeepvoid.procedures.OnyxFlareGunRightclickedProcedure;
 
 public class OnyxFlareGunItem extends Item {
 	public OnyxFlareGunItem() {
-		super(new Item.Properties().durability(5).rarity(Rarity.COMMON));
+		super(new Item.Properties().durability(150).rarity(Rarity.COMMON));
 	}
 
 	@Override

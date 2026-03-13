@@ -67,6 +67,14 @@ public class MaskedHunterEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(MaskedHunterEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(MaskedHunterEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(MaskedHunterEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_screamAmbient = SynchedEntityData.defineId(MaskedHunterEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_randomScreamAmbient = SynchedEntityData.defineId(MaskedHunterEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_jumping = SynchedEntityData.defineId(MaskedHunterEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_placeTrap = SynchedEntityData.defineId(MaskedHunterEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_playSound = SynchedEntityData.defineId(MaskedHunterEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_randomPlaySound = SynchedEntityData.defineId(MaskedHunterEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_shoot = SynchedEntityData.defineId(MaskedHunterEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_spawnSpike = SynchedEntityData.defineId(MaskedHunterEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -91,6 +99,14 @@ public class MaskedHunterEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "huntertrue");
+		this.entityData.define(DATA_screamAmbient, 0);
+		this.entityData.define(DATA_randomScreamAmbient, 0);
+		this.entityData.define(DATA_jumping, false);
+		this.entityData.define(DATA_placeTrap, 0);
+		this.entityData.define(DATA_playSound, 0);
+		this.entityData.define(DATA_randomPlaySound, 0);
+		this.entityData.define(DATA_shoot, 0);
+		this.entityData.define(DATA_spawnSpike, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -177,6 +193,14 @@ public class MaskedHunterEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DatascreamAmbient", this.entityData.get(DATA_screamAmbient));
+		compound.putInt("DatarandomScreamAmbient", this.entityData.get(DATA_randomScreamAmbient));
+		compound.putBoolean("Datajumping", this.entityData.get(DATA_jumping));
+		compound.putInt("DataplaceTrap", this.entityData.get(DATA_placeTrap));
+		compound.putInt("DataplaySound", this.entityData.get(DATA_playSound));
+		compound.putInt("DatarandomPlaySound", this.entityData.get(DATA_randomPlaySound));
+		compound.putInt("Datashoot", this.entityData.get(DATA_shoot));
+		compound.putInt("DataspawnSpike", this.entityData.get(DATA_spawnSpike));
 	}
 
 	@Override
@@ -184,6 +208,22 @@ public class MaskedHunterEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DatascreamAmbient"))
+			this.entityData.set(DATA_screamAmbient, compound.getInt("DatascreamAmbient"));
+		if (compound.contains("DatarandomScreamAmbient"))
+			this.entityData.set(DATA_randomScreamAmbient, compound.getInt("DatarandomScreamAmbient"));
+		if (compound.contains("Datajumping"))
+			this.entityData.set(DATA_jumping, compound.getBoolean("Datajumping"));
+		if (compound.contains("DataplaceTrap"))
+			this.entityData.set(DATA_placeTrap, compound.getInt("DataplaceTrap"));
+		if (compound.contains("DataplaySound"))
+			this.entityData.set(DATA_playSound, compound.getInt("DataplaySound"));
+		if (compound.contains("DatarandomPlaySound"))
+			this.entityData.set(DATA_randomPlaySound, compound.getInt("DatarandomPlaySound"));
+		if (compound.contains("Datashoot"))
+			this.entityData.set(DATA_shoot, compound.getInt("Datashoot"));
+		if (compound.contains("DataspawnSpike"))
+			this.entityData.set(DATA_spawnSpike, compound.getInt("DataspawnSpike"));
 	}
 
 	@Override

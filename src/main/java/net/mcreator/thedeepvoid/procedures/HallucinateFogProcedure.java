@@ -86,27 +86,31 @@ public class HallucinateFogProcedure {
 				return false;
 			}
 		}.checkGamemode(entity))) {
+			setShape(FogShape.SPHERE);
 			if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) > 8) {
 				setDistance(10, 14);
-				setShape(FogShape.SPHERE);
-			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) <= 8 && world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) > 6) {
+			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 8) {
+				setDistance(9, 13);
+			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 7) {
 				setDistance(8, 12);
-				setShape(FogShape.SPHERE);
-			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) <= 6 && world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) > 4) {
+			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 6) {
+				setDistance(7, 11);
+			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 7) {
 				setDistance(6, 10);
-				setShape(FogShape.SPHERE);
-			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) <= 4 && world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) > 2) {
+			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 6) {
+				setDistance(5, 9);
+			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 5) {
 				setDistance(4, 8);
-				setShape(FogShape.SPHERE);
-			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) <= 2 && world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) > 1) {
+			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 4) {
+				setDistance(4, 8);
+			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 3) {
+				setDistance(3, 7);
+			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 2) {
 				setDistance(2, 6);
-				setShape(FogShape.SPHERE);
 			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 1) {
 				setDistance(1, 4);
-				setShape(FogShape.SPHERE);
 			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0) {
 				setDistance(0, 1);
-				setShape(FogShape.SPHERE);
 				if (!(!world.getEntitiesOfClass(VoidbornEntity.class, AABB.ofSize(new Vec3(x, y, z), 200, 200, 200), e -> true).isEmpty())
 						&& !(entity instanceof LivingEntity _livEnt28 && _livEnt28.hasEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()))
 						&& !(entity instanceof LivingEntity _livEnt29 && _livEnt29.hasEffect(TheDeepVoidModMobEffects.VOID_BLESSING.get()))) {

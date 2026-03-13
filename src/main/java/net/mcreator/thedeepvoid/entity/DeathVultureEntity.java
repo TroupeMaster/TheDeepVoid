@@ -59,6 +59,8 @@ public class DeathVultureEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(DeathVultureEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(DeathVultureEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(DeathVultureEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_dash = SynchedEntityData.defineId(DeathVultureEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_attack = SynchedEntityData.defineId(DeathVultureEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -82,6 +84,8 @@ public class DeathVultureEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "death_vulture");
+		this.entityData.define(DATA_dash, 0);
+		this.entityData.define(DATA_attack, false);
 	}
 
 	public void setTexture(String texture) {
@@ -148,6 +152,8 @@ public class DeathVultureEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("Datadash", this.entityData.get(DATA_dash));
+		compound.putBoolean("Dataattack", this.entityData.get(DATA_attack));
 	}
 
 	@Override
@@ -155,6 +161,10 @@ public class DeathVultureEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datadash"))
+			this.entityData.set(DATA_dash, compound.getInt("Datadash"));
+		if (compound.contains("Dataattack"))
+			this.entityData.set(DATA_attack, compound.getBoolean("Dataattack"));
 	}
 
 	@Override

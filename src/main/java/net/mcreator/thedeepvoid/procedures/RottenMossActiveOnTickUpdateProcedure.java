@@ -16,7 +16,7 @@ public class RottenMossActiveOnTickUpdateProcedure {
 			if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.AIR) {
 				if (Math.random() < 0.6) {
 					world.setBlock(BlockPos.containing(x, y, z), TheDeepVoidModBlocks.ROTTEN_MOSS.get().defaultBlockState(), 3);
-					if (Math.random() < 0.3) {
+					if (Math.random() < 0.55) {
 						world.setBlock(BlockPos.containing(x, y - 1, z), TheDeepVoidModBlocks.HANGING_MARROW.get().defaultBlockState(), 3);
 					} else {
 						world.setBlock(BlockPos.containing(x, y - 1, z), TheDeepVoidModBlocks.CONNECTED_MARROW.get().defaultBlockState(), 3);

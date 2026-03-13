@@ -60,6 +60,19 @@ public class ApostleOfCatastropheEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Boolean> DATA_dying = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_fog = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_attackChance = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_apostleSetSecondPhase = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_spinning = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_noEscape = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_playerCount = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_baseHealth = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_parry = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_shooting = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_slashing = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_missedGrab = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_laughChance = SynchedEntityData.defineId(ApostleOfCatastropheEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -85,6 +98,19 @@ public class ApostleOfCatastropheEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "apostle");
+		this.entityData.define(DATA_dying, false);
+		this.entityData.define(DATA_fog, false);
+		this.entityData.define(DATA_attackChance, 0);
+		this.entityData.define(DATA_apostleSetSecondPhase, false);
+		this.entityData.define(DATA_spinning, false);
+		this.entityData.define(DATA_noEscape, false);
+		this.entityData.define(DATA_playerCount, 0);
+		this.entityData.define(DATA_baseHealth, 0);
+		this.entityData.define(DATA_parry, false);
+		this.entityData.define(DATA_shooting, false);
+		this.entityData.define(DATA_slashing, false);
+		this.entityData.define(DATA_missedGrab, false);
+		this.entityData.define(DATA_laughChance, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -161,6 +187,19 @@ public class ApostleOfCatastropheEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putBoolean("Datadying", this.entityData.get(DATA_dying));
+		compound.putBoolean("Datafog", this.entityData.get(DATA_fog));
+		compound.putInt("DataattackChance", this.entityData.get(DATA_attackChance));
+		compound.putBoolean("DataapostleSetSecondPhase", this.entityData.get(DATA_apostleSetSecondPhase));
+		compound.putBoolean("Dataspinning", this.entityData.get(DATA_spinning));
+		compound.putBoolean("DatanoEscape", this.entityData.get(DATA_noEscape));
+		compound.putInt("DataplayerCount", this.entityData.get(DATA_playerCount));
+		compound.putInt("DatabaseHealth", this.entityData.get(DATA_baseHealth));
+		compound.putBoolean("Dataparry", this.entityData.get(DATA_parry));
+		compound.putBoolean("Datashooting", this.entityData.get(DATA_shooting));
+		compound.putBoolean("Dataslashing", this.entityData.get(DATA_slashing));
+		compound.putBoolean("DatamissedGrab", this.entityData.get(DATA_missedGrab));
+		compound.putInt("DatalaughChance", this.entityData.get(DATA_laughChance));
 	}
 
 	@Override
@@ -168,6 +207,32 @@ public class ApostleOfCatastropheEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datadying"))
+			this.entityData.set(DATA_dying, compound.getBoolean("Datadying"));
+		if (compound.contains("Datafog"))
+			this.entityData.set(DATA_fog, compound.getBoolean("Datafog"));
+		if (compound.contains("DataattackChance"))
+			this.entityData.set(DATA_attackChance, compound.getInt("DataattackChance"));
+		if (compound.contains("DataapostleSetSecondPhase"))
+			this.entityData.set(DATA_apostleSetSecondPhase, compound.getBoolean("DataapostleSetSecondPhase"));
+		if (compound.contains("Dataspinning"))
+			this.entityData.set(DATA_spinning, compound.getBoolean("Dataspinning"));
+		if (compound.contains("DatanoEscape"))
+			this.entityData.set(DATA_noEscape, compound.getBoolean("DatanoEscape"));
+		if (compound.contains("DataplayerCount"))
+			this.entityData.set(DATA_playerCount, compound.getInt("DataplayerCount"));
+		if (compound.contains("DatabaseHealth"))
+			this.entityData.set(DATA_baseHealth, compound.getInt("DatabaseHealth"));
+		if (compound.contains("Dataparry"))
+			this.entityData.set(DATA_parry, compound.getBoolean("Dataparry"));
+		if (compound.contains("Datashooting"))
+			this.entityData.set(DATA_shooting, compound.getBoolean("Datashooting"));
+		if (compound.contains("Dataslashing"))
+			this.entityData.set(DATA_slashing, compound.getBoolean("Dataslashing"));
+		if (compound.contains("DatamissedGrab"))
+			this.entityData.set(DATA_missedGrab, compound.getBoolean("DatamissedGrab"));
+		if (compound.contains("DatalaughChance"))
+			this.entityData.set(DATA_laughChance, compound.getInt("DatalaughChance"));
 	}
 
 	@Override

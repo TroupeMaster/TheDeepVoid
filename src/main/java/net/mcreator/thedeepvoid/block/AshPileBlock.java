@@ -19,7 +19,7 @@ import net.minecraft.core.BlockPos;
 public class AshPileBlock extends FlowerBlock {
 	public AshPileBlock() {
 		super(() -> MobEffects.MOVEMENT_SPEED, 100,
-				BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).sound(SoundType.SOUL_SOIL).strength(0.2f, 0f).noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.NONE).pushReaction(PushReaction.DESTROY));
+				BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).sound(SoundType.SOUL_SOIL).strength(0.2f, 0f).noCollission().replaceable().offsetType(BlockBehaviour.OffsetType.NONE).pushReaction(PushReaction.DESTROY));
 	}
 
 	@Override

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a a",
+    "b b",
+    "b b"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "b": {
+      "item": "the_deep_void:bloodstone"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:bloodstone_armor_boots",
+    "count": 1
+  }
+}

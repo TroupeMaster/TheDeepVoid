@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "a  "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:bone_marrow"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:rotten_growth",
+    "count": 6
+  }
+}

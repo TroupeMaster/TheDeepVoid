@@ -33,12 +33,13 @@ public class SoulWingsArmorDescriptionProcedure {
 		if (tooltip == null)
 			return;
 		if (itemstack.getItem() == TheDeepVoidModItems.SOUL_WINGS_CHESTPLATE.get() || itemstack.getItem() == TheDeepVoidModItems.SOUL_WINGS_FLY_CHESTPLATE.get()) {
+			tooltip.add(Component.literal(""));
 			if (Screen.hasShiftDown()) {
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.soul_wings.key_press").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.soul_wings.on_key_press1").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.soul_wings.on_key_press2").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.soul_wings.when_worn").getString())));
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.soul_wings.worn").getString())));
+				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.key_press").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.soul_wings.on_key_press1").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.soul_wings.on_key_press2").getString())));
+				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.soul_wings.when_worn").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.soul_wings.worn").getString())));
 			} else {
 				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.press_shift").getString())));
 			}

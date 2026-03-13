@@ -34,18 +34,18 @@ public class ApostleSlashProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		double playerDashX = 0;
-		double playerDashZ = 0;
 		if (entity instanceof ApostleOfCatastropheEntity) {
 			((ApostleOfCatastropheEntity) entity).setAnimation("animation.apostle_slash");
 		}
-		entity.getPersistentData().putBoolean("deep_void:slashing", true);
+		if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+			_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_slashing, true);
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 15, 99, false, false));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 15, 99, false, false));
 		TheDeepVoidMod.queueServerWork(25, () -> {
-			entity.getPersistentData().putBoolean("deep_void:slashing", false);
+			if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_slashing, false);
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:soul_seeker_slash")), SoundSource.HOSTILE, 3, (float) 0.7);

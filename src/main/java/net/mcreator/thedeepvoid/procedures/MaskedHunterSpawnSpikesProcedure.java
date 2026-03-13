@@ -11,13 +11,15 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
+import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
 
 public class MaskedHunterSpawnSpikesProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getPersistentData().getDouble("spawnSpike") >= 240) {
-			entity.getPersistentData().putDouble("spawnSpike", 0);
+		if ((entity instanceof MaskedHunterEntity _datEntI ? _datEntI.getEntityData().get(MaskedHunterEntity.DATA_spawnSpike) : 0) >= 240) {
+			if (entity instanceof MaskedHunterEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MaskedHunterEntity.DATA_spawnSpike, 0);
 			if (Math.random() < 0.4) {
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = TheDeepVoidModEntities.GIANT_BONE_SPIKE.get()
@@ -87,7 +89,8 @@ public class MaskedHunterSpawnSpikesProcedure {
 				}
 			}
 		} else {
-			entity.getPersistentData().putDouble("spawnSpike", (entity.getPersistentData().getDouble("spawnSpike") + 1));
+			if (entity instanceof MaskedHunterEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MaskedHunterEntity.DATA_spawnSpike, (int) ((entity instanceof MaskedHunterEntity _datEntI ? _datEntI.getEntityData().get(MaskedHunterEntity.DATA_spawnSpike) : 0) + 1));
 		}
 	}
 }

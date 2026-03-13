@@ -54,6 +54,8 @@ public class BoneCageClosedEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(BoneCageClosedEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(BoneCageClosedEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(BoneCageClosedEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_findPath = SynchedEntityData.defineId(BoneCageClosedEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_despawn = SynchedEntityData.defineId(BoneCageClosedEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -78,6 +80,8 @@ public class BoneCageClosedEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "bone_cage_hidden");
+		this.entityData.define(DATA_findPath, 0);
+		this.entityData.define(DATA_despawn, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -164,6 +168,8 @@ public class BoneCageClosedEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DatafindPath", this.entityData.get(DATA_findPath));
+		compound.putInt("Datadespawn", this.entityData.get(DATA_despawn));
 	}
 
 	@Override
@@ -171,6 +177,10 @@ public class BoneCageClosedEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DatafindPath"))
+			this.entityData.set(DATA_findPath, compound.getInt("DatafindPath"));
+		if (compound.contains("Datadespawn"))
+			this.entityData.set(DATA_despawn, compound.getInt("Datadespawn"));
 	}
 
 	@Override

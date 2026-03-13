@@ -25,12 +25,13 @@ import net.minecraft.commands.CommandSource;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
+import net.mcreator.thedeepvoid.entity.MaggotEntity;
 
 public class MaggotRightClickedOnEntityProcedure {
 	public static void execute(LevelAccessor world, Entity entity, Entity sourceentity, ItemStack itemstack) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (entity.getPersistentData().getDouble("growth") >= 32) {
+		if ((entity instanceof MaggotEntity _datEntI ? _datEntI.getEntityData().get(MaggotEntity.DATA_growth) : 0) >= 32) {
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fleshy_explosion")), SoundSource.HOSTILE, 1,
@@ -63,7 +64,8 @@ public class MaggotRightClickedOnEntityProcedure {
 							(float) Mth.nextDouble(RandomSource.create(), 1.3, 1.4), false);
 				}
 			}
-			entity.getPersistentData().putDouble("growth", (entity.getPersistentData().getDouble("growth") + 1));
+			if (entity instanceof MaggotEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MaggotEntity.DATA_growth, (int) ((entity instanceof MaggotEntity _datEntI ? _datEntI.getEntityData().get(MaggotEntity.DATA_growth) : 0) + 1));
 			if (!(new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayer _serverPlayer) {
