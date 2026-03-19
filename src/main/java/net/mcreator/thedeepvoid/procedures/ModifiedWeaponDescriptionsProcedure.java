@@ -22,6 +22,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
+import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import javax.annotation.Nullable;
 
@@ -77,7 +78,18 @@ public class ModifiedWeaponDescriptionsProcedure {
 				&& itemstack.is(ItemTags.create(new ResourceLocation("the_deep_void:claws")))) {
 			tooltip.add(Component.literal(""));
 			tooltip.add(Component.literal(("\u00A77" + Component.translatable("item.the_deep_void.weapon_tooltip.bloodstone_armor").getString())));
-			tooltip.add(Component.literal((" \u00A72+2 " + Component.translatable("item.the_deep_void.weapon_tooltip.attack_damage").getString())));
+			tooltip.add(Component
+					.literal((" \u00A72+" + new java.text.DecimalFormat("##").format((double) DeepVoidConfigConfiguration.BLOODSTONEARMORBONUS.get()) + " " + Component.translatable("item.the_deep_void.weapon_tooltip.attack_damage").getString())));
+		}
+		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.PLAGUE_DOCTOR_HELMET.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.PLAGUE_DOCTOR_CHESTPLATE.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.PLAGUE_DOCTOR_LEGGINGS.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.PLAGUE_DOCTOR_BOOTS.get()
+				&& itemstack.is(ItemTags.create(new ResourceLocation("the_deep_void:scythes")))) {
+			tooltip.add(Component.literal(""));
+			tooltip.add(Component.literal(("\u00A77" + Component.translatable("item.the_deep_void.weapon_tooltip.bloodstone_armor").getString())));
+			tooltip.add(Component
+					.literal((" \u00A72+" + new java.text.DecimalFormat("##").format((double) DeepVoidConfigConfiguration.PLAGUEARMORBONUS.get()) + " " + Component.translatable("item.the_deep_void.weapon_tooltip.attack_damage").getString())));
 		}
 	}
 }

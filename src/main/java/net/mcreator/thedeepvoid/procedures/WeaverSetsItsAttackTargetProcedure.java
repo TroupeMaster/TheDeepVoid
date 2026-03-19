@@ -14,7 +14,7 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
+import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
 
 import javax.annotation.Nullable;
 
@@ -32,9 +32,9 @@ public class WeaverSetsItsAttackTargetProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (sourceentity instanceof WeaverOfSoulsEntity) {
+		if (sourceentity instanceof WeaverOfSoulsBossEntity) {
 			if (entity instanceof Player) {
-				if ((sourceentity instanceof WeaverOfSoulsEntity _datEntL2 && _datEntL2.getEntityData().get(WeaverOfSoulsEntity.DATA_screamPlayed)) == false) {
+				if ((sourceentity instanceof WeaverOfSoulsBossEntity _datEntL2 && _datEntL2.getEntityData().get(WeaverOfSoulsBossEntity.DATA_screamPlayed)) == false) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_scream_loud")),
@@ -43,10 +43,10 @@ public class WeaverSetsItsAttackTargetProcedure {
 							_level.playLocalSound((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:weaver_scream_loud")), SoundSource.HOSTILE, 2, 1, false);
 						}
 					}
-					if (sourceentity instanceof WeaverOfSoulsEntity _datEntSetL)
-						_datEntSetL.getEntityData().set(WeaverOfSoulsEntity.DATA_screamPlayed, true);
-					if (sourceentity instanceof WeaverOfSoulsEntity _datEntSetI)
-						_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_scream, 140);
+					if (sourceentity instanceof WeaverOfSoulsBossEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(WeaverOfSoulsBossEntity.DATA_screamPlayed, true);
+					if (sourceentity instanceof WeaverOfSoulsBossEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(WeaverOfSoulsBossEntity.DATA_scream, 140);
 				}
 			}
 		}

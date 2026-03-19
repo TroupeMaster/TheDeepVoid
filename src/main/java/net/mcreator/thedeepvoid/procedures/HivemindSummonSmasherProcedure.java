@@ -27,13 +27,8 @@ public class HivemindSummonSmasherProcedure {
 			return;
 		double randomX = 0;
 		double randomZ = 0;
-		if (world instanceof Level _level) {
-			if (!_level.isClientSide()) {
-				_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:hivemind_scream")), SoundSource.HOSTILE, 2, (float) 0.8);
-			} else {
-				_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:hivemind_scream")), SoundSource.HOSTILE, 2, (float) 0.8, false);
-			}
-		}
+		if (world instanceof Level)
+			((Level) world).playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:hivemind_scream")), SoundSource.HOSTILE, 2, (float) 0.8, false);
 		if (entity instanceof MisanthropicHivemindEntity) {
 			((MisanthropicHivemindEntity) entity).setAnimation("animation.hivemind_scream");
 		}

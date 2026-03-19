@@ -52,6 +52,12 @@ public class CleansingStoneRightclickedProcedure {
 					_level.addFreshEntity(new ExperienceOrb(_level, x, y, z, 6));
 				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().remove("lavenditeDamage");
 			}
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("lavenditeUpgradeLimit") > 0) {
+				if (world instanceof ServerLevel _level)
+					_level.addFreshEntity(
+							new ExperienceOrb(_level, x, y, z, (int) Math.floor(2 * (Math.abs((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("lavenditeUpgradeLimit")) + 1))));
+				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().remove("lavenditeUpgradeLimit");
+			}
 			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("lavenditeSpeed") > 0) {
 				if (world instanceof ServerLevel _level)
 					_level.addFreshEntity(new ExperienceOrb(_level, x, y, z, (int) Math.floor(2 * (Math.abs((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("lavenditeSpeed")) + 1))));

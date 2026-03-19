@@ -59,13 +59,8 @@ public class MisanthropyRightclickedProcedure {
 					}
 				}
 			}
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:misanthropy_shoot")), SoundSource.PLAYERS, 1, 1);
-				} else {
-					_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:misanthropy_shoot")), SoundSource.PLAYERS, 1, 1, false);
-				}
-			}
+			if (world instanceof Level)
+				((Level) world).playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:misanthropy_shoot")), SoundSource.PLAYERS, 1, 1, false);
 			entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entity.getYRot() + 180)) * (-0.2)), (entity.getDeltaMovement().y()), (Math.cos(Math.toRadians(entity.getYRot())) * (-0.2))));
 		} else if (itemstack.getOrCreateTag().getDouble("shot") <= 0) {
 			if (entity instanceof Player _player)

@@ -9,7 +9,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
-import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
+import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import java.util.List;
@@ -23,17 +23,17 @@ public class WeaverOfSoulsPlayerCountProcedure {
 		if (DeepVoidConfigConfiguration.DOBOSSHPSCALING.get() == true) {
 			if (world.players().size() > 1) {
 				for (Entity entityiterator : new ArrayList<>(world.players())) {
-					if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
-						_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_playerCount, (int) ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_playerCount) : 0) + 1));
+					if (entity instanceof WeaverOfSoulsBossEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(WeaverOfSoulsBossEntity.DATA_playerCount, (int) ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_playerCount) : 0) + 1));
 				}
 			}
-			if ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_playerCount) : 0) > 1) {
-				if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
-					_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_baseHealth, (int) ((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).getBaseValue());
+			if ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_playerCount) : 0) > 1) {
+				if (entity instanceof WeaverOfSoulsBossEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(WeaverOfSoulsBossEntity.DATA_baseHealth, (int) ((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH).getBaseValue());
 				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH)
-						.setBaseValue(((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_baseHealth) : 0)
-								+ (entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_baseHealth) : 0) * 0.35
-										* (entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_playerCount) : 0)));
+						.setBaseValue(((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_baseHealth) : 0)
+								+ (entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_baseHealth) : 0) * 0.35
+										* (entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_playerCount) : 0)));
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 			}

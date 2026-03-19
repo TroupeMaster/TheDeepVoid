@@ -26,6 +26,7 @@ import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
+import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEnchantments;
 
@@ -161,11 +162,21 @@ public class PlayerFishesInLiquidVoidProcedure {
 											Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "/loot spawn ~ ~ ~ loot the_deep_void:gameplay/void_crate_fishing");
 						(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("crateChance", 0);
 					} else {
-						if (world instanceof ServerLevel _level)
-							_level.getServer().getCommands()
-									.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL,
-											new Vec3((entity.getPersistentData().getDouble("rottenRodX")), (entity.getPersistentData().getDouble("rottenRodY")), (entity.getPersistentData().getDouble("rottenRodZ"))), Vec2.ZERO, _level, 4, "",
-											Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "/loot spawn ~ ~ ~ loot the_deep_void:gameplay/void_fishing");
+						if (Math.random() < 0.002) {
+							if (world instanceof ServerLevel _level) {
+								ItemEntity entityToSpawn = new ItemEntity(_level, (entity.getPersistentData().getDouble("rottenRodX")), (entity.getPersistentData().getDouble("rottenRodY")), (entity.getPersistentData().getDouble("rottenRodZ")),
+										new ItemStack(TheDeepVoidModItems.KNIGHTFISH.get()));
+								entityToSpawn.setPickUpDelay(10);
+								entityToSpawn.setUnlimitedLifetime();
+								_level.addFreshEntity(entityToSpawn);
+							}
+						} else {
+							if (world instanceof ServerLevel _level)
+								_level.getServer().getCommands()
+										.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL,
+												new Vec3((entity.getPersistentData().getDouble("rottenRodX")), (entity.getPersistentData().getDouble("rottenRodY")), (entity.getPersistentData().getDouble("rottenRodZ"))), Vec2.ZERO, _level, 4, "",
+												Component.literal(""), _level.getServer(), null).withSuppressedOutput(), "/loot spawn ~ ~ ~ loot the_deep_void:gameplay/void_fishing");
+						}
 						(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("crateChance",
 								((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("crateChance") + 0.01));
 					}

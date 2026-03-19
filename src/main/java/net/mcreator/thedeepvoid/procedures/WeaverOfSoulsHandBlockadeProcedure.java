@@ -8,13 +8,13 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
-import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
+import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
 
 public class WeaverOfSoulsHandBlockadeProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof WeaverOfSoulsEntity) {
+		if (entity instanceof WeaverOfSoulsBossEntity) {
 			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 2) {
 				if (entity.getPersistentData().getBoolean("deep_void:blockade") == false) {
 					entity.getPersistentData().putBoolean("deep_void:blockade", true);

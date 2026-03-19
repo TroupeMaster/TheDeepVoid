@@ -47,6 +47,7 @@ public class PlagueDoctorDescriptionProcedure {
 				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.plague.worn1").getString())));
 				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.plague.worn2").getString())));
 				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.plague.worn3").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.plague.worn4").getString())));
 				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.plague.uponDeath").getString())));
 				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.plague.death1").getString())));
 			} else {

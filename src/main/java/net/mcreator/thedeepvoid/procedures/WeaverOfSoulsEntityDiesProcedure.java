@@ -21,7 +21,7 @@ import net.minecraft.advancements.Advancement;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
-import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
+import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import java.util.List;
@@ -31,14 +31,14 @@ public class WeaverOfSoulsEntityDiesProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((entity instanceof WeaverOfSoulsEntity _datEntL0 && _datEntL0.getEntityData().get(WeaverOfSoulsEntity.DATA_dying)) == false) {
-			if (entity instanceof WeaverOfSoulsEntity _datEntSetL)
-				_datEntSetL.getEntityData().set(WeaverOfSoulsEntity.DATA_dying, true);
-			if (entity instanceof WeaverOfSoulsEntity) {
-				((WeaverOfSoulsEntity) entity).setAnimation("empty");
+		if ((entity instanceof WeaverOfSoulsBossEntity _datEntL0 && _datEntL0.getEntityData().get(WeaverOfSoulsBossEntity.DATA_dying)) == false) {
+			if (entity instanceof WeaverOfSoulsBossEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(WeaverOfSoulsBossEntity.DATA_dying, true);
+			if (entity instanceof WeaverOfSoulsBossEntity) {
+				((WeaverOfSoulsBossEntity) entity).setAnimation("empty");
 			}
-			if (entity instanceof WeaverOfSoulsEntity) {
-				((WeaverOfSoulsEntity) entity).setAnimation("animation.fallenWeaver_death");
+			if (entity instanceof WeaverOfSoulsBossEntity) {
+				((WeaverOfSoulsBossEntity) entity).setAnimation("animation.fallenWeaver_death");
 			}
 			TheDeepVoidMod.queueServerWork(73, () -> {
 				TheDeepVoidModVariables.MapVariables.get(world).weaverFightCount = TheDeepVoidModVariables.MapVariables.get(world).weaverFightCount + 1;

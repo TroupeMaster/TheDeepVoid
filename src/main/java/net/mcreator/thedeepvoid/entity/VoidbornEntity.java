@@ -48,6 +48,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.procedures.VoidbornThisEntityKillsAnotherOneProcedure;
 import net.mcreator.thedeepvoid.procedures.VoidbornOnEntityTickUpdateProcedure;
+import net.mcreator.thedeepvoid.procedures.VoidbornEntityIsHurtProcedure;
 import net.mcreator.thedeepvoid.procedures.VoidbornBoundingBoxScaleProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
@@ -153,6 +154,7 @@ public class VoidbornEntity extends Monster implements GeoEntity {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
+		VoidbornEntityIsHurtProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this, source.getEntity());
 		if (source.is(DamageTypes.IN_FIRE))
 			return false;
 		if (source.getDirectEntity() instanceof ThrownPotion || source.getDirectEntity() instanceof AreaEffectCloud)

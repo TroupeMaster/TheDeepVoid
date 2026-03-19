@@ -7,7 +7,6 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
@@ -20,6 +19,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
+import net.mcreator.thedeepvoid.entity.TamedMotherBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.TamedBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.TamedAlphaBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerNeutralEntity;
@@ -31,10 +31,10 @@ public class TamedMotherBoneCrawlerOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity.getPersistentData().getDouble("deep_void:LayTick") >= 1200) {
-			entity.getPersistentData().putDouble("deep_void:LayTick", 0);
+		if ((entity instanceof TamedMotherBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(TamedMotherBoneCrawlerEntity.DATA_layTick) : 0) >= 1200) {
+			if (entity instanceof TamedMotherBoneCrawlerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(TamedMotherBoneCrawlerEntity.DATA_layTick, 0);
 			if (Math.random() < 0.1) {
-				entity.getPersistentData().putBoolean("deep_void:LayEgg", true);
 				if (world instanceof ServerLevel _level) {
 					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModBlocks.BONE_CRAWLER_EGG.get()));
 					entityToSpawn.setPickUpDelay(10);
@@ -50,23 +50,8 @@ public class TamedMotherBoneCrawlerOnEntityTickUpdateProcedure {
 				}
 			}
 		} else {
-			entity.getPersistentData().putDouble("deep_void:LayTick", (entity.getPersistentData().getDouble("deep_void:LayTick") + 1));
-		}
-		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get() || (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BLOCK_OF_SKULL_PILE.get()
-				|| (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.COVERED_SKULL_PILE.get()
-				|| (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.COVERED_BONE_PILE.get()) {
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 5, 0, false, false));
-			if (entity.isVehicle()) {
-				if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, (y + 1), z), 1, 1, 1), e -> true).isEmpty()) {
-					if (((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, (y + 1), z), 1, 1, 1), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, (y + 1), z)).findFirst().orElse(null)) instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 5, 0, false, false));
-				}
-			}
+			if (entity instanceof TamedMotherBoneCrawlerEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(TamedMotherBoneCrawlerEntity.DATA_layTick, (int) ((entity instanceof TamedMotherBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(TamedMotherBoneCrawlerEntity.DATA_layTick) : 0) + 1));
 		}
 		if (!world.getEntitiesOfClass(TamedBoneCrawlerEntity.class, AABB.ofSize(new Vec3(x, y, z), 20, 20, 20), e -> true).isEmpty()
 				|| !world.getEntitiesOfClass(TamedAlphaBoneCrawlerEntity.class, AABB.ofSize(new Vec3(x, y, z), 20, 20, 20), e -> true).isEmpty()

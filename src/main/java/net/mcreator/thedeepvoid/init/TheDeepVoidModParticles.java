@@ -21,6 +21,7 @@ import net.mcreator.thedeepvoid.client.particle.ShadeDropParticle;
 import net.mcreator.thedeepvoid.client.particle.RedSmokeParticle;
 import net.mcreator.thedeepvoid.client.particle.RedGreatSlashParticle;
 import net.mcreator.thedeepvoid.client.particle.PusSporeParticle;
+import net.mcreator.thedeepvoid.client.particle.PlagueSmokeParticle;
 import net.mcreator.thedeepvoid.client.particle.PentagramParticle;
 import net.mcreator.thedeepvoid.client.particle.MobRespawnParticle;
 import net.mcreator.thedeepvoid.client.particle.LunaticEyeParticle;
@@ -88,5 +89,6 @@ public class TheDeepVoidModParticles {
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.SULFUR_SMOKE.get(), SulfurSmokeParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.VOIDRIUM_SMOKE.get(), VoidriumSmokeParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.BLOOD_SMOKE.get(), BloodSmokeParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.PLAGUE_SMOKE.get(), PlagueSmokeParticle::provider);
 	}
 }

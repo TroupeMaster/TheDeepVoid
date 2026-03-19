@@ -11,7 +11,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
+import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
 
 import javax.annotation.Nullable;
 
@@ -31,8 +31,8 @@ public class WeaverAttackedProcedure {
 	private static void execute(@Nullable Event event, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (entity instanceof WeaverOfSoulsEntity) {
-			if ((entity instanceof WeaverOfSoulsEntity _datEntL1 && _datEntL1.getEntityData().get(WeaverOfSoulsEntity.DATA_stunned)) == false) {
+		if (entity instanceof WeaverOfSoulsBossEntity) {
+			if ((entity instanceof WeaverOfSoulsBossEntity _datEntL1 && _datEntL1.getEntityData().get(WeaverOfSoulsBossEntity.DATA_stunned)) == false) {
 				if (!(new Object() {
 					public boolean checkGamemode(Entity _ent) {
 						if (_ent instanceof ServerPlayer _serverPlayer) {

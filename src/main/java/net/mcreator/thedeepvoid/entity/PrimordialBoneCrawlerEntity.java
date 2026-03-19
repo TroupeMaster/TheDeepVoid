@@ -73,6 +73,8 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Integer> DATA_baseHealth = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_diggingCount = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Boolean> DATA_dashing = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_spit = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_shooting = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -106,6 +108,8 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 		this.entityData.define(DATA_baseHealth, 0);
 		this.entityData.define(DATA_diggingCount, 0);
 		this.entityData.define(DATA_dashing, false);
+		this.entityData.define(DATA_spit, false);
+		this.entityData.define(DATA_shooting, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -219,6 +223,8 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 		compound.putInt("DatabaseHealth", this.entityData.get(DATA_baseHealth));
 		compound.putInt("DatadiggingCount", this.entityData.get(DATA_diggingCount));
 		compound.putBoolean("Datadashing", this.entityData.get(DATA_dashing));
+		compound.putBoolean("Dataspit", this.entityData.get(DATA_spit));
+		compound.putInt("Datashooting", this.entityData.get(DATA_shooting));
 	}
 
 	@Override
@@ -242,6 +248,10 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_diggingCount, compound.getInt("DatadiggingCount"));
 		if (compound.contains("Datadashing"))
 			this.entityData.set(DATA_dashing, compound.getBoolean("Datadashing"));
+		if (compound.contains("Dataspit"))
+			this.entityData.set(DATA_spit, compound.getBoolean("Dataspit"));
+		if (compound.contains("Datashooting"))
+			this.entityData.set(DATA_shooting, compound.getInt("Datashooting"));
 	}
 
 	@Override
@@ -291,7 +301,7 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.26);
-		builder = builder.add(Attributes.MAX_HEALTH, 540);
+		builder = builder.add(Attributes.MAX_HEALTH, 600);
 		builder = builder.add(Attributes.ARMOR, 14);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 8);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 58);

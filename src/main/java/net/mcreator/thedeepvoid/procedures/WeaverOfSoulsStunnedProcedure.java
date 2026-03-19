@@ -13,7 +13,7 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.core.registries.Registries;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
-import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
+import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
 
 import java.util.List;
 import java.util.Comparator;
@@ -22,10 +22,10 @@ public class WeaverOfSoulsStunnedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof WeaverOfSoulsEntity) {
-			if ((entity instanceof WeaverOfSoulsEntity _datEntL1 && _datEntL1.getEntityData().get(WeaverOfSoulsEntity.DATA_stunned)) == true) {
-				if (entity instanceof WeaverOfSoulsEntity) {
-					((WeaverOfSoulsEntity) entity).setAnimation("animation.fallenWeaver_stun");
+		if (entity instanceof WeaverOfSoulsBossEntity) {
+			if ((entity instanceof WeaverOfSoulsBossEntity _datEntL1 && _datEntL1.getEntityData().get(WeaverOfSoulsBossEntity.DATA_stunned)) == true) {
+				if (entity instanceof WeaverOfSoulsBossEntity) {
+					((WeaverOfSoulsBossEntity) entity).setAnimation("animation.fallenWeaver_stun");
 				}
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 99, false, false));
@@ -33,13 +33,13 @@ public class WeaverOfSoulsStunnedProcedure {
 					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 5, 99, false, false));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 5, 0, false, false));
-				if ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_stunCount) : 0) >= 200) {
-					if (entity instanceof WeaverOfSoulsEntity _datEntSetL)
-						_datEntSetL.getEntityData().set(WeaverOfSoulsEntity.DATA_stunned, false);
-					if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
-						_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_stunCount, 0);
-					if (entity instanceof WeaverOfSoulsEntity) {
-						((WeaverOfSoulsEntity) entity).setAnimation("animation.fallenWeaver_attack");
+				if ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_stunCount) : 0) >= 200) {
+					if (entity instanceof WeaverOfSoulsBossEntity _datEntSetL)
+						_datEntSetL.getEntityData().set(WeaverOfSoulsBossEntity.DATA_stunned, false);
+					if (entity instanceof WeaverOfSoulsBossEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(WeaverOfSoulsBossEntity.DATA_stunCount, 0);
+					if (entity instanceof WeaverOfSoulsBossEntity) {
+						((WeaverOfSoulsBossEntity) entity).setAnimation("animation.fallenWeaver_attack");
 					}
 					{
 						final Vec3 _center = new Vec3(x, y, z);
@@ -56,12 +56,12 @@ public class WeaverOfSoulsStunnedProcedure {
 						}
 					}
 				} else {
-					if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
-						_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_stunCount, (int) ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_stunCount) : 0) + 1));
+					if (entity instanceof WeaverOfSoulsBossEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(WeaverOfSoulsBossEntity.DATA_stunCount, (int) ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_stunCount) : 0) + 1));
 				}
 			} else {
-				if (entity instanceof WeaverOfSoulsEntity) {
-					((WeaverOfSoulsEntity) entity).setAnimation("empty");
+				if (entity instanceof WeaverOfSoulsBossEntity) {
+					((WeaverOfSoulsBossEntity) entity).setAnimation("empty");
 				}
 			}
 			if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 90, 90, 90), e -> true).isEmpty()) {

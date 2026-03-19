@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/dark_steel_naginata",
+  "textures": {
+    "0": "the_deep_void:block/dark_steel_naginata",
+    "particle": "the_deep_void:item/dark_steel_naginata"
+  }
+}

@@ -72,7 +72,7 @@ public abstract class GrimCrawlerItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/grim_crawler__layer_1.png";
+			return "the_deep_void:textures/models/armor/grim_bone_crawler__layer_1.png";
 		}
 	}
 
@@ -83,7 +83,7 @@ public abstract class GrimCrawlerItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/grim_crawler__layer_1.png";
+			return "the_deep_void:textures/models/armor/grim_bone_crawler__layer_1.png";
 		}
 
 		@Override
@@ -102,7 +102,7 @@ public abstract class GrimCrawlerItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/grim_crawler__layer_2.png";
+			return "the_deep_void:textures/models/armor/grim_bone_crawler__layer_2.png";
 		}
 	}
 
@@ -113,7 +113,7 @@ public abstract class GrimCrawlerItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/grim_crawler__layer_1.png";
+			return "the_deep_void:textures/models/armor/grim_bone_crawler__layer_1.png";
 		}
 	}
 }

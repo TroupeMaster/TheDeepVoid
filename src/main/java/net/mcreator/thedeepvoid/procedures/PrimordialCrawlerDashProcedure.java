@@ -35,17 +35,6 @@ public class PrimordialCrawlerDashProcedure {
 			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 20, 99, false, false));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 20, 99, false, false));
-		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty()) {
-			if (((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).stream().sorted(new Object() {
-				Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-					return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-				}
-			}.compareDistOf(x, y, z)).findFirst().orElse(null)) == (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)) {
-				entity.getPersistentData().putDouble("dashPlayerX", ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()));
-				entity.getPersistentData().putDouble("dashPlayerZ", ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ()));
-			}
-		}
-		entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((entity.getPersistentData().getDouble("dashPlayerX")), y, (entity.getPersistentData().getDouble("dashPlayerZ"))));
 		TheDeepVoidMod.queueServerWork(5, () -> {
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
@@ -54,6 +43,19 @@ public class PrimordialCrawlerDashProcedure {
 					_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:mother_crawler_ambient")), SoundSource.HOSTILE, 5, (float) 0.7, false);
 				}
 			}
+		});
+		TheDeepVoidMod.queueServerWork(15, () -> {
+			if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty()) {
+				if (((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).stream().sorted(new Object() {
+					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+					}
+				}.compareDistOf(x, y, z)).findFirst().orElse(null)) == (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)) {
+					entity.getPersistentData().putDouble("dashPlayerX", ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()));
+					entity.getPersistentData().putDouble("dashPlayerZ", ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ()));
+				}
+			}
+			entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((entity.getPersistentData().getDouble("dashPlayerX")), y, (entity.getPersistentData().getDouble("dashPlayerZ"))));
 		});
 		TheDeepVoidMod.queueServerWork(25, () -> {
 			entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((entity.getPersistentData().getDouble("dashPlayerX")), y, (entity.getPersistentData().getDouble("dashPlayerZ"))));
@@ -81,6 +83,12 @@ public class PrimordialCrawlerDashProcedure {
 			}
 			if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_dashing, false);
+			if (Math.random() < 0.4) {
+				if (entity instanceof PrimordialBoneCrawlerEntity) {
+					((PrimordialBoneCrawlerEntity) entity).setAnimation("empty");
+				}
+				PrimordialCrawlerSpitProcedure.execute(world, entity);
+			}
 		});
 	}
 }

@@ -9,6 +9,8 @@ import net.minecraftforge.common.ForgeMod;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.resources.ResourceLocation;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
@@ -30,7 +32,7 @@ public class SetItemAttributesProcedure {
 
 	private static void execute(@Nullable Event event, ItemStack itemstack) {
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.MAINHAND) {
-			if (itemstack.getItem() == TheDeepVoidModItems.ONYX_NAGINATA.get()) {
+			if (itemstack.getItem() == TheDeepVoidModItems.ONYX_NAGINATA.get() || itemstack.getItem() == TheDeepVoidModItems.DARK_STEEL_NAGINATA.get()) {
 				_event.addModifier(ForgeMod.ENTITY_REACH.get(),
 						(new AttributeModifier(UUID.fromString("c2d764d5-1e7e-4f13-8e8a-5a6d073a2b9d"), "naginataReach", ((double) DeepVoidConfigConfiguration.ONYXNAGINATAREACHADDITION.get()), AttributeModifier.Operation.ADDITION)));
 			}
@@ -41,6 +43,17 @@ public class SetItemAttributesProcedure {
 			}
 			if (itemstack.getItem() == TheDeepVoidModItems.KNIVES_GLOVE.get()) {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_SPEED, (new AttributeModifier(UUID.fromString("77b8b253-e87d-4b69-a7eb-83208a542bda"), "knifeGloveSpeed", 0.4, AttributeModifier.Operation.ADDITION)));
+			}
+			if (itemstack.is(ItemTags.create(new ResourceLocation("the_deep_void:dark_steel_tools")))) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_KNOCKBACK,
+						(new AttributeModifier(UUID.fromString("582300b7-5e68-4807-a822-01bebd809fd3"), "darkSteelTool_knockback", 1, AttributeModifier.Operation.ADDITION)));
+			}
+			if (itemstack.is(ItemTags.create(new ResourceLocation("the_deep_void:scythes")))) {
+				_event.addModifier(ForgeMod.ENTITY_REACH.get(),
+						(new AttributeModifier(UUID.fromString("ebf794e9-482e-4e28-81b3-2f8d23258894"), "scytheReach", ((double) DeepVoidConfigConfiguration.SCYTHESREACH.get()), AttributeModifier.Operation.ADDITION)));
+			}
+			if (itemstack.getItem() == TheDeepVoidModItems.VOIDRIUM_BULWARK.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE, (new AttributeModifier(UUID.fromString("ea9dbfe9-9f46-4046-b57a-d47dbe387cca"), "bulwarkDamage", 5, AttributeModifier.Operation.ADDITION)));
 			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.HEAD) {

@@ -10,7 +10,6 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.entity.ApostleOfCatastropheEntity;
 
@@ -26,13 +25,8 @@ public class ApostleSpinProcedure {
 		}
 		if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
 			_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_spinning, true);
-		if (world instanceof Level _level) {
-			if (!_level.isClientSide()) {
-				_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:apostle_hysterical_laugh")), SoundSource.HOSTILE, 4, 1);
-			} else {
-				_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:apostle_hysterical_laugh")), SoundSource.HOSTILE, 4, 1, false);
-			}
-		}
+		if (world instanceof Level)
+			((Level) world).playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:apostle_hysterical_laugh")), SoundSource.HOSTILE, 4, 1, false);
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 75, 0, false, false));
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())

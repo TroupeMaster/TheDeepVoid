@@ -8,16 +8,16 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
-import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
+import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
 
 public class WeaverSpawnHandBlockadeProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 2) {
-			if ((entity instanceof WeaverOfSoulsEntity _datEntL2 && _datEntL2.getEntityData().get(WeaverOfSoulsEntity.DATA_blockade)) == false) {
-				if (entity instanceof WeaverOfSoulsEntity _datEntSetL)
-					_datEntSetL.getEntityData().set(WeaverOfSoulsEntity.DATA_blockade, true);
+			if ((entity instanceof WeaverOfSoulsBossEntity _datEntL2 && _datEntL2.getEntityData().get(WeaverOfSoulsBossEntity.DATA_blockade)) == false) {
+				if (entity instanceof WeaverOfSoulsBossEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(WeaverOfSoulsBossEntity.DATA_blockade, true);
 				if (Math.random() < 0.25) {
 					if (world instanceof ServerLevel _level) {
 						Entity entityToSpawn = TheDeepVoidModEntities.LASTING_SHADOW_HAND.get().spawn(_level,

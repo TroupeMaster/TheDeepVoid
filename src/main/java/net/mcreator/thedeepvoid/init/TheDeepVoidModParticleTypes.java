@@ -52,4 +52,5 @@ public class TheDeepVoidModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> SULFUR_SMOKE = REGISTRY.register("sulfur_smoke", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> VOIDRIUM_SMOKE = REGISTRY.register("voidrium_smoke", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> BLOOD_SMOKE = REGISTRY.register("blood_smoke", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> PLAGUE_SMOKE = REGISTRY.register("plague_smoke", () -> new SimpleParticleType(true));
 }

@@ -42,7 +42,7 @@ public class ChainedWeaverOnEntityTickUpdateProcedure {
 					if (!entity.level().isClientSide())
 						entity.discard();
 					if (world instanceof ServerLevel _level) {
-						Entity entityToSpawn = TheDeepVoidModEntities.WEAVER_OF_SOULS.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
+						Entity entityToSpawn = TheDeepVoidModEntities.WEAVER_OF_SOULS_BOSS.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 						if (entityToSpawn != null) {
 							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 						}

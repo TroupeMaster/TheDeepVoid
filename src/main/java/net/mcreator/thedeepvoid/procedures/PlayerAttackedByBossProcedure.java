@@ -23,7 +23,7 @@ import net.minecraft.core.registries.Registries;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
-import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
+import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
 import net.mcreator.thedeepvoid.entity.SkullSmasherEntity;
 import net.mcreator.thedeepvoid.entity.ShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.SeekerEntity;
@@ -56,8 +56,8 @@ public class PlayerAttackedByBossProcedure {
 		if (damagesource == null || entity == null || sourceentity == null)
 			return;
 		if (amount > 1) {
-			if (entity instanceof Player && ((sourceentity instanceof WeaverOfSoulsEntity || sourceentity instanceof ShadowHandEntity || sourceentity instanceof SeekerEntity)
-					&& !world.getEntitiesOfClass(WeaverOfSoulsEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()
+			if (entity instanceof Player && ((sourceentity instanceof WeaverOfSoulsBossEntity || sourceentity instanceof ShadowHandEntity || sourceentity instanceof SeekerEntity)
+					&& !world.getEntitiesOfClass(WeaverOfSoulsBossEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()
 					|| sourceentity instanceof ApostleOfCatastropheEntity && !world.getEntitiesOfClass(ApostleOfCatastropheEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()
 					|| sourceentity instanceof PrimordialBoneCrawlerEntity && !world.getEntitiesOfClass(PrimordialBoneCrawlerEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()
 					|| (sourceentity instanceof MisanthropicHivemindEntity || sourceentity instanceof SkullSmasherEntity || sourceentity instanceof SawThrowerEntity || sourceentity instanceof BoneSawEntity || sourceentity instanceof FleshFangsEntity)

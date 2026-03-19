@@ -194,4 +194,5 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> PERIL_SHOOT = REGISTRY.register("peril_shoot", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "peril_shoot")));
 	public static final RegistryObject<SoundEvent> PERIL_CYLINDER = REGISTRY.register("peril_cylinder", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "peril_cylinder")));
 	public static final RegistryObject<SoundEvent> PERIL_SHOOT_NEW = REGISTRY.register("peril_shoot_new", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "peril_shoot_new")));
+	public static final RegistryObject<SoundEvent> BASALT_DELTAS_GEIGER = REGISTRY.register("basalt_deltas_geiger", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "basalt_deltas_geiger")));
 }

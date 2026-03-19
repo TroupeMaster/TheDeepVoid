@@ -60,6 +60,7 @@ public class MuzzledDeathVultureEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(MuzzledDeathVultureEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(MuzzledDeathVultureEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(MuzzledDeathVultureEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_attackCooldown = SynchedEntityData.defineId(MuzzledDeathVultureEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -84,6 +85,7 @@ public class MuzzledDeathVultureEntity extends Monster implements GeoEntity {
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "muzzled_death_vulture");
+		this.entityData.define(DATA_attackCooldown, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -161,6 +163,7 @@ public class MuzzledDeathVultureEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DataattackCooldown", this.entityData.get(DATA_attackCooldown));
 	}
 
 	@Override
@@ -168,6 +171,8 @@ public class MuzzledDeathVultureEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DataattackCooldown"))
+			this.entityData.set(DATA_attackCooldown, compound.getInt("DataattackCooldown"));
 	}
 
 	@Override

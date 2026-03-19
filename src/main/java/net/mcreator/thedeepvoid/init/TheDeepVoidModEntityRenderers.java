@@ -12,13 +12,14 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.renderer.entity.ThrownItemRenderer;
 
 import net.mcreator.thedeepvoid.client.renderer.XrayRenderer;
-import net.mcreator.thedeepvoid.client.renderer.WeaverOfSoulsRenderer;
+import net.mcreator.thedeepvoid.client.renderer.WeaverOfSoulsBossRenderer;
 import net.mcreator.thedeepvoid.client.renderer.WatchingStalkerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.WandererRenderer;
 import net.mcreator.thedeepvoid.client.renderer.VoidbornTentaclesRenderer;
 import net.mcreator.thedeepvoid.client.renderer.VoidbornRenderer;
 import net.mcreator.thedeepvoid.client.renderer.VoidTentacleRenderer;
 import net.mcreator.thedeepvoid.client.renderer.VoidDwellerRenderer;
+import net.mcreator.thedeepvoid.client.renderer.VoidArrowRenderer;
 import net.mcreator.thedeepvoid.client.renderer.ThumperEntityRenderer;
 import net.mcreator.thedeepvoid.client.renderer.TenebrisCultroRenderer;
 import net.mcreator.thedeepvoid.client.renderer.TamedMotherBoneCrawlerRenderer;
@@ -220,7 +221,6 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.CENTIGAZE.get(), CentigazeRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.CENTIGAZE_HIDDEN.get(), CentigazeHiddenRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.WATCHING_STALKER.get(), WatchingStalkerRenderer::new);
-		event.registerEntityRenderer(TheDeepVoidModEntities.WEAVER_OF_SOULS.get(), WeaverOfSoulsRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.HAND_SPAWN.get(), HandSpawnRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.SHADOW_HAND.get(), ShadowHandRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.DAMNED.get(), DamnedRenderer::new);
@@ -318,5 +318,7 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.VOIDRIUM_FLARE_SHOT.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.FLESH_FLARE_SHOT.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.PERIL_BULLET.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.VOID_ARROW.get(), VoidArrowRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.WEAVER_OF_SOULS_BOSS.get(), WeaverOfSoulsBossRenderer::new);
 	}
 }

@@ -15,6 +15,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
+import net.mcreator.thedeepvoid.entity.MuzzledDeathVultureEntity;
 
 import java.util.List;
 import java.util.Comparator;
@@ -30,8 +31,9 @@ public class MuzzledDeathVultureTickProcedure {
 					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 1, false, false));
 			}
 		}
-		if (entity.getPersistentData().getDouble("deep_void:attackCooldown") >= 20) {
-			entity.getPersistentData().putDouble("deep_void:attackCooldown", 0);
+		if ((entity instanceof MuzzledDeathVultureEntity _datEntI ? _datEntI.getEntityData().get(MuzzledDeathVultureEntity.DATA_attackCooldown) : 0) >= 20) {
+			if (entity instanceof MuzzledDeathVultureEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MuzzledDeathVultureEntity.DATA_attackCooldown, 0);
 			if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 5, 5, 5), e -> true).isEmpty()) {
 				if (!((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 5, 5, 5), e -> true).stream().sorted(new Object() {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
@@ -59,13 +61,15 @@ public class MuzzledDeathVultureTickProcedure {
 				for (Entity entityiterator : _entfound) {
 					if (entityiterator instanceof LivingEntity) {
 						if (!entityiterator.isPassenger() && !(entityiterator == entity)) {
-							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity), 6);
+							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity),
+									(float) ((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
 						}
 					}
 				}
 			}
 		} else {
-			entity.getPersistentData().putDouble("deep_void:attackCooldown", (entity.getPersistentData().getDouble("deep_void:attackCooldown") + 1));
+			if (entity instanceof MuzzledDeathVultureEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MuzzledDeathVultureEntity.DATA_attackCooldown, (int) ((entity instanceof MuzzledDeathVultureEntity _datEntI ? _datEntI.getEntityData().get(MuzzledDeathVultureEntity.DATA_attackCooldown) : 0) + 1));
 		}
 	}
 }

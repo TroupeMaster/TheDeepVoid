@@ -36,14 +36,14 @@ import net.mcreator.thedeepvoid.entity.LightEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 public class VoidbornEntityIsHurtProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity immediatesourceentity, Entity sourceentity) {
-		if (entity == null || immediatesourceentity == null || sourceentity == null)
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
+		if (entity == null || sourceentity == null)
 			return;
-		if (immediatesourceentity instanceof Player && !world.getEntitiesOfClass(LightEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 8, 8, 8), e -> true).isEmpty()
+		if (sourceentity instanceof Player && !world.getEntitiesOfClass(LightEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 8, 8, 8), e -> true).isEmpty()
 				&& (entity instanceof VoidbornEntity _datEntI ? _datEntI.getEntityData().get(VoidbornEntity.DATA_hitCooldown) : 0) <= 0) {
 			if (entity instanceof VoidbornEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(VoidbornEntity.DATA_hit, (int) ((entity instanceof VoidbornEntity _datEntI ? _datEntI.getEntityData().get(VoidbornEntity.DATA_hit) : 0)
-						+ (EnchantmentHelper.getItemEnchantmentLevel(TheDeepVoidModEnchantments.RADIANCE.get(), (immediatesourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0 ? 2 : 1)));
+						+ (EnchantmentHelper.getItemEnchantmentLevel(TheDeepVoidModEnchantments.RADIANCE.get(), (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0 ? 2 : 1)));
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 200, 0, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())

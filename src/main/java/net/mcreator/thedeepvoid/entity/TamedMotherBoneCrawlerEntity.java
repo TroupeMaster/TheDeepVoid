@@ -68,6 +68,7 @@ public class TamedMotherBoneCrawlerEntity extends TamableAnimal implements GeoEn
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(TamedMotherBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(TamedMotherBoneCrawlerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(TamedMotherBoneCrawlerEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_layTick = SynchedEntityData.defineId(TamedMotherBoneCrawlerEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -92,6 +93,7 @@ public class TamedMotherBoneCrawlerEntity extends TamableAnimal implements GeoEn
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "tamed_mother_crawler");
+		this.entityData.define(DATA_layTick, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -160,6 +162,7 @@ public class TamedMotherBoneCrawlerEntity extends TamableAnimal implements GeoEn
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DatalayTick", this.entityData.get(DATA_layTick));
 	}
 
 	@Override
@@ -167,6 +170,8 @@ public class TamedMotherBoneCrawlerEntity extends TamableAnimal implements GeoEn
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DatalayTick"))
+			this.entityData.set(DATA_layTick, compound.getInt("DatalayTick"));
 	}
 
 	@Override

@@ -21,6 +21,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.resources.ResourceLocation;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
+import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import javax.annotation.Nullable;
 
@@ -100,15 +101,32 @@ public class PlayerHasModifiedItemInHandProcedure {
 					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_BOOTS.get()
 					&& !(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("0947265b-4005-4a6c-83e1-2c0f2b7390ac")) != null)) {
 				if (!(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
-						.hasModifier((new AttributeModifier(UUID.fromString("0947265b-4005-4a6c-83e1-2c0f2b7390ac"), "bloodstoneClawsAttack", 2, AttributeModifier.Operation.ADDITION)))))
-					((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
-							.addTransientModifier((new AttributeModifier(UUID.fromString("0947265b-4005-4a6c-83e1-2c0f2b7390ac"), "bloodstoneClawsAttack", 2, AttributeModifier.Operation.ADDITION)));
+						.hasModifier((new AttributeModifier(UUID.fromString("0947265b-4005-4a6c-83e1-2c0f2b7390ac"), "bloodstoneClawsAttack", ((double) DeepVoidConfigConfiguration.BLOODSTONEARMORBONUS.get()), AttributeModifier.Operation.ADDITION)))))
+					((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).addTransientModifier(
+							(new AttributeModifier(UUID.fromString("0947265b-4005-4a6c-83e1-2c0f2b7390ac"), "bloodstoneClawsAttack", ((double) DeepVoidConfigConfiguration.BLOODSTONEARMORBONUS.get()), AttributeModifier.Operation.ADDITION)));
 			} else if (((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("0947265b-4005-4a6c-83e1-2c0f2b7390ac")) != null) {
 				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("0947265b-4005-4a6c-83e1-2c0f2b7390ac"));
 			}
 		} else if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("the_deep_void:claws"))))
 				&& ((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("0947265b-4005-4a6c-83e1-2c0f2b7390ac")) != null) {
 			((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("0947265b-4005-4a6c-83e1-2c0f2b7390ac"));
+		}
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("the_deep_void:scythes")))) {
+			if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.PLAGUE_DOCTOR_HELMET.get()
+					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.PLAGUE_DOCTOR_CHESTPLATE.get()
+					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.PLAGUE_DOCTOR_LEGGINGS.get()
+					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.PLAGUE_DOCTOR_BOOTS.get()
+					&& !(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("8c4ddbf6-9dca-4e0f-824d-bfec53b34b53")) != null)) {
+				if (!(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
+						.hasModifier((new AttributeModifier(UUID.fromString("8c4ddbf6-9dca-4e0f-824d-bfec53b34b53"), "plagueScythesAttack", ((double) DeepVoidConfigConfiguration.PLAGUEARMORBONUS.get()), AttributeModifier.Operation.ADDITION)))))
+					((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).addTransientModifier(
+							(new AttributeModifier(UUID.fromString("8c4ddbf6-9dca-4e0f-824d-bfec53b34b53"), "plagueScythesAttack", ((double) DeepVoidConfigConfiguration.PLAGUEARMORBONUS.get()), AttributeModifier.Operation.ADDITION)));
+			} else if (((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("8c4ddbf6-9dca-4e0f-824d-bfec53b34b53")) != null) {
+				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("8c4ddbf6-9dca-4e0f-824d-bfec53b34b53"));
+			}
+		} else if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("the_deep_void:scythes"))))
+				&& ((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("8c4ddbf6-9dca-4e0f-824d-bfec53b34b53")) != null) {
+			((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("8c4ddbf6-9dca-4e0f-824d-bfec53b34b53"));
 		}
 	}
 }

@@ -22,6 +22,7 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.client.renderer.item.ItemProperties;
 
+import net.mcreator.thedeepvoid.procedures.VoidBowPropertyProcedure;
 import net.mcreator.thedeepvoid.procedures.TheCatcherPropertyValueProviderProcedure;
 import net.mcreator.thedeepvoid.procedures.SharpshooterValueProviderProcedure;
 import net.mcreator.thedeepvoid.procedures.ShadestormPropertyValueProviderProcedure;
@@ -62,6 +63,7 @@ import net.mcreator.thedeepvoid.item.VoidFlyMaggotItem;
 import net.mcreator.thedeepvoid.item.VoidFlyItem;
 import net.mcreator.thedeepvoid.item.VoidDaggerItem;
 import net.mcreator.thedeepvoid.item.VoidCloakItem;
+import net.mcreator.thedeepvoid.item.VoidBowItem;
 import net.mcreator.thedeepvoid.item.VengefulLickerHookItem;
 import net.mcreator.thedeepvoid.item.UmbriumGemItem;
 import net.mcreator.thedeepvoid.item.TombstoneItem;
@@ -132,12 +134,14 @@ import net.mcreator.thedeepvoid.item.PusfishItem;
 import net.mcreator.thedeepvoid.item.PusBallItem;
 import net.mcreator.thedeepvoid.item.PrimordialCrawlerTreasureBagItem;
 import net.mcreator.thedeepvoid.item.PoisonNeedleItem;
+import net.mcreator.thedeepvoid.item.PlaguebringerItem;
 import net.mcreator.thedeepvoid.item.PlagueDoctorItem;
 import net.mcreator.thedeepvoid.item.PitchBlackItem;
 import net.mcreator.thedeepvoid.item.PerilItem;
 import net.mcreator.thedeepvoid.item.PenitentCrossItem;
 import net.mcreator.thedeepvoid.item.OnyxSwordItem;
 import net.mcreator.thedeepvoid.item.OnyxShovelItem;
+import net.mcreator.thedeepvoid.item.OnyxScytheItem;
 import net.mcreator.thedeepvoid.item.OnyxPickaxeItem;
 import net.mcreator.thedeepvoid.item.OnyxNeedleItem;
 import net.mcreator.thedeepvoid.item.OnyxNaginataItem;
@@ -173,6 +177,7 @@ import net.mcreator.thedeepvoid.item.LavenditeAxeItem;
 import net.mcreator.thedeepvoid.item.LavenditeArmorItem;
 import net.mcreator.thedeepvoid.item.LampreyItem;
 import net.mcreator.thedeepvoid.item.KnivesGloveItem;
+import net.mcreator.thedeepvoid.item.KnightfishItem;
 import net.mcreator.thedeepvoid.item.KnifeBandolierItem;
 import net.mcreator.thedeepvoid.item.JumpBoostNeedleItem;
 import net.mcreator.thedeepvoid.item.JudgementItem;
@@ -245,6 +250,7 @@ import net.mcreator.thedeepvoid.item.DarkSteelShovelItem;
 import net.mcreator.thedeepvoid.item.DarkSteelScrapItem;
 import net.mcreator.thedeepvoid.item.DarkSteelPickaxeItem;
 import net.mcreator.thedeepvoid.item.DarkSteelOnyxItem;
+import net.mcreator.thedeepvoid.item.DarkSteelNaginataItem;
 import net.mcreator.thedeepvoid.item.DarkSteelHoeItem;
 import net.mcreator.thedeepvoid.item.DarkSteelAxeItem;
 import net.mcreator.thedeepvoid.item.CultItem;
@@ -274,6 +280,7 @@ import net.mcreator.thedeepvoid.item.BottleOfAmbrosiaItem;
 import net.mcreator.thedeepvoid.item.BookOfAncientKnowledgeItem;
 import net.mcreator.thedeepvoid.item.BoneSwordItem;
 import net.mcreator.thedeepvoid.item.BoneShovelItem;
+import net.mcreator.thedeepvoid.item.BoneScytheItem;
 import net.mcreator.thedeepvoid.item.BonePickaxeItem;
 import net.mcreator.thedeepvoid.item.BoneNeedleItem;
 import net.mcreator.thedeepvoid.item.BoneMushItem;
@@ -282,6 +289,7 @@ import net.mcreator.thedeepvoid.item.BoneHoeItem;
 import net.mcreator.thedeepvoid.item.BoneCrawlerMoltPieceItem;
 import net.mcreator.thedeepvoid.item.BoneCrawlerEmbryoItem;
 import net.mcreator.thedeepvoid.item.BoneCrawlerChitinItem;
+import net.mcreator.thedeepvoid.item.BoneClimbingPickItem;
 import net.mcreator.thedeepvoid.item.BoneBallItem;
 import net.mcreator.thedeepvoid.item.BoneAxeItem;
 import net.mcreator.thedeepvoid.item.BloodyTongueItem;
@@ -795,7 +803,6 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> WEAVER_BOOTS_BOOTS = REGISTRY.register("weaver_boots_boots", () -> new WeaverBootsItem.Boots());
 	public static final RegistryObject<Item> WATCHING_STALKER_SPAWN_EGG = REGISTRY.register("watching_stalker_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.WATCHING_STALKER, -16777216, -16777216, new Item.Properties()));
 	public static final RegistryObject<Item> VOID_MIRROR = REGISTRY.register("void_mirror", () -> new VoidMirrorItem());
-	public static final RegistryObject<Item> WEAVER_OF_SOULS_SPAWN_EGG = REGISTRY.register("weaver_of_souls_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.WEAVER_OF_SOULS, -15724528, -15786978, new Item.Properties()));
 	public static final RegistryObject<Item> DARKMARE = REGISTRY.register("darkmare", () -> new DarkmareItem());
 	public static final RegistryObject<Item> HAND_SPAWN_SPAWN_EGG = REGISTRY.register("hand_spawn_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.HAND_SPAWN, -16760499, -16777216, new Item.Properties()));
 	public static final RegistryObject<Item> DAMNED_SPAWN_EGG = REGISTRY.register("damned_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.DAMNED, -15396334, -1, new Item.Properties()));
@@ -1200,6 +1207,14 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> BLOODSTONE_ARMOR_CHESTPLATE = REGISTRY.register("bloodstone_armor_chestplate", () -> new BloodstoneArmorItem.Chestplate());
 	public static final RegistryObject<Item> BLOODSTONE_ARMOR_LEGGINGS = REGISTRY.register("bloodstone_armor_leggings", () -> new BloodstoneArmorItem.Leggings());
 	public static final RegistryObject<Item> BLOODSTONE_ARMOR_BOOTS = REGISTRY.register("bloodstone_armor_boots", () -> new BloodstoneArmorItem.Boots());
+	public static final RegistryObject<Item> VOID_BOW = REGISTRY.register("void_bow", () -> new VoidBowItem());
+	public static final RegistryObject<Item> DARK_STEEL_NAGINATA = REGISTRY.register("dark_steel_naginata", () -> new DarkSteelNaginataItem());
+	public static final RegistryObject<Item> BONE_SCYTHE = REGISTRY.register("bone_scythe", () -> new BoneScytheItem());
+	public static final RegistryObject<Item> ONYX_SCYTHE = REGISTRY.register("onyx_scythe", () -> new OnyxScytheItem());
+	public static final RegistryObject<Item> PLAGUEBRINGER = REGISTRY.register("plaguebringer", () -> new PlaguebringerItem());
+	public static final RegistryObject<Item> BONE_CLIMBING_PICK = REGISTRY.register("bone_climbing_pick", () -> new BoneClimbingPickItem());
+	public static final RegistryObject<Item> WEAVER_OF_SOULS_BOSS_SPAWN_EGG = REGISTRY.register("weaver_of_souls_boss_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.WEAVER_OF_SOULS_BOSS, -15724528, -15786978, new Item.Properties()));
+	public static final RegistryObject<Item> KNIGHTFISH = REGISTRY.register("knightfish", () -> new KnightfishItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items
@@ -1230,6 +1245,7 @@ public class TheDeepVoidModItems {
 			ItemProperties.register(BLOOD_BOW.get(), new ResourceLocation("the_deep_void:blood_bow_pulling"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) BloodBowPropertyValueProviderProcedure.execute(entity));
 			ItemProperties.register(THE_CATCHER.get(), new ResourceLocation("the_deep_void:the_catcher_state"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) TheCatcherPropertyValueProviderProcedure.execute(itemStackToRender));
 			ItemProperties.register(SHARPSHOOTER.get(), new ResourceLocation("the_deep_void:sharpshooter_pulling"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) SharpshooterValueProviderProcedure.execute(entity));
+			ItemProperties.register(VOID_BOW.get(), new ResourceLocation("the_deep_void:void_bow_pulling"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) VoidBowPropertyProcedure.execute(entity));
 		});
 	}
 }

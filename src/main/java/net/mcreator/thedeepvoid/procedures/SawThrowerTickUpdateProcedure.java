@@ -281,17 +281,17 @@ public class SawThrowerTickUpdateProcedure {
 			if (entity instanceof SawThrowerEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(SawThrowerEntity.DATA_attackChance, 0);
 		}
-		if ((entity instanceof SawThrowerEntity _datEntL91 && _datEntL91.getEntityData().get(SawThrowerEntity.DATA_spinning)) == true) {
+		if ((entity instanceof SawThrowerEntity _datEntL91 && _datEntL91.getEntityData().get(SawThrowerEntity.DATA_spinning)) == true && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
 					if (entityiterator instanceof Player) {
-						if ((entityiterator instanceof LivingEntity _entUseItem93 ? _entUseItem93.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
+						if ((entityiterator instanceof LivingEntity _entUseItem94 ? _entUseItem94.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
 							if (entityiterator instanceof Player _player)
-								_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem95 ? _entUseItem95.getUseItem() : ItemStack.EMPTY).getItem(), 100);
+								_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem96 ? _entUseItem96.getUseItem() : ItemStack.EMPTY).getItem(), 100);
 							{
-								ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem97 ? _entUseItem97.getUseItem() : ItemStack.EMPTY);
+								ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem98 ? _entUseItem98.getUseItem() : ItemStack.EMPTY);
 								if (_ist.hurt(1, RandomSource.create(), null)) {
 									_ist.shrink(1);
 									_ist.setDamageValue(0);

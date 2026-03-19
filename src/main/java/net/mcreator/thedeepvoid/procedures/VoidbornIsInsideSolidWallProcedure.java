@@ -25,16 +25,16 @@ public class VoidbornIsInsideSolidWallProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getSource(), event.getEntity(), event.getSource().getDirectEntity(), event.getSource().getEntity());
+			execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getSource(), event.getEntity(), event.getSource().getEntity());
 		}
 	}
 
-	public static void execute(LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity immediatesourceentity, Entity sourceentity) {
-		execute(null, world, x, y, z, damagesource, entity, immediatesourceentity, sourceentity);
+	public static void execute(LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity sourceentity) {
+		execute(null, world, x, y, z, damagesource, entity, sourceentity);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity immediatesourceentity, Entity sourceentity) {
-		if (damagesource == null || entity == null || immediatesourceentity == null || sourceentity == null)
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity sourceentity) {
+		if (damagesource == null || entity == null || sourceentity == null)
 			return;
 		if (entity instanceof VoidbornEntity) {
 			if (entity.isInWall()) {
@@ -44,7 +44,7 @@ public class VoidbornIsInsideSolidWallProcedure {
 					event.setResult(Event.Result.DENY);
 				}
 			}
-			VoidbornEntityIsHurtProcedure.execute(world, x, y, z, entity, immediatesourceentity, sourceentity);
+			VoidbornEntityIsHurtProcedure.execute(world, x, y, z, entity, sourceentity);
 		}
 		if (sourceentity instanceof VoidbornEntity && entity instanceof Player && !((entity instanceof LivingEntity _entUseItem4 ? _entUseItem4.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) && !damagesource.is(DamageTypes.MAGIC)
 				&& world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0) {

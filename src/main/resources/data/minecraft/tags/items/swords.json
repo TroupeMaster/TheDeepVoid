@@ -1,6 +1,11 @@
 {
   "replace": false,
   "values": [
+    "the_deep_void:bone_climbing_pick",
+    "the_deep_void:plaguebringer",
+    "the_deep_void:onyx_scythe",
+    "the_deep_void:bone_scythe",
+    "the_deep_void:dark_steel_naginata",
     "the_deep_void:bloodstone_sword",
     "the_deep_void:bloodthirsty_claws",
     "the_deep_void:void_matter_scythe",

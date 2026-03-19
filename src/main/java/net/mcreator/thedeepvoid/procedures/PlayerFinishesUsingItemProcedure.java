@@ -8,6 +8,8 @@ import net.minecraftforge.event.entity.living.LivingEntityUseItemEvent;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.GameType;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.CrossbowItem;
+import net.minecraft.world.item.BowItem;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
@@ -44,8 +46,9 @@ public class PlayerFinishesUsingItemProcedure {
 	private static void execute(@Nullable Event event, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if (itemstack.is(ItemTags.create(new ResourceLocation("minecraft:enchantable/bow"))) && ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ARROW_OF_SPITE.get()
-				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ARROW_OF_SPITE.get())) {
+		if ((itemstack.is(ItemTags.create(new ResourceLocation("minecraft:enchantable/bow"))) || itemstack.getItem() instanceof BowItem || itemstack.getItem() instanceof CrossbowItem)
+				&& ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ARROW_OF_SPITE.get()
+						|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ARROW_OF_SPITE.get())) {
 			if (!(new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayer _serverPlayer) {
@@ -84,7 +87,7 @@ public class PlayerFinishesUsingItemProcedure {
 					}
 				}
 			}
-		} else if (itemstack.is(ItemTags.create(new ResourceLocation("minecraft:enchantable/bow")))
+		} else if ((itemstack.is(ItemTags.create(new ResourceLocation("minecraft:enchantable/bow"))) || itemstack.getItem() instanceof BowItem || itemstack.getItem() instanceof CrossbowItem)
 				&& ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ARROW_OF_ICHOR_PELLETS.get()
 						|| (entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ARROW_OF_ICHOR_PELLETS.get())) {
 			if (!(new Object() {

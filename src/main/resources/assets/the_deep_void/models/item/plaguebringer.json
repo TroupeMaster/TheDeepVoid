@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/plague_scythe",
+  "textures": {
+    "0": "the_deep_void:block/plague_scythe",
+    "particle": "the_deep_void:item/plague_scythe"
+  }
+}

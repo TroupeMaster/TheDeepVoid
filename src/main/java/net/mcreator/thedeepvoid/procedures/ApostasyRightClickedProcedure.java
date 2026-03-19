@@ -36,13 +36,8 @@ public class ApostasyRightClickedProcedure {
 				_player.getCooldowns().addCooldown(itemstack.getItem(), 25);
 			if (itemstack.getItem() instanceof ApostasyItem)
 				itemstack.getOrCreateTag().putString("geckoAnim", "animation.apostasy_shoot");
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:apostasy_shoot")), SoundSource.PLAYERS, 3, 1);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:apostasy_shoot")), SoundSource.PLAYERS, 3, 1, false);
-				}
-			}
+			if (world instanceof Level)
+				((Level) world).playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:apostasy_shoot")), SoundSource.PLAYERS, 3, 1, false);
 			TheDeepVoidMod.queueServerWork(12, () -> {
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {

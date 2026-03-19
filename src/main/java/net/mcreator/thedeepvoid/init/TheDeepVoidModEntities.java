@@ -18,7 +18,7 @@ import net.minecraft.world.entity.Entity;
 
 import net.mcreator.thedeepvoid.entity.XrayEntity;
 import net.mcreator.thedeepvoid.entity.XpFlareShotEntity;
-import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
+import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
 import net.mcreator.thedeepvoid.entity.WatchingStalkerEntity;
 import net.mcreator.thedeepvoid.entity.WandererEntity;
 import net.mcreator.thedeepvoid.entity.VoidriumFlareShotEntity;
@@ -27,6 +27,7 @@ import net.mcreator.thedeepvoid.entity.VoidbornEntity;
 import net.mcreator.thedeepvoid.entity.VoidTentacleEntity;
 import net.mcreator.thedeepvoid.entity.VoidPelletEntity;
 import net.mcreator.thedeepvoid.entity.VoidDwellerEntity;
+import net.mcreator.thedeepvoid.entity.VoidArrowEntity;
 import net.mcreator.thedeepvoid.entity.ThumperEntityEntity;
 import net.mcreator.thedeepvoid.entity.TenebrisCultroEntity;
 import net.mcreator.thedeepvoid.entity.TamedMotherBoneCrawlerEntity;
@@ -394,8 +395,6 @@ public class TheDeepVoidModEntities {
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(78).setUpdateInterval(3).setCustomClientFactory(CentigazeHiddenEntity::new).fireImmune().sized(1.8f, 0.8f));
 	public static final RegistryObject<EntityType<WatchingStalkerEntity>> WATCHING_STALKER = register("watching_stalker", EntityType.Builder.<WatchingStalkerEntity>of(WatchingStalkerEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(84).setUpdateInterval(3).setCustomClientFactory(WatchingStalkerEntity::new).fireImmune().sized(0.6f, 3.3f));
-	public static final RegistryObject<EntityType<WeaverOfSoulsEntity>> WEAVER_OF_SOULS = register("weaver_of_souls", EntityType.Builder.<WeaverOfSoulsEntity>of(WeaverOfSoulsEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
-			.setTrackingRange(78).setUpdateInterval(3).setCustomClientFactory(WeaverOfSoulsEntity::new).fireImmune().sized(2.8f, 2.8f));
 	public static final RegistryObject<EntityType<HandSpawnEntity>> HAND_SPAWN = register("hand_spawn",
 			EntityType.Builder.<HandSpawnEntity>of(HandSpawnEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(HandSpawnEntity::new).fireImmune().sized(0.8f, 0.1f));
 	public static final RegistryObject<EntityType<ShadowHandEntity>> SHADOW_HAND = register("shadow_hand", EntityType.Builder.<ShadowHandEntity>of(ShadowHandEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
@@ -669,6 +668,10 @@ public class TheDeepVoidModEntities {
 			EntityType.Builder.<FleshFlareShotEntity>of(FleshFlareShotEntity::new, MobCategory.MISC).setCustomClientFactory(FleshFlareShotEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<PerilBulletEntity>> PERIL_BULLET = register("peril_bullet",
 			EntityType.Builder.<PerilBulletEntity>of(PerilBulletEntity::new, MobCategory.MISC).setCustomClientFactory(PerilBulletEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<VoidArrowEntity>> VOID_ARROW = register("void_arrow",
+			EntityType.Builder.<VoidArrowEntity>of(VoidArrowEntity::new, MobCategory.MISC).setCustomClientFactory(VoidArrowEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<WeaverOfSoulsBossEntity>> WEAVER_OF_SOULS_BOSS = register("weaver_of_souls_boss", EntityType.Builder.<WeaverOfSoulsBossEntity>of(WeaverOfSoulsBossEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(78).setUpdateInterval(3).setCustomClientFactory(WeaverOfSoulsBossEntity::new).fireImmune().sized(2.8f, 2.8f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -732,7 +735,6 @@ public class TheDeepVoidModEntities {
 			CentigazeEntity.init();
 			CentigazeHiddenEntity.init();
 			WatchingStalkerEntity.init();
-			WeaverOfSoulsEntity.init();
 			HandSpawnEntity.init();
 			ShadowHandEntity.init();
 			DamnedEntity.init();
@@ -800,6 +802,7 @@ public class TheDeepVoidModEntities {
 			MarrowRootsEntity.init();
 			MarrowRootsSpawnEntity.init();
 			XrayEntity.init();
+			WeaverOfSoulsBossEntity.init();
 		});
 	}
 
@@ -860,7 +863,6 @@ public class TheDeepVoidModEntities {
 		event.put(CENTIGAZE.get(), CentigazeEntity.createAttributes().build());
 		event.put(CENTIGAZE_HIDDEN.get(), CentigazeHiddenEntity.createAttributes().build());
 		event.put(WATCHING_STALKER.get(), WatchingStalkerEntity.createAttributes().build());
-		event.put(WEAVER_OF_SOULS.get(), WeaverOfSoulsEntity.createAttributes().build());
 		event.put(HAND_SPAWN.get(), HandSpawnEntity.createAttributes().build());
 		event.put(SHADOW_HAND.get(), ShadowHandEntity.createAttributes().build());
 		event.put(DAMNED.get(), DamnedEntity.createAttributes().build());
@@ -928,5 +930,6 @@ public class TheDeepVoidModEntities {
 		event.put(MARROW_ROOTS.get(), MarrowRootsEntity.createAttributes().build());
 		event.put(MARROW_ROOTS_SPAWN.get(), MarrowRootsSpawnEntity.createAttributes().build());
 		event.put(XRAY.get(), XrayEntity.createAttributes().build());
+		event.put(WEAVER_OF_SOULS_BOSS.get(), WeaverOfSoulsBossEntity.createAttributes().build());
 	}
 }

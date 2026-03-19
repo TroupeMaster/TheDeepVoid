@@ -53,6 +53,7 @@ public class WeaverArmorDescriptionProcedure {
 				tooltip.add(Component.literal(("\u00A72" + Component.translatable("armors.the_deep_void.harvest_mask.counts").getString())));
 				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.weaver_mask.when_worn").getString())));
 				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.harvest_mask.worn").getString())));
+				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.weaver_mask.worn2").getString())));
 				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.harvest_mask.when_attack").getString())));
 				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.harvest_mask.attack").getString())));
 				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.harvest_mask.when_kill").getString())));

@@ -35,13 +35,8 @@ public class PrimordialCrawlerSlamProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (world instanceof Level _level) {
-			if (!_level.isClientSide()) {
-				_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:mother_crawler_ambient")), SoundSource.NEUTRAL, 2, (float) 0.4);
-			} else {
-				_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:mother_crawler_ambient")), SoundSource.NEUTRAL, 2, (float) 0.4, false);
-			}
-		}
+		if (world instanceof Level)
+			((Level) world).playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:mother_crawler_ambient")), SoundSource.HOSTILE, 2, (float) 0.4, false);
 		if (entity instanceof PrimordialBoneCrawlerEntity) {
 			((PrimordialBoneCrawlerEntity) entity).setAnimation("animation.primordialCrawler_slam");
 		}

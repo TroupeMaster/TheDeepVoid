@@ -43,18 +43,51 @@ public class CrawlerTickUpdateProcedure {
 				_datEntSetI.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_attackChance, (int) ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) + 1));
 		}
 		if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) == 60) {
-			PrimordialCrawlerSlamProcedure.execute(world, entity);
+			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 1.8) {
+				if (Math.random() < 0.4) {
+					if (entity instanceof PrimordialBoneCrawlerEntity) {
+						((PrimordialBoneCrawlerEntity) entity).setAnimation("empty");
+					}
+					PrimordialCrawlerJumpSlamProcedure.execute(world, entity);
+				} else {
+					if (entity instanceof PrimordialBoneCrawlerEntity) {
+						((PrimordialBoneCrawlerEntity) entity).setAnimation("empty");
+					}
+					PrimordialCrawlerSlamProcedure.execute(world, entity);
+				}
+			} else {
+				if (entity instanceof PrimordialBoneCrawlerEntity) {
+					((PrimordialBoneCrawlerEntity) entity).setAnimation("empty");
+				}
+				PrimordialCrawlerSlamProcedure.execute(world, entity);
+			}
 		} else if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) == 180) {
+			if (entity instanceof PrimordialBoneCrawlerEntity) {
+				((PrimordialBoneCrawlerEntity) entity).setAnimation("empty");
+			}
 			PrimordialCrawlerSpitProcedure.execute(world, entity);
 		} else if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) == 260) {
+			if (entity instanceof PrimordialBoneCrawlerEntity) {
+				((PrimordialBoneCrawlerEntity) entity).setAnimation("empty");
+			}
 			PrimordialCrawlerDigProcedure.execute(world, x, y, z, entity);
 		} else if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) == 330) {
+			if (entity instanceof PrimordialBoneCrawlerEntity) {
+				((PrimordialBoneCrawlerEntity) entity).setAnimation("empty");
+			}
 			PrimordialCrawlerDashProcedure.execute(world, x, y, z, entity);
-		} else if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) >= 370) {
+		} else if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) >= 393) {
+			if (Math.random() < 0.35) {
+				PrimordialCrawlerShootUpProcedure.execute(world, entity);
+			} else {
+				if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_attackChance, 0);
+			}
+		} else if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) >= 463) {
 			if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_attackChance, 0);
 		}
-		if ((entity instanceof PrimordialBoneCrawlerEntity _datEntL12 && _datEntL12.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_digging)) == true) {
+		if ((entity instanceof PrimordialBoneCrawlerEntity _datEntL22 && _datEntL22.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_digging)) == true) {
 			PrimordialCrawlerWhileDiggingProcedure.execute(world, x, y, z, entity);
 		}
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
@@ -78,6 +111,11 @@ public class CrawlerTickUpdateProcedure {
 							_serverPlayer.connection.teleport((entity.getX()), (entity.getY()), (entity.getZ()), _ent.getYRot(), _ent.getXRot());
 					}
 				});
+			}
+			if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_shooting) : 0) > 0) {
+				PrimordialCrawlerDuringShootingProcedure.execute(world, entity);
+				if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_shooting, (int) ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_shooting) : 0) - 1));
 			}
 		}
 		WeaverBossMusicProcedure.execute(world, x, y, z, entity);

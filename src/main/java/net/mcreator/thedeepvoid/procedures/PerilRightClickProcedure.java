@@ -47,13 +47,8 @@ public class PerilRightClickProcedure {
 						if (itemstack.getItem() instanceof PerilItem)
 							itemstack.getOrCreateTag().putString("geckoAnim", "animation.peril_shootSelf");
 					}
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:peril_cylinder")), SoundSource.PLAYERS, 1, 1);
-						} else {
-							_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:peril_cylinder")), SoundSource.PLAYERS, 1, 1, false);
-						}
-					}
+					if (world instanceof Level)
+						((Level) world).playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:peril_cylinder")), SoundSource.PLAYERS, 1, 1, false);
 				} else {
 					if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == itemstack.getItem()) {
 						if (itemstack.getItem() instanceof PerilItem)
@@ -62,13 +57,8 @@ public class PerilRightClickProcedure {
 						if (itemstack.getItem() instanceof PerilItem)
 							itemstack.getOrCreateTag().putString("geckoAnim", "animation.peril_shootSelfFail");
 					}
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:peril_cylinder")), SoundSource.PLAYERS, 1, 1);
-						} else {
-							_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:peril_cylinder")), SoundSource.PLAYERS, 1, 1, false);
-						}
-					}
+					if (world instanceof Level)
+						((Level) world).playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:peril_cylinder")), SoundSource.PLAYERS, 1, 1, false);
 					itemstack.getOrCreateTag().putDouble("selfShot", (itemstack.getOrCreateTag().getDouble("selfShot") - 1));
 				}
 				TheDeepVoidMod.queueServerWork(45, () -> {
@@ -133,20 +123,10 @@ public class PerilRightClickProcedure {
 				}
 				itemstack.getOrCreateTag().putDouble("adrenaline", 0);
 				itemstack.getOrCreateTag().putDouble("selfShot", 6);
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:peril_hammer_hit")), SoundSource.PLAYERS, 1, 1);
-					} else {
-						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:peril_hammer_hit")), SoundSource.PLAYERS, 1, 1, false);
-					}
-				}
-				if (world instanceof Level _level) {
-					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:peril_shoot_new")), SoundSource.PLAYERS, 1, 1);
-					} else {
-						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:peril_shoot_new")), SoundSource.PLAYERS, 1, 1, false);
-					}
-				}
+				if (world instanceof Level)
+					((Level) world).playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:peril_hammer_hit")), SoundSource.PLAYERS, 1, 1, false);
+				if (world instanceof Level)
+					((Level) world).playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:peril_shoot_new")), SoundSource.PLAYERS, 1, 1, false);
 				TheDeepVoidMod.queueServerWork(17, () -> {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {

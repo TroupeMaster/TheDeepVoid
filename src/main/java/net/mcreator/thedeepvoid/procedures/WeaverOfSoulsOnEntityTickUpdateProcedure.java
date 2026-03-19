@@ -29,7 +29,7 @@ import net.minecraft.commands.CommandSource;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
-import net.mcreator.thedeepvoid.entity.WeaverOfSoulsEntity;
+import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
@@ -41,10 +41,10 @@ public class WeaverOfSoulsOnEntityTickUpdateProcedure {
 			return;
 		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 80, 80, 80), e -> true).isEmpty()
 				&& !(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 10, 10, 10), e -> true).isEmpty())
-				&& (entity instanceof WeaverOfSoulsEntity _datEntL8 && _datEntL8.getEntityData().get(WeaverOfSoulsEntity.DATA_stunned)) == false) {
-			if ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_locate) : 0) >= 80) {
-				if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
-					_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_locate, 0);
+				&& (entity instanceof WeaverOfSoulsBossEntity _datEntL8 && _datEntL8.getEntityData().get(WeaverOfSoulsBossEntity.DATA_stunned)) == false) {
+			if ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_locate) : 0) >= 80) {
+				if (entity instanceof WeaverOfSoulsBossEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(WeaverOfSoulsBossEntity.DATA_locate, 0);
 				if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 80, 80, 80), e -> true).isEmpty()
 						&& !(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 10, 10, 10), e -> true).isEmpty())) {
 					TheDeepVoidMod.queueServerWork(40, () -> {
@@ -71,8 +71,8 @@ public class WeaverOfSoulsOnEntityTickUpdateProcedure {
 					});
 				}
 			} else {
-				if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
-					_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_locate, (int) ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_locate) : 0) + 1));
+				if (entity instanceof WeaverOfSoulsBossEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(WeaverOfSoulsBossEntity.DATA_locate, (int) ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_locate) : 0) + 1));
 			}
 		}
 		WeaverSpawnHandSpawnsProcedure.execute(world, entity);
@@ -109,14 +109,14 @@ public class WeaverOfSoulsOnEntityTickUpdateProcedure {
 							"stopsound @a record the_deep_void:darkmare");
 			});
 		}
-		if ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_scream) : 0) > 0) {
-			if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
-				_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_scream, (int) ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_scream) : 0) - 1));
+		if ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_scream) : 0) > 0) {
+			if (entity instanceof WeaverOfSoulsBossEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(WeaverOfSoulsBossEntity.DATA_scream, (int) ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_scream) : 0) - 1));
 		}
-		if ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_scream) : 0) <= 0
-				&& (entity instanceof WeaverOfSoulsEntity _datEntL63 && _datEntL63.getEntityData().get(WeaverOfSoulsEntity.DATA_screamPlayed)) == true) {
-			if (entity instanceof WeaverOfSoulsEntity _datEntSetL)
-				_datEntSetL.getEntityData().set(WeaverOfSoulsEntity.DATA_screamPlayed, false);
+		if ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_scream) : 0) <= 0
+				&& (entity instanceof WeaverOfSoulsBossEntity _datEntL63 && _datEntL63.getEntityData().get(WeaverOfSoulsBossEntity.DATA_screamPlayed)) == true) {
+			if (entity instanceof WeaverOfSoulsBossEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(WeaverOfSoulsBossEntity.DATA_screamPlayed, false);
 		}
 		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 90, 90, 90), e -> true).isEmpty())
 				&& (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) != (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) {
@@ -125,9 +125,9 @@ public class WeaverOfSoulsOnEntityTickUpdateProcedure {
 		}
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 			if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() > entity.getY() + 3) {
-				if ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_giantHand) : 0) >= 200) {
-					if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
-						_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_giantHand, 0);
+				if ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_giantHand) : 0) >= 200) {
+					if (entity instanceof WeaverOfSoulsBossEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(WeaverOfSoulsBossEntity.DATA_giantHand, 0);
 					if (world instanceof ServerLevel _level) {
 						Entity entityToSpawn = TheDeepVoidModEntities.GIANT_SHADOW_HAND.get().spawn(_level, BlockPos.containing((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX(),
 								(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() + 1, (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ()), MobSpawnType.MOB_SUMMONED);
@@ -142,15 +142,15 @@ public class WeaverOfSoulsOnEntityTickUpdateProcedure {
 						}
 					}
 				} else {
-					if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
-						_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_giantHand, (int) ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_giantHand) : 0) + 1));
+					if (entity instanceof WeaverOfSoulsBossEntity _datEntSetI)
+						_datEntSetI.getEntityData().set(WeaverOfSoulsBossEntity.DATA_giantHand, (int) ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_giantHand) : 0) + 1));
 				}
 			}
 		}
 		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 100, 100, 100), e -> true).isEmpty()) {
-			if ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_murmurs) : 0) >= 800) {
-				if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
-					_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_murmurs, 0);
+			if ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_murmurs) : 0) >= 800) {
+				if (entity instanceof WeaverOfSoulsBossEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(WeaverOfSoulsBossEntity.DATA_murmurs, 0);
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:ominous_murmurs")), SoundSource.AMBIENT, 3, 1);
@@ -159,11 +159,11 @@ public class WeaverOfSoulsOnEntityTickUpdateProcedure {
 					}
 				}
 			} else {
-				if (entity instanceof WeaverOfSoulsEntity _datEntSetI)
-					_datEntSetI.getEntityData().set(WeaverOfSoulsEntity.DATA_murmurs, (int) ((entity instanceof WeaverOfSoulsEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsEntity.DATA_murmurs) : 0) + 1));
+				if (entity instanceof WeaverOfSoulsBossEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(WeaverOfSoulsBossEntity.DATA_murmurs, (int) ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_murmurs) : 0) + 1));
 			}
 		}
-		if ((entity instanceof WeaverOfSoulsEntity _datEntL102 && _datEntL102.getEntityData().get(WeaverOfSoulsEntity.DATA_stunned)) == false) {
+		if ((entity instanceof WeaverOfSoulsBossEntity _datEntL102 && _datEntL102.getEntityData().get(WeaverOfSoulsBossEntity.DATA_stunned)) == false) {
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeAllEffects();
 		}

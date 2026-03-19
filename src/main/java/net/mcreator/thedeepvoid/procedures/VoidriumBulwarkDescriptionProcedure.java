@@ -38,10 +38,6 @@ public class VoidriumBulwarkDescriptionProcedure {
 			} else {
 				tooltip.add(Component.literal((Component.translatable("item.the_deep_void.weapon_tooltip.show").getString())));
 			}
-			tooltip.add(Component.literal(" "));
-			tooltip.add(Component.literal((Component.translatable("item.the_deep_void.voidrium_bulwark.in_main_hand").getString())));
-			tooltip.add(Component.literal((Component.translatable("item.the_deep_void.voidrium_bulwark.attack_damage").getString())));
-			tooltip.add(Component.literal((Component.translatable("item.the_deep_void.voidrium_bulwark.attack_speed").getString())));
 		}
 	}
 }

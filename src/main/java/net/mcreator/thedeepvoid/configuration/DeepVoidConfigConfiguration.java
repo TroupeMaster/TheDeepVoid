@@ -119,6 +119,10 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> PERILSELFDAMAGE;
 	public static final ForgeConfigSpec.ConfigValue<Double> PERILDAMAGEMULTIPLIER;
 	public static final ForgeConfigSpec.ConfigValue<Double> PERIL;
+	public static final ForgeConfigSpec.ConfigValue<Double> BLOODSTONEARMORBONUS;
+	public static final ForgeConfigSpec.ConfigValue<Double> VOIDBOW;
+	public static final ForgeConfigSpec.ConfigValue<Double> SCYTHESREACH;
+	public static final ForgeConfigSpec.ConfigValue<Double> PLAGUEARMORBONUS;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERWHILEMOVING;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIT;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIKESPAWN;
@@ -223,7 +227,7 @@ public class DeepVoidConfigConfiguration {
 		PRIMORDIALCRAWLERSLAM = BUILDER.comment("Damage").define("PrimordialCrawlerSlam", (double) 16);
 		PRIMORDIALCRAWLERSPIT = BUILDER.comment("Damage per spit (velocity increases that number)").define("PrimordialCrawlerSpit", (double) 6);
 		PRIMORDIALCRAWLERDIGPLAYERCLOSE = BUILDER.comment("Damage").define("PrimordialCrawlerDigPlayerClose", (double) 17);
-		PRIMORDIALCRAWLERDASH = BUILDER.comment("Damage (repeated five times)").define("PrimordialCrawlerDash", (double) 18);
+		PRIMORDIALCRAWLERDASH = BUILDER.comment("Damage (on contact)").define("PrimordialCrawlerDash", (double) 24);
 		PRIMORDIALCRAWLERGOOBLOCK = BUILDER.comment("Damage in an AOE").define("PrimordialCrawlerGooBlock", (double) 10);
 		BUILDER.pop();
 		BUILDER.push("Weapons");
@@ -246,7 +250,7 @@ public class DeepVoidConfigConfiguration {
 		ARROWOFSPITE = BUILDER.comment("Damage per projectile").define("ArrowOfSpite", (double) 4);
 		ARROWOFICHORPELLETS = BUILDER.comment("Damage per projectile").define("ArrowOfIchorPellets", (double) 2.5);
 		MISANTHROPY = BUILDER.comment("Damage (velocity increases that number)").define("Misanthropy", (double) 3);
-		NERVESOFSTEELCRIT = BUILDER.define("NervesOfSteelCrit", (double) 28);
+		NERVESOFSTEELCRIT = BUILDER.define("NervesOfSteelCrit", (double) 34);
 		FLESHPARASITETP = BUILDER.comment("Damage upon teleporting to the target").define("FleshParasiteTp", (double) 15);
 		FLESHPARASITEENABLEENTITY = BUILDER.comment("If the flesh parasite should work on mobs other than players (for servers: may cause extreme lag if used repeatedly)").define("FleshParasiteEnableEntity", true);
 		ROTTENTONGUEDAMAGE = BUILDER.comment("Extra damage when on low health").define("RottenTongueDamage", (double) 5);
@@ -269,6 +273,10 @@ public class DeepVoidConfigConfiguration {
 		PERILSELFDAMAGE = BUILDER.comment("The damage dealt to the player upon shooting themselves (ignores armor)").define("PerilSelfDamage", (double) 18);
 		PERILDAMAGEMULTIPLIER = BUILDER.comment("Adrenaline is multiplied by that value, which is then used to multiply the projectile's damage").define("PerilDamageMultiplier", (double) 4);
 		PERIL = BUILDER.comment("Damage (velocity increases that number)").define("Peril", (double) 2.8);
+		BLOODSTONEARMORBONUS = BUILDER.comment("The attack damage bonus").define("BloodstoneArmorBonus", (double) 2);
+		VOIDBOW = BUILDER.comment("Void bow damage (ignores armor and i-frames)").define("VoidBow", (double) 8);
+		SCYTHESREACH = BUILDER.define("ScythesReach", (double) 0.5);
+		PLAGUEARMORBONUS = BUILDER.comment("The attack damage bonus").define("PlagueArmorBonus", (double) 2);
 		BUILDER.pop();
 		BUILDER.push("Hive's Watcher");
 		HIVEWATCHERWHILEMOVING = BUILDER.comment("Damage each tick").define("HiveWatcherWhileMoving", (double) 10);

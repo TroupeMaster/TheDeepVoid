@@ -1,0 +1,30 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:knightfish"
+    },
+    "title": {
+      "translate": "advancements.knightfish_consume.title"
+    },
+    "description": {
+      "translate": "advancements.knightfish_consume.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "knightfish_consume_0": {
+      "trigger": "minecraft:consume_item",
+      "conditions": {
+        "item": {
+          "items": [
+            "the_deep_void:knightfish"
+          ]
+        }
+      }
+    }
+  },
+  "parent": "the_deep_void:bone_bottom"
+}

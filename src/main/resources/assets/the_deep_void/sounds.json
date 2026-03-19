@@ -1757,5 +1757,38 @@
         "stream": false
       }
     ]
+  },
+  "basalt_deltas_geiger": {
+    "subtitle": "subtitles.basalt_deltas_geiger",
+    "sounds": [
+      {
+        "name": "the_deep_void:basalt_deltas_click8.ogg",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:basalt_deltas_click7.ogg",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:basalt_deltas_click6.ogg",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:basalt_deltas_click5.ogg",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:basalt_deltas_click4.ogg",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:basalt_deltas_click3.ogg",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:basalt_deltas_click2.ogg",
+        "stream": false
+      }
+    ]
   }
 }
