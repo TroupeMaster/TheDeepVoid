@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/chainsaw_0",
+  "textures": {
+    "0": "the_deep_void:block/chainsaw_standby",
+    "particle": "the_deep_void:item/chainsaw_standby"
+  }
+}

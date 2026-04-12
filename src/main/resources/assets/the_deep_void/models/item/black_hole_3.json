@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/black_hole_pulling_2",
+  "textures": {
+    "0": "the_deep_void:block/black_hole_pulling_2",
+    "particle": "the_deep_void:item/black_hole_pulling_2"
+  }
+}

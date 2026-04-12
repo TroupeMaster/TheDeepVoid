@@ -1,0 +1,33 @@
+{
+  "parent": "the_deep_void:custom/black_hole_standby",
+  "textures": {
+    "0": "the_deep_void:block/black_hole_standby",
+    "particle": "the_deep_void:item/black_hole_standby"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "the_deep_void:black_hole_pulling": 0
+      },
+      "model": "the_deep_void:item/black_hole_0"
+    },
+    {
+      "predicate": {
+        "the_deep_void:black_hole_pulling": 1
+      },
+      "model": "the_deep_void:item/black_hole_1"
+    },
+    {
+      "predicate": {
+        "the_deep_void:black_hole_pulling": 13
+      },
+      "model": "the_deep_void:item/black_hole_2"
+    },
+    {
+      "predicate": {
+        "the_deep_void:black_hole_pulling": 23
+      },
+      "model": "the_deep_void:item/black_hole_3"
+    }
+  ]
+}

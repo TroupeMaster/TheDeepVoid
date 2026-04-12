@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/rotten_tongue",
+  "textures": {
+    "0": "the_deep_void:block/rotten_tongue",
+    "particle": "the_deep_void:item/rotten_tongue"
+  }
+}

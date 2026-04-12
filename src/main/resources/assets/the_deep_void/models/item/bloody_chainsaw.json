@@ -1,0 +1,27 @@
+{
+  "parent": "the_deep_void:custom/chainsaw_standby",
+  "textures": {
+    "0": "the_deep_void:block/chainsaw_standby",
+    "particle": "the_deep_void:item/chainsaw_standby"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "the_deep_void:bloody_chainsaw_activated": 0
+      },
+      "model": "the_deep_void:item/bloody_chainsaw_0"
+    },
+    {
+      "predicate": {
+        "the_deep_void:bloody_chainsaw_activated": 1
+      },
+      "model": "the_deep_void:item/bloody_chainsaw_1"
+    },
+    {
+      "predicate": {
+        "the_deep_void:bloody_chainsaw_activated": 2
+      },
+      "model": "the_deep_void:item/bloody_chainsaw_2"
+    }
+  ]
+}

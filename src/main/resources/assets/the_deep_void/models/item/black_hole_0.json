@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/black_hole_standby",
+  "textures": {
+    "0": "the_deep_void:block/black_hole_standby",
+    "particle": "the_deep_void:item/black_hole_standby"
+  }
+}
