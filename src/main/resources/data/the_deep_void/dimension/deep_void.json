@@ -372,12 +372,12 @@
               -0.8
             ],
             "weirdness": [
-              -0.3,
-              0.5
+              0.65,
+              1.2
             ],
             "erosion": [
-              -0.1,
-              1
+              -0.8,
+              0.1
             ],
             "depth": 0,
             "offset": 0
@@ -441,10 +441,10 @@
     },
     "settings": {
       "name": "the_deep_void:deep_void",
-      "sea_level": 63,
+      "sea_level": -64,
       "legacy_random_source": false,
       "disable_mob_generation": false,
-      "aquifers_enabled": true,
+      "aquifers_enabled": false,
       "ore_veins_enabled": false,
       "default_block": {
         "Name": "minecraft:deepslate",
@@ -453,7 +453,10 @@
         }
       },
       "default_fluid": {
-        "Name": "minecraft:air"
+        "Name": "minecraft:water",
+        "Properties": {
+          "level": "0"
+        }
       },
       "spawn_target": [],
       "noise": {

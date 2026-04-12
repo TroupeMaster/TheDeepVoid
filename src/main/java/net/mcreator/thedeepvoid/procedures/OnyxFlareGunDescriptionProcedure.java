@@ -33,7 +33,7 @@ public class OnyxFlareGunDescriptionProcedure {
 			return;
 		if (itemstack.getItem() == TheDeepVoidModItems.ONYX_FLARE_GUN.get()) {
 			tooltip.add(Component.literal(("\u00A79" + Component.translatable("item.the_deep_void.onyx_flare_gun.descr1").getString())));
-			tooltip.add(Component.literal(("\u00A77" + Component.translatable("item.the_deep_void.onyx_flare_gun.descr2").getString())));
+			tooltip.add(Component.literal(("\u00A77 " + Component.translatable("item.the_deep_void.onyx_flare_gun.descr2").getString())));
 		}
 	}
 }

@@ -52,8 +52,6 @@ public class VoidBlessingFallDamageProcedure {
 		if ((entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TheDeepVoidModMobEffects.VOID_BLESSING.get())) == true) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).FallSound == true
 					&& (entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) {
@@ -95,8 +93,6 @@ public class VoidBlessingFallDamageProcedure {
 				|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SOUL_WINGS_FLY_CHESTPLATE.get()) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 		}
 		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.HUNTERS_HELMET.get()
@@ -105,8 +101,6 @@ public class VoidBlessingFallDamageProcedure {
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.HUNTERS_BOOTS.get()) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 		}
 		if ((entity instanceof LivingEntity _livEnt21 && _livEnt21.hasEffect(TheDeepVoidModMobEffects.DEBILITATED.get()) || entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:trap_vulnerable")))

@@ -28,15 +28,11 @@ public class SulfurPowderPlacedProcedure {
 			if (!world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude()) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 			}
 			if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.SULFUR_POWDER.get()) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 			}
 		}

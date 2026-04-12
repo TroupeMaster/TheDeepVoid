@@ -48,8 +48,6 @@ public class SulfurTntEntityOnEntityTickUpdateProcedure {
 		}
 		if ((entity instanceof SulfurTntEntityEntity _datEntI ? _datEntI.getEntityData().get(SulfurTntEntityEntity.DATA_explode) : 0) == 80) {
 			if (!world.getEntitiesOfClass(SulfurTntEntityEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 2, 2, 2), e -> true).isEmpty()) {
-				if (!entity.level().isClientSide())
-					entity.discard();
 				if (world instanceof Level _level && !_level.isClientSide())
 					_level.explode(null, (entity.getX()), (entity.getY()), (entity.getZ()), 12, Level.ExplosionInteraction.TNT);
 				{
@@ -64,6 +62,8 @@ public class SulfurTntEntityOnEntityTickUpdateProcedure {
 						}
 					}
 				}
+				if (!entity.level().isClientSide())
+					entity.discard();
 			}
 		}
 		world.addParticle(ParticleTypes.SMOKE, x, y, z, 0, 0.1, 0);

@@ -1,0 +1,82 @@
+{
+  "feature": "the_deep_void:giant_skulls",
+  "placement": [
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR_WG"
+    },
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 15
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:all_of",
+        "predicates": [
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          },
+          {
+            "type": "minecraft:solid",
+            "offset": [
+              5,
+              -1,
+              5
+            ]
+          },
+          {
+            "type": "minecraft:solid",
+            "offset": [
+              4,
+              -1,
+              4
+            ]
+          },
+          {
+            "type": "minecraft:solid",
+            "offset": [
+              3,
+              -1,
+              3
+            ]
+          },
+          {
+            "type": "minecraft:solid",
+            "offset": [
+              -2,
+              -1,
+              -2
+            ]
+          },
+          {
+            "type": "minecraft:solid",
+            "offset": [
+              -3,
+              -1,
+              -3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:random_offset",
+      "xz_spread": 0,
+      "y_spread": {
+        "type": "uniform",
+        "value": {
+          "min_inclusive": -1,
+          "max_inclusive": 0
+        }
+      }
+    }
+  ]
+}

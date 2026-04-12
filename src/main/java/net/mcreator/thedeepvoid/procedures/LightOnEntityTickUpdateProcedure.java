@@ -4,10 +4,13 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
+
+import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 public class LightOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -17,13 +20,17 @@ public class LightOnEntityTickUpdateProcedure {
 			if (!entity.level().isClientSide())
 				entity.discard();
 		}
-		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:misted_remnants")) || y <= 0) {
+		if ((world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:misted_remnants")) || y <= 0) && DeepVoidConfigConfiguration.DESTROYLIGHTSOURCES.get() == true) {
 			if (Math.random() < 0.009 && !(world.getBlockState(BlockPos.containing(x, y, z))).is(BlockTags.create(new ResourceLocation("the_deep_void:safe_lights")))
 					&& !(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty())) {
 				if (!entity.level().isClientSide())
 					entity.discard();
 				world.destroyBlock(BlockPos.containing(x, y, z), false);
 			}
+		}
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) < (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1)) {
+			if (entity instanceof LivingEntity _entity)
+				_entity.setHealth(entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1);
 		}
 	}
 }

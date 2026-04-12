@@ -80,6 +80,7 @@ import net.mcreator.thedeepvoid.client.renderer.LurkerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.LightRenderer;
 import net.mcreator.thedeepvoid.client.renderer.LickerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.LastingShadowHandRenderer;
+import net.mcreator.thedeepvoid.client.renderer.InvisibleRenderer;
 import net.mcreator.thedeepvoid.client.renderer.IdlingApostleRenderer;
 import net.mcreator.thedeepvoid.client.renderer.IchorSpitRenderer;
 import net.mcreator.thedeepvoid.client.renderer.HookEndRenderer;
@@ -320,5 +321,6 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.PERIL_BULLET.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.VOID_ARROW.get(), VoidArrowRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.WEAVER_OF_SOULS_BOSS.get(), WeaverOfSoulsBossRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.INVISIBLE.get(), InvisibleRenderer::new);
 	}
 }

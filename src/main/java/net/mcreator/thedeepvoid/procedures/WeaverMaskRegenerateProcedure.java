@@ -36,8 +36,6 @@ public class WeaverMaskRegenerateProcedure {
 					&& !(entity instanceof LivingEntity _livEnt6 && _livEnt6.hasEffect(MobEffects.REGENERATION))) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 			}
 		} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_HELMET.get()
@@ -48,8 +46,6 @@ public class WeaverMaskRegenerateProcedure {
 					&& !(entity instanceof LivingEntity _livEnt17 && _livEnt17.hasEffect(MobEffects.REGENERATION))) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 			}
 		}

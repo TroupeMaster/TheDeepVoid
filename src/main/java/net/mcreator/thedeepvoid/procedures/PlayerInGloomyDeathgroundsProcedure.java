@@ -37,7 +37,6 @@ public class PlayerInGloomyDeathgroundsProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		double pos = 0;
 		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:gathering_grounds"))) {
 			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).gatheringAmbience >= 400) {
 				{

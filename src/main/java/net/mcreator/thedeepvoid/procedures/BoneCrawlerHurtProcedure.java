@@ -48,8 +48,6 @@ public class BoneCrawlerHurtProcedure {
 			if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get() && !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 6, 6, 6), e -> true).isEmpty() == false) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 			}
 		}

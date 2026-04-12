@@ -55,6 +55,14 @@ public class SetItemAttributesProcedure {
 			if (itemstack.getItem() == TheDeepVoidModItems.VOIDRIUM_BULWARK.get()) {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE, (new AttributeModifier(UUID.fromString("ea9dbfe9-9f46-4046-b57a-d47dbe387cca"), "bulwarkDamage", 5, AttributeModifier.Operation.ADDITION)));
 			}
+			if (itemstack.getItem() == TheDeepVoidModItems.ROT_TONGUE.get()) {
+				_event.addModifier(ForgeMod.ENTITY_REACH.get(), (new AttributeModifier(UUID.fromString("113f833e-af9f-460e-b241-4d8f43a07a86"), "rottenTongue_reach", 0.6, AttributeModifier.Operation.ADDITION)));
+			}
+			if (itemstack.getItem() == TheDeepVoidModItems.BLOODY_CHAINSAW.get()) {
+				_event.addModifier(ForgeMod.ENTITY_REACH.get(), (new AttributeModifier(UUID.fromString("4a0cd0cf-9b7e-45ae-a6cd-bad27875baa7"), "chainsaw_reach", 0.25, AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_KNOCKBACK,
+						(new AttributeModifier(UUID.fromString("500adec7-d9f3-4d82-8e04-35c74fcd939b"), "chainsaw_knockback", (-0.9), AttributeModifier.Operation.MULTIPLY_TOTAL)));
+			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.HEAD) {
 			if (itemstack.getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_HELMET.get()) {

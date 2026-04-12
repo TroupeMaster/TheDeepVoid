@@ -5,7 +5,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
-import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
@@ -17,7 +16,6 @@ import net.minecraft.world.entity.ai.goal.LeapAtTargetGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
-import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
@@ -31,7 +29,6 @@ import net.minecraft.network.protocol.Packet;
 
 import net.mcreator.thedeepvoid.procedures.MimickingShadowTickProcedure;
 import net.mcreator.thedeepvoid.procedures.MimickingShadowEntityIsHurtProcedure;
-import net.mcreator.thedeepvoid.procedures.MimicNaturalEntitySpawningConditionProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 public class MimickingShadowEntity extends Monster {
@@ -103,12 +100,6 @@ public class MimickingShadowEntity extends Monster {
 	}
 
 	public static void init() {
-		SpawnPlacements.register(TheDeepVoidModEntities.MIMICKING_SHADOW.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (entityType, world, reason, pos, random) -> {
-			int x = pos.getX();
-			int y = pos.getY();
-			int z = pos.getZ();
-			return MimicNaturalEntitySpawningConditionProcedure.execute(world, x, y, z);
-		});
 	}
 
 	public static AttributeSupplier.Builder createAttributes() {

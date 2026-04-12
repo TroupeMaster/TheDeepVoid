@@ -53,8 +53,6 @@ public class PainfulSharerAttackedProcedure {
 						if ((entityiterator instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.PAINFUL.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.PAINFUL.get()).getAmplifier() : 0) > 1) {
 							if (event != null && event.isCancelable()) {
 								event.setCanceled(true);
-							} else if (event != null && event.hasResult()) {
-								event.setResult(Event.Result.DENY);
 							}
 							entityiterator.hurt(
 									new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy"))), sourceentity),
@@ -71,8 +69,6 @@ public class PainfulSharerAttackedProcedure {
 						} else {
 							if (event != null && event.isCancelable()) {
 								event.setCanceled(true);
-							} else if (event != null && event.hasResult()) {
-								event.setResult(Event.Result.DENY);
 							}
 							entityiterator.hurt(
 									new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy"))), sourceentity),

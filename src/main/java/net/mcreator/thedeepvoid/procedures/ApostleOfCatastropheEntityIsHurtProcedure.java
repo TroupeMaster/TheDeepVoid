@@ -41,8 +41,6 @@ public class ApostleOfCatastropheEntityIsHurtProcedure {
 		if (entity instanceof ApostleOfCatastropheEntity && entity.getPersistentData().getBoolean("deep_void:spinning") == true && !(immediatesourceentity == sourceentity) && !(sourceentity == null) && !(sourceentity == entity)) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 			immediatesourceentity.setDeltaMovement(new Vec3(((immediatesourceentity.getX() - sourceentity.getX()) * 2), ((immediatesourceentity.getY() - (sourceentity.getY() + 2)) * 2), ((immediatesourceentity.getZ() - sourceentity.getZ()) * 2)));
 			if (world instanceof Level _level) {
@@ -57,8 +55,6 @@ public class ApostleOfCatastropheEntityIsHurtProcedure {
 				&& !(sourceentity == entity)) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 			immediatesourceentity.setDeltaMovement(new Vec3(((immediatesourceentity.getX() - sourceentity.getX()) * 2), ((immediatesourceentity.getY() - (sourceentity.getY() + 2)) * 2), ((immediatesourceentity.getZ() - sourceentity.getZ()) * 2)));
 			if (world instanceof Level _level) {
@@ -73,8 +69,6 @@ public class ApostleOfCatastropheEntityIsHurtProcedure {
 				&& !(sourceentity == entity)) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 			immediatesourceentity.setDeltaMovement(new Vec3(((immediatesourceentity.getX() - sourceentity.getX()) * 2), ((immediatesourceentity.getY() - (sourceentity.getY() + 2)) * 2), ((immediatesourceentity.getZ() - sourceentity.getZ()) * 2)));
 			if (world instanceof Level _level) {

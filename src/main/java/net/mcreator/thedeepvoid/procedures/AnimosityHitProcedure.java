@@ -41,8 +41,6 @@ public class AnimosityHitProcedure {
 				if (entity instanceof Player) {
 					if (event != null && event.isCancelable()) {
 						event.setCanceled(true);
-					} else if (event != null && event.hasResult()) {
-						event.setResult(Event.Result.DENY);
 					}
 					entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:assassination"))), sourceentity),
 							(float) (amount * 1.5));
@@ -56,8 +54,6 @@ public class AnimosityHitProcedure {
 						}
 						if (event != null && event.isCancelable()) {
 							event.setCanceled(true);
-						} else if (event != null && event.hasResult()) {
-							event.setResult(Event.Result.DENY);
 						}
 						entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:assassination"))), sourceentity),
 								(float) (amount * 2.5));
@@ -67,8 +63,6 @@ public class AnimosityHitProcedure {
 						entity.getPersistentData().putBoolean("deep_void:attackedByAnimosity", true);
 						if (event != null && event.isCancelable()) {
 							event.setCanceled(true);
-						} else if (event != null && event.hasResult()) {
-							event.setResult(Event.Result.DENY);
 						}
 						entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:assassination"))), sourceentity),
 								(float) (amount * 2));

@@ -1,0 +1,167 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:flesh_rib1",
+            "random_rotation": true,
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:flesh_rib2",
+            "random_rotation": true,
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:flesh_ribs1",
+            "random_rotation": true,
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:giant_rib1",
+            "random_rotation": true,
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:giant_rib2",
+            "random_rotation": true,
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:fleshy_giant_skull",
+            "random_rotation": true,
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:flesh_ribs_eyes",
+            "random_rotation": true,
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:flesh_tentacles_new",
+            "random_rotation": true,
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      }
+    ]
+  }
+}

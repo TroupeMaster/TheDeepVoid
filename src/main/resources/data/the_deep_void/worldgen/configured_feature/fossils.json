@@ -1,0 +1,197 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:fossil1",
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:fossil1_rotten",
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:fossil2",
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:fossil2_rotten",
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:fossil3",
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:fossil3_rotten",
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:fossil4",
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:fossil4_rotten",
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:fossil5",
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:fossil5_rotten",
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      }
+    ]
+  }
+}

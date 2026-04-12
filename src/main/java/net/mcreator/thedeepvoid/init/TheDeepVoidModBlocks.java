@@ -376,6 +376,7 @@ import net.mcreator.thedeepvoid.block.BlueCandelabraBlock;
 import net.mcreator.thedeepvoid.block.BlossomingDesolateLichenBlock;
 import net.mcreator.thedeepvoid.block.BloodstoneOreBlock;
 import net.mcreator.thedeepvoid.block.BloodLanternBlock;
+import net.mcreator.thedeepvoid.block.BlockOfVoidriumAlloyBlock;
 import net.mcreator.thedeepvoid.block.BlockOfVisceraBlock;
 import net.mcreator.thedeepvoid.block.BlockOfUmbriumBlock;
 import net.mcreator.thedeepvoid.block.BlockOfSulfurBlock;
@@ -902,6 +903,7 @@ public class TheDeepVoidModBlocks {
 	public static final RegistryObject<Block> BLOCK_OF_SHATTERED_BONE = REGISTRY.register("block_of_shattered_bone", () -> new BlockOfShatteredBoneBlock());
 	public static final RegistryObject<Block> BLOCK_OF_OLD_SHATTERED_BONE = REGISTRY.register("block_of_old_shattered_bone", () -> new BlockOfOldShatteredBoneBlock());
 	public static final RegistryObject<Block> BLOCK_OF_ROTTEN_SHATTERED_BONE = REGISTRY.register("block_of_rotten_shattered_bone", () -> new BlockOfRottenShatteredBoneBlock());
+	public static final RegistryObject<Block> BLOCK_OF_VOIDRIUM_ALLOY = REGISTRY.register("block_of_voidrium_alloy", () -> new BlockOfVoidriumAlloyBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aba",
+    "cdc",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:refined_onyx"
+    },
+    "b": {
+      "item": "the_deep_void:void_matter"
+    },
+    "c": {
+      "item": "the_deep_void:void_roots"
+    },
+    "d": {
+      "item": "minecraft:tripwire_hook"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:black_hole",
+    "count": 1
+  }
+}

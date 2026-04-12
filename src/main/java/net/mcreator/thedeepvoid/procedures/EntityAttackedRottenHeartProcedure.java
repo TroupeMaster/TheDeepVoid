@@ -38,8 +38,6 @@ public class EntityAttackedRottenHeartProcedure {
 		if (sourceentity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TheDeepVoidModMobEffects.ROTTEN_HEART.get())) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 			if (sourceentity instanceof LivingEntity _entity)
 				_entity.removeEffect(TheDeepVoidModMobEffects.ROTTEN_HEART.get());

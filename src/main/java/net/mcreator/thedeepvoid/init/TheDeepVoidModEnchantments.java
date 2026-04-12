@@ -13,7 +13,9 @@ import net.minecraft.world.item.enchantment.Enchantment;
 import net.mcreator.thedeepvoid.enchantment.VoidVisionEnchantment;
 import net.mcreator.thedeepvoid.enchantment.ScourgeOfFleshEnchantment;
 import net.mcreator.thedeepvoid.enchantment.RadianceEnchantment;
+import net.mcreator.thedeepvoid.enchantment.QuickTriggerEnchantment;
 import net.mcreator.thedeepvoid.enchantment.NecrosedEnchantment;
+import net.mcreator.thedeepvoid.enchantment.DimensionalBurstEnchantment;
 import net.mcreator.thedeepvoid.enchantment.CurseOfSorrowEnchantment;
 import net.mcreator.thedeepvoid.enchantment.CurseOfGodsBloodEnchantment;
 import net.mcreator.thedeepvoid.enchantment.CrateCatcherEnchantment;
@@ -34,4 +36,6 @@ public class TheDeepVoidModEnchantments {
 	public static final RegistryObject<Enchantment> BAIT = REGISTRY.register("bait", () -> new BaitEnchantment());
 	public static final RegistryObject<Enchantment> RADIANCE = REGISTRY.register("radiance", () -> new RadianceEnchantment());
 	public static final RegistryObject<Enchantment> CONSERVATION = REGISTRY.register("conservation", () -> new ConservationEnchantment());
+	public static final RegistryObject<Enchantment> DIMENSIONAL_BURST = REGISTRY.register("dimensional_burst", () -> new DimensionalBurstEnchantment());
+	public static final RegistryObject<Enchantment> QUICK_TRIGGER = REGISTRY.register("quick_trigger", () -> new QuickTriggerEnchantment());
 }

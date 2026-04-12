@@ -48,8 +48,6 @@ public class VoidFlyAttacksEntityProcedure {
 		if (entity instanceof BlackFlyEntity && sourceentity instanceof LivingEntity && Math.random() < 0.25) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 			entity.setDeltaMovement(new Vec3((Mth.nextDouble(RandomSource.create(), -1, 1)), 0, (Mth.nextDouble(RandomSource.create(), -1, 1))));
 			TheDeepVoidMod.queueServerWork(10, () -> {

@@ -6,7 +6,7 @@ import net.minecraft.client.gui.screens.Screen;
 public class RottenTongueDescriptionProcedure {
 	public static String execute() {
 		if (Screen.hasShiftDown()) {
-			return Component.translatable("item.the_deep_void.rotten_tongue.descr").getString();
+			return "\u00A77" + Component.translatable("item.the_deep_void.rotten_tongue.descr").getString();
 		}
 		return Component.translatable("item.the_deep_void.weapon_tooltip.show").getString();
 	}

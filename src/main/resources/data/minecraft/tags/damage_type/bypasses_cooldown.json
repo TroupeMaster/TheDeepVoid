@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "the_deep_void:void_sickness"
+    "the_deep_void:void_sickness",
+    "the_deep_void:sawed"
   ]
 }

@@ -42,8 +42,6 @@ public class OverseerAttackedProcedure {
 				if (!((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() instanceof PickaxeItem)) {
 					if (event != null && event.isCancelable()) {
 						event.setCanceled(true);
-					} else if (event != null && event.hasResult()) {
-						event.setResult(Event.Result.DENY);
 					}
 				}
 			}
@@ -51,8 +49,6 @@ public class OverseerAttackedProcedure {
 		if (entity instanceof GhostlyNightmareEntity) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 		}
 	}

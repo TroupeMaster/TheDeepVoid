@@ -36,16 +36,13 @@ import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Containers;
-import net.minecraft.util.RandomSource;
 import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.world.inventory.SoulForgeGUIMenu;
-import net.mcreator.thedeepvoid.procedures.SoulForgeOnTickUpdateProcedure;
 import net.mcreator.thedeepvoid.procedures.SoulForgeOnBlockRightClickedProcedure;
 import net.mcreator.thedeepvoid.block.entity.SoulForgeBlockEntity;
 
@@ -56,7 +53,7 @@ public class SoulForgeBlock extends Block implements SimpleWaterloggedBlock, Ent
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public SoulForgeBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).strength(-1, 3600000).noOcclusion().randomTicks().pushReaction(PushReaction.BLOCK).hasPostProcess((bs, br, bp) -> true)
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.ANVIL).strength(-1, 3600000).noOcclusion().pushReaction(PushReaction.BLOCK).hasPostProcess((bs, br, bp) -> true)
 				.emissiveRendering((bs, br, bp) -> true).isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(FACING, Direction.NORTH).setValue(WATERLOGGED, false));
 	}
@@ -79,10 +76,10 @@ public class SoulForgeBlock extends Block implements SimpleWaterloggedBlock, Ent
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
 		return switch (state.getValue(FACING)) {
-			default -> Shapes.or(box(1, 0, 0, 15, 4, 16), box(3, 4, 1, 13, 5, 15), box(5, 5, 2, 11, 10, 14), box(2, 10, 0, 14, 16, 16), box(2, 6, 0, 14, 10, 16));
-			case NORTH -> Shapes.or(box(1, 0, 0, 15, 4, 16), box(3, 4, 1, 13, 5, 15), box(5, 5, 2, 11, 10, 14), box(2, 10, 0, 14, 16, 16), box(2, 6, 0, 14, 10, 16));
-			case EAST -> Shapes.or(box(0, 0, 1, 16, 4, 15), box(1, 4, 3, 15, 5, 13), box(2, 5, 5, 14, 10, 11), box(0, 10, 2, 16, 16, 14), box(0, 6, 2, 16, 10, 14));
-			case WEST -> Shapes.or(box(0, 0, 1, 16, 4, 15), box(1, 4, 3, 15, 5, 13), box(2, 5, 5, 14, 10, 11), box(0, 10, 2, 16, 16, 14), box(0, 6, 2, 16, 10, 14));
+			default -> box(1, 0, 1, 15, 16, 15);
+			case NORTH -> box(1, 0, 1, 15, 16, 15);
+			case EAST -> box(1, 0, 1, 15, 16, 15);
+			case WEST -> box(1, 0, 1, 15, 16, 15);
 		};
 	}
 
@@ -116,15 +113,6 @@ public class SoulForgeBlock extends Block implements SimpleWaterloggedBlock, Ent
 			world.scheduleTick(currentPos, Fluids.WATER, Fluids.WATER.getTickDelay(world));
 		}
 		return super.updateShape(state, facing, facingState, world, currentPos, facingPos);
-	}
-
-	@Override
-	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
-		super.tick(blockstate, world, pos, random);
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-		SoulForgeOnTickUpdateProcedure.execute(world, x, y, z);
 	}
 
 	@Override

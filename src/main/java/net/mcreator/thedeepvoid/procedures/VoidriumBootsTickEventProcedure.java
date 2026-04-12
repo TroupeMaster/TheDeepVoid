@@ -41,8 +41,6 @@ public class VoidriumBootsTickEventProcedure {
 			if (distance > 3) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.PORTAL, x, y, z, 10, 0.2, 0.2, 0.2, 0.1);
@@ -52,8 +50,6 @@ public class VoidriumBootsTickEventProcedure {
 			if ((entity.getVehicle()) instanceof MuzzledDeathVultureEntity || (entity.getVehicle()) instanceof RideableEyekinEntity || (entity.getVehicle()) instanceof RideableFlyingEyekinEntity) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 			}
 		}

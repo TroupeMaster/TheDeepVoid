@@ -11,6 +11,7 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.tags.TagKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
@@ -68,52 +69,52 @@ public class FogStartCaveProcedure {
 			return;
 		if (DeepVoidConfigConfiguration.DEEPVOIDFOG.get() == true) {
 			if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) {
-				if (entity.getY() <= 40 && entity.getY() >= 1) {
+				if (entity.getY() <= 40 && entity.getY() >= 1 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setShape(FogShape.SPHERE);
 				}
-				if (entity.getY() <= 40 && entity.getY() > 38) {
+				if (entity.getY() <= 40 && entity.getY() > 38 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(100, 120);
-				} else if (entity.getY() <= 38 && entity.getY() > 36) {
+				} else if (entity.getY() <= 38 && entity.getY() > 36 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(95, 115);
-				} else if (entity.getY() <= 36 && entity.getY() > 34) {
+				} else if (entity.getY() <= 36 && entity.getY() > 34 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(90, 110);
-				} else if (entity.getY() <= 34 && entity.getY() > 32) {
+				} else if (entity.getY() <= 34 && entity.getY() > 32 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(85, 105);
-				} else if (entity.getY() <= 32 && entity.getY() > 30) {
+				} else if (entity.getY() <= 32 && entity.getY() > 30 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(80, 100);
-				} else if (entity.getY() <= 30 && entity.getY() > 28) {
+				} else if (entity.getY() <= 30 && entity.getY() > 28 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(75, 95);
-				} else if (entity.getY() <= 28 && entity.getY() > 26) {
+				} else if (entity.getY() <= 28 && entity.getY() > 26 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(70, 90);
-				} else if (entity.getY() <= 26 && entity.getY() > 24) {
+				} else if (entity.getY() <= 26 && entity.getY() > 24 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(65, 85);
-				} else if (entity.getY() <= 24 && entity.getY() > 22) {
+				} else if (entity.getY() <= 24 && entity.getY() > 22 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(60, 80);
-				} else if (entity.getY() <= 22 && entity.getY() > 20) {
+				} else if (entity.getY() <= 22 && entity.getY() > 20 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(55, 75);
-				} else if (entity.getY() <= 20 && entity.getY() > 18) {
+				} else if (entity.getY() <= 20 && entity.getY() > 18 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(50, 75);
-				} else if (entity.getY() <= 18 && entity.getY() > 16) {
+				} else if (entity.getY() <= 18 && entity.getY() > 16 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(45, 70);
-				} else if (entity.getY() <= 16 && entity.getY() > 14) {
+				} else if (entity.getY() <= 16 && entity.getY() > 14 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(40, 65);
-				} else if (entity.getY() <= 14 && entity.getY() > 12) {
+				} else if (entity.getY() <= 14 && entity.getY() > 12 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(35, 60);
-				} else if (entity.getY() <= 12 && entity.getY() > 10) {
+				} else if (entity.getY() <= 12 && entity.getY() > 10 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(30, 55);
-				} else if (entity.getY() <= 10 && entity.getY() > 8) {
+				} else if (entity.getY() <= 10 && entity.getY() > 8 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(25, 50);
-				} else if (entity.getY() <= 8 && entity.getY() > 6) {
+				} else if (entity.getY() <= 8 && entity.getY() > 6 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(20, 45);
-				} else if (entity.getY() <= 6 && entity.getY() > 4) {
+				} else if (entity.getY() <= 6 && entity.getY() > 4 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(15, 40);
-				} else if (entity.getY() <= 4 && entity.getY() > 2) {
+				} else if (entity.getY() <= 4 && entity.getY() > 2 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(10, 35);
-				} else if (entity.getY() == 3) {
+				} else if (entity.getY() == 3 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(10, 30);
-				} else if (entity.getY() == 2) {
+				} else if (entity.getY() == 2 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(10, 25);
-				} else if (entity.getY() <= 1 && !(entity instanceof LivingEntity _livEnt69 && _livEnt69.hasEffect(TheDeepVoidModMobEffects.HALLUCINATE.get()))) {
+				} else if (entity.getY() <= 1 && !(entity instanceof LivingEntity _livEnt91 && _livEnt91.hasEffect(TheDeepVoidModMobEffects.HALLUCINATE.get()))) {
 					setDistance(10, 20);
 				}
 			}
@@ -122,7 +123,7 @@ public class FogStartCaveProcedure {
 					setDistance(80, 180);
 					setShape(FogShape.CYLINDER);
 				}
-			} else if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:grim_canopy"))) {
+			} else if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:grim_canopy")) || world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:deep_marrows"))) {
 				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleOfCatastropheEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
 					setDistance(50, 120);
 					setShape(FogShape.CYLINDER);

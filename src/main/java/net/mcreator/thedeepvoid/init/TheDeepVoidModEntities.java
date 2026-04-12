@@ -97,6 +97,7 @@ import net.mcreator.thedeepvoid.entity.LightEntity;
 import net.mcreator.thedeepvoid.entity.LickerEntity;
 import net.mcreator.thedeepvoid.entity.LavenditeShardProjEntity;
 import net.mcreator.thedeepvoid.entity.LastingShadowHandEntity;
+import net.mcreator.thedeepvoid.entity.InvisibleEntity;
 import net.mcreator.thedeepvoid.entity.IdlingApostleEntity;
 import net.mcreator.thedeepvoid.entity.IchorSpitEntity;
 import net.mcreator.thedeepvoid.entity.HookEntity;
@@ -672,6 +673,8 @@ public class TheDeepVoidModEntities {
 			EntityType.Builder.<VoidArrowEntity>of(VoidArrowEntity::new, MobCategory.MISC).setCustomClientFactory(VoidArrowEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<WeaverOfSoulsBossEntity>> WEAVER_OF_SOULS_BOSS = register("weaver_of_souls_boss", EntityType.Builder.<WeaverOfSoulsBossEntity>of(WeaverOfSoulsBossEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(78).setUpdateInterval(3).setCustomClientFactory(WeaverOfSoulsBossEntity::new).fireImmune().sized(2.8f, 2.8f));
+	public static final RegistryObject<EntityType<InvisibleEntity>> INVISIBLE = register("invisible",
+			EntityType.Builder.<InvisibleEntity>of(InvisibleEntity::new, MobCategory.MISC).setCustomClientFactory(InvisibleEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));

@@ -9,10 +9,10 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.projectile.ThrownPotion;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.SpawnGroupData;
+import net.minecraft.world.entity.PathfinderMob;
 import net.minecraft.world.entity.MobType;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
@@ -34,7 +34,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 import javax.annotation.Nullable;
 
-public class SulfurTntEntityEntity extends Monster {
+public class SulfurTntEntityEntity extends PathfinderMob {
 	public static final EntityDataAccessor<Integer> DATA_tick = SynchedEntityData.defineId(SulfurTntEntityEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_explode = SynchedEntityData.defineId(SulfurTntEntityEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_fuse = SynchedEntityData.defineId(SulfurTntEntityEntity.class, EntityDataSerializers.INT);

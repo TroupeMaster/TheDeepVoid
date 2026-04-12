@@ -40,8 +40,6 @@ public class VoidbornIsInsideSolidWallProcedure {
 			if (entity.isInWall()) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 			}
 			VoidbornEntityIsHurtProcedure.execute(world, x, y, z, entity, sourceentity);
@@ -50,8 +48,6 @@ public class VoidbornIsInsideSolidWallProcedure {
 				&& world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), sourceentity),
 					(float) ((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getBaseValue());

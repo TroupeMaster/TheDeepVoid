@@ -89,7 +89,6 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> HERESYGOLDENBLOODSHOT;
 	public static final ForgeConfigSpec.ConfigValue<Double> HERESYBLOODSHOTSHOTGUN;
 	public static final ForgeConfigSpec.ConfigValue<Double> HERESYGOLDENBLOODSHOTSHOTGUN;
-	public static final ForgeConfigSpec.ConfigValue<Double> SENTIENTCHAINSAW;
 	public static final ForgeConfigSpec.ConfigValue<Double> APOSTASYSOULFUSEDSHOT;
 	public static final ForgeConfigSpec.ConfigValue<Double> KNIFEGLOVE;
 	public static final ForgeConfigSpec.ConfigValue<Double> ICHORSWORDSPIT;
@@ -123,6 +122,8 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> VOIDBOW;
 	public static final ForgeConfigSpec.ConfigValue<Double> SCYTHESREACH;
 	public static final ForgeConfigSpec.ConfigValue<Double> PLAGUEARMORBONUS;
+	public static final ForgeConfigSpec.ConfigValue<Double> BLACKHOLEDAMAGE;
+	public static final ForgeConfigSpec.ConfigValue<Double> BLACKHOLESTORELIMIT;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERWHILEMOVING;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIT;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIKESPAWN;
@@ -227,7 +228,7 @@ public class DeepVoidConfigConfiguration {
 		PRIMORDIALCRAWLERSLAM = BUILDER.comment("Damage").define("PrimordialCrawlerSlam", (double) 16);
 		PRIMORDIALCRAWLERSPIT = BUILDER.comment("Damage per spit (velocity increases that number)").define("PrimordialCrawlerSpit", (double) 6);
 		PRIMORDIALCRAWLERDIGPLAYERCLOSE = BUILDER.comment("Damage").define("PrimordialCrawlerDigPlayerClose", (double) 17);
-		PRIMORDIALCRAWLERDASH = BUILDER.comment("Damage (on contact)").define("PrimordialCrawlerDash", (double) 24);
+		PRIMORDIALCRAWLERDASH = BUILDER.comment("Damage (on contact)").define("PrimordialCrawlerDash", (double) 20);
 		PRIMORDIALCRAWLERGOOBLOCK = BUILDER.comment("Damage in an AOE").define("PrimordialCrawlerGooBlock", (double) 10);
 		BUILDER.pop();
 		BUILDER.push("Weapons");
@@ -243,7 +244,6 @@ public class DeepVoidConfigConfiguration {
 		HERESYGOLDENBLOODSHOT = BUILDER.comment("Damage (velocity increases that number)").define("HeresyGoldenBloodShot", (double) 2.5);
 		HERESYBLOODSHOTSHOTGUN = BUILDER.comment("Damage (velocity increases that number)").define("HeresyBloodShotShotgun", (double) 25);
 		HERESYGOLDENBLOODSHOTSHOTGUN = BUILDER.comment("Damage (velocity increases that number)").define("HeresyGoldenBloodShotShotgun", (double) 20);
-		SENTIENTCHAINSAW = BUILDER.comment("Damage each tick (ignores armor)").define("SentientChainsaw", (double) 2);
 		APOSTASYSOULFUSEDSHOT = BUILDER.comment("Damage (velocity increases that number)").define("ApostasySoulFusedShot", (double) 3);
 		KNIFEGLOVE = BUILDER.comment("Damage (velocity increases that number)").define("KnifeGlove", (double) 4.5);
 		ICHORSWORDSPIT = BUILDER.comment("Damage per projectile").define("IchorSwordSpit", (double) 5);
@@ -277,6 +277,8 @@ public class DeepVoidConfigConfiguration {
 		VOIDBOW = BUILDER.comment("Void bow damage (ignores armor and i-frames)").define("VoidBow", (double) 8);
 		SCYTHESREACH = BUILDER.define("ScythesReach", (double) 0.5);
 		PLAGUEARMORBONUS = BUILDER.comment("The attack damage bonus").define("PlagueArmorBonus", (double) 2);
+		BLACKHOLEDAMAGE = BUILDER.define("BlackHoleDamage", (double) 4);
+		BLACKHOLESTORELIMIT = BUILDER.comment("The arrow storing limit of Black Hole when enchanted with Dimensional Burst").define("BlackHoleStoreLimit", (double) 60);
 		BUILDER.pop();
 		BUILDER.push("Hive's Watcher");
 		HIVEWATCHERWHILEMOVING = BUILDER.comment("Damage each tick").define("HiveWatcherWhileMoving", (double) 10);

@@ -59,15 +59,11 @@ public class LightAttackedProcedure {
 		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:invulnerable")))) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 		} else if (entity instanceof SoulOrbEntity) {
 			if (sourceentity instanceof Player) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 				if (sourceentity instanceof Player _player && !_player.level().isClientSide())
 					_player.displayClientMessage(Component.literal("\u00A7b\u00A7l\u00A7kSOUL \u00A7b\u00A7lTake me. \u00A7b\u00A7l\u00A7kSOUL"), true);

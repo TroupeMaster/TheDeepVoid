@@ -73,6 +73,8 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 				&& (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / (double) DeepVoidConfigConfiguration.APOSTLESECONDPHASE.get() && Math.random() < 0.6) {
 			ApostleParryProcedure.execute(world, entity);
 		} else if ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_attackChance) : 0) == 280) {
+			if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
+				_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_parry, false);
 			ApostleBackJumpShootProcedure.execute(world, entity);
 		} else if ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_attackChance) : 0) == 340) {
 			ApostleSpinProcedure.execute(world, entity);
@@ -82,13 +84,13 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 			if (entity instanceof ApostleOfCatastropheEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(ApostleOfCatastropheEntity.DATA_attackChance, 0);
 		}
-		if ((entity instanceof ApostleOfCatastropheEntity _datEntL25 && _datEntL25.getEntityData().get(ApostleOfCatastropheEntity.DATA_spinning)) == true) {
+		if ((entity instanceof ApostleOfCatastropheEntity _datEntL26 && _datEntL26.getEntityData().get(ApostleOfCatastropheEntity.DATA_spinning)) == true) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
 					if (entityiterator instanceof Player) {
-						if ((entityiterator instanceof LivingEntity _entUseItem27 ? _entUseItem27.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
+						if ((entityiterator instanceof LivingEntity _entUseItem28 ? _entUseItem28.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {
 									_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.shield.block")),
@@ -99,14 +101,14 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 								}
 							}
 							{
-								ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem33 ? _entUseItem33.getUseItem() : ItemStack.EMPTY);
+								ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem34 ? _entUseItem34.getUseItem() : ItemStack.EMPTY);
 								if (_ist.hurt(1, RandomSource.create(), null)) {
 									_ist.shrink(1);
 									_ist.setDamageValue(0);
 								}
 							}
 							if (entityiterator instanceof Player _player)
-								_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem35 ? _entUseItem35.getUseItem() : ItemStack.EMPTY).getItem(), 100);
+								_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem36 ? _entUseItem36.getUseItem() : ItemStack.EMPTY).getItem(), 100);
 						} else {
 							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity), (float) (double) DeepVoidConfigConfiguration.APOSTLESPIN.get());
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -178,7 +180,7 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 				if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
 					_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_spinning, false);
 			});
-		} else if ((entity instanceof ApostleOfCatastropheEntity _datEntL76 && _datEntL76.getEntityData().get(ApostleOfCatastropheEntity.DATA_spinning)) == false) {
+		} else if ((entity instanceof ApostleOfCatastropheEntity _datEntL77 && _datEntL77.getEntityData().get(ApostleOfCatastropheEntity.DATA_spinning)) == false) {
 			if ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_laughChance) : 0) == 20) {
 				if (entity instanceof ApostleOfCatastropheEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(ApostleOfCatastropheEntity.DATA_laughChance, 0);
@@ -254,7 +256,7 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 					_datEntSetI.getEntityData().set(ApostleOfCatastropheEntity.DATA_laughChance, (int) ((entity instanceof ApostleOfCatastropheEntity _datEntI ? _datEntI.getEntityData().get(ApostleOfCatastropheEntity.DATA_laughChance) : 0) + 1));
 			}
 		}
-		if ((entity instanceof ApostleOfCatastropheEntity _datEntL106 && _datEntL106.getEntityData().get(ApostleOfCatastropheEntity.DATA_noEscape)) == true) {
+		if ((entity instanceof ApostleOfCatastropheEntity _datEntL107 && _datEntL107.getEntityData().get(ApostleOfCatastropheEntity.DATA_noEscape)) == true) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 5, 99, false, false));
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -273,7 +275,7 @@ public class ApostleOfCatastropheOnEntityTickUpdateProcedure {
 			}
 		}
 		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()) && DeepVoidConfigConfiguration.BOSSIDLES.get() == true) {
-			if ((entity instanceof ApostleOfCatastropheEntity _datEntL115 && _datEntL115.getEntityData().get(ApostleOfCatastropheEntity.DATA_fog)) == true) {
+			if ((entity instanceof ApostleOfCatastropheEntity _datEntL116 && _datEntL116.getEntityData().get(ApostleOfCatastropheEntity.DATA_fog)) == true) {
 				if (entity instanceof ApostleOfCatastropheEntity _datEntSetL)
 					_datEntSetL.getEntityData().set(ApostleOfCatastropheEntity.DATA_fog, false);
 			}

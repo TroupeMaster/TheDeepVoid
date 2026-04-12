@@ -95,8 +95,6 @@ public class PlayerDiesProcedure {
 			if (sourceentity instanceof MisanthropicHivemindEntity || sourceentity instanceof FleshFangsEntity || sourceentity instanceof SkullSmasherEntity || sourceentity instanceof SawThrowerEntity || sourceentity instanceof BoneSawEntity) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
@@ -132,8 +130,6 @@ public class PlayerDiesProcedure {
 			} else if (sourceentity instanceof PrimordialBoneCrawlerEntity) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);
@@ -156,8 +152,6 @@ public class PlayerDiesProcedure {
 			} else if (sourceentity instanceof ApostleOfCatastropheEntity) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth(1);

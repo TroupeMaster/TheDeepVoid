@@ -58,7 +58,7 @@ public class MistedRemnantsFogProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z) {
 		double fogStart = 0;
 		double fogEnd = 0;
-		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:misted_remnants")) && y > 36) {
+		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:misted_remnants")) && y > 1) {
 			setShape(FogShape.CYLINDER);
 			setDistance(0, 40);
 		}

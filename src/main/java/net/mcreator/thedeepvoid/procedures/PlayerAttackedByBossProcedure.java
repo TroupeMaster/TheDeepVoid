@@ -83,8 +83,6 @@ public class PlayerAttackedByBossProcedure {
 					&& !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:capped_damage"))) && !damagesource.is(DamageTypes.MAGIC)) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:capped_damage"))), sourceentity),
 						(float) ((double) DeepVoidConfigConfiguration.BOSSDAMAGECAP.get() + (amount - (double) DeepVoidConfigConfiguration.BOSSDAMAGECAP.get()) * (double) DeepVoidConfigConfiguration.DAMAGECAPPERCENTAGE.get()));
@@ -93,8 +91,6 @@ public class PlayerAttackedByBossProcedure {
 		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:boss"))) && sourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:boss")))) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 		}
 	}

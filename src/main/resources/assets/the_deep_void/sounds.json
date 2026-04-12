@@ -1790,5 +1790,48 @@
         "stream": false
       }
     ]
+  },
+  "sentient_chainsaw_impact": {
+    "subtitle": "subtitles.sentient_chainsaw_impact",
+    "sounds": [
+      {
+        "name": "the_deep_void:d4_sfx_item_brokensawbladeimpact-003",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:d4_sfx_item_brokensawbladeimpact-002",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:d4_sfx_item_brokensawbladeimpact-001",
+        "stream": false
+      }
+    ]
+  },
+  "sentient_chainsaw_loop": {
+    "subtitle": "subtitles.sentient_chainsaw_loop",
+    "sounds": [
+      {
+        "name": "the_deep_void:d4_sfx_item_brokensawbladesawloop8",
+        "stream": false
+      }
+    ]
+  },
+  "sentient_chainsaw_break": {
+    "subtitle": "subtitles.sentient_chainsaw_break",
+    "sounds": [
+      {
+        "name": "the_deep_void:d4_sfx_item_brokensawbladebreaknew-003",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:d4_sfx_item_brokensawbladebreaknew-002",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:d4_sfx_item_brokensawbladebreaknew-001",
+        "stream": false
+      }
+    ]
   }
 }

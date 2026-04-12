@@ -55,8 +55,6 @@ public class PlayerFishesInLiquidVoidProcedure {
 		if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 			{
 				final Vec3 _center = new Vec3(x, y, z);

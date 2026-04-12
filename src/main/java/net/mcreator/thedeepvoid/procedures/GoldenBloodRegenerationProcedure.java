@@ -29,8 +29,6 @@ public class GoldenBloodRegenerationProcedure {
 		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TheDeepVoidModMobEffects.GOLDEN_BLOOD.get())) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 			if (entity instanceof LivingEntity _entity)
 				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1)
@@ -40,8 +38,6 @@ public class GoldenBloodRegenerationProcedure {
 			if (Math.random() < 0.4) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 			}
 		}

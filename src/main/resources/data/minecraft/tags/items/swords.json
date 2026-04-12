@@ -13,7 +13,6 @@
     "the_deep_void:hunter_claws",
     "the_deep_void:penitent_cross",
     "the_deep_void:onyx_naginata",
-    "the_deep_void:rotten_tongue",
     "the_deep_void:dark_steel_sword",
     "the_deep_void:ichor_sword",
     "the_deep_void:rusty_claws",
@@ -22,7 +21,6 @@
     "the_deep_void:the_bonk",
     "the_deep_void:rotten_sword",
     "the_deep_void:claw_blade",
-    "the_deep_void:sentient_chainsaw",
     "the_deep_void:animosity_hidden",
     "the_deep_void:animosity",
     "the_deep_void:judgement",
@@ -47,6 +45,8 @@
     "the_deep_void:knives_glove",
     "the_deep_void:knife_bandolier",
     "the_deep_void:stalker_scythe_claw",
-    "the_deep_void:the_catcher"
+    "the_deep_void:the_catcher",
+    "the_deep_void:rot_tongue",
+    "the_deep_void:bloody_chainsaw"
   ]
 }

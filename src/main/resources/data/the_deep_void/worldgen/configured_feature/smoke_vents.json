@@ -1,0 +1,61 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:big_smoke_vent1",
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:big_smoke_vent2",
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:big_smoke_vent3",
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -1,
+              0
+            ]
+          }
+        },
+        "placement": []
+      }
+    ]
+  }
+}

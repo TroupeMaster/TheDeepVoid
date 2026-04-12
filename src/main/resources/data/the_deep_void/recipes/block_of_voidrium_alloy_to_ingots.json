@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:block_of_voidrium_alloy"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:voidrium_alloy",
+    "count": 9
+  }
+}

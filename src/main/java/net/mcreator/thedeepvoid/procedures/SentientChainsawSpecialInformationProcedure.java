@@ -6,7 +6,7 @@ import net.minecraft.client.gui.screens.Screen;
 public class SentientChainsawSpecialInformationProcedure {
 	public static String execute() {
 		if (Screen.hasShiftDown()) {
-			return Component.translatable("item.the_deep_void.sentient_chainsaw.descr").getString();
+			return "\u00A77" + Component.translatable("item.the_deep_void.sentient_chainsaw.descr").getString();
 		}
 		return Component.translatable("item.the_deep_void.weapon_tooltip.show").getString();
 	}

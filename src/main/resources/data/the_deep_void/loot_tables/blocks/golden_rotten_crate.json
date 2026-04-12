@@ -433,7 +433,7 @@
         },
         {
           "type": "minecraft:item",
-          "name": "the_deep_void:rotten_tongue",
+          "name": "the_deep_void:rot_tongue",
           "weight": 8,
           "functions": [
             {

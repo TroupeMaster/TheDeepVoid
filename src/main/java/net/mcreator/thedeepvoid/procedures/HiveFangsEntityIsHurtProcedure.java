@@ -31,8 +31,6 @@ public class HiveFangsEntityIsHurtProcedure {
 		if (entity instanceof HiveFangsEntity || entity instanceof SummonedHiveFangsEntity) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 		}
 	}

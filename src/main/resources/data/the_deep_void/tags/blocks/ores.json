@@ -28,6 +28,9 @@
     "the_deep_void:deep_void_lapis_lazuli_ore",
     "the_deep_void:deep_void_redstone_ore",
     "the_deep_void:deep_void_diamond_ore",
-    "the_deep_void:deep_void_gold_ore"
+    "the_deep_void:deep_void_gold_ore",
+    "the_deep_void:bloodstone_ore",
+    "the_deep_void:flesh_bloodstone_ore",
+    "the_deep_void:misted_remains"
   ]
 }

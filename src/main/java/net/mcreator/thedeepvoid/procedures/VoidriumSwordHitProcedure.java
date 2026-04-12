@@ -6,9 +6,14 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
+import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
@@ -26,6 +31,10 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
 import javax.annotation.Nullable;
+
+import java.util.UUID;
+import java.util.List;
+import java.util.Comparator;
 
 @Mod.EventBusSubscriber
 public class VoidriumSwordHitProcedure {
@@ -52,8 +61,6 @@ public class VoidriumSwordHitProcedure {
 				(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("voidHits", 0);
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), sourceentity), (float) (amount * 1.4));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
@@ -78,8 +85,6 @@ public class VoidriumSwordHitProcedure {
 				&& !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:rotten")))) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
-			} else if (event != null && event.hasResult()) {
-				event.setResult(Event.Result.DENY);
 			}
 			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:rotten"))), sourceentity),
 					(float) (amount <= 2
@@ -94,6 +99,45 @@ public class VoidriumSwordHitProcedure {
 							(float) Mth.nextDouble(RandomSource.create(), 0.9, 1.1), false);
 				}
 			}
+		} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VOID_MATTER_GREATSWORD.get()
+				&& amount > (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) && !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy")))) {
+			{
+				final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+				for (Entity entityiterator : _entfound) {
+					if (entityiterator instanceof LivingEntity && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && sourceentity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false) && !(entityiterator == entity)
+							&& !(entityiterator == sourceentity) && !(entityiterator == (sourceentity.getVehicle()))) {
+						entityiterator.hurt(
+								new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy"))), sourceentity),
+								(float) (amount - (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1)));
+					}
+				}
+			}
+		}
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ROT_TONGUE.get()
+				&& (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("block") == 1) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			}
+			if (entity instanceof LivingEntity _entity)
+				_entity.stopUsingItem();
+			if (entity instanceof Player _player)
+				_player.getCooldowns().addCooldown((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 1);
+			(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().putDouble("block", 0);
+			if (world instanceof Level _level) {
+				if (!_level.isClientSide()) {
+					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.arrow.hit_player")), SoundSource.PLAYERS, (float) 0.5, (float) 1.1);
+				} else {
+					_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.arrow.hit_player")), SoundSource.PLAYERS, (float) 0.5, (float) 1.1, false);
+				}
+			}
+			if (!(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
+					.hasModifier((new AttributeModifier(UUID.fromString("f88179f6-564d-44ff-8214-ec98a15edff2"), "rottenTongue_damage", 5, AttributeModifier.Operation.ADDITION)))))
+				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
+						.addTransientModifier((new AttributeModifier(UUID.fromString("f88179f6-564d-44ff-8214-ec98a15edff2"), "rottenTongue_damage", 5, AttributeModifier.Operation.ADDITION)));
+		}
+		if (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("f88179f6-564d-44ff-8214-ec98a15edff2")) != null) {
+			((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("f88179f6-564d-44ff-8214-ec98a15edff2"));
 		}
 	}
 }

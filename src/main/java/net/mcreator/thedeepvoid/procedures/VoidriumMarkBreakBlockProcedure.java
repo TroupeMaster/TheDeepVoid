@@ -54,8 +54,6 @@ public class VoidriumMarkBreakBlockProcedure {
 					}.checkGamemode(entity))) {
 						if (event != null && event.isCancelable()) {
 							event.setCanceled(true);
-						} else if (event != null && event.hasResult()) {
-							event.setResult(Event.Result.DENY);
 						}
 						if (entity instanceof Player _player && !_player.level().isClientSide())
 							_player.displayClientMessage(Component.literal(("\u00A7c" + Component.translatable("effect.the_deep_void.weaver_curse.warn").getString())), true);
@@ -77,8 +75,6 @@ public class VoidriumMarkBreakBlockProcedure {
 					}.checkGamemode(entity)) && !(world.getBlockState(BlockPos.containing(x, y, z))).is(BlockTags.create(new ResourceLocation("the_deep_void:curse_of_the_cult_breakable")))) {
 						if (event != null && event.isCancelable()) {
 							event.setCanceled(true);
-						} else if (event != null && event.hasResult()) {
-							event.setResult(Event.Result.DENY);
 						}
 						if (entity instanceof Player _player && !_player.level().isClientSide())
 							_player.displayClientMessage(Component.literal(("\u00A7c" + Component.translatable("effect.the_deep_void.weaver_curse.warn").getString())), true);

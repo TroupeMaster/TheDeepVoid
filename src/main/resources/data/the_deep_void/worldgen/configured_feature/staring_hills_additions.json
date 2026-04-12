@@ -1,0 +1,87 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:big_eye_tree",
+            "random_rotation": true,
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ],
+            "offset": [
+              0,
+              -2,
+              0
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:viscera_blue_eye",
+            "random_rotation": true,
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:viscera_green_eye",
+            "random_rotation": true,
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:viscera_red_eye",
+            "random_rotation": true,
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "the_deep_void:structure_feature",
+          "config": {
+            "structure": "the_deep_void:viscera_yellow_eye",
+            "random_rotation": true,
+            "random_mirror": true,
+            "ignored_blocks": [
+              "minecraft:structure_block",
+              "minecraft:air"
+            ]
+          }
+        },
+        "placement": []
+      }
+    ]
+  }
+}

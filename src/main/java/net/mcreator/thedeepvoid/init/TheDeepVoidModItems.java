@@ -26,11 +26,14 @@ import net.mcreator.thedeepvoid.procedures.VoidBowPropertyProcedure;
 import net.mcreator.thedeepvoid.procedures.TheCatcherPropertyValueProviderProcedure;
 import net.mcreator.thedeepvoid.procedures.SharpshooterValueProviderProcedure;
 import net.mcreator.thedeepvoid.procedures.ShadestormPropertyValueProviderProcedure;
+import net.mcreator.thedeepvoid.procedures.RotTonguePropertyValueProviderProcedure;
 import net.mcreator.thedeepvoid.procedures.NervesOfSteelPropertyValueProviderProcedure;
 import net.mcreator.thedeepvoid.procedures.NervesOfSteelPropertyValueProvider2Procedure;
 import net.mcreator.thedeepvoid.procedures.KnivesGlovePropertyValueProviderProcedure;
 import net.mcreator.thedeepvoid.procedures.KnifeBandolierPropertyValueProviderProcedure;
+import net.mcreator.thedeepvoid.procedures.BloodyChainsawPropertyValueProviderProcedure;
 import net.mcreator.thedeepvoid.procedures.BloodBowPropertyValueProviderProcedure;
+import net.mcreator.thedeepvoid.procedures.BlackHolePropertyValueProviderProcedure;
 import net.mcreator.thedeepvoid.procedures.BismuthVialPropertyValueProviderProcedure;
 import net.mcreator.thedeepvoid.item.WormToothItem;
 import net.mcreator.thedeepvoid.item.WitherNeedleItem;
@@ -100,7 +103,6 @@ import net.mcreator.thedeepvoid.item.SinsAndSinnersItem;
 import net.mcreator.thedeepvoid.item.SharpshooterItem;
 import net.mcreator.thedeepvoid.item.ShankItem;
 import net.mcreator.thedeepvoid.item.ShadestormItem;
-import net.mcreator.thedeepvoid.item.SentientChainsawItem;
 import net.mcreator.thedeepvoid.item.ScavengerArmorTrimItem;
 import net.mcreator.thedeepvoid.item.ScareArmorTrimItem;
 import net.mcreator.thedeepvoid.item.SaturationNeedleItem;
@@ -108,7 +110,6 @@ import net.mcreator.thedeepvoid.item.SacredVoidriumItem;
 import net.mcreator.thedeepvoid.item.SacredCinnabarItem;
 import net.mcreator.thedeepvoid.item.RustyClawsItem;
 import net.mcreator.thedeepvoid.item.RoughVoidriumItem;
-import net.mcreator.thedeepvoid.item.RottenTongueItem;
 import net.mcreator.thedeepvoid.item.RottenSwordItem;
 import net.mcreator.thedeepvoid.item.RottenShovelItem;
 import net.mcreator.thedeepvoid.item.RottenPickaxeItem;
@@ -119,6 +120,7 @@ import net.mcreator.thedeepvoid.item.RottenBoneItem;
 import net.mcreator.thedeepvoid.item.RottenBoneArmorItem;
 import net.mcreator.thedeepvoid.item.RottenAxeItem;
 import net.mcreator.thedeepvoid.item.RotfishItem;
+import net.mcreator.thedeepvoid.item.RotTongueItem;
 import net.mcreator.thedeepvoid.item.RotNeedleItem;
 import net.mcreator.thedeepvoid.item.RootingTomeItem;
 import net.mcreator.thedeepvoid.item.RidingCropItem;
@@ -294,6 +296,7 @@ import net.mcreator.thedeepvoid.item.BoneBallItem;
 import net.mcreator.thedeepvoid.item.BoneAxeItem;
 import net.mcreator.thedeepvoid.item.BloodyTongueItem;
 import net.mcreator.thedeepvoid.item.BloodyRibCageItem;
+import net.mcreator.thedeepvoid.item.BloodyChainsawItem;
 import net.mcreator.thedeepvoid.item.BloodthirstyClawsItem;
 import net.mcreator.thedeepvoid.item.BloodstoneSwordItem;
 import net.mcreator.thedeepvoid.item.BloodstoneShovelItem;
@@ -306,6 +309,7 @@ import net.mcreator.thedeepvoid.item.BloodfinItem;
 import net.mcreator.thedeepvoid.item.BloodBowItem;
 import net.mcreator.thedeepvoid.item.BloatfishItem;
 import net.mcreator.thedeepvoid.item.BlackMossItem;
+import net.mcreator.thedeepvoid.item.BlackHoleItem;
 import net.mcreator.thedeepvoid.item.BismuthVialItem;
 import net.mcreator.thedeepvoid.item.BismuthNetheriteSwordItem;
 import net.mcreator.thedeepvoid.item.BismuthNetheriteShovelItem;
@@ -904,7 +908,6 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> BONE_CRAWLER_MOLT_PIECE = REGISTRY.register("bone_crawler_molt_piece", () -> new BoneCrawlerMoltPieceItem());
 	public static final RegistryObject<Item> PRESERVER_SPAWN_EGG = REGISTRY.register("preserver_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.PRESERVER, -15269117, -4080225, new Item.Properties()));
 	public static final RegistryObject<Item> VOID_BLOSSOM = block(TheDeepVoidModBlocks.VOID_BLOSSOM);
-	public static final RegistryObject<Item> SENTIENT_CHAINSAW = REGISTRY.register("sentient_chainsaw", () -> new SentientChainsawItem());
 	public static final RegistryObject<Item> CRAWLER_ROYALTY_HELMET = REGISTRY.register("crawler_royalty_helmet", () -> new CrawlerRoyaltyItem.Helmet());
 	public static final RegistryObject<Item> CRAWLER_ROYALTY_CHESTPLATE = REGISTRY.register("crawler_royalty_chestplate", () -> new CrawlerRoyaltyItem.Chestplate());
 	public static final RegistryObject<Item> CRAWLER_ROYALTY_LEGGINGS = REGISTRY.register("crawler_royalty_leggings", () -> new CrawlerRoyaltyItem.Leggings());
@@ -1108,7 +1111,6 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> VOID_FLY = REGISTRY.register("void_fly", () -> new VoidFlyItem());
 	public static final RegistryObject<Item> VOID_FLY_MAGGOT = REGISTRY.register("void_fly_maggot", () -> new VoidFlyMaggotItem());
 	public static final RegistryObject<Item> BONE_CRAWLER_EMBRYO = REGISTRY.register("bone_crawler_embryo", () -> new BoneCrawlerEmbryoItem());
-	public static final RegistryObject<Item> ROTTEN_TONGUE = REGISTRY.register("rotten_tongue", () -> new RottenTongueItem());
 	public static final RegistryObject<Item> BLOOD_BOW = REGISTRY.register("blood_bow", () -> new BloodBowItem());
 	public static final RegistryObject<Item> GORE_ARMOR_TRIM = REGISTRY.register("gore_armor_trim", () -> new GoreArmorTrimItem());
 	public static final RegistryObject<Item> ONYX_NAGINATA = REGISTRY.register("onyx_naginata", () -> new OnyxNaginataItem());
@@ -1215,6 +1217,10 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> BONE_CLIMBING_PICK = REGISTRY.register("bone_climbing_pick", () -> new BoneClimbingPickItem());
 	public static final RegistryObject<Item> WEAVER_OF_SOULS_BOSS_SPAWN_EGG = REGISTRY.register("weaver_of_souls_boss_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.WEAVER_OF_SOULS_BOSS, -15724528, -15786978, new Item.Properties()));
 	public static final RegistryObject<Item> KNIGHTFISH = REGISTRY.register("knightfish", () -> new KnightfishItem());
+	public static final RegistryObject<Item> ROT_TONGUE = REGISTRY.register("rot_tongue", () -> new RotTongueItem());
+	public static final RegistryObject<Item> BLACK_HOLE = REGISTRY.register("black_hole", () -> new BlackHoleItem());
+	public static final RegistryObject<Item> BLOODY_CHAINSAW = REGISTRY.register("bloody_chainsaw", () -> new BloodyChainsawItem());
+	public static final RegistryObject<Item> BLOCK_OF_VOIDRIUM_ALLOY = block(TheDeepVoidModBlocks.BLOCK_OF_VOIDRIUM_ALLOY);
 
 	// Start of user code block custom items
 	// End of user code block custom items
@@ -1246,6 +1252,10 @@ public class TheDeepVoidModItems {
 			ItemProperties.register(THE_CATCHER.get(), new ResourceLocation("the_deep_void:the_catcher_state"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) TheCatcherPropertyValueProviderProcedure.execute(itemStackToRender));
 			ItemProperties.register(SHARPSHOOTER.get(), new ResourceLocation("the_deep_void:sharpshooter_pulling"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) SharpshooterValueProviderProcedure.execute(entity));
 			ItemProperties.register(VOID_BOW.get(), new ResourceLocation("the_deep_void:void_bow_pulling"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) VoidBowPropertyProcedure.execute(entity));
+			ItemProperties.register(ROT_TONGUE.get(), new ResourceLocation("the_deep_void:rot_tongue_blocking"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) RotTonguePropertyValueProviderProcedure.execute(itemStackToRender));
+			ItemProperties.register(BLACK_HOLE.get(), new ResourceLocation("the_deep_void:black_hole_pulling"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) BlackHolePropertyValueProviderProcedure.execute(entity));
+			ItemProperties.register(BLOODY_CHAINSAW.get(), new ResourceLocation("the_deep_void:bloody_chainsaw_activated"),
+					(itemStackToRender, clientWorld, entity, itemEntityId) -> (float) BloodyChainsawPropertyValueProviderProcedure.execute(itemStackToRender));
 		});
 	}
 }

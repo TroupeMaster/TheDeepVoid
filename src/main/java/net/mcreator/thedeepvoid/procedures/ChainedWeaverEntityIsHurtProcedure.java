@@ -41,8 +41,6 @@ public class ChainedWeaverEntityIsHurtProcedure {
 			if (sourceentity instanceof Player) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
-				} else if (event != null && event.hasResult()) {
-					event.setResult(Event.Result.DENY);
 				}
 				if ((entity instanceof ChainedWeaverEntity _datEntL2 && _datEntL2.getEntityData().get(ChainedWeaverEntity.DATA_free)) == false) {
 					if (entity instanceof ChainedWeaverEntity _datEntSetI)
