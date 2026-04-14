@@ -12,7 +12,6 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -32,7 +31,6 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
 import javax.annotation.Nullable;
 
-import java.util.UUID;
 import java.util.List;
 import java.util.Comparator;
 
@@ -131,13 +129,8 @@ public class VoidriumSwordHitProcedure {
 					_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.arrow.hit_player")), SoundSource.PLAYERS, (float) 0.5, (float) 1.1, false);
 				}
 			}
-			if (!(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
-					.hasModifier((new AttributeModifier(UUID.fromString("f88179f6-564d-44ff-8214-ec98a15edff2"), "rottenTongue_damage", 5, AttributeModifier.Operation.ADDITION)))))
-				((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE)
-						.addTransientModifier((new AttributeModifier(UUID.fromString("f88179f6-564d-44ff-8214-ec98a15edff2"), "rottenTongue_damage", 5, AttributeModifier.Operation.ADDITION)));
-		}
-		if (((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getModifier(UUID.fromString("f88179f6-564d-44ff-8214-ec98a15edff2")) != null) {
-			((LivingEntity) sourceentity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).removeModifier(UUID.fromString("f88179f6-564d-44ff-8214-ec98a15edff2"));
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 30, 1));
 		}
 	}
 }

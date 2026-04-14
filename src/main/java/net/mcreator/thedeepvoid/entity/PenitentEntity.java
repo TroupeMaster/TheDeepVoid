@@ -79,7 +79,7 @@ public class PenitentEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "penitent");
+		this.entityData.define(TEXTURE, "penitent_and_shank");
 		this.entityData.define(DATA_attackChance, 0);
 		this.entityData.define(DATA_pray, 0);
 		this.entityData.define(DATA_praying, false);

@@ -68,7 +68,7 @@ public class ShankPrisonerEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "penitent");
+		this.entityData.define(TEXTURE, "penitent_and_shank");
 	}
 
 	public void setTexture(String texture) {

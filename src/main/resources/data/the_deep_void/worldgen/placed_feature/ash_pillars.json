@@ -5,9 +5,6 @@
       "type": "minecraft:biome"
     },
     {
-      "type": "minecraft:in_square"
-    },
-    {
       "type": "minecraft:rarity_filter",
       "chance": 2
     },
