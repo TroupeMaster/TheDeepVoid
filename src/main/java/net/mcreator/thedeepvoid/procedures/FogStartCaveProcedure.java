@@ -9,9 +9,12 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.GameType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.tags.TagKey;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
@@ -21,7 +24,7 @@ import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.Minecraft;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
-import net.mcreator.thedeepvoid.entity.ApostleOfCatastropheEntity;
+import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import javax.annotation.Nullable;
@@ -68,7 +71,17 @@ public class FogStartCaveProcedure {
 		if (entity == null)
 			return;
 		if (DeepVoidConfigConfiguration.DEEPVOIDFOG.get() == true) {
-			if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"))) {
+			if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void")) && !(new Object() {
+				public boolean checkGamemode(Entity _ent) {
+					if (_ent instanceof ServerPlayer _serverPlayer) {
+						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.SPECTATOR;
+					} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+						return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+								&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.SPECTATOR;
+					}
+					return false;
+				}
+			}.checkGamemode(entity))) {
 				if (entity.getY() <= 40 && entity.getY() >= 1 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setShape(FogShape.SPHERE);
 				}
@@ -114,32 +127,32 @@ public class FogStartCaveProcedure {
 					setDistance(10, 30);
 				} else if (entity.getY() == 2 && !world.getBiome(BlockPos.containing(x, y, z)).is(TagKey.create(Registries.BIOME, new ResourceLocation("the_deep_void:force_fog")))) {
 					setDistance(10, 25);
-				} else if (entity.getY() <= 1 && !(entity instanceof LivingEntity _livEnt91 && _livEnt91.hasEffect(TheDeepVoidModMobEffects.HALLUCINATE.get()))) {
+				} else if (entity.getY() <= 1 && !(entity instanceof LivingEntity _livEnt92 && _livEnt92.hasEffect(TheDeepVoidModMobEffects.HALLUCINATE.get()))) {
 					setDistance(10, 20);
 				}
 			}
 			if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:gloomy_deathgrounds")) || world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:staring_hills"))) {
-				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleOfCatastropheEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
+				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleBossEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
 					setDistance(80, 180);
 					setShape(FogShape.CYLINDER);
 				}
 			} else if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:grim_canopy")) || world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:deep_marrows"))) {
-				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleOfCatastropheEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
+				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleBossEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
 					setDistance(50, 120);
 					setShape(FogShape.CYLINDER);
 				}
 			} else if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:watching_undergrowth"))) {
-				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleOfCatastropheEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
+				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleBossEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
 					setDistance(5, 80);
 					setShape(FogShape.CYLINDER);
 				}
 			} else if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:crawler_nest"))) {
-				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleOfCatastropheEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
+				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleBossEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
 					setDistance(35, 100);
 					setShape(FogShape.CYLINDER);
 				}
 			} else if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:gaol_of_heretics"))) {
-				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleOfCatastropheEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
+				if (entity.getY() > 40 && !(!world.getEntitiesOfClass(ApostleBossEntity.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty())) {
 					setDistance(50, 120);
 					setShape(FogShape.CYLINDER);
 				}

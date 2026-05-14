@@ -1,0 +1,1808 @@
+{
+  "format_version": "1.21.11",
+  "credit": "Made with Blockbench",
+  "elements": [
+    {
+      "name": "grimberry_on_a_stick_0",
+      "from": [
+        12,
+        0,
+        1
+      ],
+      "to": [
+        14,
+        1,
+        5
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            14,
+            1,
+            12,
+            2
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            13,
+            1,
+            14,
+            5
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            12,
+            4,
+            14,
+            5
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            12,
+            1,
+            13,
+            5
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            12,
+            1,
+            14,
+            5
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            12,
+            5,
+            14,
+            1
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_1",
+      "from": [
+        11,
+        0,
+        2
+      ],
+      "to": [
+        12,
+        1,
+        6
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            2,
+            11,
+            3
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            11,
+            2,
+            12,
+            6
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            11,
+            5,
+            12,
+            6
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            11,
+            2,
+            12,
+            6
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            11,
+            2,
+            12,
+            6
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            11,
+            6,
+            12,
+            2
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_2",
+      "from": [
+        10,
+        0,
+        3
+      ],
+      "to": [
+        11,
+        1,
+        7
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            11,
+            3,
+            10,
+            4
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            10,
+            3,
+            11,
+            7
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            10,
+            6,
+            11,
+            7
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            10,
+            3,
+            11,
+            7
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            10,
+            3,
+            11,
+            7
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            10,
+            7,
+            11,
+            3
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_3",
+      "from": [
+        9,
+        0,
+        4
+      ],
+      "to": [
+        10,
+        1,
+        8
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            10,
+            4,
+            9,
+            5
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            9,
+            4,
+            10,
+            8
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            9,
+            7,
+            10,
+            8
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            9,
+            4,
+            10,
+            8
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            9,
+            4,
+            10,
+            8
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            9,
+            8,
+            10,
+            4
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_4",
+      "from": [
+        8,
+        0,
+        5
+      ],
+      "to": [
+        9,
+        1,
+        9
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            9,
+            5,
+            8,
+            6
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            8,
+            5,
+            9,
+            9
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            8,
+            8,
+            9,
+            9
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            8,
+            5,
+            9,
+            9
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            8,
+            5,
+            9,
+            9
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            8,
+            9,
+            9,
+            5
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_5",
+      "from": [
+        13,
+        0,
+        5
+      ],
+      "to": [
+        14,
+        1,
+        15
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            14,
+            5,
+            13,
+            6
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            13,
+            5,
+            14,
+            15
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            13,
+            14,
+            14,
+            15
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            13,
+            5,
+            14,
+            15
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            13,
+            5,
+            14,
+            15
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            13,
+            15,
+            14,
+            5
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_6",
+      "from": [
+        7,
+        0,
+        6
+      ],
+      "to": [
+        8,
+        1,
+        10
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            6,
+            7,
+            7
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            7,
+            6,
+            8,
+            10
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            7,
+            9,
+            8,
+            10
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            7,
+            6,
+            8,
+            10
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            7,
+            6,
+            8,
+            10
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            7,
+            10,
+            8,
+            6
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_7",
+      "from": [
+        6,
+        0,
+        7
+      ],
+      "to": [
+        7,
+        1,
+        14
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            7,
+            7,
+            6,
+            8
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            6,
+            7,
+            7,
+            14
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            6,
+            13,
+            7,
+            14
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            6,
+            7,
+            7,
+            14
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            6,
+            7,
+            7,
+            14
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            6,
+            14,
+            7,
+            7
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_8",
+      "from": [
+        5,
+        0,
+        8
+      ],
+      "to": [
+        6,
+        1,
+        14
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            6,
+            8,
+            5,
+            9
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            5,
+            8,
+            6,
+            14
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            5,
+            13,
+            6,
+            14
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            5,
+            8,
+            6,
+            14
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            5,
+            8,
+            6,
+            14
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            5,
+            14,
+            6,
+            8
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_9",
+      "from": [
+        4,
+        0,
+        9
+      ],
+      "to": [
+        5,
+        1,
+        13
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            5,
+            9,
+            4,
+            10
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            4,
+            9,
+            5,
+            13
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            4,
+            12,
+            5,
+            13
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            4,
+            9,
+            5,
+            13
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            4,
+            9,
+            5,
+            13
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            4,
+            13,
+            5,
+            9
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_10",
+      "from": [
+        11,
+        0,
+        9
+      ],
+      "to": [
+        12,
+        1,
+        16
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            12,
+            9,
+            11,
+            10
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            11,
+            9,
+            12,
+            16
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            11,
+            15,
+            12,
+            16
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            11,
+            9,
+            12,
+            16
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            11,
+            9,
+            12,
+            16
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            11,
+            16,
+            12,
+            9
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_11",
+      "from": [
+        12,
+        0,
+        10
+      ],
+      "to": [
+        13,
+        1,
+        16
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            13,
+            10,
+            12,
+            11
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            12,
+            10,
+            13,
+            16
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            12,
+            15,
+            13,
+            16
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            12,
+            10,
+            13,
+            16
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            12,
+            10,
+            13,
+            16
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            12,
+            16,
+            13,
+            10
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_12",
+      "from": [
+        14,
+        0,
+        10
+      ],
+      "to": [
+        15,
+        1,
+        11
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            15,
+            10,
+            14,
+            11
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            14,
+            10,
+            15,
+            11
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            14,
+            10,
+            15,
+            11
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            14,
+            10,
+            15,
+            11
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            14,
+            10,
+            15,
+            11
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            14,
+            11,
+            15,
+            10
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_13",
+      "from": [
+        3,
+        0,
+        11
+      ],
+      "to": [
+        4,
+        1,
+        14
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            4,
+            11,
+            3,
+            12
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            3,
+            11,
+            4,
+            14
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            3,
+            13,
+            4,
+            14
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            3,
+            11,
+            4,
+            14
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            3,
+            11,
+            4,
+            14
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            3,
+            14,
+            4,
+            11
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_14",
+      "from": [
+        7,
+        0,
+        11
+      ],
+      "to": [
+        8,
+        1,
+        13
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            8,
+            11,
+            7,
+            12
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            7,
+            11,
+            8,
+            13
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            7,
+            12,
+            8,
+            13
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            7,
+            11,
+            8,
+            13
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            7,
+            11,
+            8,
+            13
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            7,
+            13,
+            8,
+            11
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_15",
+      "from": [
+        10,
+        0,
+        11
+      ],
+      "to": [
+        11,
+        1,
+        15
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            11,
+            11,
+            10,
+            12
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            10,
+            11,
+            11,
+            15
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            10,
+            14,
+            11,
+            15
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            10,
+            11,
+            11,
+            15
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            10,
+            11,
+            11,
+            15
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            10,
+            15,
+            11,
+            11
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_16",
+      "from": [
+        15,
+        0,
+        11
+      ],
+      "to": [
+        16,
+        1,
+        13
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            16,
+            11,
+            15,
+            12
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            15,
+            11,
+            16,
+            13
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            15,
+            12,
+            16,
+            13
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            15,
+            11,
+            16,
+            13
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            15,
+            11,
+            16,
+            13
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            15,
+            13,
+            16,
+            11
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_17",
+      "from": [
+        2,
+        0,
+        12
+      ],
+      "to": [
+        3,
+        1,
+        15
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            3,
+            12,
+            2,
+            13
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            2,
+            12,
+            3,
+            15
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            2,
+            14,
+            3,
+            15
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            2,
+            12,
+            3,
+            15
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            2,
+            12,
+            3,
+            15
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            2,
+            15,
+            3,
+            12
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_18",
+      "from": [
+        9,
+        0,
+        12
+      ],
+      "to": [
+        10,
+        1,
+        14
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            10,
+            12,
+            9,
+            13
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            9,
+            12,
+            10,
+            14
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            9,
+            13,
+            10,
+            14
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            9,
+            12,
+            10,
+            14
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            9,
+            12,
+            10,
+            14
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            9,
+            14,
+            10,
+            12
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_19",
+      "from": [
+        14,
+        0,
+        12
+      ],
+      "to": [
+        15,
+        1,
+        14
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            15,
+            12,
+            14,
+            13
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            14,
+            12,
+            15,
+            14
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            14,
+            13,
+            15,
+            14
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            14,
+            12,
+            15,
+            14
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            14,
+            12,
+            15,
+            14
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            14,
+            14,
+            15,
+            12
+          ],
+          "texture": "#1"
+        }
+      }
+    },
+    {
+      "name": "grimberry_on_a_stick_20",
+      "from": [
+        1,
+        0,
+        13
+      ],
+      "to": [
+        2,
+        1,
+        15
+      ],
+      "rotation": {
+        "angle": 0,
+        "axis": "y",
+        "origin": [
+          3,
+          0.5,
+          13
+        ]
+      },
+      "faces": {
+        "north": {
+          "uv": [
+            2,
+            13,
+            1,
+            14
+          ],
+          "texture": "#1"
+        },
+        "east": {
+          "uv": [
+            1,
+            13,
+            2,
+            15
+          ],
+          "rotation": 90,
+          "texture": "#1"
+        },
+        "south": {
+          "uv": [
+            1,
+            14,
+            2,
+            15
+          ],
+          "texture": "#1"
+        },
+        "west": {
+          "uv": [
+            1,
+            13,
+            2,
+            15
+          ],
+          "rotation": 270,
+          "texture": "#1"
+        },
+        "up": {
+          "uv": [
+            1,
+            13,
+            2,
+            15
+          ],
+          "texture": "#1"
+        },
+        "down": {
+          "uv": [
+            1,
+            15,
+            2,
+            13
+          ],
+          "texture": "#1"
+        }
+      }
+    }
+  ],
+  "gui_light": "front",
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [
+        145,
+        0,
+        -90
+      ],
+      "translation": [
+        7.5,
+        3,
+        3
+      ]
+    },
+    "thirdperson_lefthand": {
+      "rotation": [
+        145,
+        0,
+        90
+      ],
+      "translation": [
+        -7.5,
+        3,
+        3
+      ]
+    },
+    "firstperson_righthand": {
+      "rotation": [
+        90,
+        0,
+        -90
+      ],
+      "translation": [
+        11,
+        0,
+        -5
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        90,
+        0,
+        90
+      ],
+      "translation": [
+        -2.5,
+        0,
+        -5
+      ]
+    },
+    "ground": {
+      "rotation": [
+        90,
+        0,
+        0
+      ],
+      "translation": [
+        0,
+        3,
+        4
+      ],
+      "scale": [
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "gui": {
+      "rotation": [
+        90,
+        0,
+        0
+      ]
+    },
+    "fixed": {
+      "rotation": [
+        90,
+        0,
+        -180
+      ],
+      "translation": [
+        0.5,
+        0,
+        -8
+      ]
+    }
+  },
+  "groups": [
+    {
+      "name": "grimberry_on_a_stick",
+      "origin": [
+        8,
+        8,
+        8
+      ],
+      "scope": 0,
+      "color": 0,
+      "children": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    }
+  ]
+}

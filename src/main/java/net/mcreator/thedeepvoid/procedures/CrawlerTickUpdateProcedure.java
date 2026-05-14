@@ -77,17 +77,10 @@ public class CrawlerTickUpdateProcedure {
 			}
 			PrimordialCrawlerDashProcedure.execute(world, x, y, z, entity);
 		} else if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) >= 393) {
-			if (Math.random() < 0.35) {
-				PrimordialCrawlerShootUpProcedure.execute(world, entity);
-			} else {
-				if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetI)
-					_datEntSetI.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_attackChance, 0);
-			}
-		} else if ((entity instanceof PrimordialBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_attackChance) : 0) >= 463) {
 			if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_attackChance, 0);
 		}
-		if ((entity instanceof PrimordialBoneCrawlerEntity _datEntL22 && _datEntL22.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_digging)) == true) {
+		if ((entity instanceof PrimordialBoneCrawlerEntity _datEntL20 && _datEntL20.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_digging)) == true) {
 			PrimordialCrawlerWhileDiggingProcedure.execute(world, x, y, z, entity);
 		}
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {

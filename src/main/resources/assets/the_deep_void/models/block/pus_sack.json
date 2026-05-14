@@ -1,9 +1,9 @@
 {
-  "parent": "the_deep_void:custom/pus_sack",
+  "parent": "the_deep_void:custom/pussacknew",
   "textures": {
-    "all": "the_deep_void:block/pus_sack_texture",
-    "particle": "the_deep_void:block/pustulent_flesh_block",
-    "0": "the_deep_void:block/pus_sack_texture"
+    "all": "the_deep_void:block/pussacknew",
+    "particle": "the_deep_void:block/pus_veiny_flesh",
+    "0": "the_deep_void:block/pussacknew"
   },
   "render_type": "cutout"
 }

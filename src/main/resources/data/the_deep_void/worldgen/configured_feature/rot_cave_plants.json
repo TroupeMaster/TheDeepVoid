@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 96,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "the_deep_void:bone_marrow"
+                },
+                "weight": 60
+              },
+              {
+                "data": {
+                  "Name": "the_deep_void:rotten_grass"
+                },
+                "weight": 40
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    }
+  }
+}

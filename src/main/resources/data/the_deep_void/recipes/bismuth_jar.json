@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:bismuth"
+    },
+    "b": {
+      "item": "the_deep_void:refined_bismuth"
+    },
+    "c": {
+      "item": "minecraft:glass_bottle"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:bismuth_jar",
+    "count": 1
+  }
+}

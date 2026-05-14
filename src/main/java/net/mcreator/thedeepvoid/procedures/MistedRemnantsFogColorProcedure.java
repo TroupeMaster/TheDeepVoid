@@ -7,6 +7,7 @@ import net.minecraftforge.client.event.ViewportEvent;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.Mth;
@@ -14,6 +15,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.Minecraft;
+
+import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
 
 import javax.annotation.Nullable;
 
@@ -58,7 +61,7 @@ public class MistedRemnantsFogColorProcedure {
 	}
 
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z) {
-		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:misted_remnants")) && y > 10) {
+		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:misted_remnants")) && y > 10 && !(!world.getEntitiesOfClass(ApostleBossEntity.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty())) {
 			setColor(255 << 24 | 189 << 16 | 189 << 8 | 189);
 		}
 	}

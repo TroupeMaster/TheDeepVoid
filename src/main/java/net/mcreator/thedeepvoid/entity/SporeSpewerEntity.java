@@ -78,7 +78,7 @@ public class SporeSpewerEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "spore_spewer_texture");
+		this.entityData.define(TEXTURE, "sporespewernew");
 		this.entityData.define(DATA_spew, 0);
 	}
 

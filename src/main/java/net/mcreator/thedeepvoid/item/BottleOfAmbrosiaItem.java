@@ -24,6 +24,16 @@ public class BottleOfAmbrosiaItem extends Item {
 	}
 
 	@Override
+	public boolean hasCraftingRemainingItem() {
+		return true;
+	}
+
+	@Override
+	public ItemStack getCraftingRemainingItem(ItemStack itemstack) {
+		return new ItemStack(Items.GLASS_BOTTLE);
+	}
+
+	@Override
 	public ItemStack finishUsingItem(ItemStack itemstack, Level world, LivingEntity entity) {
 		ItemStack retval = new ItemStack(Items.GLASS_BOTTLE);
 		super.finishUsingItem(itemstack, world, entity);

@@ -6,7 +6,7 @@
       "count": {
         "type": "uniform",
         "value": {
-          "min_inclusive": 2,
+          "min_inclusive": 4,
           "max_inclusive": 8
         }
       }

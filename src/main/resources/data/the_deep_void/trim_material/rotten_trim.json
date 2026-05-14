@@ -1,0 +1,9 @@
+{
+  "asset_name": "rotten_trim",
+  "description": {
+    "color": "#6B6A63",
+    "translate": "trim_material.the_deep_void.rotten_trim"
+  },
+  "ingredient": "the_deep_void:rotten_bone",
+  "item_model_index": 0.0
+}

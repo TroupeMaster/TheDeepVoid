@@ -57,134 +57,63 @@ public class PlayerRespawnsProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (DeepVoidConfigConfiguration.HELL.get() == true) {
-			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).SendToHell == true) {
+		if (DeepVoidConfigConfiguration.PURGATORY.get() == true) {
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VOID_BLESSING.get(), 600, 0, false, false));
+			if (entity instanceof ServerPlayer _player && !_player.level().isClientSide()) {
+				ResourceKey<Level> destinationType = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"));
+				if (_player.level().dimension() == destinationType)
+					return;
+				ServerLevel nextLevel = _player.server.getLevel(destinationType);
+				if (nextLevel != null) {
+					_player.connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.WIN_GAME, 0));
+					_player.teleportTo(nextLevel, _player.getX(), _player.getY(), _player.getZ(), _player.getYRot(), _player.getXRot());
+					_player.connection.send(new ClientboundPlayerAbilitiesPacket(_player.getAbilities()));
+					for (MobEffectInstance _effectinstance : _player.getActiveEffects())
+						_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance));
+					_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
+				}
+			}
+			TheDeepVoidMod.queueServerWork(5, () -> {
 				{
-					boolean _setval = false;
+					Entity _ent = entity;
+					_ent.teleportTo((entity.getX()), 250, (entity.getZ()));
+					if (_ent instanceof ServerPlayer _serverPlayer)
+						_serverPlayer.connection.teleport((entity.getX()), 250, (entity.getZ()), _ent.getYRot(), _ent.getXRot());
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "stopsound @s ambient minecraft:block.portal.travel");
+					}
+				}
+				{
+					Entity _ent = entity;
+					if (!_ent.level().isClientSide() && _ent.getServer() != null) {
+						_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
+								_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "playsound the_deep_void:wind_falling player @s ~ ~ ~ 10 1 1");
+					}
+				}
+				{
+					boolean _setval = true;
 					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.SendToHell = _setval;
+						capability.FallSound = _setval;
 						capability.syncPlayerVariables(entity);
 					});
 				}
-				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VOID_BLESSING.get(), 600, 0, false, false));
-				if (entity instanceof ServerPlayer _player && !_player.level().isClientSide()) {
-					ResourceKey<Level> destinationType = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"));
-					if (_player.level().dimension() == destinationType)
-						return;
-					ServerLevel nextLevel = _player.server.getLevel(destinationType);
-					if (nextLevel != null) {
-						_player.connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.WIN_GAME, 0));
-						_player.teleportTo(nextLevel, _player.getX(), _player.getY(), _player.getZ(), _player.getYRot(), _player.getXRot());
-						_player.connection.send(new ClientboundPlayerAbilitiesPacket(_player.getAbilities()));
-						for (MobEffectInstance _effectinstance : _player.getActiveEffects())
-							_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance));
-						_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
+				if (DeepVoidConfigConfiguration.GIVETORCHES.get() == true) {
+					if (entity instanceof Player _player) {
+						ItemStack _setstack = new ItemStack(Blocks.TORCH).copy();
+						_setstack.setCount(2);
+						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
 					}
 				}
-				TheDeepVoidMod.queueServerWork(5, () -> {
-					{
-						Entity _ent = entity;
-						_ent.teleportTo((entity.getX()), 250, (entity.getZ()));
-						if (_ent instanceof ServerPlayer _serverPlayer)
-							_serverPlayer.connection.teleport((entity.getX()), 250, (entity.getZ()), _ent.getYRot(), _ent.getXRot());
-					}
-					{
-						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "stopsound @s ambient minecraft:block.portal.travel");
-						}
-					}
-					{
-						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "playsound the_deep_void:wind_falling player @s ~ ~ ~ 10 1 1");
-						}
-					}
-					{
-						boolean _setval = true;
-						entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.FallSound = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					if (DeepVoidConfigConfiguration.GIVETORCHES.get() == true) {
-						if (entity instanceof Player _player) {
-							ItemStack _setstack = new ItemStack(Blocks.TORCH).copy();
-							_setstack.setCount(2);
-							ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-						}
-					}
-				});
-			}
-		} else if (DeepVoidConfigConfiguration.PURGATORY.get() == true) {
-			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).sendToPurgatory == true) {
-				{
-					boolean _setval = false;
-					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.sendToPurgatory = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VOID_BLESSING.get(), 600, 0, false, false));
-				if (entity instanceof ServerPlayer _player && !_player.level().isClientSide()) {
-					ResourceKey<Level> destinationType = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"));
-					if (_player.level().dimension() == destinationType)
-						return;
-					ServerLevel nextLevel = _player.server.getLevel(destinationType);
-					if (nextLevel != null) {
-						_player.connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.WIN_GAME, 0));
-						_player.teleportTo(nextLevel, _player.getX(), _player.getY(), _player.getZ(), _player.getYRot(), _player.getXRot());
-						_player.connection.send(new ClientboundPlayerAbilitiesPacket(_player.getAbilities()));
-						for (MobEffectInstance _effectinstance : _player.getActiveEffects())
-							_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance));
-						_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
-					}
-				}
-				TheDeepVoidMod.queueServerWork(5, () -> {
-					{
-						Entity _ent = entity;
-						_ent.teleportTo((entity.getX()), 250, (entity.getZ()));
-						if (_ent instanceof ServerPlayer _serverPlayer)
-							_serverPlayer.connection.teleport((entity.getX()), 250, (entity.getZ()), _ent.getYRot(), _ent.getXRot());
-					}
-					{
-						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "stopsound @s ambient minecraft:block.portal.travel");
-						}
-					}
-					{
-						Entity _ent = entity;
-						if (!_ent.level().isClientSide() && _ent.getServer() != null) {
-							_ent.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, _ent.position(), _ent.getRotationVector(), _ent.level() instanceof ServerLevel ? (ServerLevel) _ent.level() : null, 4,
-									_ent.getName().getString(), _ent.getDisplayName(), _ent.level().getServer(), _ent), "playsound the_deep_void:wind_falling player @s ~ ~ ~ 10 1 1");
-						}
-					}
-					{
-						boolean _setval = true;
-						entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-							capability.FallSound = _setval;
-							capability.syncPlayerVariables(entity);
-						});
-					}
-					if (DeepVoidConfigConfiguration.GIVETORCHES.get() == true) {
-						if (entity instanceof Player _player) {
-							ItemStack _setstack = new ItemStack(Blocks.TORCH).copy();
-							_setstack.setCount(2);
-							ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-						}
-					}
-				});
-			}
+			});
 		}
 		if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).parasitizedType == 1) {
 			for (Entity entityiterator : new ArrayList<>(world.players())) {
-				if (entityiterator instanceof LivingEntity _livEnt22 && _livEnt22.hasEffect(TheDeepVoidModMobEffects.PARASITIZED.get())
+				if (entityiterator instanceof LivingEntity _livEnt11 && _livEnt11.hasEffect(TheDeepVoidModMobEffects.PARASITIZED.get())
 						&& (entityiterator.getPersistentData().getString("parasitizedParasite")).equals(entity.getDisplayName().getString())) {
 					{
 						Entity _ent = entity;
@@ -213,7 +142,7 @@ public class PlayerRespawnsProcedure {
 				final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4000 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
-					if (entityiterator instanceof LivingEntity _livEnt43 && _livEnt43.hasEffect(TheDeepVoidModMobEffects.PARASITIZED.get())
+					if (entityiterator instanceof LivingEntity _livEnt32 && _livEnt32.hasEffect(TheDeepVoidModMobEffects.PARASITIZED.get())
 							&& (entityiterator.getPersistentData().getString("parasitizedParasite")).equals(entity.getDisplayName().getString())) {
 						{
 							Entity _ent = entity;

@@ -37,7 +37,7 @@ public class GoreStemsBlock extends FlowerBlock {
 	public boolean mayPlaceOn(BlockState groundState, BlockGetter worldIn, BlockPos pos) {
 		return groundState.is(TheDeepVoidModBlocks.FLESH_BLOCK.get()) || groundState.is(TheDeepVoidModBlocks.PUSTULENT_FLESH_BLOCK.get()) || groundState.is(TheDeepVoidModBlocks.EYE_FLESH_BLOCK.get())
 				|| groundState.is(TheDeepVoidModBlocks.POROUS_FLESH.get()) || groundState.is(TheDeepVoidModBlocks.GAPING_POROUS_FLESH.get()) || groundState.is(TheDeepVoidModBlocks.MESSY_FLESH.get())
-				|| groundState.is(TheDeepVoidModBlocks.AMBROSIAL_FLESH_BLOCK.get());
+				|| groundState.is(TheDeepVoidModBlocks.AMBROSIAL_FLESH_BLOCK.get()) || groundState.is(TheDeepVoidModBlocks.ACTIVE_FLESH_BLOCK.get());
 	}
 
 	@Override

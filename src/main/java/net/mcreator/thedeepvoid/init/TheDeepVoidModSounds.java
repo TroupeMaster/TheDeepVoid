@@ -198,4 +198,9 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> SENTIENT_CHAINSAW_IMPACT = REGISTRY.register("sentient_chainsaw_impact", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "sentient_chainsaw_impact")));
 	public static final RegistryObject<SoundEvent> SENTIENT_CHAINSAW_LOOP = REGISTRY.register("sentient_chainsaw_loop", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "sentient_chainsaw_loop")));
 	public static final RegistryObject<SoundEvent> SENTIENT_CHAINSAW_BREAK = REGISTRY.register("sentient_chainsaw_break", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "sentient_chainsaw_break")));
+	public static final RegistryObject<SoundEvent> SOUL_UNLEASH = REGISTRY.register("soul_unleash", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "soul_unleash")));
+	public static final RegistryObject<SoundEvent> SOUL_BUILD_UP = REGISTRY.register("soul_build_up", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "soul_build_up")));
+	public static final RegistryObject<SoundEvent> WANDERER_CALL = REGISTRY.register("wanderer_call", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "wanderer_call")));
+	public static final RegistryObject<SoundEvent> WANDERER_HURT = REGISTRY.register("wanderer_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "wanderer_hurt")));
+	public static final RegistryObject<SoundEvent> WANDERER_AMBIENT = REGISTRY.register("wanderer_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "wanderer_ambient")));
 }

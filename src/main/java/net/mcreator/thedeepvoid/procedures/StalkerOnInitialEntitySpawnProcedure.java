@@ -4,6 +4,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ClipContext;
@@ -19,6 +20,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
+import net.minecraft.commands.arguments.EntityAnchorArgument;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
@@ -183,6 +185,37 @@ public class StalkerOnInitialEntitySpawnProcedure {
 			});
 		});
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
+			if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() > entity.getY() + 2) {
+				if (world.getBlockState(BlockPos.containing(
+						entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX(), entity.getY(),
+						entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(1)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ())).canOcclude()
+						&& !entity.isInWater()) {
+					if (entity instanceof StalkerEntity) {
+						((StalkerEntity) entity).setAnimation("animation.stalker_climb");
+					}
+					if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() + 4, entity.getZ())).canOcclude()
+							&& world.getBlockState(BlockPos.containing(x, entity.getY() + 4, z)).getDestroySpeed(world, BlockPos.containing(x, entity.getY() + 4, z)) > -1) {
+						{
+							BlockPos _pos = BlockPos.containing(entity.getX(), entity.getY() + 4, entity.getZ());
+							Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(entity.getX(), entity.getY() + 4, entity.getZ()), null);
+							world.destroyBlock(_pos, false);
+						}
+					}
+					if (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() + 5, entity.getZ())).canOcclude()
+							&& world.getBlockState(BlockPos.containing(x, entity.getY() + 5, z)).getDestroySpeed(world, BlockPos.containing(x, entity.getY() + 5, z)) > -1) {
+						{
+							BlockPos _pos = BlockPos.containing(entity.getX(), entity.getY() + 5, entity.getZ());
+							Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(entity.getX(), entity.getY() + 5, entity.getZ()), null);
+							world.destroyBlock(_pos, false);
+						}
+					}
+					TheDeepVoidMod.queueServerWork(8, () -> {
+						entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()), ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() + 1),
+								((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ())));
+						entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entity.getYRot() + 180)) * 0.25), 0.3, (Math.cos(Math.toRadians(entity.getYRot())) * 0.25)));
+					});
+				}
+			}
 			if (world
 					.getBiome(BlockPos.containing((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX(), (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY(),
 							(entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ()))
@@ -196,7 +229,7 @@ public class StalkerOnInitialEntitySpawnProcedure {
 					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 40, 99, false, false));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, 99, false, false));
-				if ((entity instanceof StalkerEntity _datEntL118 && _datEntL118.getEntityData().get(StalkerEntity.DATA_soundAngry)) == false) {
+				if ((entity instanceof StalkerEntity _datEntL164 && _datEntL164.getEntityData().get(StalkerEntity.DATA_soundAngry)) == false) {
 					if (entity instanceof StalkerEntity _datEntSetL)
 						_datEntSetL.getEntityData().set(StalkerEntity.DATA_soundAngry, true);
 					if (world instanceof Level _level) {

@@ -77,7 +77,7 @@ public class IdlingApostleEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "apostle");
+		this.entityData.define(TEXTURE, "apostleofcatastrophe");
 		this.entityData.define(DATA_talking, false);
 		this.entityData.define(DATA_psalmCount, 0);
 		this.entityData.define(DATA_apostleDiscuss, 0);
@@ -228,38 +228,9 @@ public class IdlingApostleEntity extends Monster implements GeoEntity {
 
 	private PlayState movementPredicate(AnimationState event) {
 		if (this.animationprocedure.equals("empty")) {
-			if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))
-
-					&& !this.isAggressive()) {
-				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.apostle_walk"));
-			}
-			if (this.isDeadOrDying()) {
-				return event.setAndContinue(RawAnimation.begin().thenPlay("animation.apostle_death"));
-			}
-			if (this.isAggressive() && event.isMoving()) {
-				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.apostle_aggressive"));
-			}
-			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.apostle_idle"));
+			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.apostle_pray"));
 		}
 		return PlayState.STOP;
-	}
-
-	private PlayState attackingPredicate(AnimationState event) {
-		double d1 = this.getX() - this.xOld;
-		double d0 = this.getZ() - this.zOld;
-		float velocity = (float) Math.sqrt(d1 * d1 + d0 * d0);
-		if (getAttackAnim(event.getPartialTick()) > 0f && !this.swinging) {
-			this.swinging = true;
-			this.lastSwing = level().getGameTime();
-		}
-		if (this.swinging && this.lastSwing + 7L <= level().getGameTime()) {
-			this.swinging = false;
-		}
-		if (this.swinging && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
-			event.getController().forceAnimationReset();
-			return event.setAndContinue(RawAnimation.begin().thenPlay("animation.apostle_melee"));
-		}
-		return PlayState.CONTINUE;
 	}
 
 	String prevAnim = "empty";
@@ -301,7 +272,6 @@ public class IdlingApostleEntity extends Monster implements GeoEntity {
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar data) {
 		data.add(new AnimationController<>(this, "movement", 4, this::movementPredicate));
-		data.add(new AnimationController<>(this, "attacking", 4, this::attackingPredicate));
 		data.add(new AnimationController<>(this, "procedure", 4, this::procedurePredicate));
 	}
 

@@ -7,15 +7,16 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class DesolateStemUpdateTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		if (world.getBlockState(BlockPos.containing(x, y + 1, z)).canOcclude() == false && ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == TheDeepVoidModBlocks.DESOLATE_STEM.get()) == false) {
+		if (Math.random() < 0.8 && world.isEmptyBlock(BlockPos.containing(x, y + 1, z))) {
 			if (Math.random() < 0.8) {
-				world.setBlock(BlockPos.containing(x, y + 1, z), TheDeepVoidModBlocks.DESOLATE_STEM.get().defaultBlockState(), 3);
+				if (Math.random() < 0.4) {
+					world.setBlock(BlockPos.containing(x, y + 1, z), TheDeepVoidModBlocks.LIVING_GLOOM_STEM.get().defaultBlockState(), 3);
+				} else {
+					world.setBlock(BlockPos.containing(x, y + 1, z), TheDeepVoidModBlocks.DESOLATE_STEM.get().defaultBlockState(), 3);
+				}
 			} else {
-				world.setBlock(BlockPos.containing(x, y + 1, z), TheDeepVoidModBlocks.VOIDLIGHT.get().defaultBlockState(), 3);
+				world.setBlock(BlockPos.containing(x, y + 1, z), TheDeepVoidModBlocks.OVERGROWN_VOIDLIGHT.get().defaultBlockState(), 3);
 			}
-		}
-		if (world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude() == false && ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.DESOLATE_STEM.get()) == false) {
-			world.destroyBlock(BlockPos.containing(x, y, z), false);
 		}
 	}
 }

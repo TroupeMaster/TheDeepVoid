@@ -13,12 +13,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.util.RandomSource;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.thedeepvoid.procedures.ActiveFleshBlockTickProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class ActiveFleshBlockBlock extends Block {
@@ -27,7 +24,7 @@ public class ActiveFleshBlockBlock extends Block {
 				.sound(new ForgeSoundType(1.0f, 1.0f, () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.slime_block.break")), () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:flesh_block_step")),
 						() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:flesh_block_place")), () -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.slime_block.hit")),
 						() -> ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.wet_grass.fall"))))
-				.strength(1f, 4f).friction(0.7f).speedFactor(0.9f).randomTicks());
+				.strength(1f, 4f).friction(0.7f).speedFactor(0.9f));
 	}
 
 	@Override
@@ -38,14 +35,5 @@ public class ActiveFleshBlockBlock extends Block {
 	@Override
 	public ItemStack getCloneItemStack(BlockState state, HitResult target, BlockGetter world, BlockPos pos, Player player) {
 		return new ItemStack(TheDeepVoidModBlocks.FLESH_BLOCK.get());
-	}
-
-	@Override
-	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
-		super.tick(blockstate, world, pos, random);
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-		ActiveFleshBlockTickProcedure.execute(world, x, y, z);
 	}
 }

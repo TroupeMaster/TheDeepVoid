@@ -16,7 +16,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.entity.SawThrowerEntity;
 import net.mcreator.thedeepvoid.entity.HiveWatcherEntity;
-import net.mcreator.thedeepvoid.entity.ApostleOfCatastropheEntity;
+import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
 
 import javax.annotation.Nullable;
 
@@ -38,7 +38,8 @@ public class ApostleOfCatastropheEntityIsHurtProcedure {
 			return;
 		double slowness = 0;
 		double resistance = 0;
-		if (entity instanceof ApostleOfCatastropheEntity && entity.getPersistentData().getBoolean("deep_void:spinning") == true && !(immediatesourceentity == sourceentity) && !(sourceentity == null) && !(sourceentity == entity)) {
+		if (entity instanceof ApostleBossEntity && (entity instanceof ApostleBossEntity _datEntL1 && _datEntL1.getEntityData().get(ApostleBossEntity.DATA_spinning)) == true && !(immediatesourceentity == sourceentity) && !(sourceentity == null)
+				&& !(sourceentity == entity)) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
 			}

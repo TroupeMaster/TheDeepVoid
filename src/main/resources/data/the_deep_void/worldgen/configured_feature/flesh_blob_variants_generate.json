@@ -1,0 +1,49 @@
+{
+  "type": "minecraft:simple_random_selector",
+  "config": {
+    "features": [
+      {
+        "feature": {
+          "type": "minecraft:scattered_ore",
+          "config": {
+            "size": 24,
+            "discard_chance_on_air_exposure": 0,
+            "targets": [
+              {
+                "target": {
+                  "predicate_type": "block_match",
+                  "block": "the_deep_void:active_flesh_block"
+                },
+                "state": {
+                  "Name": "the_deep_void:pustulent_flesh_block"
+                }
+              }
+            ]
+          }
+        },
+        "placement": []
+      },
+      {
+        "feature": {
+          "type": "minecraft:scattered_ore",
+          "config": {
+            "size": 24,
+            "discard_chance_on_air_exposure": 0,
+            "targets": [
+              {
+                "target": {
+                  "predicate_type": "block_match",
+                  "block": "the_deep_void:active_flesh_block"
+                },
+                "state": {
+                  "Name": "the_deep_void:eye_flesh_block"
+                }
+              }
+            ]
+          }
+        },
+        "placement": []
+      }
+    ]
+  }
+}

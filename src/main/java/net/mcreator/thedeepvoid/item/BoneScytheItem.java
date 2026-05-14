@@ -48,7 +48,7 @@ public class BoneScytheItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(Items.BONE));
 			}
-		}, 3, -2.8f, new Item.Properties());
+		}, 3, -3f, new Item.Properties());
 	}
 
 	@Override

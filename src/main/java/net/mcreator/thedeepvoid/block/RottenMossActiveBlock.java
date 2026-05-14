@@ -21,13 +21,12 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.thedeepvoid.procedures.RottenMossActiveOnTickUpdateProcedure;
 import net.mcreator.thedeepvoid.procedures.BlockOfBonePileOnBoneMealSuccessProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class RottenMossActiveBlock extends Block implements BonemealableBlock {
 	public RottenMossActiveBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_LIGHT_GRAY).sound(SoundType.MOSS).strength(0.2f, 0.5f).randomTicks());
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_LIGHT_GRAY).sound(SoundType.MOSS).strength(0.2f, 0.5f));
 	}
 
 	@Override
@@ -43,15 +42,6 @@ public class RottenMossActiveBlock extends Block implements BonemealableBlock {
 	@Override
 	public boolean canSustainPlant(BlockState state, BlockGetter world, BlockPos pos, Direction direction, IPlantable plantable) {
 		return true;
-	}
-
-	@Override
-	public void tick(BlockState blockstate, ServerLevel world, BlockPos pos, RandomSource random) {
-		super.tick(blockstate, world, pos, random);
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-		RottenMossActiveOnTickUpdateProcedure.execute(world, x, y, z);
 	}
 
 	@Override

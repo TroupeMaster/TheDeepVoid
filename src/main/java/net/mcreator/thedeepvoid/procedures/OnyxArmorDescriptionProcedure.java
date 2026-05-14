@@ -35,34 +35,52 @@ public class OnyxArmorDescriptionProcedure {
 	private static void execute(@Nullable Event event, Entity entity, ItemStack itemstack, List<Component> tooltip) {
 		if (entity == null || tooltip == null)
 			return;
-		if ((itemstack.getItem() == TheDeepVoidModItems.ONYX_ARMOR_HELMET.get() || itemstack.getItem() == TheDeepVoidModItems.ONYX_ARMOR_CHESTPLATE.get() || itemstack.getItem() == TheDeepVoidModItems.ONYX_ARMOR_LEGGINGS.get()
-				|| itemstack.getItem() == TheDeepVoidModItems.ONYX_ARMOR_BOOTS.get())
-				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ONYX_ARMOR_HELMET.get()
-				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ONYX_ARMOR_CHESTPLATE.get()
-				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ONYX_ARMOR_LEGGINGS.get()
-				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ONYX_ARMOR_BOOTS.get()) {
+		if (itemstack.getItem() == TheDeepVoidModItems.ONYX_ARMOR_HELMET.get() || itemstack.getItem() == TheDeepVoidModItems.ONYX_ARMOR_CHESTPLATE.get() || itemstack.getItem() == TheDeepVoidModItems.ONYX_ARMOR_LEGGINGS.get()
+				|| itemstack.getItem() == TheDeepVoidModItems.ONYX_ARMOR_BOOTS.get()) {
 			tooltip.add(Component.literal(""));
-			if (Screen.hasShiftDown()) {
-				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.onyx.when_darkness").getString())));
-				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.onyx.in_darkness1").getString())));
-				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.onyx.in_darkness2").getString())));
+			if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ONYX_ARMOR_HELMET.get()
+					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ONYX_ARMOR_CHESTPLATE.get()
+					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ONYX_ARMOR_LEGGINGS.get()
+					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ONYX_ARMOR_BOOTS.get()) {
+				if (Screen.hasShiftDown()) {
+					tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.onyx.when_darkness").getString())));
+					tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.onyx.in_darkness1").getString())));
+					tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.onyx.in_darkness2").getString())));
+				} else {
+					tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.press_shift").getString())));
+				}
 			} else {
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.press_shift").getString())));
+				if (Screen.hasShiftDown()) {
+					tooltip.add(Component.literal(("\u00A77" + Component.translatable("armors.the_deep_void.onyx.when_darkness").getString())));
+					tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.onyx.in_darkness1").getString())));
+					tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.onyx.in_darkness2").getString())));
+				} else {
+					tooltip.add(Component.literal(("\u00A77" + Component.translatable("armors.the_deep_void.press_shift_nofull").getString())));
+				}
 			}
 		}
-		if ((itemstack.getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_HELMET.get() || itemstack.getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_CHESTPLATE.get() || itemstack.getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_LEGGINGS.get()
-				|| itemstack.getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_BOOTS.get())
-				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_HELMET.get()
-				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_CHESTPLATE.get()
-				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_LEGGINGS.get()
-				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_BOOTS.get()) {
+		if (itemstack.getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_HELMET.get() || itemstack.getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_CHESTPLATE.get() || itemstack.getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_LEGGINGS.get()
+				|| itemstack.getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_BOOTS.get()) {
 			tooltip.add(Component.literal(""));
-			if (Screen.hasShiftDown()) {
-				tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.onyx.when_darkness").getString())));
-				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.onyx.in_darkness1").getString())));
-				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.onyx.in_darkness2").getString())));
+			if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_HELMET.get()
+					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_CHESTPLATE.get()
+					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_LEGGINGS.get()
+					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_BOOTS.get()) {
+				if (Screen.hasShiftDown()) {
+					tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.onyx.when_darkness").getString())));
+					tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.onyx.in_darkness1").getString())));
+					tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.onyx.in_darkness2").getString())));
+				} else {
+					tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.press_shift").getString())));
+				}
 			} else {
-				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.press_shift").getString())));
+				if (Screen.hasShiftDown()) {
+					tooltip.add(Component.literal(("\u00A77" + Component.translatable("armors.the_deep_void.onyx.when_darkness").getString())));
+					tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.onyx.in_darkness1").getString())));
+					tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.onyx.in_darkness2").getString())));
+				} else {
+					tooltip.add(Component.literal(("\u00A77" + Component.translatable("armors.the_deep_void.press_shift_nofull").getString())));
+				}
 			}
 		}
 	}

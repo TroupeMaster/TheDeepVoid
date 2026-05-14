@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "the_deep_void:eye_vine_stem"
+          },
+          "weight": 90
+        },
+        {
+          "data": {
+            "Name": "the_deep_void:huge_eye_vine_stem"
+          },
+          "weight": 10
+        }
+      ]
+    }
+  }
+}

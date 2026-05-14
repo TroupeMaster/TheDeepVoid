@@ -9,12 +9,12 @@ import net.mcreator.thedeepvoid.entity.IdlingApostleEntity;
 public class IdlingApostleModel extends GeoModel<IdlingApostleEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(IdlingApostleEntity entity) {
-		return new ResourceLocation("the_deep_void", "animations/apostle.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/apostleofcatastrophe.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(IdlingApostleEntity entity) {
-		return new ResourceLocation("the_deep_void", "geo/apostle.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/apostleofcatastrophe.geo.json");
 	}
 
 	@Override

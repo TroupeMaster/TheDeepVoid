@@ -75,6 +75,10 @@ import net.mcreator.thedeepvoid.item.TheHauntItem;
 import net.mcreator.thedeepvoid.item.TheHarvestItem;
 import net.mcreator.thedeepvoid.item.TheCatcherItem;
 import net.mcreator.thedeepvoid.item.TheBonkItem;
+import net.mcreator.thedeepvoid.item.TatteredCultTunicItem;
+import net.mcreator.thedeepvoid.item.TatteredCultLeggingsItem;
+import net.mcreator.thedeepvoid.item.TatteredCultHoodItem;
+import net.mcreator.thedeepvoid.item.TatteredCultBootsItem;
 import net.mcreator.thedeepvoid.item.SulfurItem;
 import net.mcreator.thedeepvoid.item.SulfurFlareItem;
 import net.mcreator.thedeepvoid.item.SulfurBombItem;
@@ -200,6 +204,7 @@ import net.mcreator.thedeepvoid.item.HarvesterMaskItem;
 import net.mcreator.thedeepvoid.item.HardFleshSwordItem;
 import net.mcreator.thedeepvoid.item.HardFleshIngotItem;
 import net.mcreator.thedeepvoid.item.GrimberryPieItem;
+import net.mcreator.thedeepvoid.item.GrimberryOnAStickItem;
 import net.mcreator.thedeepvoid.item.GrimberryJuiceItem;
 import net.mcreator.thedeepvoid.item.GrimberryItem;
 import net.mcreator.thedeepvoid.item.GrimSickleItem;
@@ -237,7 +242,9 @@ import net.mcreator.thedeepvoid.item.EyefishItem;
 import net.mcreator.thedeepvoid.item.EyeballSoupItem;
 import net.mcreator.thedeepvoid.item.EyeballItem;
 import net.mcreator.thedeepvoid.item.EyeShieldItem;
+import net.mcreator.thedeepvoid.item.ExecutionerSwordItem;
 import net.mcreator.thedeepvoid.item.EverhungryFleshGloveItem;
+import net.mcreator.thedeepvoid.item.EsotericTomeItem;
 import net.mcreator.thedeepvoid.item.EntityTurnerItem;
 import net.mcreator.thedeepvoid.item.EntityImmobilizerItem;
 import net.mcreator.thedeepvoid.item.EndlessQuiverItem;
@@ -253,8 +260,10 @@ import net.mcreator.thedeepvoid.item.DarkSteelScrapItem;
 import net.mcreator.thedeepvoid.item.DarkSteelPickaxeItem;
 import net.mcreator.thedeepvoid.item.DarkSteelOnyxItem;
 import net.mcreator.thedeepvoid.item.DarkSteelNaginataItem;
+import net.mcreator.thedeepvoid.item.DarkSteelKunaiItem;
 import net.mcreator.thedeepvoid.item.DarkSteelHoeItem;
 import net.mcreator.thedeepvoid.item.DarkSteelAxeItem;
+import net.mcreator.thedeepvoid.item.DarkClothItem;
 import net.mcreator.thedeepvoid.item.CultItem;
 import net.mcreator.thedeepvoid.item.CruelStilettoItem;
 import net.mcreator.thedeepvoid.item.CreepOMeterItem;
@@ -276,6 +285,7 @@ import net.mcreator.thedeepvoid.item.CinnabarRollItem;
 import net.mcreator.thedeepvoid.item.CinnabarItem;
 import net.mcreator.thedeepvoid.item.ChasmsMusicDiscItem;
 import net.mcreator.thedeepvoid.item.ChainsawItem;
+import net.mcreator.thedeepvoid.item.CeremonialDaggerItem;
 import net.mcreator.thedeepvoid.item.CallUponTheHiveItem;
 import net.mcreator.thedeepvoid.item.BrightFlareItem;
 import net.mcreator.thedeepvoid.item.BottleOfAmbrosiaItem;
@@ -317,8 +327,10 @@ import net.mcreator.thedeepvoid.item.BismuthNetheritePickaxeItem;
 import net.mcreator.thedeepvoid.item.BismuthNetheriteItem;
 import net.mcreator.thedeepvoid.item.BismuthNetheriteHoeItem;
 import net.mcreator.thedeepvoid.item.BismuthNetheriteAxeItem;
+import net.mcreator.thedeepvoid.item.BismuthJarItem;
 import net.mcreator.thedeepvoid.item.BismuthItem;
 import net.mcreator.thedeepvoid.item.BismuthFlareItem;
+import net.mcreator.thedeepvoid.item.BismuthBottleItem;
 import net.mcreator.thedeepvoid.item.ArrowOfSpiteItem;
 import net.mcreator.thedeepvoid.item.ArrowOfIchorPelletsItem;
 import net.mcreator.thedeepvoid.item.ApostleOfCatastropheTreasureBagItem;
@@ -857,8 +869,6 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> BIG_TOOTH = block(TheDeepVoidModBlocks.BIG_TOOTH);
 	public static final RegistryObject<Item> SOUL_FORGE = block(TheDeepVoidModBlocks.SOUL_FORGE);
 	public static final RegistryObject<Item> SOUL_FUSED_INGOT = REGISTRY.register("soul_fused_ingot", () -> new SoulFusedIngotItem());
-	public static final RegistryObject<Item> APOSTLE_OF_CATASTROPHE_SPAWN_EGG = REGISTRY.register("apostle_of_catastrophe_spawn_egg",
-			() -> new ForgeSpawnEggItem(TheDeepVoidModEntities.APOSTLE_OF_CATASTROPHE, -13762560, -11776, new Item.Properties()));
 	public static final RegistryObject<Item> CHAINSAW = REGISTRY.register("chainsaw", () -> new ChainsawItem());
 	public static final RegistryObject<Item> APOSTLE_OF_CATASTROPHE_TREASURE_BAG = REGISTRY.register("apostle_of_catastrophe_treasure_bag", () -> new ApostleOfCatastropheTreasureBagItem());
 	public static final RegistryObject<Item> RED_GATE = block(TheDeepVoidModBlocks.RED_GATE);
@@ -1221,6 +1231,26 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> BLACK_HOLE = REGISTRY.register("black_hole", () -> new BlackHoleItem());
 	public static final RegistryObject<Item> BLOODY_CHAINSAW = REGISTRY.register("bloody_chainsaw", () -> new BloodyChainsawItem());
 	public static final RegistryObject<Item> BLOCK_OF_VOIDRIUM_ALLOY = block(TheDeepVoidModBlocks.BLOCK_OF_VOIDRIUM_ALLOY);
+	public static final RegistryObject<Item> OVERGROWN_GLOOM_GROWTH = block(TheDeepVoidModBlocks.OVERGROWN_GLOOM_GROWTH);
+	public static final RegistryObject<Item> OVERGROWN_VOIDLIGHT = block(TheDeepVoidModBlocks.OVERGROWN_VOIDLIGHT);
+	public static final RegistryObject<Item> LIVING_GLOOM_STEM = block(TheDeepVoidModBlocks.LIVING_GLOOM_STEM);
+	public static final RegistryObject<Item> GLOOM_VINES = block(TheDeepVoidModBlocks.GLOOM_VINES);
+	public static final RegistryObject<Item> LIVING_GLOOM_VINES = block(TheDeepVoidModBlocks.LIVING_GLOOM_VINES);
+	public static final RegistryObject<Item> BISMUTH_BOTTLE = REGISTRY.register("bismuth_bottle", () -> new BismuthBottleItem());
+	public static final RegistryObject<Item> BISMUTH_JAR = REGISTRY.register("bismuth_jar", () -> new BismuthJarItem());
+	public static final RegistryObject<Item> GRIMBERRY_ON_A_STICK = REGISTRY.register("grimberry_on_a_stick", () -> new GrimberryOnAStickItem());
+	public static final RegistryObject<Item> APOSTLE_BOSS_SPAWN_EGG = REGISTRY.register("apostle_boss_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.APOSTLE_BOSS, -13762560, -11776, new Item.Properties()));
+	public static final RegistryObject<Item> TATTERED_CULT_HOOD = REGISTRY.register("tattered_cult_hood", () -> new TatteredCultHoodItem());
+	public static final RegistryObject<Item> TATTERED_CULT_TUNIC = REGISTRY.register("tattered_cult_tunic", () -> new TatteredCultTunicItem());
+	public static final RegistryObject<Item> TATTERED_CULT_LEGGINGS = REGISTRY.register("tattered_cult_leggings", () -> new TatteredCultLeggingsItem());
+	public static final RegistryObject<Item> TATTERED_CULT_BOOTS = REGISTRY.register("tattered_cult_boots", () -> new TatteredCultBootsItem());
+	public static final RegistryObject<Item> DARK_CLOTH = REGISTRY.register("dark_cloth", () -> new DarkClothItem());
+	public static final RegistryObject<Item> ESOTERIC_TOME = REGISTRY.register("esoteric_tome", () -> new EsotericTomeItem());
+	public static final RegistryObject<Item> MAD_CULTIST_SPAWN_EGG = REGISTRY.register("mad_cultist_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.MAD_CULTIST, -16777216, -13434880, new Item.Properties()));
+	public static final RegistryObject<Item> CEREMONIAL_DAGGER = REGISTRY.register("ceremonial_dagger", () -> new CeremonialDaggerItem());
+	public static final RegistryObject<Item> EXECUTIONER_SWORD = REGISTRY.register("executioner_sword", () -> new ExecutionerSwordItem());
+	public static final RegistryObject<Item> EXECUTIONER_SPAWN_EGG = REGISTRY.register("executioner_spawn_egg", () -> new ForgeSpawnEggItem(TheDeepVoidModEntities.EXECUTIONER, -13290187, -9370877, new Item.Properties()));
+	public static final RegistryObject<Item> DARK_STEEL_KUNAI = REGISTRY.register("dark_steel_kunai", () -> new DarkSteelKunaiItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items
@@ -1256,6 +1286,9 @@ public class TheDeepVoidModItems {
 			ItemProperties.register(BLACK_HOLE.get(), new ResourceLocation("the_deep_void:black_hole_pulling"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) BlackHolePropertyValueProviderProcedure.execute(entity));
 			ItemProperties.register(BLOODY_CHAINSAW.get(), new ResourceLocation("the_deep_void:bloody_chainsaw_activated"),
 					(itemStackToRender, clientWorld, entity, itemEntityId) -> (float) BloodyChainsawPropertyValueProviderProcedure.execute(itemStackToRender));
+			ItemProperties.register(BISMUTH_BOTTLE.get(), new ResourceLocation("the_deep_void:bismuth_bottle_xp"),
+					(itemStackToRender, clientWorld, entity, itemEntityId) -> (float) BismuthVialPropertyValueProviderProcedure.execute(itemStackToRender));
+			ItemProperties.register(BISMUTH_JAR.get(), new ResourceLocation("the_deep_void:bismuth_jar_xp"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) BismuthVialPropertyValueProviderProcedure.execute(itemStackToRender));
 		});
 	}
 }

@@ -14,11 +14,11 @@
       "item": "the_deep_void:ancient_onyx"
     },
     "c": {
-      "item": "minecraft:bookshelf"
+      "item": "the_deep_void:esoteric_tome"
     }
   },
   "result": {
     "item": "the_deep_void:ancient_bookshelf",
-    "count": 3
+    "count": 1
   }
 }

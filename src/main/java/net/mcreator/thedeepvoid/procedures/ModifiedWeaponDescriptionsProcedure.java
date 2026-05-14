@@ -91,5 +91,25 @@ public class ModifiedWeaponDescriptionsProcedure {
 			tooltip.add(Component
 					.literal((" \u00A72+" + new java.text.DecimalFormat("##").format((double) DeepVoidConfigConfiguration.PLAGUEARMORBONUS.get()) + " " + Component.translatable("item.the_deep_void.weapon_tooltip.attack_damage").getString())));
 		}
+		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GRIM_ROTTEN_BONE_HELMET.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GRIM_ROTTEN_BONE_CHESTPLATE.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GRIM_ROTTEN_BONE_LEGGINGS.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GRIM_ROTTEN_BONE_BOOTS.get()
+				&& itemstack.is(ItemTags.create(new ResourceLocation("the_deep_void:scythes")))) {
+			tooltip.add(Component.literal(""));
+			tooltip.add(Component.literal(("\u00A77" + Component.translatable("item.the_deep_void.weapon_tooltip.bloodstone_armor").getString())));
+			tooltip.add(Component
+					.literal((" \u00A72+" + new java.text.DecimalFormat("##").format((double) DeepVoidConfigConfiguration.GRIMROTTENARMORBONUS.get()) + " " + Component.translatable("item.the_deep_void.weapon_tooltip.attack_damage").getString())));
+		}
+		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.HUNTERS_HELMET.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.HUNTERS_CHESTPLATE.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.HUNTERS_LEGGINGS.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.HUNTERS_BOOTS.get()
+				&& itemstack.is(ItemTags.create(new ResourceLocation("the_deep_void:claws")))) {
+			tooltip.add(Component.literal(""));
+			tooltip.add(Component.literal(("\u00A77" + Component.translatable("item.the_deep_void.weapon_tooltip.bloodstone_armor").getString())));
+			tooltip.add(Component
+					.literal((" \u00A72+" + new java.text.DecimalFormat("##").format((double) DeepVoidConfigConfiguration.HUNTERARMORBONUS.get()) + " " + Component.translatable("item.the_deep_void.weapon_tooltip.attack_damage").getString())));
+		}
 	}
 }

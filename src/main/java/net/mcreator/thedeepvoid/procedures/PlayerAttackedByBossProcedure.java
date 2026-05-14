@@ -8,18 +8,20 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.GameType;
 import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.tags.TagKey;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.client.Minecraft;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
@@ -34,7 +36,7 @@ import net.mcreator.thedeepvoid.entity.HiveWatcherEntity;
 import net.mcreator.thedeepvoid.entity.GiantShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.FleshFangsEntity;
 import net.mcreator.thedeepvoid.entity.BoneSawEntity;
-import net.mcreator.thedeepvoid.entity.ApostleOfCatastropheEntity;
+import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import javax.annotation.Nullable;
@@ -58,7 +60,7 @@ public class PlayerAttackedByBossProcedure {
 		if (amount > 1) {
 			if (entity instanceof Player && ((sourceentity instanceof WeaverOfSoulsBossEntity || sourceentity instanceof ShadowHandEntity || sourceentity instanceof SeekerEntity)
 					&& !world.getEntitiesOfClass(WeaverOfSoulsBossEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()
-					|| sourceentity instanceof ApostleOfCatastropheEntity && !world.getEntitiesOfClass(ApostleOfCatastropheEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()
+					|| sourceentity instanceof ApostleBossEntity && !world.getEntitiesOfClass(ApostleBossEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()
 					|| sourceentity instanceof PrimordialBoneCrawlerEntity && !world.getEntitiesOfClass(PrimordialBoneCrawlerEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()
 					|| (sourceentity instanceof MisanthropicHivemindEntity || sourceentity instanceof SkullSmasherEntity || sourceentity instanceof SawThrowerEntity || sourceentity instanceof BoneSawEntity || sourceentity instanceof FleshFangsEntity)
 							&& !world.getEntitiesOfClass(MisanthropicHivemindEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()
@@ -79,19 +81,29 @@ public class PlayerAttackedByBossProcedure {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.BROKEN_ARMOR.get(), 400, 0));
 			}
-			if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:boss"))) && amount > (double) DeepVoidConfigConfiguration.BOSSDAMAGECAP.get() && DeepVoidConfigConfiguration.DODAMAGECAP.get() == true
-					&& !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:capped_damage"))) && !damagesource.is(DamageTypes.MAGIC)) {
-				if (event != null && event.isCancelable()) {
-					event.setCanceled(true);
-				}
-				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:capped_damage"))), sourceentity),
-						(float) ((double) DeepVoidConfigConfiguration.BOSSDAMAGECAP.get() + (amount - (double) DeepVoidConfigConfiguration.BOSSDAMAGECAP.get()) * (double) DeepVoidConfigConfiguration.DAMAGECAPPERCENTAGE.get()));
-			}
 		}
 		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:boss"))) && sourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:boss")))) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
 			}
+		}
+		if (entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:affected_by_cap")))
+				&& amount > (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) * (double) DeepVoidConfigConfiguration.DAMAGECAPPERCENTAGE.get() && DeepVoidConfigConfiguration.DODAMAGECAP.get() == true && !(new Object() {
+					public boolean checkGamemode(Entity _ent) {
+						if (_ent instanceof ServerPlayer _serverPlayer) {
+							return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+						} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+							return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+									&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+						}
+						return false;
+					}
+				}.checkGamemode(sourceentity)) && !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:capped_damage")))) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			}
+			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:capped_damage"))), sourceentity),
+					(float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) * (double) DeepVoidConfigConfiguration.DAMAGECAPPERCENTAGE.get()));
 		}
 	}
 }

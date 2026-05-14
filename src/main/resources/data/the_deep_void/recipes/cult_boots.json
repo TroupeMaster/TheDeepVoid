@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a a",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:dark_cloth"
+    },
+    "b": {
+      "item": "the_deep_void:tattered_cult_boots"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:cult_boots",
+    "count": 1
+  }
+}

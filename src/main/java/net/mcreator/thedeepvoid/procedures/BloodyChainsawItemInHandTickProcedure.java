@@ -24,6 +24,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
+import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import java.util.List;
 import java.util.Comparator;
@@ -43,8 +44,8 @@ public class BloodyChainsawItemInHandTickProcedure {
 					if (entityiterator instanceof LivingEntity && !(entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false) && !(entityiterator == entity)
 							&& !(entityiterator == (entity.getVehicle()))) {
 						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:sawed"))), entity),
-								(float) (((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() * 0.1));
-						if (!(entityiterator instanceof LivingEntity _livEnt13 && _livEnt13.hasEffect(TheDeepVoidModMobEffects.BLOOD_BOIL.get()))) {
+								(float) (((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() * (double) DeepVoidConfigConfiguration.BLOODYCHAINSAW.get()));
+						if (!(entityiterator instanceof LivingEntity _livEnt14 && _livEnt14.hasEffect(TheDeepVoidModMobEffects.BLOOD_BOIL.get()))) {
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.BLOOD_BOIL.get(), 40, 0));
 						}

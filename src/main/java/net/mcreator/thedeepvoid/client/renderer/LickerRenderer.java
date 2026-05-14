@@ -18,7 +18,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 public class LickerRenderer extends GeoEntityRenderer<LickerEntity> {
 	public LickerRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new LickerModel());
-		this.shadowRadius = 0.5f;
+		this.shadowRadius = 0f;
 	}
 
 	@Override
@@ -33,5 +33,10 @@ public class LickerRenderer extends GeoEntityRenderer<LickerEntity> {
 		this.scaleHeight = scale;
 		this.scaleWidth = scale;
 		super.preRender(poseStack, entity, model, bufferSource, buffer, isReRender, partialTick, packedLight, packedOverlay, red, green, blue, alpha);
+	}
+
+	@Override
+	protected float getDeathMaxRotation(LickerEntity entityLivingBaseIn) {
+		return 0.0F;
 	}
 }

@@ -21,7 +21,7 @@ public class BloodyChainsawPlayerFinishesUsingItemProcedure {
 			return;
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == itemstack.getItem()) {
 			if (entity instanceof Player _player)
-				_player.getCooldowns().addCooldown(itemstack.getItem(), 100);
+				_player.getCooldowns().addCooldown(itemstack.getItem(), 120);
 			itemstack.getOrCreateTag().putDouble("state", 0);
 			itemstack.getOrCreateTag().putBoolean("used", false);
 			entity.getPersistentData().putDouble("sentientChainsawUse", 0);

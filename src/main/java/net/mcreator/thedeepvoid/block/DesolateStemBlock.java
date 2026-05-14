@@ -5,6 +5,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.level.material.PushReaction;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
@@ -31,7 +32,7 @@ public class DesolateStemBlock extends Block implements SimpleWaterloggedBlock {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public DesolateStemBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.TWISTING_VINES).strength(0.1f, 0.5f).noCollission().noOcclusion().randomTicks().pushReaction(PushReaction.DESTROY).isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLUE).sound(SoundType.TWISTING_VINES).strength(0.1f, 0.5f).noCollission().noOcclusion().randomTicks().pushReaction(PushReaction.DESTROY).isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
 	}
 

@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "the_deep_void:block/living_gloom_vines",
+    "particle": "the_deep_void:block/living_gloom_vines"
+  },
+  "render_type": "solid"
+}

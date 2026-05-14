@@ -12,7 +12,7 @@ public class CallOfTheVoidEffectExpiresProcedure {
 	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (!world.getEntitiesOfClass(StalkerEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 350, 350, 350), e -> true).isEmpty()) {
+		if (!world.getEntitiesOfClass(StalkerEntity.class, AABB.ofSize(new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), 350, 350, 350), e -> true).isEmpty() && entity.onGround()) {
 			{
 				boolean _setval = true;
 				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

@@ -1,0 +1,46 @@
+{
+  "feature": "the_deep_void:giant_overgrown_growth",
+  "placement": [
+    {
+      "type": "minecraft:biome"
+    },
+    {
+      "type": "minecraft:rarity_filter",
+      "chance": 2
+    },
+    {
+      "type": "minecraft:count_on_every_layer",
+      "count": 4
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:all_of",
+        "predicates": [
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          },
+          {
+            "type": "minecraft:matching_blocks",
+            "blocks": "the_deep_void:desolate_soil",
+            "offset": [
+              0,
+              1,
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "type": "environment_scan",
+      "direction_of_search": "down",
+      "target_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "minecraft:air"
+      },
+      "max_steps": 8
+    }
+  ]
+}

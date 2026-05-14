@@ -27,6 +27,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
+import net.mcreator.thedeepvoid.entity.VoidPelletEntity;
 import net.mcreator.thedeepvoid.entity.VoidArrowEntity;
 import net.mcreator.thedeepvoid.entity.GoldenRotArrowEntity;
 import net.mcreator.thedeepvoid.entity.FleshArrowEntity;
@@ -197,6 +198,14 @@ public class BigShadeArrowHitProcedure {
 				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy"))), sourceentity),
 						(float) (amount + (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.POWER_ARROWS) + 1));
 			}
+		}
+		if (entity instanceof LivingEntity && immediatesourceentity instanceof VoidPelletEntity && !(entity instanceof VoidPelletEntity) && !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:gun")))) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			}
+			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:gun"))), sourceentity), (float) amount);
+			if (!immediatesourceentity.level().isClientSide())
+				immediatesourceentity.discard();
 		}
 	}
 }

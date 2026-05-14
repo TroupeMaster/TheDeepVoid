@@ -113,9 +113,9 @@ public class PlayerAttackedByStalkerProcedure {
 					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 60, 0));
 			}
 		}
-		if (sourceentity instanceof LickerEntity) {
+		if (sourceentity instanceof LickerEntity && (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 5) {
 			if (sourceentity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 2));
+				_entity.setHealth((float) ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 4));
 		}
 		if (sourceentity instanceof FleshCubeEntity || sourceentity instanceof SmallFleshCubeEntity) {
 			if (world instanceof Level _level) {

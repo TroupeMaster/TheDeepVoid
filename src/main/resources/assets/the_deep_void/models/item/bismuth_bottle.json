@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "the_deep_void:item/empty_bismuth_bottle"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "the_deep_void:bismuth_bottle_xp": 1
+      },
+      "model": "the_deep_void:item/bismuth_bottle_0"
+    }
+  ]
+}

@@ -1833,5 +1833,58 @@
         "stream": false
       }
     ]
+  },
+  "soul_unleash": {
+    "subtitle": "subtitles.soul_unleash",
+    "sounds": [
+      {
+        "name": "the_deep_void:sfx_item_harvestervoices-003_soundwave",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:sfx_item_harvestervoices-002_soundwave",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:sfx_item_harvestervoices-001_soundwave",
+        "stream": false
+      }
+    ]
+  },
+  "soul_build_up": {
+    "subtitle": "subtitles.soul_build_up",
+    "sounds": [
+      {
+        "name": "the_deep_void:sfx_item_harvestersoultransport-002_soundwave",
+        "stream": false
+      }
+    ]
+  },
+  "wanderer_call": {
+    "subtitle": "subtitles.wanderer_call",
+    "sounds": [
+      {
+        "name": "the_deep_void:wanderer_call",
+        "stream": false
+      }
+    ]
+  },
+  "wanderer_hurt": {
+    "subtitle": "subtitles.wanderer_hurt",
+    "sounds": [
+      {
+        "name": "the_deep_void:wanderer_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "wanderer_ambient": {
+    "subtitle": "subtitles.wanderer_ambient",
+    "sounds": [
+      {
+        "name": "the_deep_void:wanderer_idle",
+        "stream": false
+      }
+    ]
   }
 }

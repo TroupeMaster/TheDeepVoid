@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:living_gloom_stem"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:living_gloom_vines",
+    "count": 4
+  }
+}

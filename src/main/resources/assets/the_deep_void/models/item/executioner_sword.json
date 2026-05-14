@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/executionersword",
+  "textures": {
+    "0": "the_deep_void:block/executioner_sword",
+    "particle": "the_deep_void:item/executioner_sword"
+  }
+}

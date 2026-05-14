@@ -18,7 +18,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class HugeEyeVineTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		if (world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude() == false && ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.HUGE_EYE_VINE_STEM.get()) == false
+		if (world.isEmptyBlock(BlockPos.containing(x, y - 1, z)) && ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.HUGE_EYE_VINE_STEM.get()) == false
 				&& ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BIG_BLUE_EYE.get()) == false
 				&& ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BIG_GREEN_EYE.get()) == false
 				&& ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BIG_RED_EYE.get()) == false

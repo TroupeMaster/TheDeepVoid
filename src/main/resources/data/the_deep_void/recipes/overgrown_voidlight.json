@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "ingredients": [
+    {
+      "item": "the_deep_void:voidlight"
+    },
+    {
+      "item": "the_deep_void:overgrown_gloom_growth"
+    }
+  ],
+  "result": {
+    "item": "the_deep_void:overgrown_voidlight",
+    "count": 1
+  }
+}

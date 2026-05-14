@@ -24,6 +24,16 @@ public class GrimberryJuiceItem extends Item {
 	}
 
 	@Override
+	public boolean hasCraftingRemainingItem() {
+		return true;
+	}
+
+	@Override
+	public ItemStack getCraftingRemainingItem(ItemStack itemstack) {
+		return new ItemStack(Items.GLASS_BOTTLE);
+	}
+
+	@Override
 	public int getUseDuration(ItemStack itemstack) {
 		return 15;
 	}

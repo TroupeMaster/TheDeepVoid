@@ -27,7 +27,7 @@ public class ArmorAbilityRottenArmorProcedure {
 				});
 			}
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROTTEN_HEART.get(), 360, 1));
+				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROTTEN_HEART.get(), 240, 2));
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("particle.soul_escape")), SoundSource.PLAYERS, (float) 1.5, 1);

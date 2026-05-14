@@ -50,6 +50,7 @@ import net.mcreator.thedeepvoid.client.model.ModelmarrowRoots;
 import net.mcreator.thedeepvoid.client.model.Modellurker;
 import net.mcreator.thedeepvoid.client.model.Modellighthead;
 import net.mcreator.thedeepvoid.client.model.Modellicker;
+import net.mcreator.thedeepvoid.client.model.Modelkunai;
 import net.mcreator.thedeepvoid.client.model.Modelhunter_mask;
 import net.mcreator.thedeepvoid.client.model.Modelhunter;
 import net.mcreator.thedeepvoid.client.model.Modelhallucination_new;
@@ -104,6 +105,7 @@ public class TheDeepVoidModModels {
 		event.registerLayerDefinition(Modelstalker2.LAYER_LOCATION, Modelstalker2::createBodyLayer);
 		event.registerLayerDefinition(Modelvoid_dweller3.LAYER_LOCATION, Modelvoid_dweller3::createBodyLayer);
 		event.registerLayerDefinition(Modeldeath_maw.LAYER_LOCATION, Modeldeath_maw::createBodyLayer);
+		event.registerLayerDefinition(Modelkunai.LAYER_LOCATION, Modelkunai::createBodyLayer);
 		event.registerLayerDefinition(ModelplagueDoctorMask.LAYER_LOCATION, ModelplagueDoctorMask::createBodyLayer);
 		event.registerLayerDefinition(Modelstalker_new.LAYER_LOCATION, Modelstalker_new::createBodyLayer);
 		event.registerLayerDefinition(Modelhunter.LAYER_LOCATION, Modelhunter::createBodyLayer);

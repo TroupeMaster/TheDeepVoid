@@ -49,6 +49,7 @@ import net.mcreator.thedeepvoid.entity.MotherBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
 import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
 import net.mcreator.thedeepvoid.entity.MaggotEntity;
+import net.mcreator.thedeepvoid.entity.MadCultistEntity;
 import net.mcreator.thedeepvoid.entity.LurkerEntity;
 import net.mcreator.thedeepvoid.entity.LickerEntity;
 import net.mcreator.thedeepvoid.entity.LastingShadowHandEntity;
@@ -75,6 +76,7 @@ import net.mcreator.thedeepvoid.entity.FleshCubeEntity;
 import net.mcreator.thedeepvoid.entity.EyekinFlyingEntity;
 import net.mcreator.thedeepvoid.entity.EyekinEntity;
 import net.mcreator.thedeepvoid.entity.EyeOfTheWatcherEntity;
+import net.mcreator.thedeepvoid.entity.ExecutionerEntity;
 import net.mcreator.thedeepvoid.entity.EverhungerEntity;
 import net.mcreator.thedeepvoid.entity.DoomingTombstoneEntity;
 import net.mcreator.thedeepvoid.entity.DevourerEntity;
@@ -100,7 +102,8 @@ import net.mcreator.thedeepvoid.entity.BigEyeEntity;
 import net.mcreator.thedeepvoid.entity.BeholderEntity;
 import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerNeutralEntity;
 import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerEntity;
-import net.mcreator.thedeepvoid.entity.ApostleOfCatastropheEntity;
+import net.mcreator.thedeepvoid.entity.ApostleCloneEntity;
+import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
 import net.mcreator.thedeepvoid.entity.AlphaBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.AbductorEntity;
 
@@ -487,13 +490,6 @@ public class EntityAnimationFactory {
 					syncable.animationprocedure = animation;
 				}
 			}
-			if (event.getEntity() instanceof ApostleOfCatastropheEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
 			if (event.getEntity() instanceof IdlingApostleEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
@@ -796,6 +792,34 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof WeaverOfSoulsBossEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof ApostleBossEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof ApostleCloneEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof MadCultistEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof ExecutionerEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

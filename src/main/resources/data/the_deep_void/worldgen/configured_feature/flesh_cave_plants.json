@@ -1,0 +1,39 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 96,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              {
+                "data": {
+                  "Name": "the_deep_void:tendrils"
+                },
+                "weight": 80
+              },
+              {
+                "data": {
+                  "Name": "the_deep_void:pus_flower"
+                },
+                "weight": 20
+              }
+            ]
+          }
+        }
+      },
+      "placement": [
+        {
+          "type": "minecraft:block_predicate_filter",
+          "predicate": {
+            "type": "minecraft:matching_blocks",
+            "blocks": "minecraft:air"
+          }
+        }
+      ]
+    }
+  }
+}

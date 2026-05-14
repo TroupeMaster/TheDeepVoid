@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#the_deep_void:flesh_biome",
+  "features": "the_deep_void:flesh_blob_variants_generate",
+  "step": "top_layer_modification"
+}

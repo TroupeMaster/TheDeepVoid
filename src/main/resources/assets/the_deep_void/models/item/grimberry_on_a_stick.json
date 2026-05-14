@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/grimberry_stick",
+  "textures": {
+    "1": "the_deep_void:block/grimberry_on_a_stick",
+    "particle": "the_deep_void:item/grimberry_on_a_stick"
+  }
+}

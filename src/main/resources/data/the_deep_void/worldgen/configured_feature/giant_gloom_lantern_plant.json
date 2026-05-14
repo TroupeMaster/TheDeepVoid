@@ -1,0 +1,8 @@
+{
+  "type": "the_deep_void:structure_feature",
+  "config": {
+    "structure": "the_deep_void:giant_gloom_lantern_plant",
+    "random_mirror": true,
+    "ignored_blocks": "minecraft:structure_block"
+  }
+}

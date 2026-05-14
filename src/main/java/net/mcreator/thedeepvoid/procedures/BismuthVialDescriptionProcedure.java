@@ -34,5 +34,11 @@ public class BismuthVialDescriptionProcedure {
 		if (itemstack.getItem() == TheDeepVoidModItems.BISMUTH_VIAL.get()) {
 			tooltip.add(Component.literal((itemstack.getOrCreateTag().getDouble("xp") + "/5.0" + " XP")));
 		}
+		if (itemstack.getItem() == TheDeepVoidModItems.BISMUTH_BOTTLE.get()) {
+			tooltip.add(Component.literal((itemstack.getOrCreateTag().getDouble("xp") + "/15.0" + " XP")));
+		}
+		if (itemstack.getItem() == TheDeepVoidModItems.BISMUTH_JAR.get()) {
+			tooltip.add(Component.literal((itemstack.getOrCreateTag().getDouble("xp") + "/25.0" + " XP")));
+		}
 	}
 }

@@ -67,7 +67,7 @@ public abstract class RottenBoneArmorItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/eidolon_armor__layer_1.png";
+			return "the_deep_void:textures/models/armor/rotten_bone__layer_1.png";
 		}
 	}
 
@@ -78,7 +78,7 @@ public abstract class RottenBoneArmorItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/eidolon_armor__layer_1.png";
+			return "the_deep_void:textures/models/armor/rotten_bone__layer_1.png";
 		}
 	}
 
@@ -89,7 +89,7 @@ public abstract class RottenBoneArmorItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/eidolon_armor__layer_2.png";
+			return "the_deep_void:textures/models/armor/rotten_bone__layer_2.png";
 		}
 	}
 
@@ -100,7 +100,7 @@ public abstract class RottenBoneArmorItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/eidolon_armor__layer_1.png";
+			return "the_deep_void:textures/models/armor/rotten_bone__layer_1.png";
 		}
 	}
 }

@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "the_deep_void:item/empty_bismuth_jar"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "the_deep_void:bismuth_jar_xp": 1
+      },
+      "model": "the_deep_void:item/bismuth_jar_0"
+    }
+  ]
+}

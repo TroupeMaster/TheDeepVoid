@@ -3,6 +3,9 @@ package net.mcreator.thedeepvoid.block;
 
 import net.minecraftforge.common.PlantType;
 
+import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.pathfinder.BlockPathTypes;
 import net.minecraft.world.level.material.PushReaction;
 import net.minecraft.world.level.material.MapColor;
@@ -22,6 +25,12 @@ import net.mcreator.thedeepvoid.procedures.PusSackMobplayerCollidesWithPlantProc
 public class PusSackBlock extends FlowerBlock {
 	public PusSackBlock() {
 		super(() -> MobEffects.MOVEMENT_SPEED, 100, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_YELLOW).sound(SoundType.ROOTS).instabreak().noCollission().offsetType(BlockBehaviour.OffsetType.NONE).pushReaction(PushReaction.DESTROY));
+	}
+
+	@Override
+	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
+		Vec3 offset = state.getOffset(world, pos);
+		return box(0, 0, 0, 16, 10, 16).move(offset.x, offset.y, offset.z);
 	}
 
 	@Override

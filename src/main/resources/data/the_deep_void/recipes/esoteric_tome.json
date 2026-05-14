@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:dark_cloth"
+    },
+    "b": {
+      "item": "minecraft:book"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:esoteric_tome",
+    "count": 1
+  }
+}

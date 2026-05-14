@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aa",
+    "aa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:desolate_stem"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:gloom_vines",
+    "count": 4
+  }
+}

@@ -14,7 +14,7 @@ import net.minecraft.core.BlockPos;
 
 public class VoidlightBlock extends Block {
 	public VoidlightBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_BLUE).sound(SoundType.SHROOMLIGHT).strength(1f, 2f).lightLevel(s -> 6));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.COLOR_LIGHT_BLUE).sound(SoundType.SHROOMLIGHT).strength(1f, 2f).lightLevel(s -> 6));
 	}
 
 	@Override

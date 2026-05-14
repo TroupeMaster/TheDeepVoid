@@ -72,6 +72,12 @@ public class PlantDestroyedByPlayerProcedure {
 					entityToSpawn.setPickUpDelay(10);
 					_level.addFreshEntity(entityToSpawn);
 				}
+			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == TheDeepVoidModBlocks.OVERGROWN_GLOOM_GROWTH.get()) {
+				if (world instanceof ServerLevel _level) {
+					ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModBlocks.OVERGROWN_GLOOM_GROWTH.get()));
+					entityToSpawn.setPickUpDelay(10);
+					_level.addFreshEntity(entityToSpawn);
+				}
 			} else if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == TheDeepVoidModBlocks.BLOSSOMING_DESOLATE_LICHEN.get()) {
 				for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), 1, 2); index0++) {
 					if (world instanceof ServerLevel _level) {

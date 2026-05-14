@@ -26,6 +26,7 @@ import net.mcreator.thedeepvoid.client.particle.PentagramParticle;
 import net.mcreator.thedeepvoid.client.particle.MobRespawnParticle;
 import net.mcreator.thedeepvoid.client.particle.LunaticEyeParticle;
 import net.mcreator.thedeepvoid.client.particle.LickerTongueParticle;
+import net.mcreator.thedeepvoid.client.particle.IchorLavaParticle;
 import net.mcreator.thedeepvoid.client.particle.IchorFlameParticle;
 import net.mcreator.thedeepvoid.client.particle.HookLineParticle;
 import net.mcreator.thedeepvoid.client.particle.GrimSweepParticle;
@@ -92,5 +93,6 @@ public class TheDeepVoidModParticles {
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.BLOOD_SMOKE.get(), BloodSmokeParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.PLAGUE_SMOKE.get(), PlagueSmokeParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.FALLING_VOID_ASH.get(), FallingVoidAshParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.ICHOR_LAVA.get(), IchorLavaParticle::provider);
 	}
 }

@@ -9,6 +9,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
@@ -16,6 +17,9 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 public class LiquidIchorCheckBelowProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
 		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.WATER) {
+			for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), 12, 24); index0++) {
+				world.addParticle(ParticleTypes.SMOKE, (x + 0.5), y, (z + 0.5), (Mth.nextDouble(RandomSource.create(), -0.05, 0.05)), (Mth.nextDouble(RandomSource.create(), 0.4, 0.6)), (Mth.nextDouble(RandomSource.create(), -0.05, 0.05)));
+			}
 			world.setBlock(BlockPos.containing(x, y - 1, z), TheDeepVoidModBlocks.CRYSTALLIZED_ICHOR.get().defaultBlockState(), 3);
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {

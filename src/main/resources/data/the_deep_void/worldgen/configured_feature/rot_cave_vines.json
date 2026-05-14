@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:simple_block",
+  "config": {
+    "to_place": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "the_deep_void:connected_marrow"
+          },
+          "weight": 60
+        },
+        {
+          "data": {
+            "Name": "the_deep_void:hanging_marrow"
+          },
+          "weight": 40
+        }
+      ]
+    }
+  }
+}

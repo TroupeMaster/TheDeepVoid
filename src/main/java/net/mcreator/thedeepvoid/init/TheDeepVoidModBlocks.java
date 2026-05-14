@@ -152,6 +152,8 @@ import net.mcreator.thedeepvoid.block.PenitentInACageBlock;
 import net.mcreator.thedeepvoid.block.PeepingStemBlock;
 import net.mcreator.thedeepvoid.block.PeepingRootsBlock;
 import net.mcreator.thedeepvoid.block.PackedFleshBlock;
+import net.mcreator.thedeepvoid.block.OvergrownVoidlightBlock;
+import net.mcreator.thedeepvoid.block.OvergrownGloomGrowthBlock;
 import net.mcreator.thedeepvoid.block.OrangeCandlestickBlock;
 import net.mcreator.thedeepvoid.block.OrangeCandelabraBlock;
 import net.mcreator.thedeepvoid.block.OnyxOreBlock;
@@ -181,6 +183,8 @@ import net.mcreator.thedeepvoid.block.MagentaCandelabraBlock;
 import net.mcreator.thedeepvoid.block.MadnessLanternBlock;
 import net.mcreator.thedeepvoid.block.LurkerShrineBlock;
 import net.mcreator.thedeepvoid.block.LurkerHeadBlock;
+import net.mcreator.thedeepvoid.block.LivingGloomVinesBlock;
+import net.mcreator.thedeepvoid.block.LivingGloomStemBlock;
 import net.mcreator.thedeepvoid.block.LiquidVoidBlock;
 import net.mcreator.thedeepvoid.block.LiquidIchorBlock;
 import net.mcreator.thedeepvoid.block.LimeCandlestickBlock;
@@ -242,6 +246,7 @@ import net.mcreator.thedeepvoid.block.GoldenRottenCrateBlock;
 import net.mcreator.thedeepvoid.block.GoldenRegurgitatedMatterBlock;
 import net.mcreator.thedeepvoid.block.GoldenFleshCrateBlock;
 import net.mcreator.thedeepvoid.block.GluttonBlockBlock;
+import net.mcreator.thedeepvoid.block.GloomVinesBlock;
 import net.mcreator.thedeepvoid.block.GapingPorousFleshBlock;
 import net.mcreator.thedeepvoid.block.FramedSulfurGlassPaneBlock;
 import net.mcreator.thedeepvoid.block.FramedSulfurGlassBlock;
@@ -904,6 +909,11 @@ public class TheDeepVoidModBlocks {
 	public static final RegistryObject<Block> BLOCK_OF_OLD_SHATTERED_BONE = REGISTRY.register("block_of_old_shattered_bone", () -> new BlockOfOldShatteredBoneBlock());
 	public static final RegistryObject<Block> BLOCK_OF_ROTTEN_SHATTERED_BONE = REGISTRY.register("block_of_rotten_shattered_bone", () -> new BlockOfRottenShatteredBoneBlock());
 	public static final RegistryObject<Block> BLOCK_OF_VOIDRIUM_ALLOY = REGISTRY.register("block_of_voidrium_alloy", () -> new BlockOfVoidriumAlloyBlock());
+	public static final RegistryObject<Block> OVERGROWN_GLOOM_GROWTH = REGISTRY.register("overgrown_gloom_growth", () -> new OvergrownGloomGrowthBlock());
+	public static final RegistryObject<Block> OVERGROWN_VOIDLIGHT = REGISTRY.register("overgrown_voidlight", () -> new OvergrownVoidlightBlock());
+	public static final RegistryObject<Block> LIVING_GLOOM_STEM = REGISTRY.register("living_gloom_stem", () -> new LivingGloomStemBlock());
+	public static final RegistryObject<Block> GLOOM_VINES = REGISTRY.register("gloom_vines", () -> new GloomVinesBlock());
+	public static final RegistryObject<Block> LIVING_GLOOM_VINES = REGISTRY.register("living_gloom_vines", () -> new LivingGloomVinesBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

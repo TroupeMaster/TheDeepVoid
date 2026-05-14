@@ -9,12 +9,12 @@ import net.mcreator.thedeepvoid.entity.LickerEntity;
 public class LickerModel extends GeoModel<LickerEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(LickerEntity entity) {
-		return new ResourceLocation("the_deep_void", "animations/lickerremodel.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/lickerremodeled.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(LickerEntity entity) {
-		return new ResourceLocation("the_deep_void", "geo/lickerremodel.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/lickerremodeled.geo.json");
 	}
 
 	@Override

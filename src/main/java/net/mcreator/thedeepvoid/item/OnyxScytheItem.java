@@ -48,7 +48,7 @@ public class OnyxScytheItem extends SwordItem {
 			public Ingredient getRepairIngredient() {
 				return Ingredient.of(new ItemStack(TheDeepVoidModItems.ONYX.get()));
 			}
-		}, 3, -2.8f, new Item.Properties().fireResistant());
+		}, 3, -3f, new Item.Properties().fireResistant());
 	}
 
 	@Override

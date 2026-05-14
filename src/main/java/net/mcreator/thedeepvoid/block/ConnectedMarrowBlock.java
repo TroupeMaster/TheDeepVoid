@@ -34,7 +34,8 @@ public class ConnectedMarrowBlock extends Block implements SimpleWaterloggedBloc
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public ConnectedMarrowBlock() {
-		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.BONE_BLOCK).strength(0.2f, 0.5f).noCollission().noOcclusion().pushReaction(PushReaction.DESTROY).isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.BONE_BLOCK).strength(0.2f, 0.5f).noCollission().noOcclusion().randomTicks().pushReaction(PushReaction.DESTROY)
+				.isRedstoneConductor((bs, br, bp) -> false));
 		this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
 	}
 
@@ -80,7 +81,6 @@ public class ConnectedMarrowBlock extends Block implements SimpleWaterloggedBloc
 	@Override
 	public void onPlace(BlockState blockstate, Level world, BlockPos pos, BlockState oldState, boolean moving) {
 		super.onPlace(blockstate, world, pos, oldState, moving);
-		world.scheduleTick(pos, this, 15);
 		HangingMarrowBlockAddedProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 
@@ -97,7 +97,6 @@ public class ConnectedMarrowBlock extends Block implements SimpleWaterloggedBloc
 		int y = pos.getY();
 		int z = pos.getZ();
 		ConnectedMarrowOnTickUpdateProcedure.execute(world, x, y, z);
-		world.scheduleTick(pos, this, 15);
 	}
 
 	@Override

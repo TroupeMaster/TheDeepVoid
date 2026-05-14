@@ -48,16 +48,17 @@ public class LavenditeArmorProcedureProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getEntity(), event.getSource().getDirectEntity(), event.getSource().getEntity(), event.getAmount());
+			execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getSource(), event.getEntity(), event.getSource().getDirectEntity(), event.getSource().getEntity(),
+					event.getAmount());
 		}
 	}
 
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity immediatesourceentity, Entity sourceentity, double amount) {
-		execute(null, world, x, y, z, entity, immediatesourceentity, sourceentity, amount);
+	public static void execute(LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity immediatesourceentity, Entity sourceentity, double amount) {
+		execute(null, world, x, y, z, damagesource, entity, immediatesourceentity, sourceentity, amount);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity, Entity immediatesourceentity, Entity sourceentity, double amount) {
-		if (entity == null || immediatesourceentity == null || sourceentity == null)
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity immediatesourceentity, Entity sourceentity, double amount) {
+		if (damagesource == null || entity == null || immediatesourceentity == null || sourceentity == null)
 			return;
 		double health_boost = 0;
 		double resistance = 0;
@@ -113,15 +114,8 @@ public class LavenditeArmorProcedureProcedure {
 					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VOIDRIUM_CHESTPLATE.get()
 					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VOIDRIUM_LEGGINGS.get()
 					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VOIDRIUM_BOOTS.get()) {
-				if (Math.random() < 0.8) {
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("enchant.thorns.hit")), SoundSource.NEUTRAL, 1, (float) 0.7);
-						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("enchant.thorns.hit")), SoundSource.NEUTRAL, 1, (float) 0.7, false);
-						}
-					}
-					sourceentity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), entity), (float) Math.ceil(amount / 5));
+				if (Math.random() < 0.8 && !damagesource.is(DamageTypes.THORNS)) {
+					sourceentity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.THORNS), entity), (float) Math.ceil(amount / 5));
 					world.addParticle((SimpleParticleType) (TheDeepVoidModParticleTypes.PENTAGRAM.get()), (sourceentity.getX()), (sourceentity.getY() + 1), (sourceentity.getZ()), 0, 0, 0);
 				}
 			}
@@ -129,15 +123,8 @@ public class LavenditeArmorProcedureProcedure {
 					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SACRED_VOIDRIUM_CHESTPLATE.get()
 					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SACRED_VOIDRIUM_LEGGINGS.get()
 					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SACRED_VOIDRIUM_BOOTS.get()) {
-				if (Math.random() < 0.8) {
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("enchant.thorns.hit")), SoundSource.PLAYERS, 1, (float) 0.7);
-						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("enchant.thorns.hit")), SoundSource.PLAYERS, 1, (float) 0.7, false);
-						}
-					}
-					sourceentity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC), entity), (float) Math.ceil(amount / 4));
+				if (Math.random() < 0.8 && !damagesource.is(DamageTypes.THORNS)) {
+					sourceentity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.THORNS), entity), (float) Math.ceil(amount / 4));
 					world.addParticle((SimpleParticleType) (TheDeepVoidModParticleTypes.PENTAGRAM.get()), (sourceentity.getX()), (sourceentity.getY() + 1), (sourceentity.getZ()), 0, 0, 0);
 				}
 			}

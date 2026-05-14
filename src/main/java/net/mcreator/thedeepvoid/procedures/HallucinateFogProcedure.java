@@ -85,6 +85,15 @@ public class HallucinateFogProcedure {
 				}
 				return false;
 			}
+		}.checkGamemode(entity)) && !(new Object() {
+			public boolean checkGamemode(Entity _ent) {
+				if (_ent instanceof ServerPlayer _serverPlayer) {
+					return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+				} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+					return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null && Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+				}
+				return false;
+			}
 		}.checkGamemode(entity))) {
 			setShape(FogShape.SPHERE);
 			if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) > 8) {
@@ -112,8 +121,8 @@ public class HallucinateFogProcedure {
 			} else if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0) {
 				setDistance(0, 1);
 				if (!(!world.getEntitiesOfClass(VoidbornEntity.class, AABB.ofSize(new Vec3(x, y, z), 200, 200, 200), e -> true).isEmpty())
-						&& !(entity instanceof LivingEntity _livEnt28 && _livEnt28.hasEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()))
-						&& !(entity instanceof LivingEntity _livEnt29 && _livEnt29.hasEffect(TheDeepVoidModMobEffects.VOID_BLESSING.get()))) {
+						&& !(entity instanceof LivingEntity _livEnt29 && _livEnt29.hasEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()))
+						&& !(entity instanceof LivingEntity _livEnt30 && _livEnt30.hasEffect(TheDeepVoidModMobEffects.VOID_BLESSING.get()))) {
 					if (entity.getPersistentData().getDouble("voidbornSpawn") >= (double) DeepVoidConfigConfiguration.VOIDBORNSPAWNTIMER.get()) {
 						entity.getPersistentData().putDouble("voidbornSpawn", 0);
 						if (world instanceof ServerLevel _level) {

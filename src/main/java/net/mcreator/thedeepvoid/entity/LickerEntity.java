@@ -30,6 +30,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
@@ -41,13 +42,17 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.thedeepvoid.procedures.LickerSpawnProcedure;
+import net.mcreator.thedeepvoid.procedures.LickerPlayerCollidesWithThisEntityProcedure;
 import net.mcreator.thedeepvoid.procedures.LickerOnEntityTickUpdateProcedure;
+import net.mcreator.thedeepvoid.procedures.LickerEntityIsHurtProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 public class LickerEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(LickerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(LickerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(LickerEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Boolean> DATA_caughtPrey = SynchedEntityData.defineId(LickerEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_stunned = SynchedEntityData.defineId(LickerEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -70,7 +75,9 @@ public class LickerEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "lickerremodel");
+		this.entityData.define(TEXTURE, "lickerremodeled");
+		this.entityData.define(DATA_caughtPrey, false);
+		this.entityData.define(DATA_stunned, false);
 	}
 
 	public void setTexture(String texture) {
@@ -105,11 +112,6 @@ public class LickerEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
-	public double getPassengersRidingOffset() {
-		return super.getPassengersRidingOffset() + -2;
-	}
-
-	@Override
 	public SoundEvent getHurtSound(DamageSource ds) {
 		return ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.generic.hurt"));
 	}
@@ -120,9 +122,17 @@ public class LickerEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
+	public boolean hurt(DamageSource source, float amount) {
+		LickerEntityIsHurtProcedure.execute(this, source.getEntity());
+		return super.hurt(source, amount);
+	}
+
+	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putBoolean("DatacaughtPrey", this.entityData.get(DATA_caughtPrey));
+		compound.putBoolean("Datastunned", this.entityData.get(DATA_stunned));
 	}
 
 	@Override
@@ -130,6 +140,10 @@ public class LickerEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DatacaughtPrey"))
+			this.entityData.set(DATA_caughtPrey, compound.getBoolean("DatacaughtPrey"));
+		if (compound.contains("Datastunned"))
+			this.entityData.set(DATA_stunned, compound.getBoolean("Datastunned"));
 	}
 
 	@Override
@@ -142,6 +156,25 @@ public class LickerEntity extends Monster implements GeoEntity {
 	@Override
 	public EntityDimensions getDimensions(Pose p_33597_) {
 		return super.getDimensions(p_33597_).scale((float) 1);
+	}
+
+	@Override
+	public void playerTouch(Player sourceentity) {
+		super.playerTouch(sourceentity);
+		LickerPlayerCollidesWithThisEntityProcedure.execute(this.level(), this, sourceentity);
+	}
+
+	@Override
+	public boolean isPushable() {
+		return false;
+	}
+
+	@Override
+	protected void doPush(Entity entityIn) {
+	}
+
+	@Override
+	protected void pushEntities() {
 	}
 
 	public static void init() {
@@ -158,7 +191,7 @@ public class LickerEntity extends Monster implements GeoEntity {
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0);
 		builder = builder.add(Attributes.MAX_HEALTH, 15);
 		builder = builder.add(Attributes.ARMOR, 0);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 3);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 999);
 		return builder;
@@ -166,27 +199,12 @@ public class LickerEntity extends Monster implements GeoEntity {
 
 	private PlayState movementPredicate(AnimationState event) {
 		if (this.animationprocedure.equals("empty")) {
-			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.lickerRemodel_idle"));
+			if (this.isDeadOrDying()) {
+				return event.setAndContinue(RawAnimation.begin().thenPlay("animation.licker_stun"));
+			}
+			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.licker_idle"));
 		}
 		return PlayState.STOP;
-	}
-
-	private PlayState attackingPredicate(AnimationState event) {
-		double d1 = this.getX() - this.xOld;
-		double d0 = this.getZ() - this.zOld;
-		float velocity = (float) Math.sqrt(d1 * d1 + d0 * d0);
-		if (getAttackAnim(event.getPartialTick()) > 0f && !this.swinging) {
-			this.swinging = true;
-			this.lastSwing = level().getGameTime();
-		}
-		if (this.swinging && this.lastSwing + 7L <= level().getGameTime()) {
-			this.swinging = false;
-		}
-		if (this.swinging && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
-			event.getController().forceAnimationReset();
-			return event.setAndContinue(RawAnimation.begin().thenPlay("animation.lickerRemodel_attack"));
-		}
-		return PlayState.CONTINUE;
 	}
 
 	String prevAnim = "empty";
@@ -228,7 +246,6 @@ public class LickerEntity extends Monster implements GeoEntity {
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar data) {
 		data.add(new AnimationController<>(this, "movement", 4, this::movementPredicate));
-		data.add(new AnimationController<>(this, "attacking", 4, this::attackingPredicate));
 		data.add(new AnimationController<>(this, "procedure", 4, this::procedurePredicate));
 	}
 

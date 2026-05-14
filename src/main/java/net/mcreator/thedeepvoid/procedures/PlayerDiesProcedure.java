@@ -9,20 +9,16 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.Vec2;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.GameType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.CommandSource;
-import net.minecraft.client.Minecraft;
 
-import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.SkullSmasherEntity;
 import net.mcreator.thedeepvoid.entity.SawThrowerEntity;
@@ -31,7 +27,7 @@ import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
 import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
 import net.mcreator.thedeepvoid.entity.FleshFangsEntity;
 import net.mcreator.thedeepvoid.entity.BoneSawEntity;
-import net.mcreator.thedeepvoid.entity.ApostleOfCatastropheEntity;
+import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
@@ -56,37 +52,6 @@ public class PlayerDiesProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (DeepVoidConfigConfiguration.HELL.get() == true) {
-			if (entity instanceof Player && !(new Object() {
-				public boolean checkGamemode(Entity _ent) {
-					if (_ent instanceof ServerPlayer _serverPlayer) {
-						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
-					} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
-						return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
-								&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
-					}
-					return false;
-				}
-			}.checkGamemode(entity)) && !(new Object() {
-				public boolean checkGamemode(Entity _ent) {
-					if (_ent instanceof ServerPlayer _serverPlayer) {
-						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.SPECTATOR;
-					} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
-						return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
-								&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.SPECTATOR;
-					}
-					return false;
-				}
-			}.checkGamemode(entity))) {
-				{
-					boolean _setval = true;
-					entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
-						capability.SendToHell = _setval;
-						capability.syncPlayerVariables(entity);
-					});
-				}
-			}
-		}
 		if (entity instanceof Player && sourceentity instanceof MaskedHunterEntity) {
 			if (!sourceentity.level().isClientSide())
 				sourceentity.discard();
@@ -149,7 +114,7 @@ public class PlayerDiesProcedure {
 						_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 								"stopsound @a record the_deep_void:the_haunt");
 				});
-			} else if (sourceentity instanceof ApostleOfCatastropheEntity) {
+			} else if (sourceentity instanceof ApostleBossEntity) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}

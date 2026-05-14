@@ -5,7 +5,7 @@
       "Name": "minecraft:deepslate"
     },
     "state": {
-      "Name": "the_deep_void:rotten_moss_active"
+      "Name": "the_deep_void:rotten_moss"
     },
     "radius": {
       "type": "uniform",

@@ -6,6 +6,7 @@ import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
@@ -21,21 +22,21 @@ public class AllSeeingSwordKillProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity(), event.getSource().getEntity(), event.getAmount());
+			execute(event, event.getEntity(), event.getSource().getEntity());
 		}
 	}
 
-	public static void execute(Entity entity, Entity sourceentity, double amount) {
-		execute(null, entity, sourceentity, amount);
+	public static void execute(Entity entity, Entity sourceentity) {
+		execute(null, entity, sourceentity);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity, Entity sourceentity, double amount) {
+	private static void execute(@Nullable Event event, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
 		if (entity instanceof LivingEntity && sourceentity instanceof LivingEntity) {
 			if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ALL_SEEING_SWORD.get()) {
-				if (Math.random() < 0.5) {
-					if (amount >= 5) {
+				if (Math.random() < 0.6) {
+					if ((sourceentity instanceof Player _plr ? _plr.getAttackStrengthScale(0) : 0) >= 0.848) {
 						{
 							double _setval = sourceentity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.DIG_SPEED) ? _livEnt.getEffect(MobEffects.DIG_SPEED).getAmplifier() : 0;
 							sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
@@ -52,8 +53,8 @@ public class AllSeeingSwordKillProcedure {
 				}
 			}
 			if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SOUL_CLEAVER.get()) {
-				if (Math.random() < 0.7) {
-					if (amount >= 8) {
+				if (Math.random() < 0.8) {
+					if ((sourceentity instanceof Player _plr ? _plr.getAttackStrengthScale(0) : 0) >= 0.848) {
 						{
 							double _setval = sourceentity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.DIG_SPEED) ? _livEnt.getEffect(MobEffects.DIG_SPEED).getAmplifier() : 0;
 							sourceentity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
