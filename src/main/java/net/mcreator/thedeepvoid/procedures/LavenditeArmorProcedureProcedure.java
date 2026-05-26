@@ -20,6 +20,8 @@ import net.minecraft.world.entity.projectile.LargeFireball;
 import net.minecraft.world.entity.projectile.FireworkRocketEntity;
 import net.minecraft.world.entity.projectile.DragonFireball;
 import net.minecraft.world.entity.projectile.Arrow;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
@@ -107,6 +109,28 @@ public class LavenditeArmorProcedureProcedure {
 					immediatesourceentity
 							.setDeltaMovement(new Vec3(((immediatesourceentity.getX() - sourceentity.getX()) * 2), ((immediatesourceentity.getY() - (sourceentity.getY() + 2)) * 2), ((immediatesourceentity.getZ() - sourceentity.getZ()) * 2)));
 				}
+			}
+		}
+		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_HELMET.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_CHESTPLATE.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_LEGGINGS.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_BOOTS.get() && !(immediatesourceentity == sourceentity)
+				&& (entity instanceof Player _plrCldRem64
+						? _plrCldRem64.getCooldowns().getCooldownPercent((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem(), 0f) * 100
+						: 0) <= 0) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			}
+			if (entity instanceof Player _player)
+				_player.getCooldowns().addCooldown((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem(), 5);
+			entity.hurt(damagesource, (float) (amount - amount * 0.2));
+			if (immediatesourceentity instanceof Arrow) {
+				if (entity instanceof Player _plr70)
+					_plr70.setArrowCount((int) ((entity instanceof Player _plr69 ? _plr69.getArrowCount() : 0) + 1));
+			}
+			if ((immediatesourceentity instanceof AbstractArrow _arrowContext ? _arrowContext.getPierceLevel() : 0) <= 0) {
+				if (!immediatesourceentity.level().isClientSide())
+					immediatesourceentity.discard();
 			}
 		}
 		if (sourceentity instanceof LivingEntity) {

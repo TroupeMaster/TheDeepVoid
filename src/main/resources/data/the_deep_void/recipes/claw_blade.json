@@ -3,22 +3,22 @@
   "category": "equipment",
   "pattern": [
     "aaa",
-    "  b",
-    "cb "
+    " bc",
+    "cc "
   ],
   "key": {
     "a": {
       "item": "the_deep_void:rotten_bone"
     },
     "b": {
-      "item": "the_deep_void:bone_crawler_molt_piece"
+      "item": "the_deep_void:bone_scythe"
     },
     "c": {
-      "item": "the_deep_void:bone_sword"
+      "item": "the_deep_void:bone_crawler_molt_piece"
     }
   },
   "result": {
-    "item": "the_deep_void:claw_blade",
+    "item": "the_deep_void:claw_scythe",
     "count": 1
   }
 }

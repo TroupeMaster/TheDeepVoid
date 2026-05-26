@@ -172,7 +172,6 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> MONSTERS_LAIR = REGISTRY.register("monsters_lair", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "monsters_lair")));
 	public static final RegistryObject<SoundEvent> WIND_FALLING = REGISTRY.register("wind_falling", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "wind_falling")));
 	public static final RegistryObject<SoundEvent> BONE_DUNES_LOOP = REGISTRY.register("bone_dunes_loop", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "bone_dunes_loop")));
-	public static final RegistryObject<SoundEvent> BONE_DUNES_VOLCANIC_LOOP = REGISTRY.register("bone_dunes_volcanic_loop", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "bone_dunes_volcanic_loop")));
 	public static final RegistryObject<SoundEvent> BONE_DUNES_WINDY_LOOP = REGISTRY.register("bone_dunes_windy_loop", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "bone_dunes_windy_loop")));
 	public static final RegistryObject<SoundEvent> MISANTHROPY_SHOOT = REGISTRY.register("misanthropy_shoot", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "misanthropy_shoot")));
 	public static final RegistryObject<SoundEvent> FLESH_WORM_SCREAM = REGISTRY.register("flesh_worm_scream", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "flesh_worm_scream")));
@@ -203,4 +202,10 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> WANDERER_CALL = REGISTRY.register("wanderer_call", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "wanderer_call")));
 	public static final RegistryObject<SoundEvent> WANDERER_HURT = REGISTRY.register("wanderer_hurt", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "wanderer_hurt")));
 	public static final RegistryObject<SoundEvent> WANDERER_AMBIENT = REGISTRY.register("wanderer_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "wanderer_ambient")));
+	public static final RegistryObject<SoundEvent> DOUBLE_BARREL_INSERT = REGISTRY.register("double_barrel_insert", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "double_barrel_insert")));
+	public static final RegistryObject<SoundEvent> DOUBLE_BARREL_OPEN = REGISTRY.register("double_barrel_open", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "double_barrel_open")));
+	public static final RegistryObject<SoundEvent> DOUBLE_BARREL_RELEASE = REGISTRY.register("double_barrel_release", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "double_barrel_release")));
+	public static final RegistryObject<SoundEvent> DOUBLE_BARREL_TRIGGER = REGISTRY.register("double_barrel_trigger", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "double_barrel_trigger")));
+	public static final RegistryObject<SoundEvent> DOUBLE_BARREL_SHOOT = REGISTRY.register("double_barrel_shoot", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "double_barrel_shoot")));
+	public static final RegistryObject<SoundEvent> BONE_DUNES_VOLCANIC = REGISTRY.register("bone_dunes_volcanic", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "bone_dunes_volcanic")));
 }

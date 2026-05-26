@@ -160,6 +160,16 @@ public class TheDeepVoidModBrewingRecipes implements IModPlugin {
 		PotionUtils.setPotion(potion2, TheDeepVoidModPotions.EXTENDED_CREATURE_REPELLENT_POTION.get());
 		brewingRecipes.add(factory.createBrewingRecipe(List.copyOf(ingredientStack), potion.copy(), potion2.copy()));
 		ingredientStack.clear();
+		ingredientStack.add(new ItemStack(Items.BLAZE_POWDER));
+		inputStack.add(new ItemStack(TheDeepVoidModItems.BONE_NEEDLE.get()));
+		brewingRecipes.add(factory.createBrewingRecipe(List.copyOf(ingredientStack), List.copyOf(inputStack), new ItemStack(TheDeepVoidModItems.STRENGTH_NEEDLE.get())));
+		inputStack.clear();
+		ingredientStack.clear();
+		ingredientStack.add(new ItemStack(Items.FERMENTED_SPIDER_EYE));
+		inputStack.add(new ItemStack(TheDeepVoidModItems.STRENGTH_NEEDLE.get()));
+		brewingRecipes.add(factory.createBrewingRecipe(List.copyOf(ingredientStack), List.copyOf(inputStack), new ItemStack(TheDeepVoidModItems.WEAKNESS_NEEDLE.get())));
+		inputStack.clear();
+		ingredientStack.clear();
 		registration.addRecipes(RecipeTypes.BREWING, brewingRecipes);
 	}
 }

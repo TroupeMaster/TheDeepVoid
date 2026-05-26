@@ -48,6 +48,7 @@ import net.mcreator.thedeepvoid.entity.MournerEntity;
 import net.mcreator.thedeepvoid.entity.MotherBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
 import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
+import net.mcreator.thedeepvoid.entity.ManiacEntity;
 import net.mcreator.thedeepvoid.entity.MaggotEntity;
 import net.mcreator.thedeepvoid.entity.MadCultistEntity;
 import net.mcreator.thedeepvoid.entity.LurkerEntity;
@@ -820,6 +821,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof ExecutionerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof ManiacEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

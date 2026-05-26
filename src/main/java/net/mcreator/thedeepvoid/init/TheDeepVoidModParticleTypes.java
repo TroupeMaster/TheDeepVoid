@@ -55,4 +55,6 @@ public class TheDeepVoidModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> PLAGUE_SMOKE = REGISTRY.register("plague_smoke", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> FALLING_VOID_ASH = REGISTRY.register("falling_void_ash", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> ICHOR_LAVA = REGISTRY.register("ichor_lava", () -> new SimpleParticleType(false));
+	public static final RegistryObject<SimpleParticleType> CHAIN = REGISTRY.register("chain", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> SHOTGUN_SHELL = REGISTRY.register("shotgun_shell", () -> new SimpleParticleType(true));
 }

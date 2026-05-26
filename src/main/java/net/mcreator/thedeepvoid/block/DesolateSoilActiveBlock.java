@@ -9,7 +9,9 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.ItemStack;
@@ -21,10 +23,11 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.procedures.DesolateSoilEntityWalksOnBlockProcedure;
+import net.mcreator.thedeepvoid.procedures.DesolateSoilBoneMealedProcedure;
 import net.mcreator.thedeepvoid.procedures.DesolateSoilActiveOnTickUpdateProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
-public class DesolateSoilActiveBlock extends Block {
+public class DesolateSoilActiveBlock extends Block implements BonemealableBlock {
 	public DesolateSoilActiveBlock() {
 		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.TERRACOTTA_LIGHT_BLUE).sound(SoundType.SOUL_SOIL).strength(1.5f).randomTicks());
 	}
@@ -57,5 +60,20 @@ public class DesolateSoilActiveBlock extends Block {
 	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
 		super.stepOn(world, pos, blockstate, entity);
 		DesolateSoilEntityWalksOnBlockProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+	}
+
+	@Override
+	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState blockstate, boolean clientSide) {
+		return true;
+	}
+
+	@Override
+	public boolean isBonemealSuccess(Level world, RandomSource random, BlockPos pos, BlockState blockstate) {
+		return true;
+	}
+
+	@Override
+	public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState blockstate) {
+		DesolateSoilBoneMealedProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 }

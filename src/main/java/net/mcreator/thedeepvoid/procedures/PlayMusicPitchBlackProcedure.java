@@ -10,7 +10,7 @@ import net.minecraft.commands.CommandSource;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
-import net.mcreator.thedeepvoid.entity.HiveWatcherEntity;
+import net.mcreator.thedeepvoid.entity.FleshWormEntity;
 import net.mcreator.thedeepvoid.entity.ElderMimicEntity;
 
 public class PlayMusicPitchBlackProcedure {
@@ -43,7 +43,7 @@ public class PlayMusicPitchBlackProcedure {
 		}
 		if (!(!world.getEntitiesOfClass(MisanthropicHivemindEntity.class, AABB.ofSize(new Vec3(x, y, z), 200, 200, 200), e -> true).isEmpty())
 				&& !(!world.getEntitiesOfClass(ElderMimicEntity.class, AABB.ofSize(new Vec3(x, y, z), 200, 200, 200), e -> true).isEmpty())
-				&& !(!world.getEntitiesOfClass(HiveWatcherEntity.class, AABB.ofSize(new Vec3(x, y, z), 200, 200, 200), e -> true).isEmpty())) {
+				&& !(!world.getEntitiesOfClass(FleshWormEntity.class, AABB.ofSize(new Vec3(x, y, z), 200, 200, 200), e -> true).isEmpty())) {
 			{
 				double _setval = (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).MusicWait + 1;
 				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {

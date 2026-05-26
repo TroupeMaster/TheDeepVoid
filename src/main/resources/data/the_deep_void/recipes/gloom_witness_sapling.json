@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    " a ",
+    " b ",
+    "bbb"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:voidlight"
+    },
+    "b": {
+      "item": "the_deep_void:gloom_vines"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:gloom_witness_sapling",
+    "count": 2
+  }
+}

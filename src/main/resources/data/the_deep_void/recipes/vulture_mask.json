@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aaa",
+    "bcb",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:death_vulture_feather"
+    },
+    "b": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "c": {
+      "item": "the_deep_void:refined_onyx"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:vulture_helmet",
+    "count": 1
+  }
+}

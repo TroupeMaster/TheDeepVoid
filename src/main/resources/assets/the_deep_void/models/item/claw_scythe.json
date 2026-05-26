@@ -1,0 +1,57 @@
+{
+  "parent": "the_deep_void:custom/clawscythe",
+  "textures": {
+    "0": "the_deep_void:block/claw_scythe",
+    "particle": "the_deep_void:item/claw_scythe"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "the_deep_void:claw_scythe_state": 1
+      },
+      "model": "the_deep_void:item/claw_scythe_0"
+    },
+    {
+      "predicate": {
+        "the_deep_void:claw_scythe_state": 2
+      },
+      "model": "the_deep_void:item/claw_scythe_1"
+    },
+    {
+      "predicate": {
+        "the_deep_void:claw_scythe_state": 3
+      },
+      "model": "the_deep_void:item/claw_scythe_2"
+    },
+    {
+      "predicate": {
+        "the_deep_void:claw_scythe_state": 4
+      },
+      "model": "the_deep_void:item/claw_scythe_3"
+    },
+    {
+      "predicate": {
+        "the_deep_void:claw_scythe_state": 5
+      },
+      "model": "the_deep_void:item/claw_scythe_4"
+    },
+    {
+      "predicate": {
+        "the_deep_void:claw_scythe_state": 6
+      },
+      "model": "the_deep_void:item/claw_scythe_5"
+    },
+    {
+      "predicate": {
+        "the_deep_void:claw_scythe_state": 7
+      },
+      "model": "the_deep_void:item/claw_scythe_6"
+    },
+    {
+      "predicate": {
+        "the_deep_void:claw_scythe_state": 8
+      },
+      "model": "the_deep_void:item/claw_scythe_7"
+    }
+  ]
+}

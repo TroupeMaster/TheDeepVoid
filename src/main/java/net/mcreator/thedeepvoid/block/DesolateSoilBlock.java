@@ -8,16 +8,21 @@ import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.BonemealableBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.util.RandomSource;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.procedures.DesolateSoilEntityWalksOnBlockProcedure;
+import net.mcreator.thedeepvoid.procedures.DesolateSoilBoneMealedProcedure;
 
-public class DesolateSoilBlock extends Block {
+public class DesolateSoilBlock extends Block implements BonemealableBlock {
 	public DesolateSoilBlock() {
 		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).mapColor(MapColor.TERRACOTTA_LIGHT_BLUE).sound(SoundType.SOUL_SOIL).strength(1.5f));
 	}
@@ -36,5 +41,20 @@ public class DesolateSoilBlock extends Block {
 	public void stepOn(Level world, BlockPos pos, BlockState blockstate, Entity entity) {
 		super.stepOn(world, pos, blockstate, entity);
 		DesolateSoilEntityWalksOnBlockProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
+	}
+
+	@Override
+	public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState blockstate, boolean clientSide) {
+		return true;
+	}
+
+	@Override
+	public boolean isBonemealSuccess(Level world, RandomSource random, BlockPos pos, BlockState blockstate) {
+		return true;
+	}
+
+	@Override
+	public void performBonemeal(ServerLevel world, RandomSource random, BlockPos pos, BlockState blockstate) {
+		DesolateSoilBoneMealedProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
 	}
 }

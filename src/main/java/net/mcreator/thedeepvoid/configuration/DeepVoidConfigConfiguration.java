@@ -66,6 +66,8 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> APOSTLETELEPORTCOOLDOWN;
 	public static final ForgeConfigSpec.ConfigValue<Double> APOSTLESLASH;
 	public static final ForgeConfigSpec.ConfigValue<Double> APOSTLEANGERTIMER;
+	public static final ForgeConfigSpec.ConfigValue<Double> APOSTLECHAINDISTANCE;
+	public static final ForgeConfigSpec.ConfigValue<Double> APOSTLECHAINYDISTANCE;
 	public static final ForgeConfigSpec.ConfigValue<Double> THROWERBONESAW;
 	public static final ForgeConfigSpec.ConfigValue<Double> THROWERSPIN;
 	public static final ForgeConfigSpec.ConfigValue<Double> SMASHERSLASH;
@@ -129,6 +131,7 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> GRIMROTTENARMORBONUS;
 	public static final ForgeConfigSpec.ConfigValue<Double> HUNTERARMORBONUS;
 	public static final ForgeConfigSpec.ConfigValue<Double> BLOODYCHAINSAW;
+	public static final ForgeConfigSpec.ConfigValue<Double> DOUBLEBARRELSHOTGUN;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERWHILEMOVING;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIT;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIKESPAWN;
@@ -138,9 +141,6 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSECONDPHASE;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIKE;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERATTACKRADIUS;
-	public static final ForgeConfigSpec.ConfigValue<Double> FLESHWORMATTACK;
-	public static final ForgeConfigSpec.ConfigValue<Double> FLESHWORMSPAWNCHANCE;
-	public static final ForgeConfigSpec.ConfigValue<Double> FLESHWORMSPIT;
 	public static final ForgeConfigSpec.ConfigValue<Double> MASKEDHUNTERCOOLDOWN;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> SPAWNBONECAGES;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> SPAWNMASKEDHUNTERS;
@@ -186,7 +186,7 @@ public class DeepVoidConfigConfiguration {
 		DARKNESS = BUILDER.comment("If Darkness should attack the Player below y=0 while still keeping Hallucinate").define("Darkness", true);
 		DEEPVOIDTP = BUILDER.comment("Should players be teleported to the top of the dimension when falling in the void in the Deep Void").define("DeepVoidTp", true);
 		ALLOWMININGPRIMORDIALSTONE = BUILDER.comment("Should players be able to mine Primordial Stone with the Shatterbone Pickaxe").define("AllowMiningPrimordialStone", false);
-		WANDERERCENTERPATHING = BUILDER.comment("If the Wanderer should pathfind to x=0 z=0 (set to false if performance is low)").define("WandererCenterPathing", true);
+		WANDERERCENTERPATHING = BUILDER.comment("If the Wanderer should pathfind to x=0 z=0 (may affect performance)").define("WandererCenterPathing", false);
 		CURSEDISALLOWMININGPLACING = BUILDER.comment("If the Curse Of The Cult should block mining and placing blocks").define("CurseDisallowMiningPlacing", true);
 		PREVENTSLEEPING = BUILDER.comment("If sleeping should be prevented when a Masked Hunter is nearby").define("PreventSleeping", true);
 		BOSSESBREAKARMOR = BUILDER.comment("If bosses should apply Broken Armor when attacking").define("BossesBreakArmor", true);
@@ -220,6 +220,8 @@ public class DeepVoidConfigConfiguration {
 		APOSTLETELEPORTCOOLDOWN = BUILDER.comment("Cooldown between teleports (in ticks)").define("ApostleTeleportCooldown", (double) 100);
 		APOSTLESLASH = BUILDER.define("ApostleSlash", (double) 10);
 		APOSTLEANGERTIMER = BUILDER.comment("How long does the player need to keep using a shield before angering the apostle (in ticks)").define("ApostleAngerTimer", (double) 200);
+		APOSTLECHAINDISTANCE = BUILDER.comment("How far the player has to be for the apostle to use his chain attack").define("ApostleChainDistance", (double) 28);
+		APOSTLECHAINYDISTANCE = BUILDER.comment("How far the player has to be (y position) for the apostle to use his chain attack").define("ApostleChainYDistance", (double) 4);
 		BUILDER.pop();
 		BUILDER.push("Misanthropic Hivemind");
 		THROWERBONESAW = BUILDER.comment("Damage each tick").define("ThrowerBoneSaw", (double) 6);
@@ -256,13 +258,13 @@ public class DeepVoidConfigConfiguration {
 		ICHORSWORDSPIT = BUILDER.comment("Damage per projectile").define("IchorSwordSpit", (double) 5);
 		ARROWOFSPITE = BUILDER.comment("Damage per projectile").define("ArrowOfSpite", (double) 4);
 		ARROWOFICHORPELLETS = BUILDER.comment("Damage per projectile").define("ArrowOfIchorPellets", (double) 2.5);
-		MISANTHROPY = BUILDER.comment("Damage (velocity increases that number)").define("Misanthropy", (double) 3);
+		MISANTHROPY = BUILDER.comment("Damage (velocity increases that number)").define("Misanthropy", (double) 3.2);
 		NERVESOFSTEELCRIT = BUILDER.define("NervesOfSteelCrit", (double) 34);
 		FLESHPARASITETP = BUILDER.comment("Damage upon teleporting to the target").define("FleshParasiteTp", (double) 15);
 		FLESHPARASITEENABLEENTITY = BUILDER.comment("If the flesh parasite should work on mobs other than players (for servers: may cause extreme lag if used repeatedly)").define("FleshParasiteEnableEntity", true);
 		ROTTENTONGUEDAMAGE = BUILDER.comment("Extra damage when on low health").define("RottenTongueDamage", (double) 5);
 		BLOODBOWSPIKE = BUILDER.define("BloodBowSpike", (double) 2);
-		ONYXNAGINATAREACHADDITION = BUILDER.define("OnyxNaginataReachAddition", (double) 2);
+		ONYXNAGINATAREACHADDITION = BUILDER.define("OnyxNaginataReachAddition", (double) 1.5);
 		NEEDLEFISH = BUILDER.define("Needlefish", (double) 4);
 		TOMBSTONEDOOM = BUILDER.comment("Ignores armor").define("TombstoneDoom", (double) 16);
 		KNIFEBANDOLIERFULLCHARGEHIT = BUILDER.define("KnifeBandolierFullChargeHit", (double) 6);
@@ -274,8 +276,8 @@ public class DeepVoidConfigConfiguration {
 		THECATCHEREXTRADAMAGE = BUILDER.comment("Damage added to the weapon's base damage upon catching an entity").define("TheCatcherExtraDamage", (double) 4);
 		FLYWINGSDURATION = BUILDER.comment("For how long can the player fly (in ticks)").define("FlyWingsDuration", (double) 100);
 		PENITENTCROSSREACHADDITION = BUILDER.define("PenitentCrossReachAddition", (double) 1);
-		ELDRITCHMAW = BUILDER.comment("Damage (velocity increases that number)").define("EldritchMaw", (double) 2);
-		ABYSSALMARKBURST = BUILDER.comment("Damage dealt when the effect expires. The damage is equal to the level of the effect * value (ignores armor)").define("AbyssalMarkBurst", (double) 2.25);
+		ELDRITCHMAW = BUILDER.comment("Damage (velocity increases that number)").define("EldritchMaw", (double) 0.7);
+		ABYSSALMARKBURST = BUILDER.comment("Damage dealt when the effect expires. The damage is equal to the level of the effect * value (ignores armor)").define("AbyssalMarkBurst", (double) 2.15);
 		SHARPSHOOTER = BUILDER.comment("Distance is multiplied by this value. The result multiplies the initial damage").define("Sharpshooter", (double) 0.085);
 		PERILSELFDAMAGE = BUILDER.comment("The damage dealt to the player upon shooting themselves (ignores armor)").define("PerilSelfDamage", (double) 18);
 		PERILDAMAGEMULTIPLIER = BUILDER.comment("Adrenaline is multiplied by that value, which is then used to multiply the projectile's damage").define("PerilDamageMultiplier", (double) 4);
@@ -288,7 +290,8 @@ public class DeepVoidConfigConfiguration {
 		BLACKHOLESTORELIMIT = BUILDER.comment("The arrow storing limit of Black Hole when enchanted with Dimensional Burst").define("BlackHoleStoreLimit", (double) 60);
 		GRIMROTTENARMORBONUS = BUILDER.comment("The attack damage bonus").define("GrimRottenArmorBonus", (double) 1);
 		HUNTERARMORBONUS = BUILDER.comment("The attack damage bonus").define("HunterArmorBonus", (double) 1);
-		BLOODYCHAINSAW = BUILDER.comment("Base damage multiplier (ignores i-frames)").define("BloodyChainsaw", (double) 0.07);
+		BLOODYCHAINSAW = BUILDER.comment("Base damage multiplier (ignores i-frames)").define("BloodyChainsaw", (double) 0.05);
+		DOUBLEBARRELSHOTGUN = BUILDER.comment("Damage (ignores i-frames)").define("DoubleBarrelShotgun", (double) 0.7);
 		BUILDER.pop();
 		BUILDER.push("Hive's Watcher");
 		HIVEWATCHERWHILEMOVING = BUILDER.comment("Damage each tick").define("HiveWatcherWhileMoving", (double) 10);
@@ -300,11 +303,6 @@ public class DeepVoidConfigConfiguration {
 		HIVEWATCHERSECONDPHASE = BUILDER.comment("When under Max Health/Config Number, second phase is active").define("HiveWatcherSecondPhase", (double) 1.7);
 		HIVEWATCHERSPIKE = BUILDER.comment("Damage when the player is near the spike").define("HiveWatcherSpike", (double) 10);
 		HIVEWATCHERATTACKRADIUS = BUILDER.comment("Size of the damaging zone around the boss while it's moving").define("HiveWatcherAttackRadius", (double) 7);
-		BUILDER.pop();
-		BUILDER.push("Flesh Worm");
-		FLESHWORMATTACK = BUILDER.comment("Damage in an AOE").define("FleshWormAttack", (double) 24);
-		FLESHWORMSPAWNCHANCE = BUILDER.comment("Percentage for the Thumper to summon a flesh worm every 20 seconds").define("FleshWormSpawnChance", (double) 0.4);
-		FLESHWORMSPIT = BUILDER.comment("Damage per projectile").define("FleshWormSpit", (double) 5);
 		BUILDER.pop();
 		BUILDER.push("Masked Hunter");
 		MASKEDHUNTERCOOLDOWN = BUILDER.comment("The cooldown before a Masked Hunter can spawn naturally (In ticks, 24,000 ticks is one day)").define("MaskedHunterCooldown", (double) 72000);

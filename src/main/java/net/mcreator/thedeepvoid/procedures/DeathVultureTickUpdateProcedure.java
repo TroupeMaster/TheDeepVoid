@@ -37,8 +37,13 @@ public class DeathVultureTickUpdateProcedure {
 				if ((entity instanceof DeathVultureEntity _datEntI ? _datEntI.getEntityData().get(DeathVultureEntity.DATA_dash) : 0) >= 60) {
 					if (entity instanceof DeathVultureEntity _datEntSetI)
 						_datEntSetI.getEntityData().set(DeathVultureEntity.DATA_dash, 0);
-					if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 26, 26, 26), e -> true).isEmpty() && !(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 6, 6, 6), e -> true).isEmpty())) {
-						if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
+					if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 26, 26, 26), e -> true).isEmpty() && !(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 6, 6, 6), e -> true).isEmpty())
+							&& !((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
+						if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == ((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 26, 26, 26), e -> true).stream().sorted(new Object() {
+							Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+								return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+							}
+						}.compareDistOf(x, y, z)).findFirst().orElse(null))) {
 							if (entity instanceof DeathVultureEntity) {
 								((DeathVultureEntity) entity).setAnimation("animation.vulture_dash");
 							}
@@ -67,7 +72,7 @@ public class DeathVultureTickUpdateProcedure {
 						_datEntSetI.getEntityData().set(DeathVultureEntity.DATA_dash, (int) ((entity instanceof DeathVultureEntity _datEntI ? _datEntI.getEntityData().get(DeathVultureEntity.DATA_dash) : 0) + 1));
 				}
 			}
-			if ((entity instanceof DeathVultureEntity _datEntL34 && _datEntL34.getEntityData().get(DeathVultureEntity.DATA_attack)) == false) {
+			if ((entity instanceof DeathVultureEntity _datEntL37 && _datEntL37.getEntityData().get(DeathVultureEntity.DATA_attack)) == false) {
 				if (Math.random() < 0.008) {
 					if (entity instanceof DeathVultureEntity _datEntSetL)
 						_datEntSetL.getEntityData().set(DeathVultureEntity.DATA_attack, true);
@@ -120,7 +125,7 @@ public class DeathVultureTickUpdateProcedure {
 						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 					}
 				}.compareDistOf(x, y, z)).findFirst().orElse(null))))) {
-					if ((entity instanceof DeathVultureEntity _datEntL52 && _datEntL52.getEntityData().get(DeathVultureEntity.DATA_attack)) == false) {
+					if ((entity instanceof DeathVultureEntity _datEntL55 && _datEntL55.getEntityData().get(DeathVultureEntity.DATA_attack)) == false) {
 						if (entity instanceof DeathVultureEntity _datEntSetL)
 							_datEntSetL.getEntityData().set(DeathVultureEntity.DATA_attack, true);
 						if (entity instanceof LivingEntity _entity)
@@ -143,7 +148,7 @@ public class DeathVultureTickUpdateProcedure {
 		}
 		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get() || (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.MOSSY_BONE_PILE.get()
 				|| (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BLOCK_OF_SKULL_PILE.get()) {
-			if (!(entity instanceof LivingEntity _livEnt65 && _livEnt65.hasEffect(MobEffects.MOVEMENT_SLOWDOWN))) {
+			if (!(entity instanceof LivingEntity _livEnt68 && _livEnt68.hasEffect(MobEffects.MOVEMENT_SLOWDOWN))) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 5, 0, false, false));
 			}

@@ -72,6 +72,12 @@
     "the_deep_void:dark_steel_onyx_chestplate",
     "the_deep_void:dark_steel_onyx_leggings",
     "the_deep_void:dark_steel_onyx_boots",
-    "the_deep_void:ichor_strider_boots"
+    "the_deep_void:ichor_strider_boots",
+    "the_deep_void:gunslinger_helmet",
+    "the_deep_void:gunslinger_chestplate",
+    "the_deep_void:gunslinger_leggings",
+    "the_deep_void:gunslinger_boots",
+    "the_deep_void:vulture_leggings",
+    "the_deep_void:vulture_boots"
   ]
 }

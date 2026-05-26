@@ -14,6 +14,7 @@ import net.mcreator.thedeepvoid.item.PerilItem;
 import net.mcreator.thedeepvoid.item.MisanthropyItem;
 import net.mcreator.thedeepvoid.item.HeresyItem;
 import net.mcreator.thedeepvoid.item.EldritchMawItem;
+import net.mcreator.thedeepvoid.item.DoubleBarrelShotgunItem;
 import net.mcreator.thedeepvoid.item.ApostasyItem;
 
 @Mod.EventBusSubscriber
@@ -125,6 +126,24 @@ public class ItemAnimationFactory {
 					event.player.getOffhandItem().getOrCreateTag().putString("geckoAnim", "");
 					if (event.player.level().isClientSide()) {
 						((PerilItem) event.player.getOffhandItem().getItem()).animationprocedure = animation;
+					}
+				}
+			}
+			if (mainhandItem.getItem() instanceof DoubleBarrelShotgunItem animatable) {
+				animation = mainhandItem.getOrCreateTag().getString("geckoAnim");
+				if (!animation.isEmpty()) {
+					event.player.getMainHandItem().getOrCreateTag().putString("geckoAnim", "");
+					if (event.player.level().isClientSide()) {
+						((DoubleBarrelShotgunItem) event.player.getMainHandItem().getItem()).animationprocedure = animation;
+					}
+				}
+			}
+			if (offhandItem.getItem() instanceof DoubleBarrelShotgunItem animatable) {
+				animation = offhandItem.getOrCreateTag().getString("geckoAnim");
+				if (!animation.isEmpty()) {
+					event.player.getOffhandItem().getOrCreateTag().putString("geckoAnim", "");
+					if (event.player.level().isClientSide()) {
+						((DoubleBarrelShotgunItem) event.player.getOffhandItem().getItem()).animationprocedure = animation;
 					}
 				}
 			}

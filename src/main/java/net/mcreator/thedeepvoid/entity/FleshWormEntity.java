@@ -49,6 +49,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.mcreator.thedeepvoid.procedures.FleshWormOnInitialEntitySpawnProcedure;
 import net.mcreator.thedeepvoid.procedures.FleshWormOnEntityTickUpdateProcedure;
 import net.mcreator.thedeepvoid.procedures.FleshWormEntityIsHurtProcedure;
+import net.mcreator.thedeepvoid.procedures.FleshWormDiesProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 import javax.annotation.Nullable;
@@ -59,9 +60,10 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<Boolean> DATA_teleporting = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Boolean> DATA_spawning = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.BOOLEAN);
-	public static final EntityDataAccessor<Boolean> DATA_attackFromBelow = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Integer> DATA_attackChance = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_sound = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_attacking = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_spit = SynchedEntityData.defineId(FleshWormEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -76,7 +78,7 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 		super(type, world);
 		xpReward = 50;
 		setNoAi(false);
-		setMaxUpStep(10f);
+		setMaxUpStep(2f);
 		setPersistenceRequired();
 	}
 
@@ -85,12 +87,13 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "fleshworm");
+		this.entityData.define(TEXTURE, "fleshwormnew");
 		this.entityData.define(DATA_teleporting, false);
 		this.entityData.define(DATA_spawning, false);
-		this.entityData.define(DATA_attackFromBelow, false);
 		this.entityData.define(DATA_attackChance, 0);
 		this.entityData.define(DATA_sound, 0);
+		this.entityData.define(DATA_attacking, false);
+		this.entityData.define(DATA_spit, false);
 	}
 
 	public void setTexture(String texture) {
@@ -121,7 +124,7 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 			}
 		});
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
-		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1.2));
+		this.goalSelector.addGoal(3, new RandomStrollGoal(this, 1));
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.targetSelector.addGoal(5, new NearestAttackableTargetGoal(this, Player.class, false, false));
 	}
@@ -157,6 +160,12 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
+	public void die(DamageSource source) {
+		super.die(source);
+		FleshWormDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
+	}
+
+	@Override
 	public SpawnGroupData finalizeSpawn(ServerLevelAccessor world, DifficultyInstance difficulty, MobSpawnType reason, @Nullable SpawnGroupData livingdata, @Nullable CompoundTag tag) {
 		SpawnGroupData retval = super.finalizeSpawn(world, difficulty, reason, livingdata, tag);
 		FleshWormOnInitialEntitySpawnProcedure.execute(world, this);
@@ -169,9 +178,10 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 		compound.putString("Texture", this.getTexture());
 		compound.putBoolean("Datateleporting", this.entityData.get(DATA_teleporting));
 		compound.putBoolean("Dataspawning", this.entityData.get(DATA_spawning));
-		compound.putBoolean("DataattackFromBelow", this.entityData.get(DATA_attackFromBelow));
 		compound.putInt("DataattackChance", this.entityData.get(DATA_attackChance));
 		compound.putInt("Datasound", this.entityData.get(DATA_sound));
+		compound.putBoolean("Dataattacking", this.entityData.get(DATA_attacking));
+		compound.putBoolean("Dataspit", this.entityData.get(DATA_spit));
 	}
 
 	@Override
@@ -183,12 +193,14 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_teleporting, compound.getBoolean("Datateleporting"));
 		if (compound.contains("Dataspawning"))
 			this.entityData.set(DATA_spawning, compound.getBoolean("Dataspawning"));
-		if (compound.contains("DataattackFromBelow"))
-			this.entityData.set(DATA_attackFromBelow, compound.getBoolean("DataattackFromBelow"));
 		if (compound.contains("DataattackChance"))
 			this.entityData.set(DATA_attackChance, compound.getInt("DataattackChance"));
 		if (compound.contains("Datasound"))
 			this.entityData.set(DATA_sound, compound.getInt("Datasound"));
+		if (compound.contains("Dataattacking"))
+			this.entityData.set(DATA_attacking, compound.getBoolean("Dataattacking"));
+		if (compound.contains("Dataspit"))
+			this.entityData.set(DATA_spit, compound.getBoolean("Dataspit"));
 	}
 
 	@Override
@@ -221,7 +233,7 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0);
 		builder = builder.add(Attributes.MAX_HEALTH, 500);
 		builder = builder.add(Attributes.ARMOR, 15);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
@@ -233,16 +245,11 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 
 	private PlayState movementPredicate(AnimationState event) {
 		if (this.animationprocedure.equals("empty")) {
-			if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))
-
-					&& !this.isAggressive()) {
-				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.fleshWorm_walk"));
-			}
 			if (this.isDeadOrDying()) {
-				return event.setAndContinue(RawAnimation.begin().thenPlay("animation.fleshWorm_teleport"));
+				return event.setAndContinue(RawAnimation.begin().thenPlay("animation.fleshWorm_death"));
 			}
 			if (this.isAggressive() && event.isMoving()) {
-				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.fleshWorm_idle"));
+				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.fleshWorm_aggressive"));
 			}
 			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.fleshWorm_idle"));
 		}
@@ -271,7 +278,7 @@ public class FleshWormEntity extends Monster implements GeoEntity {
 	@Override
 	protected void tickDeath() {
 		++this.deathTime;
-		if (this.deathTime == 10) {
+		if (this.deathTime == 60) {
 			this.remove(FleshWormEntity.RemovalReason.KILLED);
 			this.dropExperience();
 		}

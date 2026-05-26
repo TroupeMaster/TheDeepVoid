@@ -12,6 +12,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.RideableFlyingEyekinEntity;
 import net.mcreator.thedeepvoid.entity.RideableEyekinEntity;
@@ -24,7 +25,7 @@ public class EyekinSaddleRightclickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if (itemstack.getOrCreateTag().getBoolean("deep_void:eyekinSummoned") == false) {
+		if (itemstack.getOrCreateTag().getBoolean("deep_void:eyekinSummoned") == false && !(entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(TheDeepVoidModMobEffects.WEAVER_CURSE.get()))) {
 			itemstack.getOrCreateTag().putBoolean("deep_void:eyekinSummoned", true);
 			if (entity instanceof Player _player)
 				_player.getCooldowns().addCooldown(itemstack.getItem(), 200);
@@ -46,7 +47,7 @@ public class EyekinSaddleRightclickedProcedure {
 			}
 		}
 		TheDeepVoidMod.queueServerWork(5, () -> {
-			if (itemstack.getOrCreateTag().getBoolean("deep_void:eyekinSummoned") == true && (entity instanceof Player _plrCldRem13 ? _plrCldRem13.getCooldowns().getCooldownPercent(itemstack.getItem(), 0f) * 100 : 0) <= 0) {
+			if (itemstack.getOrCreateTag().getBoolean("deep_void:eyekinSummoned") == true && (entity instanceof Player _plrCldRem14 ? _plrCldRem14.getCooldowns().getCooldownPercent(itemstack.getItem(), 0f) * 100 : 0) <= 0) {
 				if (!world.getEntitiesOfClass(RideableEyekinEntity.class, AABB.ofSize(new Vec3(x, y, z), 1000, 1000, 1000), e -> true).isEmpty()) {
 					if (((Entity) world.getEntitiesOfClass(RideableEyekinEntity.class, AABB.ofSize(new Vec3(x, y, z), 1000, 1000, 1000), e -> true).stream().sorted(new Object() {
 						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {

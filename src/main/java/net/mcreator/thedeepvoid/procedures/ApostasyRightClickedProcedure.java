@@ -11,6 +11,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
@@ -22,6 +23,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.item.ApostasyItem;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
+import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.SoulFusedShotEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
@@ -111,7 +113,12 @@ public class ApostasyRightClickedProcedure {
 				itemstack.getOrCreateTag().putString("geckoAnim", "animation.apostasy_reload");
 			TheDeepVoidMod.queueServerWork(10, () -> {
 				if (entity instanceof LivingEntity _entity)
-					_entity.setHealth((float) Math.ceil((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) - ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) * 50) / 100));
+					_entity.setHealth((float) Math.ceil((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) - ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1)
+							* ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_HELMET.get()
+									&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_CHESTPLATE.get()
+									&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_LEGGINGS.get()
+									&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_BOOTS.get() ? 40 : 50))
+							/ 100));
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.phantom.bite")), SoundSource.PLAYERS, 1, (float) 0.8);

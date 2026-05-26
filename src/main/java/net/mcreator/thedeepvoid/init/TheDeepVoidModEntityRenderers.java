@@ -75,6 +75,7 @@ import net.mcreator.thedeepvoid.client.renderer.MimicRenderer;
 import net.mcreator.thedeepvoid.client.renderer.MaskedHunterRenderer;
 import net.mcreator.thedeepvoid.client.renderer.MarrowRootsSpawnRenderer;
 import net.mcreator.thedeepvoid.client.renderer.MarrowRootsRenderer;
+import net.mcreator.thedeepvoid.client.renderer.ManiacRenderer;
 import net.mcreator.thedeepvoid.client.renderer.MaggotRenderer;
 import net.mcreator.thedeepvoid.client.renderer.MadCultistRenderer;
 import net.mcreator.thedeepvoid.client.renderer.LurkerRenderer;
@@ -330,5 +331,9 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.MAD_CULTIST.get(), MadCultistRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.EXECUTIONER.get(), ExecutionerRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.KUNAI.get(), KunaiRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.SHOTGUN_PELLET.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.MANIAC.get(), ManiacRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.ICHOR_FLAME_SHOT.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.THROWABLE_ICHOR_PROJ.get(), ThrownItemRenderer::new);
 	}
 }

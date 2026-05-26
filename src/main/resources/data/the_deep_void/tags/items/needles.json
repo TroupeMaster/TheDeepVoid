@@ -15,6 +15,8 @@
     "the_deep_void:health_boost_needle",
     "the_deep_void:wither_needle",
     "the_deep_void:saturation_needle",
-    "the_deep_void:instant_damage_needle"
+    "the_deep_void:instant_damage_needle",
+    "the_deep_void:strength_needle",
+    "the_deep_void:weakness_needle"
   ]
 }

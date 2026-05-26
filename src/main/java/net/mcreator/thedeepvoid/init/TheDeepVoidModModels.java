@@ -12,6 +12,8 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.mcreator.thedeepvoid.client.model.Modelxray;
 import net.mcreator.thedeepvoid.client.model.Modelweaver;
 import net.mcreator.thedeepvoid.client.model.Modelwanderer;
+import net.mcreator.thedeepvoid.client.model.Modelvulture_mask;
+import net.mcreator.thedeepvoid.client.model.Modelvulture_chestplate;
 import net.mcreator.thedeepvoid.client.model.Modelvoid_guardian;
 import net.mcreator.thedeepvoid.client.model.Modelvoid_dweller3;
 import net.mcreator.thedeepvoid.client.model.Modelthrown_soul_seeker;
@@ -93,6 +95,7 @@ public class TheDeepVoidModModels {
 		event.registerLayerDefinition(Modelweaver.LAYER_LOCATION, Modelweaver::createBodyLayer);
 		event.registerLayerDefinition(Modelabducter.LAYER_LOCATION, Modelabducter::createBodyLayer);
 		event.registerLayerDefinition(Modeleverhunger.LAYER_LOCATION, Modeleverhunger::createBodyLayer);
+		event.registerLayerDefinition(Modelvulture_mask.LAYER_LOCATION, Modelvulture_mask::createBodyLayer);
 		event.registerLayerDefinition(Modelbone_crawler.LAYER_LOCATION, Modelbone_crawler::createBodyLayer);
 		event.registerLayerDefinition(Modelrooted_rework.LAYER_LOCATION, Modelrooted_rework::createBodyLayer);
 		event.registerLayerDefinition(Modelamalgam_rework.LAYER_LOCATION, Modelamalgam_rework::createBodyLayer);
@@ -127,6 +130,7 @@ public class TheDeepVoidModModels {
 		event.registerLayerDefinition(Modelblock_projectile.LAYER_LOCATION, Modelblock_projectile::createBodyLayer);
 		event.registerLayerDefinition(Modelthrown_soul_seeker.LAYER_LOCATION, Modelthrown_soul_seeker::createBodyLayer);
 		event.registerLayerDefinition(Modeloverseer_bigpillar.LAYER_LOCATION, Modeloverseer_bigpillar::createBodyLayer);
+		event.registerLayerDefinition(Modelvulture_chestplate.LAYER_LOCATION, Modelvulture_chestplate::createBodyLayer);
 		event.registerLayerDefinition(Modelspike.LAYER_LOCATION, Modelspike::createBodyLayer);
 		event.registerLayerDefinition(Modelonlooker.LAYER_LOCATION, Modelonlooker::createBodyLayer);
 		event.registerLayerDefinition(ModelsoulOrbHigher.LAYER_LOCATION, ModelsoulOrbHigher::createBodyLayer);

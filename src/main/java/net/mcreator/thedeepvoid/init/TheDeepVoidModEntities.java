@@ -29,6 +29,7 @@ import net.mcreator.thedeepvoid.entity.VoidPelletEntity;
 import net.mcreator.thedeepvoid.entity.VoidDwellerEntity;
 import net.mcreator.thedeepvoid.entity.VoidArrowEntity;
 import net.mcreator.thedeepvoid.entity.ThumperEntityEntity;
+import net.mcreator.thedeepvoid.entity.ThrowableIchorProjEntity;
 import net.mcreator.thedeepvoid.entity.TenebrisCultroEntity;
 import net.mcreator.thedeepvoid.entity.TamedMotherBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.TamedBoneCrawlerEntity;
@@ -51,6 +52,7 @@ import net.mcreator.thedeepvoid.entity.SoulFusedShotEntity;
 import net.mcreator.thedeepvoid.entity.SmallFleshCubeEntity;
 import net.mcreator.thedeepvoid.entity.SleepingPrimordialCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.SkullSmasherEntity;
+import net.mcreator.thedeepvoid.entity.ShotgunPelletEntity;
 import net.mcreator.thedeepvoid.entity.ShankPrisonerEntity;
 import net.mcreator.thedeepvoid.entity.ShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.ShadowArrowEntity;
@@ -91,6 +93,7 @@ import net.mcreator.thedeepvoid.entity.MimicEntity;
 import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
 import net.mcreator.thedeepvoid.entity.MarrowRootsSpawnEntity;
 import net.mcreator.thedeepvoid.entity.MarrowRootsEntity;
+import net.mcreator.thedeepvoid.entity.ManiacEntity;
 import net.mcreator.thedeepvoid.entity.MaggotEntity;
 import net.mcreator.thedeepvoid.entity.MadCultistEntity;
 import net.mcreator.thedeepvoid.entity.LurkerEntity;
@@ -102,6 +105,7 @@ import net.mcreator.thedeepvoid.entity.KunaiEntity;
 import net.mcreator.thedeepvoid.entity.InvisibleEntity;
 import net.mcreator.thedeepvoid.entity.IdlingApostleEntity;
 import net.mcreator.thedeepvoid.entity.IchorSpitEntity;
+import net.mcreator.thedeepvoid.entity.IchorFlameShotEntity;
 import net.mcreator.thedeepvoid.entity.HookEntity;
 import net.mcreator.thedeepvoid.entity.HookEndEntity;
 import net.mcreator.thedeepvoid.entity.HollowedEntity;
@@ -601,7 +605,7 @@ public class TheDeepVoidModEntities {
 	public static final RegistryObject<EntityType<FleshWormEntity>> FLESH_WORM = register("flesh_worm",
 			EntityType.Builder.<FleshWormEntity>of(FleshWormEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(80).setUpdateInterval(3).setCustomClientFactory(FleshWormEntity::new)
 
-					.sized(2f, 8f));
+					.sized(4f, 8.2f));
 	public static final RegistryObject<EntityType<ThumperEntityEntity>> THUMPER_ENTITY = register("thumper_entity", EntityType.Builder.<ThumperEntityEntity>of(ThumperEntityEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ThumperEntityEntity::new).fireImmune().sized(1f, 1f));
 	public static final RegistryObject<EntityType<BoneBlockadeEntity>> BONE_BLOCKADE = register("bone_blockade", EntityType.Builder.<BoneBlockadeEntity>of(BoneBlockadeEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
@@ -688,6 +692,16 @@ public class TheDeepVoidModEntities {
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ExecutionerEntity::new).fireImmune().sized(2f, 3.8f));
 	public static final RegistryObject<EntityType<KunaiEntity>> KUNAI = register("kunai",
 			EntityType.Builder.<KunaiEntity>of(KunaiEntity::new, MobCategory.MISC).setCustomClientFactory(KunaiEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<ShotgunPelletEntity>> SHOTGUN_PELLET = register("shotgun_pellet",
+			EntityType.Builder.<ShotgunPelletEntity>of(ShotgunPelletEntity::new, MobCategory.MISC).setCustomClientFactory(ShotgunPelletEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<ManiacEntity>> MANIAC = register("maniac",
+			EntityType.Builder.<ManiacEntity>of(ManiacEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(ManiacEntity::new)
+
+					.sized(0.6f, 2.4f));
+	public static final RegistryObject<EntityType<IchorFlameShotEntity>> ICHOR_FLAME_SHOT = register("ichor_flame_shot",
+			EntityType.Builder.<IchorFlameShotEntity>of(IchorFlameShotEntity::new, MobCategory.MISC).setCustomClientFactory(IchorFlameShotEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<ThrowableIchorProjEntity>> THROWABLE_ICHOR_PROJ = register("throwable_ichor_proj", EntityType.Builder.<ThrowableIchorProjEntity>of(ThrowableIchorProjEntity::new, MobCategory.MISC)
+			.setCustomClientFactory(ThrowableIchorProjEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -822,6 +836,7 @@ public class TheDeepVoidModEntities {
 			ApostleCloneEntity.init();
 			MadCultistEntity.init();
 			ExecutionerEntity.init();
+			ManiacEntity.init();
 		});
 	}
 
@@ -953,5 +968,6 @@ public class TheDeepVoidModEntities {
 		event.put(APOSTLE_CLONE.get(), ApostleCloneEntity.createAttributes().build());
 		event.put(MAD_CULTIST.get(), MadCultistEntity.createAttributes().build());
 		event.put(EXECUTIONER.get(), ExecutionerEntity.createAttributes().build());
+		event.put(MANIAC.get(), ManiacEntity.createAttributes().build());
 	}
 }

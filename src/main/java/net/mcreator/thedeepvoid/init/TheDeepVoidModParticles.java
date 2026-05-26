@@ -17,6 +17,7 @@ import net.mcreator.thedeepvoid.client.particle.SulfurSmokeParticle;
 import net.mcreator.thedeepvoid.client.particle.SoulSweepParticle;
 import net.mcreator.thedeepvoid.client.particle.SoulHookLineParticle;
 import net.mcreator.thedeepvoid.client.particle.SoulFusedBloodParticle;
+import net.mcreator.thedeepvoid.client.particle.ShotgunShellParticle;
 import net.mcreator.thedeepvoid.client.particle.ShadeDropParticle;
 import net.mcreator.thedeepvoid.client.particle.RedSmokeParticle;
 import net.mcreator.thedeepvoid.client.particle.RedGreatSlashParticle;
@@ -41,6 +42,7 @@ import net.mcreator.thedeepvoid.client.particle.EldritchEyeParticle;
 import net.mcreator.thedeepvoid.client.particle.DeepslatePebbleParticle;
 import net.mcreator.thedeepvoid.client.particle.DarkTearParticle;
 import net.mcreator.thedeepvoid.client.particle.DarkSweepParticle;
+import net.mcreator.thedeepvoid.client.particle.ChainParticle;
 import net.mcreator.thedeepvoid.client.particle.BrokenBoneParticle;
 import net.mcreator.thedeepvoid.client.particle.BrightSmokeParticle;
 import net.mcreator.thedeepvoid.client.particle.BloodSmokeParticle;
@@ -94,5 +96,7 @@ public class TheDeepVoidModParticles {
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.PLAGUE_SMOKE.get(), PlagueSmokeParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.FALLING_VOID_ASH.get(), FallingVoidAshParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.ICHOR_LAVA.get(), IchorLavaParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.CHAIN.get(), ChainParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.SHOTGUN_SHELL.get(), ShotgunShellParticle::provider);
 	}
 }

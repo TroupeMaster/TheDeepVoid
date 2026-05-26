@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
+    "the_deep_void:chain_gauntlet",
     "the_deep_void:executioner_sword",
     "the_deep_void:ceremonial_dagger",
     "the_deep_void:bone_climbing_pick",
@@ -22,7 +23,6 @@
     "the_deep_void:shank",
     "the_deep_void:the_bonk",
     "the_deep_void:rotten_sword",
-    "the_deep_void:claw_blade",
     "the_deep_void:animosity_hidden",
     "the_deep_void:animosity",
     "the_deep_void:judgement",
@@ -45,7 +45,6 @@
     "the_deep_void:onyx_sword",
     "the_deep_void:bone_sword",
     "the_deep_void:knives_glove",
-    "the_deep_void:knife_bandolier",
     "the_deep_void:stalker_scythe_claw",
     "the_deep_void:the_catcher",
     "the_deep_void:rot_tongue",

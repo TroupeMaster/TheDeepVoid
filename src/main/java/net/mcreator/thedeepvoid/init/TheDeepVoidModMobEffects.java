@@ -45,7 +45,9 @@ import net.mcreator.thedeepvoid.potion.DeadInsideMobEffect;
 import net.mcreator.thedeepvoid.potion.CreatureRepellentMobEffect;
 import net.mcreator.thedeepvoid.potion.CrateMagnetMobEffect;
 import net.mcreator.thedeepvoid.potion.ComboMobEffect;
+import net.mcreator.thedeepvoid.potion.ChainedMobEffect;
 import net.mcreator.thedeepvoid.potion.CallOfTheVoidMobEffect;
+import net.mcreator.thedeepvoid.potion.BullseyeMobEffect;
 import net.mcreator.thedeepvoid.potion.BrokenArmorMobEffect;
 import net.mcreator.thedeepvoid.potion.BlossomMobEffect;
 import net.mcreator.thedeepvoid.potion.BloodBoilMobEffect;
@@ -96,4 +98,6 @@ public class TheDeepVoidModMobEffects {
 	public static final RegistryObject<MobEffect> CREATURE_REPELLENT = REGISTRY.register("creature_repellent", () -> new CreatureRepellentMobEffect());
 	public static final RegistryObject<MobEffect> ABYSSAL_MARK = REGISTRY.register("abyssal_mark", () -> new AbyssalMarkMobEffect());
 	public static final RegistryObject<MobEffect> EXPERIENCED = REGISTRY.register("experienced", () -> new ExperiencedMobEffect());
+	public static final RegistryObject<MobEffect> CHAINED = REGISTRY.register("chained", () -> new ChainedMobEffect());
+	public static final RegistryObject<MobEffect> BULLSEYE = REGISTRY.register("bullseye", () -> new BullseyeMobEffect());
 }

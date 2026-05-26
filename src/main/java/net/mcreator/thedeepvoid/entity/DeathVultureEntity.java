@@ -16,7 +16,6 @@ import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
@@ -36,11 +35,8 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.InteractionResult;
-import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.resources.ResourceLocation;
@@ -52,7 +48,6 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.thedeepvoid.procedures.DeathVultureTickUpdateProcedure;
-import net.mcreator.thedeepvoid.procedures.DeathVultureRightClickedOnEntityProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 public class DeathVultureEntity extends Monster implements GeoEntity {
@@ -165,21 +160,6 @@ public class DeathVultureEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_dash, compound.getInt("Datadash"));
 		if (compound.contains("Dataattack"))
 			this.entityData.set(DATA_attack, compound.getBoolean("Dataattack"));
-	}
-
-	@Override
-	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
-		ItemStack itemstack = sourceentity.getItemInHand(hand);
-		InteractionResult retval = InteractionResult.sidedSuccess(this.level().isClientSide());
-		super.mobInteract(sourceentity, hand);
-		double x = this.getX();
-		double y = this.getY();
-		double z = this.getZ();
-		Entity entity = this;
-		Level world = this.level();
-
-		DeathVultureRightClickedOnEntityProcedure.execute(world, entity, sourceentity);
-		return retval;
 	}
 
 	@Override

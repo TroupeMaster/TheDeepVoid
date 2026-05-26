@@ -9,12 +9,12 @@ import net.mcreator.thedeepvoid.entity.FleshWormEntity;
 public class FleshWormModel extends GeoModel<FleshWormEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(FleshWormEntity entity) {
-		return new ResourceLocation("the_deep_void", "animations/fleshworm.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/fleshwormnew.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(FleshWormEntity entity) {
-		return new ResourceLocation("the_deep_void", "geo/fleshworm.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/fleshwormnew.geo.json");
 	}
 
 	@Override

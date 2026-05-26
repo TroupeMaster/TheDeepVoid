@@ -45,7 +45,7 @@ public class ApostleTickUpdateAdditionsProcedure {
 		double random = 0;
 		if ((entity instanceof ApostleBossEntity _datEntI ? _datEntI.getEntityData().get(ApostleBossEntity.DATA_taunt) : 0) <= 0
 				&& (entity instanceof ApostleBossEntity _datEntL1 && _datEntL1.getEntityData().get(ApostleBossEntity.DATA_doingAttack)) == false
-				&& (entity instanceof ApostleBossEntity _datEntL2 && _datEntL2.getEntityData().get(ApostleBossEntity.DATA_dying)) == false) {
+				&& (entity instanceof ApostleBossEntity _datEntL2 && _datEntL2.getEntityData().get(ApostleBossEntity.DATA_dying)) == false && !((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 			if (entity instanceof ApostleBossEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(ApostleBossEntity.DATA_taunt, 300);
 			if (entity instanceof ApostleBossEntity) {
@@ -315,20 +315,20 @@ public class ApostleTickUpdateAdditionsProcedure {
 					_datEntSetI.getEntityData().set(ApostleBossEntity.DATA_teleportCooldown, (int) ((entity instanceof ApostleBossEntity _datEntI ? _datEntI.getEntityData().get(ApostleBossEntity.DATA_teleportCooldown) : 0) + 1));
 			}
 		}
-		if (entity instanceof LivingEntity _livEnt101 && _livEnt101.hasEffect(TheDeepVoidModMobEffects.ROT.get())) {
+		if (entity instanceof LivingEntity _livEnt103 && _livEnt103.hasEffect(TheDeepVoidModMobEffects.ROT.get())) {
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeEffect(TheDeepVoidModMobEffects.ROT.get());
 		}
-		if (entity instanceof LivingEntity _livEnt103 && _livEnt103.hasEffect(MobEffects.POISON)) {
+		if (entity instanceof LivingEntity _livEnt105 && _livEnt105.hasEffect(MobEffects.POISON)) {
 			if (entity instanceof LivingEntity _entity)
 				_entity.removeEffect(MobEffects.POISON);
 		}
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
-			if (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entUseItem108 ? _entUseItem108.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
+			if (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _entUseItem110 ? _entUseItem110.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
 				if (entity instanceof ApostleBossEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(ApostleBossEntity.DATA_shieldIsUsed, (int) ((entity instanceof ApostleBossEntity _datEntI ? _datEntI.getEntityData().get(ApostleBossEntity.DATA_shieldIsUsed) : 0) + 1));
 				if ((entity instanceof ApostleBossEntity _datEntI ? _datEntI.getEntityData().get(ApostleBossEntity.DATA_shieldIsUsed) : 0) >= (double) DeepVoidConfigConfiguration.APOSTLEANGERTIMER.get()
-						&& (entity instanceof ApostleBossEntity _datEntL114 && _datEntL114.getEntityData().get(ApostleBossEntity.DATA_doingAttack)) == false) {
+						&& (entity instanceof ApostleBossEntity _datEntL116 && _datEntL116.getEntityData().get(ApostleBossEntity.DATA_doingAttack)) == false) {
 					if (entity instanceof ApostleBossEntity _datEntSetI)
 						_datEntSetI.getEntityData().set(ApostleBossEntity.DATA_shieldIsUsed, 0);
 					ApostleGrabJumpProcedure.execute(world, entity);

@@ -115,7 +115,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "the_deep_void:knife_bandolier",
+          "name": "the_deep_void:chain_gauntlet",
           "weight": 50,
           "functions": [
             {

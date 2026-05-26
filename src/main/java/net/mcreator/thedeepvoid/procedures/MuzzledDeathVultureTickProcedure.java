@@ -3,6 +3,7 @@ package net.mcreator.thedeepvoid.procedures;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.GameType;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -10,9 +11,11 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
+import net.minecraft.client.Minecraft;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 import net.mcreator.thedeepvoid.entity.MuzzledDeathVultureEntity;
@@ -39,7 +42,35 @@ public class MuzzledDeathVultureTickProcedure {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)).isPassenger()) {
+				}.compareDistOf(x, y, z)).findFirst().orElse(null)).isPassenger() && !(new Object() {
+					public boolean checkGamemode(Entity _ent) {
+						if (_ent instanceof ServerPlayer _serverPlayer) {
+							return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+						} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+							return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+									&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+						}
+						return false;
+					}
+				}.checkGamemode(((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 5, 5, 5), e -> true).stream().sorted(new Object() {
+					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+					}
+				}.compareDistOf(x, y, z)).findFirst().orElse(null)))) && !(new Object() {
+					public boolean checkGamemode(Entity _ent) {
+						if (_ent instanceof ServerPlayer _serverPlayer) {
+							return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.SPECTATOR;
+						} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+							return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+									&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.SPECTATOR;
+						}
+						return false;
+					}
+				}.checkGamemode(((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 5, 5, 5), e -> true).stream().sorted(new Object() {
+					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
+						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
+					}
+				}.compareDistOf(x, y, z)).findFirst().orElse(null))))) {
 					entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 5, 5, 5), e -> true).stream().sorted(new Object() {
 						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
@@ -59,11 +90,29 @@ public class MuzzledDeathVultureTickProcedure {
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
-					if (entityiterator instanceof LivingEntity) {
-						if (!entityiterator.isPassenger() && !(entityiterator == entity)) {
-							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity),
-									(float) ((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
+					if (entityiterator instanceof Player && !entityiterator.isPassenger() && !(entityiterator == entity) && !(new Object() {
+						public boolean checkGamemode(Entity _ent) {
+							if (_ent instanceof ServerPlayer _serverPlayer) {
+								return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+							} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+								return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+										&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+							}
+							return false;
 						}
+					}.checkGamemode(entityiterator)) && !(new Object() {
+						public boolean checkGamemode(Entity _ent) {
+							if (_ent instanceof ServerPlayer _serverPlayer) {
+								return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.SPECTATOR;
+							} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+								return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+										&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.SPECTATOR;
+							}
+							return false;
+						}
+					}.checkGamemode(entityiterator))) {
+						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity),
+								(float) ((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue());
 					}
 				}
 			}

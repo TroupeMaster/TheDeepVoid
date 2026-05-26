@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:bloodshot",
+    "the_deep_void:golden_bloodshot",
+    "the_deep_void:soul_fused_shot",
+    "the_deep_void:ichor_spit",
+    "the_deep_void:void_pellet",
+    "the_deep_void:peril_bullet",
+    "the_deep_void:shotgun_pellet",
+    "the_deep_void:bright_flare_shot",
+    "the_deep_void:flare",
+    "the_deep_void:flesh_flare_shot",
+    "the_deep_void:golden_flare_shot",
+    "the_deep_void:red_flare_shot",
+    "the_deep_void:sulfur_flare_shot",
+    "the_deep_void:voidrium_flare_shot",
+    "the_deep_void:xp_flare_shot"
+  ]
+}

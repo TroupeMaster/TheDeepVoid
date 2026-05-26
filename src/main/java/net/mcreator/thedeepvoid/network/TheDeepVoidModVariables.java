@@ -161,6 +161,8 @@ public class TheDeepVoidModVariables {
 				clone.mistedRemnantAmbience = original.mistedRemnantAmbience;
 				clone.gaol_ambience = original.gaol_ambience;
 				clone.noHit = original.noHit;
+				clone.vultureArmorAbility = original.vultureArmorAbility;
+				clone.gunslingerArmorAbility = original.gunslingerArmorAbility;
 			}
 		}
 
@@ -441,9 +443,9 @@ public class TheDeepVoidModVariables {
 		public ItemStack saveArmor1 = ItemStack.EMPTY;
 		public ItemStack saveArmor0 = ItemStack.EMPTY;
 		public double saveArmorPoint = 0;
-		public double gaol_ambience = 0;
+		public double gaol_ambience = 0.0;
 		public boolean noHit = true;
-		public double MusicTick = 0;
+		public double MusicTick = 0.0;
 		public double MusicWait = 0;
 		public boolean MusicLock = false;
 		public boolean MusicReplace = false;
@@ -455,6 +457,8 @@ public class TheDeepVoidModVariables {
 		public double saveKnockbackResistance = 0;
 		public double saveStepHeight = 0;
 		public double parasitizedType = 0;
+		public double vultureArmorAbility = 0;
+		public double gunslingerArmorAbility = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -550,6 +554,8 @@ public class TheDeepVoidModVariables {
 			nbt.putDouble("saveKnockbackResistance", saveKnockbackResistance);
 			nbt.putDouble("saveStepHeight", saveStepHeight);
 			nbt.putDouble("parasitizedType", parasitizedType);
+			nbt.putDouble("vultureArmorAbility", vultureArmorAbility);
+			nbt.putDouble("gunslingerArmorAbility", gunslingerArmorAbility);
 			return nbt;
 		}
 
@@ -642,6 +648,8 @@ public class TheDeepVoidModVariables {
 			saveKnockbackResistance = nbt.getDouble("saveKnockbackResistance");
 			saveStepHeight = nbt.getDouble("saveStepHeight");
 			parasitizedType = nbt.getDouble("parasitizedType");
+			vultureArmorAbility = nbt.getDouble("vultureArmorAbility");
+			gunslingerArmorAbility = nbt.getDouble("gunslingerArmorAbility");
 		}
 	}
 
@@ -753,6 +761,8 @@ public class TheDeepVoidModVariables {
 					variables.saveKnockbackResistance = message.data.saveKnockbackResistance;
 					variables.saveStepHeight = message.data.saveStepHeight;
 					variables.parasitizedType = message.data.parasitizedType;
+					variables.vultureArmorAbility = message.data.vultureArmorAbility;
+					variables.gunslingerArmorAbility = message.data.gunslingerArmorAbility;
 				}
 			});
 			context.setPacketHandled(true);

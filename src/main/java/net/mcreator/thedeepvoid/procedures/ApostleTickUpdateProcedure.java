@@ -113,6 +113,7 @@ public class ApostleTickUpdateProcedure {
 					_datEntSetL.getEntityData().set(ApostleBossEntity.DATA_grabbedPlayer, false);
 			}
 		}
+		ApostleUsesChainProcedure.execute(world, x, y, z, entity);
 		ApostleDoingSpinProcedure.execute(world, entity);
 		ApostleTickUpdateAdditionsProcedure.execute(world, x, y, z, entity);
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {

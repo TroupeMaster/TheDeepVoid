@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " aa",
+    "bba",
+    "cb "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:onyx_needle"
+    },
+    "b": {
+      "item": "the_deep_void:bone_crawler_molt_piece"
+    },
+    "c": {
+      "item": "the_deep_void:bone_crawler_chitin"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:stinger",
+    "count": 1
+  }
+}

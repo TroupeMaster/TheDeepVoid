@@ -96,7 +96,7 @@ public class SpawnBoneSpikesEntity extends Monster {
 		Entity sourceentity = damagesource.getEntity();
 		Entity immediatesourceentity = damagesource.getDirectEntity();
 
-		SpawnBoneSpikesEntityIsHurtProcedure.execute(entity);
+		SpawnBoneSpikesEntityIsHurtProcedure.execute(world, x, y, z, entity);
 		if (damagesource.is(DamageTypes.IN_FIRE))
 			return false;
 		if (damagesource.getDirectEntity() instanceof AbstractArrow)
@@ -159,7 +159,7 @@ public class SpawnBoneSpikesEntity extends Monster {
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		SpawnBoneSpikesOnEntityTickUpdateProcedure.execute(this.level(), this);
+		SpawnBoneSpikesOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

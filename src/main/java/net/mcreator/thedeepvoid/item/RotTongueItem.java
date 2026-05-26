@@ -22,6 +22,7 @@ import net.mcreator.thedeepvoid.procedures.RottenTongueDescriptionProcedure;
 import net.mcreator.thedeepvoid.procedures.RotTongueRightclickedProcedure;
 import net.mcreator.thedeepvoid.procedures.RotTonguePlayerFinishesUsingItemProcedure;
 import net.mcreator.thedeepvoid.procedures.RotTongueOnPlayerStoppedUsingProcedure;
+import net.mcreator.thedeepvoid.procedures.RotTongueLivingEntityIsHitWithItemProcedure;
 
 import java.util.List;
 
@@ -78,6 +79,7 @@ public class RotTongueItem extends Item {
 	@Override
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 		itemstack.hurtAndBreak(1, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+		RotTongueLivingEntityIsHitWithItemProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity, sourceentity);
 		return true;
 	}
 

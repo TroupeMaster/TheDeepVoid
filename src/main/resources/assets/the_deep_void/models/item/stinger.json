@@ -1,0 +1,26 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "the_deep_void:item/stinger"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "the_deep_void:stinger_state": 1
+      },
+      "model": "the_deep_void:item/stinger_0"
+    },
+    {
+      "predicate": {
+        "the_deep_void:stinger_state": 2
+      },
+      "model": "the_deep_void:item/stinger_1"
+    },
+    {
+      "predicate": {
+        "the_deep_void:stinger_state": 3
+      },
+      "model": "the_deep_void:item/stinger_2"
+    }
+  ]
+}

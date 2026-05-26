@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/stinger2",
+  "textures": {
+    "0": "the_deep_void:block/stinger",
+    "particle": "the_deep_void:item/stinger"
+  }
+}

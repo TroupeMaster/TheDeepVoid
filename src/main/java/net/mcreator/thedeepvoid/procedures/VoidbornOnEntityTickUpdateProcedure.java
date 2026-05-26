@@ -9,19 +9,14 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.entity.VoidbornEntity;
 import net.mcreator.thedeepvoid.entity.LightEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
-
-import java.util.List;
-import java.util.Comparator;
 
 public class VoidbornOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -116,29 +111,17 @@ public class VoidbornOnEntityTickUpdateProcedure {
 				}
 			});
 		}
-		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 60, 60, 60), e -> true).isEmpty()) {
-			{
-				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(60 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-				for (Entity entityiterator : _entfound) {
-					if (entityiterator instanceof Player) {
-						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-							_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.HEAVY.get(), 5, 0, false, false));
-					}
-				}
-			}
-		}
 		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 15, 15, 15), e -> true).isEmpty()) {
 			if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0) {
 				if (entity instanceof VoidbornEntity) {
 					((VoidbornEntity) entity).setAnimation("animation.caveNightmare_walkClose");
 				}
-				if ((entity instanceof VoidbornEntity _datEntL70 && _datEntL70.getEntityData().get(VoidbornEntity.DATA_cancelClose)) == false) {
+				if ((entity instanceof VoidbornEntity _datEntL66 && _datEntL66.getEntityData().get(VoidbornEntity.DATA_cancelClose)) == false) {
 					if (entity instanceof VoidbornEntity _datEntSetL)
 						_datEntSetL.getEntityData().set(VoidbornEntity.DATA_cancelClose, true);
 				}
 			} else {
-				if ((entity instanceof VoidbornEntity _datEntL72 && _datEntL72.getEntityData().get(VoidbornEntity.DATA_cancelClose)) == true) {
+				if ((entity instanceof VoidbornEntity _datEntL68 && _datEntL68.getEntityData().get(VoidbornEntity.DATA_cancelClose)) == true) {
 					TheDeepVoidMod.queueServerWork(6, () -> {
 						if (entity instanceof VoidbornEntity) {
 							((VoidbornEntity) entity).setAnimation("empty");

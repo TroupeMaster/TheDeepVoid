@@ -12,18 +12,17 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.tags.TagKey;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.entity.SporeSpewerEntity;
-import net.mcreator.thedeepvoid.entity.SmallFleshCubeEntity;
-import net.mcreator.thedeepvoid.entity.LickerEntity;
-import net.mcreator.thedeepvoid.entity.FleshCubeEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import java.util.List;
@@ -54,9 +53,8 @@ public class SporeSpewerOnEntityTickUpdateProcedure {
 						final Vec3 _center = new Vec3(x, y, z);
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(8 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
-							if (entityiterator instanceof SporeSpewerEntity == false && entityiterator instanceof LickerEntity == false && entityiterator instanceof FleshCubeEntity == false
-									&& entityiterator instanceof SmallFleshCubeEntity == false) {
-								if (!(entityiterator instanceof LivingEntity _livEnt12 && _livEnt12.hasEffect(MobEffects.CONFUSION))) {
+							if (!entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:fleshkin")))) {
+								if (!(entityiterator instanceof LivingEntity _livEnt9 && _livEnt9.hasEffect(MobEffects.CONFUSION))) {
 									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 										_entity.addEffect(new MobEffectInstance(MobEffects.CONFUSION, 240, 3));
 									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())

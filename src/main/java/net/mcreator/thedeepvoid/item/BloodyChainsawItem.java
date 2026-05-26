@@ -18,6 +18,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.network.chat.Component;
 
 import net.mcreator.thedeepvoid.procedures.SentientChainsawSpecialInformationProcedure;
+import net.mcreator.thedeepvoid.procedures.RotTongueLivingEntityIsHitWithItemProcedure;
 import net.mcreator.thedeepvoid.procedures.BloodyChainsawRightclickedProcedure;
 import net.mcreator.thedeepvoid.procedures.BloodyChainsawPlayerFinishesUsingItemProcedure;
 import net.mcreator.thedeepvoid.procedures.BloodyChainsawOnPlayerStoppedUsingProcedure;
@@ -78,6 +79,7 @@ public class BloodyChainsawItem extends Item {
 	@Override
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 		itemstack.hurtAndBreak(1, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
+		RotTongueLivingEntityIsHitWithItemProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity, sourceentity);
 		return true;
 	}
 

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a a",
+    "b b",
+    "c c"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:dark_steel_chainmail"
+    },
+    "b": {
+      "item": "the_deep_void:dark_cloth"
+    },
+    "c": {
+      "item": "the_deep_void:mourner_hide"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:gunslinger_boots",
+    "count": 1
+  }
+}

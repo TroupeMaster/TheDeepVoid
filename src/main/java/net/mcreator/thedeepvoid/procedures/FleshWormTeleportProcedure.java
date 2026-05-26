@@ -17,9 +17,12 @@ public class FleshWormTeleportProcedure {
 		if (entity instanceof FleshWormEntity _datEntSetL)
 			_datEntSetL.getEntityData().set(FleshWormEntity.DATA_teleporting, true);
 		if (entity instanceof FleshWormEntity) {
-			((FleshWormEntity) entity).setAnimation("animation.fleshWorm_teleport");
+			((FleshWormEntity) entity).setAnimation("empty");
 		}
-		TheDeepVoidMod.queueServerWork(15, () -> {
+		if (entity instanceof FleshWormEntity) {
+			((FleshWormEntity) entity).setAnimation("animation.fleshWorm_disappear");
+		}
+		TheDeepVoidMod.queueServerWork(30, () -> {
 			if (entity instanceof FleshWormEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(FleshWormEntity.DATA_teleporting, false);
 			if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
@@ -31,6 +34,12 @@ public class FleshWormTeleportProcedure {
 						_serverPlayer.connection.teleport(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() + Mth.nextInt(RandomSource.create(), -8, 8)),
 								((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY()), ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() + Mth.nextInt(RandomSource.create(), -8, 8)),
 								_ent.getYRot(), _ent.getXRot());
+				}
+				if (entity instanceof FleshWormEntity) {
+					((FleshWormEntity) entity).setAnimation("empty");
+				}
+				if (entity instanceof FleshWormEntity) {
+					((FleshWormEntity) entity).setAnimation("animation.fleshWorm_appear");
 				}
 			}
 		});

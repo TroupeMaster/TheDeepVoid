@@ -143,6 +143,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModBlocks.DESOLATE_STEM.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.LIVING_GLOOM_STEM.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.DESOLATE_LICHEN.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.GLOOM_WITNESS_SAPLING.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.FLESHY_BONE_BLOCK.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.FLESHY_OLD_BONE_BLOCK.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.FLESHY_ROTTEN_BONE_BLOCK.get().asItem());
@@ -473,6 +474,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.MOURNER_HIDE.get());
 				tabData.accept(TheDeepVoidModItems.BONE_CRAWLER_CHITIN.get());
 				tabData.accept(TheDeepVoidModItems.DARK_CLOTH.get());
+				tabData.accept(TheDeepVoidModItems.DARK_STEEL_CHAINMAIL.get());
 				tabData.accept(TheDeepVoidModItems.NECROSED_SKIN_BACKPACK.get());
 				tabData.accept(TheDeepVoidModItems.TATTERED_CULT_HOOD.get());
 				tabData.accept(TheDeepVoidModItems.TATTERED_CULT_TUNIC.get());
@@ -490,9 +492,10 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.ELYTRA_PIECE.get());
 				tabData.accept(TheDeepVoidModItems.VOIDED_HEART.get());
 				tabData.accept(TheDeepVoidModItems.VOID_MATTER.get());
-				tabData.accept(TheDeepVoidModItems.SOLID_VOID.get());
 				tabData.accept(TheDeepVoidModItems.VOID_LENS.get());
+				tabData.accept(TheDeepVoidModItems.SOLID_VOID.get());
 				tabData.accept(TheDeepVoidModItems.BLACK_MOSS.get());
+				tabData.accept(TheDeepVoidModItems.DEATH_VULTURE_FEATHER.get());
 				tabData.accept(TheDeepVoidModItems.MISTED_HEART.get());
 				tabData.accept(TheDeepVoidModItems.MISTED_BONE.get());
 				tabData.accept(TheDeepVoidModItems.CREEP_O_METER.get());
@@ -629,6 +632,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.NEEDLEFISH.get());
 				tabData.accept(TheDeepVoidModItems.PUS_BALL.get());
 				tabData.accept(TheDeepVoidModItems.SULFUR_BOMB.get());
+				tabData.accept(TheDeepVoidModItems.THROWABLE_ICHOR.get());
 				tabData.accept(TheDeepVoidModItems.ONYX_FLARE_GUN.get());
 				tabData.accept(TheDeepVoidModItems.RED_FLARE.get());
 				tabData.accept(TheDeepVoidModItems.FLESH_FLARE.get());
@@ -643,7 +647,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.ROOTING_TOME.get());
 				tabData.accept(TheDeepVoidModItems.NECRONOMICON.get());
 				tabData.accept(TheDeepVoidModItems.VOODOO_DOLL.get());
-				tabData.accept(TheDeepVoidModItems.KNIFE_BANDOLIER.get());
+				tabData.accept(TheDeepVoidModItems.DOUBLE_BARREL_SHOTGUN.get());
 				tabData.accept(TheDeepVoidModItems.MISANTHROPY.get());
 				tabData.accept(TheDeepVoidModItems.ELDRITCH_MAW.get());
 				tabData.accept(TheDeepVoidModItems.PERIL.get());
@@ -663,6 +667,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.RUSTY_CLAWS.get());
 				tabData.accept(TheDeepVoidModItems.HUNTER_CLAWS.get());
 				tabData.accept(TheDeepVoidModItems.KNIVES_GLOVE.get());
+				tabData.accept(TheDeepVoidModItems.CHAIN_GAUNTLET.get());
 				tabData.accept(TheDeepVoidModItems.ROT_TONGUE.get());
 				tabData.accept(TheDeepVoidModItems.THE_CATCHER.get());
 				tabData.accept(TheDeepVoidModItems.VOID_DAGGER.get());
@@ -670,7 +675,8 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.VOID_MATTER_GREATSWORD.get());
 				tabData.accept(TheDeepVoidModItems.VOID_MATTER_SCYTHE.get());
 				tabData.accept(TheDeepVoidModItems.GOO_SWORD.get());
-				tabData.accept(TheDeepVoidModItems.CLAW_BLADE.get());
+				tabData.accept(TheDeepVoidModItems.CLAW_SCYTHE.get());
+				tabData.accept(TheDeepVoidModItems.STINGER.get());
 				tabData.accept(TheDeepVoidModItems.SOUL_CLEAVER.get());
 				tabData.accept(TheDeepVoidModItems.JUDGEMENT.get());
 				tabData.accept(TheDeepVoidModItems.ONYX_NAGINATA.get());
@@ -744,6 +750,14 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.BLOODSTONE_ARMOR_CHESTPLATE.get());
 				tabData.accept(TheDeepVoidModItems.BLOODSTONE_ARMOR_LEGGINGS.get());
 				tabData.accept(TheDeepVoidModItems.BLOODSTONE_ARMOR_BOOTS.get());
+				tabData.accept(TheDeepVoidModItems.GUNSLINGER_HELMET.get());
+				tabData.accept(TheDeepVoidModItems.GUNSLINGER_CHESTPLATE.get());
+				tabData.accept(TheDeepVoidModItems.GUNSLINGER_LEGGINGS.get());
+				tabData.accept(TheDeepVoidModItems.GUNSLINGER_BOOTS.get());
+				tabData.accept(TheDeepVoidModItems.VULTURE_HELMET.get());
+				tabData.accept(TheDeepVoidModItems.VULTURE_CHESTPLATE.get());
+				tabData.accept(TheDeepVoidModItems.VULTURE_LEGGINGS.get());
+				tabData.accept(TheDeepVoidModItems.VULTURE_BOOTS.get());
 				tabData.accept(TheDeepVoidModItems.PLAGUE_DOCTOR_HELMET.get());
 				tabData.accept(TheDeepVoidModItems.PLAGUE_DOCTOR_CHESTPLATE.get());
 				tabData.accept(TheDeepVoidModItems.PLAGUE_DOCTOR_LEGGINGS.get());
@@ -789,6 +803,8 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.WITHER_NEEDLE.get());
 				tabData.accept(TheDeepVoidModItems.SATURATION_NEEDLE.get());
 				tabData.accept(TheDeepVoidModItems.INSTANT_DAMAGE_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.STRENGTH_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.WEAKNESS_NEEDLE.get());
 				tabData.accept(TheDeepVoidModItems.MISANTHROPIC_HIVEMIND_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.HIVE_BRAIN_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.SAW_THROWER_SPAWN_EGG.get());
@@ -858,6 +874,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.PRISONER_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.PRISON_GUARD_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.SHANK_PRISONER_SPAWN_EGG.get());
+				tabData.accept(TheDeepVoidModItems.MANIAC_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.MAD_CULTIST_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.EXECUTIONER_SPAWN_EGG.get());
 				tabData.accept(TheDeepVoidModItems.ABDUCTOR_SPAWN_EGG.get());

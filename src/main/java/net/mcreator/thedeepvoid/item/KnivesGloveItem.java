@@ -65,7 +65,7 @@ public class KnivesGloveItem extends Item {
 	@Override
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 		boolean retval = super.hurtEnemy(itemstack, entity, sourceentity);
-		KnivesGloveLivingEntityIsHitWithItemProcedure.execute(itemstack);
+		KnivesGloveLivingEntityIsHitWithItemProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity, sourceentity, itemstack);
 		return retval;
 	}
 }

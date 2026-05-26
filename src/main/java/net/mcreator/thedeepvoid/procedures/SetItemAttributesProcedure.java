@@ -44,6 +44,9 @@ public class SetItemAttributesProcedure {
 			if (itemstack.getItem() == TheDeepVoidModItems.EXECUTIONER_SWORD.get()) {
 				_event.addModifier(ForgeMod.ENTITY_REACH.get(), (new AttributeModifier(UUID.fromString("91c3cc39-df93-477d-878a-3f8a1c0a3747"), "executionerReach", 1, AttributeModifier.Operation.ADDITION)));
 			}
+			if (itemstack.getItem() == TheDeepVoidModItems.STINGER.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_SPEED, (new AttributeModifier(UUID.fromString("3ebf6c26-26e9-4652-8ed1-054178166bea"), "stingerSpeed", 1.4, AttributeModifier.Operation.ADDITION)));
+			}
 			if (itemstack.getItem() == TheDeepVoidModItems.KNIVES_GLOVE.get()) {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_SPEED, (new AttributeModifier(UUID.fromString("77b8b253-e87d-4b69-a7eb-83208a542bda"), "knifeGloveSpeed", 0.4, AttributeModifier.Operation.ADDITION)));
 			}
@@ -71,6 +74,9 @@ public class SetItemAttributesProcedure {
 			if (itemstack.getItem() == TheDeepVoidModItems.VOID_MATTER_GREATSWORD.get()) {
 				_event.addModifier(ForgeMod.ENTITY_REACH.get(), (new AttributeModifier(UUID.fromString("48f3899b-36d3-4114-bf7e-e331e1095109"), "greatsword_reach", 0.55, AttributeModifier.Operation.ADDITION)));
 			}
+			if (itemstack.getItem() == TheDeepVoidModItems.CLAW_SCYTHE.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_SPEED, (new AttributeModifier(UUID.fromString("34336e81-e420-44ed-9b7c-5823ad725ae7"), "clawscytheSpeed", (-0.8), AttributeModifier.Operation.ADDITION)));
+			}
 			if (itemstack.getItem() == TheDeepVoidModItems.CEREMONIAL_DAGGER.get()) {
 				_event.addModifier(ForgeMod.ENTITY_REACH.get(), (new AttributeModifier(UUID.fromString("c06f24ef-d58e-4c6c-8731-a6ca8764b269"), "ceremonial_reach", (-0.5), AttributeModifier.Operation.ADDITION)));
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE,
@@ -84,6 +90,10 @@ public class SetItemAttributesProcedure {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
 						(new AttributeModifier(UUID.fromString("e3e28def-8ac7-4786-bf1b-9c40b2adbe13"), "bloodstoneHelmetSpeed", 0.1, AttributeModifier.Operation.MULTIPLY_BASE)));
 			}
+			if (itemstack.getItem() == TheDeepVoidModItems.VULTURE_HELMET.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("20becca3-d644-43ef-8598-24659f89f3b3"), "vultureMaskSpeed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
+			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.CHEST) {
 			if (itemstack.getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_CHESTPLATE.get()) {
@@ -92,6 +102,10 @@ public class SetItemAttributesProcedure {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
 						(new AttributeModifier(UUID.fromString("3d44d829-1981-4ce1-ad8d-0b61f55544e3"), "bloodstoneChestplateSpeed", 0.1, AttributeModifier.Operation.MULTIPLY_BASE)));
 			}
+			if (itemstack.getItem() == TheDeepVoidModItems.VULTURE_CHESTPLATE.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("c3ec1923-603c-48b7-838d-b45534890f9b"), "vultureChestplateSpeed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
+			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.LEGS) {
 			if (itemstack.getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_LEGGINGS.get()) {
@@ -99,6 +113,10 @@ public class SetItemAttributesProcedure {
 						(new AttributeModifier(UUID.fromString("086d99dd-744f-4f1b-b221-0498a2e55ae2"), "bloodstoneLeggingsHealth", (-1), AttributeModifier.Operation.ADDITION)));
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
 						(new AttributeModifier(UUID.fromString("01d34c3f-48cc-4963-ae79-18fd27890ea1"), "bloodstoneLeggingsSpeed", 0.1, AttributeModifier.Operation.MULTIPLY_BASE)));
+			}
+			if (itemstack.getItem() == TheDeepVoidModItems.VULTURE_LEGGINGS.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("56a76483-c4d7-4dc0-9c35-0387fc9b134d"), "vultureLeggingsSpeed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
 			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.FEET) {
@@ -109,6 +127,10 @@ public class SetItemAttributesProcedure {
 			}
 			if (itemstack.getItem() == TheDeepVoidModItems.HUNTERS_BOOTS.get()) {
 				_event.addModifier(ForgeMod.STEP_HEIGHT_ADDITION.get(), (new AttributeModifier(UUID.fromString("905f3797-a937-48a0-89e0-7492943a9219"), "hunterStepHeight", 0.4, AttributeModifier.Operation.ADDITION)));
+			}
+			if (itemstack.getItem() == TheDeepVoidModItems.VULTURE_BOOTS.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("f43fe2fd-417c-4108-8c72-91aa179184f2"), "vultureBootsSpeed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
 			}
 		}
 	}

@@ -40,8 +40,14 @@ public class MadCultistOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		double rnd = 0;
-		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof MadCultistEntity _datEntL2 && _datEntL2.getEntityData().get(MadCultistEntity.DATA_aggressive)) == false
+		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null && (entity instanceof MadCultistEntity _datEntL2 && _datEntL2.getEntityData().get(MadCultistEntity.DATA_aggressive)) == false
 				&& (entity instanceof MadCultistEntity _datEntL3 && _datEntL3.getEntityData().get(MadCultistEntity.DATA_patrol)) == false) {
+			if (entity instanceof MadCultistEntity) {
+				((MadCultistEntity) entity).setAnimation("animation.madCultist_pray");
+			}
+		}
+		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof MadCultistEntity _datEntL7 && _datEntL7.getEntityData().get(MadCultistEntity.DATA_aggressive)) == false
+				&& (entity instanceof MadCultistEntity _datEntL8 && _datEntL8.getEntityData().get(MadCultistEntity.DATA_patrol)) == false) {
 			if (entity instanceof MadCultistEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(MadCultistEntity.DATA_aggressive, true);
 			if (entity instanceof MadCultistEntity) {
@@ -55,7 +61,7 @@ public class MadCultistOnEntityTickUpdateProcedure {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 99, false, false));
 		}
-		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof MadCultistEntity _datEntL11 && _datEntL11.getEntityData().get(MadCultistEntity.DATA_attacking)) == false
+		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof MadCultistEntity _datEntL16 && _datEntL16.getEntityData().get(MadCultistEntity.DATA_attacking)) == false
 				&& (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
 			if (entity instanceof MadCultistEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(MadCultistEntity.DATA_attackChance, (int) ((entity instanceof MadCultistEntity _datEntI ? _datEntI.getEntityData().get(MadCultistEntity.DATA_attackChance) : 0) + 1));
@@ -88,11 +94,11 @@ public class MadCultistOnEntityTickUpdateProcedure {
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator == (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)) {
-								if ((entityiterator instanceof LivingEntity _entUseItem31 ? _entUseItem31.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
+								if ((entityiterator instanceof LivingEntity _entUseItem36 ? _entUseItem36.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
 									if (entityiterator instanceof Player _player)
-										_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem33 ? _entUseItem33.getUseItem() : ItemStack.EMPTY).getItem(), 60);
+										_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem38 ? _entUseItem38.getUseItem() : ItemStack.EMPTY).getItem(), 60);
 									{
-										ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem35 ? _entUseItem35.getUseItem() : ItemStack.EMPTY);
+										ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem40 ? _entUseItem40.getUseItem() : ItemStack.EMPTY);
 										if (_ist.hurt(1, RandomSource.create(), null)) {
 											_ist.shrink(1);
 											_ist.setDamageValue(0);
@@ -151,11 +157,11 @@ public class MadCultistOnEntityTickUpdateProcedure {
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator == (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)) {
-								if ((entityiterator instanceof LivingEntity _entUseItem67 ? _entUseItem67.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
+								if ((entityiterator instanceof LivingEntity _entUseItem72 ? _entUseItem72.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
 									if (entityiterator instanceof Player _player)
-										_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem69 ? _entUseItem69.getUseItem() : ItemStack.EMPTY).getItem(), 60);
+										_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem74 ? _entUseItem74.getUseItem() : ItemStack.EMPTY).getItem(), 60);
 									{
-										ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem71 ? _entUseItem71.getUseItem() : ItemStack.EMPTY);
+										ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem76 ? _entUseItem76.getUseItem() : ItemStack.EMPTY);
 										if (_ist.hurt(1, RandomSource.create(), null)) {
 											_ist.shrink(1);
 											_ist.setDamageValue(0);
@@ -255,7 +261,7 @@ public class MadCultistOnEntityTickUpdateProcedure {
 				});
 			}
 		}
-		if ((entity instanceof MadCultistEntity _datEntL116 && _datEntL116.getEntityData().get(MadCultistEntity.DATA_aggressive)) == false) {
+		if ((entity instanceof MadCultistEntity _datEntL121 && _datEntL121.getEntityData().get(MadCultistEntity.DATA_aggressive)) == false) {
 			if (Math.random() < 0.002) {
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {

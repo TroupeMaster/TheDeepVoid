@@ -24,6 +24,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 import net.mcreator.thedeepvoid.entity.PrisonGuardEntity;
 import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
+import net.mcreator.thedeepvoid.entity.ManiacEntity;
 import net.mcreator.thedeepvoid.entity.BoneCrawlerEntity;
 
 import javax.annotation.Nullable;
@@ -88,6 +89,22 @@ public class BoneCrawlerHurtProcedure {
 								(float) Mth.nextDouble(RandomSource.create(), 0.9, 1.1));
 					} else {
 						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:prison_guard_attack")), SoundSource.HOSTILE, 1, (float) Mth.nextDouble(RandomSource.create(), 0.9, 1.1), false);
+					}
+				}
+			}
+		}
+		if (sourceentity instanceof ManiacEntity && (sourceentity instanceof ManiacEntity _datEntL22 && _datEntL22.getEntityData().get(ManiacEntity.DATA_attacking)) == true
+				&& (entity instanceof LivingEntity _entUseItem23 ? _entUseItem23.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
+			if (Math.random() < 0.25) {
+				if (entity instanceof Player _player)
+					_player.getCooldowns().addCooldown((entity instanceof LivingEntity _entUseItem25 ? _entUseItem25.getUseItem() : ItemStack.EMPTY).getItem(), 70);
+				if (entity instanceof LivingEntity _entity)
+					_entity.stopUsingItem();
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.shield.break")), SoundSource.PLAYERS, (float) 0.4, 1);
+					} else {
+						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.shield.break")), SoundSource.PLAYERS, (float) 0.4, 1, false);
 					}
 				}
 			}

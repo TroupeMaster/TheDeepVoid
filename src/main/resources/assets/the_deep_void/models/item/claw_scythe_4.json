@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/clawscythe4",
+  "textures": {
+    "0": "the_deep_void:block/claw_scythe",
+    "particle": "the_deep_void:item/claw_scythe"
+  }
+}

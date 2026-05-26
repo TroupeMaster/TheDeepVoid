@@ -14,11 +14,19 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.projectile.SpectralArrow;
+import net.minecraft.world.entity.projectile.Arrow;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
+import net.minecraft.tags.TagKey;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
@@ -29,6 +37,13 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.entity.VoidPelletEntity;
 import net.mcreator.thedeepvoid.entity.VoidArrowEntity;
+import net.mcreator.thedeepvoid.entity.SpiteArrowEntity;
+import net.mcreator.thedeepvoid.entity.SoulFusedShotEntity;
+import net.mcreator.thedeepvoid.entity.ShotgunPelletEntity;
+import net.mcreator.thedeepvoid.entity.ShadowArrowEntity;
+import net.mcreator.thedeepvoid.entity.ShadeArrowEntity;
+import net.mcreator.thedeepvoid.entity.PerilBulletEntity;
+import net.mcreator.thedeepvoid.entity.IchorSpitEntity;
 import net.mcreator.thedeepvoid.entity.GoldenRotArrowEntity;
 import net.mcreator.thedeepvoid.entity.FleshArrowEntity;
 import net.mcreator.thedeepvoid.entity.BloodSpikeEntity;
@@ -199,13 +214,75 @@ public class BigShadeArrowHitProcedure {
 						(float) (amount + (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.POWER_ARROWS) + 1));
 			}
 		}
-		if (entity instanceof LivingEntity && immediatesourceentity instanceof VoidPelletEntity && !(entity instanceof VoidPelletEntity) && !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:gun")))) {
+		if (entity instanceof LivingEntity && (immediatesourceentity instanceof VoidPelletEntity || immediatesourceentity instanceof ShotgunPelletEntity) && !(entity instanceof VoidPelletEntity) && !(entity instanceof ShotgunPelletEntity)
+				&& !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:gun")))
+				&& !((entity instanceof LivingEntity _entUseItem135 ? _entUseItem135.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
 			}
-			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:gun"))), sourceentity), (float) amount);
+			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:gun"))), sourceentity),
+					(float) ((sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_HELMET.get()
+							&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_CHESTPLATE.get()
+							&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_LEGGINGS.get()
+							&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_BOOTS.get() ? amount * 1.2 : amount));
 			if (!immediatesourceentity.level().isClientSide())
 				immediatesourceentity.discard();
+		}
+		if (immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:bullet")))
+				&& !immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:nocooldown_bullet")))
+				&& !((entity instanceof LivingEntity _entUseItem150 ? _entUseItem150.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
+				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_HELMET.get()
+				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_CHESTPLATE.get()
+				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_LEGGINGS.get()
+				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_BOOTS.get()
+				&& !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy")))) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			}
+			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy"))), sourceentity),
+					(float) (amount * 1.2));
+			if (!(immediatesourceentity instanceof SoulFusedShotEntity) && !(immediatesourceentity instanceof PerilBulletEntity) && !(immediatesourceentity instanceof IchorSpitEntity)) {
+				if (!immediatesourceentity.level().isClientSide())
+					immediatesourceentity.discard();
+			}
+		}
+		if (!(immediatesourceentity == sourceentity) && !immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:bullet")))
+				&& !immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:nocooldown_bullet")))
+				&& !((entity instanceof LivingEntity _entUseItem170 ? _entUseItem170.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
+				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VULTURE_HELMET.get()
+				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VULTURE_CHESTPLATE.get()
+				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VULTURE_LEGGINGS.get()
+				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VULTURE_BOOTS.get()
+				&& (sourceentity instanceof Player _plrCldRem181
+						? _plrCldRem181.getCooldowns().getCooldownPercent((sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem(), 0f) * 100
+						: 0) <= 0) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			}
+			if (sourceentity instanceof Player _player)
+				_player.getCooldowns().addCooldown((sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem(), 5);
+			entity.hurt(damagesource, (float) (amount * 1.2));
+			if ((immediatesourceentity instanceof AbstractArrow _arrowContext ? _arrowContext.getPierceLevel() : 0) <= 0) {
+				if (!immediatesourceentity.level().isClientSide())
+					immediatesourceentity.discard();
+			}
+			if (immediatesourceentity instanceof Arrow || immediatesourceentity instanceof SpectralArrow || immediatesourceentity instanceof BigShadeArrowEntity || immediatesourceentity instanceof FleshArrowEntity
+					|| immediatesourceentity instanceof GoldenRotArrowEntity || immediatesourceentity instanceof ShadeArrowEntity || immediatesourceentity instanceof ShadowArrowEntity || immediatesourceentity instanceof SpiteArrowEntity
+					|| immediatesourceentity instanceof VoidArrowEntity) {
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.arrow.hit")), SoundSource.NEUTRAL, 1,
+								(float) Mth.nextDouble(RandomSource.create(), 12 / 11, 4 / 3));
+					} else {
+						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.arrow.hit")), SoundSource.NEUTRAL, 1,
+								(float) Mth.nextDouble(RandomSource.create(), 12 / 11, 4 / 3), false);
+					}
+				}
+				if (entity instanceof Player) {
+					if (entity instanceof Player _plr203)
+						_plr203.setArrowCount((int) ((entity instanceof Player _plr202 ? _plr202.getArrowCount() : 0) + 1));
+				}
+			}
 		}
 	}
 }

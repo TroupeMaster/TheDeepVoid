@@ -1556,15 +1556,6 @@
       }
     ]
   },
-  "bone_dunes_volcanic_loop": {
-    "subtitle": "subtitles.bone_dunes_volcanic_loop",
-    "sounds": [
-      {
-        "name": "the_deep_void:bone_dunes_volcanic_loop",
-        "stream": false
-      }
-    ]
-  },
   "bone_dunes_windy_loop": {
     "subtitle": "subtitles.bone_dunes_windy_loop",
     "sounds": [
@@ -1883,6 +1874,60 @@
     "sounds": [
       {
         "name": "the_deep_void:wanderer_idle",
+        "stream": false
+      }
+    ]
+  },
+  "double_barrel_insert": {
+    "subtitle": "subtitles.double_barrel_insert",
+    "sounds": [
+      {
+        "name": "the_deep_void:double_barrel_insert",
+        "stream": false
+      }
+    ]
+  },
+  "double_barrel_open": {
+    "subtitle": "subtitles.double_barrel_open",
+    "sounds": [
+      {
+        "name": "the_deep_void:double_barrel_open",
+        "stream": false
+      }
+    ]
+  },
+  "double_barrel_release": {
+    "subtitle": "subtitles.double_barrel_release",
+    "sounds": [
+      {
+        "name": "the_deep_void:double_barrel_flap",
+        "stream": false
+      }
+    ]
+  },
+  "double_barrel_trigger": {
+    "subtitle": "subtitles.double_barrel_trigger",
+    "sounds": [
+      {
+        "name": "the_deep_void:double_barrel_trigger",
+        "stream": false
+      }
+    ]
+  },
+  "double_barrel_shoot": {
+    "subtitle": "subtitles.double_barrel_shoot",
+    "sounds": [
+      {
+        "name": "the_deep_void:double_barrel_shoot",
+        "stream": false
+      }
+    ]
+  },
+  "bone_dunes_volcanic": {
+    "subtitle": "subtitles.bone_dunes_volcanic",
+    "sounds": [
+      {
+        "name": "the_deep_void:bone_dunes_volcanic_loop_new",
         "stream": false
       }
     ]

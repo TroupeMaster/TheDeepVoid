@@ -246,6 +246,7 @@ import net.mcreator.thedeepvoid.block.GoldenRottenCrateBlock;
 import net.mcreator.thedeepvoid.block.GoldenRegurgitatedMatterBlock;
 import net.mcreator.thedeepvoid.block.GoldenFleshCrateBlock;
 import net.mcreator.thedeepvoid.block.GluttonBlockBlock;
+import net.mcreator.thedeepvoid.block.GloomWitnessSaplingBlock;
 import net.mcreator.thedeepvoid.block.GloomVinesBlock;
 import net.mcreator.thedeepvoid.block.GapingPorousFleshBlock;
 import net.mcreator.thedeepvoid.block.FramedSulfurGlassPaneBlock;
@@ -914,6 +915,7 @@ public class TheDeepVoidModBlocks {
 	public static final RegistryObject<Block> LIVING_GLOOM_STEM = REGISTRY.register("living_gloom_stem", () -> new LivingGloomStemBlock());
 	public static final RegistryObject<Block> GLOOM_VINES = REGISTRY.register("gloom_vines", () -> new GloomVinesBlock());
 	public static final RegistryObject<Block> LIVING_GLOOM_VINES = REGISTRY.register("living_gloom_vines", () -> new LivingGloomVinesBlock());
+	public static final RegistryObject<Block> GLOOM_WITNESS_SAPLING = REGISTRY.register("gloom_witness_sapling", () -> new GloomWitnessSaplingBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

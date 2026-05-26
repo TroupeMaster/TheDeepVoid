@@ -20,7 +20,7 @@ import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.ThumperEntityEntity;
 import net.mcreator.thedeepvoid.entity.FleshWormEntity;
-import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
+import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 public class ThumperEntityOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
@@ -48,21 +48,21 @@ public class ThumperEntityOnEntityTickUpdateProcedure {
 			if ((entity instanceof ThumperEntityEntity _datEntI ? _datEntI.getEntityData().get(ThumperEntityEntity.DATA_summon) : 0) >= 400) {
 				if (entity instanceof ThumperEntityEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(ThumperEntityEntity.DATA_summon, 0);
-				if (Math.random() < (double) DeepVoidConfigConfiguration.FLESHWORMSPAWNCHANCE.get()) {
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:deep_rumble")), SoundSource.BLOCKS, 2, 1);
+					} else {
+						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:deep_rumble")), SoundSource.BLOCKS, 2, 1, false);
+					}
+				}
+				TheDeepVoidMod.queueServerWork(60, () -> {
 					if (world instanceof ServerLevel _level) {
 						Entity entityToSpawn = TheDeepVoidModEntities.FLESH_WORM.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
 						if (entityToSpawn != null) {
 							entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 						}
 					}
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:deep_rumble")), SoundSource.BLOCKS, 2, 1);
-						} else {
-							_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:deep_rumble")), SoundSource.BLOCKS, 2, 1, false);
-						}
-					}
-				}
+				});
 			} else {
 				if (entity instanceof ThumperEntityEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(ThumperEntityEntity.DATA_summon, (int) ((entity instanceof ThumperEntityEntity _datEntI ? _datEntI.getEntityData().get(ThumperEntityEntity.DATA_summon) : 0) + 1));
