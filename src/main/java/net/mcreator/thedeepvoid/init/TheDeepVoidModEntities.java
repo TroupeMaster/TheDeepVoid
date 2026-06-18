@@ -466,15 +466,15 @@ public class TheDeepVoidModEntities {
 	public static final RegistryObject<EntityType<FleshFangsEntity>> FLESH_FANGS = register("flesh_fangs",
 			EntityType.Builder.<FleshFangsEntity>of(FleshFangsEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FleshFangsEntity::new)
 
-					.sized(1f, 1f));
+					.sized(1f, 1.5f));
 	public static final RegistryObject<EntityType<GoreExpectoratorEntity>> GORE_EXPECTORATOR = register("gore_expectorator",
 			EntityType.Builder.<GoreExpectoratorEntity>of(GoreExpectoratorEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GoreExpectoratorEntity::new)
 
 					.sized(1.4f, 5f));
 	public static final RegistryObject<EntityType<BloodSpitEntity>> BLOOD_SPIT = register("blood_spit",
 			EntityType.Builder.<BloodSpitEntity>of(BloodSpitEntity::new, MobCategory.MISC).setCustomClientFactory(BloodSpitEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
-	public static final RegistryObject<EntityType<HiveBrainEntity>> HIVE_BRAIN = register("hive_brain",
-			EntityType.Builder.<HiveBrainEntity>of(HiveBrainEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(99).setUpdateInterval(3).setCustomClientFactory(HiveBrainEntity::new).fireImmune().sized(1f, 1f));
+	public static final RegistryObject<EntityType<HiveBrainEntity>> HIVE_BRAIN = register("hive_brain", EntityType.Builder.<HiveBrainEntity>of(HiveBrainEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(99)
+			.setUpdateInterval(3).setCustomClientFactory(HiveBrainEntity::new).fireImmune().sized(1.5f, 1.5f));
 	public static final RegistryObject<EntityType<RideableEyekinEntity>> RIDEABLE_EYEKIN = register("rideable_eyekin",
 			EntityType.Builder.<RideableEyekinEntity>of(RideableEyekinEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(74).setUpdateInterval(3).setCustomClientFactory(RideableEyekinEntity::new)
 
@@ -599,7 +599,7 @@ public class TheDeepVoidModEntities {
 	public static final RegistryObject<EntityType<AmbrosiaSpitEntity>> AMBROSIA_SPIT = register("ambrosia_spit",
 			EntityType.Builder.<AmbrosiaSpitEntity>of(AmbrosiaSpitEntity::new, MobCategory.MISC).setCustomClientFactory(AmbrosiaSpitEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<EyeOfTheWatcherEntity>> EYE_OF_THE_WATCHER = register("eye_of_the_watcher", EntityType.Builder.<EyeOfTheWatcherEntity>of(EyeOfTheWatcherEntity::new, MobCategory.MONSTER)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(99).setUpdateInterval(3).setCustomClientFactory(EyeOfTheWatcherEntity::new).fireImmune().sized(1f, 1f));
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(99).setUpdateInterval(3).setCustomClientFactory(EyeOfTheWatcherEntity::new).fireImmune().sized(1.5f, 1.5f));
 	public static final RegistryObject<EntityType<IchorSpitEntity>> ICHOR_SPIT = register("ichor_spit",
 			EntityType.Builder.<IchorSpitEntity>of(IchorSpitEntity::new, MobCategory.MISC).setCustomClientFactory(IchorSpitEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<FleshWormEntity>> FLESH_WORM = register("flesh_worm",

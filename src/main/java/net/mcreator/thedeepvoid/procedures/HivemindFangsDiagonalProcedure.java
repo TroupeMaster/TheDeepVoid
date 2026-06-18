@@ -1,29 +1,19 @@
 package net.mcreator.thedeepvoid.procedures;
 
-import net.minecraftforge.registries.ForgeRegistries;
-
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
-import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
-import net.mcreator.thedeepvoid.entity.HivemindTentaclesEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 public class HivemindFangsDiagonalProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+	public static void execute(LevelAccessor world, Entity entity) {
 		if (entity == null)
 			return;
-		if (world instanceof Level)
-			((Level) world).playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:hivemind_scream")), SoundSource.HOSTILE, 2, 1, false);
 		if (entity instanceof MisanthropicHivemindEntity) {
 			((MisanthropicHivemindEntity) entity).setAnimation("animation.hivemind_scream");
 		}
@@ -131,14 +121,5 @@ public class HivemindFangsDiagonalProcedure {
 				}
 			}
 		});
-		if (!(!world.getEntitiesOfClass(HivemindTentaclesEntity.class, AABB.ofSize(new Vec3(x, y, z), 20, 20, 20), e -> true).isEmpty())
-				&& (entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_fleshTentaclesCooldown) : 0) <= 0) {
-			if (world instanceof ServerLevel _level) {
-				Entity entityToSpawn = TheDeepVoidModEntities.HIVEMIND_TENTACLES.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-				if (entityToSpawn != null) {
-					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-				}
-			}
-		}
 	}
 }

@@ -46,7 +46,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.thedeepvoid.procedures.SkullSmasherTickUpdateProcedure;
-import net.mcreator.thedeepvoid.procedures.SkullSmasherEntityDiesProcedure;
+import net.mcreator.thedeepvoid.procedures.HivemindSummonEntityDiesProcedure;
 import net.mcreator.thedeepvoid.procedures.HivemindMinionPlayerCountProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
@@ -145,7 +145,7 @@ public class SkullSmasherEntity extends Monster implements GeoEntity {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		SkullSmasherEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
+		HivemindSummonEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), source.getEntity());
 	}
 
 	@Override
@@ -195,7 +195,7 @@ public class SkullSmasherEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.28);
-		builder = builder.add(Attributes.MAX_HEALTH, 80);
+		builder = builder.add(Attributes.MAX_HEALTH, 160);
 		builder = builder.add(Attributes.ARMOR, 6);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 24);

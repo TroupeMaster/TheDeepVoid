@@ -61,7 +61,7 @@ public class HollowedOnEntityTickUpdateProcedure {
 						final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
-							if (entityiterator instanceof MarrowRootsSpawnEntity) {
+							if (entityiterator instanceof MarrowRootsSpawnEntity && !((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 								if (entityiterator instanceof Mob _entity && (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _ent)
 									_entity.setTarget(_ent);
 								if (entityiterator instanceof Mob _entity)
@@ -71,8 +71,8 @@ public class HollowedOnEntityTickUpdateProcedure {
 						}
 					}
 				});
-			} else {
-				if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _livEnt31 && _livEnt31.hasEffect(TheDeepVoidModMobEffects.ROOT_BLIND.get()))) {
+			} else if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
+				if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) instanceof LivingEntity _livEnt35 && _livEnt35.hasEffect(TheDeepVoidModMobEffects.ROOT_BLIND.get()))) {
 					if (entity instanceof HollowedEntity _datEntSetI)
 						_datEntSetI.getEntityData().set(HollowedEntity.DATA_vines, (int) ((entity instanceof HollowedEntity _datEntI ? _datEntI.getEntityData().get(HollowedEntity.DATA_vines) : 0) + 1));
 				}

@@ -158,7 +158,6 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> APOSTASY_RELOAD = REGISTRY.register("apostasy_reload", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "apostasy_reload")));
 	public static final RegistryObject<SoundEvent> APOSTASY_SHOOT = REGISTRY.register("apostasy_shoot", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "apostasy_shoot")));
 	public static final RegistryObject<SoundEvent> BONK = REGISTRY.register("bonk", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "bonk")));
-	public static final RegistryObject<SoundEvent> UNDER_THE_ASYLUM = REGISTRY.register("under_the_asylum", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "under_the_asylum")));
 	public static final RegistryObject<SoundEvent> DEBILITATED_FALL = REGISTRY.register("debilitated_fall", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "debilitated_fall")));
 	public static final RegistryObject<SoundEvent> PRISON_GUARD_AMBIENT = REGISTRY.register("prison_guard_ambient", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "prison_guard_ambient")));
 	public static final RegistryObject<SoundEvent> PRISON_GUARD_ATTACK = REGISTRY.register("prison_guard_attack", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "prison_guard_attack")));
@@ -208,4 +207,6 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> DOUBLE_BARREL_TRIGGER = REGISTRY.register("double_barrel_trigger", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "double_barrel_trigger")));
 	public static final RegistryObject<SoundEvent> DOUBLE_BARREL_SHOOT = REGISTRY.register("double_barrel_shoot", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "double_barrel_shoot")));
 	public static final RegistryObject<SoundEvent> BONE_DUNES_VOLCANIC = REGISTRY.register("bone_dunes_volcanic", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "bone_dunes_volcanic")));
+	public static final RegistryObject<SoundEvent> UNDER_THE_ASYLUM = REGISTRY.register("under_the_asylum", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "under_the_asylum")));
+	public static final RegistryObject<SoundEvent> HIVEMIND_SUCK = REGISTRY.register("hivemind_suck", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hivemind_suck")));
 }

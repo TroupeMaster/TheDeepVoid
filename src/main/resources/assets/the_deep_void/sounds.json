@@ -1366,15 +1366,6 @@
       }
     ]
   },
-  "under_the_asylum": {
-    "subtitle": "subtitles.under_the_asylum",
-    "sounds": [
-      {
-        "name": "the_deep_void:under_the_asylum_ogg",
-        "stream": false
-      }
-    ]
-  },
   "debilitated_fall": {
     "subtitle": "subtitles.debilitated_fall",
     "sounds": [
@@ -1928,6 +1919,24 @@
     "sounds": [
       {
         "name": "the_deep_void:bone_dunes_volcanic_loop_new",
+        "stream": false
+      }
+    ]
+  },
+  "under_the_asylum": {
+    "subtitle": "subtitles.under_the_asylum",
+    "sounds": [
+      {
+        "name": "the_deep_void:under_the_asylum",
+        "stream": false
+      }
+    ]
+  },
+  "hivemind_suck": {
+    "subtitle": "subtitles.hivemind_suck",
+    "sounds": [
+      {
+        "name": "the_deep_void:hivemind_sucknew",
         "stream": false
       }
     ]

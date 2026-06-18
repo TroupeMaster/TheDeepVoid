@@ -46,7 +46,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.thedeepvoid.procedures.SawThrowerTickUpdateProcedure;
-import net.mcreator.thedeepvoid.procedures.SawThrowerEntityDiesProcedure;
+import net.mcreator.thedeepvoid.procedures.HivemindSummonEntityDiesProcedure;
 import net.mcreator.thedeepvoid.procedures.HivemindMinionPlayerCountProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
@@ -147,7 +147,7 @@ public class SawThrowerEntity extends Monster implements GeoEntity {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		SawThrowerEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
+		HivemindSummonEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), source.getEntity());
 	}
 
 	@Override
@@ -200,7 +200,7 @@ public class SawThrowerEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.32);
-		builder = builder.add(Attributes.MAX_HEALTH, 90);
+		builder = builder.add(Attributes.MAX_HEALTH, 180);
 		builder = builder.add(Attributes.ARMOR, 4);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 24);

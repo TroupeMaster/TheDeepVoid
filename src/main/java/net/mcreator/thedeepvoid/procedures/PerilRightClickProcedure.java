@@ -18,12 +18,18 @@ import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.core.particles.SimpleParticleType;
 import net.minecraft.core.BlockPos;
+import net.minecraft.advancements.AdvancementProgress;
+import net.minecraft.advancements.Advancement;
 
 import net.mcreator.thedeepvoid.item.PerilItem;
+import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.PerilBulletEntity;
@@ -85,6 +91,19 @@ public class PerilRightClickProcedure {
 							}
 						}
 						itemstack.getOrCreateTag().putDouble("shot", (itemstack.getOrCreateTag().getDouble("shot") - 1));
+						if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= 0) {
+							if (world instanceof Level _level) {
+								if (!_level.isClientSide()) {
+									_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fleshy_explosion")), SoundSource.PLAYERS, 1, 1);
+								} else {
+									_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fleshy_explosion")), SoundSource.PLAYERS, 1, 1, false);
+								}
+							}
+							if (world instanceof ServerLevel _level)
+								_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.LASTING_BLOOD.get()), (entity.getX()), (entity.getY() + entity.getEyeHeight()), (entity.getZ()), 24, 0.5, 0.5, 0.5, 0.25);
+							if (world instanceof ServerLevel _level)
+								_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.BRAIN_PIECE.get()), (entity.getX()), (entity.getY() + entity.getEyeHeight()), (entity.getZ()), 24, 0.5, 0.1, 0.5, 0.25);
+						}
 					} else {
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {
@@ -94,6 +113,17 @@ public class PerilRightClickProcedure {
 							}
 						}
 						itemstack.getOrCreateTag().putDouble("adrenaline", (itemstack.getOrCreateTag().getDouble("adrenaline") + 1));
+						if (itemstack.getOrCreateTag().getDouble("adrenaline") >= 5 && !(entity instanceof ServerPlayer _plr87 && _plr87.level() instanceof ServerLevel
+								&& _plr87.getAdvancements().getOrStartProgress(_plr87.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:i_cant_stop_winning"))).isDone())) {
+							if (entity instanceof ServerPlayer _player) {
+								Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:i_cant_stop_winning"));
+								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+								if (!_ap.isDone()) {
+									for (String criteria : _ap.getRemainingCriteria())
+										_player.getAdvancements().award(_adv, criteria);
+								}
+							}
+						}
 					}
 				});
 			} else {

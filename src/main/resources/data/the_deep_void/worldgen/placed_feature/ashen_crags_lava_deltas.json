@@ -1,0 +1,27 @@
+{
+  "feature": "the_deep_void:ashen_crags_lava_deltas",
+  "placement": [
+    {
+      "type": "minecraft:count",
+      "count": 128
+    },
+    {
+      "type": "minecraft:in_square"
+    },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": {
+          "above_bottom": 2
+        },
+        "max_inclusive": {
+          "absolute": 45
+        }
+      }
+    },
+    {
+      "type": "minecraft:biome"
+    }
+  ]
+}

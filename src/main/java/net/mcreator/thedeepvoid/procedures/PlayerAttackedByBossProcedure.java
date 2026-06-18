@@ -32,10 +32,15 @@ import net.mcreator.thedeepvoid.entity.SeekerEntity;
 import net.mcreator.thedeepvoid.entity.SawThrowerEntity;
 import net.mcreator.thedeepvoid.entity.PrimordialBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
+import net.mcreator.thedeepvoid.entity.HivemindTentaclesEntity;
 import net.mcreator.thedeepvoid.entity.HiveWatcherEntity;
+import net.mcreator.thedeepvoid.entity.HiveBrainEntity;
 import net.mcreator.thedeepvoid.entity.GiantShadowHandEntity;
+import net.mcreator.thedeepvoid.entity.GiantBoneCrawlerEggEntity;
 import net.mcreator.thedeepvoid.entity.FleshFangsEntity;
+import net.mcreator.thedeepvoid.entity.EyeOfTheWatcherEntity;
 import net.mcreator.thedeepvoid.entity.BoneSawEntity;
+import net.mcreator.thedeepvoid.entity.BloodSpitEntity;
 import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
@@ -46,17 +51,23 @@ public class PlayerAttackedByBossProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getSource(), event.getEntity(), event.getSource().getEntity(), event.getAmount());
+			execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getSource(), event.getEntity(), event.getSource().getDirectEntity(), event.getSource().getEntity(),
+					event.getAmount());
 		}
 	}
 
-	public static void execute(LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity sourceentity, double amount) {
-		execute(null, world, x, y, z, damagesource, entity, sourceentity, amount);
+	public static void execute(LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity immediatesourceentity, Entity sourceentity, double amount) {
+		execute(null, world, x, y, z, damagesource, entity, immediatesourceentity, sourceentity, amount);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity sourceentity, double amount) {
-		if (damagesource == null || entity == null || sourceentity == null)
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity immediatesourceentity, Entity sourceentity, double amount) {
+		if (damagesource == null || entity == null || immediatesourceentity == null || sourceentity == null)
 			return;
+		if ((entity instanceof HiveBrainEntity || entity instanceof EyeOfTheWatcherEntity || entity instanceof GiantBoneCrawlerEggEntity) && !(sourceentity instanceof Player)) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			}
+		}
 		if (amount > 1) {
 			if (entity instanceof Player && ((sourceentity instanceof WeaverOfSoulsBossEntity || sourceentity instanceof ShadowHandEntity || sourceentity instanceof SeekerEntity)
 					&& !world.getEntitiesOfClass(WeaverOfSoulsBossEntity.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()
@@ -76,8 +87,8 @@ public class PlayerAttackedByBossProcedure {
 				}
 			}
 			if (entity instanceof Player && (sourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:boss"))) || sourceentity instanceof GiantShadowHandEntity)
-					&& !((entity instanceof LivingEntity _entUseItem20 ? _entUseItem20.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
-					&& !(entity instanceof LivingEntity _livEnt22 && _livEnt22.hasEffect(TheDeepVoidModMobEffects.BROKEN_ARMOR.get())) && DeepVoidConfigConfiguration.BOSSESBREAKARMOR.get() == true) {
+					&& !((entity instanceof LivingEntity _entUseItem24 ? _entUseItem24.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
+					&& !(entity instanceof LivingEntity _livEnt26 && _livEnt26.hasEffect(TheDeepVoidModMobEffects.BROKEN_ARMOR.get())) && DeepVoidConfigConfiguration.BOSSESBREAKARMOR.get() == true) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.BROKEN_ARMOR.get(), 400, 0));
 			}
@@ -104,6 +115,14 @@ public class PlayerAttackedByBossProcedure {
 			}
 			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:capped_damage"))), sourceentity),
 					(float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) * (double) DeepVoidConfigConfiguration.DAMAGECAPPERCENTAGE.get()));
+		}
+		if ((entity instanceof MisanthropicHivemindEntity || entity instanceof SawThrowerEntity || entity instanceof SkullSmasherEntity || entity instanceof FleshFangsEntity || entity instanceof HivemindTentaclesEntity)
+				&& immediatesourceentity instanceof BloodSpitEntity) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			}
+			if (!immediatesourceentity.level().isClientSide())
+				immediatesourceentity.discard();
 		}
 	}
 }

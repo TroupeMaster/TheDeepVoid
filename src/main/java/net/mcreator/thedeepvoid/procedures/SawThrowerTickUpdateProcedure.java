@@ -76,9 +76,12 @@ public class SawThrowerTickUpdateProcedure {
 					}
 				}
 			});
-		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 100) {
+		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 80) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 99, false, false));
+			if (entity instanceof SawThrowerEntity) {
+				((SawThrowerEntity) entity).setAnimation("empty");
+			}
 			if (entity instanceof SawThrowerEntity) {
 				((SawThrowerEntity) entity).setAnimation("animation.sawThrower_shoot");
 			}
@@ -108,15 +111,13 @@ public class SawThrowerTickUpdateProcedure {
 					}
 				}
 			});
-		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 200) {
+		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 180) {
 			if (entity instanceof SawThrowerEntity) {
 				((SawThrowerEntity) entity).setAnimation("animation.sawThrower_spin");
 			}
 			TheDeepVoidMod.queueServerWork(10, () -> {
 				if (entity instanceof SawThrowerEntity _datEntSetL)
 					_datEntSetL.getEntityData().set(SawThrowerEntity.DATA_spinning, true);
-				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 1, false, false));
 				if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 30, 30, 30), e -> true).isEmpty()) {
 					if (entity instanceof Mob _entity)
 						_entity.getNavigation().moveTo((((Entity) world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 30, 30, 30), e -> true).stream().sorted(new Object() {
@@ -138,7 +139,7 @@ public class SawThrowerTickUpdateProcedure {
 				if (entity instanceof SawThrowerEntity _datEntSetL)
 					_datEntSetL.getEntityData().set(SawThrowerEntity.DATA_spinning, false);
 			});
-		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 300) {
+		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 240) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 99, false, false));
 			if (entity instanceof SawThrowerEntity) {
@@ -170,9 +171,12 @@ public class SawThrowerTickUpdateProcedure {
 					}
 				}
 			});
-		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 340) {
+		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 260) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 30, 99, false, false));
+			if (entity instanceof SawThrowerEntity) {
+				((SawThrowerEntity) entity).setAnimation("empty");
+			}
 			if (entity instanceof SawThrowerEntity) {
 				((SawThrowerEntity) entity).setAnimation("animation.sawThrower_shoot");
 			}
@@ -202,7 +206,7 @@ public class SawThrowerTickUpdateProcedure {
 					}
 				}
 			});
-		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 380) {
+		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 390) {
 			if (entity instanceof SawThrowerEntity) {
 				((SawThrowerEntity) entity).setAnimation("animation.sawThrower_spin");
 			}
@@ -235,6 +239,9 @@ public class SawThrowerTickUpdateProcedure {
 		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) == 440) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 80, 99, false, false));
+			if (entity instanceof SawThrowerEntity) {
+				((SawThrowerEntity) entity).setAnimation("empty");
+			}
 			if (entity instanceof SawThrowerEntity) {
 				((SawThrowerEntity) entity).setAnimation("animation.sawThrower_teleport");
 			}
@@ -277,21 +284,21 @@ public class SawThrowerTickUpdateProcedure {
 					((SawThrowerEntity) entity).setAnimation("animation.sawThrower_out");
 				}
 			});
-		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) >= 560) {
+		} else if ((entity instanceof SawThrowerEntity _datEntI ? _datEntI.getEntityData().get(SawThrowerEntity.DATA_attackChance) : 0) >= 500) {
 			if (entity instanceof SawThrowerEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(SawThrowerEntity.DATA_attackChance, 0);
 		}
-		if ((entity instanceof SawThrowerEntity _datEntL91 && _datEntL91.getEntityData().get(SawThrowerEntity.DATA_spinning)) == true && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
+		if ((entity instanceof SawThrowerEntity _datEntL93 && _datEntL93.getEntityData().get(SawThrowerEntity.DATA_spinning)) == true && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(6 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
 					if (entityiterator instanceof Player) {
-						if ((entityiterator instanceof LivingEntity _entUseItem94 ? _entUseItem94.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
+						if ((entityiterator instanceof LivingEntity _entUseItem96 ? _entUseItem96.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
 							if (entityiterator instanceof Player _player)
-								_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem96 ? _entUseItem96.getUseItem() : ItemStack.EMPTY).getItem(), 100);
+								_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem98 ? _entUseItem98.getUseItem() : ItemStack.EMPTY).getItem(), 100);
 							{
-								ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem98 ? _entUseItem98.getUseItem() : ItemStack.EMPTY);
+								ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem100 ? _entUseItem100.getUseItem() : ItemStack.EMPTY);
 								if (_ist.hurt(1, RandomSource.create(), null)) {
 									_ist.shrink(1);
 									_ist.setDamageValue(0);

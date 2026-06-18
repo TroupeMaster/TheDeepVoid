@@ -452,6 +452,20 @@
               }
             }
           ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "the_deep_void:rune_of_void",
+          "weight": 8,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
         }
       ]
     },

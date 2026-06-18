@@ -66,6 +66,12 @@ public class MisanthropicHivemindEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Integer> DATA_sawThrowerCooldown = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_skullSmasherCooldown = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_fleshTentaclesCooldown = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_bloodSpit = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_attacking = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_sucking = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_digesting = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_summonedMinions = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_skipSummons = SynchedEntityData.defineId(MisanthropicHivemindEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -90,7 +96,7 @@ public class MisanthropicHivemindEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "misanthropic_hivemind");
+		this.entityData.define(TEXTURE, "hivemindrework_pinkbrain");
 		this.entityData.define(DATA_playerCount, 0);
 		this.entityData.define(DATA_baseHealth, 0);
 		this.entityData.define(DATA_dying, false);
@@ -98,6 +104,12 @@ public class MisanthropicHivemindEntity extends Monster implements GeoEntity {
 		this.entityData.define(DATA_sawThrowerCooldown, 0);
 		this.entityData.define(DATA_skullSmasherCooldown, 0);
 		this.entityData.define(DATA_fleshTentaclesCooldown, 0);
+		this.entityData.define(DATA_bloodSpit, 0);
+		this.entityData.define(DATA_attacking, false);
+		this.entityData.define(DATA_sucking, 0);
+		this.entityData.define(DATA_digesting, false);
+		this.entityData.define(DATA_summonedMinions, false);
+		this.entityData.define(DATA_skipSummons, false);
 	}
 
 	public void setTexture(String texture) {
@@ -189,6 +201,12 @@ public class MisanthropicHivemindEntity extends Monster implements GeoEntity {
 		compound.putInt("DatasawThrowerCooldown", this.entityData.get(DATA_sawThrowerCooldown));
 		compound.putInt("DataskullSmasherCooldown", this.entityData.get(DATA_skullSmasherCooldown));
 		compound.putInt("DatafleshTentaclesCooldown", this.entityData.get(DATA_fleshTentaclesCooldown));
+		compound.putInt("DatabloodSpit", this.entityData.get(DATA_bloodSpit));
+		compound.putBoolean("Dataattacking", this.entityData.get(DATA_attacking));
+		compound.putInt("Datasucking", this.entityData.get(DATA_sucking));
+		compound.putBoolean("Datadigesting", this.entityData.get(DATA_digesting));
+		compound.putBoolean("DatasummonedMinions", this.entityData.get(DATA_summonedMinions));
+		compound.putBoolean("DataskipSummons", this.entityData.get(DATA_skipSummons));
 	}
 
 	@Override
@@ -210,6 +228,18 @@ public class MisanthropicHivemindEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_skullSmasherCooldown, compound.getInt("DataskullSmasherCooldown"));
 		if (compound.contains("DatafleshTentaclesCooldown"))
 			this.entityData.set(DATA_fleshTentaclesCooldown, compound.getInt("DatafleshTentaclesCooldown"));
+		if (compound.contains("DatabloodSpit"))
+			this.entityData.set(DATA_bloodSpit, compound.getInt("DatabloodSpit"));
+		if (compound.contains("Dataattacking"))
+			this.entityData.set(DATA_attacking, compound.getBoolean("Dataattacking"));
+		if (compound.contains("Datasucking"))
+			this.entityData.set(DATA_sucking, compound.getInt("Datasucking"));
+		if (compound.contains("Datadigesting"))
+			this.entityData.set(DATA_digesting, compound.getBoolean("Datadigesting"));
+		if (compound.contains("DatasummonedMinions"))
+			this.entityData.set(DATA_summonedMinions, compound.getBoolean("DatasummonedMinions"));
+		if (compound.contains("DataskipSummons"))
+			this.entityData.set(DATA_skipSummons, compound.getBoolean("DataskipSummons"));
 	}
 
 	@Override

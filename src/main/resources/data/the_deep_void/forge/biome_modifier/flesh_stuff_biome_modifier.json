@@ -2,5 +2,5 @@
   "type": "forge:add_features",
   "biomes": "the_deep_void:gloomy_deathgrounds",
   "features": "the_deep_void:flesh_stuff",
-  "step": "surface_structures"
+  "step": "vegetal_decoration"
 }

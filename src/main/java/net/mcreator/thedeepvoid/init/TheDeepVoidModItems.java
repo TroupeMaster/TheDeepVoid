@@ -119,6 +119,7 @@ import net.mcreator.thedeepvoid.item.SaturationNeedleItem;
 import net.mcreator.thedeepvoid.item.SacredVoidriumItem;
 import net.mcreator.thedeepvoid.item.SacredCinnabarItem;
 import net.mcreator.thedeepvoid.item.RustyClawsItem;
+import net.mcreator.thedeepvoid.item.RuneOfVoidItem;
 import net.mcreator.thedeepvoid.item.RoughVoidriumItem;
 import net.mcreator.thedeepvoid.item.RottenSwordItem;
 import net.mcreator.thedeepvoid.item.RottenShovelItem;
@@ -1278,6 +1279,7 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> CHAIN_GAUNTLET = REGISTRY.register("chain_gauntlet", () -> new ChainGauntletItem());
 	public static final RegistryObject<Item> STRENGTH_NEEDLE = REGISTRY.register("strength_needle", () -> new StrengthNeedleItem());
 	public static final RegistryObject<Item> WEAKNESS_NEEDLE = REGISTRY.register("weakness_needle", () -> new WeaknessNeedleItem());
+	public static final RegistryObject<Item> RUNE_OF_VOID = REGISTRY.register("rune_of_void", () -> new RuneOfVoidItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items

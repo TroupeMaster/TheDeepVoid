@@ -505,6 +505,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.VOID_PENDANT.get());
 				tabData.accept(TheDeepVoidModItems.VOID_MIRROR.get());
 				tabData.accept(TheDeepVoidModItems.ONYX_NEEDLE.get());
+				tabData.accept(TheDeepVoidModItems.RUNE_OF_VOID.get());
 				tabData.accept(TheDeepVoidModItems.CALL_UPON_THE_HIVE.get());
 				tabData.accept(TheDeepVoidModItems.STALKER_TREAT.get());
 				tabData.accept(TheDeepVoidModItems.LICKER_HOOK.get());

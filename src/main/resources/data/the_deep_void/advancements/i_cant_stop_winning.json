@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:peril"
+    },
+    "title": {
+      "translate": "advancements.i_cant_stop_winning.title"
+    },
+    "description": {
+      "translate": "advancements.i_cant_stop_winning.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "i_cant_stop_winning_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "rewards": {
+    "experience": 25
+  },
+  "parent": "the_deep_void:unholy_psalmody"
+}

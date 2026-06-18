@@ -4,7 +4,6 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
@@ -12,7 +11,6 @@ import net.minecraft.network.chat.Component;
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
-import java.util.UUID;
 import java.util.List;
 import java.util.Comparator;
 import java.util.ArrayList;
@@ -56,9 +54,5 @@ public class ApostleSpawnsProcedure {
 				}
 			}
 		}
-		if (!(((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_KNOCKBACK)
-				.hasModifier((new AttributeModifier(UUID.fromString("652232f0-1bca-49d8-8ea8-614e5516e1aa"), "apostleKnockback", (-1), AttributeModifier.Operation.MULTIPLY_TOTAL)))))
-			((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_KNOCKBACK)
-					.addTransientModifier((new AttributeModifier(UUID.fromString("652232f0-1bca-49d8-8ea8-614e5516e1aa"), "apostleKnockback", (-1), AttributeModifier.Operation.MULTIPLY_TOTAL)));
 	}
 }

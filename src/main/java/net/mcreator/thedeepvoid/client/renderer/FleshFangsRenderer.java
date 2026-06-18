@@ -18,7 +18,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 public class FleshFangsRenderer extends GeoEntityRenderer<FleshFangsEntity> {
 	public FleshFangsRenderer(EntityRendererProvider.Context renderManager) {
 		super(renderManager, new FleshFangsModel());
-		this.shadowRadius = 0.2f;
+		this.shadowRadius = 0f;
 	}
 
 	@Override

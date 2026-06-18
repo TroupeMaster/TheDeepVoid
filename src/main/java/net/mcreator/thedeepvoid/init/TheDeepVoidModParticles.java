@@ -27,6 +27,7 @@ import net.mcreator.thedeepvoid.client.particle.PentagramParticle;
 import net.mcreator.thedeepvoid.client.particle.MobRespawnParticle;
 import net.mcreator.thedeepvoid.client.particle.LunaticEyeParticle;
 import net.mcreator.thedeepvoid.client.particle.LickerTongueParticle;
+import net.mcreator.thedeepvoid.client.particle.LastingBloodParticle;
 import net.mcreator.thedeepvoid.client.particle.IchorLavaParticle;
 import net.mcreator.thedeepvoid.client.particle.IchorFlameParticle;
 import net.mcreator.thedeepvoid.client.particle.HookLineParticle;
@@ -34,6 +35,7 @@ import net.mcreator.thedeepvoid.client.particle.GrimSweepParticle;
 import net.mcreator.thedeepvoid.client.particle.GrimHookLineParticle;
 import net.mcreator.thedeepvoid.client.particle.GoldenSmokeParticle;
 import net.mcreator.thedeepvoid.client.particle.GoldBloodParticle;
+import net.mcreator.thedeepvoid.client.particle.ForgetfulFogParticle;
 import net.mcreator.thedeepvoid.client.particle.FlyParticle;
 import net.mcreator.thedeepvoid.client.particle.FlameOfSpiteParticle;
 import net.mcreator.thedeepvoid.client.particle.FallingVoidAshParticle;
@@ -45,6 +47,7 @@ import net.mcreator.thedeepvoid.client.particle.DarkSweepParticle;
 import net.mcreator.thedeepvoid.client.particle.ChainParticle;
 import net.mcreator.thedeepvoid.client.particle.BrokenBoneParticle;
 import net.mcreator.thedeepvoid.client.particle.BrightSmokeParticle;
+import net.mcreator.thedeepvoid.client.particle.BrainPieceParticle;
 import net.mcreator.thedeepvoid.client.particle.BloodSmokeParticle;
 import net.mcreator.thedeepvoid.client.particle.BloodParticle;
 import net.mcreator.thedeepvoid.client.particle.BlackTentacleParticle;
@@ -98,5 +101,8 @@ public class TheDeepVoidModParticles {
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.ICHOR_LAVA.get(), IchorLavaParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.CHAIN.get(), ChainParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.SHOTGUN_SHELL.get(), ShotgunShellParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.FORGETFUL_FOG.get(), ForgetfulFogParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.BRAIN_PIECE.get(), BrainPieceParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.LASTING_BLOOD.get(), LastingBloodParticle::provider);
 	}
 }

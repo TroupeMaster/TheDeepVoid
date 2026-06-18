@@ -4,7 +4,7 @@
   "pattern": [
     "a a",
     "aba",
-    "aaa"
+    "aca"
   ],
   "key": {
     "a": {
@@ -12,6 +12,9 @@
     },
     "b": {
       "item": "the_deep_void:tattered_cult_tunic"
+    },
+    "c": {
+      "item": "the_deep_void:rune_of_void"
     }
   },
   "result": {

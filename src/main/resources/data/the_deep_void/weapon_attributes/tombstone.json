@@ -11,7 +11,6 @@
         "angle": 150,
         "upswing": 0.5,
         "animation": "bettercombat:two_handed_slash_horizontal_right",
-        }
       },
       {
         "hitbox": "HORIZONTAL_PLANE",
@@ -19,7 +18,6 @@
         "angle": 150,
         "upswing": 0.5,
         "animation": "bettercombat:two_handed_slash_horizontal_left",
-        }
       },
       {
         "hitbox": "VERTICAL_PLANE",
@@ -27,7 +25,6 @@
         "angle": 150,
         "upswing": 0.5,
         "animation": "bettercombat:two_handed_slam",
-        }
       }
     ]
   }

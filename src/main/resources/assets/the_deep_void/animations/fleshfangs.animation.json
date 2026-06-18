@@ -1,56 +1,66 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.fleshFangs_idle": {
-			"loop": true,
-			"animation_length": 1,
-			"bones": {
-				"left_fang": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, -5]
-						},
-						"0.5": {
-							"vector": [0, 0, 7.5]
-						},
-						"1.0": {
-							"vector": [0, 0, -5]
-						}
-					}
-				},
-				"right_fang": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 5]
-						},
-						"0.5": {
-							"vector": [0, 0, -7.5]
-						},
-						"1.0": {
-							"vector": [0, 0, 5]
-						}
-					}
-				}
-			}
-		},
-		"animation.fleshFangs_attack": {
+		"animation.fleshFangs_appear": {
 			"animation_length": 0.5,
 			"bones": {
 				"main": {
 					"position": {
-						"vector": [0, 1, 0]
+						"0.0": {
+							"vector": [0, -8, 0]
+						},
+						"0.5": {
+							"vector": [0, -4, 0]
+						}
 					}
 				},
+				"left_fang": {
+					"rotation": {
+						"vector": [0, 0, 60]
+					}
+				},
+				"right_fang": {
+					"rotation": {
+						"vector": [0, 0, -60]
+					}
+				}
+			}
+		},
+		"animation.fleshFangs_idle": {
+			"loop": true,
+			"animation_length": 0.0417,
+			"bones": {
+				"main": {
+					"position": {
+						"vector": [0, -4, 0]
+					}
+				},
+				"left_fang": {
+					"rotation": {
+						"vector": [0, 0, 60]
+					}
+				},
+				"right_fang": {
+					"rotation": {
+						"vector": [0, 0, -60]
+					}
+				}
+			}
+		},
+		"animation.fleshFangs_caught": {
+			"loop": true,
+			"animation_length": 0.5,
+			"bones": {
 				"left_fang": {
 					"rotation": {
 						"0.0": {
 							"vector": [0, 0, 40]
 						},
-						"0.125": {
+						"0.25": {
 							"vector": [0, 0, -5]
 						},
 						"0.5": {
-							"vector": [0, 0, 35]
+							"vector": [0, 0, 40]
 						}
 					}
 				},
@@ -59,79 +69,26 @@
 						"0.0": {
 							"vector": [0, 0, -40]
 						},
-						"0.125": {
+						"0.25": {
 							"vector": [0, 0, 5]
 						},
 						"0.5": {
-							"vector": [0, 0, -35]
+							"vector": [0, 0, -40]
 						}
 					}
 				}
 			}
 		},
-		"animation.fleshFangs_appear": {
-			"animation_length": 0.5833,
-			"bones": {
-				"main": {
-					"position": {
-						"0.0": {
-							"vector": [0, -8, 0]
-						},
-						"0.1667": {
-							"vector": [0, -3, 0]
-						},
-						"0.3333": {
-							"vector": [0, 0, 0]
-						},
-						"0.5": {
-							"vector": [0, 0, 0]
-						}
-					}
-				},
-				"left_fang": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, 60]
-						},
-						"0.3333": {
-							"vector": [0, 0, 20]
-						},
-						"0.5": {
-							"vector": [0, 0, -5]
-						}
-					}
-				},
-				"right_fang": {
-					"rotation": {
-						"0.0": {
-							"vector": [0, 0, -60]
-						},
-						"0.3333": {
-							"vector": [0, 0, -20]
-						},
-						"0.5": {
-							"vector": [0, 0, 5]
-						}
-					}
-				}
-			}
-		},
-		"animation.fleshFangs_despawn": {
-			"animation_length": 0.5833,
+		"animation.fleshFangs_death": {
+			"animation_length": 0.25,
 			"bones": {
 				"main": {
 					"position": {
 						"0.0": {
 							"vector": [0, 0, 0]
 						},
-						"0.1667": {
-							"vector": [0, 0, 0]
-						},
-						"0.3333": {
-							"vector": [0, -3, 0]
-						},
-						"0.5": {
-							"vector": [0, -8, 0]
+						"0.25": {
+							"vector": [0, -4, 0]
 						}
 					}
 				},
@@ -140,11 +97,8 @@
 						"0.0": {
 							"vector": [0, 0, -5]
 						},
-						"0.1667": {
-							"vector": [0, 0, 20]
-						},
-						"0.5": {
-							"vector": [0, 0, 60]
+						"0.25": {
+							"vector": [0, 0, 80]
 						}
 					}
 				},
@@ -153,16 +107,12 @@
 						"0.0": {
 							"vector": [0, 0, 5]
 						},
-						"0.1667": {
-							"vector": [0, 0, -20]
-						},
-						"0.5": {
-							"vector": [0, 0, -60]
+						"0.25": {
+							"vector": [0, 0, -80]
 						}
 					}
 				}
 			}
 		}
-	},
-	"geckolib_format_version": 2
+	}
 }

@@ -26,10 +26,9 @@ public class CreepOMeterItem extends Item {
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
 		list.add(Component.literal("\u00A7bCreative mode only"));
-		list.add(Component.literal("\u00A79Shows the spawn timer for the Stalker/Nightmare"));
-		list.add(Component.literal(" \u00A79-Stalker is above y=0 and Nightmare below"));
-		list.add(Component.literal(" \u00A79-Right click to show the Stalking Stalker/Darkness count instead"));
-		list.add(Component.literal(" \u00A79-Right click while sneaking to show if the Stalker is after you above y=0 or the Darkness Damage Build Up below y=0"));
+		list.add(Component.literal("\u00A79Shows the spawn timer for the Stalker"));
+		list.add(Component.literal(" \u00A79-Right click to show the Stalking Stalker"));
+		list.add(Component.literal(" \u00A79-Right click while sneaking to show if the Stalker is after you"));
 	}
 
 	@Override

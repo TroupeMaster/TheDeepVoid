@@ -40,7 +40,6 @@ import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.thedeepvoid.procedures.HivemindTentaclesOnEntityTickUpdateProcedure;
 import net.mcreator.thedeepvoid.procedures.HivemindTentaclesEntityIsHurtProcedure;
-import net.mcreator.thedeepvoid.procedures.HivemindTentaclesDiesProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 public class HivemindTentaclesEntity extends PathfinderMob implements GeoEntity {
@@ -136,12 +135,6 @@ public class HivemindTentaclesEntity extends PathfinderMob implements GeoEntity 
 	}
 
 	@Override
-	public void die(DamageSource source) {
-		super.die(source);
-		HivemindTentaclesDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
-	}
-
-	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
@@ -157,7 +150,7 @@ public class HivemindTentaclesEntity extends PathfinderMob implements GeoEntity 
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		HivemindTentaclesOnEntityTickUpdateProcedure.execute(this);
+		HivemindTentaclesOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
 
@@ -191,7 +184,7 @@ public class HivemindTentaclesEntity extends PathfinderMob implements GeoEntity 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0);
-		builder = builder.add(Attributes.MAX_HEALTH, 20);
+		builder = builder.add(Attributes.MAX_HEALTH, 40);
 		builder = builder.add(Attributes.ARMOR, 0);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 0);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 1);

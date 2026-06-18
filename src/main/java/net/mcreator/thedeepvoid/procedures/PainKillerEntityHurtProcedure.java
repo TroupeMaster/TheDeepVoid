@@ -65,5 +65,12 @@ public class PainKillerEntityHurtProcedure {
 							(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.PAIN_KILLER.get()).getAmplifier() : 0) - 1)));
 			}
 		}
+		if (entity instanceof LivingEntity _livEnt17 && _livEnt17.hasEffect(TheDeepVoidModMobEffects.TRIBUTE_TO_THE_VOID.get()) && !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:tribute")))
+				&& sourceentity instanceof LivingEntity) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			}
+			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:tribute"))), sourceentity), (float) (amount * 2));
+		}
 	}
 }

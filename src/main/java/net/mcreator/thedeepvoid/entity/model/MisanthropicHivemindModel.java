@@ -9,12 +9,12 @@ import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
 public class MisanthropicHivemindModel extends GeoModel<MisanthropicHivemindEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(MisanthropicHivemindEntity entity) {
-		return new ResourceLocation("the_deep_void", "animations/hivemind.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/hivemindrework.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(MisanthropicHivemindEntity entity) {
-		return new ResourceLocation("the_deep_void", "geo/hivemind.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/hivemindrework.geo.json");
 	}
 
 	@Override
