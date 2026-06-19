@@ -90,6 +90,16 @@ public class GluttonBlockHopperProcedure {
 				}
 			}.getItemStack(world, BlockPos.containing(x, y, z), 0)).is(ItemTags.create(new ResourceLocation("the_deep_void:glutton_end")))) {
 				GluttonBlockHopperItemEnterProcedure.execute(world, x, y, z, "/loot spawn ~ ~ ~ loot the_deep_void:blocks/glutton_end");
+			} else if ((new Object() {
+				public ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
+					AtomicReference<ItemStack> _retval = new AtomicReference<>(ItemStack.EMPTY);
+					BlockEntity _ent = world.getBlockEntity(pos);
+					if (_ent != null)
+						_ent.getCapability(ForgeCapabilities.ITEM_HANDLER, null).ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).copy()));
+					return _retval.get();
+				}
+			}.getItemStack(world, BlockPos.containing(x, y, z), 0)).is(ItemTags.create(new ResourceLocation("the_deep_void:glutton_givexp")))) {
+				GluttonBlockHopperItemEnterProcedure.execute(world, x, y, z, "bossLoot");
 			} else {
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {

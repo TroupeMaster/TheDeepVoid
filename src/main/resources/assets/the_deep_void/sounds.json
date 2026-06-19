@@ -1940,5 +1940,14 @@
         "stream": false
       }
     ]
+  },
+  "hivemind_prepare_suck": {
+    "subtitle": "subtitles.hivemind_prepare_suck",
+    "sounds": [
+      {
+        "name": "the_deep_void:hivemind_prepare_suck",
+        "stream": false
+      }
+    ]
   }
 }

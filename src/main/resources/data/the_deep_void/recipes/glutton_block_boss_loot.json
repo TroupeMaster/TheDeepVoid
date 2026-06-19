@@ -1,0 +1,12 @@
+{
+  "type": "the_deep_void:glutton_block_jei_type",
+  "ingredients": [
+    {
+      "tag": "the_deep_void:glutton_givexp"
+    }
+  ],
+  "output": {
+    "item": "the_deep_void:experience_orbs",
+    "count": 1
+  }
+}

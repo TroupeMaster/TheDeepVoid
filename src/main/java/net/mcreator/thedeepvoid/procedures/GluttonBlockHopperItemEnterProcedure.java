@@ -14,6 +14,9 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.ExperienceOrb;
+import net.minecraft.util.RandomSource;
+import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
@@ -69,28 +72,7 @@ public class GluttonBlockHopperItemEnterProcedure {
 		});
 		TheDeepVoidMod.queueServerWork(80, () -> {
 			if ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == TheDeepVoidModBlocks.GLUTTON_BLOCK.get()) {
-				if (new Object() {
-					public int getContainerSize(LevelAccessor world, BlockPos pos) {
-						BlockEntity _ent = world.getBlockEntity(pos);
-						if (_ent != null) {
-							if (_ent instanceof BaseContainerBlockEntity _block) {
-								return _block.getContainerSize();
-							}
-						}
-						return 0;
-					}
-
-					public int getAmount(LevelAccessor world, BlockPos pos) {
-						Block block = world.getBlockState(pos).getBlock();
-						if (block == Blocks.CHEST || block == Blocks.TRAPPED_CHEST) {
-							boolean isSingle = block.getStateDefinition().getProperty("type") instanceof EnumProperty _getep5 && world.getBlockState(pos).getValue(_getep5).toString().equals("SINGLE");
-							if (!isSingle) {
-								return getContainerSize(world, pos) * 2;
-							}
-						}
-						return getContainerSize(world, pos);
-					}
-				}.getAmount(world, new BlockPos((int) x, (int) (y + 1), (int) z)) > 0) {
+				if ((command).equals("bossLoot")) {
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
 							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.burp")), SoundSource.BLOCKS, 1, 1);
@@ -98,23 +80,60 @@ public class GluttonBlockHopperItemEnterProcedure {
 							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.burp")), SoundSource.BLOCKS, 1, 1, false);
 						}
 					}
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((x + 0.5), (y + 1), (z + 0.5)), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), command);
-					GluttonBlockChestSlotCheckProcedure.execute(world, x, y, z);
-				} else {
-					if (world instanceof Level _level) {
-						if (!_level.isClientSide()) {
-							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.burp")), SoundSource.BLOCKS, 1, 1);
-						} else {
-							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.burp")), SoundSource.BLOCKS, 1, 1, false);
-						}
+					for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), 2, 6); index0++) {
+						if (world instanceof ServerLevel _level)
+							_level.addFreshEntity(new ExperienceOrb(_level, (x + 0.5), (y + 1), (z + 0.5), Mth.nextInt(RandomSource.create(), 4, 8)));
 					}
-					if (world instanceof ServerLevel _level)
-						_level.getServer().getCommands()
-								.performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3((x + 0.5), (y + 1), (z + 0.5)), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), command);
 					if (world instanceof ServerLevel _level)
 						_level.sendParticles(ParticleTypes.CRIT, (x + 0.5), (y + 1), (z + 0.5), 10, 1, 1, 1, 0.1);
+				} else {
+					if (new Object() {
+						public int getContainerSize(LevelAccessor world, BlockPos pos) {
+							BlockEntity _ent = world.getBlockEntity(pos);
+							if (_ent != null) {
+								if (_ent instanceof BaseContainerBlockEntity _block) {
+									return _block.getContainerSize();
+								}
+							}
+							return 0;
+						}
+
+						public int getAmount(LevelAccessor world, BlockPos pos) {
+							Block block = world.getBlockState(pos).getBlock();
+							if (block == Blocks.CHEST || block == Blocks.TRAPPED_CHEST) {
+								boolean isSingle = block.getStateDefinition().getProperty("type") instanceof EnumProperty _getep5 && world.getBlockState(pos).getValue(_getep5).toString().equals("SINGLE");
+								if (!isSingle) {
+									return getContainerSize(world, pos) * 2;
+								}
+							}
+							return getContainerSize(world, pos);
+						}
+					}.getAmount(world, new BlockPos((int) x, (int) (y + 1), (int) z)) > 0) {
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.burp")), SoundSource.BLOCKS, 1, 1);
+							} else {
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.burp")), SoundSource.BLOCKS, 1, 1, false);
+							}
+						}
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(
+									new CommandSourceStack(CommandSource.NULL, new Vec3((x + 0.5), (y + 1), (z + 0.5)), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), command);
+						GluttonBlockChestSlotCheckProcedure.execute(world, x, y, z);
+					} else {
+						if (world instanceof Level _level) {
+							if (!_level.isClientSide()) {
+								_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.burp")), SoundSource.BLOCKS, 1, 1);
+							} else {
+								_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.player.burp")), SoundSource.BLOCKS, 1, 1, false);
+							}
+						}
+						if (world instanceof ServerLevel _level)
+							_level.getServer().getCommands().performPrefixedCommand(
+									new CommandSourceStack(CommandSource.NULL, new Vec3((x + 0.5), (y + 1), (z + 0.5)), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(), command);
+						if (world instanceof ServerLevel _level)
+							_level.sendParticles(ParticleTypes.CRIT, (x + 0.5), (y + 1), (z + 0.5), 10, 1, 1, 1, 0.1);
+					}
 				}
 			}
 		});

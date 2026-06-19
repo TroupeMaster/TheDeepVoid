@@ -78,6 +78,7 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEMINDBLOODSPITDAMAGE;
 	public static final ForgeConfigSpec.ConfigValue<Double> FLESHFANGSDAMAGE;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEMINDDAMAGEFROMSUMMON;
+	public static final ForgeConfigSpec.ConfigValue<Double> HIVEMINDPULLINTENSITY;
 	public static final ForgeConfigSpec.ConfigValue<Double> PRIMORDIALCRAWLERSLAM;
 	public static final ForgeConfigSpec.ConfigValue<Double> PRIMORDIALCRAWLERSPIT;
 	public static final ForgeConfigSpec.ConfigValue<Double> PRIMORDIALCRAWLERDIGPLAYERCLOSE;
@@ -228,11 +229,12 @@ public class DeepVoidConfigConfiguration {
 		SMASHERSLASH = BUILDER.comment("Damage").define("SmasherSlash", (double) 10);
 		SMASHEROVERHEAD = BUILDER.comment("Damage").define("SmasherOverhead", (double) 14);
 		HIVEMINDHEALTENTACLES = BUILDER.comment("Amount healed each tick when protected by the hivemind tentacles").define("HivemindHealTentacles", (double) 0.1);
-		HIVEMINDHEALDIGEST = BUILDER.comment("Amount healed each tick when digesting a player").define("HivemindHealDigest", (double) 0.9);
-		HIVEMINDDAMAGEDIGEST = BUILDER.comment("Damage dealt to the player when they are being digested (ignores i-frames)").define("HivemindDamageDigest", (double) 1.15);
+		HIVEMINDHEALDIGEST = BUILDER.comment("Amount healed each tick when digesting a player").define("HivemindHealDigest", (double) 2);
+		HIVEMINDDAMAGEDIGEST = BUILDER.comment("Damage dealt to the player when they are being digested (ignores i-frames)").define("HivemindDamageDigest", (double) 0.54);
 		HIVEMINDBLOODSPITDAMAGE = BUILDER.define("HivemindBloodSpitDamage", (double) 8);
 		FLESHFANGSDAMAGE = BUILDER.define("FleshFangsDamage", (double) 2);
 		HIVEMINDDAMAGEFROMSUMMON = BUILDER.comment("Damage dealt to the boss when the saw thrower or the skull smasher dies").define("HivemindDamageFromSummon", (double) 10);
+		HIVEMINDPULLINTENSITY = BUILDER.comment("The force with which the hivemind sucks the player in").define("HivemindPullIntensity", (double) 0.028);
 		BUILDER.pop();
 		BUILDER.push("Primordial Bone Crawler");
 		PRIMORDIALCRAWLERSLAM = BUILDER.comment("Damage").define("PrimordialCrawlerSlam", (double) 16);

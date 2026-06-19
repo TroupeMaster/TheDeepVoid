@@ -9,26 +9,17 @@
       "item": "the_deep_void:cobbled_ancient_deepslate"
     },
     {
-      "item": "the_deep_void:cobbled_ancient_deepslate"
+      "item": "the_deep_void:bismuth"
     },
     {
       "item": "the_deep_void:cobbled_ancient_deepslate"
     },
     {
-      "item": "minecraft:lapis_lazuli"
-    },
-    {
-      "item": "minecraft:lapis_lazuli"
-    },
-    {
-      "item": "minecraft:lapis_lazuli"
-    },
-    {
-      "item": "minecraft:lapis_lazuli"
+      "item": "the_deep_void:cobbled_ancient_deepslate"
     }
   ],
   "result": {
-    "item": "the_deep_void:cleansing_stone",
+    "item": "the_deep_void:mending_stone",
     "count": 1
   }
 }

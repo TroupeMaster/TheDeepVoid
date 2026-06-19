@@ -435,6 +435,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.SMITHING_TEMPLATE_LAVENDITE.get());
 				tabData.accept(TheDeepVoidModItems.SMITHING_TEMPLATE_DAMAGE.get());
 				tabData.accept(TheDeepVoidModItems.CLEANSING_STONE.get());
+				tabData.accept(TheDeepVoidModItems.MENDING_STONE.get());
 				tabData.accept(TheDeepVoidModItems.ROTTEN_BONE.get());
 				tabData.accept(TheDeepVoidModItems.ANCIENT_ONYX.get());
 				tabData.accept(TheDeepVoidModItems.ONYX.get());

@@ -93,14 +93,7 @@ public class HivemindTickUpdateProcedure {
 			if (entity instanceof MisanthropicHivemindEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(MisanthropicHivemindEntity.DATA_attackChance, 301);
 			if (entity instanceof MisanthropicHivemindEntity _datEntSetI)
-				_datEntSetI.getEntityData().set(MisanthropicHivemindEntity.DATA_sucking, 100);
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:hivemind_suck")), SoundSource.HOSTILE, (float) 2.5, 1);
-				} else {
-					_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:hivemind_suck")), SoundSource.HOSTILE, (float) 2.5, 1, false);
-				}
-			}
+				_datEntSetI.getEntityData().set(MisanthropicHivemindEntity.DATA_sucking, 140);
 		} else if ((entity instanceof MisanthropicHivemindEntity _datEntI ? _datEntI.getEntityData().get(MisanthropicHivemindEntity.DATA_attackChance) : 0) == 300
 				&& (!world.getEntitiesOfClass(SawThrowerEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()
 						|| !world.getEntitiesOfClass(SkullSmasherEntity.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty())) {
@@ -116,7 +109,7 @@ public class HivemindTickUpdateProcedure {
 				}
 			}
 			HivemindSurroundWithFangsProcedure.execute(world, entity);
-			if ((entity instanceof MisanthropicHivemindEntity _datEntL46 && _datEntL46.getEntityData().get(MisanthropicHivemindEntity.DATA_digesting)) == true) {
+			if ((entity instanceof MisanthropicHivemindEntity _datEntL42 && _datEntL42.getEntityData().get(MisanthropicHivemindEntity.DATA_digesting)) == true) {
 				if (entity instanceof MisanthropicHivemindEntity _datEntSetL)
 					_datEntSetL.getEntityData().set(MisanthropicHivemindEntity.DATA_digesting, false);
 			}
@@ -128,8 +121,8 @@ public class HivemindTickUpdateProcedure {
 		HivemindSpitBloodProcedure.execute(world, x, y, z, entity);
 		HivemindSuckingProcedure.execute(world, x, y, z, entity);
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 2
-				&& (entity instanceof MisanthropicHivemindEntity _datEntL52 && _datEntL52.getEntityData().get(MisanthropicHivemindEntity.DATA_summonedMinions)) == false
-				&& (entity instanceof MisanthropicHivemindEntity _datEntL53 && _datEntL53.getEntityData().get(MisanthropicHivemindEntity.DATA_skipSummons)) == false) {
+				&& (entity instanceof MisanthropicHivemindEntity _datEntL48 && _datEntL48.getEntityData().get(MisanthropicHivemindEntity.DATA_summonedMinions)) == false
+				&& (entity instanceof MisanthropicHivemindEntity _datEntL49 && _datEntL49.getEntityData().get(MisanthropicHivemindEntity.DATA_skipSummons)) == false) {
 			if (entity instanceof MisanthropicHivemindEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(MisanthropicHivemindEntity.DATA_summonedMinions, true);
 			if (world instanceof Level _level) {

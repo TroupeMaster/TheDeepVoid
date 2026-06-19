@@ -209,4 +209,5 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> BONE_DUNES_VOLCANIC = REGISTRY.register("bone_dunes_volcanic", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "bone_dunes_volcanic")));
 	public static final RegistryObject<SoundEvent> UNDER_THE_ASYLUM = REGISTRY.register("under_the_asylum", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "under_the_asylum")));
 	public static final RegistryObject<SoundEvent> HIVEMIND_SUCK = REGISTRY.register("hivemind_suck", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hivemind_suck")));
+	public static final RegistryObject<SoundEvent> HIVEMIND_PREPARE_SUCK = REGISTRY.register("hivemind_prepare_suck", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hivemind_prepare_suck")));
 }

@@ -60,7 +60,7 @@ public class VoidriumSwordHitProcedure {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);
 				}
-				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), sourceentity), (float) (amount * 1.4));
+				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC), sourceentity), (float) (amount * 1.2));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 100, 0));
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())

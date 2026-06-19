@@ -30,6 +30,8 @@ public class GluttonBlockOnBlockRightClickedProcedure {
 			GluttonBlockTier1Procedure.execute(world, x, y, z, entity, "/loot spawn ~ ~ ~ loot the_deep_void:blocks/glutton_soul_soil");
 		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("the_deep_void:glutton_end")))) {
 			GluttonBlockTier1Procedure.execute(world, x, y, z, entity, "/loot spawn ~ ~ ~ loot the_deep_void:blocks/glutton_end");
+		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("the_deep_void:glutton_givexp")))) {
+			GluttonBlockTier1Procedure.execute(world, x, y, z, entity, "bossLoot");
 		} else if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == ItemStack.EMPTY.getItem())) {
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {

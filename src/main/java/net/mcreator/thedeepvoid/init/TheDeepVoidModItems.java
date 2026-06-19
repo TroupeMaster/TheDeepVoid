@@ -175,6 +175,7 @@ import net.mcreator.thedeepvoid.item.MistedBoneItem;
 import net.mcreator.thedeepvoid.item.MisanthropyItem;
 import net.mcreator.thedeepvoid.item.MisanthropicHivemindTreasureBagItem;
 import net.mcreator.thedeepvoid.item.MimicDollItem;
+import net.mcreator.thedeepvoid.item.MendingStoneItem;
 import net.mcreator.thedeepvoid.item.LurkingMusicDiscItem;
 import net.mcreator.thedeepvoid.item.LiquidVoidItem;
 import net.mcreator.thedeepvoid.item.LiquidIchorItem;
@@ -249,6 +250,7 @@ import net.mcreator.thedeepvoid.item.EyefishItem;
 import net.mcreator.thedeepvoid.item.EyeballSoupItem;
 import net.mcreator.thedeepvoid.item.EyeballItem;
 import net.mcreator.thedeepvoid.item.EyeShieldItem;
+import net.mcreator.thedeepvoid.item.ExperienceOrbsItem;
 import net.mcreator.thedeepvoid.item.ExecutionerSwordItem;
 import net.mcreator.thedeepvoid.item.EverhungryFleshGloveItem;
 import net.mcreator.thedeepvoid.item.EsotericTomeItem;
@@ -1280,6 +1282,8 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> STRENGTH_NEEDLE = REGISTRY.register("strength_needle", () -> new StrengthNeedleItem());
 	public static final RegistryObject<Item> WEAKNESS_NEEDLE = REGISTRY.register("weakness_needle", () -> new WeaknessNeedleItem());
 	public static final RegistryObject<Item> RUNE_OF_VOID = REGISTRY.register("rune_of_void", () -> new RuneOfVoidItem());
+	public static final RegistryObject<Item> MENDING_STONE = REGISTRY.register("mending_stone", () -> new MendingStoneItem());
+	public static final RegistryObject<Item> EXPERIENCE_ORBS = REGISTRY.register("experience_orbs", () -> new ExperienceOrbsItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items
