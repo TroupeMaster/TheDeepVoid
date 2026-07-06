@@ -84,6 +84,9 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> PRIMORDIALCRAWLERDIGPLAYERCLOSE;
 	public static final ForgeConfigSpec.ConfigValue<Double> PRIMORDIALCRAWLERDASH;
 	public static final ForgeConfigSpec.ConfigValue<Double> PRIMORDIALCRAWLERGOOBLOCK;
+	public static final ForgeConfigSpec.ConfigValue<Double> PRIMORDIALCRAWLERAIRSLAM;
+	public static final ForgeConfigSpec.ConfigValue<Double> PRIMORDIALCRAWLERAIRSLAMCHANCE;
+	public static final ForgeConfigSpec.ConfigValue<Double> PRIMORDIALCRAWLERSTUNDURATION;
 	public static final ForgeConfigSpec.ConfigValue<Double> FORBIDDENTOME;
 	public static final ForgeConfigSpec.ConfigValue<Double> CRUELSTILETTO;
 	public static final ForgeConfigSpec.ConfigValue<Double> SHADESTORMSHADEARROW;
@@ -138,7 +141,6 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERFANGSSPAWN;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIKEDURATION;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIKEFREQUENCY;
-	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSECONDPHASE;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIKE;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERATTACKRADIUS;
 	public static final ForgeConfigSpec.ConfigValue<Double> MASKEDHUNTERCOOLDOWN;
@@ -242,6 +244,9 @@ public class DeepVoidConfigConfiguration {
 		PRIMORDIALCRAWLERDIGPLAYERCLOSE = BUILDER.comment("Damage").define("PrimordialCrawlerDigPlayerClose", (double) 17);
 		PRIMORDIALCRAWLERDASH = BUILDER.comment("Damage (on contact)").define("PrimordialCrawlerDash", (double) 20);
 		PRIMORDIALCRAWLERGOOBLOCK = BUILDER.comment("Damage in an AOE").define("PrimordialCrawlerGooBlock", (double) 10);
+		PRIMORDIALCRAWLERAIRSLAM = BUILDER.comment("Damage").define("PrimordialCrawlerAirSlam", (double) 18);
+		PRIMORDIALCRAWLERAIRSLAMCHANCE = BUILDER.define("PrimordialCrawlerAirSlamChance", (double) 0.38);
+		PRIMORDIALCRAWLERSTUNDURATION = BUILDER.define("PrimordialCrawlerStunDuration", (double) 80);
 		BUILDER.pop();
 		BUILDER.push("Weapons");
 		FORBIDDENTOME = BUILDER.comment("Initial damage & damage dealt by the daggers").define("ForbiddenTome", (double) 6);
@@ -295,14 +300,13 @@ public class DeepVoidConfigConfiguration {
 		BUILDER.pop();
 		BUILDER.push("Hive's Watcher");
 		HIVEWATCHERWHILEMOVING = BUILDER.comment("Damage each tick").define("HiveWatcherWhileMoving", (double) 10);
-		HIVEWATCHERSPIT = BUILDER.comment("Damage per projectile").define("HiveWatcherSpit", (double) 12);
-		HIVEWATCHERSPIKESPAWN = BUILDER.comment("Percentage change of spawning bone spikes").define("HiveWatcherSpikeSpawn", (double) 0.3);
-		HIVEWATCHERFANGSSPAWN = BUILDER.comment("Percentage change of spawning fangs").define("HiveWatcherFangsSpawn", (double) 0.3);
-		HIVEWATCHERSPIKEDURATION = BUILDER.comment("How long the bone spike attack lasts (in ticks)").define("HiveWatcherSpikeDuration", (double) 80);
+		HIVEWATCHERSPIT = BUILDER.comment("Damage per projectile").define("HiveWatcherSpit", (double) 8);
+		HIVEWATCHERSPIKESPAWN = BUILDER.comment("Percentage change of spawning bone spikes").define("HiveWatcherSpikeSpawn", (double) 0.18);
+		HIVEWATCHERFANGSSPAWN = BUILDER.comment("Percentage change of spawning fangs").define("HiveWatcherFangsSpawn", (double) 0.2);
+		HIVEWATCHERSPIKEDURATION = BUILDER.comment("How long the bone spike attack lasts (in ticks)").define("HiveWatcherSpikeDuration", (double) 70);
 		HIVEWATCHERSPIKEFREQUENCY = BUILDER.comment("The frequency at which the bone spikes spawn (in ticks)").define("HiveWatcherSpikeFrequency", (double) 5);
-		HIVEWATCHERSECONDPHASE = BUILDER.comment("When under Max Health/Config Number, second phase is active").define("HiveWatcherSecondPhase", (double) 1.7);
-		HIVEWATCHERSPIKE = BUILDER.comment("Damage when the player is near the spike").define("HiveWatcherSpike", (double) 10);
-		HIVEWATCHERATTACKRADIUS = BUILDER.comment("Size of the damaging zone around the boss while it's moving").define("HiveWatcherAttackRadius", (double) 7);
+		HIVEWATCHERSPIKE = BUILDER.comment("Damage when the player is near the spike").define("HiveWatcherSpike", (double) 8);
+		HIVEWATCHERATTACKRADIUS = BUILDER.comment("Size of the damaging zone around the boss while it's moving").define("HiveWatcherAttackRadius", (double) 6);
 		BUILDER.pop();
 		BUILDER.push("Masked Hunter");
 		MASKEDHUNTERCOOLDOWN = BUILDER.comment("The cooldown before a Masked Hunter can spawn naturally (In ticks, 24,000 ticks is one day)").define("MaskedHunterCooldown", (double) 72000);

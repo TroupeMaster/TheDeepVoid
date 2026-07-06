@@ -48,39 +48,42 @@ public class PrimordialCrawlerFallsProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof PrimordialBoneCrawlerEntity && (entity instanceof PrimordialBoneCrawlerEntity _datEntL1 && _datEntL1.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_primordialCrawlerFall)) == true) {
-			if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetL)
-				_datEntSetL.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_primordialCrawlerFall, false);
-			if (world instanceof Level _level && !_level.isClientSide())
-				_level.explode(null, x, y, z, 0, Level.ExplosionInteraction.MOB);
-			{
-				final Vec3 _center = new Vec3(x, y, z);
-				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-				for (Entity entityiterator : _entfound) {
-					if (!(entityiterator == entity) && entityiterator instanceof LivingEntity) {
-						if ((entityiterator instanceof LivingEntity _entUseItem6 ? _entUseItem6.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
-							if (entityiterator instanceof Player _player)
-								_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem8 ? _entUseItem8.getUseItem() : ItemStack.EMPTY).getItem(), 140);
-							{
-								ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem10 ? _entUseItem10.getUseItem() : ItemStack.EMPTY);
-								if (_ist.hurt(20, RandomSource.create(), null)) {
-									_ist.shrink(1);
-									_ist.setDamageValue(0);
+		if (entity instanceof PrimordialBoneCrawlerEntity) {
+			if ((entity instanceof PrimordialBoneCrawlerEntity _datEntL1 && _datEntL1.getEntityData().get(PrimordialBoneCrawlerEntity.DATA_primordialCrawlerFall)) == true) {
+				if (entity instanceof PrimordialBoneCrawlerEntity _datEntSetL)
+					_datEntSetL.getEntityData().set(PrimordialBoneCrawlerEntity.DATA_primordialCrawlerFall, false);
+				if (world instanceof Level _level && !_level.isClientSide())
+					_level.explode(null, x, y, z, 0, Level.ExplosionInteraction.NONE);
+				{
+					final Vec3 _center = new Vec3(x, y, z);
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(5 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+					for (Entity entityiterator : _entfound) {
+						if (!(entityiterator == entity) && entityiterator instanceof LivingEntity) {
+							if ((entityiterator instanceof LivingEntity _entUseItem6 ? _entUseItem6.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
+								if (entityiterator instanceof Player _player)
+									_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem8 ? _entUseItem8.getUseItem() : ItemStack.EMPTY).getItem(), 140);
+								{
+									ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem10 ? _entUseItem10.getUseItem() : ItemStack.EMPTY);
+									if (_ist.hurt(20, RandomSource.create(), null)) {
+										_ist.shrink(1);
+										_ist.setDamageValue(0);
+									}
 								}
-							}
-							if (world instanceof Level _level) {
-								if (!_level.isClientSide()) {
-									_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.shield.break")),
-											SoundSource.NEUTRAL, 1, 1);
-								} else {
-									_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.shield.break")), SoundSource.NEUTRAL, 1, 1, false);
+								if (world instanceof Level _level) {
+									if (!_level.isClientSide()) {
+										_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.shield.break")),
+												SoundSource.NEUTRAL, 1, 1);
+									} else {
+										_level.playLocalSound((entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.shield.break")), SoundSource.NEUTRAL, 1, 1,
+												false);
+									}
 								}
+							} else {
+								entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity), 8);
+								entityiterator.setDeltaMovement(new Vec3((entityiterator.getDeltaMovement().x()), 0.4, (entityiterator.getDeltaMovement().z())));
+								if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+									_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 0));
 							}
-						} else {
-							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity), 8);
-							entityiterator.setDeltaMovement(new Vec3((entityiterator.getDeltaMovement().x()), 0.4, (entityiterator.getDeltaMovement().z())));
-							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 100, 0));
 						}
 					}
 				}

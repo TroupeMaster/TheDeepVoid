@@ -7,7 +7,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class VoidDwellerSpawningProcedure {
 	public static boolean execute(LevelAccessor world, double x, double y, double z) {
-		if (y <= 40 && ((world.getBlockState(BlockPos.containing(x, y, z))).getBlock() == TheDeepVoidModBlocks.DESOLATE_SOIL.get() || (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.DESOLATE_SOIL.get())) {
+		if (y <= 40 && (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.DESOLATE_SOIL.get() && !((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.ASH_BLOCK.get())) {
 			return true;
 		}
 		return false;

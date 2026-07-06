@@ -70,7 +70,7 @@ public class AcidSpitEntity extends AbstractArrow implements ItemSupplier {
 	@Override
 	public void onHitEntity(EntityHitResult entityHitResult) {
 		super.onHitEntity(entityHitResult);
-		AcidSpitProjectileHitsLivingEntityProcedure.execute(entityHitResult.getEntity());
+		AcidSpitProjectileHitsLivingEntityProcedure.execute(entityHitResult.getEntity(), this.getOwner());
 	}
 
 	@Override

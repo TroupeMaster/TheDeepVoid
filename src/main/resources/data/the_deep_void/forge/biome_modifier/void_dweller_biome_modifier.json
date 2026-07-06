@@ -3,7 +3,7 @@
   "biomes": "the_deep_void:windswept_hollow",
   "spawners": {
     "type": "the_deep_void:void_dweller",
-    "weight": 4,
+    "weight": 2,
     "minCount": 1,
     "maxCount": 3
   }

@@ -52,7 +52,7 @@ public class PrimordialCrawlerJumpSlamProcedure {
 		TheDeepVoidMod.queueServerWork(6, () -> {
 			if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 				entity.setDeltaMovement(
-						new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() - entity.getX()) * 0.5), 0.8, (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() - entity.getZ()) * 0.5)));
+						new Vec3((((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX() - entity.getX()) * 0.2), 0.8, (((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ() - entity.getZ()) * 0.2)));
 			} else {
 				entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entity.getYRot() + 180)) * 1), 0.8, (Math.cos(Math.toRadians(entity.getYRot())) * 1)));
 			}
@@ -71,7 +71,7 @@ public class PrimordialCrawlerJumpSlamProcedure {
 				entity.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3(((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getX()), ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getY() + 1.5),
 						((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null).getZ())));
 			}
-			entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entity.getYRot() + 180)) * 0.7), 0.2, (Math.cos(Math.toRadians(entity.getYRot())) * 0.7)));
+			entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entity.getYRot() + 180)) * 0.2), 0.2, (Math.cos(Math.toRadians(entity.getYRot())) * 0.2)));
 		});
 		TheDeepVoidMod.queueServerWork(37, () -> {
 			if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
@@ -96,6 +96,8 @@ public class PrimordialCrawlerJumpSlamProcedure {
 									_ist.setDamageValue(0);
 								}
 							}
+							if (entityiterator instanceof LivingEntity _entity)
+								_entity.stopUsingItem();
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {
 									_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.shield.break")),

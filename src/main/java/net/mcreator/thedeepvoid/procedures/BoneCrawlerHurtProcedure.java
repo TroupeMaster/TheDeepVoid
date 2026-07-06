@@ -6,8 +6,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.item.ShieldItem;
@@ -21,11 +19,9 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 import net.mcreator.thedeepvoid.entity.PrisonGuardEntity;
 import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
 import net.mcreator.thedeepvoid.entity.ManiacEntity;
-import net.mcreator.thedeepvoid.entity.BoneCrawlerEntity;
 
 import javax.annotation.Nullable;
 
@@ -45,15 +41,8 @@ public class BoneCrawlerHurtProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (entity instanceof BoneCrawlerEntity) {
-			if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BLOCK_OF_BONE_PILE.get() && !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 6, 6, 6), e -> true).isEmpty() == false) {
-				if (event != null && event.isCancelable()) {
-					event.setCanceled(true);
-				}
-			}
-		}
 		if (sourceentity instanceof MaskedHunterEntity) {
-			if (entity instanceof LivingEntity _livEnt5 && _livEnt5.isBlocking()) {
+			if (entity instanceof LivingEntity _livEnt1 && _livEnt1.isBlocking()) {
 				sourceentity.getPersistentData().putDouble("block", (sourceentity.getPersistentData().getDouble("block") + 1));
 				if (sourceentity.getPersistentData().getDouble("block") > 3) {
 					sourceentity.getPersistentData().putDouble("block", 0);
@@ -93,11 +82,11 @@ public class BoneCrawlerHurtProcedure {
 				}
 			}
 		}
-		if (sourceentity instanceof ManiacEntity && (sourceentity instanceof ManiacEntity _datEntL22 && _datEntL22.getEntityData().get(ManiacEntity.DATA_attacking)) == true
-				&& (entity instanceof LivingEntity _entUseItem23 ? _entUseItem23.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
+		if (sourceentity instanceof ManiacEntity && (sourceentity instanceof ManiacEntity _datEntL18 && _datEntL18.getEntityData().get(ManiacEntity.DATA_attacking)) == true
+				&& (entity instanceof LivingEntity _entUseItem19 ? _entUseItem19.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
 			if (Math.random() < 0.25) {
 				if (entity instanceof Player _player)
-					_player.getCooldowns().addCooldown((entity instanceof LivingEntity _entUseItem25 ? _entUseItem25.getUseItem() : ItemStack.EMPTY).getItem(), 70);
+					_player.getCooldowns().addCooldown((entity instanceof LivingEntity _entUseItem21 ? _entUseItem21.getUseItem() : ItemStack.EMPTY).getItem(), 70);
 				if (entity instanceof LivingEntity _entity)
 					_entity.stopUsingItem();
 				if (world instanceof Level _level) {

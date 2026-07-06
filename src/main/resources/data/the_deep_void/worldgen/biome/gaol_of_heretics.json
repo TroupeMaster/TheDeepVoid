@@ -1,6 +1,6 @@
 {
   "has_precipitation": false,
-  "temperature": 0.5,
+  "temperature": 0.8,
   "downfall": 0,
   "effects": {
     "ambient_sound": "the_deep_void:gaol_of_heretics_loop",

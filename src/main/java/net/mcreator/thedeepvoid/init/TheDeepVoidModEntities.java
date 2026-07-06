@@ -31,9 +31,6 @@ import net.mcreator.thedeepvoid.entity.VoidArrowEntity;
 import net.mcreator.thedeepvoid.entity.ThumperEntityEntity;
 import net.mcreator.thedeepvoid.entity.ThrowableIchorProjEntity;
 import net.mcreator.thedeepvoid.entity.TenebrisCultroEntity;
-import net.mcreator.thedeepvoid.entity.TamedMotherBoneCrawlerEntity;
-import net.mcreator.thedeepvoid.entity.TamedBoneCrawlerEntity;
-import net.mcreator.thedeepvoid.entity.TamedAlphaBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.SwarmerEntity;
 import net.mcreator.thedeepvoid.entity.SummonedShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.SummonedHiveFangsEntity;
@@ -42,6 +39,7 @@ import net.mcreator.thedeepvoid.entity.SulfurTntEntityEntity;
 import net.mcreator.thedeepvoid.entity.SulfurFlareShotEntity;
 import net.mcreator.thedeepvoid.entity.SulfurBombProjEntity;
 import net.mcreator.thedeepvoid.entity.StalkerTreatThrownEntity;
+import net.mcreator.thedeepvoid.entity.StalkerJuvenileEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
 import net.mcreator.thedeepvoid.entity.SporeSpewerEntity;
 import net.mcreator.thedeepvoid.entity.SpiteArrowEntity;
@@ -180,7 +178,6 @@ import net.mcreator.thedeepvoid.entity.BigShadeArrowEntity;
 import net.mcreator.thedeepvoid.entity.BigOverseerEntity;
 import net.mcreator.thedeepvoid.entity.BigEyeEntity;
 import net.mcreator.thedeepvoid.entity.BeholderEntity;
-import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerNeutralEntity;
 import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.ApostleCloneEntity;
 import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
@@ -245,15 +242,11 @@ public class TheDeepVoidModEntities {
 	public static final RegistryObject<EntityType<BoneCrawlerEntity>> BONE_CRAWLER = register("bone_crawler",
 			EntityType.Builder.<BoneCrawlerEntity>of(BoneCrawlerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BoneCrawlerEntity::new)
 
-					.sized(1.1f, 0.7f));
+					.sized(1.3f, 0.7f));
 	public static final RegistryObject<EntityType<FoolEaterEntity>> FOOL_EATER = register("fool_eater",
 			EntityType.Builder.<FoolEaterEntity>of(FoolEaterEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FoolEaterEntity::new)
 
 					.sized(1f, 5.6f));
-	public static final RegistryObject<EntityType<TamedBoneCrawlerEntity>> TAMED_BONE_CRAWLER = register("tamed_bone_crawler",
-			EntityType.Builder.<TamedBoneCrawlerEntity>of(TamedBoneCrawlerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(TamedBoneCrawlerEntity::new)
-
-					.sized(0.8f, 0.5f));
 	public static final RegistryObject<EntityType<LurkerEntity>> LURKER = register("lurker",
 			EntityType.Builder.<LurkerEntity>of(LurkerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(LurkerEntity::new)
 
@@ -295,7 +288,7 @@ public class TheDeepVoidModEntities {
 	public static final RegistryObject<EntityType<GooSpitterEntity>> GOO_SPITTER = register("goo_spitter",
 			EntityType.Builder.<GooSpitterEntity>of(GooSpitterEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GooSpitterEntity::new)
 
-					.sized(0.8f, 0.5f));
+					.sized(1.3f, 0.7f));
 	public static final RegistryObject<EntityType<RoamerEntity>> ROAMER = register("roamer",
 			EntityType.Builder.<RoamerEntity>of(RoamerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(RoamerEntity::new)
 
@@ -304,27 +297,12 @@ public class TheDeepVoidModEntities {
 			EntityType.Builder.<MotherBoneCrawlerEntity>of(MotherBoneCrawlerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(MotherBoneCrawlerEntity::new)
 
 					.sized(2f, 2f));
-	public static final RegistryObject<EntityType<TamedMotherBoneCrawlerEntity>> TAMED_MOTHER_BONE_CRAWLER = register("tamed_mother_bone_crawler",
-			EntityType.Builder.<TamedMotherBoneCrawlerEntity>of(TamedMotherBoneCrawlerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
-					.setCustomClientFactory(TamedMotherBoneCrawlerEntity::new)
-
-					.sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<AlphaBoneCrawlerEntity>> ALPHA_BONE_CRAWLER = register("alpha_bone_crawler",
 			EntityType.Builder.<AlphaBoneCrawlerEntity>of(AlphaBoneCrawlerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(AlphaBoneCrawlerEntity::new)
 
 					.sized(1.6f, 1.5f));
-	public static final RegistryObject<EntityType<TamedAlphaBoneCrawlerEntity>> TAMED_ALPHA_BONE_CRAWLER = register("tamed_alpha_bone_crawler",
-			EntityType.Builder.<TamedAlphaBoneCrawlerEntity>of(TamedAlphaBoneCrawlerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
-					.setCustomClientFactory(TamedAlphaBoneCrawlerEntity::new)
-
-					.sized(1.6f, 1.5f));
 	public static final RegistryObject<EntityType<BabyBoneCrawlerEntity>> BABY_BONE_CRAWLER = register("baby_bone_crawler",
 			EntityType.Builder.<BabyBoneCrawlerEntity>of(BabyBoneCrawlerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(BabyBoneCrawlerEntity::new)
-
-					.sized(0.8f, 0.5f));
-	public static final RegistryObject<EntityType<BabyBoneCrawlerNeutralEntity>> BABY_BONE_CRAWLER_NEUTRAL = register("baby_bone_crawler_neutral",
-			EntityType.Builder.<BabyBoneCrawlerNeutralEntity>of(BabyBoneCrawlerNeutralEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
-					.setCustomClientFactory(BabyBoneCrawlerNeutralEntity::new)
 
 					.sized(0.8f, 0.5f));
 	public static final RegistryObject<EntityType<RottenCorpseEntity>> ROTTEN_CORPSE = register("rotten_corpse",
@@ -702,6 +680,8 @@ public class TheDeepVoidModEntities {
 			EntityType.Builder.<IchorFlameShotEntity>of(IchorFlameShotEntity::new, MobCategory.MISC).setCustomClientFactory(IchorFlameShotEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<ThrowableIchorProjEntity>> THROWABLE_ICHOR_PROJ = register("throwable_ichor_proj", EntityType.Builder.<ThrowableIchorProjEntity>of(ThrowableIchorProjEntity::new, MobCategory.MISC)
 			.setCustomClientFactory(ThrowableIchorProjEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<StalkerJuvenileEntity>> STALKER_JUVENILE = register("stalker_juvenile", EntityType.Builder.<StalkerJuvenileEntity>of(StalkerJuvenileEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(StalkerJuvenileEntity::new).fireImmune().sized(1.35f, 1.6f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -723,7 +703,6 @@ public class TheDeepVoidModEntities {
 			MournerEntity.init();
 			BoneCrawlerEntity.init();
 			FoolEaterEntity.init();
-			TamedBoneCrawlerEntity.init();
 			LurkerEntity.init();
 			StalkerEntity.init();
 			AbductorEntity.init();
@@ -737,11 +716,8 @@ public class TheDeepVoidModEntities {
 			GooSpitterEntity.init();
 			RoamerEntity.init();
 			MotherBoneCrawlerEntity.init();
-			TamedMotherBoneCrawlerEntity.init();
 			AlphaBoneCrawlerEntity.init();
-			TamedAlphaBoneCrawlerEntity.init();
 			BabyBoneCrawlerEntity.init();
-			BabyBoneCrawlerNeutralEntity.init();
 			RottenCorpseEntity.init();
 			RottenCultMemberEntity.init();
 			EyekinEntity.init();
@@ -837,6 +813,7 @@ public class TheDeepVoidModEntities {
 			MadCultistEntity.init();
 			ExecutionerEntity.init();
 			ManiacEntity.init();
+			StalkerJuvenileEntity.init();
 		});
 	}
 
@@ -855,7 +832,6 @@ public class TheDeepVoidModEntities {
 		event.put(MOURNER.get(), MournerEntity.createAttributes().build());
 		event.put(BONE_CRAWLER.get(), BoneCrawlerEntity.createAttributes().build());
 		event.put(FOOL_EATER.get(), FoolEaterEntity.createAttributes().build());
-		event.put(TAMED_BONE_CRAWLER.get(), TamedBoneCrawlerEntity.createAttributes().build());
 		event.put(LURKER.get(), LurkerEntity.createAttributes().build());
 		event.put(STALKER.get(), StalkerEntity.createAttributes().build());
 		event.put(ABDUCTOR.get(), AbductorEntity.createAttributes().build());
@@ -869,11 +845,8 @@ public class TheDeepVoidModEntities {
 		event.put(GOO_SPITTER.get(), GooSpitterEntity.createAttributes().build());
 		event.put(ROAMER.get(), RoamerEntity.createAttributes().build());
 		event.put(MOTHER_BONE_CRAWLER.get(), MotherBoneCrawlerEntity.createAttributes().build());
-		event.put(TAMED_MOTHER_BONE_CRAWLER.get(), TamedMotherBoneCrawlerEntity.createAttributes().build());
 		event.put(ALPHA_BONE_CRAWLER.get(), AlphaBoneCrawlerEntity.createAttributes().build());
-		event.put(TAMED_ALPHA_BONE_CRAWLER.get(), TamedAlphaBoneCrawlerEntity.createAttributes().build());
 		event.put(BABY_BONE_CRAWLER.get(), BabyBoneCrawlerEntity.createAttributes().build());
-		event.put(BABY_BONE_CRAWLER_NEUTRAL.get(), BabyBoneCrawlerNeutralEntity.createAttributes().build());
 		event.put(ROTTEN_CORPSE.get(), RottenCorpseEntity.createAttributes().build());
 		event.put(ROTTEN_CULT_MEMBER.get(), RottenCultMemberEntity.createAttributes().build());
 		event.put(EYEKIN.get(), EyekinEntity.createAttributes().build());
@@ -969,5 +942,6 @@ public class TheDeepVoidModEntities {
 		event.put(MAD_CULTIST.get(), MadCultistEntity.createAttributes().build());
 		event.put(EXECUTIONER.get(), ExecutionerEntity.createAttributes().build());
 		event.put(MANIAC.get(), ManiacEntity.createAttributes().build());
+		event.put(STALKER_JUVENILE.get(), StalkerJuvenileEntity.createAttributes().build());
 	}
 }

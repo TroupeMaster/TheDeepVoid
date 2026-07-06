@@ -20,38 +20,37 @@ import net.minecraft.commands.CommandSource;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.MaggotEntity;
-import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerNeutralEntity;
 import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerEntity;
 
 public class MaggotThisEntityKillsAnotherOneProcedure {
-	public static void execute(LevelAccessor world, Entity entity) {
-		if (entity == null)
+	public static void execute(LevelAccessor world, Entity entity, Entity sourceentity) {
+		if (entity == null || sourceentity == null)
 			return;
-		if (entity instanceof BabyBoneCrawlerEntity || entity instanceof BabyBoneCrawlerNeutralEntity) {
-			if (entity instanceof MaggotEntity _datEntSetI)
-				_datEntSetI.getEntityData().set(MaggotEntity.DATA_killed, (int) ((entity instanceof MaggotEntity _datEntI ? _datEntI.getEntityData().get(MaggotEntity.DATA_killed) : 0) + 1));
-			if ((entity instanceof MaggotEntity _datEntI ? _datEntI.getEntityData().get(MaggotEntity.DATA_killed) : 0) >= 2) {
+		if (entity instanceof BabyBoneCrawlerEntity) {
+			if (sourceentity instanceof MaggotEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(MaggotEntity.DATA_killed, (int) ((sourceentity instanceof MaggotEntity _datEntI ? _datEntI.getEntityData().get(MaggotEntity.DATA_killed) : 0) + 1));
+			if ((sourceentity instanceof MaggotEntity _datEntI ? _datEntI.getEntityData().get(MaggotEntity.DATA_killed) : 0) >= 2) {
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fleshy_explosion")), SoundSource.HOSTILE, 1,
+						_level.playSound(null, BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fleshy_explosion")), SoundSource.HOSTILE, 1,
 								(float) Mth.nextDouble(RandomSource.create(), 1.2, 1.4));
 					} else {
-						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fleshy_explosion")), SoundSource.HOSTILE, 1,
+						_level.playLocalSound((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fleshy_explosion")), SoundSource.HOSTILE, 1,
 								(float) Mth.nextDouble(RandomSource.create(), 1.2, 1.4), false);
 					}
 				}
 				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = TheDeepVoidModEntities.BLACK_FLY.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+					Entity entityToSpawn = TheDeepVoidModEntities.BLACK_FLY.get().spawn(_level, BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ()), MobSpawnType.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
 				}
 				if (world instanceof ServerLevel _level)
 					_level.getServer().getCommands().performPrefixedCommand(
-							new CommandSourceStack(CommandSource.NULL, new Vec3((entity.getX()), (entity.getY()), (entity.getZ())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
+							new CommandSourceStack(CommandSource.NULL, new Vec3((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ())), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 							"/loot spawn ~ ~ ~ loot the_deep_void:entities/maggot_grow");
-				if (!entity.level().isClientSide())
-					entity.discard();
+				if (!sourceentity.level().isClientSide())
+					sourceentity.discard();
 			}
 		}
 	}

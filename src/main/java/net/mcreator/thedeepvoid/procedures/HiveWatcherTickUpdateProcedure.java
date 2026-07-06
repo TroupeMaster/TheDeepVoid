@@ -30,13 +30,8 @@ public class HiveWatcherTickUpdateProcedure {
 		if (entity == null)
 			return;
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
-			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / (double) DeepVoidConfigConfiguration.HIVEWATCHERSECONDPHASE.get()) {
-				if (entity instanceof HiveWatcherEntity _datEntSetI)
-					_datEntSetI.getEntityData().set(HiveWatcherEntity.DATA_attackChance, (int) ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) + 2));
-			} else {
-				if (entity instanceof HiveWatcherEntity _datEntSetI)
-					_datEntSetI.getEntityData().set(HiveWatcherEntity.DATA_attackChance, (int) ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) + 1));
-			}
+			if (entity instanceof HiveWatcherEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(HiveWatcherEntity.DATA_attackChance, (int) ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) + 1));
 		}
 		if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) == 40) {
 			HiveWatcherMoveInXProcedure.execute(world, entity);
@@ -126,21 +121,21 @@ public class HiveWatcherTickUpdateProcedure {
 				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_spawnBlockade, false);
 			HiveWatcherSpinProcedure.execute(world, x, y, z, entity);
 		}
-		if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) >= 220) {
+		if ((entity instanceof HiveWatcherEntity _datEntI ? _datEntI.getEntityData().get(HiveWatcherEntity.DATA_attackChance) : 0) >= 250) {
 			if (entity instanceof HiveWatcherEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_spinning, false);
 			if (entity instanceof HiveWatcherEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(HiveWatcherEntity.DATA_attackChance, 0);
 		}
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
-			if ((entity instanceof HiveWatcherEntity _datEntL58 && _datEntL58.getEntityData().get(HiveWatcherEntity.DATA_damageX)) == true
-					&& (entity instanceof HiveWatcherEntity _datEntL59 && _datEntL59.getEntityData().get(HiveWatcherEntity.DATA_damageZ)) == false) {
+			if ((entity instanceof HiveWatcherEntity _datEntL53 && _datEntL53.getEntityData().get(HiveWatcherEntity.DATA_damageX)) == true
+					&& (entity instanceof HiveWatcherEntity _datEntL54 && _datEntL54.getEntityData().get(HiveWatcherEntity.DATA_damageZ)) == false) {
 				HiveWatcherWhileMovingXProcedure.execute(world, x, y, z, entity);
-			} else if ((entity instanceof HiveWatcherEntity _datEntL60 && _datEntL60.getEntityData().get(HiveWatcherEntity.DATA_damageZ)) == true
-					&& (entity instanceof HiveWatcherEntity _datEntL61 && _datEntL61.getEntityData().get(HiveWatcherEntity.DATA_damageX)) == false) {
+			} else if ((entity instanceof HiveWatcherEntity _datEntL55 && _datEntL55.getEntityData().get(HiveWatcherEntity.DATA_damageZ)) == true
+					&& (entity instanceof HiveWatcherEntity _datEntL56 && _datEntL56.getEntityData().get(HiveWatcherEntity.DATA_damageX)) == false) {
 				HiveWatcherWhileMovingZProcedure.execute(world, x, y, z, entity);
-			} else if ((entity instanceof HiveWatcherEntity _datEntL62 && _datEntL62.getEntityData().get(HiveWatcherEntity.DATA_damageX)) == true
-					&& (entity instanceof HiveWatcherEntity _datEntL63 && _datEntL63.getEntityData().get(HiveWatcherEntity.DATA_damageZ)) == true) {
+			} else if ((entity instanceof HiveWatcherEntity _datEntL57 && _datEntL57.getEntityData().get(HiveWatcherEntity.DATA_damageX)) == true
+					&& (entity instanceof HiveWatcherEntity _datEntL58 && _datEntL58.getEntityData().get(HiveWatcherEntity.DATA_damageZ)) == true) {
 				HiveWatcherWhileMovingDiagonalProcedure.execute(world, x, y, z, entity);
 			}
 		}

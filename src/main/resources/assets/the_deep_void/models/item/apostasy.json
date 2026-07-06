@@ -1,6 +1,6 @@
 {
-  "parent": "the_deep_void:displaysettings/apostasy",
+  "parent": "the_deep_void:displaysettings/apostasynew",
   "textures": {
-    "layer0": "the_deep_void:item/apostasy"
+    "layer0": "the_deep_void:item/apostasynew"
   }
 }

@@ -19,10 +19,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
-import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
-import net.mcreator.thedeepvoid.entity.TamedMotherBoneCrawlerEntity;
-import net.mcreator.thedeepvoid.entity.TamedBoneCrawlerEntity;
-import net.mcreator.thedeepvoid.entity.TamedAlphaBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.SwarmerEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
 import net.mcreator.thedeepvoid.entity.SmallFleshCubeEntity;
@@ -64,29 +60,26 @@ public class PlayerAttackedByStalkerProcedure {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.DECOMPOSITION.get(), 160, 0));
 		}
-		if (sourceentity instanceof BoneCrawlerEntity || sourceentity instanceof TamedBoneCrawlerEntity) {
-			if (Math.random() < 0.1) {
-				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 140, 0));
-			}
-		}
-		if (sourceentity instanceof AlphaBoneCrawlerEntity || sourceentity instanceof TamedAlphaBoneCrawlerEntity) {
-			if (Math.random() < 0.1) {
-				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 80, 2));
-			}
-		}
-		if (sourceentity instanceof GooSpitterEntity) {
+		if (sourceentity instanceof BoneCrawlerEntity) {
 			if (Math.random() < 0.4) {
-				if (!world.getBlockState(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())).canOcclude()) {
-					world.setBlock(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), TheDeepVoidModBlocks.GOO_WEB.get().defaultBlockState(), 3);
-				}
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 180, 0));
 			}
 		}
-		if (sourceentity instanceof MotherBoneCrawlerEntity || sourceentity instanceof TamedMotherBoneCrawlerEntity) {
-			if (Math.random() < 0.2) {
+		if (sourceentity instanceof AlphaBoneCrawlerEntity) {
+			if (Math.random() < 0.4) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 140, 1));
+					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 160, 1));
+			}
+		}
+		if (sourceentity instanceof GooSpitterEntity && Math.random() < 0.5 && !(entity instanceof LivingEntity _livEnt7 && _livEnt7.hasEffect(TheDeepVoidModMobEffects.STICKY.get()))) {
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.STICKY.get(), 100, 0));
+		}
+		if (sourceentity instanceof MotherBoneCrawlerEntity) {
+			if (Math.random() < 0.4) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 140, 2));
 			}
 		}
 		if (sourceentity instanceof GravekeeperEntity) {

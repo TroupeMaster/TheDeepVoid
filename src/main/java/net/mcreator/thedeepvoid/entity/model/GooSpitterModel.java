@@ -14,12 +14,12 @@ import net.mcreator.thedeepvoid.entity.GooSpitterEntity;
 public class GooSpitterModel extends GeoModel<GooSpitterEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(GooSpitterEntity entity) {
-		return new ResourceLocation("the_deep_void", "animations/spitter.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/spittercrawlerremodel.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(GooSpitterEntity entity) {
-		return new ResourceLocation("the_deep_void", "geo/spitter.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/spittercrawlerremodel.geo.json");
 	}
 
 	@Override

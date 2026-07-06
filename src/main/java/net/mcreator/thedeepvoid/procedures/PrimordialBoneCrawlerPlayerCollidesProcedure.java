@@ -37,6 +37,8 @@ public class PrimordialBoneCrawlerPlayerCollidesProcedure {
 						_ist.setDamageValue(0);
 					}
 				}
+				if (sourceentity instanceof LivingEntity _entity)
+					_entity.stopUsingItem();
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
 						_level.playSound(null, BlockPos.containing(sourceentity.getX(), sourceentity.getY(), sourceentity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.shield.break")), SoundSource.NEUTRAL, 1, 1);

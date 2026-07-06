@@ -36,16 +36,16 @@
           "biome": "the_deep_void:grim_canopy",
           "parameters": {
             "temperature": [
-              -1.5,
+              -0.5,
               1
             ],
             "humidity": [
-              -1,
+              0,
               1
             ],
             "continentalness": [
-              0.9,
-              1
+              0,
+              0.5
             ],
             "weirdness": [
               -0.0815,
@@ -53,7 +53,7 @@
             ],
             "erosion": [
               -0.1,
-              0.1
+              0.2
             ],
             "depth": 0,
             "offset": 0
@@ -117,23 +117,23 @@
           "biome": "the_deep_void:gloomy_deathgrounds",
           "parameters": {
             "temperature": [
-              0,
+              -0.5,
               1
             ],
             "humidity": [
-              0,
-              0.8
+              -0.2,
+              1
             ],
             "continentalness": [
-              0,
-              0.5
+              -0.1,
+              0.8
             ],
             "weirdness": [
-              0,
-              0.2
+              -0.2,
+              0.1
             ],
             "erosion": [
-              0,
+              -0.05,
               0.05
             ],
             "depth": 0,
@@ -144,24 +144,24 @@
           "biome": "the_deep_void:drifting_monoliths",
           "parameters": {
             "temperature": [
-              -1.5,
-              0
+              -0.8,
+              -0.2
             ],
             "humidity": [
-              0,
-              0.1
+              -0.8,
+              -0.15
             ],
             "continentalness": [
-              0,
-              0.4
+              -1.05,
+              -0.16
             ],
             "weirdness": [
-              0,
-              1.4
+              -0.1,
+              0
             ],
             "erosion": [
-              0,
-              0.1
+              -0.1,
+              0
             ],
             "depth": 0,
             "offset": 0
@@ -172,23 +172,23 @@
           "parameters": {
             "temperature": [
               -0.8,
-              -0.5
+              0.15
             ],
             "humidity": [
-              -0.8,
-              -0.2
+              -0.9,
+              0
             ],
             "continentalness": [
-              -0.1,
+              -0.9,
               0.1
             ],
             "weirdness": [
-              -0.1,
-              0
+              -0.2,
+              -0.12
             ],
             "erosion": [
-              -0.1,
-              0
+              -0.2,
+              -0.05
             ],
             "depth": 0,
             "offset": 0
@@ -198,24 +198,24 @@
           "biome": "the_deep_void:watching_undergrowth",
           "parameters": {
             "temperature": [
-              -1.2,
-              0.8
+              -0.4,
+              1
             ],
             "humidity": [
-              -0.8,
+              0,
               1
             ],
             "continentalness": [
-              0.9,
-              1
+              0,
+              0.4
             ],
             "weirdness": [
-              -0.0875,
-              0.05
+              -0.0815,
+              0.1
             ],
             "erosion": [
               -0.1,
-              0.08
+              0.2
             ],
             "depth": 0,
             "offset": 0
@@ -252,24 +252,24 @@
           "biome": "the_deep_void:staring_hills",
           "parameters": {
             "temperature": [
-              0.1,
-              0.9
+              0,
+              1
             ],
             "humidity": [
-              0,
-              0.95
+              -0.3,
+              1
             ],
             "continentalness": [
-              0.2,
-              0.5
+              -0.15,
+              0.8
             ],
             "weirdness": [
-              -0.5,
-              0.2
+              -0.1,
+              0.1
             ],
             "erosion": [
-              0.1,
-              0.2
+              -0.1,
+              0.05
             ],
             "depth": 0,
             "offset": 0

@@ -312,7 +312,9 @@ import net.mcreator.thedeepvoid.item.BoneMushItem;
 import net.mcreator.thedeepvoid.item.BoneLoafItem;
 import net.mcreator.thedeepvoid.item.BoneHoeItem;
 import net.mcreator.thedeepvoid.item.BoneCrawlerMoltPieceItem;
+import net.mcreator.thedeepvoid.item.BoneCrawlerFeedItem;
 import net.mcreator.thedeepvoid.item.BoneCrawlerEmbryoItem;
+import net.mcreator.thedeepvoid.item.BoneCrawlerClawItem;
 import net.mcreator.thedeepvoid.item.BoneCrawlerChitinItem;
 import net.mcreator.thedeepvoid.item.BoneClimbingPickItem;
 import net.mcreator.thedeepvoid.item.BoneBallItem;
@@ -1284,6 +1286,8 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> RUNE_OF_VOID = REGISTRY.register("rune_of_void", () -> new RuneOfVoidItem());
 	public static final RegistryObject<Item> MENDING_STONE = REGISTRY.register("mending_stone", () -> new MendingStoneItem());
 	public static final RegistryObject<Item> EXPERIENCE_ORBS = REGISTRY.register("experience_orbs", () -> new ExperienceOrbsItem());
+	public static final RegistryObject<Item> BONE_CRAWLER_FEED = REGISTRY.register("bone_crawler_feed", () -> new BoneCrawlerFeedItem());
+	public static final RegistryObject<Item> BONE_CRAWLER_CLAW = REGISTRY.register("bone_crawler_claw", () -> new BoneCrawlerClawItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items

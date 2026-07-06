@@ -16,6 +16,7 @@ import net.mcreator.thedeepvoid.potion.VoidBlessingMobEffect;
 import net.mcreator.thedeepvoid.potion.VanishMobEffect;
 import net.mcreator.thedeepvoid.potion.TributeToTheVoidMobEffect;
 import net.mcreator.thedeepvoid.potion.TrembleMobEffect;
+import net.mcreator.thedeepvoid.potion.StickyMobEffect;
 import net.mcreator.thedeepvoid.potion.StareMobEffect;
 import net.mcreator.thedeepvoid.potion.RottenHeartMobEffect;
 import net.mcreator.thedeepvoid.potion.RotMobEffect;
@@ -104,4 +105,5 @@ public class TheDeepVoidModMobEffects {
 	public static final RegistryObject<MobEffect> BULLSEYE = REGISTRY.register("bullseye", () -> new BullseyeMobEffect());
 	public static final RegistryObject<MobEffect> BRAIN_FOG = REGISTRY.register("brain_fog", () -> new BrainFogMobEffect());
 	public static final RegistryObject<MobEffect> TRIBUTE_TO_THE_VOID = REGISTRY.register("tribute_to_the_void", () -> new TributeToTheVoidMobEffect());
+	public static final RegistryObject<MobEffect> STICKY = REGISTRY.register("sticky", () -> new StickyMobEffect());
 }

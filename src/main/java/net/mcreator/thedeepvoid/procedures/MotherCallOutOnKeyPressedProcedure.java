@@ -4,6 +4,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -13,14 +14,14 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
-import net.mcreator.thedeepvoid.entity.TamedMotherBoneCrawlerEntity;
+import net.mcreator.thedeepvoid.entity.MotherBoneCrawlerEntity;
 
 public class MotherCallOutOnKeyPressedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
 		if (entity.isPassenger()) {
-			if ((entity.getVehicle()) instanceof TamedMotherBoneCrawlerEntity) {
+			if ((entity.getVehicle()) instanceof MotherBoneCrawlerEntity && ((entity.getVehicle()) instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)) {
 				if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).motherCallOutCooldown == 0) {
 					{
 						double _setval = 80;

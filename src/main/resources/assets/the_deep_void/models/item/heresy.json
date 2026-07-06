@@ -1,6 +1,6 @@
 {
-  "parent": "the_deep_void:displaysettings/heresy",
+  "parent": "the_deep_void:displaysettings/heresynew",
   "textures": {
-    "layer0": "the_deep_void:item/heresy"
+    "layer0": "the_deep_void:item/heresynew"
   }
 }

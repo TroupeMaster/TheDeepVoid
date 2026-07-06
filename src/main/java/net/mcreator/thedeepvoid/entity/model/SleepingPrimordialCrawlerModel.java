@@ -9,12 +9,12 @@ import net.mcreator.thedeepvoid.entity.SleepingPrimordialCrawlerEntity;
 public class SleepingPrimordialCrawlerModel extends GeoModel<SleepingPrimordialCrawlerEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(SleepingPrimordialCrawlerEntity entity) {
-		return new ResourceLocation("the_deep_void", "animations/primordial_crawler.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/primordialbonecrawler.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(SleepingPrimordialCrawlerEntity entity) {
-		return new ResourceLocation("the_deep_void", "geo/primordial_crawler.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/primordialbonecrawler.geo.json");
 	}
 
 	@Override

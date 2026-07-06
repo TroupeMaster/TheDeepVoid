@@ -2,8 +2,6 @@ package net.mcreator.thedeepvoid.procedures;
 
 import net.minecraftforge.registries.ForgeRegistries;
 
-import net.minecraft.world.phys.Vec3;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.GameType;
@@ -15,6 +13,7 @@ import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
@@ -29,88 +28,149 @@ import net.minecraft.advancements.Advancement;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
-import net.mcreator.thedeepvoid.entity.TamedBoneCrawlerEntity;
-import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerNeutralEntity;
-
-import java.util.Comparator;
+import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerEntity;
 
 public class BabyBoneCrawlerNeutralRightClickedOnEntityProcedure {
-	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
+	public static InteractionResult execute(LevelAccessor world, double x, double y, double z, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
-			return;
-		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.BONE) {
-			if (sourceentity instanceof Player _player)
-				_player.getCooldowns().addCooldown((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem(), 10);
-			if (!(new Object() {
-				public boolean checkGamemode(Entity _ent) {
-					if (_ent instanceof ServerPlayer _serverPlayer) {
-						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
-					} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
-						return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
-								&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+			return InteractionResult.PASS;
+		if (entity instanceof TamableAnimal _tamIsTamedBy && sourceentity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false) {
+			if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.BONE) {
+				if (!(new Object() {
+					public boolean checkGamemode(Entity _ent) {
+						if (_ent instanceof ServerPlayer _serverPlayer) {
+							return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+						} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+							return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+									&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+						}
+						return false;
 					}
-					return false;
+				}.checkGamemode(sourceentity))) {
+					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).shrink(1);
 				}
-			}.checkGamemode(sourceentity))) {
-				(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).shrink(1);
-			}
-			if (world instanceof Level _level) {
-				if (!_level.isClientSide()) {
-					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.bite")), SoundSource.HOSTILE, 1, (float) 1.6);
-				} else {
-					_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.bite")), SoundSource.HOSTILE, 1, (float) 1.6, false);
-				}
-			}
-			if (entity instanceof BabyBoneCrawlerNeutralEntity _datEntSetI)
-				_datEntSetI.getEntityData().set(BabyBoneCrawlerNeutralEntity.DATA_growth, (int) ((entity instanceof BabyBoneCrawlerNeutralEntity _datEntI ? _datEntI.getEntityData().get(BabyBoneCrawlerNeutralEntity.DATA_growth) : 0) + 1));
-			if (world instanceof ServerLevel _level)
-				_level.sendParticles(ParticleTypes.HEART, x, y, z, 2, 0.1, 0.1, 0.1, 0.1);
-			if (entity instanceof LivingEntity _entity)
-				_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 2));
-			if ((entity instanceof BabyBoneCrawlerNeutralEntity _datEntI ? _datEntI.getEntityData().get(BabyBoneCrawlerNeutralEntity.DATA_growth) : 0) >= 64) {
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {
-						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:insect_cry_1")), SoundSource.HOSTILE, 1, (float) 1.4);
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.bite")), SoundSource.HOSTILE, 1, (float) 1.6);
 					} else {
-						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:insect_cry_1")), SoundSource.HOSTILE, 1, (float) 1.4, false);
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.bite")), SoundSource.HOSTILE, 1, (float) 1.6, false);
 					}
 				}
-				if (world instanceof ServerLevel _level) {
-					Entity entityToSpawn = TheDeepVoidModEntities.TAMED_BONE_CRAWLER.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-					if (entityToSpawn != null) {
-						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-					}
-				}
-				if (!world.getEntitiesOfClass(TamedBoneCrawlerEntity.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
-					if (((Entity) world.getEntitiesOfClass(TamedBoneCrawlerEntity.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).stream().sorted(new Object() {
-						Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
-							return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
-						}
-					}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof TamableAnimal _toTame && sourceentity instanceof Player _owner)
-						_toTame.tame(_owner);
-				}
-				if (!entity.level().isClientSide())
-					entity.discard();
-				for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), 0, 4); index0++) {
-					if (world instanceof ServerLevel _level) {
-						ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.BONE_CRAWLER_CHITIN.get()));
-						entityToSpawn.setPickUpDelay(10);
-						entityToSpawn.setUnlimitedLifetime();
-						_level.addFreshEntity(entityToSpawn);
-					}
-				}
-				if (!(sourceentity instanceof ServerPlayer _plr22 && _plr22.level() instanceof ServerLevel
-						&& _plr22.getAdvancements().getOrStartProgress(_plr22.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:miracle_of_life"))).isDone())) {
-					if (sourceentity instanceof ServerPlayer _player) {
-						Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:miracle_of_life"));
-						AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
-						if (!_ap.isDone()) {
-							for (String criteria : _ap.getRemainingCriteria())
-								_player.getAdvancements().award(_adv, criteria);
+				if (entity instanceof BabyBoneCrawlerEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(BabyBoneCrawlerEntity.DATA_growth, (int) ((entity instanceof BabyBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(BabyBoneCrawlerEntity.DATA_growth) : 0) + 1));
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.HEART, x, y, z, 2, 0.1, 0.1, 0.1, 0.1);
+				if (entity instanceof LivingEntity _entity)
+					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 2));
+				if ((entity instanceof BabyBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(BabyBoneCrawlerEntity.DATA_growth) : 0) >= 64) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:insect_cry_1")), SoundSource.HOSTILE, 1, (float) 1.4);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:insect_cry_1")), SoundSource.HOSTILE, 1, (float) 1.4, false);
 						}
 					}
+					if (world instanceof ServerLevel _serverLevel) {
+						Entity entityinstance = TheDeepVoidModEntities.BONE_CRAWLER.get().create(_serverLevel, null, null, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED, false, false);
+						if (entityinstance != null) {
+							entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
+							if (entityinstance instanceof TamableAnimal _toTame && sourceentity instanceof Player _owner)
+								_toTame.tame(_owner);
+							_serverLevel.addFreshEntity(entityinstance);
+						}
+					}
+					for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), 0, 4); index0++) {
+						if (world instanceof ServerLevel _level) {
+							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.BONE_CRAWLER_CHITIN.get()));
+							entityToSpawn.setPickUpDelay(10);
+							entityToSpawn.setUnlimitedLifetime();
+							_level.addFreshEntity(entityToSpawn);
+						}
+					}
+					if (!(sourceentity instanceof ServerPlayer _plr19 && _plr19.level() instanceof ServerLevel
+							&& _plr19.getAdvancements().getOrStartProgress(_plr19.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:miracle_of_life"))).isDone())) {
+						if (sourceentity instanceof ServerPlayer _player) {
+							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:miracle_of_life"));
+							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+							if (!_ap.isDone()) {
+								for (String criteria : _ap.getRemainingCriteria())
+									_player.getAdvancements().award(_adv, criteria);
+							}
+						}
+					}
+					if (!entity.level().isClientSide())
+						entity.discard();
 				}
+				return InteractionResult.SUCCESS;
+			} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.BONE_CRAWLER_FEED.get()) {
+				if (!(new Object() {
+					public boolean checkGamemode(Entity _ent) {
+						if (_ent instanceof ServerPlayer _serverPlayer) {
+							return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+						} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+							return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+									&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+						}
+						return false;
+					}
+				}.checkGamemode(sourceentity))) {
+					(sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).shrink(1);
+				}
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.bite")), SoundSource.HOSTILE, 1, (float) 1.6);
+					} else {
+						_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("entity.fox.bite")), SoundSource.HOSTILE, 1, (float) 1.6, false);
+					}
+				}
+				if (entity instanceof BabyBoneCrawlerEntity _datEntSetI)
+					_datEntSetI.getEntityData().set(BabyBoneCrawlerEntity.DATA_growth, (int) ((entity instanceof BabyBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(BabyBoneCrawlerEntity.DATA_growth) : 0) + 2));
+				if (world instanceof ServerLevel _level)
+					_level.sendParticles(ParticleTypes.HEART, x, y, z, 2, 0.1, 0.1, 0.1, 0.1);
+				if (entity instanceof LivingEntity _entity)
+					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 4));
+				if ((entity instanceof BabyBoneCrawlerEntity _datEntI ? _datEntI.getEntityData().get(BabyBoneCrawlerEntity.DATA_growth) : 0) >= 64) {
+					if (world instanceof Level _level) {
+						if (!_level.isClientSide()) {
+							_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:insect_cry_1")), SoundSource.HOSTILE, 1, (float) 1.4);
+						} else {
+							_level.playLocalSound(x, y, z, ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:insect_cry_1")), SoundSource.HOSTILE, 1, (float) 1.4, false);
+						}
+					}
+					if (world instanceof ServerLevel _serverLevel) {
+						Entity entityinstance = TheDeepVoidModEntities.BONE_CRAWLER.get().create(_serverLevel, null, null, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED, false, false);
+						if (entityinstance != null) {
+							entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
+							if (entityinstance instanceof TamableAnimal _toTame && sourceentity instanceof Player _owner)
+								_toTame.tame(_owner);
+							_serverLevel.addFreshEntity(entityinstance);
+						}
+					}
+					for (int index1 = 0; index1 < Mth.nextInt(RandomSource.create(), 1, 5); index1++) {
+						if (world instanceof ServerLevel _level) {
+							ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, new ItemStack(TheDeepVoidModItems.BONE_CRAWLER_CHITIN.get()));
+							entityToSpawn.setPickUpDelay(10);
+							entityToSpawn.setUnlimitedLifetime();
+							_level.addFreshEntity(entityToSpawn);
+						}
+					}
+					if (!(sourceentity instanceof ServerPlayer _plr41 && _plr41.level() instanceof ServerLevel
+							&& _plr41.getAdvancements().getOrStartProgress(_plr41.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:miracle_of_life"))).isDone())) {
+						if (sourceentity instanceof ServerPlayer _player) {
+							Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:miracle_of_life"));
+							AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);
+							if (!_ap.isDone()) {
+								for (String criteria : _ap.getRemainingCriteria())
+									_player.getAdvancements().award(_adv, criteria);
+							}
+						}
+					}
+					if (!entity.level().isClientSide())
+						entity.discard();
+				}
+				return InteractionResult.SUCCESS;
 			}
 		}
+		return InteractionResult.PASS;
 	}
 }

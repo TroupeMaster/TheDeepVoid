@@ -38,7 +38,7 @@ public class HiveWatcherWhileMovingXProcedure {
 				if (entityiterator instanceof LivingEntity && !(entityiterator == entity) && !entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:boss")))) {
 					if ((entityiterator instanceof LivingEntity _entUseItem4 ? _entUseItem4.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
 						if (entityiterator instanceof Player _player)
-							_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem6 ? _entUseItem6.getUseItem() : ItemStack.EMPTY).getItem(), 100);
+							_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem6 ? _entUseItem6.getUseItem() : ItemStack.EMPTY).getItem(), 60);
 						{
 							ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem8 ? _entUseItem8.getUseItem() : ItemStack.EMPTY);
 							if (_ist.hurt(1, RandomSource.create(), null)) {
@@ -59,15 +59,16 @@ public class HiveWatcherWhileMovingXProcedure {
 								}
 							}
 						}
+						if (entityiterator instanceof LivingEntity _entity)
+							_entity.stopUsingItem();
 					} else {
 						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity), (float) (double) DeepVoidConfigConfiguration.HIVEWATCHERWHILEMOVING.get());
 					}
 				}
 			}
 		}
-		entity.getPersistentData().putDouble("speedBuildUp",
-				(entity.getPersistentData().getDouble("speedBuildUp") + ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 2 ? 0.07 : 0.02)));
-		if ((entity instanceof HiveWatcherEntity _datEntL24 && _datEntL24.getEntityData().get(HiveWatcherEntity.DATA_positive)) == true) {
+		entity.getPersistentData().putDouble("speedBuildUp", (entity.getPersistentData().getDouble("speedBuildUp") + 0.025));
+		if ((entity instanceof HiveWatcherEntity _datEntL23 && _datEntL23.getEntityData().get(HiveWatcherEntity.DATA_positive)) == true) {
 			entity.setDeltaMovement(new Vec3((entity.getPersistentData().getDouble("speedBuildUp")), (-1), 0));
 		} else {
 			entity.setDeltaMovement(new Vec3((entity.getPersistentData().getDouble("speedBuildUp") * (-1)), (-1), 0));

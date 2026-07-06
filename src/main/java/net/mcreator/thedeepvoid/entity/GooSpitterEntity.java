@@ -45,13 +45,14 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
-import net.mcreator.thedeepvoid.procedures.BoneCrawlerOnEntityTickUpdateProcedure;
+import net.mcreator.thedeepvoid.procedures.GooSpitterDigInBoneProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 public class GooSpitterEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(GooSpitterEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(GooSpitterEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(GooSpitterEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Boolean> DATA_dig = SynchedEntityData.defineId(GooSpitterEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -74,7 +75,8 @@ public class GooSpitterEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "goo_spiter");
+		this.entityData.define(TEXTURE, "spittercrawlerremodel");
+		this.entityData.define(DATA_dig, false);
 	}
 
 	public void setTexture(String texture) {
@@ -126,6 +128,7 @@ public class GooSpitterEntity extends Monster implements GeoEntity {
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putBoolean("Datadig", this.entityData.get(DATA_dig));
 	}
 
 	@Override
@@ -133,12 +136,14 @@ public class GooSpitterEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datadig"))
+			this.entityData.set(DATA_dig, compound.getBoolean("Datadig"));
 	}
 
 	@Override
 	public void baseTick() {
 		super.baseTick();
-		BoneCrawlerOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
+		GooSpitterDigInBoneProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
 
@@ -155,9 +160,9 @@ public class GooSpitterEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 10);
+		builder = builder.add(Attributes.MAX_HEALTH, 15);
 		builder = builder.add(Attributes.ARMOR, 0);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 2);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 5);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 0.1);
 		return builder;
@@ -168,9 +173,9 @@ public class GooSpitterEntity extends Monster implements GeoEntity {
 			if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))
 
 			) {
-				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.spitter_walk"));
+				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.boneCrawler_walk"));
 			}
-			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.spitter_idle"));
+			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.boneCrawler_idle"));
 		}
 		return PlayState.STOP;
 	}
@@ -188,7 +193,7 @@ public class GooSpitterEntity extends Monster implements GeoEntity {
 		}
 		if (this.swinging && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
 			event.getController().forceAnimationReset();
-			return event.setAndContinue(RawAnimation.begin().thenPlay("animation.spitter_attack"));
+			return event.setAndContinue(RawAnimation.begin().thenPlay("animation.boneCrawler_attack"));
 		}
 		return PlayState.CONTINUE;
 	}

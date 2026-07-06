@@ -14,12 +14,12 @@ import net.mcreator.thedeepvoid.entity.BoneCrawlerEntity;
 public class BoneCrawlerModel extends GeoModel<BoneCrawlerEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(BoneCrawlerEntity entity) {
-		return new ResourceLocation("the_deep_void", "animations/crawler.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/bonecrawlerremodel.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(BoneCrawlerEntity entity) {
-		return new ResourceLocation("the_deep_void", "geo/crawler.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/bonecrawlerremodel.geo.json");
 	}
 
 	@Override

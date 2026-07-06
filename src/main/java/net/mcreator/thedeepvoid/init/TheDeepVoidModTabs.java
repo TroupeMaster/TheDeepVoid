@@ -531,6 +531,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.BONE_MUSH.get());
 				tabData.accept(TheDeepVoidModItems.BONE_LOAF.get());
 				tabData.accept(TheDeepVoidModItems.ROTTEN_DELIGHT.get());
+				tabData.accept(TheDeepVoidModItems.BONE_CRAWLER_FEED.get());
 				tabData.accept(TheDeepVoidModItems.VOIDFISH.get());
 				tabData.accept(TheDeepVoidModItems.COOKED_VOIDFISH.get());
 				tabData.accept(TheDeepVoidModItems.ROTFISH.get());
@@ -670,6 +671,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.HUNTER_CLAWS.get());
 				tabData.accept(TheDeepVoidModItems.KNIVES_GLOVE.get());
 				tabData.accept(TheDeepVoidModItems.CHAIN_GAUNTLET.get());
+				tabData.accept(TheDeepVoidModItems.BONE_CRAWLER_CLAW.get());
 				tabData.accept(TheDeepVoidModItems.ROT_TONGUE.get());
 				tabData.accept(TheDeepVoidModItems.THE_CATCHER.get());
 				tabData.accept(TheDeepVoidModItems.VOID_DAGGER.get());

@@ -81,53 +81,55 @@ public class AbductorOnEntityTickUpdateProcedure {
 			if (entity instanceof AbductorEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(AbductorEntity.DATA_playerAbducted, false);
 			TheDeepVoidMod.queueServerWork(60, () -> {
-				if ((entity instanceof LivingEntity _livEnt14 && _livEnt14.hasEffect(MobEffects.INVISIBILITY)) == false) {
-					{
-						final Vec3 _center = new Vec3(x, y, z);
-						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-						for (Entity entityiterator : _entfound) {
-							if (entityiterator instanceof Player || entityiterator instanceof AbductorEntity) {
-								if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 40, 0, false, false));
-								if (world instanceof ServerLevel _level)
-									_level.sendParticles(ParticleTypes.SMOKE, x, y, z, 15, 3, 3, 3, 0.1);
+				if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
+					if ((entity instanceof LivingEntity _livEnt15 && _livEnt15.hasEffect(MobEffects.INVISIBILITY)) == false) {
+						{
+							final Vec3 _center = new Vec3(x, y, z);
+							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+							for (Entity entityiterator : _entfound) {
+								if (entityiterator instanceof Player || entityiterator instanceof AbductorEntity) {
+									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 40, 0, false, false));
+									if (world instanceof ServerLevel _level)
+										_level.sendParticles(ParticleTypes.SMOKE, x, y, z, 15, 3, 3, 3, 0.1);
+								}
 							}
 						}
-					}
-				} else {
-					if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 2, 2, 2), e -> true).isEmpty()) {
-						if (!entity.level().isClientSide())
-							entity.discard();
-					}
-					{
-						final Vec3 _center = new Vec3(x, y, z);
-						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
-						for (Entity entityiterator : _entfound) {
-							if (entityiterator instanceof Player) {
-								if (entityiterator instanceof ServerPlayer _player && !_player.level().isClientSide()) {
-									ResourceKey<Level> destinationType = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"));
-									if (_player.level().dimension() == destinationType)
-										return;
-									ServerLevel nextLevel = _player.server.getLevel(destinationType);
-									if (nextLevel != null) {
-										_player.connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.WIN_GAME, 0));
-										_player.teleportTo(nextLevel, _player.getX(), _player.getY(), _player.getZ(), _player.getYRot(), _player.getXRot());
-										_player.connection.send(new ClientboundPlayerAbilitiesPacket(_player.getAbilities()));
-										for (MobEffectInstance _effectinstance : _player.getActiveEffects())
-											_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance));
-										_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
+					} else {
+						if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 2, 2, 2), e -> true).isEmpty()) {
+							if (!entity.level().isClientSide())
+								entity.discard();
+						}
+						{
+							final Vec3 _center = new Vec3(x, y, z);
+							List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(2 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+							for (Entity entityiterator : _entfound) {
+								if (entityiterator instanceof Player) {
+									if (entityiterator instanceof ServerPlayer _player && !_player.level().isClientSide()) {
+										ResourceKey<Level> destinationType = ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:deep_void"));
+										if (_player.level().dimension() == destinationType)
+											return;
+										ServerLevel nextLevel = _player.server.getLevel(destinationType);
+										if (nextLevel != null) {
+											_player.connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.WIN_GAME, 0));
+											_player.teleportTo(nextLevel, _player.getX(), _player.getY(), _player.getZ(), _player.getYRot(), _player.getXRot());
+											_player.connection.send(new ClientboundPlayerAbilitiesPacket(_player.getAbilities()));
+											for (MobEffectInstance _effectinstance : _player.getActiveEffects())
+												_player.connection.send(new ClientboundUpdateMobEffectPacket(_player.getId(), _effectinstance));
+											_player.connection.send(new ClientboundLevelEventPacket(1032, BlockPos.ZERO, 0, false));
+										}
 									}
+									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VOID_BLESSING.get(), (int) (double) DeepVoidConfigConfiguration.VOIDBLESSINGTIMER.get(), 0));
+									TheDeepVoidMod.queueServerWork(10, () -> {
+										{
+											Entity _ent = entityiterator;
+											_ent.teleportTo(x, 300, z);
+											if (_ent instanceof ServerPlayer _serverPlayer)
+												_serverPlayer.connection.teleport(x, 300, z, _ent.getYRot(), _ent.getXRot());
+										}
+									});
 								}
-								if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VOID_BLESSING.get(), (int) (double) DeepVoidConfigConfiguration.VOIDBLESSINGTIMER.get(), 0));
-								TheDeepVoidMod.queueServerWork(10, () -> {
-									{
-										Entity _ent = entityiterator;
-										_ent.teleportTo(x, 300, z);
-										if (_ent instanceof ServerPlayer _serverPlayer)
-											_serverPlayer.connection.teleport(x, 300, z, _ent.getYRot(), _ent.getXRot());
-									}
-								});
 							}
 						}
 					}
@@ -142,7 +144,7 @@ public class AbductorOnEntityTickUpdateProcedure {
 					Comparator<Entity> compareDistOf(double _x, double _y, double _z) {
 						return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 					}
-				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _livEnt34 && _livEnt34.hasEffect(TheDeepVoidModMobEffects.FIXATION.get())) && !(new Object() {
+				}.compareDistOf(x, y, z)).findFirst().orElse(null)) instanceof LivingEntity _livEnt35 && _livEnt35.hasEffect(TheDeepVoidModMobEffects.FIXATION.get())) && !(new Object() {
 					public boolean checkGamemode(Entity _ent) {
 						if (_ent instanceof ServerPlayer _serverPlayer) {
 							return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;

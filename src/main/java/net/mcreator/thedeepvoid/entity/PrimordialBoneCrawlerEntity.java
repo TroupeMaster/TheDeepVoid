@@ -75,6 +75,9 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> DATA_dashing = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Boolean> DATA_spit = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Integer> DATA_shooting = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_airSlam = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Boolean> DATA_fly = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
+	public static final EntityDataAccessor<Integer> DATA_stun = SynchedEntityData.defineId(PrimordialBoneCrawlerEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -99,7 +102,7 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "primordial_crawler");
+		this.entityData.define(TEXTURE, "primordial_bone_crawler");
 		this.entityData.define(DATA_dying, false);
 		this.entityData.define(DATA_digging, false);
 		this.entityData.define(DATA_attackChance, 0);
@@ -110,6 +113,9 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 		this.entityData.define(DATA_dashing, false);
 		this.entityData.define(DATA_spit, false);
 		this.entityData.define(DATA_shooting, 0);
+		this.entityData.define(DATA_airSlam, false);
+		this.entityData.define(DATA_fly, false);
+		this.entityData.define(DATA_stun, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -225,6 +231,9 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 		compound.putBoolean("Datadashing", this.entityData.get(DATA_dashing));
 		compound.putBoolean("Dataspit", this.entityData.get(DATA_spit));
 		compound.putInt("Datashooting", this.entityData.get(DATA_shooting));
+		compound.putBoolean("DataairSlam", this.entityData.get(DATA_airSlam));
+		compound.putBoolean("Datafly", this.entityData.get(DATA_fly));
+		compound.putInt("Datastun", this.entityData.get(DATA_stun));
 	}
 
 	@Override
@@ -252,6 +261,12 @@ public class PrimordialBoneCrawlerEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_spit, compound.getBoolean("Dataspit"));
 		if (compound.contains("Datashooting"))
 			this.entityData.set(DATA_shooting, compound.getInt("Datashooting"));
+		if (compound.contains("DataairSlam"))
+			this.entityData.set(DATA_airSlam, compound.getBoolean("DataairSlam"));
+		if (compound.contains("Datafly"))
+			this.entityData.set(DATA_fly, compound.getBoolean("Datafly"));
+		if (compound.contains("Datastun"))
+			this.entityData.set(DATA_stun, compound.getInt("Datastun"));
 	}
 
 	@Override

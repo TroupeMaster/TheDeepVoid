@@ -18,12 +18,14 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.player.LocalPlayer;
 
+import net.mcreator.thedeepvoid.procedures.ApostasySwingItemProcedure;
 import net.mcreator.thedeepvoid.procedures.ApostasyRightClickedProcedure;
 import net.mcreator.thedeepvoid.item.renderer.ApostasyItemRenderer;
 
@@ -120,5 +122,12 @@ public class ApostasyItem extends Item implements GeoItem {
 
 		ApostasyRightClickedProcedure.execute(world, x, y, z, entity, itemstack);
 		return ar;
+	}
+
+	@Override
+	public boolean onEntitySwing(ItemStack itemstack, LivingEntity entity) {
+		boolean retval = super.onEntitySwing(itemstack, entity);
+		ApostasySwingItemProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity, itemstack);
+		return retval;
 	}
 }

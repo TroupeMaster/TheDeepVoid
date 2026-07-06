@@ -73,7 +73,7 @@ public class SleepingPrimordialCrawlerEntity extends Monster implements GeoEntit
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "primordial_crawler");
+		this.entityData.define(TEXTURE, "primordial_bone_crawler");
 	}
 
 	public void setTexture(String texture) {

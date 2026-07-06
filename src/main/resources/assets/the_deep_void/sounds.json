@@ -1949,5 +1949,14 @@
         "stream": false
       }
     ]
+  },
+  "primordial_crawler_flying": {
+    "subtitle": "subtitles.primordial_crawler_flying",
+    "sounds": [
+      {
+        "name": "the_deep_void:primordial_crawler_flying",
+        "stream": false
+      }
+    ]
   }
 }

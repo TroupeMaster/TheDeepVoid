@@ -12,6 +12,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
+import net.mcreator.thedeepvoid.entity.StalkerJuvenileEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
 
 import javax.annotation.Nullable;
@@ -21,15 +22,15 @@ public class StalkerEntityIsHurtProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity(), event.getSource().getEntity());
+			execute(event, event.getEntity(), event.getSource().getEntity(), event.getAmount());
 		}
 	}
 
-	public static void execute(Entity entity, Entity sourceentity) {
-		execute(null, entity, sourceentity);
+	public static void execute(Entity entity, Entity sourceentity, double amount) {
+		execute(null, entity, sourceentity, amount);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity, Entity sourceentity) {
+	private static void execute(@Nullable Event event, Entity entity, Entity sourceentity, double amount) {
 		if (entity == null || sourceentity == null)
 			return;
 		boolean roar = false;
@@ -51,6 +52,12 @@ public class StalkerEntityIsHurtProcedure {
 			if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 3) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) - 2));
+			}
+		}
+		if (sourceentity instanceof StalkerJuvenileEntity) {
+			if (!(entity instanceof LivingEntity _livEnt26 && _livEnt26.hasEffect(TheDeepVoidModMobEffects.DECOMPOSITION.get())) && amount > 0) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.DECOMPOSITION.get(), 100, 0));
 			}
 		}
 	}

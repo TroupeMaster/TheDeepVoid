@@ -111,7 +111,6 @@ public class MaggotEntity extends Monster implements GeoEntity {
 		this.goalSelector.addGoal(5, new FloatGoal(this));
 		this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, Player.class, false, false));
 		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, BabyBoneCrawlerEntity.class, false, true));
-		this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, BabyBoneCrawlerNeutralEntity.class, false, true));
 	}
 
 	@Override
@@ -173,7 +172,7 @@ public class MaggotEntity extends Monster implements GeoEntity {
 	@Override
 	public void awardKillScore(Entity entity, int score, DamageSource damageSource) {
 		super.awardKillScore(entity, score, damageSource);
-		MaggotThisEntityKillsAnotherOneProcedure.execute(this.level(), entity);
+		MaggotThisEntityKillsAnotherOneProcedure.execute(this.level(), entity, this);
 	}
 
 	@Override

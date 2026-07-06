@@ -74,6 +74,8 @@ public class PrimordialCrawlerSlamProcedure {
 									_ist.setDamageValue(0);
 								}
 							}
+							if (entityiterator instanceof LivingEntity _entity)
+								_entity.stopUsingItem();
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {
 									_level.playSound(null, BlockPos.containing(entityiterator.getX(), entityiterator.getY(), entityiterator.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("item.shield.break")),

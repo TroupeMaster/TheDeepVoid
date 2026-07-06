@@ -9,6 +9,7 @@ import net.minecraft.world.level.GameType;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -38,8 +39,6 @@ public class BoneCrawlerEggOnBlockRightClickedProcedure {
 					return false;
 				}
 			}.checkGamemode(entity))) {
-				if (entity instanceof Player _player)
-					_player.getCooldowns().addCooldown(TheDeepVoidModItems.HATCHING_ENZYME.get(), 80);
 				(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).shrink(1);
 				if (entity instanceof Player _player) {
 					ItemStack _setstack = new ItemStack(Items.GLASS_BOTTLE).copy();
@@ -55,10 +54,13 @@ public class BoneCrawlerEggOnBlockRightClickedProcedure {
 				}
 			}
 			world.destroyBlock(BlockPos.containing(x, y, z), false);
-			if (world instanceof ServerLevel _level) {
-				Entity entityToSpawn = TheDeepVoidModEntities.BABY_BONE_CRAWLER_NEUTRAL.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
-				if (entityToSpawn != null) {
-					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+			if (world instanceof ServerLevel _serverLevel) {
+				Entity entityinstance = TheDeepVoidModEntities.BABY_BONE_CRAWLER.get().create(_serverLevel, null, null, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED, false, false);
+				if (entityinstance != null) {
+					entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
+					if (entityinstance instanceof TamableAnimal _toTame && entity instanceof Player _owner)
+						_toTame.tame(_owner);
+					_serverLevel.addFreshEntity(entityinstance);
 				}
 			}
 		}

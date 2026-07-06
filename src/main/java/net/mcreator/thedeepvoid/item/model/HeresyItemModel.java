@@ -9,16 +9,16 @@ import net.mcreator.thedeepvoid.item.HeresyItem;
 public class HeresyItemModel extends GeoModel<HeresyItem> {
 	@Override
 	public ResourceLocation getAnimationResource(HeresyItem animatable) {
-		return new ResourceLocation("the_deep_void", "animations/heresy.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/heresynew.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(HeresyItem animatable) {
-		return new ResourceLocation("the_deep_void", "geo/heresy.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/heresynew.geo.json");
 	}
 
 	@Override
 	public ResourceLocation getTextureResource(HeresyItem animatable) {
-		return new ResourceLocation("the_deep_void", "textures/item/heresy.png");
+		return new ResourceLocation("the_deep_void", "textures/item/heresynew.png");
 	}
 }

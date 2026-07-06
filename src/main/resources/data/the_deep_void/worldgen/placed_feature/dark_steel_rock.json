@@ -21,7 +21,7 @@
         "type": "uniform",
         "value": {
           "min_inclusive": 0,
-          "max_inclusive": 2
+          "max_inclusive": 3
         }
       }
     },

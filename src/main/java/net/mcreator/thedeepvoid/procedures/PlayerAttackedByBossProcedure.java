@@ -26,6 +26,7 @@ import net.minecraft.client.Minecraft;
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
+import net.mcreator.thedeepvoid.entity.SpawnBoneSpikesEntity;
 import net.mcreator.thedeepvoid.entity.SkullSmasherEntity;
 import net.mcreator.thedeepvoid.entity.ShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.SeekerEntity;
@@ -40,6 +41,7 @@ import net.mcreator.thedeepvoid.entity.GiantBoneCrawlerEggEntity;
 import net.mcreator.thedeepvoid.entity.FleshFangsEntity;
 import net.mcreator.thedeepvoid.entity.EyeOfTheWatcherEntity;
 import net.mcreator.thedeepvoid.entity.BoneSawEntity;
+import net.mcreator.thedeepvoid.entity.BoneBlockadeEntity;
 import net.mcreator.thedeepvoid.entity.BloodSpitEntity;
 import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
@@ -87,8 +89,9 @@ public class PlayerAttackedByBossProcedure {
 				}
 			}
 			if (entity instanceof Player && (sourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:boss"))) || sourceentity instanceof GiantShadowHandEntity)
-					&& !((entity instanceof LivingEntity _entUseItem24 ? _entUseItem24.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
-					&& !(entity instanceof LivingEntity _livEnt26 && _livEnt26.hasEffect(TheDeepVoidModMobEffects.BROKEN_ARMOR.get())) && DeepVoidConfigConfiguration.BOSSESBREAKARMOR.get() == true) {
+					&& !(sourceentity instanceof SpawnBoneSpikesEntity) && !(sourceentity instanceof BoneBlockadeEntity)
+					&& !((entity instanceof LivingEntity _entUseItem26 ? _entUseItem26.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
+					&& !(entity instanceof LivingEntity _livEnt28 && _livEnt28.hasEffect(TheDeepVoidModMobEffects.BROKEN_ARMOR.get())) && DeepVoidConfigConfiguration.BOSSESBREAKARMOR.get() == true) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.BROKEN_ARMOR.get(), 400, 0));
 			}
@@ -109,7 +112,8 @@ public class PlayerAttackedByBossProcedure {
 						}
 						return false;
 					}
-				}.checkGamemode(sourceentity)) && !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:capped_damage")))) {
+				}.checkGamemode(sourceentity)) && !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:capped_damage")))
+				&& !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:final_judgement")))) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
 			}

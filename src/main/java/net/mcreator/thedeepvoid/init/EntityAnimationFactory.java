@@ -12,13 +12,11 @@ import net.mcreator.thedeepvoid.entity.VoidbornEntity;
 import net.mcreator.thedeepvoid.entity.VoidTentacleEntity;
 import net.mcreator.thedeepvoid.entity.VoidDwellerEntity;
 import net.mcreator.thedeepvoid.entity.ThumperEntityEntity;
-import net.mcreator.thedeepvoid.entity.TamedMotherBoneCrawlerEntity;
-import net.mcreator.thedeepvoid.entity.TamedBoneCrawlerEntity;
-import net.mcreator.thedeepvoid.entity.TamedAlphaBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.SwarmerEntity;
 import net.mcreator.thedeepvoid.entity.SummonedShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.SummonedHiveFangsEntity;
 import net.mcreator.thedeepvoid.entity.SummonedDevourerEntity;
+import net.mcreator.thedeepvoid.entity.StalkerJuvenileEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
 import net.mcreator.thedeepvoid.entity.SporeSpewerEntity;
 import net.mcreator.thedeepvoid.entity.SmallFleshCubeEntity;
@@ -101,7 +99,6 @@ import net.mcreator.thedeepvoid.entity.BlackFlyEntity;
 import net.mcreator.thedeepvoid.entity.BigOverseerEntity;
 import net.mcreator.thedeepvoid.entity.BigEyeEntity;
 import net.mcreator.thedeepvoid.entity.BeholderEntity;
-import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerNeutralEntity;
 import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.ApostleCloneEntity;
 import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
@@ -128,13 +125,6 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof FoolEaterEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof TamedBoneCrawlerEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");
@@ -232,13 +222,6 @@ public class EntityAnimationFactory {
 					syncable.animationprocedure = animation;
 				}
 			}
-			if (event.getEntity() instanceof TamedMotherBoneCrawlerEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
 			if (event.getEntity() instanceof AlphaBoneCrawlerEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
@@ -246,21 +229,7 @@ public class EntityAnimationFactory {
 					syncable.animationprocedure = animation;
 				}
 			}
-			if (event.getEntity() instanceof TamedAlphaBoneCrawlerEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
 			if (event.getEntity() instanceof BabyBoneCrawlerEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof BabyBoneCrawlerNeutralEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");
@@ -828,6 +797,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof ManiacEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof StalkerJuvenileEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

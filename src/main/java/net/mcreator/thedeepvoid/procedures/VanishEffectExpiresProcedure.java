@@ -41,12 +41,26 @@ public class VanishEffectExpiresProcedure {
 					_living.setItemSlot(EquipmentSlot.HEAD, ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).saveArmor3));
 				}
 			}
+			{
+				ItemStack _setval = ItemStack.EMPTY;
+				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.saveArmor3 = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		} else {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).saveArmor3));
 				entityToSpawn.setPickUpDelay(20);
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);
+			}
+			{
+				ItemStack _setval = ItemStack.EMPTY;
+				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.saveArmor3 = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == ItemStack.EMPTY.getItem()) {
@@ -59,12 +73,26 @@ public class VanishEffectExpiresProcedure {
 					_living.setItemSlot(EquipmentSlot.CHEST, ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).saveArmor2));
 				}
 			}
+			{
+				ItemStack _setval = ItemStack.EMPTY;
+				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.saveArmor2 = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		} else {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).saveArmor2));
 				entityToSpawn.setPickUpDelay(20);
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);
+			}
+			{
+				ItemStack _setval = ItemStack.EMPTY;
+				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.saveArmor2 = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == ItemStack.EMPTY.getItem()) {
@@ -77,12 +105,26 @@ public class VanishEffectExpiresProcedure {
 					_living.setItemSlot(EquipmentSlot.LEGS, ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).saveArmor1));
 				}
 			}
+			{
+				ItemStack _setval = ItemStack.EMPTY;
+				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.saveArmor1 = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		} else {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).saveArmor1));
 				entityToSpawn.setPickUpDelay(20);
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);
+			}
+			{
+				ItemStack _setval = ItemStack.EMPTY;
+				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.saveArmor1 = _setval;
+					capability.syncPlayerVariables(entity);
+				});
 			}
 		}
 		if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == ItemStack.EMPTY.getItem()) {
@@ -95,6 +137,13 @@ public class VanishEffectExpiresProcedure {
 					_living.setItemSlot(EquipmentSlot.FEET, ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).saveArmor0));
 				}
 			}
+			{
+				ItemStack _setval = ItemStack.EMPTY;
+				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.saveArmor0 = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
 		} else {
 			if (world instanceof ServerLevel _level) {
 				ItemEntity entityToSpawn = new ItemEntity(_level, x, y, z, ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).saveArmor0));
@@ -102,6 +151,34 @@ public class VanishEffectExpiresProcedure {
 				entityToSpawn.setUnlimitedLifetime();
 				_level.addFreshEntity(entityToSpawn);
 			}
+			{
+				ItemStack _setval = ItemStack.EMPTY;
+				entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+					capability.saveArmor0 = _setval;
+					capability.syncPlayerVariables(entity);
+				});
+			}
+		}
+		{
+			double _setval = 0;
+			entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.saveArmorToughness = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		{
+			double _setval = 0;
+			entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.saveKnockbackResistance = _setval;
+				capability.syncPlayerVariables(entity);
+			});
+		}
+		{
+			double _setval = 0;
+			entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+				capability.saveStepHeight = _setval;
+				capability.syncPlayerVariables(entity);
+			});
 		}
 	}
 }

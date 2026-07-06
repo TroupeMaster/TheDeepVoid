@@ -14,11 +14,17 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.network.PlayMessages;
 import net.minecraftforge.network.NetworkHooks;
 
+import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.SpawnEggItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtTargetGoal;
+import net.minecraft.world.entity.ai.goal.target.OwnerHurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.ai.goal.RandomStrollGoal;
@@ -26,18 +32,26 @@ import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.LeapAtTargetGoal;
 import net.minecraft.world.entity.ai.goal.FloatGoal;
+import net.minecraft.world.entity.ai.goal.AvoidEntityGoal;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.Pose;
 import net.minecraft.world.entity.MobType;
+import net.minecraft.world.entity.MobSpawnType;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.EntityDimensions;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.AgeableMob;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.Difficulty;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.network.syncher.SynchedEntityData;
 import net.minecraft.network.syncher.EntityDataSerializers;
@@ -47,14 +61,20 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.procedures.TamedMotherBoneCrawlerRightClickedOnEntityProcedure;
+import net.mcreator.thedeepvoid.procedures.TamedMotherBoneCrawlerOnEntityTickUpdateProcedure;
 import net.mcreator.thedeepvoid.procedures.MotherBoneCrawlerEntityIsHurtProcedure;
 import net.mcreator.thedeepvoid.procedures.MotherBoneCrawlerEntityDiesProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
-public class MotherBoneCrawlerEntity extends Monster implements GeoEntity {
+import java.util.List;
+
+public class MotherBoneCrawlerEntity extends TamableAnimal implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(MotherBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(MotherBoneCrawlerEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(MotherBoneCrawlerEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_layEgg = SynchedEntityData.defineId(MotherBoneCrawlerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Boolean> DATA_tamed = SynchedEntityData.defineId(MotherBoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -77,7 +97,9 @@ public class MotherBoneCrawlerEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "mother_bone_crawler");
+		this.entityData.define(TEXTURE, "mothercrawlerremodel");
+		this.entityData.define(DATA_layEgg, 0);
+		this.entityData.define(DATA_tamed, false);
 	}
 
 	public void setTexture(String texture) {
@@ -99,7 +121,7 @@ public class MotherBoneCrawlerEntity extends Monster implements GeoEntity {
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
-				return 4.84;
+				return 7.84;
 			}
 		});
 		this.targetSelector.addGoal(2, new HurtByTargetGoal(this));
@@ -107,7 +129,10 @@ public class MotherBoneCrawlerEntity extends Monster implements GeoEntity {
 		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 1));
 		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(6, new FloatGoal(this));
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, Player.class, false, false));
+		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, StalkerEntity.class, (float) 60, 1.2, 1.2));
+		this.targetSelector.addGoal(8, new OwnerHurtTargetGoal(this));
+		this.goalSelector.addGoal(9, new OwnerHurtByTargetGoal(this));
+		this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, Player.class, false, false));
 	}
 
 	@Override
@@ -137,20 +162,22 @@ public class MotherBoneCrawlerEntity extends Monster implements GeoEntity {
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
-		MotherBoneCrawlerEntityIsHurtProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this, source.getEntity());
+		MotherBoneCrawlerEntityIsHurtProcedure.execute(this.level(), this);
 		return super.hurt(source, amount);
 	}
 
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		MotherBoneCrawlerEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
+		MotherBoneCrawlerEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("DatalayEgg", this.entityData.get(DATA_layEgg));
+		compound.putBoolean("Datatamed", this.entityData.get(DATA_tamed));
 	}
 
 	@Override
@@ -158,17 +185,118 @@ public class MotherBoneCrawlerEntity extends Monster implements GeoEntity {
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("DatalayEgg"))
+			this.entityData.set(DATA_layEgg, compound.getInt("DatalayEgg"));
+		if (compound.contains("Datatamed"))
+			this.entityData.set(DATA_tamed, compound.getBoolean("Datatamed"));
+	}
+
+	@Override
+	public InteractionResult mobInteract(Player sourceentity, InteractionHand hand) {
+		ItemStack itemstack = sourceentity.getItemInHand(hand);
+		InteractionResult retval = InteractionResult.sidedSuccess(this.level().isClientSide());
+		Item item = itemstack.getItem();
+		if (itemstack.getItem() instanceof SpawnEggItem) {
+			retval = super.mobInteract(sourceentity, hand);
+		} else if (this.level().isClientSide()) {
+			retval = (this.isTame() && this.isOwnedBy(sourceentity) || this.isFood(itemstack)) ? InteractionResult.sidedSuccess(this.level().isClientSide()) : InteractionResult.PASS;
+		} else {
+			if (this.isTame()) {
+				if (this.isOwnedBy(sourceentity)) {
+					if (item.isEdible() && this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
+						this.usePlayerItem(sourceentity, hand, itemstack);
+						this.heal((float) item.getFoodProperties().getNutrition());
+						retval = InteractionResult.sidedSuccess(this.level().isClientSide());
+					} else if (this.isFood(itemstack) && this.getHealth() < this.getMaxHealth()) {
+						this.usePlayerItem(sourceentity, hand, itemstack);
+						this.heal(4);
+						retval = InteractionResult.sidedSuccess(this.level().isClientSide());
+					} else {
+						retval = super.mobInteract(sourceentity, hand);
+					}
+				}
+			} else if (this.isFood(itemstack)) {
+				this.usePlayerItem(sourceentity, hand, itemstack);
+				if (this.random.nextInt(3) == 0 && !net.minecraftforge.event.ForgeEventFactory.onAnimalTame(this, sourceentity)) {
+					this.tame(sourceentity);
+					this.level().broadcastEntityEvent(this, (byte) 7);
+				} else {
+					this.level().broadcastEntityEvent(this, (byte) 6);
+				}
+				this.setPersistenceRequired();
+				retval = InteractionResult.sidedSuccess(this.level().isClientSide());
+			} else {
+				retval = super.mobInteract(sourceentity, hand);
+				if (retval == InteractionResult.SUCCESS || retval == InteractionResult.CONSUME)
+					this.setPersistenceRequired();
+			}
+		}
+		sourceentity.startRiding(this);
+		double x = this.getX();
+		double y = this.getY();
+		double z = this.getZ();
+		Entity entity = this;
+		Level world = this.level();
+		return TamedMotherBoneCrawlerRightClickedOnEntityProcedure.execute(world, x, y, z, entity, sourceentity);
 	}
 
 	@Override
 	public void baseTick() {
 		super.baseTick();
+		TamedMotherBoneCrawlerOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 		this.refreshDimensions();
 	}
 
 	@Override
 	public EntityDimensions getDimensions(Pose p_33597_) {
 		return super.getDimensions(p_33597_).scale((float) 1);
+	}
+
+	@Override
+	public AgeableMob getBreedOffspring(ServerLevel serverWorld, AgeableMob ageable) {
+		MotherBoneCrawlerEntity retval = TheDeepVoidModEntities.MOTHER_BONE_CRAWLER.get().create(serverWorld);
+		retval.finalizeSpawn(serverWorld, serverWorld.getCurrentDifficultyAt(retval.blockPosition()), MobSpawnType.BREEDING, null, null);
+		return retval;
+	}
+
+	@Override
+	public boolean isFood(ItemStack stack) {
+		return List.of().contains(stack.getItem());
+	}
+
+	@Override
+	public void travel(Vec3 dir) {
+		Entity entity = this.getPassengers().isEmpty() ? null : (Entity) this.getPassengers().get(0);
+		if (this.isVehicle()) {
+			this.setYRot(entity.getYRot());
+			this.yRotO = this.getYRot();
+			this.setXRot(entity.getXRot() * 0.5F);
+			this.setRot(this.getYRot(), this.getXRot());
+			this.yBodyRot = entity.getYRot();
+			this.yHeadRot = entity.getYRot();
+			if (entity instanceof LivingEntity passenger) {
+				this.setSpeed((float) this.getAttributeValue(Attributes.MOVEMENT_SPEED));
+				float forward = passenger.zza;
+				float strafe = passenger.xxa;
+				super.travel(new Vec3(strafe, 0, forward));
+			}
+			double d1 = this.getX() - this.xo;
+			double d0 = this.getZ() - this.zo;
+			float f1 = (float) Math.sqrt(d1 * d1 + d0 * d0) * 4;
+			if (f1 > 1.0F)
+				f1 = 1.0F;
+			this.walkAnimation.setSpeed(this.walkAnimation.speed() + (f1 - this.walkAnimation.speed()) * 0.4F);
+			this.walkAnimation.position(this.walkAnimation.position() + this.walkAnimation.speed());
+			this.calculateEntityAnimation(true);
+			return;
+		}
+		super.travel(dir);
+	}
+
+	@Override
+	public void aiStep() {
+		super.aiStep();
+		this.updateSwingTime();
 	}
 
 	public static void init() {
@@ -181,7 +309,7 @@ public class MotherBoneCrawlerEntity extends Monster implements GeoEntity {
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.28);
 		builder = builder.add(Attributes.MAX_HEALTH, 50);
 		builder = builder.add(Attributes.ARMOR, 4);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 6);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 10);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 16);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 0.5);
 		return builder;
