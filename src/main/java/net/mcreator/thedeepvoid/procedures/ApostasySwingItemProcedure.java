@@ -36,10 +36,6 @@ public class ApostasySwingItemProcedure {
 			return;
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == Items.SPYGLASS
 				&& (entity instanceof Player _plrCldRem3 ? _plrCldRem3.getCooldowns().getCooldownPercent(itemstack.getItem(), 0f) * 100 : 0) <= 0) {
-			if ((entity instanceof LivingEntity _entUseItem4 ? _entUseItem4.getUseItem() : ItemStack.EMPTY).getItem() == Items.SPYGLASS) {
-				if (entity instanceof LivingEntity _entity)
-					_entity.stopUsingItem();
-			}
 			if (itemstack.getOrCreateTag().getDouble("deep_void:rounds") > 0) {
 				if (entity instanceof Player _player)
 					_player.getCooldowns().addCooldown(itemstack.getItem(), 25);

@@ -35,11 +35,8 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
-import net.mcreator.thedeepvoid.entity.VoidPelletEntity;
 import net.mcreator.thedeepvoid.entity.VoidArrowEntity;
 import net.mcreator.thedeepvoid.entity.SpiteArrowEntity;
-import net.mcreator.thedeepvoid.entity.SoulFusedShotEntity;
-import net.mcreator.thedeepvoid.entity.ShotgunPelletEntity;
 import net.mcreator.thedeepvoid.entity.ShadowArrowEntity;
 import net.mcreator.thedeepvoid.entity.ShadeArrowEntity;
 import net.mcreator.thedeepvoid.entity.PerilBulletEntity;
@@ -214,9 +211,9 @@ public class BigShadeArrowHitProcedure {
 						(float) (amount + (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getEnchantmentLevel(Enchantments.POWER_ARROWS) + 1));
 			}
 		}
-		if (entity instanceof LivingEntity && (immediatesourceentity instanceof VoidPelletEntity || immediatesourceentity instanceof ShotgunPelletEntity) && !(entity instanceof VoidPelletEntity) && !(entity instanceof ShotgunPelletEntity)
-				&& !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:gun")))
-				&& !((entity instanceof LivingEntity _entUseItem135 ? _entUseItem135.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)) {
+		if (entity instanceof LivingEntity && immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:nocooldown_bullet")))
+				&& !entity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:nocooldown_bullet"))) && !damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:gun")))
+				&& !((entity instanceof LivingEntity _entUseItem133 ? _entUseItem133.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
 			}
@@ -230,7 +227,7 @@ public class BigShadeArrowHitProcedure {
 		}
 		if (immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:bullet")))
 				&& !immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:nocooldown_bullet")))
-				&& !((entity instanceof LivingEntity _entUseItem150 ? _entUseItem150.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
+				&& !((entity instanceof LivingEntity _entUseItem148 ? _entUseItem148.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_HELMET.get()
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_CHESTPLATE.get()
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_LEGGINGS.get()
@@ -241,20 +238,20 @@ public class BigShadeArrowHitProcedure {
 			}
 			entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy"))), sourceentity),
 					(float) (amount * 1.2));
-			if (!(immediatesourceentity instanceof SoulFusedShotEntity) && !(immediatesourceentity instanceof PerilBulletEntity) && !(immediatesourceentity instanceof IchorSpitEntity)) {
+			if (!(immediatesourceentity instanceof PerilBulletEntity) && !(immediatesourceentity instanceof IchorSpitEntity)) {
 				if (!immediatesourceentity.level().isClientSide())
 					immediatesourceentity.discard();
 			}
 		}
 		if (!(immediatesourceentity == sourceentity) && !immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:bullet")))
 				&& !immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:nocooldown_bullet")))
-				&& !((entity instanceof LivingEntity _entUseItem170 ? _entUseItem170.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
+				&& !((entity instanceof LivingEntity _entUseItem167 ? _entUseItem167.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VULTURE_HELMET.get()
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VULTURE_CHESTPLATE.get()
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VULTURE_LEGGINGS.get()
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VULTURE_BOOTS.get()
-				&& (sourceentity instanceof Player _plrCldRem181
-						? _plrCldRem181.getCooldowns().getCooldownPercent((sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem(), 0f) * 100
+				&& (sourceentity instanceof Player _plrCldRem178
+						? _plrCldRem178.getCooldowns().getCooldownPercent((sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem(), 0f) * 100
 						: 0) <= 0) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
@@ -279,8 +276,8 @@ public class BigShadeArrowHitProcedure {
 					}
 				}
 				if (entity instanceof Player) {
-					if (entity instanceof Player _plr203)
-						_plr203.setArrowCount((int) ((entity instanceof Player _plr202 ? _plr202.getArrowCount() : 0) + 1));
+					if (entity instanceof Player _plr200)
+						_plr200.setArrowCount((int) ((entity instanceof Player _plr199 ? _plr199.getArrowCount() : 0) + 1));
 				}
 			}
 		}
