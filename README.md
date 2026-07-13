@@ -6,7 +6,7 @@ The Deep Void adds in a new horror dimension filled to the brim with new items, 
 With its carefully crafted eerie atmosphere, this mod is a fine addition to any scary modpack. It serves as an endgame dimension for more temerous Players with lots of challenges to face and many structures to conquer.
 The hidden tale of a lost civilisation and the rise of a lunatic cult will keep lore enthusiasts busy!
 
-Can you brave this forsaken and unforgiving place ? Can you uncover its tale that has been lost to time? If so, jump right in and we'll see you on the other side!
+Can you brave this forsaken and unforgiving place? Can you uncover its tale that has been lost to time? If so, jump right in and we'll see you on the other side!
 ***
 
 This mod is made for NeoForge and Forge.
