@@ -74,11 +74,6 @@ public class SoulForgeGUISlotMessage {
 
 			TakenSoulFusedIngotProcedure.execute(world, x, y, z, entity);
 		}
-		if (slot == 2 && changeType == 2) {
-			int amount = meta;
-
-			TakenSoulFusedIngotProcedure.execute(world, x, y, z, entity);
-		}
 	}
 
 	@SubscribeEvent

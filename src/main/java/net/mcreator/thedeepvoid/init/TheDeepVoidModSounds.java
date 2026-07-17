@@ -211,4 +211,14 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> HIVEMIND_SUCK = REGISTRY.register("hivemind_suck", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hivemind_suck")));
 	public static final RegistryObject<SoundEvent> HIVEMIND_PREPARE_SUCK = REGISTRY.register("hivemind_prepare_suck", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hivemind_prepare_suck")));
 	public static final RegistryObject<SoundEvent> PRIMORDIAL_CRAWLER_FLYING = REGISTRY.register("primordial_crawler_flying", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "primordial_crawler_flying")));
+	public static final RegistryObject<SoundEvent> SLAUGHTER = REGISTRY.register("slaughter", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "slaughter")));
+	public static final RegistryObject<SoundEvent> FALSE_HYDRA_SCREAM = REGISTRY.register("false_hydra_scream", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "false_hydra_scream")));
+	public static final RegistryObject<SoundEvent> FALSE_HYDRA_LAUGHTER_LOOP = REGISTRY.register("false_hydra_laughter_loop", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "false_hydra_laughter_loop")));
+	public static final RegistryObject<SoundEvent> FALSE_HYDRA_PREPARE_BITE = REGISTRY.register("false_hydra_prepare_bite", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "false_hydra_prepare_bite")));
+	public static final RegistryObject<SoundEvent> FALSE_HYDRA_BITE = REGISTRY.register("false_hydra_bite", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "false_hydra_bite")));
+	public static final RegistryObject<SoundEvent> FALSE_HYDRA_PREPARE_SLASH = REGISTRY.register("false_hydra_prepare_slash", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "false_hydra_prepare_slash")));
+	public static final RegistryObject<SoundEvent> FALSE_HYDRA_SLIDE = REGISTRY.register("false_hydra_slide", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "false_hydra_slide")));
+	public static final RegistryObject<SoundEvent> FALSE_HYDRA_SING = REGISTRY.register("false_hydra_sing", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "false_hydra_sing")));
+	public static final RegistryObject<SoundEvent> FALSE_HYDRA_SING_DISTORTED = REGISTRY.register("false_hydra_sing_distorted", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "false_hydra_sing_distorted")));
+	public static final RegistryObject<SoundEvent> FALSE_HYDRA_SONG_FAR = REGISTRY.register("false_hydra_song_far", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "false_hydra_song_far")));
 }

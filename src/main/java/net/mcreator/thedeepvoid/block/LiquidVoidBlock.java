@@ -13,12 +13,10 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.procedures.LiquidVoidOnTickUpdateProcedure;
-import net.mcreator.thedeepvoid.procedures.LiquidVoidMobplayerCollidesBlockProcedure;
 import net.mcreator.thedeepvoid.procedures.LiquidVoidBeforeReplacingABlockProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModFluids;
 
@@ -36,12 +34,6 @@ public class LiquidVoidBlock extends LiquidBlock {
 	public void neighborChanged(BlockState blockstate, Level world, BlockPos pos, Block neighborBlock, BlockPos fromPos, boolean moving) {
 		super.neighborChanged(blockstate, world, pos, neighborBlock, fromPos, moving);
 		LiquidVoidBeforeReplacingABlockProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ());
-	}
-
-	@Override
-	public void entityInside(BlockState blockstate, Level world, BlockPos pos, Entity entity) {
-		super.entityInside(blockstate, world, pos, entity);
-		LiquidVoidMobplayerCollidesBlockProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), entity);
 	}
 
 	@Override

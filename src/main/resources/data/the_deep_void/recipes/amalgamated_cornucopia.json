@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:golden_carrot"
+    },
+    "b": {
+      "item": "the_deep_void:golden_eyeball"
+    },
+    "c": {
+      "tag": "the_deep_void:hydra_heart"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:amalgamated_cornucopia",
+    "count": 1
+  }
+}

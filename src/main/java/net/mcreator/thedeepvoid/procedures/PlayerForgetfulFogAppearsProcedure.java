@@ -46,7 +46,8 @@ public class PlayerForgetfulFogAppearsProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, double x, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TheDeepVoidModMobEffects.BRAIN_FOG.get())) {
+		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TheDeepVoidModMobEffects.BRAIN_FOG.get())
+				&& (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.BRAIN_FOG.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.BRAIN_FOG.get()).getAmplifier() : 0) >= 2) {
 			if (world instanceof ClientLevel) {
 				for (Entity entityiterator : ((ClientLevel) world).entitiesForRendering()) {
 					if (entityiterator instanceof Player && !(entityiterator == entity)) {
@@ -55,7 +56,9 @@ public class PlayerForgetfulFogAppearsProcedure {
 								(Mth.nextDouble(RandomSource.create(), -0.005, 0.005)));
 						world.addParticle((SimpleParticleType) (TheDeepVoidModParticleTypes.FORGETFUL_FOG.get()), entityiterator.getX() + entityiterator.getLookAngle().x * 0.7, (entityiterator.getY() + 1.8),
 								entityiterator.getZ() + entityiterator.getLookAngle().z * 0.7, (Mth.nextDouble(RandomSource.create(), -0.005, 0.005)), 0, (Mth.nextDouble(RandomSource.create(), -0.005, 0.005)));
-						entityiterator.setCustomName(Component.literal(("\u00A7k" + entityiterator.getDisplayName().getString())));
+						if (!(entityiterator.getDisplayName().getString()).isEmpty()) {
+							entityiterator.setCustomName(Component.literal(("\u00A7k" + entityiterator.getDisplayName().getString())));
+						}
 					}
 					if (entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false) {
 						world.addParticle((SimpleParticleType) (TheDeepVoidModParticleTypes.FORGETFUL_FOG.get()), (entityiterator.getX() + Mth.nextDouble(RandomSource.create(), -1, 1)),

@@ -65,6 +65,8 @@ public class LiquidIchorRenderFogColorProcedure {
 				&& (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY() + 1.5, entity.getZ()))).getBlock() == TheDeepVoidModBlocks.LIQUID_ICHOR.get()
 				|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()))).getBlock() == TheDeepVoidModBlocks.LIQUID_ICHOR.get() && entity.isSwimming()) {
 			setColor(255 << 24 | 255 << 16 | 235 << 8 | 85);
+		} else if ((world.getBlockState(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()))).getBlock() == TheDeepVoidModBlocks.LIQUID_VOID.get()) {
+			setColor(255 << 24 | 0 << 16 | 0 << 8 | 0);
 		}
 	}
 }

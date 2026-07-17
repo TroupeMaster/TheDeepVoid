@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "the_deep_void:item/misted_heart_new"
+    "layer0": "the_deep_void:item/hydra_heart"
   }
 }

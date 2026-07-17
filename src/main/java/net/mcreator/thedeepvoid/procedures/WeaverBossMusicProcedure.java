@@ -12,7 +12,7 @@ import net.mcreator.thedeepvoid.entity.PrimordialBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
 import net.mcreator.thedeepvoid.entity.HiveWatcherEntity;
 import net.mcreator.thedeepvoid.entity.FleshWormEntity;
-import net.mcreator.thedeepvoid.entity.ElderMimicEntity;
+import net.mcreator.thedeepvoid.entity.FalseHydraEntity;
 import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
 
 import java.util.List;
@@ -113,7 +113,7 @@ public class WeaverBossMusicProcedure {
 						}
 					}
 				}
-			} else if (entity instanceof MisanthropicHivemindEntity || entity instanceof ElderMimicEntity || entity instanceof FleshWormEntity) {
+			} else if (entity instanceof MisanthropicHivemindEntity || entity instanceof FleshWormEntity) {
 				{
 					final Vec3 _center = new Vec3(x, y, z);
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(200 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
@@ -240,6 +240,51 @@ public class WeaverBossMusicProcedure {
 						} else if ((entityiterator.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).MusicReplace) {
 							{
 								double _setval = 3600;
+								entityiterator.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.MusicWait = _setval;
+									capability.syncPlayerVariables(entityiterator);
+								});
+							}
+						}
+					}
+				}
+			} else if (entity instanceof FalseHydraEntity) {
+				{
+					final Vec3 _center = new Vec3(x, y, z);
+					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(200 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+					for (Entity entityiterator : _entfound) {
+						if (!(entityiterator.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).MusicLock) {
+							{
+								boolean _setval = true;
+								entityiterator.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.MusicLock = _setval;
+									capability.syncPlayerVariables(entityiterator);
+								});
+							}
+							{
+								double _setval = 0;
+								entityiterator.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.MusicTick = _setval;
+									capability.syncPlayerVariables(entityiterator);
+								});
+							}
+							{
+								double _setval = 0;
+								entityiterator.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.MusicWait = _setval;
+									capability.syncPlayerVariables(entityiterator);
+								});
+							}
+							{
+								String _setval = "slaughter";
+								entityiterator.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
+									capability.MusicPlay = _setval;
+									capability.syncPlayerVariables(entityiterator);
+								});
+							}
+						} else if ((entityiterator.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).MusicReplace) {
+							{
+								double _setval = 3200;
 								entityiterator.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).ifPresent(capability -> {
 									capability.MusicWait = _setval;
 									capability.syncPlayerVariables(entityiterator);

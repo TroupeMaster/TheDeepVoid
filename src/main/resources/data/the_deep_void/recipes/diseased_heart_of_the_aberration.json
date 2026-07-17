@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:black_moss"
+    },
+    "b": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "c": {
+      "tag": "the_deep_void:hydra_heart"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:diseased_heart_of_the_aberration",
+    "count": 2
+  }
+}

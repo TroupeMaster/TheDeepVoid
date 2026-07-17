@@ -26,24 +26,6 @@ public class WatchingStalkerOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		TheDeepVoidMod.queueServerWork(180, () -> {
-			if (entity.getPersistentData().getDouble("despawning") <= 0) {
-				entity.getPersistentData().putDouble("despawning", 40);
-				if (entity instanceof WatchingStalkerEntity) {
-					((WatchingStalkerEntity) entity).setAnimation("animation.stalker_hide");
-				}
-				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 99, false, false));
-				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 40, 99, false, false));
-				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, 99, false, false));
-				TheDeepVoidMod.queueServerWork(35, () -> {
-					if (!entity.level().isClientSide())
-						entity.discard();
-				});
-			}
-		});
 		if (entity.isInWall()) {
 			{
 				Entity _ent = entity;
@@ -90,8 +72,23 @@ public class WatchingStalkerOnEntityTickUpdateProcedure {
 			if (!entity.level().isClientSide())
 				entity.discard();
 		}
-		if (entity.getPersistentData().getDouble("despawning") > 0) {
-			entity.getPersistentData().putDouble("despawning", (entity.getPersistentData().getDouble("despawning") - 1));
+		if (entity.getPersistentData().getDouble("despawning") >= 180) {
+			entity.getPersistentData().putDouble("despawning", 40);
+			if (entity instanceof WatchingStalkerEntity) {
+				((WatchingStalkerEntity) entity).setAnimation("animation.stalker_hide");
+			}
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 99, false, false));
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 40, 99, false, false));
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 40, 99, false, false));
+			TheDeepVoidMod.queueServerWork(35, () -> {
+				if (!entity.level().isClientSide())
+					entity.discard();
+			});
+		} else {
+			entity.getPersistentData().putDouble("despawning", (entity.getPersistentData().getDouble("despawning") + 1));
 		}
 	}
 }

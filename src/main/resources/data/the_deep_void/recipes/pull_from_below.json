@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "abc",
+    "def",
+    "agc"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "b": {
+      "item": "the_deep_void:rune_of_void"
+    },
+    "c": {
+      "item": "the_deep_void:misted_bone"
+    },
+    "d": {
+      "item": "the_deep_void:black_moss"
+    },
+    "e": {
+      "tag": "the_deep_void:hydra_heart"
+    },
+    "f": {
+      "item": "the_deep_void:worm_tooth"
+    },
+    "g": {
+      "item": "minecraft:book"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:pull_from_below",
+    "count": 1
+  }
+}

@@ -37,7 +37,8 @@ public class LacerationEntityAttackedProcedure {
 			return;
 		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TheDeepVoidModMobEffects.LACERATION.get()) && sourceentity instanceof LivingEntity
 				&& ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.FLESH_GLOVE.get()
-						|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.EVERHUNGRY_FLESH_GLOVE.get())) {
+						|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.EVERHUNGRY_FLESH_GLOVE.get()
+						|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ADAPTIVE_CLAW.get())) {
 			entity.getPersistentData().putDouble("deep_void:laceration", (entity.getPersistentData().getDouble("deep_void:laceration")
 					+ (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.LACERATION.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.LACERATION.get()).getAmplifier() : 0) + 1));
 			if (!damagesource.is(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy")))) {

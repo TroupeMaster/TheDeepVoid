@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "the_deep_void:item/golden_eyeball"
+    "layer0": "the_deep_void:item/golden_eyeball_new"
   }
 }

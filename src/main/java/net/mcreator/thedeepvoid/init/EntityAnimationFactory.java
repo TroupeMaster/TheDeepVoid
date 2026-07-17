@@ -72,6 +72,9 @@ import net.mcreator.thedeepvoid.entity.FleshWormEntity;
 import net.mcreator.thedeepvoid.entity.FleshLampreyEntity;
 import net.mcreator.thedeepvoid.entity.FleshFangsEntity;
 import net.mcreator.thedeepvoid.entity.FleshCubeEntity;
+import net.mcreator.thedeepvoid.entity.FalseHydraSingingEntity;
+import net.mcreator.thedeepvoid.entity.FalseHydraEntity;
+import net.mcreator.thedeepvoid.entity.FalseHydraArmEntity;
 import net.mcreator.thedeepvoid.entity.EyekinFlyingEntity;
 import net.mcreator.thedeepvoid.entity.EyekinEntity;
 import net.mcreator.thedeepvoid.entity.EyeOfTheWatcherEntity;
@@ -804,6 +807,27 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof StalkerJuvenileEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof FalseHydraEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof FalseHydraArmEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof FalseHydraSingingEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

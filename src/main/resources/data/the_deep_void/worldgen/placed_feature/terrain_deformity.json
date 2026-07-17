@@ -17,6 +17,9 @@
           "max_inclusive": 2
         }
       }
+    },
+    {
+      "type": "minecraft:biome"
     }
   ]
 }

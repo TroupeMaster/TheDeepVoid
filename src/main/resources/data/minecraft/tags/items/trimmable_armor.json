@@ -78,6 +78,10 @@
     "the_deep_void:gunslinger_leggings",
     "the_deep_void:gunslinger_boots",
     "the_deep_void:vulture_leggings",
-    "the_deep_void:vulture_boots"
+    "the_deep_void:vulture_boots",
+    "the_deep_void:sentient_helmet",
+    "the_deep_void:sentient_chestplate",
+    "the_deep_void:sentient_leggings",
+    "the_deep_void:sentient_boots"
   ]
 }

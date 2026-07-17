@@ -30,6 +30,7 @@ import net.mcreator.thedeepvoid.client.particle.LickerTongueParticle;
 import net.mcreator.thedeepvoid.client.particle.LastingBloodParticle;
 import net.mcreator.thedeepvoid.client.particle.IchorLavaParticle;
 import net.mcreator.thedeepvoid.client.particle.IchorFlameParticle;
+import net.mcreator.thedeepvoid.client.particle.HydraSweepParticle;
 import net.mcreator.thedeepvoid.client.particle.HookLineParticle;
 import net.mcreator.thedeepvoid.client.particle.GrimSweepParticle;
 import net.mcreator.thedeepvoid.client.particle.GrimHookLineParticle;
@@ -54,6 +55,7 @@ import net.mcreator.thedeepvoid.client.particle.BlackTentacleParticle;
 import net.mcreator.thedeepvoid.client.particle.BlackFlameParticle;
 import net.mcreator.thedeepvoid.client.particle.BiteParticle;
 import net.mcreator.thedeepvoid.client.particle.AmbrosiaDropletParticle;
+import net.mcreator.thedeepvoid.client.particle.AberrationHandParticle;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class TheDeepVoidModParticles {
@@ -104,5 +106,7 @@ public class TheDeepVoidModParticles {
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.FORGETFUL_FOG.get(), ForgetfulFogParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.BRAIN_PIECE.get(), BrainPieceParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.LASTING_BLOOD.get(), LastingBloodParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.HYDRA_SWEEP.get(), HydraSweepParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.ABERRATION_HAND.get(), AberrationHandParticle::provider);
 	}
 }

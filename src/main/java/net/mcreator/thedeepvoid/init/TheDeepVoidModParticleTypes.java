@@ -60,4 +60,6 @@ public class TheDeepVoidModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> FORGETFUL_FOG = REGISTRY.register("forgetful_fog", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> BRAIN_PIECE = REGISTRY.register("brain_piece", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> LASTING_BLOOD = REGISTRY.register("lasting_blood", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> HYDRA_SWEEP = REGISTRY.register("hydra_sweep", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> ABERRATION_HAND = REGISTRY.register("aberration_hand", () -> new SimpleParticleType(true));
 }

@@ -72,6 +72,7 @@ import net.mcreator.thedeepvoid.client.model.Modeldark_throw_knife;
 import net.mcreator.thedeepvoid.client.model.Modelcharred_walker;
 import net.mcreator.thedeepvoid.client.model.Modelbone_crawler_remodeled;
 import net.mcreator.thedeepvoid.client.model.Modelbone_crawler;
+import net.mcreator.thedeepvoid.client.model.ModelboneBoulder;
 import net.mcreator.thedeepvoid.client.model.Modelblock_projectile;
 import net.mcreator.thedeepvoid.client.model.Modelblind_prophet;
 import net.mcreator.thedeepvoid.client.model.Modelbig_shade_arrow;
@@ -101,6 +102,7 @@ public class TheDeepVoidModModels {
 		event.registerLayerDefinition(Modelamalgam_rework.LAYER_LOCATION, Modelamalgam_rework::createBodyLayer);
 		event.registerLayerDefinition(Modelmourner.LAYER_LOCATION, Modelmourner::createBodyLayer);
 		event.registerLayerDefinition(Modelalpha_bone_crawler.LAYER_LOCATION, Modelalpha_bone_crawler::createBodyLayer);
+		event.registerLayerDefinition(ModelboneBoulder.LAYER_LOCATION, ModelboneBoulder::createBodyLayer);
 		event.registerLayerDefinition(Modellurker.LAYER_LOCATION, Modellurker::createBodyLayer);
 		event.registerLayerDefinition(Modelhallucination_new.LAYER_LOCATION, Modelhallucination_new::createBodyLayer);
 		event.registerLayerDefinition(Modelgiant_crawler_egg.LAYER_LOCATION, Modelgiant_crawler_egg::createBodyLayer);

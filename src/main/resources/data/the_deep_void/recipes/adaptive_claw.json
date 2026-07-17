@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aa ",
+    " ab",
+    "abc"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:misted_bone"
+    },
+    "b": {
+      "item": "the_deep_void:rotten_bone"
+    },
+    "c": {
+      "tag": "the_deep_void:hydra_heart"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:adaptive_claw",
+    "count": 1
+  }
+}

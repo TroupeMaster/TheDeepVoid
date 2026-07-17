@@ -64,6 +64,9 @@ public class PlayerInLiquidIchorProcedure {
 				|| (world.getBlockState(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()))).getBlock() == TheDeepVoidModBlocks.LIQUID_ICHOR.get() && entity.isSwimming()) {
 			setShape(FogShape.SPHERE);
 			setDistance(1, 3);
+		} else if ((world.getBlockState(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()))).getBlock() == TheDeepVoidModBlocks.LIQUID_VOID.get()) {
+			setShape(FogShape.SPHERE);
+			setDistance(0, 2);
 		}
 	}
 }

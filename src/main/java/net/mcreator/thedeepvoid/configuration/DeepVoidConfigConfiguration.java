@@ -26,6 +26,7 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Boolean> SUMMONBOSSRESPAWN;
 	public static final ForgeConfigSpec.ConfigValue<Double> LIGHTREDUCESTALKERTIMER;
 	public static final ForgeConfigSpec.ConfigValue<Double> STALKERLIGHTLEVEL;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> FALSEHYDRAFROMBRAINFOG;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> SEEKLIGHTWARNING;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> DESTROYLIGHTSOURCES;
 	public static final ForgeConfigSpec.ConfigValue<Double> VOIDBLESSINGTIMER;
@@ -48,6 +49,9 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> VOIDBORNHEALTH;
 	public static final ForgeConfigSpec.ConfigValue<Double> VOIDBORNHITCOOLDOWN;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> BOSSIDLES;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> DOBRAINFOG;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> FALSEHYDRAREMOVESBRAINFOG;
+	public static final ForgeConfigSpec.ConfigValue<Double> BRAINFOGDURATION;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> ENDLESSABYSS;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> PURGATORY;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> GIVETORCHES;
@@ -150,6 +154,15 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> MASKEDHUNTERSCREAMCOOLDOWN;
 	public static final ForgeConfigSpec.ConfigValue<Double> MASKEDHUNTERSCREAMCHANCE;
 	public static final ForgeConfigSpec.ConfigValue<Double> MASKEDHUNTERSPAWNRADIUS;
+	public static final ForgeConfigSpec.ConfigValue<Double> HYDRADEBUFFDURATION;
+	public static final ForgeConfigSpec.ConfigValue<Double> HYDRAHITGROUND;
+	public static final ForgeConfigSpec.ConfigValue<Double> HYDRASWEEP;
+	public static final ForgeConfigSpec.ConfigValue<Double> HYDRASLIDESPEED;
+	public static final ForgeConfigSpec.ConfigValue<Double> HYDRASLIDEDAMAGE;
+	public static final ForgeConfigSpec.ConfigValue<Double> HYDRAMULTIHIT;
+	public static final ForgeConfigSpec.ConfigValue<Double> HYDRABOULDER;
+	public static final ForgeConfigSpec.ConfigValue<Double> HYDRASINGINGDESPAWNTIMER;
+	public static final ForgeConfigSpec.ConfigValue<Double> SPAWNHYDRAREQUIREDENCOUNTER;
 	static {
 		BUILDER.push("Generation&World");
 		PLACECULTTEMPLE = BUILDER.comment("Whether the Cult Temple will be place at 0,0 or not").define("PlaceCultTemple", true);
@@ -176,6 +189,7 @@ public class DeepVoidConfigConfiguration {
 		SUMMONBOSSRESPAWN = BUILDER.comment("If a respawn entity should be summoned when a boss dies").define("SummonBossRespawn", true);
 		LIGHTREDUCESTALKERTIMER = BUILDER.comment("By how much the Stalker Timer is reduced when the player is in light").define("LightReduceStalkerTimer", (double) 4);
 		STALKERLIGHTLEVEL = BUILDER.comment("The light level (and under) at which the Stalker can spawn if the Player is in that light level range for long enough").define("StalkerLightLevel", (double) 1);
+		FALSEHYDRAFROMBRAINFOG = BUILDER.comment("If the False Hydra should spawn when the player has brain fog").define("FalseHydraFromBrainFog", true);
 		BUILDER.pop();
 		BUILDER.push("Misc");
 		SEEKLIGHTWARNING = BUILDER.comment("Whether the ''Seek Light'' warning should appear when the Stalker is close or not (Happens only one time)").define("SeekLightWarning", true);
@@ -200,6 +214,9 @@ public class DeepVoidConfigConfiguration {
 		VOIDBORNHEALTH = BUILDER.comment("How many hits it takes before the Voidborn disappears (damage is irrelevant)").define("VoidbornHealth", (double) 10);
 		VOIDBORNHITCOOLDOWN = BUILDER.comment("How long before the Voidborn can get hit again (in ticks)").define("VoidbornHitCooldown", (double) 60);
 		BOSSIDLES = BUILDER.comment("If bosses should go back to idling when there are no players nearby").define("BossIdles", true);
+		DOBRAINFOG = BUILDER.comment("If brain fog should be applied to the player when in the misted remnants").define("DoBrainFog", true);
+		FALSEHYDRAREMOVESBRAINFOG = BUILDER.comment("If the false hydra should remove brain fog when it is killed").define("FalseHydraRemovesBrainFog", true);
+		BRAINFOGDURATION = BUILDER.comment("In ticks").define("BrainFogDuration", (double) 2000);
 		BUILDER.pop();
 		BUILDER.push("Gameplay Changes");
 		ENDLESSABYSS = BUILDER.comment("The player spawns in the Deep Void").define("EndlessAbyss", false);
@@ -316,6 +333,17 @@ public class DeepVoidConfigConfiguration {
 		MASKEDHUNTERSCREAMCOOLDOWN = BUILDER.comment("How long before the hunter screams (in ticks, 24,000 ticks is one day)").define("MaskedHunterScreamCooldown", (double) 72000);
 		MASKEDHUNTERSCREAMCHANCE = BUILDER.comment("The chance of the masked hunter screaming (percentage divided by 100)").define("MaskedHunterScreamChance", (double) 0.7);
 		MASKEDHUNTERSPAWNRADIUS = BUILDER.comment("The radius around the player in which the masked hunter cannot spawn (in blocks * 2)").define("MaskedHunterSpawnRadius", (double) 200);
+		BUILDER.pop();
+		BUILDER.push("False Hydra");
+		HYDRADEBUFFDURATION = BUILDER.define("HydraDebuffDuration", (double) 500);
+		HYDRAHITGROUND = BUILDER.comment("Damage").define("HydraHitGround", (double) 8);
+		HYDRASWEEP = BUILDER.comment("Damage").define("HydraSweep", (double) 12);
+		HYDRASLIDESPEED = BUILDER.define("HydraSlideSpeed", (double) 0.4);
+		HYDRASLIDEDAMAGE = BUILDER.define("HydraSlideDamage", (double) 8);
+		HYDRAMULTIHIT = BUILDER.comment("Damage").define("HydraMultiHit", (double) 8);
+		HYDRABOULDER = BUILDER.comment("Damage of the projectile").define("HydraBoulder", (double) 10);
+		HYDRASINGINGDESPAWNTIMER = BUILDER.comment("In ticks").define("HydraSingingDespawnTimer", (double) 2000);
+		SPAWNHYDRAREQUIREDENCOUNTER = BUILDER.comment("The amount of encounters that is required before the false hydra spawns (-1)").define("SpawnHydraRequiredEncounter", (double) 3);
 		BUILDER.pop();
 
 		SPEC = BUILDER.build();

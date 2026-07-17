@@ -163,6 +163,7 @@ public class TheDeepVoidModVariables {
 				clone.noHit = original.noHit;
 				clone.vultureArmorAbility = original.vultureArmorAbility;
 				clone.gunslingerArmorAbility = original.gunslingerArmorAbility;
+				clone.sentientArmorAbility = original.sentientArmorAbility;
 			}
 		}
 
@@ -238,6 +239,9 @@ public class TheDeepVoidModVariables {
 		public double hivemindFightCount = 0;
 		public double primordialcrawlerFightCount = 0;
 		public double hunterSpawnCooldown = 72000.0;
+		public double hydraFightCount = 0;
+		public double spawnHydra = 0;
+		public boolean hydraKilled = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -260,6 +264,9 @@ public class TheDeepVoidModVariables {
 			hivemindFightCount = nbt.getDouble("hivemindFightCount");
 			primordialcrawlerFightCount = nbt.getDouble("primordialcrawlerFightCount");
 			hunterSpawnCooldown = nbt.getDouble("hunterSpawnCooldown");
+			hydraFightCount = nbt.getDouble("hydraFightCount");
+			spawnHydra = nbt.getDouble("spawnHydra");
+			hydraKilled = nbt.getBoolean("hydraKilled");
 		}
 
 		@Override
@@ -278,6 +285,9 @@ public class TheDeepVoidModVariables {
 			nbt.putDouble("hivemindFightCount", hivemindFightCount);
 			nbt.putDouble("primordialcrawlerFightCount", primordialcrawlerFightCount);
 			nbt.putDouble("hunterSpawnCooldown", hunterSpawnCooldown);
+			nbt.putDouble("hydraFightCount", hydraFightCount);
+			nbt.putDouble("spawnHydra", spawnHydra);
+			nbt.putBoolean("hydraKilled", hydraKilled);
 			return nbt;
 		}
 
@@ -459,6 +469,7 @@ public class TheDeepVoidModVariables {
 		public double parasitizedType = 0;
 		public double vultureArmorAbility = 0;
 		public double gunslingerArmorAbility = 0;
+		public double sentientArmorAbility = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -556,6 +567,7 @@ public class TheDeepVoidModVariables {
 			nbt.putDouble("parasitizedType", parasitizedType);
 			nbt.putDouble("vultureArmorAbility", vultureArmorAbility);
 			nbt.putDouble("gunslingerArmorAbility", gunslingerArmorAbility);
+			nbt.putDouble("sentientArmorAbility", sentientArmorAbility);
 			return nbt;
 		}
 
@@ -650,6 +662,7 @@ public class TheDeepVoidModVariables {
 			parasitizedType = nbt.getDouble("parasitizedType");
 			vultureArmorAbility = nbt.getDouble("vultureArmorAbility");
 			gunslingerArmorAbility = nbt.getDouble("gunslingerArmorAbility");
+			sentientArmorAbility = nbt.getDouble("sentientArmorAbility");
 		}
 	}
 
@@ -763,6 +776,7 @@ public class TheDeepVoidModVariables {
 					variables.parasitizedType = message.data.parasitizedType;
 					variables.vultureArmorAbility = message.data.vultureArmorAbility;
 					variables.gunslingerArmorAbility = message.data.gunslingerArmorAbility;
+					variables.sentientArmorAbility = message.data.sentientArmorAbility;
 				}
 			});
 			context.setPacketHandled(true);

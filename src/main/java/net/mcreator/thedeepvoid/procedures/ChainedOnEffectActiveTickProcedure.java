@@ -186,7 +186,8 @@ public class ChainedOnEffectActiveTickProcedure {
 					final Vec3 _center = new Vec3(x, y, z);
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
-						if ((entityiterator instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.CHAIN_GAUNTLET.get() && !(entityiterator == entity)) {
+						if (((entityiterator instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.CHAIN_GAUNTLET.get()
+								|| (entityiterator instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ADAPTIVE_CLAW.get()) && !(entityiterator == entity)) {
 							entity.setDeltaMovement(new Vec3(((entityiterator.getX() - entity.getX()) * 0.1), ((entityiterator.getY() - entity.getY()) * 0.1), ((entityiterator.getZ() - entity.getZ()) * 0.1)));
 							Xo = entity.getX() - entityiterator.getX();
 							Yo = (entity.getY() + entity.getEyeHeight() / 1.4) - (entityiterator.getY() + 1.4);
@@ -269,7 +270,8 @@ public class ChainedOnEffectActiveTickProcedure {
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
-					if ((entityiterator instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.CHAIN_GAUNTLET.get() && !(entityiterator == entity)) {
+					if (((entityiterator instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.CHAIN_GAUNTLET.get()
+							|| (entityiterator instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.ADAPTIVE_CLAW.get()) && !(entityiterator == entity)) {
 						entity.setDeltaMovement(new Vec3(((entityiterator.getX() - entity.getX()) * 0.1), ((entityiterator.getY() - entity.getY()) * 0.1), ((entityiterator.getZ() - entity.getZ()) * 0.1)));
 						Xo = entity.getX() - entityiterator.getX();
 						Yo = (entity.getY() + entity.getEyeHeight() / 1.4) - (entityiterator.getY() + 1.4);

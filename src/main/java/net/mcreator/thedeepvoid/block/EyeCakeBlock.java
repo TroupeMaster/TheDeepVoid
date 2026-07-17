@@ -34,6 +34,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.procedures.EyeCakeOnBlockRightClickedProcedure;
+import net.mcreator.thedeepvoid.procedures.EyeCakeBlockDestroyedByPlayerProcedure;
 
 public class EyeCakeBlock extends Block implements SimpleWaterloggedBlock {
 	public static final IntegerProperty BLOCKSTATE = IntegerProperty.create("blockstate", 0, 3);
@@ -113,6 +114,13 @@ public class EyeCakeBlock extends Block implements SimpleWaterloggedBlock {
 	}
 
 	@Override
+	public boolean onDestroyedByPlayer(BlockState blockstate, Level world, BlockPos pos, Player entity, boolean willHarvest, FluidState fluid) {
+		boolean retval = super.onDestroyedByPlayer(blockstate, world, pos, entity, willHarvest, fluid);
+		EyeCakeBlockDestroyedByPlayerProcedure.execute(world, pos.getX(), pos.getY(), pos.getZ(), blockstate, entity);
+		return retval;
+	}
+
+	@Override
 	public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
 		super.use(blockstate, world, pos, entity, hand, hit);
 		int x = pos.getX();
@@ -122,7 +130,7 @@ public class EyeCakeBlock extends Block implements SimpleWaterloggedBlock {
 		double hitY = hit.getLocation().y;
 		double hitZ = hit.getLocation().z;
 		Direction direction = hit.getDirection();
-		EyeCakeOnBlockRightClickedProcedure.execute(world, x, y, z, blockstate, entity);
-		return InteractionResult.SUCCESS;
+		InteractionResult result = EyeCakeOnBlockRightClickedProcedure.execute(world, x, y, z, blockstate, entity);
+		return result;
 	}
 }

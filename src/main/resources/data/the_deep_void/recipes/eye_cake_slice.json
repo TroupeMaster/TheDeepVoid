@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:eye_cake"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:eye_cake_slice",
+    "count": 4
+  }
+}

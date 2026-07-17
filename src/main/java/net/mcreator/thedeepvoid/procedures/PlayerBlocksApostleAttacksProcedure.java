@@ -11,6 +11,8 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 
 import net.mcreator.thedeepvoid.entity.MadCultistEntity;
+import net.mcreator.thedeepvoid.entity.FalseHydraEntity;
+import net.mcreator.thedeepvoid.entity.FalseHydraArmEntity;
 import net.mcreator.thedeepvoid.entity.ExecutionerEntity;
 import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
 
@@ -33,8 +35,8 @@ public class PlayerBlocksApostleAttacksProcedure {
 		if (entity == null || sourceentity == null)
 			return;
 		if (entity instanceof Player) {
-			if ((sourceentity instanceof ApostleBossEntity || sourceentity instanceof ExecutionerEntity || sourceentity instanceof MadCultistEntity)
-					&& (entity instanceof LivingEntity _entUseItem4 ? _entUseItem4.getUseItem() : ItemStack.EMPTY).getItem().isEdible()) {
+			if ((sourceentity instanceof ApostleBossEntity || sourceentity instanceof ExecutionerEntity || sourceentity instanceof MadCultistEntity || sourceentity instanceof FalseHydraEntity || sourceentity instanceof FalseHydraArmEntity)
+					&& (entity instanceof LivingEntity _entUseItem6 ? _entUseItem6.getUseItem() : ItemStack.EMPTY).getItem().isEdible()) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.stopUsingItem();
 			}

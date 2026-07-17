@@ -8,9 +8,11 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 
+import net.mcreator.thedeepvoid.procedures.BloodthirstyClawsEntitySwingsItemProcedure;
 import net.mcreator.thedeepvoid.procedures.BloodthirstyClawsDescriptionProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
@@ -50,5 +52,12 @@ public class BloodthirstyClawsItem extends SwordItem {
 		super.appendHoverText(itemstack, level, list, flag);
 		Entity entity = itemstack.getEntityRepresentation();
 		list.add(Component.literal(BloodthirstyClawsDescriptionProcedure.execute()));
+	}
+
+	@Override
+	public boolean onEntitySwing(ItemStack itemstack, LivingEntity entity) {
+		boolean retval = super.onEntitySwing(itemstack, entity);
+		BloodthirstyClawsEntitySwingsItemProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity, itemstack);
+		return retval;
 	}
 }

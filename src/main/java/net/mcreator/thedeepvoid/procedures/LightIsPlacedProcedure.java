@@ -20,6 +20,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.LightEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
@@ -48,10 +49,21 @@ public class LightIsPlacedProcedure {
 								&& !(world.getBlockState(BlockPos.containing(x, y, z))).is(BlockTags.create(new ResourceLocation("the_deep_void:safe_lights")))
 								&& !(world.getBlockState(BlockPos.containing(x, y, z))).is(BlockTags.create(new ResourceLocation("the_deep_void:soul_lights")))) {
 							if (!world.getEntitiesOfClass(LightEntity.class, AABB.ofSize(new Vec3(x, (y + 0.45), z), 0.5, 0.5, 0.5), e -> true).isEmpty() == false) {
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = TheDeepVoidModEntities.LIGHT.get().spawn(_level, BlockPos.containing(x, y + 0.45, z), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+								if (entity instanceof LivingEntity _livEnt12 && _livEnt12.hasEffect(TheDeepVoidModMobEffects.BRAIN_FOG.get())) {
+									if (world instanceof ServerLevel _serverLevel) {
+										Entity entityinstance = TheDeepVoidModEntities.LIGHT.get().create(_serverLevel, null, null, BlockPos.containing(x, y + 0.45, z), MobSpawnType.MOB_SUMMONED, false, false);
+										if (entityinstance != null) {
+											entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
+											entityinstance.getPersistentData().putBoolean("brainFog", true);
+											_serverLevel.addFreshEntity(entityinstance);
+										}
+									}
+								} else {
+									if (world instanceof ServerLevel _level) {
+										Entity entityToSpawn = TheDeepVoidModEntities.LIGHT.get().spawn(_level, BlockPos.containing(x, y + 0.45, z), MobSpawnType.MOB_SUMMONED);
+										if (entityToSpawn != null) {
+											entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+										}
 									}
 								}
 							}
@@ -60,10 +72,21 @@ public class LightIsPlacedProcedure {
 						if (world.getBlockState(BlockPos.containing(x, y, z)).getLightEmission(world, BlockPos.containing(x, y, z)) > 0
 								&& !(world.getBlockState(BlockPos.containing(x, y, z))).is(BlockTags.create(new ResourceLocation("the_deep_void:safe_lights")))) {
 							if (!world.getEntitiesOfClass(LightEntity.class, AABB.ofSize(new Vec3(x, (y + 0.45), z), 0.5, 0.5, 0.5), e -> true).isEmpty() == false) {
-								if (world instanceof ServerLevel _level) {
-									Entity entityToSpawn = TheDeepVoidModEntities.LIGHT.get().spawn(_level, BlockPos.containing(x, y + 0.45, z), MobSpawnType.MOB_SUMMONED);
-									if (entityToSpawn != null) {
-										entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+								if (entity instanceof LivingEntity _livEnt21 && _livEnt21.hasEffect(TheDeepVoidModMobEffects.BRAIN_FOG.get())) {
+									if (world instanceof ServerLevel _serverLevel) {
+										Entity entityinstance = TheDeepVoidModEntities.LIGHT.get().create(_serverLevel, null, null, BlockPos.containing(x, y + 0.45, z), MobSpawnType.MOB_SUMMONED, false, false);
+										if (entityinstance != null) {
+											entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
+											entityinstance.getPersistentData().putBoolean("brainFog", true);
+											_serverLevel.addFreshEntity(entityinstance);
+										}
+									}
+								} else {
+									if (world instanceof ServerLevel _level) {
+										Entity entityToSpawn = TheDeepVoidModEntities.LIGHT.get().spawn(_level, BlockPos.containing(x, y + 0.45, z), MobSpawnType.MOB_SUMMONED);
+										if (entityToSpawn != null) {
+											entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+										}
 									}
 								}
 							}

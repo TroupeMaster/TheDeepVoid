@@ -1958,5 +1958,95 @@
         "stream": false
       }
     ]
+  },
+  "slaughter": {
+    "subtitle": "subtitles.slaughter",
+    "sounds": [
+      {
+        "name": "the_deep_void:slaughter",
+        "stream": true
+      }
+    ]
+  },
+  "false_hydra_scream": {
+    "subtitle": "subtitles.false_hydra_scream",
+    "sounds": [
+      {
+        "name": "the_deep_void:false_hydra_scream_new",
+        "stream": false
+      }
+    ]
+  },
+  "false_hydra_laughter_loop": {
+    "subtitle": "subtitles.false_hydra_laughter_loop",
+    "sounds": [
+      {
+        "name": "the_deep_void:false_hydra_laughter_quiet",
+        "stream": false
+      }
+    ]
+  },
+  "false_hydra_prepare_bite": {
+    "subtitle": "subtitles.false_hydra_prepare_bite",
+    "sounds": [
+      {
+        "name": "the_deep_void:false_hydra_prepare_bite_wfangs",
+        "stream": false
+      }
+    ]
+  },
+  "false_hydra_bite": {
+    "subtitle": "subtitles.false_hydra_bite",
+    "sounds": [
+      {
+        "name": "the_deep_void:false_hydra_bite_new",
+        "stream": false
+      }
+    ]
+  },
+  "false_hydra_prepare_slash": {
+    "subtitle": "subtitles.false_hydra_prepare_slash",
+    "sounds": [
+      {
+        "name": "the_deep_void:false_hydra_prepare_slash",
+        "stream": false
+      }
+    ]
+  },
+  "false_hydra_slide": {
+    "subtitle": "subtitles.false_hydra_slide",
+    "sounds": [
+      {
+        "name": "the_deep_void:false_hydra_slide_new",
+        "stream": false
+      }
+    ]
+  },
+  "false_hydra_sing": {
+    "subtitle": "subtitles.false_hydra_sing",
+    "sounds": [
+      {
+        "name": "the_deep_void:false_hydra_sing_better_quality",
+        "stream": false
+      }
+    ]
+  },
+  "false_hydra_sing_distorted": {
+    "subtitle": "subtitles.false_hydra_sing_distorted",
+    "sounds": [
+      {
+        "name": "the_deep_void:false_hydra_sing_distorted_better_quality",
+        "stream": false
+      }
+    ]
+  },
+  "false_hydra_song_far": {
+    "subtitle": "subtitles.false_hydra_song_far",
+    "sounds": [
+      {
+        "name": "the_deep_void:hydra_song_far",
+        "stream": false
+      }
+    ]
   }
 }

@@ -17,7 +17,7 @@ import net.mcreator.thedeepvoid.entity.PrimordialBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
 import net.mcreator.thedeepvoid.entity.HiveWatcherEntity;
 import net.mcreator.thedeepvoid.entity.FleshWormEntity;
-import net.mcreator.thedeepvoid.entity.ElderMimicEntity;
+import net.mcreator.thedeepvoid.entity.FalseHydraEntity;
 import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
 
 import javax.annotation.Nullable;
@@ -51,7 +51,7 @@ public class PlayerDiesBecauseOfBossProcedure {
 			}
 		}
 		if (entity instanceof MisanthropicHivemindEntity || entity instanceof HiveWatcherEntity || entity instanceof PrimordialBoneCrawlerEntity || entity instanceof ApostleBossEntity || entity instanceof WeaverOfSoulsBossEntity
-				|| entity instanceof ElderMimicEntity || entity instanceof FleshWormEntity) {
+				|| entity instanceof FalseHydraEntity || entity instanceof FleshWormEntity) {
 			{
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(80 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();

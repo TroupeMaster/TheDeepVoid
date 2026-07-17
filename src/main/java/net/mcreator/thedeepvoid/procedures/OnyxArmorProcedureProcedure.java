@@ -8,6 +8,7 @@ import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.TamableAnimal;
@@ -29,9 +30,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.SummonedShadowHandEntity;
-import net.mcreator.thedeepvoid.entity.MimickingShadowEntity;
 import net.mcreator.thedeepvoid.entity.MimicEntity;
-import net.mcreator.thedeepvoid.entity.ElderMimicEntity;
 
 import javax.annotation.Nullable;
 
@@ -61,7 +60,7 @@ public class OnyxArmorProcedureProcedure {
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SACRED_VOIDRIUM_BOOTS.get()) {
 			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).armorToggle == false && sourceentity instanceof LivingEntity && Math.random() < 0.5
 					&& !(!world.getEntitiesOfClass(SummonedShadowHandEntity.class, AABB.ofSize(new Vec3((sourceentity.getX()), (sourceentity.getY()), (sourceentity.getZ())), 10, 10, 10), e -> true).isEmpty()) && !damagesource.is(DamageTypes.THORNS)
-					&& !(entity instanceof MimicEntity) && !(entity instanceof MimickingShadowEntity) && !(entity instanceof ElderMimicEntity)) {
+					&& !(entity instanceof MimicEntity)) {
 				for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), 2, 4); index0++) {
 					if (world instanceof ServerLevel _level) {
 						Entity entityToSpawn = TheDeepVoidModEntities.SUMMONED_SHADOW_HAND.get().spawn(_level,
@@ -90,7 +89,7 @@ public class OnyxArmorProcedureProcedure {
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GRIM_CRAWLER_BOOTS.get()) {
 			if (sourceentity instanceof LivingEntity) {
 				if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) < 2) {
-					if (!(entity instanceof LivingEntity _livEnt38 && _livEnt38.hasEffect(TheDeepVoidModMobEffects.ROT.get()))) {
+					if (!(entity instanceof LivingEntity _livEnt36 && _livEnt36.hasEffect(TheDeepVoidModMobEffects.ROT.get()))) {
 						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 							_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 100, 0));
 					}
@@ -101,7 +100,7 @@ public class OnyxArmorProcedureProcedure {
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.CRAWLER_ROYALTY_LEGGINGS.get()
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.CRAWLER_ROYALTY_BOOTS.get()) {
 			if (sourceentity instanceof LivingEntity) {
-				if (!(entity instanceof LivingEntity _livEnt49 && _livEnt49.hasEffect(TheDeepVoidModMobEffects.ROT.get()))) {
+				if (!(entity instanceof LivingEntity _livEnt47 && _livEnt47.hasEffect(TheDeepVoidModMobEffects.ROT.get()))) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ROT.get(), 80, 0));
 				}
@@ -113,6 +112,20 @@ public class OnyxArmorProcedureProcedure {
 			if (sourceentity instanceof LivingEntity && entity instanceof LivingEntity && immediatesourceentity == sourceentity) {
 				if (sourceentity instanceof LivingEntity _entity)
 					_entity.setHealth((float) ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + amount / 20));
+			}
+		} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SENTIENT_HELMET.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SENTIENT_CHESTPLATE.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SENTIENT_LEGGINGS.get()
+				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SENTIENT_BOOTS.get()
+				&& !((entity instanceof LivingEntity _entUseItem70 ? _entUseItem70.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)) {
+			if (!(entity instanceof LivingEntity _livEnt72 && _livEnt72.hasEffect(TheDeepVoidModMobEffects.ADAPTED.get()))) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ADAPTED.get(), 600, 0));
+			} else {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ADAPTED.get(),
+							(int) Math.floor((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.ADAPTED.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.ADAPTED.get()).getDuration() : 0) / 1.2),
+							(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.ADAPTED.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.ADAPTED.get()).getAmplifier() : 0) + 1)));
 			}
 		}
 	}

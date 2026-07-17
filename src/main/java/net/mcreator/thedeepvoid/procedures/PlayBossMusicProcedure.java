@@ -46,6 +46,8 @@ public class PlayBossMusicProcedure {
 				PlayMusicTheHauntProcedure.execute(world, x, y, z, entity);
 			} else if (((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).MusicPlay).equals("monsters_lair")) {
 				PlayMusicMonstersLairProcedure.execute(world, x, y, z, entity);
+			} else if (((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).MusicPlay).equals("slaughter")) {
+				PlayMusicSlaughterProcedure.execute(world, x, y, z, entity);
 			}
 		}
 	}

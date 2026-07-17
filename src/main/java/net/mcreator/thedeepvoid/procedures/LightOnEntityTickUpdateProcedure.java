@@ -20,7 +20,7 @@ public class LightOnEntityTickUpdateProcedure {
 			if (!entity.level().isClientSide())
 				entity.discard();
 		}
-		if ((world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:misted_remnants")) || y <= 0) && DeepVoidConfigConfiguration.DESTROYLIGHTSOURCES.get() == true) {
+		if ((entity.getPersistentData().getBoolean("brainFog") == true || y <= 0) && DeepVoidConfigConfiguration.DESTROYLIGHTSOURCES.get() == true) {
 			if (Math.random() < 0.009 && !(world.getBlockState(BlockPos.containing(x, y, z))).is(BlockTags.create(new ResourceLocation("the_deep_void:safe_lights")))
 					&& !(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty())) {
 				if (!entity.level().isClientSide())

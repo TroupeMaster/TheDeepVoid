@@ -113,12 +113,6 @@ public class SoulForgeGUIMenu extends AbstractContainerMenu implements Supplier<
 			}
 
 			@Override
-			public void onQuickCraft(ItemStack a, ItemStack b) {
-				super.onQuickCraft(a, b);
-				slotChanged(2, 2, b.getCount() - a.getCount());
-			}
-
-			@Override
 			public boolean mayPlace(ItemStack stack) {
 				return false;
 			}
