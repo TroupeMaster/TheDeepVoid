@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aab",
+    " cd",
+    "ed "
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:block_of_misted_bone_pile"
+    },
+    "b": {
+      "tag": "the_deep_void:hydra_heart"
+    },
+    "c": {
+      "item": "the_deep_void:bone_scythe"
+    },
+    "d": {
+      "item": "the_deep_void:ancient_onyx"
+    },
+    "e": {
+      "item": "the_deep_void:block_of_rotten_bone_pile"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:living_scythe",
+    "count": 1
+  }
+}

@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"animation.boneBlockade_spawn": {
+		"animation.boneblockade_spawn": {
 			"animation_length": 0.5,
 			"bones": {
 				"main": {
@@ -22,7 +22,7 @@
 				}
 			}
 		},
-		"animation.boneBlockade_despawn": {
+		"animation.boneblockade_despawn": {
 			"animation_length": 0.5,
 			"bones": {
 				"main": {
@@ -51,10 +51,9 @@
 				}
 			}
 		},
-		"animation.boneBlockade_idle": {
+		"animation.boneblockade_idle": {
 			"loop": true,
 			"animation_length": 0.0417
 		}
-	},
-	"geckolib_format_version": 2
+	}
 }

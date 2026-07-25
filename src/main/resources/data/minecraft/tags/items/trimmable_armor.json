@@ -82,6 +82,10 @@
     "the_deep_void:sentient_helmet",
     "the_deep_void:sentient_chestplate",
     "the_deep_void:sentient_leggings",
-    "the_deep_void:sentient_boots"
+    "the_deep_void:sentient_boots",
+    "the_deep_void:dark_steel_chainmail_armor_helmet",
+    "the_deep_void:dark_steel_chainmail_armor_chestplate",
+    "the_deep_void:dark_steel_chainmail_armor_leggings",
+    "the_deep_void:dark_steel_chainmail_armor_boots"
   ]
 }

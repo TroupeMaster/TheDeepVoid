@@ -6,7 +6,10 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
+
+import net.mcreator.thedeepvoid.procedures.HatchingEnzymeDescriptionProcedure;
 
 import java.util.List;
 
@@ -18,6 +21,7 @@ public class HatchingEnzymeItem extends Item {
 	@Override
 	public void appendHoverText(ItemStack itemstack, Level level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A79Use on a Bone Crawler Egg to hatch it"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(HatchingEnzymeDescriptionProcedure.execute()));
 	}
 }

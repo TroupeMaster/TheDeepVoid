@@ -109,6 +109,7 @@ import net.mcreator.thedeepvoid.item.SmithingTemplateGrimItem;
 import net.mcreator.thedeepvoid.item.SmithingTemplateDarkSteelItem;
 import net.mcreator.thedeepvoid.item.SmithingTemplateDamageItem;
 import net.mcreator.thedeepvoid.item.SmithingTemplateBismuthItem;
+import net.mcreator.thedeepvoid.item.SlownessNeedleItem;
 import net.mcreator.thedeepvoid.item.SlaughterItem;
 import net.mcreator.thedeepvoid.item.SinsAndSinnersItem;
 import net.mcreator.thedeepvoid.item.SharpshooterItem;
@@ -181,6 +182,7 @@ import net.mcreator.thedeepvoid.item.MisanthropicHivemindTreasureBagItem;
 import net.mcreator.thedeepvoid.item.MendingStoneItem;
 import net.mcreator.thedeepvoid.item.MemoryLocketItem;
 import net.mcreator.thedeepvoid.item.LurkingMusicDiscItem;
+import net.mcreator.thedeepvoid.item.LivingScytheItem;
 import net.mcreator.thedeepvoid.item.LiquidVoidItem;
 import net.mcreator.thedeepvoid.item.LiquidIchorItem;
 import net.mcreator.thedeepvoid.item.LickerHookItem;
@@ -198,6 +200,7 @@ import net.mcreator.thedeepvoid.item.KnivesGloveItem;
 import net.mcreator.thedeepvoid.item.KnightfishItem;
 import net.mcreator.thedeepvoid.item.JumpBoostNeedleItem;
 import net.mcreator.thedeepvoid.item.JudgementItem;
+import net.mcreator.thedeepvoid.item.InvisibilityNeedleItem;
 import net.mcreator.thedeepvoid.item.InstantDamageNeedleItem;
 import net.mcreator.thedeepvoid.item.IchorSwordItem;
 import net.mcreator.thedeepvoid.item.IchorStriderItem;
@@ -281,6 +284,7 @@ import net.mcreator.thedeepvoid.item.DarkSteelNaginataItem;
 import net.mcreator.thedeepvoid.item.DarkSteelKunaiItem;
 import net.mcreator.thedeepvoid.item.DarkSteelHoeItem;
 import net.mcreator.thedeepvoid.item.DarkSteelChainmailItem;
+import net.mcreator.thedeepvoid.item.DarkSteelChainmailArmorItem;
 import net.mcreator.thedeepvoid.item.DarkSteelAxeItem;
 import net.mcreator.thedeepvoid.item.DarkClothItem;
 import net.mcreator.thedeepvoid.item.CultItem;
@@ -1312,6 +1316,14 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> SENTIENT_LEGGINGS = REGISTRY.register("sentient_leggings", () -> new SentientItem.Leggings());
 	public static final RegistryObject<Item> SENTIENT_BOOTS = REGISTRY.register("sentient_boots", () -> new SentientItem.Boots());
 	public static final RegistryObject<Item> MEMORY_LOCKET = REGISTRY.register("memory_locket", () -> new MemoryLocketItem());
+	public static final RegistryObject<Item> HEAD_OF_THE_FALSE_HYDRA = block(TheDeepVoidModBlocks.HEAD_OF_THE_FALSE_HYDRA);
+	public static final RegistryObject<Item> LIVING_SCYTHE = REGISTRY.register("living_scythe", () -> new LivingScytheItem());
+	public static final RegistryObject<Item> DARK_STEEL_CHAINMAIL_ARMOR_HELMET = REGISTRY.register("dark_steel_chainmail_armor_helmet", () -> new DarkSteelChainmailArmorItem.Helmet());
+	public static final RegistryObject<Item> DARK_STEEL_CHAINMAIL_ARMOR_CHESTPLATE = REGISTRY.register("dark_steel_chainmail_armor_chestplate", () -> new DarkSteelChainmailArmorItem.Chestplate());
+	public static final RegistryObject<Item> DARK_STEEL_CHAINMAIL_ARMOR_LEGGINGS = REGISTRY.register("dark_steel_chainmail_armor_leggings", () -> new DarkSteelChainmailArmorItem.Leggings());
+	public static final RegistryObject<Item> DARK_STEEL_CHAINMAIL_ARMOR_BOOTS = REGISTRY.register("dark_steel_chainmail_armor_boots", () -> new DarkSteelChainmailArmorItem.Boots());
+	public static final RegistryObject<Item> SLOWNESS_NEEDLE = REGISTRY.register("slowness_needle", () -> new SlownessNeedleItem());
+	public static final RegistryObject<Item> INVISIBILITY_NEEDLE = REGISTRY.register("invisibility_needle", () -> new InvisibilityNeedleItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items

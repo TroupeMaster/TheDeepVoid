@@ -28,7 +28,6 @@ import net.mcreator.thedeepvoid.client.renderer.SummonedHiveFangsRenderer;
 import net.mcreator.thedeepvoid.client.renderer.SummonedDevourerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.SulfurTntEntityRenderer;
 import net.mcreator.thedeepvoid.client.renderer.StalkerRenderer;
-import net.mcreator.thedeepvoid.client.renderer.StalkerJuvenileRenderer;
 import net.mcreator.thedeepvoid.client.renderer.SporeSpewerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.SpiteArrowRenderer;
 import net.mcreator.thedeepvoid.client.renderer.SpawnBoneSpikesRenderer;
@@ -328,7 +327,6 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.MANIAC.get(), ManiacRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.ICHOR_FLAME_SHOT.get(), ThrownItemRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.THROWABLE_ICHOR_PROJ.get(), ThrownItemRenderer::new);
-		event.registerEntityRenderer(TheDeepVoidModEntities.STALKER_JUVENILE.get(), StalkerJuvenileRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.FALSE_HYDRA.get(), FalseHydraRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.FALSE_HYDRA_ARM.get(), FalseHydraArmRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.FALSE_HYDRA_SINGING.get(), FalseHydraSingingRenderer::new);

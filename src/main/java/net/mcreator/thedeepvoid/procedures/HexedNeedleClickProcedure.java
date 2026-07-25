@@ -36,6 +36,6 @@ public class HexedNeedleClickProcedure {
 		}
 		entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy")))), 2);
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.HEXED.get(), 1200, 0));
+			_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.HEXED.get(), 600, 0));
 	}
 }

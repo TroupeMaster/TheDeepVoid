@@ -1,0 +1,12 @@
+{
+  "type": "the_deep_void:treasure_bag_jei_type",
+  "ingredients": [
+    {
+      "item": "the_deep_void:false_hydra_treasure_bag"
+    }
+  ],
+  "output": {
+    "item": "the_deep_void:block_of_misted_bone_pile",
+    "count": 4
+  }
+}

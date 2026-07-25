@@ -1,0 +1,12 @@
+{
+  "type": "the_deep_void:treasure_bag_jei_type",
+  "ingredients": [
+    {
+      "item": "the_deep_void:false_hydra_treasure_bag"
+    }
+  ],
+  "output": {
+    "item": "the_deep_void:misted_heart",
+    "count": 1
+  }
+}

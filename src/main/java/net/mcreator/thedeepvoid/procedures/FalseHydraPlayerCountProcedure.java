@@ -51,7 +51,7 @@ public class FalseHydraPlayerCountProcedure {
 						});
 					}
 					if (entityiterator instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal("\u00A74\u00A7kDisc \u00A77Slaughter - by Dark Fantasy Studio \u00A74\u00A7kDisc"), true);
+						_player.displayClientMessage(Component.literal("\u00A77\u00A7kDisc \u00A77Slaughter - by Dark Fantasy Studio \u00A77\u00A7kDisc"), true);
 				}
 			}
 		}

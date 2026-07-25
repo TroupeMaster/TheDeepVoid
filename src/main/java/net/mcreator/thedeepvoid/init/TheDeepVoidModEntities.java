@@ -39,7 +39,6 @@ import net.mcreator.thedeepvoid.entity.SulfurTntEntityEntity;
 import net.mcreator.thedeepvoid.entity.SulfurFlareShotEntity;
 import net.mcreator.thedeepvoid.entity.SulfurBombProjEntity;
 import net.mcreator.thedeepvoid.entity.StalkerTreatThrownEntity;
-import net.mcreator.thedeepvoid.entity.StalkerJuvenileEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
 import net.mcreator.thedeepvoid.entity.SporeSpewerEntity;
 import net.mcreator.thedeepvoid.entity.SpiteArrowEntity;
@@ -674,8 +673,6 @@ public class TheDeepVoidModEntities {
 			EntityType.Builder.<IchorFlameShotEntity>of(IchorFlameShotEntity::new, MobCategory.MISC).setCustomClientFactory(IchorFlameShotEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 	public static final RegistryObject<EntityType<ThrowableIchorProjEntity>> THROWABLE_ICHOR_PROJ = register("throwable_ichor_proj", EntityType.Builder.<ThrowableIchorProjEntity>of(ThrowableIchorProjEntity::new, MobCategory.MISC)
 			.setCustomClientFactory(ThrowableIchorProjEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
-	public static final RegistryObject<EntityType<StalkerJuvenileEntity>> STALKER_JUVENILE = register("stalker_juvenile", EntityType.Builder.<StalkerJuvenileEntity>of(StalkerJuvenileEntity::new, MobCategory.MONSTER)
-			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(StalkerJuvenileEntity::new).fireImmune().sized(1.35f, 1.6f));
 	public static final RegistryObject<EntityType<FalseHydraEntity>> FALSE_HYDRA = register("false_hydra", EntityType.Builder.<FalseHydraEntity>of(FalseHydraEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(128)
 			.setUpdateInterval(3).setCustomClientFactory(FalseHydraEntity::new).fireImmune().sized(3.4f, 4f));
 	public static final RegistryObject<EntityType<FalseHydraArmEntity>> FALSE_HYDRA_ARM = register("false_hydra_arm", EntityType.Builder.<FalseHydraArmEntity>of(FalseHydraArmEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
@@ -813,7 +810,6 @@ public class TheDeepVoidModEntities {
 			MadCultistEntity.init();
 			ExecutionerEntity.init();
 			ManiacEntity.init();
-			StalkerJuvenileEntity.init();
 			FalseHydraEntity.init();
 			FalseHydraArmEntity.init();
 			FalseHydraSingingEntity.init();
@@ -943,7 +939,6 @@ public class TheDeepVoidModEntities {
 		event.put(MAD_CULTIST.get(), MadCultistEntity.createAttributes().build());
 		event.put(EXECUTIONER.get(), ExecutionerEntity.createAttributes().build());
 		event.put(MANIAC.get(), ManiacEntity.createAttributes().build());
-		event.put(STALKER_JUVENILE.get(), StalkerJuvenileEntity.createAttributes().build());
 		event.put(FALSE_HYDRA.get(), FalseHydraEntity.createAttributes().build());
 		event.put(FALSE_HYDRA_ARM.get(), FalseHydraArmEntity.createAttributes().build());
 		event.put(FALSE_HYDRA_SINGING.get(), FalseHydraSingingEntity.createAttributes().build());

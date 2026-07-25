@@ -278,7 +278,7 @@ public class DeepVoidConfigConfiguration {
 		HERESYGOLDENBLOODSHOT = BUILDER.comment("Damage (velocity increases that number)").define("HeresyGoldenBloodShot", (double) 2.5);
 		HERESYBLOODSHOTSHOTGUN = BUILDER.comment("Damage (velocity increases that number)").define("HeresyBloodShotShotgun", (double) 25);
 		HERESYGOLDENBLOODSHOTSHOTGUN = BUILDER.comment("Damage (velocity increases that number)").define("HeresyGoldenBloodShotShotgun", (double) 20);
-		APOSTASYSOULFUSEDSHOT = BUILDER.comment("Damage (velocity increases that number)").define("ApostasySoulFusedShot", (double) 3);
+		APOSTASYSOULFUSEDSHOT = BUILDER.comment("Damage (velocity increases that number)").define("ApostasySoulFusedShot", (double) 3.8);
 		KNIFEGLOVE = BUILDER.comment("Damage (velocity increases that number)").define("KnifeGlove", (double) 4.5);
 		ICHORSWORDSPIT = BUILDER.comment("Damage per projectile").define("IchorSwordSpit", (double) 5);
 		ARROWOFSPITE = BUILDER.comment("Damage per projectile").define("ArrowOfSpite", (double) 4);

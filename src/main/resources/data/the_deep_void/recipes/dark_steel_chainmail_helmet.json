@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "the_deep_void:smithing_template_dark_steel"
+  },
+  "base": {
+    "item": "minecraft:chainmail_helmet"
+  },
+  "addition": {
+    "item": "the_deep_void:dark_steel_chainmail"
+  },
+  "result": {
+    "item": "the_deep_void:dark_steel_chainmail_armor_helmet"
+  }
+}

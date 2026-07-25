@@ -13,11 +13,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.core.Direction;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.procedures.VoidEffigyRedstoneOnProcedure;
+import net.mcreator.thedeepvoid.procedures.VoidEffigyDescriptionProcedure;
 
 import java.util.List;
 
@@ -29,7 +31,8 @@ public class VoidEffigyBlock extends Block {
 	@Override
 	public void appendHoverText(ItemStack itemstack, BlockGetter level, List<Component> list, TooltipFlag flag) {
 		super.appendHoverText(itemstack, level, list, flag);
-		list.add(Component.literal("\u00A77Gives Void's Blessing to all nearby Players when activated with redstone"));
+		Entity entity = itemstack.getEntityRepresentation();
+		list.add(Component.literal(VoidEffigyDescriptionProcedure.execute()));
 	}
 
 	@Override

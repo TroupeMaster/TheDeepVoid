@@ -117,8 +117,8 @@ public class OnyxArmorProcedureProcedure {
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SENTIENT_CHESTPLATE.get()
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SENTIENT_LEGGINGS.get()
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.SENTIENT_BOOTS.get()
-				&& !((entity instanceof LivingEntity _entUseItem70 ? _entUseItem70.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)) {
-			if (!(entity instanceof LivingEntity _livEnt72 && _livEnt72.hasEffect(TheDeepVoidModMobEffects.ADAPTED.get()))) {
+				&& !((entity instanceof LivingEntity _entUseItem70 ? _entUseItem70.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) && entity instanceof Player) {
+			if (!(entity instanceof LivingEntity _livEnt73 && _livEnt73.hasEffect(TheDeepVoidModMobEffects.ADAPTED.get()))) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.ADAPTED.get(), 600, 0));
 			} else {

@@ -16,7 +16,6 @@ import net.mcreator.thedeepvoid.entity.SwarmerEntity;
 import net.mcreator.thedeepvoid.entity.SummonedShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.SummonedHiveFangsEntity;
 import net.mcreator.thedeepvoid.entity.SummonedDevourerEntity;
-import net.mcreator.thedeepvoid.entity.StalkerJuvenileEntity;
 import net.mcreator.thedeepvoid.entity.StalkerEntity;
 import net.mcreator.thedeepvoid.entity.SporeSpewerEntity;
 import net.mcreator.thedeepvoid.entity.SmallFleshCubeEntity;
@@ -800,13 +799,6 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof ManiacEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof StalkerJuvenileEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

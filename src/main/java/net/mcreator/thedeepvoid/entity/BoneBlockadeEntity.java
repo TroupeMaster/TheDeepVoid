@@ -210,9 +210,9 @@ public class BoneBlockadeEntity extends PathfinderMob implements GeoEntity {
 	private PlayState movementPredicate(AnimationState event) {
 		if (this.animationprocedure.equals("empty")) {
 			if (this.isDeadOrDying()) {
-				return event.setAndContinue(RawAnimation.begin().thenPlay("animation.boneBlockade_despawn"));
+				return event.setAndContinue(RawAnimation.begin().thenPlay("animation.boneblockade_despawn"));
 			}
-			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.boneBlockade_idle"));
+			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.boneblockade_idle"));
 		}
 		return PlayState.STOP;
 	}

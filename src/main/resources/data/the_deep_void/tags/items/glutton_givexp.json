@@ -2,21 +2,16 @@
   "replace": false,
   "values": [
     "the_deep_void:chainsaw",
-    "the_deep_void:apostle_of_catastrophe_treasure_bag",
     "the_deep_void:darkmare",
-    "the_deep_void:weaver_of_souls_treasure_bag",
     "the_deep_void:soul_shard",
     "the_deep_void:hexed_doll",
     "the_deep_void:flesh_bone",
-    "the_deep_void:primordial_crawler_treasure_bag",
     "the_deep_void:the_haunt",
     "the_deep_void:pitch_black",
-    "the_deep_void:misanthropic_hivemind_treasure_bag",
     "the_deep_void:bone_crawler_molt_piece",
     "the_deep_void:smithing_template_hard_flesh",
     "the_deep_void:smithing_template_soul",
     "the_deep_void:knives_glove",
-    "the_deep_void:hive_watcher_treasure_bag",
     "the_deep_void:ambrosial_flesh_chunk",
     "the_deep_void:rusty_claws",
     "the_deep_void:ancient_gun_part",
@@ -25,6 +20,10 @@
     "the_deep_void:head_of_the_primordial_crawler",
     "the_deep_void:head_of_the_apostle",
     "the_deep_void:head_of_the_weaver",
-    "the_deep_void:sacred_cinnabar"
+    "the_deep_void:sacred_cinnabar",
+    "the_deep_void:misted_heart",
+    "#the_deep_void:treasure_bag",
+    "the_deep_void:monsters_lair",
+    "the_deep_void:slaughter"
   ]
 }

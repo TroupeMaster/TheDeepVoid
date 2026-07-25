@@ -170,6 +170,16 @@ public class TheDeepVoidModBrewingRecipes implements IModPlugin {
 		brewingRecipes.add(factory.createBrewingRecipe(List.copyOf(ingredientStack), List.copyOf(inputStack), new ItemStack(TheDeepVoidModItems.WEAKNESS_NEEDLE.get())));
 		inputStack.clear();
 		ingredientStack.clear();
+		ingredientStack.add(new ItemStack(Items.FERMENTED_SPIDER_EYE));
+		inputStack.add(new ItemStack(TheDeepVoidModItems.SPEED_NEEDLE.get()));
+		brewingRecipes.add(factory.createBrewingRecipe(List.copyOf(ingredientStack), List.copyOf(inputStack), new ItemStack(TheDeepVoidModItems.SLOWNESS_NEEDLE.get())));
+		inputStack.clear();
+		ingredientStack.clear();
+		ingredientStack.add(new ItemStack(TheDeepVoidModItems.MISTED_BONE.get()));
+		inputStack.add(new ItemStack(TheDeepVoidModItems.BONE_NEEDLE.get()));
+		brewingRecipes.add(factory.createBrewingRecipe(List.copyOf(ingredientStack), List.copyOf(inputStack), new ItemStack(TheDeepVoidModItems.INVISIBILITY_NEEDLE.get())));
+		inputStack.clear();
+		ingredientStack.clear();
 		registration.addRecipes(RecipeTypes.BREWING, brewingRecipes);
 	}
 }

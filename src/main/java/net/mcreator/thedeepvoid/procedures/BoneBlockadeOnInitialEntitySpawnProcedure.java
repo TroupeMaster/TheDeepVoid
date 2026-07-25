@@ -31,7 +31,7 @@ public class BoneBlockadeOnInitialEntitySpawnProcedure {
 		if (entity == null)
 			return;
 		if (entity instanceof BoneBlockadeEntity) {
-			((BoneBlockadeEntity) entity).setAnimation("animation.boneBlockade_spawn");
+			((BoneBlockadeEntity) entity).setAnimation("animation.boneblockade_spawn");
 		}
 		TheDeepVoidMod.queueServerWork(10, () -> {
 			if (world instanceof Level _level) {
@@ -55,7 +55,7 @@ public class BoneBlockadeOnInitialEntitySpawnProcedure {
 		});
 		TheDeepVoidMod.queueServerWork(30, () -> {
 			if (entity instanceof BoneBlockadeEntity) {
-				((BoneBlockadeEntity) entity).setAnimation("animation.boneBlockade_despawn");
+				((BoneBlockadeEntity) entity).setAnimation("animation.boneblockade_despawn");
 			}
 		});
 	}

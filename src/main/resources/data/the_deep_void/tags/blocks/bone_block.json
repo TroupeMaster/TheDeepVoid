@@ -29,6 +29,8 @@
     "the_deep_void:block_of_marrow",
     "the_deep_void:block_of_shattered_bone",
     "the_deep_void:block_of_old_shattered_bone",
-    "the_deep_void:block_of_rotten_shattered_bone"
+    "the_deep_void:block_of_rotten_shattered_bone",
+    "the_deep_void:misted_remains",
+    "the_deep_void:block_of_misted_bone_pile"
   ]
 }

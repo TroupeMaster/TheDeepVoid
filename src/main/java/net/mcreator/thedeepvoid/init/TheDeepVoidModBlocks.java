@@ -216,6 +216,7 @@ import net.mcreator.thedeepvoid.block.HeadOfTheWeaverBlock;
 import net.mcreator.thedeepvoid.block.HeadOfThePrimordialCrawlerBlock;
 import net.mcreator.thedeepvoid.block.HeadOfTheHunterBlock;
 import net.mcreator.thedeepvoid.block.HeadOfTheHivemindBlock;
+import net.mcreator.thedeepvoid.block.HeadOfTheFalseHydraBlock;
 import net.mcreator.thedeepvoid.block.HeadOfTheApostleBlock;
 import net.mcreator.thedeepvoid.block.HardFleshStairsBlock;
 import net.mcreator.thedeepvoid.block.HardFleshSlabBlock;
@@ -916,6 +917,7 @@ public class TheDeepVoidModBlocks {
 	public static final RegistryObject<Block> GLOOM_VINES = REGISTRY.register("gloom_vines", () -> new GloomVinesBlock());
 	public static final RegistryObject<Block> LIVING_GLOOM_VINES = REGISTRY.register("living_gloom_vines", () -> new LivingGloomVinesBlock());
 	public static final RegistryObject<Block> GLOOM_WITNESS_SAPLING = REGISTRY.register("gloom_witness_sapling", () -> new GloomWitnessSaplingBlock());
+	public static final RegistryObject<Block> HEAD_OF_THE_FALSE_HYDRA = REGISTRY.register("head_of_the_false_hydra", () -> new HeadOfTheFalseHydraBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

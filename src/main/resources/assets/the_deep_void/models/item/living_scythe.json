@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/livingscythe",
+  "textures": {
+    "0": "the_deep_void:block/living_scythe",
+    "particle": "the_deep_void:item/living_scythe"
+  }
+}
