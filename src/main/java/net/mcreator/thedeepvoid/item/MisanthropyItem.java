@@ -18,11 +18,13 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.HumanoidArm;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.client.model.HumanoidModel;
 
 import net.mcreator.thedeepvoid.procedures.MisanthropyRightclickedProcedure;
 import net.mcreator.thedeepvoid.item.renderer.MisanthropyItemRenderer;
@@ -51,6 +53,28 @@ public class MisanthropyItem extends Item implements GeoItem {
 				return renderer;
 			}
 
+			private static final HumanoidModel.ArmPose MisanthropyPose = HumanoidModel.ArmPose.create("Misanthropy", false, (model, entity, arm) -> {
+				if (arm == HumanoidArm.LEFT) {
+					model.rightArm.xRot = -45F + model.head.xRot;
+					model.leftArm.xRot = -45F + model.head.xRot;
+					model.leftArm.yRot = 45F;
+				} else {
+					model.rightArm.xRot = -45F + model.head.xRot;
+					model.leftArm.xRot = -45F + model.head.xRot;
+					model.leftArm.yRot = 45F;
+				}
+			});
+
+			@Override
+			public HumanoidModel.ArmPose getArmPose(LivingEntity entityLiving, InteractionHand hand, ItemStack itemStack) {
+				if (!itemStack.isEmpty()) {
+					if (entityLiving.getUsedItemHand() == hand) {
+						return MisanthropyPose;
+					}
+				}
+				return HumanoidModel.ArmPose.EMPTY;
+			}
+
 			public boolean applyForgeHandTransform(PoseStack poseStack, LocalPlayer player, HumanoidArm arm, ItemStack itemInHand, float partialTick, float equipProcess, float swingProcess) {
 				int i = arm == HumanoidArm.RIGHT ? 1 : -1;
 				poseStack.translate(i * 0.56F, -0.52F, -0.72F);
@@ -67,7 +91,7 @@ public class MisanthropyItem extends Item implements GeoItem {
 	}
 
 	private PlayState idlePredicate(AnimationState event) {
-		if (this.transformType != null ? true : false) {
+		if (this.transformType != null ? this.transformType.firstPerson() : false) {
 			if (this.animationprocedure.equals("empty")) {
 				event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.ichorRifle_idle"));
 				return PlayState.CONTINUE;
@@ -79,7 +103,7 @@ public class MisanthropyItem extends Item implements GeoItem {
 	String prevAnim = "empty";
 
 	private PlayState procedurePredicate(AnimationState event) {
-		if (this.transformType != null ? true : false) {
+		if (this.transformType != null ? this.transformType.firstPerson() : false) {
 			if (!this.animationprocedure.equals("empty") && event.getController().getAnimationState() == AnimationController.State.STOPPED || (!this.animationprocedure.equals(prevAnim) && !this.animationprocedure.equals("empty"))) {
 				if (!this.animationprocedure.equals(prevAnim))
 					event.getController().forceAnimationReset();

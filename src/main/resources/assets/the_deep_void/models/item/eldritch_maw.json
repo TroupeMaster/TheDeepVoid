@@ -1,5 +1,5 @@
 {
-  "parent": "the_deep_void:displaysettings/eldritchmouth",
+  "parent": "the_deep_void:displaysettings/eldritchmawarms",
   "textures": {
     "layer0": "the_deep_void:item/eldritchmouth"
   }

@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "the_deep_void:bone_mush"
+    },
+    {
+      "item": "the_deep_void:cooked_flesh"
+    },
+    {
+      "item": "the_deep_void:void_fly"
+    },
+    {
+      "item": "the_deep_void:bone_crawler_embryo"
+    },
+    {
+      "item": "the_deep_void:goo_ball"
+    },
+    {
+      "item": "the_deep_void:maggot_stew"
+    },
+    {
+      "item": "the_deep_void:maggot_stew"
+    },
+    {
+      "item": "the_deep_void:maggot_stew"
+    }
+  ],
+  "result": {
+    "item": "the_deep_void:gooey_delight",
+    "count": 3
+  }
+}

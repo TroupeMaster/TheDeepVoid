@@ -73,6 +73,11 @@
     "the_deep_void:cooked_void_fly_maggot",
     "the_deep_void:ambrosiafish",
     "minecraft:dried_kelp",
-    "the_deep_void:eye_cake"
+    "the_deep_void:eye_cake",
+    "the_deep_void:cooked_flesh",
+    "the_deep_void:disgusting_meal",
+    "the_deep_void:opened_dead_man_hand",
+    "the_deep_void:maggot_stew",
+    "the_deep_void:gooey_delight"
   ]
 }

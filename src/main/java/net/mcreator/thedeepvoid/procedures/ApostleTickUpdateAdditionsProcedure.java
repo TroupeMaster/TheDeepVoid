@@ -208,8 +208,6 @@ public class ApostleTickUpdateAdditionsProcedure {
 			}
 		}
 		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()) && DeepVoidConfigConfiguration.BOSSIDLES.get() == true) {
-			if (!entity.level().isClientSide())
-				entity.discard();
 			if (world instanceof ServerLevel _level) {
 				Entity entityToSpawn = TheDeepVoidModEntities.IDLING_APOSTLE.get().spawn(_level,
 						BlockPos.containing(entity.getPersistentData().getDouble("deep_void:forgeX"), entity.getPersistentData().getDouble("deep_void:forgeY"), entity.getPersistentData().getDouble("deep_void:forgeZ")), MobSpawnType.MOB_SUMMONED);
@@ -234,6 +232,8 @@ public class ApostleTickUpdateAdditionsProcedure {
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 							"stopsound @a record the_deep_void:chainsaw");
 			});
+			if (!entity.level().isClientSide())
+				entity.discard();
 		}
 		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty()) && !world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {
 			if (!(new Object() {

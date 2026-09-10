@@ -9,12 +9,12 @@ import net.mcreator.thedeepvoid.item.ApostasyItem;
 public class ApostasyItemModel extends GeoModel<ApostasyItem> {
 	@Override
 	public ResourceLocation getAnimationResource(ApostasyItem animatable) {
-		return new ResourceLocation("the_deep_void", "animations/apostasynew.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/apostasyarms.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(ApostasyItem animatable) {
-		return new ResourceLocation("the_deep_void", "geo/apostasynew.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/apostasyarms.geo.json");
 	}
 
 	@Override

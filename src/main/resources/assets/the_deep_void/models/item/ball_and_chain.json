@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "the_deep_void:item/ball_and_chain"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "the_deep_void:ball_and_chain_secret": 1
+      },
+      "model": "the_deep_void:item/ball_and_chain_0"
+    }
+  ]
+}

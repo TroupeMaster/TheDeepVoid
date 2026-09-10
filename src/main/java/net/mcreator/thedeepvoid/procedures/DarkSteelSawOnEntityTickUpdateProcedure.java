@@ -36,7 +36,8 @@ public class DarkSteelSawOnEntityTickUpdateProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.ANCIENT_DEEPSLATE_SAW_TRAP_TRACK.get()) {
+		if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.ANCIENT_DEEPSLATE_SAW_TRAP_TRACK.get()
+				|| (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.TRAPPED_ANCIENT_DEEPSLATE_SAW_TRAP_TRACK.get()) {
 			if ((new Object() {
 				public Direction getDirection(BlockPos pos) {
 					BlockState _bs = world.getBlockState(pos);
@@ -136,7 +137,7 @@ public class DarkSteelSawOnEntityTickUpdateProcedure {
 			for (Entity entityiterator : _entfound) {
 				if (entityiterator instanceof LivingEntity && !(entityiterator instanceof DarkSteelSawEntity) && !(entityiterator == entity)) {
 					entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.GENERIC)),
-							(float) (entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:trap_vulnerable"))) ? 11 : 7));
+							(float) (entityiterator.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:trap_vulnerable"))) ? 11 : 6));
 					if (Math.random() < 0.4) {
 						if (world instanceof Level _level) {
 							if (!_level.isClientSide()) {

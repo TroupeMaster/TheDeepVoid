@@ -16,6 +16,7 @@ import net.minecraft.client.renderer.FogRenderer;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
 
 import javax.annotation.Nullable;
@@ -49,19 +50,22 @@ public class MistedRemnantsFogProcedure {
 			Entity entity = provider.getCamera().getEntity();
 			if (level != null && entity != null) {
 				Vec3 pos = entity.getPosition((float) provider.getPartialTick());
-				execute(provider, level, pos.x(), pos.y(), pos.z());
+				execute(provider, level, pos.x(), pos.y(), pos.z(), entity);
 			}
 		}
 	}
 
-	public static void execute(LevelAccessor world, double x, double y, double z) {
-		execute(null, world, x, y, z);
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		execute(null, world, x, y, z, entity);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z) {
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
+			return;
 		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:misted_remnants")) && y > 1 && !(!world.getEntitiesOfClass(ApostleBossEntity.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty())) {
 			setShape(FogShape.CYLINDER);
-			setDistance(0, 40);
+			setDistance((float) ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).remnantsFog - 40),
+					(float) (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).remnantsFog);
 		}
 	}
 }

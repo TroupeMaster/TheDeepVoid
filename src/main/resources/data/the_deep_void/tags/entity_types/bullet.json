@@ -15,6 +15,9 @@
     "the_deep_void:red_flare_shot",
     "the_deep_void:sulfur_flare_shot",
     "the_deep_void:voidrium_flare_shot",
-    "the_deep_void:xp_flare_shot"
+    "the_deep_void:xp_flare_shot",
+    "the_deep_void:maniac_shotgun_pellet",
+    "the_deep_void:ichor_flare_shot",
+    "the_deep_void:peril_bullet_no_cooldown"
   ]
 }

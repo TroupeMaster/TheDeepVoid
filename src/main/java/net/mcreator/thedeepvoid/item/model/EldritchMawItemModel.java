@@ -9,12 +9,12 @@ import net.mcreator.thedeepvoid.item.EldritchMawItem;
 public class EldritchMawItemModel extends GeoModel<EldritchMawItem> {
 	@Override
 	public ResourceLocation getAnimationResource(EldritchMawItem animatable) {
-		return new ResourceLocation("the_deep_void", "animations/eldritchmouth.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/eldritchmawarms.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(EldritchMawItem animatable) {
-		return new ResourceLocation("the_deep_void", "geo/eldritchmouth.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/eldritchmawarms.geo.json");
 	}
 
 	@Override

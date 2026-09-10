@@ -21,7 +21,7 @@ public class PlayerCageRenderer extends MobRenderer<PlayerCageEntity, Modelplaye
 	public PlayerCageRenderer(EntityRendererProvider.Context context) {
 		super(context, new Modelplayer_cage(context.bakeLayer(Modelplayer_cage.LAYER_LOCATION)), 0f);
 		this.addLayer(new RenderLayer<PlayerCageEntity, Modelplayer_cage<PlayerCageEntity>>(this) {
-			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("the_deep_void:textures/entities/gaoler.png");
+			final ResourceLocation LAYER_TEXTURE = new ResourceLocation("the_deep_void:textures/entities/player_cage.png");
 
 			@Override
 			public void render(PoseStack poseStack, MultiBufferSource bufferSource, int light, PlayerCageEntity entity, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch) {
@@ -37,6 +37,6 @@ public class PlayerCageRenderer extends MobRenderer<PlayerCageEntity, Modelplaye
 
 	@Override
 	public ResourceLocation getTextureLocation(PlayerCageEntity entity) {
-		return new ResourceLocation("the_deep_void:textures/entities/gaoler.png");
+		return new ResourceLocation("the_deep_void:textures/entities/player_cage.png");
 	}
 }

@@ -1,0 +1,9 @@
+{
+  "parent": "block/template_glass_pane_side_alt",
+  "textures": {
+    "particle": "the_deep_void:block/executioner_spawner_active",
+    "edge": "the_deep_void:block/executioner_spawner_active",
+    "pane": "the_deep_void:block/executioner_spawner_active"
+  },
+  "render_type": "cutout_mipped"
+}

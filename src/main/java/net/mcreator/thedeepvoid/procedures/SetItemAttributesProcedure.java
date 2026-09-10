@@ -94,6 +94,10 @@ public class SetItemAttributesProcedure {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
 						(new AttributeModifier(UUID.fromString("20becca3-d644-43ef-8598-24659f89f3b3"), "vultureMaskSpeed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
 			}
+			if (itemstack.getItem() == TheDeepVoidModItems.DARK_STEEL_BISMUTH_NETHERITE_HELMET.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("02a154be-a982-4399-bdbf-47feb640e42f"), "bismuthHelmetSpeed", (-0.05), AttributeModifier.Operation.MULTIPLY_BASE)));
+			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.CHEST) {
 			if (itemstack.getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_CHESTPLATE.get()) {
@@ -106,6 +110,10 @@ public class SetItemAttributesProcedure {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
 						(new AttributeModifier(UUID.fromString("c3ec1923-603c-48b7-838d-b45534890f9b"), "vultureChestplateSpeed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
 			}
+			if (itemstack.getItem() == TheDeepVoidModItems.DARK_STEEL_BISMUTH_NETHERITE_CHESTPLATE.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("337de984-8c20-47fe-aaa5-8d7ff1f8db59"), "bismuthChestplateSpeed", (-0.05), AttributeModifier.Operation.MULTIPLY_BASE)));
+			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.LEGS) {
 			if (itemstack.getItem() == TheDeepVoidModItems.BLOODSTONE_ARMOR_LEGGINGS.get()) {
@@ -117,6 +125,10 @@ public class SetItemAttributesProcedure {
 			if (itemstack.getItem() == TheDeepVoidModItems.VULTURE_LEGGINGS.get()) {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
 						(new AttributeModifier(UUID.fromString("56a76483-c4d7-4dc0-9c35-0387fc9b134d"), "vultureLeggingsSpeed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
+			}
+			if (itemstack.getItem() == TheDeepVoidModItems.DARK_STEEL_BISMUTH_NETHERITE_LEGGINGS.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("0294bfa7-a54b-40e6-b2ad-16284859dbaf"), "bismuthLeggingsSpeed", (-0.05), AttributeModifier.Operation.MULTIPLY_BASE)));
 			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.FEET) {
@@ -131,6 +143,10 @@ public class SetItemAttributesProcedure {
 			if (itemstack.getItem() == TheDeepVoidModItems.VULTURE_BOOTS.get()) {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
 						(new AttributeModifier(UUID.fromString("f43fe2fd-417c-4108-8c72-91aa179184f2"), "vultureBootsSpeed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
+			}
+			if (itemstack.getItem() == TheDeepVoidModItems.DARK_STEEL_BISMUTH_NETHERITE_BOOTS.get()) {
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("7cf3def5-b317-48c4-9958-9cd0e57bb6a7"), "bismuthBootsSpeed", (-0.05), AttributeModifier.Operation.MULTIPLY_BASE)));
 			}
 		}
 	}

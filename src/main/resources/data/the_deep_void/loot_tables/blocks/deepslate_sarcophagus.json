@@ -392,6 +392,20 @@
               }
             }
           ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "the_deep_void:dark_steel_coin",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 4,
+                "max": 12
+              }
+            }
+          ]
         }
       ]
     }

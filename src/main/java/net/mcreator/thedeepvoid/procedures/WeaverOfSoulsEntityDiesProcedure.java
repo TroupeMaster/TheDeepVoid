@@ -19,7 +19,6 @@ import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
-import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
@@ -41,8 +40,6 @@ public class WeaverOfSoulsEntityDiesProcedure {
 				((WeaverOfSoulsBossEntity) entity).setAnimation("animation.fallenWeaver_death");
 			}
 			TheDeepVoidMod.queueServerWork(73, () -> {
-				TheDeepVoidModVariables.MapVariables.get(world).weaverFightCount = TheDeepVoidModVariables.MapVariables.get(world).weaverFightCount + 1;
-				TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
 				if (world instanceof ServerLevel _level)
 					_level.sendParticles(ParticleTypes.SCULK_SOUL, x, y, z, 20, 0.4, 0.4, 0.4, 0.1);
 				if (world instanceof ServerLevel _level)

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "the_deep_void:cooked_flesh"
+    },
+    {
+      "item": "the_deep_void:eyeball"
+    },
+    {
+      "item": "the_deep_void:eyeball"
+    },
+    {
+      "item": "minecraft:bowl"
+    }
+  ],
+  "result": {
+    "item": "the_deep_void:disgusting_meal",
+    "count": 1
+  }
+}

@@ -8,6 +8,7 @@ import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 
+import net.mcreator.thedeepvoid.entity.GooSpitterEntity;
 import net.mcreator.thedeepvoid.entity.BoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.AlphaBoneCrawlerEntity;
 
@@ -22,7 +23,7 @@ public class MotherlyCallOnEffectActiveTickProcedure {
 			final Vec3 _center = new Vec3(x, y, z);
 			List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(60 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 			for (Entity entityiterator : _entfound) {
-				if ((entityiterator instanceof BoneCrawlerEntity || entityiterator instanceof AlphaBoneCrawlerEntity)
+				if ((entityiterator instanceof BoneCrawlerEntity || entityiterator instanceof GooSpitterEntity || entityiterator instanceof AlphaBoneCrawlerEntity)
 						&& (entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)
 						&& (entityiterator instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) {
 					if (entityiterator instanceof Mob _entity)

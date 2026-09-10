@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/dark_steel_spikes",
+  "textures": {
+    "all": "the_deep_void:block/dark_steel_spikes",
+    "particle": "the_deep_void:block/dark_steel_block",
+    "0": "the_deep_void:block/dark_steel_spikes"
+  },
+  "render_type": "cutout"
+}

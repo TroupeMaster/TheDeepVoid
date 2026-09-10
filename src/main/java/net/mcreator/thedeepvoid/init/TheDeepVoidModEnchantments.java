@@ -15,6 +15,7 @@ import net.mcreator.thedeepvoid.enchantment.ScourgeOfFleshEnchantment;
 import net.mcreator.thedeepvoid.enchantment.RadianceEnchantment;
 import net.mcreator.thedeepvoid.enchantment.QuickTriggerEnchantment;
 import net.mcreator.thedeepvoid.enchantment.NecrosedEnchantment;
+import net.mcreator.thedeepvoid.enchantment.MarksmanEnchantment;
 import net.mcreator.thedeepvoid.enchantment.DimensionalBurstEnchantment;
 import net.mcreator.thedeepvoid.enchantment.CurseOfSorrowEnchantment;
 import net.mcreator.thedeepvoid.enchantment.CurseOfGodsBloodEnchantment;
@@ -22,6 +23,7 @@ import net.mcreator.thedeepvoid.enchantment.CrateCatcherEnchantment;
 import net.mcreator.thedeepvoid.enchantment.ConservationEnchantment;
 import net.mcreator.thedeepvoid.enchantment.BoneWalkerEnchantment;
 import net.mcreator.thedeepvoid.enchantment.BaitEnchantment;
+import net.mcreator.thedeepvoid.enchantment.AkimboEnchantment;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 public class TheDeepVoidModEnchantments {
@@ -38,4 +40,6 @@ public class TheDeepVoidModEnchantments {
 	public static final RegistryObject<Enchantment> CONSERVATION = REGISTRY.register("conservation", () -> new ConservationEnchantment());
 	public static final RegistryObject<Enchantment> DIMENSIONAL_BURST = REGISTRY.register("dimensional_burst", () -> new DimensionalBurstEnchantment());
 	public static final RegistryObject<Enchantment> QUICK_TRIGGER = REGISTRY.register("quick_trigger", () -> new QuickTriggerEnchantment());
+	public static final RegistryObject<Enchantment> MARKSMAN = REGISTRY.register("marksman", () -> new MarksmanEnchantment());
+	public static final RegistryObject<Enchantment> AKIMBO = REGISTRY.register("akimbo", () -> new AkimboEnchantment());
 }

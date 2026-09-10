@@ -16,7 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
-import net.mcreator.thedeepvoid.entity.BloodSpitEntity;
+import net.mcreator.thedeepvoid.entity.BloodthirstyClawsBloodSpitEntity;
 
 public class BloodthirstyClawsEntitySwingsItemProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
@@ -32,7 +32,7 @@ public class BloodthirstyClawsEntitySwingsItemProcedure {
 					if (!projectileLevel.isClientSide()) {
 						Projectile _entityToSpawn = new Object() {
 							public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
-								AbstractArrow entityToSpawn = new BloodSpitEntity(TheDeepVoidModEntities.BLOOD_SPIT.get(), level);
+								AbstractArrow entityToSpawn = new BloodthirstyClawsBloodSpitEntity(TheDeepVoidModEntities.BLOODTHIRSTY_CLAWS_BLOOD_SPIT.get(), level);
 								entityToSpawn.setOwner(shooter);
 								entityToSpawn.setBaseDamage(damage);
 								entityToSpawn.setKnockback(knockback);

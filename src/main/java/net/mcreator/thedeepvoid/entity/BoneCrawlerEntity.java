@@ -59,6 +59,7 @@ import net.minecraft.nbt.CompoundTag;
 import net.mcreator.thedeepvoid.procedures.TamedBoneCrawlerRightClickedProcedure;
 import net.mcreator.thedeepvoid.procedures.BoneCrawlerNaturalEntitySpawningConditionProcedure;
 import net.mcreator.thedeepvoid.procedures.BoneCrawlerDigIntoBoneProcedure;
+import net.mcreator.thedeepvoid.procedures.BoneCrawlerAttackPlayerConditionProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 import java.util.List;
@@ -70,6 +71,7 @@ public class BoneCrawlerEntity extends TamableAnimal implements GeoEntity {
 	public static final EntityDataAccessor<Boolean> DATA_dig = SynchedEntityData.defineId(BoneCrawlerEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<Integer> DATA_growthAlpha = SynchedEntityData.defineId(BoneCrawlerEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_growthMother = SynchedEntityData.defineId(BoneCrawlerEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_growthSpitter = SynchedEntityData.defineId(BoneCrawlerEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -96,6 +98,7 @@ public class BoneCrawlerEntity extends TamableAnimal implements GeoEntity {
 		this.entityData.define(DATA_dig, false);
 		this.entityData.define(DATA_growthAlpha, 0);
 		this.entityData.define(DATA_growthMother, 0);
+		this.entityData.define(DATA_growthSpitter, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -128,8 +131,48 @@ public class BoneCrawlerEntity extends TamableAnimal implements GeoEntity {
 		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, StalkerEntity.class, (float) 60, 1.2, 1.2));
 		this.targetSelector.addGoal(8, new OwnerHurtTargetGoal(this));
 		this.goalSelector.addGoal(9, new OwnerHurtByTargetGoal(this));
-		this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, Player.class, false, false));
-		this.targetSelector.addGoal(11, new NearestAttackableTargetGoal(this, LightEntity.class, false, true));
+		this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, Player.class, false, false) {
+			@Override
+			public boolean canUse() {
+				double x = BoneCrawlerEntity.this.getX();
+				double y = BoneCrawlerEntity.this.getY();
+				double z = BoneCrawlerEntity.this.getZ();
+				Entity entity = BoneCrawlerEntity.this;
+				Level world = BoneCrawlerEntity.this.level();
+				return super.canUse() && BoneCrawlerAttackPlayerConditionProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = BoneCrawlerEntity.this.getX();
+				double y = BoneCrawlerEntity.this.getY();
+				double z = BoneCrawlerEntity.this.getZ();
+				Entity entity = BoneCrawlerEntity.this;
+				Level world = BoneCrawlerEntity.this.level();
+				return super.canContinueToUse() && BoneCrawlerAttackPlayerConditionProcedure.execute(entity);
+			}
+		});
+		this.targetSelector.addGoal(11, new NearestAttackableTargetGoal(this, LightEntity.class, false, true) {
+			@Override
+			public boolean canUse() {
+				double x = BoneCrawlerEntity.this.getX();
+				double y = BoneCrawlerEntity.this.getY();
+				double z = BoneCrawlerEntity.this.getZ();
+				Entity entity = BoneCrawlerEntity.this;
+				Level world = BoneCrawlerEntity.this.level();
+				return super.canUse() && BoneCrawlerAttackPlayerConditionProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = BoneCrawlerEntity.this.getX();
+				double y = BoneCrawlerEntity.this.getY();
+				double z = BoneCrawlerEntity.this.getZ();
+				Entity entity = BoneCrawlerEntity.this;
+				Level world = BoneCrawlerEntity.this.level();
+				return super.canContinueToUse() && BoneCrawlerAttackPlayerConditionProcedure.execute(entity);
+			}
+		});
 	}
 
 	@Override
@@ -154,6 +197,7 @@ public class BoneCrawlerEntity extends TamableAnimal implements GeoEntity {
 		compound.putBoolean("Datadig", this.entityData.get(DATA_dig));
 		compound.putInt("DatagrowthAlpha", this.entityData.get(DATA_growthAlpha));
 		compound.putInt("DatagrowthMother", this.entityData.get(DATA_growthMother));
+		compound.putInt("DatagrowthSpitter", this.entityData.get(DATA_growthSpitter));
 	}
 
 	@Override
@@ -167,6 +211,8 @@ public class BoneCrawlerEntity extends TamableAnimal implements GeoEntity {
 			this.entityData.set(DATA_growthAlpha, compound.getInt("DatagrowthAlpha"));
 		if (compound.contains("DatagrowthMother"))
 			this.entityData.set(DATA_growthMother, compound.getInt("DatagrowthMother"));
+		if (compound.contains("DatagrowthSpitter"))
+			this.entityData.set(DATA_growthSpitter, compound.getInt("DatagrowthSpitter"));
 	}
 
 	@Override

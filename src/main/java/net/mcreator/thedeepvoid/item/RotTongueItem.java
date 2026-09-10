@@ -20,7 +20,6 @@ import net.minecraft.network.chat.Component;
 import net.mcreator.thedeepvoid.procedures.RottenTongueLivingEntityIsHitWithToolProcedure;
 import net.mcreator.thedeepvoid.procedures.RottenTongueDescriptionProcedure;
 import net.mcreator.thedeepvoid.procedures.RotTongueRightclickedProcedure;
-import net.mcreator.thedeepvoid.procedures.RotTonguePlayerFinishesUsingItemProcedure;
 import net.mcreator.thedeepvoid.procedures.RotTongueOnPlayerStoppedUsingProcedure;
 import net.mcreator.thedeepvoid.procedures.RotTongueLivingEntityIsHitWithItemProcedure;
 
@@ -31,12 +30,12 @@ import com.google.common.collect.ImmutableMultimap;
 
 public class RotTongueItem extends Item {
 	public RotTongueItem() {
-		super(new Item.Properties().durability(850).fireResistant().rarity(Rarity.COMMON));
+		super(new Item.Properties().durability(850).fireResistant().rarity(Rarity.UNCOMMON));
 	}
 
 	@Override
 	public int getUseDuration(ItemStack itemstack) {
-		return 6;
+		return 72000;
 	}
 
 	@Override
@@ -67,16 +66,6 @@ public class RotTongueItem extends Item {
 	}
 
 	@Override
-	public ItemStack finishUsingItem(ItemStack itemstack, Level world, LivingEntity entity) {
-		ItemStack retval = super.finishUsingItem(itemstack, world, entity);
-		double x = entity.getX();
-		double y = entity.getY();
-		double z = entity.getZ();
-		RotTonguePlayerFinishesUsingItemProcedure.execute(entity, itemstack);
-		return retval;
-	}
-
-	@Override
 	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
 		itemstack.hurtAndBreak(1, entity, i -> i.broadcastBreakEvent(EquipmentSlot.MAINHAND));
 		RotTongueLivingEntityIsHitWithItemProcedure.execute(entity.level(), entity.getX(), entity.getY(), entity.getZ(), entity, sourceentity);
@@ -87,11 +76,11 @@ public class RotTongueItem extends Item {
 	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
-			RottenTongueLivingEntityIsHitWithToolProcedure.execute(world, entity);
+			RottenTongueLivingEntityIsHitWithToolProcedure.execute(world, entity, itemstack);
 	}
 
 	@Override
 	public void releaseUsing(ItemStack itemstack, Level world, LivingEntity entity, int time) {
-		RotTongueOnPlayerStoppedUsingProcedure.execute(itemstack);
+		RotTongueOnPlayerStoppedUsingProcedure.execute(entity, itemstack);
 	}
 }

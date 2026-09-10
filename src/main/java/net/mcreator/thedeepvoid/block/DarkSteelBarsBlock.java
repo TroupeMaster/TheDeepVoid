@@ -10,7 +10,7 @@ import net.minecraft.core.BlockPos;
 
 public class DarkSteelBarsBlock extends IronBarsBlock {
 	public DarkSteelBarsBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(5f, 6f).requiresCorrectToolForDrops());
+		super(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(5f, 6f).requiresCorrectToolForDrops().noOcclusion().isRedstoneConductor((bs, br, bp) -> false));
 	}
 
 	@Override

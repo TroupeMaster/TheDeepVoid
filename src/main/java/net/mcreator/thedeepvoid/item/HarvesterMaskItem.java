@@ -67,7 +67,7 @@ public abstract class HarvesterMaskItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/harvester_mask__layer_1.png";
+			return "the_deep_void:textures/models/armor/soul_spite__layer_1.png";
 		}
 	}
 }

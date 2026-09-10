@@ -1,7 +1,7 @@
 {
-  "parent": "the_deep_void:custom/stalker_claw_new",
+  "parent": "the_deep_void:custom/stalker_claw_newer",
   "textures": {
-    "0": "the_deep_void:block/stalker_claw_new",
+    "0": "the_deep_void:block/stalker_claw",
     "particle": "the_deep_void:item/stalker_claw_new"
   }
 }

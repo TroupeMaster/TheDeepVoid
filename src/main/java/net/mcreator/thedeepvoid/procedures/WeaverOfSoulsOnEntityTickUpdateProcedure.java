@@ -81,8 +81,6 @@ public class WeaverOfSoulsOnEntityTickUpdateProcedure {
 		WeaverSpawnHandBlockadeProcedure.execute(world, entity);
 		WeaverBreakEnderPearlProcedure.execute(world, x, y, z);
 		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 110, 110, 110), e -> true).isEmpty()) && DeepVoidConfigConfiguration.BOSSIDLES.get() == true) {
-			if (!entity.level().isClientSide())
-				entity.discard();
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(x, y, z), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("the_deep_void:fog_appear")), SoundSource.HOSTILE, 1, (float) 0.8);
@@ -108,6 +106,8 @@ public class WeaverOfSoulsOnEntityTickUpdateProcedure {
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 							"stopsound @a record the_deep_void:darkmare");
 			});
+			if (!entity.level().isClientSide())
+				entity.discard();
 		}
 		if ((entity instanceof WeaverOfSoulsBossEntity _datEntI ? _datEntI.getEntityData().get(WeaverOfSoulsBossEntity.DATA_scream) : 0) > 0) {
 			if (entity instanceof WeaverOfSoulsBossEntity _datEntSetI)

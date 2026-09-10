@@ -23,7 +23,6 @@ import net.minecraft.commands.CommandSource;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.Advancement;
 
-import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.entity.FalseHydraEntity;
@@ -50,8 +49,6 @@ public class FalseHydraDiesProcedure {
 				}
 			}
 			TheDeepVoidMod.queueServerWork(60, () -> {
-				TheDeepVoidModVariables.MapVariables.get(world).hydraFightCount = TheDeepVoidModVariables.MapVariables.get(world).hydraFightCount + 1;
-				TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
 				{
 					final Vec3 _center = new Vec3(x, y, z);
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(50 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    "bcb",
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:ambrosia"
+    },
+    "b": {
+      "item": "the_deep_void:sacred_cinnabar"
+    },
+    "c": {
+      "item": "minecraft:enchanted_golden_apple"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:forbidden_fruit",
+    "count": 1
+  }
+}

@@ -136,10 +136,6 @@ public class PlayerIsInDeepVoidProcedure {
 		if ((entity.level().dimension()) == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("the_deep_void:the_pit"))) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.WEAVER_CURSE.get(), 20, 0, false, false));
-			if (!(entity instanceof LivingEntity _livEnt25 && _livEnt25.hasEffect(TheDeepVoidModMobEffects.DEBILITATED.get()))) {
-				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.DEBILITATED.get(), (int) Double.POSITIVE_INFINITY, 0, true, true));
-			}
 		}
 	}
 }

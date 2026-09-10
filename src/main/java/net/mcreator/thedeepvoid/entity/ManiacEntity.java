@@ -134,8 +134,6 @@ public class ManiacEntity extends Monster implements GeoEntity {
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(5, new FloatGoal(this));
 		this.targetSelector.addGoal(6, new NearestAttackableTargetGoal(this, Player.class, true, false));
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, DeathVultureEntity.class, true, true));
-		this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, FoolEaterEntity.class, true, true));
 	}
 
 	@Override

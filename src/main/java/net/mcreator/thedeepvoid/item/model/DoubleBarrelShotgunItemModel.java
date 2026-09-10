@@ -9,16 +9,16 @@ import net.mcreator.thedeepvoid.item.DoubleBarrelShotgunItem;
 public class DoubleBarrelShotgunItemModel extends GeoModel<DoubleBarrelShotgunItem> {
 	@Override
 	public ResourceLocation getAnimationResource(DoubleBarrelShotgunItem animatable) {
-		return new ResourceLocation("the_deep_void", "animations/doublebarrel.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/spitearms.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(DoubleBarrelShotgunItem animatable) {
-		return new ResourceLocation("the_deep_void", "geo/doublebarrel.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/spitearms.geo.json");
 	}
 
 	@Override
 	public ResourceLocation getTextureResource(DoubleBarrelShotgunItem animatable) {
-		return new ResourceLocation("the_deep_void", "textures/item/doublebarrel.png");
+		return new ResourceLocation("the_deep_void", "textures/item/strife.png");
 	}
 }

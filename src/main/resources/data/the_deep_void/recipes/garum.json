@@ -1,0 +1,37 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "the_deep_void:eyefish"
+    },
+    {
+      "item": "the_deep_void:voidfish"
+    },
+    {
+      "item": "the_deep_void:rotfish"
+    },
+    {
+      "item": "minecraft:sugar"
+    },
+    {
+      "item": "minecraft:brown_mushroom"
+    },
+    {
+      "item": "the_deep_void:grimberry_juice"
+    },
+    {
+      "item": "the_deep_void:grimberry_juice"
+    },
+    {
+      "item": "the_deep_void:grimberry_juice"
+    },
+    {
+      "item": "the_deep_void:grimberry_juice"
+    }
+  ],
+  "result": {
+    "item": "the_deep_void:garum",
+    "count": 4
+  }
+}

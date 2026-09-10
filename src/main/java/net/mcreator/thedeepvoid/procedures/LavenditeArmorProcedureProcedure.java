@@ -39,6 +39,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.entity.PusBallProjectileEntity;
+import net.mcreator.thedeepvoid.entity.MimicEntity;
 import net.mcreator.thedeepvoid.entity.LavenditeShardProjEntity;
 import net.mcreator.thedeepvoid.entity.FlareEntity;
 import net.mcreator.thedeepvoid.entity.BoneBallProjectileEntity;
@@ -117,16 +118,17 @@ public class LavenditeArmorProcedureProcedure {
 				&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_BOOTS.get() && !(immediatesourceentity == sourceentity)
 				&& (entity instanceof Player _plrCldRem64
 						? _plrCldRem64.getCooldowns().getCooldownPercent((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem(), 0f) * 100
-						: 0) <= 0) {
+						: 0) <= 0
+				&& !(entity instanceof MimicEntity)) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
 			}
 			if (entity instanceof Player _player)
 				_player.getCooldowns().addCooldown((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem(), 5);
-			entity.hurt(damagesource, (float) (amount - amount * 0.2));
+			entity.hurt(damagesource, (float) (amount * 0.8));
 			if (immediatesourceentity instanceof Arrow) {
-				if (entity instanceof Player _plr70)
-					_plr70.setArrowCount((int) ((entity instanceof Player _plr69 ? _plr69.getArrowCount() : 0) + 1));
+				if (entity instanceof Player _plr71)
+					_plr71.setArrowCount((int) ((entity instanceof Player _plr70 ? _plr70.getArrowCount() : 0) + 1));
 			}
 			if ((immediatesourceentity instanceof AbstractArrow _arrowContext ? _arrowContext.getPierceLevel() : 0) <= 0) {
 				if (!immediatesourceentity.level().isClientSide())

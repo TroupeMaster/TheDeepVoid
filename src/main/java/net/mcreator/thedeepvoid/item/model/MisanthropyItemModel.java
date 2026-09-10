@@ -9,16 +9,16 @@ import net.mcreator.thedeepvoid.item.MisanthropyItem;
 public class MisanthropyItemModel extends GeoModel<MisanthropyItem> {
 	@Override
 	public ResourceLocation getAnimationResource(MisanthropyItem animatable) {
-		return new ResourceLocation("the_deep_void", "animations/ichorrifle.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/misanthropyarms.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(MisanthropyItem animatable) {
-		return new ResourceLocation("the_deep_void", "geo/ichorrifle.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/misanthropyarms.geo.json");
 	}
 
 	@Override
 	public ResourceLocation getTextureResource(MisanthropyItem animatable) {
-		return new ResourceLocation("the_deep_void", "textures/item/ichorrifle.png");
+		return new ResourceLocation("the_deep_void", "textures/item/misanthropy.png");
 	}
 }

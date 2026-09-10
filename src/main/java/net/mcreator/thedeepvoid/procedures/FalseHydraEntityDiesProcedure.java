@@ -52,8 +52,6 @@ public class FalseHydraEntityDiesProcedure {
 				}
 			}
 			TheDeepVoidMod.queueServerWork(40, () -> {
-				TheDeepVoidModVariables.MapVariables.get(world).hydraFightCount = TheDeepVoidModVariables.MapVariables.get(world).hydraFightCount + 1;
-				TheDeepVoidModVariables.MapVariables.get(world).syncData(world);
 				if (DeepVoidConfigConfiguration.FALSEHYDRAREMOVESBRAINFOG.get() == true) {
 					TheDeepVoidModVariables.MapVariables.get(world).hydraKilled = true;
 					TheDeepVoidModVariables.MapVariables.get(world).syncData(world);

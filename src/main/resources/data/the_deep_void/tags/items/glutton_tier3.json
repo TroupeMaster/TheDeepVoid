@@ -5,10 +5,18 @@
     "minecraft:gold_ingot",
     "minecraft:glistering_melon_slice",
     "minecraft:rabbit_foot",
-    "the_deep_void:stalker_treat",
     "minecraft:golden_apple",
     "minecraft:enchanted_golden_apple",
     "the_deep_void:golden_eyeball",
-    "the_deep_void:ambrosia"
+    "the_deep_void:ambrosia",
+    "the_deep_void:knightfish",
+    "the_deep_void:gooey_delight",
+    "the_deep_void:forbidden_fruit",
+    "the_deep_void:garum",
+    "the_deep_void:eye_cake",
+    "minecraft:cake",
+    "the_deep_void:cooked_lamprey",
+    "the_deep_void:the_catcher",
+    "the_deep_void:flesh_chunk"
   ]
 }

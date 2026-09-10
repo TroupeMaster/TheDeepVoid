@@ -43,6 +43,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.thedeepvoid.procedures.FoolEaterThisEntityKillsAnotherOneProcedure;
+import net.mcreator.thedeepvoid.procedures.FoolEaterOnEntityTickUpdateProcedure;
 import net.mcreator.thedeepvoid.procedures.FoolEaterNaturalEntitySpawningConditionProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
@@ -149,6 +150,7 @@ public class FoolEaterEntity extends Monster implements GeoEntity {
 	@Override
 	public void baseTick() {
 		super.baseTick();
+		FoolEaterOnEntityTickUpdateProcedure.execute(this.level(), this);
 		this.refreshDimensions();
 	}
 

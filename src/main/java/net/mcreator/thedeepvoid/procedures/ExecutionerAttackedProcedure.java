@@ -22,7 +22,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.BlockPos;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.thedeepvoid.entity.FlailExecutionerEntity;
 import net.mcreator.thedeepvoid.entity.ExecutionerEntity;
+import net.mcreator.thedeepvoid.entity.ExecutionerDarkSteelFlailEntity;
 
 import javax.annotation.Nullable;
 
@@ -42,8 +44,8 @@ public class ExecutionerAttackedProcedure {
 	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
 			return;
-		if (entity instanceof ExecutionerEntity) {
-			if ((entity instanceof ExecutionerEntity _datEntL1 && _datEntL1.getEntityData().get(ExecutionerEntity.DATA_stunned)) == false && !(new Object() {
+		if (entity instanceof ExecutionerEntity && !(sourceentity instanceof ExecutionerDarkSteelFlailEntity)) {
+			if ((entity instanceof ExecutionerEntity _datEntL2 && _datEntL2.getEntityData().get(ExecutionerEntity.DATA_stunned)) == false && !(new Object() {
 				public boolean checkGamemode(Entity _ent) {
 					if (_ent instanceof ServerPlayer _serverPlayer) {
 						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
@@ -53,7 +55,7 @@ public class ExecutionerAttackedProcedure {
 					}
 					return false;
 				}
-			}.checkGamemode(entity))) {
+			}.checkGamemode(sourceentity))) {
 				if (sourceentity instanceof LivingEntity) {
 					if (sourceentity.isSprinting() && sourceentity.onGround()) {
 						sourceentity.setSprinting(false);
@@ -91,6 +93,31 @@ public class ExecutionerAttackedProcedure {
 										(float) Mth.nextDouble(RandomSource.create(), 0.9, 1.1), false);
 							}
 						}
+					}
+				}
+				if (event != null && event.isCancelable()) {
+					event.setCanceled(true);
+				}
+			}
+		} else if (entity instanceof FlailExecutionerEntity && !(sourceentity instanceof ExecutionerDarkSteelFlailEntity)) {
+			if ((entity instanceof FlailExecutionerEntity _datEntL32 && _datEntL32.getEntityData().get(FlailExecutionerEntity.DATA_stunned)) == false && !(new Object() {
+				public boolean checkGamemode(Entity _ent) {
+					if (_ent instanceof ServerPlayer _serverPlayer) {
+						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+					} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+						return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+								&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+					}
+					return false;
+				}
+			}.checkGamemode(sourceentity))) {
+				if (world instanceof Level _level) {
+					if (!_level.isClientSide()) {
+						_level.playSound(null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.place")), SoundSource.HOSTILE, 1,
+								(float) Mth.nextDouble(RandomSource.create(), 0.9, 1.1));
+					} else {
+						_level.playLocalSound((entity.getX()), (entity.getY()), (entity.getZ()), ForgeRegistries.SOUND_EVENTS.getValue(new ResourceLocation("block.anvil.place")), SoundSource.HOSTILE, 1,
+								(float) Mth.nextDouble(RandomSource.create(), 0.9, 1.1), false);
 					}
 				}
 				if (event != null && event.isCancelable()) {

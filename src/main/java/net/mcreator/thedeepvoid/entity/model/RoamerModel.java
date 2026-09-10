@@ -14,12 +14,12 @@ import net.mcreator.thedeepvoid.entity.RoamerEntity;
 public class RoamerModel extends GeoModel<RoamerEntity> {
 	@Override
 	public ResourceLocation getAnimationResource(RoamerEntity entity) {
-		return new ResourceLocation("the_deep_void", "animations/hunter.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/roamerlurk.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(RoamerEntity entity) {
-		return new ResourceLocation("the_deep_void", "geo/hunter.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/roamerlurk.geo.json");
 	}
 
 	@Override
@@ -29,7 +29,7 @@ public class RoamerModel extends GeoModel<RoamerEntity> {
 
 	@Override
 	public void setCustomAnimations(RoamerEntity animatable, long instanceId, AnimationState animationState) {
-		CoreGeoBone head = getAnimationProcessor().getBone("head");
+		CoreGeoBone head = getAnimationProcessor().getBone("neck0");
 		if (head != null) {
 			EntityModelData entityData = (EntityModelData) animationState.getData(DataTickets.ENTITY_MODEL_DATA);
 			head.setRotX(entityData.headPitch() * Mth.DEG_TO_RAD);

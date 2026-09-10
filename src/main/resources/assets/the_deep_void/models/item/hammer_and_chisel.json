@@ -1,0 +1,21 @@
+{
+  "parent": "the_deep_void:custom/hammer",
+  "textures": {
+    "0": "the_deep_void:block/hammer",
+    "particle": "the_deep_void:item/hammer_and_chisel"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "the_deep_void:hammer_and_chisel_state": 0
+      },
+      "model": "the_deep_void:item/hammer_and_chisel_0"
+    },
+    {
+      "predicate": {
+        "the_deep_void:hammer_and_chisel_state": 1
+      },
+      "model": "the_deep_void:item/hammer_and_chisel_1"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "the_deep_void:block/executioner_spawner_active"
+  },
+  "render_type": "cutout_mipped"
+}

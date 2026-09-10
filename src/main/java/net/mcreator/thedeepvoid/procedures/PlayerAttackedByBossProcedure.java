@@ -89,9 +89,9 @@ public class PlayerAttackedByBossProcedure {
 				}
 			}
 			if (entity instanceof Player && (sourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:boss"))) || sourceentity instanceof GiantShadowHandEntity)
-					&& !(sourceentity instanceof SpawnBoneSpikesEntity) && !(sourceentity instanceof BoneBlockadeEntity)
-					&& !((entity instanceof LivingEntity _entUseItem26 ? _entUseItem26.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
-					&& !(entity instanceof LivingEntity _livEnt28 && _livEnt28.hasEffect(TheDeepVoidModMobEffects.BROKEN_ARMOR.get())) && DeepVoidConfigConfiguration.BOSSESBREAKARMOR.get() == true) {
+					&& !(sourceentity instanceof SpawnBoneSpikesEntity) && !(sourceentity instanceof BoneBlockadeEntity) && !(sourceentity instanceof FleshFangsEntity)
+					&& !((entity instanceof LivingEntity _entUseItem27 ? _entUseItem27.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) && immediatesourceentity == sourceentity
+					&& !(entity instanceof LivingEntity _livEnt30 && _livEnt30.hasEffect(TheDeepVoidModMobEffects.BROKEN_ARMOR.get())) && DeepVoidConfigConfiguration.BOSSESBREAKARMOR.get() == true) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 					_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.BROKEN_ARMOR.get(), 400, 0));
 			}

@@ -30,6 +30,8 @@ import net.minecraft.advancements.Advancement;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
+import net.mcreator.thedeepvoid.entity.DoomingTombstoneEntity;
+import net.mcreator.thedeepvoid.entity.DoomingCoffinEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
@@ -42,10 +44,31 @@ public class DoomEffectStartedappliedProcedure {
 			return;
 		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 			_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 23, 99, false, false));
-		if (world instanceof ServerLevel _level) {
-			Entity entityToSpawn = TheDeepVoidModEntities.DOOMING_TOMBSTONE.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
-			if (entityToSpawn != null) {
-				entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+		if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.DOOM.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.DOOM.get()).getAmplifier() : 0) == 1) {
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.DOOMING_COFFIN.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+		} else {
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.DOOMING_TOMBSTONE.get().spawn(_level, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+			{
+				final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
+				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(12 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
+				for (Entity entityiterator : _entfound) {
+					if (entityiterator instanceof LivingEntity && !((entityiterator instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.TOMBSTONE.get())
+							&& !(entityiterator instanceof LivingEntity _livEnt16 && _livEnt16.hasEffect(TheDeepVoidModMobEffects.DOOM.get())) && !(entityiterator == entity) && !(entityiterator instanceof DoomingTombstoneEntity)
+							&& !(entityiterator instanceof DoomingCoffinEntity)) {
+						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.DOOM.get(), 20, 0));
+					}
+				}
 			}
 		}
 		for (int index0 = 0; index0 < Mth.nextInt(RandomSource.create(), 1, 10); index0++) {
@@ -71,20 +94,19 @@ public class DoomEffectStartedappliedProcedure {
 			}
 		});
 		TheDeepVoidMod.queueServerWork(23, () -> {
-			if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.DOOM.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.DOOM.get()).getAmplifier() : 0) > 1) {
-				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC)), (float) ((double) DeepVoidConfigConfiguration.TOMBSTONEDOOM.get()
-						+ (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.DOOM.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.DOOM.get()).getAmplifier() : 0)));
+			if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.DOOM.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.DOOM.get()).getAmplifier() : 0) == 1) {
+				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC)), (float) (double) DeepVoidConfigConfiguration.COFFINDOOM.get());
 			} else {
 				entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MAGIC)), (float) (double) DeepVoidConfigConfiguration.TOMBSTONEDOOM.get());
 			}
-			if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty() && entity instanceof LivingEntity _livEnt26 && _livEnt26.getMobType() == MobType.UNDEAD) {
+			if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty() && entity instanceof LivingEntity _livEnt42 && _livEnt42.getMobType() == MobType.UNDEAD) {
 				{
 					final Vec3 _center = new Vec3(x, y, z);
 					List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(40 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 					for (Entity entityiterator : _entfound) {
 						if (entityiterator instanceof Player && (entityiterator instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.TOMBSTONE.get()
-								&& !(entityiterator instanceof ServerPlayer _plr30 && _plr30.level() instanceof ServerLevel
-										&& _plr30.getAdvancements().getOrStartProgress(_plr30.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:desecrating_the_dead"))).isDone())) {
+								&& !(entityiterator instanceof ServerPlayer _plr46 && _plr46.level() instanceof ServerLevel
+										&& _plr46.getAdvancements().getOrStartProgress(_plr46.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:desecrating_the_dead"))).isDone())) {
 							if (entityiterator instanceof ServerPlayer _player) {
 								Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:desecrating_the_dead"));
 								AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);

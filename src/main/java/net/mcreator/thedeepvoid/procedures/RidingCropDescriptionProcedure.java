@@ -32,8 +32,8 @@ public class RidingCropDescriptionProcedure {
 		if (tooltip == null)
 			return;
 		if (itemstack.getItem() == TheDeepVoidModItems.RIDING_CROP.get()) {
-			tooltip.add(Component.literal((Component.translatable(("\u00A79" + "item.the_deep_void.riding_crop.desc1")).getString())));
-			tooltip.add(Component.literal((Component.translatable((" \u00A77" + "item.the_deep_void.riding_crop.desc2")).getString())));
+			tooltip.add(Component.literal(("\u00A79" + Component.translatable("item.the_deep_void.riding_crop.desc1").getString())));
+			tooltip.add(Component.literal((" \u00A77" + Component.translatable("item.the_deep_void.riding_crop.desc2").getString())));
 		}
 	}
 }

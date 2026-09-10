@@ -30,7 +30,8 @@ public class TombstoneGoodHitProcedure {
 	private static void execute(@Nullable Event event, Entity sourceentity) {
 		if (sourceentity == null)
 			return;
-		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.TOMBSTONE.get()) {
+		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.TOMBSTONE.get()
+				|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.COFFIN.get()) {
 			if ((sourceentity instanceof Player _plr ? _plr.getAttackStrengthScale(0) : 0) < 0.9) {
 				if (event != null && event.isCancelable()) {
 					event.setCanceled(true);

@@ -6,7 +6,6 @@ import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.sounds.SoundSource;
@@ -18,7 +17,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModBlocks;
 
 public class HugeEyeVineTickProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z) {
-		if (world.isEmptyBlock(BlockPos.containing(x, y - 1, z)) && ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.HUGE_EYE_VINE_STEM.get()) == false
+		if (Math.random() < 0.25 && world.isEmptyBlock(BlockPos.containing(x, y - 1, z)) && ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.HUGE_EYE_VINE_STEM.get()) == false
 				&& ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BIG_BLUE_EYE.get()) == false
 				&& ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BIG_GREEN_EYE.get()) == false
 				&& ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.BIG_RED_EYE.get()) == false
@@ -514,13 +513,6 @@ public class HugeEyeVineTickProcedure {
 						}
 					}
 				}
-			}
-		}
-		if (world.getBlockState(BlockPos.containing(x, y + 1, z)).canOcclude() == false && ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == TheDeepVoidModBlocks.HUGE_EYE_VINE_STEM.get()) == false) {
-			{
-				BlockPos _pos = BlockPos.containing(x, y, z);
-				Block.dropResources(world.getBlockState(_pos), world, BlockPos.containing(x, y, z), null);
-				world.destroyBlock(_pos, false);
 			}
 		}
 	}

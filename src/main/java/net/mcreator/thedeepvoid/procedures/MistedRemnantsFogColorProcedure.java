@@ -16,6 +16,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.Minecraft;
 
+import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
 import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
 
 import javax.annotation.Nullable;
@@ -52,17 +53,21 @@ public class MistedRemnantsFogColorProcedure {
 		Entity entity = provider.getCamera().getEntity();
 		if (level != null && entity != null) {
 			Vec3 entPos = entity.getPosition((float) provider.getPartialTick());
-			execute(provider, level, entPos.x(), entPos.y(), entPos.z());
+			execute(provider, level, entPos.x(), entPos.y(), entPos.z(), entity);
 		}
 	}
 
-	public static void execute(LevelAccessor world, double x, double y, double z) {
-		execute(null, world, x, y, z);
+	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
+		execute(null, world, x, y, z, entity);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z) {
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, Entity entity) {
+		if (entity == null)
+			return;
 		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:misted_remnants")) && y > 10 && !(!world.getEntitiesOfClass(ApostleBossEntity.class, AABB.ofSize(new Vec3(x, y, z), 40, 40, 40), e -> true).isEmpty())) {
-			setColor(255 << 24 | 189 << 16 | 189 << 8 | 189);
+			setColor(255 << 24 | (int) (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).remnantsColor << 16
+					| (int) (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).remnantsColor << 8
+					| (int) (entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).remnantsColor);
 		}
 	}
 }

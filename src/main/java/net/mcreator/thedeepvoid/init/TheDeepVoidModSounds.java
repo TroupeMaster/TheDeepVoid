@@ -221,4 +221,8 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> FALSE_HYDRA_SING = REGISTRY.register("false_hydra_sing", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "false_hydra_sing")));
 	public static final RegistryObject<SoundEvent> FALSE_HYDRA_SING_DISTORTED = REGISTRY.register("false_hydra_sing_distorted", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "false_hydra_sing_distorted")));
 	public static final RegistryObject<SoundEvent> FALSE_HYDRA_SONG_FAR = REGISTRY.register("false_hydra_song_far", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "false_hydra_song_far")));
+	public static final RegistryObject<SoundEvent> PLAYER_PUT_IN_CAGE = REGISTRY.register("player_put_in_cage", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "player_put_in_cage")));
+	public static final RegistryObject<SoundEvent> DEATH_WHISTLE = REGISTRY.register("death_whistle", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "death_whistle")));
+	public static final RegistryObject<SoundEvent> FLAIL_IMPACT = REGISTRY.register("flail_impact", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "flail_impact")));
+	public static final RegistryObject<SoundEvent> HAMMER_AND_CHISEL_HIT = REGISTRY.register("hammer_and_chisel_hit", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hammer_and_chisel_hit")));
 }

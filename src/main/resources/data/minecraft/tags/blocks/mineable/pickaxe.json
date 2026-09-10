@@ -1,6 +1,18 @@
 {
   "replace": false,
   "values": [
+    "the_deep_void:dark_steel_ore",
+    "the_deep_void:flail_executioner_spawner_active",
+    "the_deep_void:flail_executioner_spawner",
+    "the_deep_void:debilitator",
+    "the_deep_void:crumbling_ancient_deepslate_bricks",
+    "the_deep_void:dungeon_dark_steel_bars_active",
+    "the_deep_void:dungeon_dark_steel_bars",
+    "the_deep_void:dark_steel_door",
+    "the_deep_void:ancient_deepslate_dark_steel_spike_trap",
+    "the_deep_void:trapped_ancient_deepslate_saw_trap_track",
+    "the_deep_void:cracked_ancient_deepslate_brick_slab",
+    "the_deep_void:cracked_ancient_deepslate_brick_stairs",
     "the_deep_void:block_of_voidrium_alloy",
     "the_deep_void:block_of_bloodstone",
     "the_deep_void:bloodstone_ore",

@@ -8,7 +8,6 @@ import net.minecraftforge.common.brewing.IBrewingRecipe;
 import net.minecraftforge.common.brewing.BrewingRecipeRegistry;
 
 import net.minecraft.world.item.crafting.Ingredient;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.ItemStack;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
@@ -27,7 +26,7 @@ public class ResistanceNeedleRecipeBrewingRecipe implements IBrewingRecipe {
 
 	@Override
 	public boolean isIngredient(ItemStack ingredient) {
-		return Ingredient.of(new ItemStack(Items.IRON_INGOT)).test(ingredient);
+		return Ingredient.of(new ItemStack(TheDeepVoidModItems.DARK_STEEL_SCRAP.get())).test(ingredient);
 	}
 
 	@Override

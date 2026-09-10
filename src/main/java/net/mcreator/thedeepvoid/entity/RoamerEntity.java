@@ -48,7 +48,6 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
 import net.mcreator.thedeepvoid.procedures.RoamerOnEntityTickUpdateProcedure;
-import net.mcreator.thedeepvoid.procedures.RoamerEntityDiesProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 public class RoamerEntity extends Monster implements GeoEntity {
@@ -77,7 +76,7 @@ public class RoamerEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "hunter");
+		this.entityData.define(TEXTURE, "roamerlurk");
 	}
 
 	public void setTexture(String texture) {
@@ -96,19 +95,20 @@ public class RoamerEntity extends Monster implements GeoEntity {
 	@Override
 	protected void registerGoals() {
 		super.registerGoals();
-		this.goalSelector.addGoal(1, new RandomStrollGoal(this, 0.8));
-		this.goalSelector.addGoal(2, new AvoidEntityGoal<>(this, StalkerEntity.class, (float) 60, 1.2, 1.2));
-		this.goalSelector.addGoal(3, new LookAtPlayerGoal(this, Player.class, (float) 45));
-		this.targetSelector.addGoal(4, new HurtByTargetGoal(this).setAlertOthers());
-		this.goalSelector.addGoal(5, new MeleeAttackGoal(this, 1.8, true) {
+		this.goalSelector.addGoal(1, new AvoidEntityGoal<>(this, StalkerEntity.class, (float) 60, 1.2, 1.2));
+		this.targetSelector.addGoal(2, new HurtByTargetGoal(this).setAlertOthers());
+		this.goalSelector.addGoal(3, new MeleeAttackGoal(this, 1.4, true) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
-				return 4;
+				return 9.9225;
 			}
 		});
-		this.goalSelector.addGoal(6, new RandomLookAroundGoal(this));
-		this.goalSelector.addGoal(7, new FloatGoal(this));
+		this.goalSelector.addGoal(4, new RandomStrollGoal(this, 0.8));
+		this.goalSelector.addGoal(5, new RandomLookAroundGoal(this));
+		this.goalSelector.addGoal(6, new FloatGoal(this));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, Player.class, false, false));
 		this.targetSelector.addGoal(8, new NearestAttackableTargetGoal(this, LightEntity.class, false, true));
+		this.goalSelector.addGoal(9, new LookAtPlayerGoal(this, Player.class, (float) 45));
 	}
 
 	@Override
@@ -139,12 +139,6 @@ public class RoamerEntity extends Monster implements GeoEntity {
 	}
 
 	@Override
-	public void die(DamageSource source) {
-		super.die(source);
-		RoamerEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ());
-	}
-
-	@Override
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
@@ -166,7 +160,7 @@ public class RoamerEntity extends Monster implements GeoEntity {
 
 	@Override
 	public EntityDimensions getDimensions(Pose p_33597_) {
-		return super.getDimensions(p_33597_).scale((float) 1);
+		return super.getDimensions(p_33597_).scale((float) 1.3);
 	}
 
 	public static void init() {
@@ -176,11 +170,11 @@ public class RoamerEntity extends Monster implements GeoEntity {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.3);
-		builder = builder.add(Attributes.MAX_HEALTH, 25);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.22);
+		builder = builder.add(Attributes.MAX_HEALTH, 40);
 		builder = builder.add(Attributes.ARMOR, 4);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 5);
-		builder = builder.add(Attributes.FOLLOW_RANGE, 20);
+		builder = builder.add(Attributes.FOLLOW_RANGE, 32);
 		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 999);
 		return builder;
 	}
@@ -190,12 +184,12 @@ public class RoamerEntity extends Monster implements GeoEntity {
 			if ((event.isMoving() || !(event.getLimbSwingAmount() > -0.15F && event.getLimbSwingAmount() < 0.15F))
 
 					&& !this.isAggressive()) {
-				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.hunter_walk"));
+				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.roamer_walk"));
 			}
 			if (this.isAggressive() && event.isMoving()) {
-				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.hunter_aggressive"));
+				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.roamer_aggressive"));
 			}
-			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.hunter_idle"));
+			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.roamer_idle"));
 		}
 		return PlayState.STOP;
 	}

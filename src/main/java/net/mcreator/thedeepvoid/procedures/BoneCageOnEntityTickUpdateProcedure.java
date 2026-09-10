@@ -29,23 +29,23 @@ public class BoneCageOnEntityTickUpdateProcedure {
 		if (entity == null)
 			return;
 		if (!world.getEntitiesOfClass(Animal.class, AABB.ofSize(new Vec3(x, y, z), 2.5, 2.5, 2.5), e -> true).isEmpty()) {
-			if (!entity.level().isClientSide())
-				entity.discard();
 			if (world instanceof ServerLevel _level) {
 				Entity entityToSpawn = TheDeepVoidModEntities.BONE_CAGE_CLOSED.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 				if (entityToSpawn != null) {
 					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 				}
 			}
+			if (!entity.level().isClientSide())
+				entity.discard();
 		} else if (!world.getEntitiesOfClass(Villager.class, AABB.ofSize(new Vec3(x, y, z), 2.5, 2.5, 2.5), e -> true).isEmpty()) {
-			if (!entity.level().isClientSide())
-				entity.discard();
 			if (world instanceof ServerLevel _level) {
 				Entity entityToSpawn = TheDeepVoidModEntities.BONE_CAGE_CLOSED.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 				if (entityToSpawn != null) {
 					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 				}
 			}
+			if (!entity.level().isClientSide())
+				entity.discard();
 		} else if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 2.5, 2.5, 2.5), e -> true).isEmpty()) {
 			if (!(new Object() {
 				public boolean checkGamemode(Entity _ent) {
@@ -76,14 +76,14 @@ public class BoneCageOnEntityTickUpdateProcedure {
 					return Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_x, _y, _z));
 				}
 			}.compareDistOf(x, y, z)).findFirst().orElse(null))))) {
-				if (!entity.level().isClientSide())
-					entity.discard();
 				if (world instanceof ServerLevel _level) {
 					Entity entityToSpawn = TheDeepVoidModEntities.BONE_CAGE_CLOSED.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 					if (entityToSpawn != null) {
 						entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
 					}
 				}
+				if (!entity.level().isClientSide())
+					entity.discard();
 			}
 		}
 		if (!world.getEntitiesOfClass(Animal.class, AABB.ofSize(new Vec3(x, y, z), 25, 25, 25), e -> true).isEmpty()) {

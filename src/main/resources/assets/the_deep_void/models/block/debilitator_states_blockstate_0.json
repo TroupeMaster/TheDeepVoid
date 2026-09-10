@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/debilitator_on",
+  "textures": {
+    "all": "the_deep_void:block/debilitator_on",
+    "particle": "the_deep_void:block/debilitator_off",
+    "0": "the_deep_void:block/debilitator_on"
+  },
+  "render_type": "solid"
+}

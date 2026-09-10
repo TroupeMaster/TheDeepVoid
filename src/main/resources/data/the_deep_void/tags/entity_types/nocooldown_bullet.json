@@ -2,6 +2,10 @@
   "replace": false,
   "values": [
     "the_deep_void:void_pellet",
-    "the_deep_void:shotgun_pellet"
+    "the_deep_void:shotgun_pellet",
+    "the_deep_void:maniac_shotgun_pellet",
+    "the_deep_void:bloodthirsty_claws_blood_spit",
+    "the_deep_void:peril_bullet_no_cooldown",
+    "the_deep_void:blood_spike"
   ]
 }

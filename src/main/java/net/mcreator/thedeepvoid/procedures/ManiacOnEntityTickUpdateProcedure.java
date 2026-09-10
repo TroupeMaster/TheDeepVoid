@@ -23,7 +23,7 @@ import net.minecraft.commands.arguments.EntityAnchorArgument;
 
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
-import net.mcreator.thedeepvoid.entity.ShotgunPelletEntity;
+import net.mcreator.thedeepvoid.entity.ManiacShotgunPelletEntity;
 import net.mcreator.thedeepvoid.entity.ManiacEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
@@ -155,7 +155,7 @@ public class ManiacOnEntityTickUpdateProcedure {
 								if (!projectileLevel.isClientSide()) {
 									Projectile _entityToSpawn = new Object() {
 										public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
-											AbstractArrow entityToSpawn = new ShotgunPelletEntity(TheDeepVoidModEntities.SHOTGUN_PELLET.get(), level);
+											AbstractArrow entityToSpawn = new ManiacShotgunPelletEntity(TheDeepVoidModEntities.MANIAC_SHOTGUN_PELLET.get(), level);
 											entityToSpawn.setOwner(shooter);
 											entityToSpawn.setBaseDamage(damage);
 											entityToSpawn.setKnockback(knockback);
@@ -175,7 +175,7 @@ public class ManiacOnEntityTickUpdateProcedure {
 							if (!projectileLevel.isClientSide()) {
 								Projectile _entityToSpawn = new Object() {
 									public Projectile getArrow(Level level, Entity shooter, float damage, int knockback) {
-										AbstractArrow entityToSpawn = new ShotgunPelletEntity(TheDeepVoidModEntities.SHOTGUN_PELLET.get(), level);
+										AbstractArrow entityToSpawn = new ManiacShotgunPelletEntity(TheDeepVoidModEntities.MANIAC_SHOTGUN_PELLET.get(), level);
 										entityToSpawn.setOwner(shooter);
 										entityToSpawn.setBaseDamage(damage);
 										entityToSpawn.setKnockback(knockback);

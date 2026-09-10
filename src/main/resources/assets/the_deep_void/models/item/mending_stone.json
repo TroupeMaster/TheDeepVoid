@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "the_deep_void:item/mending_stone"
+    "layer0": "the_deep_void:item/gluttonous_fleshstone"
   }
 }

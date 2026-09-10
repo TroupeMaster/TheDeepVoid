@@ -9,12 +9,12 @@ import net.mcreator.thedeepvoid.item.PerilItem;
 public class PerilItemModel extends GeoModel<PerilItem> {
 	@Override
 	public ResourceLocation getAnimationResource(PerilItem animatable) {
-		return new ResourceLocation("the_deep_void", "animations/peril.animation.json");
+		return new ResourceLocation("the_deep_void", "animations/perilarms.animation.json");
 	}
 
 	@Override
 	public ResourceLocation getModelResource(PerilItem animatable) {
-		return new ResourceLocation("the_deep_void", "geo/peril.geo.json");
+		return new ResourceLocation("the_deep_void", "geo/perilarms.geo.json");
 	}
 
 	@Override

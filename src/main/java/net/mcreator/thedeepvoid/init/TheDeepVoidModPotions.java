@@ -29,4 +29,5 @@ public class TheDeepVoidModPotions {
 	public static final RegistryObject<Potion> CREATURE_REPELLENT_POTION = REGISTRY.register("creature_repellent_potion", () -> new Potion(new MobEffectInstance(TheDeepVoidModMobEffects.CREATURE_REPELLENT.get(), 3600, 0, false, true)));
 	public static final RegistryObject<Potion> EXTENDED_CREATURE_REPELLENT_POTION = REGISTRY.register("extended_creature_repellent_potion",
 			() -> new Potion(new MobEffectInstance(TheDeepVoidModMobEffects.CREATURE_REPELLENT.get(), 9600, 0, false, true)));
+	public static final RegistryObject<Potion> BAD_LUCK = REGISTRY.register("bad_luck", () -> new Potion(new MobEffectInstance(MobEffects.UNLUCK, 6000, 0, false, true)));
 }

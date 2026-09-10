@@ -14,9 +14,9 @@ public class VoidriumHelmetTickEventProcedure {
 		if (entity == null)
 			return;
 		if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).armorToggle == false) {
-			if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0) {
+			if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) <= 4 && (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.NIGHT_VISION) ? _livEnt.getEffect(MobEffects.NIGHT_VISION).getDuration() : 0) <= 100) {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 60, 0, false, false));
+					_entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 400, 0, false, false));
 			}
 		}
 	}

@@ -59,7 +59,7 @@ public class BrainFogOnEffectActiveTickProcedure {
 					}
 					return false;
 				}
-			}.checkGamemode(entity))) {
+			}.checkGamemode(entity)) && !(!world.getEntitiesOfClass(FalseHydraSingingEntity.class, AABB.ofSize(new Vec3(x, y, z), 128, 128, 128), e -> true).isEmpty())) {
 				if (entity instanceof LivingEntity _entity)
 					_entity.removeEffect(TheDeepVoidModMobEffects.BRAIN_FOG.get());
 			}

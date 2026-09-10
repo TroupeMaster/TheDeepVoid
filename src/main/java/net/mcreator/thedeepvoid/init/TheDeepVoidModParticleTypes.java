@@ -33,7 +33,6 @@ public class TheDeepVoidModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> HOOK_LINE = REGISTRY.register("hook_line", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> GRIM_HOOK_LINE = REGISTRY.register("grim_hook_line", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> SOUL_HOOK_LINE = REGISTRY.register("soul_hook_line", () -> new SimpleParticleType(false));
-	public static final RegistryObject<SimpleParticleType> RED_GREAT_SLASH = REGISTRY.register("red_great_slash", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> SOUL_FUSED_BLOOD = REGISTRY.register("soul_fused_blood", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> MOB_RESPAWN = REGISTRY.register("mob_respawn", () -> new SimpleParticleType(false));
 	public static final RegistryObject<SimpleParticleType> AMBROSIA_DROPLET = REGISTRY.register("ambrosia_droplet", () -> new SimpleParticleType(false));
@@ -62,4 +61,7 @@ public class TheDeepVoidModParticleTypes {
 	public static final RegistryObject<SimpleParticleType> LASTING_BLOOD = REGISTRY.register("lasting_blood", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> HYDRA_SWEEP = REGISTRY.register("hydra_sweep", () -> new SimpleParticleType(true));
 	public static final RegistryObject<SimpleParticleType> ABERRATION_HAND = REGISTRY.register("aberration_hand", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> ICHOR_SMOKE = REGISTRY.register("ichor_smoke", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> CONNECTING_DARK_STEEL_CHAIN = REGISTRY.register("connecting_dark_steel_chain", () -> new SimpleParticleType(true));
+	public static final RegistryObject<SimpleParticleType> MORNINGSTAR_CHAIN = REGISTRY.register("morningstar_chain", () -> new SimpleParticleType(true));
 }

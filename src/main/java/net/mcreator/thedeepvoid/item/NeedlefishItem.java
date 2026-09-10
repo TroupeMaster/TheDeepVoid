@@ -13,7 +13,7 @@ import net.mcreator.thedeepvoid.procedures.NeedlefishRightclickedProcedure;
 
 public class NeedlefishItem extends Item {
 	public NeedlefishItem() {
-		super(new Item.Properties().stacksTo(64).rarity(Rarity.COMMON));
+		super(new Item.Properties().stacksTo(64).rarity(Rarity.UNCOMMON));
 	}
 
 	@Override

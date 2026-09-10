@@ -37,9 +37,6 @@ import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 
 import javax.annotation.Nullable;
 
-import java.util.List;
-import java.util.Comparator;
-
 @Mod.EventBusSubscriber
 public class StalkingStalkerSpawnsProcedure {
 	@SubscribeEvent
@@ -134,30 +131,23 @@ public class StalkingStalkerSpawnsProcedure {
 									if (!(!world
 											.getEntitiesOfClass(Player.class,
 													AABB.ofSize(new Vec3(TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnX, (entity.getY()), TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnZ), 60, 60, 60), e -> true)
-											.isEmpty())) {
-										if (world instanceof ServerLevel _level) {
-											Entity entityToSpawn = TheDeepVoidModEntities.WATCHING_STALKER.get().spawn(_level,
-													BlockPos.containing(TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnX, entity.getY(), TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnZ), MobSpawnType.MOB_SUMMONED);
-											if (entityToSpawn != null) {
-												entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
-											}
-										}
-										{
-											final Vec3 _center = new Vec3(TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnX, (entity.getY()), TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnZ);
-											List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(4 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center)))
-													.toList();
-											for (Entity entityiterator : _entfound) {
-												if (entityiterator instanceof WatchingStalkerEntity) {
-													if (entityiterator instanceof WatchingStalkerEntity) {
-														((WatchingStalkerEntity) entityiterator).setAnimation("animation.stalker_digOut");
-													}
-													if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-														_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 75, 99, false, false));
-													if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-														_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 75, 99, false, false));
-													if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-														_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 75, 99, false, false));
+											.isEmpty()) && !(!world.getEntitiesOfClass(WatchingStalkerEntity.class, AABB.ofSize(new Vec3(x, y, z), 160, 160, 160), e -> true).isEmpty())) {
+										if (world instanceof ServerLevel _serverLevel) {
+											Entity entityinstance = TheDeepVoidModEntities.WATCHING_STALKER.get().create(_serverLevel, null, null,
+													BlockPos.containing(TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnX, entity.getY(), TheDeepVoidModVariables.MapVariables.get(world).stalkerSpawnZ), MobSpawnType.MOB_SUMMONED, false,
+													false);
+											if (entityinstance != null) {
+												entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
+												if (entityinstance instanceof WatchingStalkerEntity) {
+													((WatchingStalkerEntity) entityinstance).setAnimation("animation.stalker_digOut");
 												}
+												if (entityinstance instanceof LivingEntity _entity && !_entity.level().isClientSide())
+													_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 75, 99, false, false));
+												if (entityinstance instanceof LivingEntity _entity && !_entity.level().isClientSide())
+													_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 75, 99, false, false));
+												if (entityinstance instanceof LivingEntity _entity && !_entity.level().isClientSide())
+													_entity.addEffect(new MobEffectInstance(MobEffects.WEAKNESS, 75, 99, false, false));
+												_serverLevel.addFreshEntity(entityinstance);
 											}
 										}
 									} else if (!world

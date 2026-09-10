@@ -16,7 +16,6 @@ import net.mcreator.thedeepvoid.procedures.TombstoneToolInInventoryTickProcedure
 import net.mcreator.thedeepvoid.procedures.TombstoneSpecialInformationProcedure;
 import net.mcreator.thedeepvoid.procedures.TombstoneLivingEntityIsHitWithToolProcedure;
 import net.mcreator.thedeepvoid.procedures.TombstoneInHandTickProcedure;
-import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
 import java.util.List;
 
@@ -24,7 +23,7 @@ public class TombstoneItem extends SwordItem {
 	public TombstoneItem() {
 		super(new Tier() {
 			public int getUses() {
-				return 2465;
+				return 0;
 			}
 
 			public float getSpeed() {
@@ -44,7 +43,7 @@ public class TombstoneItem extends SwordItem {
 			}
 
 			public Ingredient getRepairIngredient() {
-				return Ingredient.of(new ItemStack(TheDeepVoidModItems.SOUL_SHARD.get()));
+				return Ingredient.of();
 			}
 		}, 3, -3.2f, new Item.Properties().fireResistant());
 	}

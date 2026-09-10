@@ -1,6 +1,6 @@
 {
-  "parent": "the_deep_void:displaysettings/ichorrifle",
+  "parent": "the_deep_void:displaysettings/misanthropyarms",
   "textures": {
-    "layer0": "the_deep_void:item/ichorrifle"
+    "layer0": "the_deep_void:item/misanthropy"
   }
 }

@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:ancient_deepslate_bricks",
+    "the_deep_void:ancient_deepslate_brick_stairs",
+    "the_deep_void:ancient_deepslate_brick_slab",
+    "the_deep_void:smooth_ancient_deepslate",
+    "the_deep_void:smooth_ancient_deepslate_slab",
+    "the_deep_void:smooth_ancient_deepslate_stairs",
+    "the_deep_void:chiseled_ancient_deepslate_bricks",
+    "the_deep_void:cracked_ancient_deepslate_bricks",
+    "the_deep_void:rotten_ancient_deepslate_bricks",
+    "the_deep_void:rotten_ancient_deepslate_brick_stairs",
+    "the_deep_void:rotten_ancient_deepslate_brick_slab",
+    "the_deep_void:inscribed_ancient_deepslate",
+    "the_deep_void:crumbling_ancient_deepslate_bricks",
+    "the_deep_void:cracked_ancient_deepslate_brick_stairs",
+    "the_deep_void:cracked_ancient_deepslate_brick_slab"
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "parent": "the_deep_void:displaysettings/doublebarrel",
+  "parent": "the_deep_void:displaysettings/spitearms",
   "textures": {
-    "layer0": "the_deep_void:item/doublebarrel"
+    "layer0": "the_deep_void:item/strife"
   }
 }

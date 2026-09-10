@@ -2048,5 +2048,49 @@
         "stream": false
       }
     ]
+  },
+  "player_put_in_cage": {
+    "subtitle": "subtitles.player_put_in_cage",
+    "sounds": [
+      {
+        "name": "the_deep_void:player_put_in_cage",
+        "stream": false
+      }
+    ]
+  },
+  "death_whistle": {
+    "subtitle": "subtitles.death_whistle",
+    "sounds": [
+      {
+        "name": "the_deep_void:death_whistle_0",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:death_whistle_1",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:death_whistle_2",
+        "stream": false
+      }
+    ]
+  },
+  "flail_impact": {
+    "subtitle": "subtitles.flail_impact",
+    "sounds": [
+      {
+        "name": "the_deep_void:mace_smash_ground_heavy",
+        "stream": false
+      }
+    ]
+  },
+  "hammer_and_chisel_hit": {
+    "subtitle": "subtitles.hammer_and_chisel_hit",
+    "sounds": [
+      {
+        "name": "the_deep_void:hammer_hit",
+        "stream": false
+      }
+    ]
   }
 }

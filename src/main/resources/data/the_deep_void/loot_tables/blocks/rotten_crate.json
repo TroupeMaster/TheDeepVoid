@@ -636,6 +636,20 @@
               }
             }
           ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "the_deep_void:garum",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
         }
       ]
     },

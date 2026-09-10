@@ -140,8 +140,6 @@ public class HiveWatcherTickUpdateProcedure {
 			}
 		}
 		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()) && DeepVoidConfigConfiguration.BOSSIDLES.get() == true) {
-			if (!entity.level().isClientSide())
-				entity.discard();
 			if (world instanceof ServerLevel _level) {
 				Entity entityToSpawn = TheDeepVoidModEntities.EYE_OF_THE_WATCHER.get().spawn(_level,
 						BlockPos.containing(entity.getPersistentData().getDouble("deep_void:startingX"), entity.getPersistentData().getDouble("deep_void:startingY"), entity.getPersistentData().getDouble("deep_void:startingZ")),
@@ -158,6 +156,8 @@ public class HiveWatcherTickUpdateProcedure {
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 							"stopsound @a record the_deep_void:monsters_lair");
 			});
+			if (!entity.level().isClientSide())
+				entity.discard();
 		}
 		WeaverBossMusicProcedure.execute(world, x, y, z, entity);
 		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {

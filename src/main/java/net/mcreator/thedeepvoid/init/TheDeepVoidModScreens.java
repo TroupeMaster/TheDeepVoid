@@ -12,6 +12,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraft.client.gui.screens.MenuScreens;
 
 import net.mcreator.thedeepvoid.client.gui.VoidBagGuiScreen;
+import net.mcreator.thedeepvoid.client.gui.UndertakerTradeGuiScreen;
 import net.mcreator.thedeepvoid.client.gui.SoulForgeGUIScreen;
 import net.mcreator.thedeepvoid.client.gui.NecrosedSkinBackpackGUIScreen;
 
@@ -23,6 +24,7 @@ public class TheDeepVoidModScreens {
 			MenuScreens.register(TheDeepVoidModMenus.VOID_BAG_GUI.get(), VoidBagGuiScreen::new);
 			MenuScreens.register(TheDeepVoidModMenus.SOUL_FORGE_GUI.get(), SoulForgeGUIScreen::new);
 			MenuScreens.register(TheDeepVoidModMenus.NECROSED_SKIN_BACKPACK_GUI.get(), NecrosedSkinBackpackGUIScreen::new);
+			MenuScreens.register(TheDeepVoidModMenus.UNDERTAKER_TRADE_GUI.get(), UndertakerTradeGuiScreen::new);
 		});
 	}
 }

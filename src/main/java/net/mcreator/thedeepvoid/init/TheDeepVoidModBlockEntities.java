@@ -18,6 +18,7 @@ import net.mcreator.thedeepvoid.block.entity.SoulOrbPillarBlockEntity;
 import net.mcreator.thedeepvoid.block.entity.SoulForgeBlockEntity;
 import net.mcreator.thedeepvoid.block.entity.InfestedBoneCrawlerEggBlockEntity;
 import net.mcreator.thedeepvoid.block.entity.GluttonBlockBlockEntity;
+import net.mcreator.thedeepvoid.block.entity.DungeonDarkSteelBarsActiveBlockEntity;
 import net.mcreator.thedeepvoid.block.entity.DeepslateSarcophagusBlockEntity;
 import net.mcreator.thedeepvoid.block.entity.DeepslateSarcophagusBlockBlockEntity;
 import net.mcreator.thedeepvoid.block.entity.BoneCrawlerEggBlockEntity;
@@ -41,6 +42,7 @@ public class TheDeepVoidModBlockEntities {
 	public static final RegistryObject<BlockEntityType<?>> VOIDRIUM_SAW_TRAP = register("voidrium_saw_trap", TheDeepVoidModBlocks.VOIDRIUM_SAW_TRAP, VoidriumSawTrapBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> ANCIENT_DEEPSLATE_DART_TRAP = register("ancient_deepslate_dart_trap", TheDeepVoidModBlocks.ANCIENT_DEEPSLATE_DART_TRAP, AncientDeepslateDartTrapBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> INFESTED_BONE_CRAWLER_EGG = register("infested_bone_crawler_egg", TheDeepVoidModBlocks.INFESTED_BONE_CRAWLER_EGG, InfestedBoneCrawlerEggBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> DUNGEON_DARK_STEEL_BARS_ACTIVE = register("dungeon_dark_steel_bars_active", TheDeepVoidModBlocks.DUNGEON_DARK_STEEL_BARS_ACTIVE, DungeonDarkSteelBarsActiveBlockEntity::new);
 
 	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block, BlockEntityType.BlockEntitySupplier<?> supplier) {
 		return REGISTRY.register(registryname, () -> BlockEntityType.Builder.of(supplier, block.get()).build(null));

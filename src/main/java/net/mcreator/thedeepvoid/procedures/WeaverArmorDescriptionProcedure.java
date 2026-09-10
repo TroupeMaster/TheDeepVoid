@@ -8,9 +8,6 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.network.chat.Component;
 import net.minecraft.client.gui.screens.Screen;
 
@@ -25,15 +22,15 @@ public class WeaverArmorDescriptionProcedure {
 	@OnlyIn(Dist.CLIENT)
 	@SubscribeEvent
 	public static void onItemTooltip(ItemTooltipEvent event) {
-		execute(event, event.getEntity(), event.getItemStack(), event.getToolTip());
+		execute(event, event.getItemStack(), event.getToolTip());
 	}
 
-	public static void execute(Entity entity, ItemStack itemstack, List<Component> tooltip) {
-		execute(null, entity, itemstack, tooltip);
+	public static void execute(ItemStack itemstack, List<Component> tooltip) {
+		execute(null, itemstack, tooltip);
 	}
 
-	private static void execute(@Nullable Event event, Entity entity, ItemStack itemstack, List<Component> tooltip) {
-		if (entity == null || tooltip == null)
+	private static void execute(@Nullable Event event, ItemStack itemstack, List<Component> tooltip) {
+		if (tooltip == null)
 			return;
 		if (itemstack.getItem() == TheDeepVoidModItems.WEAVER_MASK_HELMET.get()) {
 			tooltip.add(Component.literal(""));
@@ -89,26 +86,6 @@ public class WeaverArmorDescriptionProcedure {
 				tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.weaver_boots.on_key_press").getString())));
 			} else {
 				tooltip.add(Component.literal((Component.translatable("armors.the_deep_void.press_shift").getString())));
-			}
-		}
-		if (itemstack.getItem() == TheDeepVoidModItems.WEAVER_MASK_HELMET.get() || itemstack.getItem() == TheDeepVoidModItems.HARVESTER_MASK_HELMET.get() || itemstack.getItem() == TheDeepVoidModItems.WEAVER_ROBE_CHESTPLATE.get()
-				|| itemstack.getItem() == TheDeepVoidModItems.WEAVER_LEGGINGS_LEGGINGS.get() || itemstack.getItem() == TheDeepVoidModItems.WEAVER_BOOTS_BOOTS.get()) {
-			if (((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.WEAVER_MASK_HELMET.get()
-					|| (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.HARVESTER_MASK_HELMET.get())
-					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.WEAVER_ROBE_CHESTPLATE.get()
-					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.WEAVER_LEGGINGS_LEGGINGS.get()
-					&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.WEAVER_BOOTS_BOOTS.get()) {
-				if (Screen.hasShiftDown()) {
-					tooltip.add(Component.literal(("\u00A76" + Component.translatable("armors.the_deep_void.weaver.full").getString())));
-					tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.weaver.descr").getString())));
-				}
-			} else {
-				if (Screen.hasAltDown()) {
-					tooltip.add(Component.literal(("\u00A77" + Component.translatable("armors.the_deep_void.weaver.full").getString())));
-					tooltip.add(Component.literal((" \u00A77-" + Component.translatable("armors.the_deep_void.weaver.descr").getString())));
-				} else {
-					tooltip.add(Component.literal(("\u00A77" + Component.translatable("armors.the_deep_void.press_alt_nofull").getString())));
-				}
 			}
 		}
 	}

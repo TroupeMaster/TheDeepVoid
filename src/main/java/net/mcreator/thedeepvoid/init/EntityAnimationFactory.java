@@ -6,11 +6,13 @@ import net.minecraftforge.event.entity.living.LivingEvent;
 
 import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
 import net.mcreator.thedeepvoid.entity.WatchingStalkerEntity;
+import net.mcreator.thedeepvoid.entity.WardenOfThePitEntity;
 import net.mcreator.thedeepvoid.entity.WandererEntity;
 import net.mcreator.thedeepvoid.entity.VoidbornTentaclesEntity;
 import net.mcreator.thedeepvoid.entity.VoidbornEntity;
 import net.mcreator.thedeepvoid.entity.VoidTentacleEntity;
 import net.mcreator.thedeepvoid.entity.VoidDwellerEntity;
+import net.mcreator.thedeepvoid.entity.UndertakerEntity;
 import net.mcreator.thedeepvoid.entity.ThumperEntityEntity;
 import net.mcreator.thedeepvoid.entity.SwarmerEntity;
 import net.mcreator.thedeepvoid.entity.SummonedShadowHandEntity;
@@ -26,6 +28,7 @@ import net.mcreator.thedeepvoid.entity.ShadowHandEntity;
 import net.mcreator.thedeepvoid.entity.SeekerEntity;
 import net.mcreator.thedeepvoid.entity.ScarecrowEntity;
 import net.mcreator.thedeepvoid.entity.SawThrowerEntity;
+import net.mcreator.thedeepvoid.entity.SageOfWrathEntity;
 import net.mcreator.thedeepvoid.entity.RottenCultMemberEntity;
 import net.mcreator.thedeepvoid.entity.RottenCorpseEntity;
 import net.mcreator.thedeepvoid.entity.RootedEntity;
@@ -37,6 +40,7 @@ import net.mcreator.thedeepvoid.entity.PrisonerEntity;
 import net.mcreator.thedeepvoid.entity.PrisonGuardEntity;
 import net.mcreator.thedeepvoid.entity.PrimordialBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.PreserverEntity;
+import net.mcreator.thedeepvoid.entity.PitPrisonerEntity;
 import net.mcreator.thedeepvoid.entity.PenitentEntity;
 import net.mcreator.thedeepvoid.entity.OverseerEntity;
 import net.mcreator.thedeepvoid.entity.MuzzledDeathVultureEntity;
@@ -57,7 +61,10 @@ import net.mcreator.thedeepvoid.entity.HivemindTentaclesEntity;
 import net.mcreator.thedeepvoid.entity.HiveWatcherEntity;
 import net.mcreator.thedeepvoid.entity.HiveFangsEntity;
 import net.mcreator.thedeepvoid.entity.HiveBrainEntity;
+import net.mcreator.thedeepvoid.entity.HarbingerOfCataclysmEntity;
+import net.mcreator.thedeepvoid.entity.HarbingerCloneEntity;
 import net.mcreator.thedeepvoid.entity.GravekeeperEntity;
+import net.mcreator.thedeepvoid.entity.GrabbingHandsEntity;
 import net.mcreator.thedeepvoid.entity.GoreLurkerEntity;
 import net.mcreator.thedeepvoid.entity.GoreExpectoratorEntity;
 import net.mcreator.thedeepvoid.entity.GooSpitterEntity;
@@ -71,6 +78,7 @@ import net.mcreator.thedeepvoid.entity.FleshWormEntity;
 import net.mcreator.thedeepvoid.entity.FleshLampreyEntity;
 import net.mcreator.thedeepvoid.entity.FleshFangsEntity;
 import net.mcreator.thedeepvoid.entity.FleshCubeEntity;
+import net.mcreator.thedeepvoid.entity.FlailExecutionerEntity;
 import net.mcreator.thedeepvoid.entity.FalseHydraSingingEntity;
 import net.mcreator.thedeepvoid.entity.FalseHydraEntity;
 import net.mcreator.thedeepvoid.entity.FalseHydraArmEntity;
@@ -80,6 +88,7 @@ import net.mcreator.thedeepvoid.entity.EyeOfTheWatcherEntity;
 import net.mcreator.thedeepvoid.entity.ExecutionerEntity;
 import net.mcreator.thedeepvoid.entity.EverhungerEntity;
 import net.mcreator.thedeepvoid.entity.DoomingTombstoneEntity;
+import net.mcreator.thedeepvoid.entity.DoomingCoffinEntity;
 import net.mcreator.thedeepvoid.entity.DevourerEntity;
 import net.mcreator.thedeepvoid.entity.DeathVultureEntity;
 import net.mcreator.thedeepvoid.entity.DeathMawEntity;
@@ -820,6 +829,69 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof FalseHydraSingingEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof PitPrisonerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof GrabbingHandsEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof WardenOfThePitEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof FlailExecutionerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof HarbingerOfCataclysmEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof HarbingerCloneEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof SageOfWrathEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof UndertakerEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof DoomingCoffinEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

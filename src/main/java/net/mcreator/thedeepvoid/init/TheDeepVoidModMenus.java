@@ -12,6 +12,7 @@ import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraft.world.inventory.MenuType;
 
 import net.mcreator.thedeepvoid.world.inventory.VoidBagGuiMenu;
+import net.mcreator.thedeepvoid.world.inventory.UndertakerTradeGuiMenu;
 import net.mcreator.thedeepvoid.world.inventory.SoulForgeGUIMenu;
 import net.mcreator.thedeepvoid.world.inventory.NecrosedSkinBackpackGUIMenu;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
@@ -21,4 +22,5 @@ public class TheDeepVoidModMenus {
 	public static final RegistryObject<MenuType<VoidBagGuiMenu>> VOID_BAG_GUI = REGISTRY.register("void_bag_gui", () -> IForgeMenuType.create(VoidBagGuiMenu::new));
 	public static final RegistryObject<MenuType<SoulForgeGUIMenu>> SOUL_FORGE_GUI = REGISTRY.register("soul_forge_gui", () -> IForgeMenuType.create(SoulForgeGUIMenu::new));
 	public static final RegistryObject<MenuType<NecrosedSkinBackpackGUIMenu>> NECROSED_SKIN_BACKPACK_GUI = REGISTRY.register("necrosed_skin_backpack_gui", () -> IForgeMenuType.create(NecrosedSkinBackpackGUIMenu::new));
+	public static final RegistryObject<MenuType<UndertakerTradeGuiMenu>> UNDERTAKER_TRADE_GUI = REGISTRY.register("undertaker_trade_gui", () -> IForgeMenuType.create(UndertakerTradeGuiMenu::new));
 }

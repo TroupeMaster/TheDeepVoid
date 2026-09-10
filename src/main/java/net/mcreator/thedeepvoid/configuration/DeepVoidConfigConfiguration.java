@@ -27,6 +27,9 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> LIGHTREDUCESTALKERTIMER;
 	public static final ForgeConfigSpec.ConfigValue<Double> STALKERLIGHTLEVEL;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> FALSEHYDRAFROMBRAINFOG;
+	public static final ForgeConfigSpec.ConfigValue<Double> UNDERTAKERSPAWNTIMER;
+	public static final ForgeConfigSpec.ConfigValue<Double> UNDERTAKERSPAWNCHANCE;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> SPAWNUNDERTAKER;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> SEEKLIGHTWARNING;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> DESTROYLIGHTSOURCES;
 	public static final ForgeConfigSpec.ConfigValue<Double> VOIDBLESSINGTIMER;
@@ -139,6 +142,7 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> BLOODYCHAINSAW;
 	public static final ForgeConfigSpec.ConfigValue<Double> DOUBLEBARRELSHOTGUN;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> PERILSHOWADRENALINE;
+	public static final ForgeConfigSpec.ConfigValue<Double> COFFINDOOM;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERWHILEMOVING;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIT;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIKESPAWN;
@@ -190,6 +194,9 @@ public class DeepVoidConfigConfiguration {
 		LIGHTREDUCESTALKERTIMER = BUILDER.comment("By how much the Stalker Timer is reduced when the player is in light").define("LightReduceStalkerTimer", (double) 4);
 		STALKERLIGHTLEVEL = BUILDER.comment("The light level (and under) at which the Stalker can spawn if the Player is in that light level range for long enough").define("StalkerLightLevel", (double) 1);
 		FALSEHYDRAFROMBRAINFOG = BUILDER.comment("If the False Hydra should spawn when the player has brain fog").define("FalseHydraFromBrainFog", true);
+		UNDERTAKERSPAWNTIMER = BUILDER.comment("In ticks").define("UndertakerSpawnTimer", (double) 24000);
+		UNDERTAKERSPAWNCHANCE = BUILDER.define("UndertakerSpawnChance", (double) 0.5);
+		SPAWNUNDERTAKER = BUILDER.define("SpawnUndertaker", true);
 		BUILDER.pop();
 		BUILDER.push("Misc");
 		SEEKLIGHTWARNING = BUILDER.comment("Whether the ''Seek Light'' warning should appear when the Stalker is close or not (Happens only one time)").define("SeekLightWarning", true);
@@ -226,7 +233,7 @@ public class DeepVoidConfigConfiguration {
 		STALKED = BUILDER.comment("Allows the Stalker to spawn in the Overworld").define("Stalked", false);
 		BUILDER.pop();
 		BUILDER.push("Apostle Of Catastrophe");
-		APOSTLEKNIVES = BUILDER.comment("Damage of each knife (velocity increases that number)").define("ApostleThreeKnives", (double) 4);
+		APOSTLEKNIVES = BUILDER.comment("Damage of each knife (velocity increases that number)").define("ApostleThreeKnives", (double) 5);
 		APOSTLEBIGSLASH = BUILDER.define("ApostleBigSlash", (double) 16);
 		APOSTLEJUMPSHOOT = BUILDER.comment("Damage of each knife (velocity increases that number)").define("ApostleJumpShoot", (double) 7);
 		APOSTLESPIN = BUILDER.comment("Damage (ignores i-frames)").define("ApostleSpin", (double) 1);
@@ -253,7 +260,7 @@ public class DeepVoidConfigConfiguration {
 		HIVEMINDBLOODSPITDAMAGE = BUILDER.define("HivemindBloodSpitDamage", (double) 8);
 		FLESHFANGSDAMAGE = BUILDER.define("FleshFangsDamage", (double) 2);
 		HIVEMINDDAMAGEFROMSUMMON = BUILDER.comment("Damage dealt to the boss when the saw thrower or the skull smasher dies").define("HivemindDamageFromSummon", (double) 10);
-		HIVEMINDPULLINTENSITY = BUILDER.comment("The force with which the hivemind sucks the player in").define("HivemindPullIntensity", (double) 0.028);
+		HIVEMINDPULLINTENSITY = BUILDER.comment("The force with which the hivemind sucks the player in").define("HivemindPullIntensity", (double) 0.024);
 		BUILDER.pop();
 		BUILDER.push("Primordial Bone Crawler");
 		PRIMORDIALCRAWLERSLAM = BUILDER.comment("Damage").define("PrimordialCrawlerSlam", (double) 16);
@@ -301,7 +308,7 @@ public class DeepVoidConfigConfiguration {
 		ABYSSALMARKBURST = BUILDER.comment("Damage dealt when the effect expires. The damage is equal to the level of the effect * value (ignores armor)").define("AbyssalMarkBurst", (double) 2.15);
 		SHARPSHOOTER = BUILDER.comment("Distance is multiplied by this value. The result multiplies the initial damage").define("Sharpshooter", (double) 0.085);
 		PERILSELFDAMAGE = BUILDER.comment("The damage dealt to the player upon shooting themselves (ignores armor)").define("PerilSelfDamage", (double) 18);
-		PERILDAMAGEMULTIPLIER = BUILDER.comment("Adrenaline is multiplied by that value, which is then used to multiply the projectile's damage").define("PerilDamageMultiplier", (double) 3);
+		PERILDAMAGEMULTIPLIER = BUILDER.comment("Adrenaline is multiplied by that value, which is then used to multiply the projectile's damage").define("PerilDamageMultiplier", (double) 2.5);
 		PERIL = BUILDER.comment("Damage (velocity increases that number)").define("Peril", (double) 2.8);
 		BLOODSTONEARMORBONUS = BUILDER.comment("The attack damage bonus").define("BloodstoneArmorBonus", (double) 2);
 		VOIDBOW = BUILDER.comment("Void bow damage (ignores armor and i-frames)").define("VoidBow", (double) 8);
@@ -314,6 +321,7 @@ public class DeepVoidConfigConfiguration {
 		BLOODYCHAINSAW = BUILDER.comment("Base damage multiplier (ignores i-frames)").define("BloodyChainsaw", (double) 0.05);
 		DOUBLEBARRELSHOTGUN = BUILDER.comment("Damage (ignores i-frames)").define("DoubleBarrelShotgun", (double) 0.7);
 		PERILSHOWADRENALINE = BUILDER.define("PerilShowAdrenaline", true);
+		COFFINDOOM = BUILDER.define("CoffinDoom", (double) 10);
 		BUILDER.pop();
 		BUILDER.push("Hive's Watcher");
 		HIVEWATCHERWHILEMOVING = BUILDER.comment("Damage each tick").define("HiveWatcherWhileMoving", (double) 10);

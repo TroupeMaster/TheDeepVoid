@@ -20,6 +20,7 @@ import net.mcreator.thedeepvoid.entity.XrayEntity;
 import net.mcreator.thedeepvoid.entity.XpFlareShotEntity;
 import net.mcreator.thedeepvoid.entity.WeaverOfSoulsBossEntity;
 import net.mcreator.thedeepvoid.entity.WatchingStalkerEntity;
+import net.mcreator.thedeepvoid.entity.WardenOfThePitEntity;
 import net.mcreator.thedeepvoid.entity.WandererEntity;
 import net.mcreator.thedeepvoid.entity.VoidriumFlareShotEntity;
 import net.mcreator.thedeepvoid.entity.VoidbornTentaclesEntity;
@@ -28,7 +29,9 @@ import net.mcreator.thedeepvoid.entity.VoidTentacleEntity;
 import net.mcreator.thedeepvoid.entity.VoidPelletEntity;
 import net.mcreator.thedeepvoid.entity.VoidDwellerEntity;
 import net.mcreator.thedeepvoid.entity.VoidArrowEntity;
+import net.mcreator.thedeepvoid.entity.UndertakerEntity;
 import net.mcreator.thedeepvoid.entity.ThumperEntityEntity;
+import net.mcreator.thedeepvoid.entity.ThrownNoxiousBrewEntity;
 import net.mcreator.thedeepvoid.entity.ThrowableIchorProjEntity;
 import net.mcreator.thedeepvoid.entity.TenebrisCultroEntity;
 import net.mcreator.thedeepvoid.entity.SwarmerEntity;
@@ -57,6 +60,7 @@ import net.mcreator.thedeepvoid.entity.ShadeArrowEntity;
 import net.mcreator.thedeepvoid.entity.SeekerEntity;
 import net.mcreator.thedeepvoid.entity.ScarecrowEntity;
 import net.mcreator.thedeepvoid.entity.SawThrowerEntity;
+import net.mcreator.thedeepvoid.entity.SageOfWrathEntity;
 import net.mcreator.thedeepvoid.entity.RottenDartProjectileEntity;
 import net.mcreator.thedeepvoid.entity.RottenCultMemberEntity;
 import net.mcreator.thedeepvoid.entity.RottenCorpseEntity;
@@ -74,6 +78,8 @@ import net.mcreator.thedeepvoid.entity.PrimordialBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.PreserverEntity;
 import net.mcreator.thedeepvoid.entity.PoisonKnifeEntity;
 import net.mcreator.thedeepvoid.entity.PlayerCageEntity;
+import net.mcreator.thedeepvoid.entity.PitPrisonerEntity;
+import net.mcreator.thedeepvoid.entity.PerilBulletNoCooldownEntity;
 import net.mcreator.thedeepvoid.entity.PerilBulletEntity;
 import net.mcreator.thedeepvoid.entity.PenitentEntity;
 import net.mcreator.thedeepvoid.entity.OverseerPillarEntity;
@@ -89,6 +95,7 @@ import net.mcreator.thedeepvoid.entity.MimicEntity;
 import net.mcreator.thedeepvoid.entity.MaskedHunterEntity;
 import net.mcreator.thedeepvoid.entity.MarrowRootsSpawnEntity;
 import net.mcreator.thedeepvoid.entity.MarrowRootsEntity;
+import net.mcreator.thedeepvoid.entity.ManiacShotgunPelletEntity;
 import net.mcreator.thedeepvoid.entity.ManiacEntity;
 import net.mcreator.thedeepvoid.entity.MaggotEntity;
 import net.mcreator.thedeepvoid.entity.MadCultistEntity;
@@ -101,7 +108,9 @@ import net.mcreator.thedeepvoid.entity.KunaiEntity;
 import net.mcreator.thedeepvoid.entity.InvisibleEntity;
 import net.mcreator.thedeepvoid.entity.IdlingApostleEntity;
 import net.mcreator.thedeepvoid.entity.IchorSpitEntity;
+import net.mcreator.thedeepvoid.entity.IchorFlareShotEntity;
 import net.mcreator.thedeepvoid.entity.IchorFlameShotEntity;
+import net.mcreator.thedeepvoid.entity.IchorCloudEntity;
 import net.mcreator.thedeepvoid.entity.HookEntity;
 import net.mcreator.thedeepvoid.entity.HookEndEntity;
 import net.mcreator.thedeepvoid.entity.HollowedEntity;
@@ -109,10 +118,13 @@ import net.mcreator.thedeepvoid.entity.HivemindTentaclesEntity;
 import net.mcreator.thedeepvoid.entity.HiveWatcherEntity;
 import net.mcreator.thedeepvoid.entity.HiveFangsEntity;
 import net.mcreator.thedeepvoid.entity.HiveBrainEntity;
+import net.mcreator.thedeepvoid.entity.HarbingerOfCataclysmEntity;
+import net.mcreator.thedeepvoid.entity.HarbingerCloneEntity;
 import net.mcreator.thedeepvoid.entity.HandSpawnEntity;
 import net.mcreator.thedeepvoid.entity.GrimHookEntity;
 import net.mcreator.thedeepvoid.entity.GreaterXpBottleEntity;
 import net.mcreator.thedeepvoid.entity.GravekeeperEntity;
+import net.mcreator.thedeepvoid.entity.GrabbingHandsEntity;
 import net.mcreator.thedeepvoid.entity.GoreLurkerEntity;
 import net.mcreator.thedeepvoid.entity.GoreExpectoratorEntity;
 import net.mcreator.thedeepvoid.entity.GooSpitterEntity;
@@ -136,6 +148,7 @@ import net.mcreator.thedeepvoid.entity.FleshFangsEntity;
 import net.mcreator.thedeepvoid.entity.FleshCubeEntity;
 import net.mcreator.thedeepvoid.entity.FleshArrowEntity;
 import net.mcreator.thedeepvoid.entity.FlareEntity;
+import net.mcreator.thedeepvoid.entity.FlailExecutionerEntity;
 import net.mcreator.thedeepvoid.entity.FalseHydraSingingEntity;
 import net.mcreator.thedeepvoid.entity.FalseHydraEntity;
 import net.mcreator.thedeepvoid.entity.FalseHydraArmEntity;
@@ -144,13 +157,16 @@ import net.mcreator.thedeepvoid.entity.EyekinFlyingEntity;
 import net.mcreator.thedeepvoid.entity.EyekinEntity;
 import net.mcreator.thedeepvoid.entity.EyeOfTheWatcherEntity;
 import net.mcreator.thedeepvoid.entity.ExecutionerEntity;
+import net.mcreator.thedeepvoid.entity.ExecutionerDarkSteelFlailEntity;
 import net.mcreator.thedeepvoid.entity.EverhungerEntity;
 import net.mcreator.thedeepvoid.entity.DoomingTombstoneEntity;
+import net.mcreator.thedeepvoid.entity.DoomingCoffinEntity;
 import net.mcreator.thedeepvoid.entity.DevourerEntity;
 import net.mcreator.thedeepvoid.entity.DeathVultureEntity;
 import net.mcreator.thedeepvoid.entity.DeathMawHiddenEntity;
 import net.mcreator.thedeepvoid.entity.DeathMawEntity;
 import net.mcreator.thedeepvoid.entity.DarkSteelSawEntity;
+import net.mcreator.thedeepvoid.entity.DarkSteelFlailEntity;
 import net.mcreator.thedeepvoid.entity.DarkDaggerEntity;
 import net.mcreator.thedeepvoid.entity.DamnedEntity;
 import net.mcreator.thedeepvoid.entity.CrossEyesEntity;
@@ -171,6 +187,7 @@ import net.mcreator.thedeepvoid.entity.BoneBoulderEntity;
 import net.mcreator.thedeepvoid.entity.BoneBlockadeEntity;
 import net.mcreator.thedeepvoid.entity.BoneBallProjectileEntity;
 import net.mcreator.thedeepvoid.entity.BogWalkerEntity;
+import net.mcreator.thedeepvoid.entity.BloodthirstyClawsBloodSpitEntity;
 import net.mcreator.thedeepvoid.entity.BloodshotEntity;
 import net.mcreator.thedeepvoid.entity.BloodSpitEntity;
 import net.mcreator.thedeepvoid.entity.BloodSpikeEntity;
@@ -681,6 +698,51 @@ public class TheDeepVoidModEntities {
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FalseHydraSingingEntity::new).fireImmune().sized(1f, 1f));
 	public static final RegistryObject<EntityType<BoneBoulderEntity>> BONE_BOULDER = register("bone_boulder",
 			EntityType.Builder.<BoneBoulderEntity>of(BoneBoulderEntity::new, MobCategory.MISC).setCustomClientFactory(BoneBoulderEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<PitPrisonerEntity>> PIT_PRISONER = register("pit_prisoner",
+			EntityType.Builder.<PitPrisonerEntity>of(PitPrisonerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(PitPrisonerEntity::new)
+
+					.sized(0.6f, 1.9f));
+	public static final RegistryObject<EntityType<GrabbingHandsEntity>> GRABBING_HANDS = register("grabbing_hands", EntityType.Builder.<GrabbingHandsEntity>of(GrabbingHandsEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(GrabbingHandsEntity::new).fireImmune().sized(1f, 1f));
+	public static final RegistryObject<EntityType<ManiacShotgunPelletEntity>> MANIAC_SHOTGUN_PELLET = register("maniac_shotgun_pellet", EntityType.Builder.<ManiacShotgunPelletEntity>of(ManiacShotgunPelletEntity::new, MobCategory.MISC)
+			.setCustomClientFactory(ManiacShotgunPelletEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<IchorCloudEntity>> ICHOR_CLOUD = register("ichor_cloud", EntityType.Builder.<IchorCloudEntity>of(IchorCloudEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(1)
+			.setUpdateInterval(3).setCustomClientFactory(IchorCloudEntity::new).fireImmune().sized(0.1f, 0.1f));
+	public static final RegistryObject<EntityType<IchorFlareShotEntity>> ICHOR_FLARE_SHOT = register("ichor_flare_shot",
+			EntityType.Builder.<IchorFlareShotEntity>of(IchorFlareShotEntity::new, MobCategory.MISC).setCustomClientFactory(IchorFlareShotEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<WardenOfThePitEntity>> WARDEN_OF_THE_PIT = register("warden_of_the_pit", EntityType.Builder.<WardenOfThePitEntity>of(WardenOfThePitEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(WardenOfThePitEntity::new).fireImmune().sized(3f, 3f));
+	public static final RegistryObject<EntityType<BloodthirstyClawsBloodSpitEntity>> BLOODTHIRSTY_CLAWS_BLOOD_SPIT = register("bloodthirsty_claws_blood_spit",
+			EntityType.Builder.<BloodthirstyClawsBloodSpitEntity>of(BloodthirstyClawsBloodSpitEntity::new, MobCategory.MISC).setCustomClientFactory(BloodthirstyClawsBloodSpitEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64)
+					.setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<DarkSteelFlailEntity>> DARK_STEEL_FLAIL = register("dark_steel_flail", EntityType.Builder.<DarkSteelFlailEntity>of(DarkSteelFlailEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(DarkSteelFlailEntity::new).fireImmune().sized(1f, 1f));
+	public static final RegistryObject<EntityType<FlailExecutionerEntity>> FLAIL_EXECUTIONER = register("flail_executioner", EntityType.Builder.<FlailExecutionerEntity>of(FlailExecutionerEntity::new, MobCategory.MONSTER)
+			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(FlailExecutionerEntity::new).fireImmune().sized(1.8f, 2.8f));
+	public static final RegistryObject<EntityType<ExecutionerDarkSteelFlailEntity>> EXECUTIONER_DARK_STEEL_FLAIL = register("executioner_dark_steel_flail",
+			EntityType.Builder.<ExecutionerDarkSteelFlailEntity>of(ExecutionerDarkSteelFlailEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
+					.setCustomClientFactory(ExecutionerDarkSteelFlailEntity::new).fireImmune().sized(1f, 1f));
+	public static final RegistryObject<EntityType<PerilBulletNoCooldownEntity>> PERIL_BULLET_NO_COOLDOWN = register("peril_bullet_no_cooldown", EntityType.Builder.<PerilBulletNoCooldownEntity>of(PerilBulletNoCooldownEntity::new, MobCategory.MISC)
+			.setCustomClientFactory(PerilBulletNoCooldownEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<HarbingerOfCataclysmEntity>> HARBINGER_OF_CATACLYSM = register("harbinger_of_cataclysm",
+			EntityType.Builder.<HarbingerOfCataclysmEntity>of(HarbingerOfCataclysmEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(78).setUpdateInterval(3)
+					.setCustomClientFactory(HarbingerOfCataclysmEntity::new)
+
+					.sized(0.8f, 3.12f));
+	public static final RegistryObject<EntityType<HarbingerCloneEntity>> HARBINGER_CLONE = register("harbinger_clone", EntityType.Builder.<HarbingerCloneEntity>of(HarbingerCloneEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HarbingerCloneEntity::new).fireImmune().sized(0.8f, 3.12f));
+	public static final RegistryObject<EntityType<SageOfWrathEntity>> SAGE_OF_WRATH = register("sage_of_wrath",
+			EntityType.Builder.<SageOfWrathEntity>of(SageOfWrathEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(78).setUpdateInterval(3).setCustomClientFactory(SageOfWrathEntity::new)
+
+					.sized(0.8f, 2.875f));
+	public static final RegistryObject<EntityType<UndertakerEntity>> UNDERTAKER = register("undertaker",
+			EntityType.Builder.<UndertakerEntity>of(UndertakerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(UndertakerEntity::new)
+
+					.sized(1.4f, 3f));
+	public static final RegistryObject<EntityType<DoomingCoffinEntity>> DOOMING_COFFIN = register("dooming_coffin", EntityType.Builder.<DoomingCoffinEntity>of(DoomingCoffinEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
+			.setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(DoomingCoffinEntity::new).fireImmune().sized(0.6f, 1.8f));
+	public static final RegistryObject<EntityType<ThrownNoxiousBrewEntity>> THROWN_NOXIOUS_BREW = register("thrown_noxious_brew", EntityType.Builder.<ThrownNoxiousBrewEntity>of(ThrownNoxiousBrewEntity::new, MobCategory.MISC)
+			.setCustomClientFactory(ThrownNoxiousBrewEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -813,6 +875,18 @@ public class TheDeepVoidModEntities {
 			FalseHydraEntity.init();
 			FalseHydraArmEntity.init();
 			FalseHydraSingingEntity.init();
+			PitPrisonerEntity.init();
+			GrabbingHandsEntity.init();
+			IchorCloudEntity.init();
+			WardenOfThePitEntity.init();
+			DarkSteelFlailEntity.init();
+			FlailExecutionerEntity.init();
+			ExecutionerDarkSteelFlailEntity.init();
+			HarbingerOfCataclysmEntity.init();
+			HarbingerCloneEntity.init();
+			SageOfWrathEntity.init();
+			UndertakerEntity.init();
+			DoomingCoffinEntity.init();
 		});
 	}
 
@@ -942,5 +1016,17 @@ public class TheDeepVoidModEntities {
 		event.put(FALSE_HYDRA.get(), FalseHydraEntity.createAttributes().build());
 		event.put(FALSE_HYDRA_ARM.get(), FalseHydraArmEntity.createAttributes().build());
 		event.put(FALSE_HYDRA_SINGING.get(), FalseHydraSingingEntity.createAttributes().build());
+		event.put(PIT_PRISONER.get(), PitPrisonerEntity.createAttributes().build());
+		event.put(GRABBING_HANDS.get(), GrabbingHandsEntity.createAttributes().build());
+		event.put(ICHOR_CLOUD.get(), IchorCloudEntity.createAttributes().build());
+		event.put(WARDEN_OF_THE_PIT.get(), WardenOfThePitEntity.createAttributes().build());
+		event.put(DARK_STEEL_FLAIL.get(), DarkSteelFlailEntity.createAttributes().build());
+		event.put(FLAIL_EXECUTIONER.get(), FlailExecutionerEntity.createAttributes().build());
+		event.put(EXECUTIONER_DARK_STEEL_FLAIL.get(), ExecutionerDarkSteelFlailEntity.createAttributes().build());
+		event.put(HARBINGER_OF_CATACLYSM.get(), HarbingerOfCataclysmEntity.createAttributes().build());
+		event.put(HARBINGER_CLONE.get(), HarbingerCloneEntity.createAttributes().build());
+		event.put(SAGE_OF_WRATH.get(), SageOfWrathEntity.createAttributes().build());
+		event.put(UNDERTAKER.get(), UndertakerEntity.createAttributes().build());
+		event.put(DOOMING_COFFIN.get(), DoomingCoffinEntity.createAttributes().build());
 	}
 }

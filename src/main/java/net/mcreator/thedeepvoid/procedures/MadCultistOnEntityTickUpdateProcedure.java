@@ -26,7 +26,6 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 
-import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 import net.mcreator.thedeepvoid.entity.MadCultistEntity;
 import net.mcreator.thedeepvoid.entity.KunaiEntity;
@@ -119,8 +118,6 @@ public class MadCultistOnEntityTickUpdateProcedure {
 										_datEntSetI.getEntityData().set(MadCultistEntity.DATA_attackChance, 60);
 								} else {
 									entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity), 8);
-									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-										_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.BROKEN_ARMOR.get(), 100, 0));
 								}
 							}
 						}
@@ -157,11 +154,11 @@ public class MadCultistOnEntityTickUpdateProcedure {
 						List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(3 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 						for (Entity entityiterator : _entfound) {
 							if (entityiterator == (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null)) {
-								if ((entityiterator instanceof LivingEntity _entUseItem72 ? _entUseItem72.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
+								if ((entityiterator instanceof LivingEntity _entUseItem71 ? _entUseItem71.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem) {
 									if (entityiterator instanceof Player _player)
-										_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem74 ? _entUseItem74.getUseItem() : ItemStack.EMPTY).getItem(), 60);
+										_player.getCooldowns().addCooldown((entityiterator instanceof LivingEntity _entUseItem73 ? _entUseItem73.getUseItem() : ItemStack.EMPTY).getItem(), 60);
 									{
-										ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem76 ? _entUseItem76.getUseItem() : ItemStack.EMPTY);
+										ItemStack _ist = (entityiterator instanceof LivingEntity _entUseItem75 ? _entUseItem75.getUseItem() : ItemStack.EMPTY);
 										if (_ist.hurt(1, RandomSource.create(), null)) {
 											_ist.shrink(1);
 											_ist.setDamageValue(0);
@@ -182,8 +179,6 @@ public class MadCultistOnEntityTickUpdateProcedure {
 										_datEntSetI.getEntityData().set(MadCultistEntity.DATA_attackChance, 60);
 								} else {
 									entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(DamageTypes.MOB_ATTACK), entity), 8);
-									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-										_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.BROKEN_ARMOR.get(), 140, 0));
 								}
 							}
 						}
@@ -261,7 +256,7 @@ public class MadCultistOnEntityTickUpdateProcedure {
 				});
 			}
 		}
-		if ((entity instanceof MadCultistEntity _datEntL121 && _datEntL121.getEntityData().get(MadCultistEntity.DATA_aggressive)) == false) {
+		if ((entity instanceof MadCultistEntity _datEntL119 && _datEntL119.getEntityData().get(MadCultistEntity.DATA_aggressive)) == false) {
 			if (Math.random() < 0.002) {
 				if (world instanceof Level _level) {
 					if (!_level.isClientSide()) {

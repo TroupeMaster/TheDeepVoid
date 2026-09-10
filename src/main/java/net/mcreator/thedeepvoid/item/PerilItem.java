@@ -18,13 +18,18 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.HumanoidArm;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.client.model.HumanoidModel;
 
 import net.mcreator.thedeepvoid.procedures.PerilRightClickProcedure;
+import net.mcreator.thedeepvoid.procedures.PerilItemInHandTickProcedure;
+import net.mcreator.thedeepvoid.procedures.PerilEntitySwingsItemProcedure;
 import net.mcreator.thedeepvoid.item.renderer.PerilItemRenderer;
 
 import java.util.function.Consumer;
@@ -51,6 +56,24 @@ public class PerilItem extends Item implements GeoItem {
 				return renderer;
 			}
 
+			private static final HumanoidModel.ArmPose PerilPose = HumanoidModel.ArmPose.create("Peril", false, (model, entity, arm) -> {
+				if (arm == HumanoidArm.LEFT) {
+					model.leftArm.xRot = -45F + model.head.xRot;
+				} else {
+					model.rightArm.xRot = -45F + model.head.xRot;
+				}
+			});
+
+			@Override
+			public HumanoidModel.ArmPose getArmPose(LivingEntity entityLiving, InteractionHand hand, ItemStack itemStack) {
+				if (!itemStack.isEmpty()) {
+					if (entityLiving.getUsedItemHand() == hand) {
+						return PerilPose;
+					}
+				}
+				return HumanoidModel.ArmPose.EMPTY;
+			}
+
 			public boolean applyForgeHandTransform(PoseStack poseStack, LocalPlayer player, HumanoidArm arm, ItemStack itemInHand, float partialTick, float equipProcess, float swingProcess) {
 				int i = arm == HumanoidArm.RIGHT ? 1 : -1;
 				poseStack.translate(i * 0.56F, -0.52F, -0.72F);
@@ -67,7 +90,7 @@ public class PerilItem extends Item implements GeoItem {
 	}
 
 	private PlayState idlePredicate(AnimationState event) {
-		if (this.transformType != null ? true : false) {
+		if (this.transformType != null ? this.transformType.firstPerson() : false) {
 			if (this.animationprocedure.equals("empty")) {
 				event.getController().setAnimation(RawAnimation.begin().thenLoop("animation.peril_idle"));
 				return PlayState.CONTINUE;
@@ -79,7 +102,7 @@ public class PerilItem extends Item implements GeoItem {
 	String prevAnim = "empty";
 
 	private PlayState procedurePredicate(AnimationState event) {
-		if (this.transformType != null ? true : false) {
+		if (this.transformType != null ? this.transformType.firstPerson() : false) {
 			if (!this.animationprocedure.equals("empty") && event.getController().getAnimationState() == AnimationController.State.STOPPED || (!this.animationprocedure.equals(prevAnim) && !this.animationprocedure.equals("empty"))) {
 				if (!this.animationprocedure.equals(prevAnim))
 					event.getController().forceAnimationReset();
@@ -120,5 +143,19 @@ public class PerilItem extends Item implements GeoItem {
 
 		PerilRightClickProcedure.execute(world, entity, itemstack);
 		return ar;
+	}
+
+	@Override
+	public boolean onEntitySwing(ItemStack itemstack, LivingEntity entity) {
+		boolean retval = super.onEntitySwing(itemstack, entity);
+		PerilEntitySwingsItemProcedure.execute(entity.level(), entity, itemstack);
+		return retval;
+	}
+
+	@Override
+	public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
+		super.inventoryTick(itemstack, world, entity, slot, selected);
+		if (selected)
+			PerilItemInHandTickProcedure.execute(entity, itemstack);
 	}
 }

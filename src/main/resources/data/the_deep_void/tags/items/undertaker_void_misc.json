@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:mourner_hide",
+    "the_deep_void:watching_willow_sapling",
+    "the_deep_void:void_rose",
+    "the_deep_void:black_moss",
+    "the_deep_void:disturbing_root",
+    "the_deep_void:bone_loaf",
+    "the_deep_void:bone_needle",
+    "the_deep_void:void_stem",
+    "the_deep_void:rotfish",
+    "the_deep_void:eyefish",
+    "the_deep_void:needlefish",
+    "the_deep_void:solid_void",
+    "the_deep_void:dark_steel_chainmail",
+    "the_deep_void:dark_cloth",
+    "the_deep_void:bone_crawler_feed",
+    "the_deep_void:desolate_soil",
+    "the_deep_void:bone_crawler_egg",
+    "the_deep_void:infested_bone_crawler_egg",
+    "the_deep_void:onyx_needle",
+    "minecraft:fishing_rod",
+    "the_deep_void:liquid_void_bucket",
+    "the_deep_void:rotten_dart",
+    "the_deep_void:throwable_ichor",
+    "the_deep_void:sulfur_bomb",
+    "the_deep_void:dark_steel_kunai"
+  ]
+}

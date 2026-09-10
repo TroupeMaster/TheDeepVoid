@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/chisel",
+  "textures": {
+    "0": "the_deep_void:block/chisel",
+    "particle": "the_deep_void:item/hammer_and_chisel"
+  }
+}

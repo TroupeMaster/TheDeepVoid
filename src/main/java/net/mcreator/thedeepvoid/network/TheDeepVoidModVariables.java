@@ -105,13 +105,13 @@ public class TheDeepVoidModVariables {
 			clone.MusicLock = original.MusicLock;
 			clone.MusicReplace = original.MusicReplace;
 			clone.MusicPlay = original.MusicPlay;
-			clone.watcherFightCount = original.watcherFightCount;
 			clone.sendToPurgatory = original.sendToPurgatory;
 			clone.receivedWikiBook = original.receivedWikiBook;
 			clone.saveArmorToughness = original.saveArmorToughness;
 			clone.saveKnockbackResistance = original.saveKnockbackResistance;
 			clone.saveStepHeight = original.saveStepHeight;
 			clone.parasitizedType = original.parasitizedType;
+			clone.pitShowText = original.pitShowText;
 			if (!event.isWasDeath()) {
 				clone.playerX = original.playerX;
 				clone.playerY = original.playerY;
@@ -164,6 +164,9 @@ public class TheDeepVoidModVariables {
 				clone.vultureArmorAbility = original.vultureArmorAbility;
 				clone.gunslingerArmorAbility = original.gunslingerArmorAbility;
 				clone.sentientArmorAbility = original.sentientArmorAbility;
+				clone.playMusicPit = original.playMusicPit;
+				clone.remnantsFog = original.remnantsFog;
+				clone.remnantsColor = original.remnantsColor;
 			}
 		}
 
@@ -232,16 +235,14 @@ public class TheDeepVoidModVariables {
 		public boolean WeaverTemplePlaced = false;
 		public double stalkerSpawnX = 0;
 		public double stalkerSpawnZ = 0;
-		public double weaverFightCount = 0;
 		public boolean overwritten = false;
 		public boolean surfaceOverwritten = false;
-		public double apostleFightCount = 0;
-		public double hivemindFightCount = 0;
-		public double primordialcrawlerFightCount = 0;
 		public double hunterSpawnCooldown = 72000.0;
-		public double hydraFightCount = 0;
 		public double spawnHydra = 0;
 		public boolean hydraKilled = false;
+		public boolean pitPlaced = false;
+		public double undertakerSpawn = 24000.0;
+		public boolean undertakerKilled = false;
 
 		public static MapVariables load(CompoundTag tag) {
 			MapVariables data = new MapVariables();
@@ -257,16 +258,14 @@ public class TheDeepVoidModVariables {
 			WeaverTemplePlaced = nbt.getBoolean("WeaverTemplePlaced");
 			stalkerSpawnX = nbt.getDouble("stalkerSpawnX");
 			stalkerSpawnZ = nbt.getDouble("stalkerSpawnZ");
-			weaverFightCount = nbt.getDouble("weaverFightCount");
 			overwritten = nbt.getBoolean("overwritten");
 			surfaceOverwritten = nbt.getBoolean("surfaceOverwritten");
-			apostleFightCount = nbt.getDouble("apostleFightCount");
-			hivemindFightCount = nbt.getDouble("hivemindFightCount");
-			primordialcrawlerFightCount = nbt.getDouble("primordialcrawlerFightCount");
 			hunterSpawnCooldown = nbt.getDouble("hunterSpawnCooldown");
-			hydraFightCount = nbt.getDouble("hydraFightCount");
 			spawnHydra = nbt.getDouble("spawnHydra");
 			hydraKilled = nbt.getBoolean("hydraKilled");
+			pitPlaced = nbt.getBoolean("pitPlaced");
+			undertakerSpawn = nbt.getDouble("undertakerSpawn");
+			undertakerKilled = nbt.getBoolean("undertakerKilled");
 		}
 
 		@Override
@@ -278,16 +277,14 @@ public class TheDeepVoidModVariables {
 			nbt.putBoolean("WeaverTemplePlaced", WeaverTemplePlaced);
 			nbt.putDouble("stalkerSpawnX", stalkerSpawnX);
 			nbt.putDouble("stalkerSpawnZ", stalkerSpawnZ);
-			nbt.putDouble("weaverFightCount", weaverFightCount);
 			nbt.putBoolean("overwritten", overwritten);
 			nbt.putBoolean("surfaceOverwritten", surfaceOverwritten);
-			nbt.putDouble("apostleFightCount", apostleFightCount);
-			nbt.putDouble("hivemindFightCount", hivemindFightCount);
-			nbt.putDouble("primordialcrawlerFightCount", primordialcrawlerFightCount);
 			nbt.putDouble("hunterSpawnCooldown", hunterSpawnCooldown);
-			nbt.putDouble("hydraFightCount", hydraFightCount);
 			nbt.putDouble("spawnHydra", spawnHydra);
 			nbt.putBoolean("hydraKilled", hydraKilled);
+			nbt.putBoolean("pitPlaced", pitPlaced);
+			nbt.putDouble("undertakerSpawn", undertakerSpawn);
+			nbt.putBoolean("undertakerKilled", undertakerKilled);
 			return nbt;
 		}
 
@@ -454,13 +451,12 @@ public class TheDeepVoidModVariables {
 		public ItemStack saveArmor0 = ItemStack.EMPTY;
 		public double saveArmorPoint = 0;
 		public double gaol_ambience = 0.0;
-		public boolean noHit = true;
+		public boolean noHit = false;
 		public double MusicTick = 0.0;
 		public double MusicWait = 0;
 		public boolean MusicLock = false;
 		public boolean MusicReplace = false;
 		public String MusicPlay = "\"\"";
-		public double watcherFightCount = 0;
 		public boolean sendToPurgatory = false;
 		public boolean receivedWikiBook = false;
 		public double saveArmorToughness = 0;
@@ -470,6 +466,10 @@ public class TheDeepVoidModVariables {
 		public double vultureArmorAbility = 0;
 		public double gunslingerArmorAbility = 0;
 		public double sentientArmorAbility = 0;
+		public boolean playMusicPit = false;
+		public boolean pitShowText = false;
+		public double remnantsFog = 400.0;
+		public double remnantsColor = 24.0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -558,7 +558,6 @@ public class TheDeepVoidModVariables {
 			nbt.putBoolean("MusicLock", MusicLock);
 			nbt.putBoolean("MusicReplace", MusicReplace);
 			nbt.putString("MusicPlay", MusicPlay);
-			nbt.putDouble("watcherFightCount", watcherFightCount);
 			nbt.putBoolean("sendToPurgatory", sendToPurgatory);
 			nbt.putBoolean("receivedWikiBook", receivedWikiBook);
 			nbt.putDouble("saveArmorToughness", saveArmorToughness);
@@ -568,6 +567,10 @@ public class TheDeepVoidModVariables {
 			nbt.putDouble("vultureArmorAbility", vultureArmorAbility);
 			nbt.putDouble("gunslingerArmorAbility", gunslingerArmorAbility);
 			nbt.putDouble("sentientArmorAbility", sentientArmorAbility);
+			nbt.putBoolean("playMusicPit", playMusicPit);
+			nbt.putBoolean("pitShowText", pitShowText);
+			nbt.putDouble("remnantsFog", remnantsFog);
+			nbt.putDouble("remnantsColor", remnantsColor);
 			return nbt;
 		}
 
@@ -653,7 +656,6 @@ public class TheDeepVoidModVariables {
 			MusicLock = nbt.getBoolean("MusicLock");
 			MusicReplace = nbt.getBoolean("MusicReplace");
 			MusicPlay = nbt.getString("MusicPlay");
-			watcherFightCount = nbt.getDouble("watcherFightCount");
 			sendToPurgatory = nbt.getBoolean("sendToPurgatory");
 			receivedWikiBook = nbt.getBoolean("receivedWikiBook");
 			saveArmorToughness = nbt.getDouble("saveArmorToughness");
@@ -663,6 +665,10 @@ public class TheDeepVoidModVariables {
 			vultureArmorAbility = nbt.getDouble("vultureArmorAbility");
 			gunslingerArmorAbility = nbt.getDouble("gunslingerArmorAbility");
 			sentientArmorAbility = nbt.getDouble("sentientArmorAbility");
+			playMusicPit = nbt.getBoolean("playMusicPit");
+			pitShowText = nbt.getBoolean("pitShowText");
+			remnantsFog = nbt.getDouble("remnantsFog");
+			remnantsColor = nbt.getDouble("remnantsColor");
 		}
 	}
 
@@ -767,7 +773,6 @@ public class TheDeepVoidModVariables {
 					variables.MusicLock = message.data.MusicLock;
 					variables.MusicReplace = message.data.MusicReplace;
 					variables.MusicPlay = message.data.MusicPlay;
-					variables.watcherFightCount = message.data.watcherFightCount;
 					variables.sendToPurgatory = message.data.sendToPurgatory;
 					variables.receivedWikiBook = message.data.receivedWikiBook;
 					variables.saveArmorToughness = message.data.saveArmorToughness;
@@ -777,6 +782,10 @@ public class TheDeepVoidModVariables {
 					variables.vultureArmorAbility = message.data.vultureArmorAbility;
 					variables.gunslingerArmorAbility = message.data.gunslingerArmorAbility;
 					variables.sentientArmorAbility = message.data.sentientArmorAbility;
+					variables.playMusicPit = message.data.playMusicPit;
+					variables.pitShowText = message.data.pitShowText;
+					variables.remnantsFog = message.data.remnantsFog;
+					variables.remnantsColor = message.data.remnantsColor;
 				}
 			});
 			context.setPacketHandled(true);

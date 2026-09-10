@@ -15,7 +15,7 @@ import net.minecraft.client.model.EntityModel;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.PoseStack;
 
-// Made with Blockbench 5.0.7
+// Made with Blockbench 5.1.6
 // Exported for Minecraft version 1.17 or later with Mojang mappings
 // Paste this class into your mod and generate all required imports
 public class ModelplagueDoctorMask<T extends Entity> extends EntityModel<T> {
@@ -32,13 +32,15 @@ public class ModelplagueDoctorMask<T extends Entity> extends EntityModel<T> {
 		MeshDefinition meshdefinition = new MeshDefinition();
 		PartDefinition partdefinition = meshdefinition.getRoot();
 		PartDefinition Head = partdefinition.addOrReplaceChild("Head",
-				CubeListBuilder.create().texOffs(0, 27).addBox(-4.5F, -8.5F, -5.0F, 9.0F, 9.0F, 1.0F, new CubeDeformation(0.0F)).texOffs(0, 0).addBox(-7.0F, -9.0F, -7.0F, 14.0F, 1.0F, 14.0F, new CubeDeformation(0.0F)).texOffs(0, 15)
-						.addBox(-4.5F, -12.0F, -4.5F, 9.0F, 3.0F, 9.0F, new CubeDeformation(0.0F)).texOffs(0, 37).addBox(-1.5F, -4.5F, -9.0F, 3.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)).texOffs(20, 27)
+				CubeListBuilder.create().texOffs(0, 27).addBox(-4.5F, -8.5F, -5.0F, 9.0F, 9.0F, 1.0F, new CubeDeformation(0.0F)).texOffs(0, 37).addBox(-1.5F, -4.5F, -9.0F, 3.0F, 4.0F, 4.0F, new CubeDeformation(0.0F)).texOffs(20, 27)
 						.addBox(-4.6F, -4.5F, -4.4F, 0.0F, 1.0F, 9.0F, new CubeDeformation(0.0F)).texOffs(36, 25).addBox(-4.5F, -4.5F, 4.6F, 9.0F, 1.0F, 0.0F, new CubeDeformation(0.0F)).texOffs(36, 15)
 						.addBox(4.6F, -4.5F, -4.4F, 0.0F, 1.0F, 9.0F, new CubeDeformation(0.0F)),
 				PartPose.offset(0.0F, 0.0F, 0.0F));
 		PartDefinition Head_r1 = Head.addOrReplaceChild("Head_r1", CubeListBuilder.create().texOffs(14, 37).addBox(-1.0F, -2.0F, -5.0F, 2.0F, 3.0F, 5.0F, new CubeDeformation(0.0F)),
 				PartPose.offsetAndRotation(0.0F, -2.0F, -7.5F, 0.2618F, 0.0F, 0.0F));
+		PartDefinition Head_r2 = Head.addOrReplaceChild("Head_r2",
+				CubeListBuilder.create().texOffs(0, 15).addBox(-4.5F, -4.0F, -4.5F, 9.0F, 3.0F, 9.0F, new CubeDeformation(0.0F)).texOffs(0, 0).addBox(-7.0F, -1.0F, -7.0F, 14.0F, 1.0F, 14.0F, new CubeDeformation(0.0F)),
+				PartPose.offsetAndRotation(0.0F, -8.0F, 0.0F, 0.0F, -0.7854F, 0.0F));
 		return LayerDefinition.create(meshdefinition, 64, 64);
 	}
 

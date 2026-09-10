@@ -43,6 +43,7 @@ import net.mcreator.thedeepvoid.entity.PerilBulletEntity;
 import net.mcreator.thedeepvoid.entity.IchorSpitEntity;
 import net.mcreator.thedeepvoid.entity.GoldenRotArrowEntity;
 import net.mcreator.thedeepvoid.entity.FleshArrowEntity;
+import net.mcreator.thedeepvoid.entity.BloodthirstyClawsBloodSpitEntity;
 import net.mcreator.thedeepvoid.entity.BloodSpikeEntity;
 import net.mcreator.thedeepvoid.entity.BigShadeArrowEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
@@ -221,13 +222,14 @@ public class BigShadeArrowHitProcedure {
 					(float) ((sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_HELMET.get()
 							&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_CHESTPLATE.get()
 							&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_LEGGINGS.get()
-							&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_BOOTS.get() ? amount * 1.2 : amount));
+							&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_BOOTS.get()
+							&& !(immediatesourceentity instanceof BloodthirstyClawsBloodSpitEntity) && !(immediatesourceentity instanceof BloodSpikeEntity) ? amount * 1.2 : amount));
 			if (!immediatesourceentity.level().isClientSide())
 				immediatesourceentity.discard();
 		}
 		if (immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:bullet")))
 				&& !immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:nocooldown_bullet")))
-				&& !((entity instanceof LivingEntity _entUseItem148 ? _entUseItem148.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
+				&& !((entity instanceof LivingEntity _entUseItem150 ? _entUseItem150.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_HELMET.get()
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_CHESTPLATE.get()
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_LEGGINGS.get()
@@ -245,13 +247,13 @@ public class BigShadeArrowHitProcedure {
 		}
 		if (!(immediatesourceentity == sourceentity) && !immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:bullet")))
 				&& !immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:nocooldown_bullet")))
-				&& !((entity instanceof LivingEntity _entUseItem167 ? _entUseItem167.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
+				&& !((entity instanceof LivingEntity _entUseItem169 ? _entUseItem169.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VULTURE_HELMET.get()
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VULTURE_CHESTPLATE.get()
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VULTURE_LEGGINGS.get()
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.VULTURE_BOOTS.get()
-				&& (sourceentity instanceof Player _plrCldRem178
-						? _plrCldRem178.getCooldowns().getCooldownPercent((sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem(), 0f) * 100
+				&& (sourceentity instanceof Player _plrCldRem180
+						? _plrCldRem180.getCooldowns().getCooldownPercent((sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem(), 0f) * 100
 						: 0) <= 0) {
 			if (event != null && event.isCancelable()) {
 				event.setCanceled(true);
@@ -276,8 +278,8 @@ public class BigShadeArrowHitProcedure {
 					}
 				}
 				if (entity instanceof Player) {
-					if (entity instanceof Player _plr200)
-						_plr200.setArrowCount((int) ((entity instanceof Player _plr199 ? _plr199.getArrowCount() : 0) + 1));
+					if (entity instanceof Player _plr202)
+						_plr202.setArrowCount((int) ((entity instanceof Player _plr201 ? _plr201.getArrowCount() : 0) + 1));
 				}
 			}
 		}

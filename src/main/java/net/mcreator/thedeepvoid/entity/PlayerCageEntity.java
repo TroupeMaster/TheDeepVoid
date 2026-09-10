@@ -25,6 +25,7 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 
 import net.mcreator.thedeepvoid.procedures.PlayerCagePlayerCollidesWithThisEntityProcedure;
+import net.mcreator.thedeepvoid.procedures.PlayerCageOnEntityTickUpdateProcedure;
 import net.mcreator.thedeepvoid.procedures.PlayerCageEntityDiesProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
@@ -37,18 +38,12 @@ public class PlayerCageEntity extends Monster {
 		super(type, world);
 		setMaxUpStep(0f);
 		xpReward = 0;
-		setNoAi(false);
+		setNoAi(true);
 	}
 
 	@Override
 	public Packet<ClientGamePacketListener> getAddEntityPacket() {
 		return NetworkHooks.getEntitySpawningPacket(this);
-	}
-
-	@Override
-	protected void registerGoals() {
-		super.registerGoals();
-
 	}
 
 	@Override
@@ -108,7 +103,13 @@ public class PlayerCageEntity extends Monster {
 	@Override
 	public void die(DamageSource source) {
 		super.die(source);
-		PlayerCageEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
+		PlayerCageEntityDiesProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this, source.getEntity());
+	}
+
+	@Override
+	public void baseTick() {
+		super.baseTick();
+		PlayerCageOnEntityTickUpdateProcedure.execute(this.level(), this.getX(), this.getY(), this.getZ(), this);
 	}
 
 	@Override

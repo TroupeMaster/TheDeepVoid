@@ -1,14 +1,22 @@
 package net.mcreator.thedeepvoid.item.renderer;
 
+import software.bernie.geckolib.util.RenderUtils;
 import software.bernie.geckolib.renderer.GeoItemRenderer;
+import software.bernie.geckolib.cache.object.GeoBone;
 import software.bernie.geckolib.cache.object.BakedGeoModel;
 
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.client.renderer.texture.OverlayTexture;
+import net.minecraft.client.renderer.entity.player.PlayerRenderer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.MultiBufferSource;
+import net.minecraft.client.player.AbstractClientPlayer;
+import net.minecraft.client.model.PlayerModel;
+import net.minecraft.client.Minecraft;
 
+import net.mcreator.thedeepvoid.utils.AnimUtils;
 import net.mcreator.thedeepvoid.item.model.PerilItemModel;
 import net.mcreator.thedeepvoid.item.PerilItem;
 
@@ -55,6 +63,47 @@ public class PerilItemRenderer extends GeoItemRenderer<PerilItem> {
 		if (this.renderArms) {
 			this.renderArms = false;
 		}
+	}
+
+	@Override
+	public void renderRecursively(PoseStack stack, PerilItem animatable, GeoBone bone, RenderType type, MultiBufferSource buffer, VertexConsumer bufferIn, boolean isReRender, float partialTick, int packedLightIn, int packedOverlayIn, float red,
+			float green, float blue, float alpha) {
+		Minecraft mc = Minecraft.getInstance();
+		String name = bone.getName();
+		boolean renderingArms = false;
+		if (name.equals("RightArm") || name.equals("LeftArm")) {
+			bone.setHidden(true);
+			renderingArms = true;
+		} else {
+			bone.setHidden(this.hiddenBones.contains(name));
+		}
+		if (this.transformType.firstPerson() && renderingArms) {
+			AbstractClientPlayer player = mc.player;
+			float armsAlpha = player.isInvisible() ? 0.15f : 1.0f;
+			PlayerRenderer playerRenderer = (PlayerRenderer) mc.getEntityRenderDispatcher().getRenderer(player);
+			PlayerModel<AbstractClientPlayer> model = playerRenderer.getModel();
+			stack.pushPose();
+			RenderUtils.translateMatrixToBone(stack, bone);
+			RenderUtils.translateToPivotPoint(stack, bone);
+			RenderUtils.rotateMatrixAroundBone(stack, bone);
+			RenderUtils.scaleMatrixForBone(stack, bone);
+			RenderUtils.translateAwayFromPivotPoint(stack, bone);
+			ResourceLocation loc = player.getSkinTextureLocation();
+			VertexConsumer armBuilder = this.currentBuffer.getBuffer(RenderType.entitySolid(loc));
+			VertexConsumer sleeveBuilder = this.currentBuffer.getBuffer(RenderType.entityTranslucent(loc));
+			if (name.equals("RightArm")) {
+				stack.translate(-1.0f * SCALE_RECIPROCAL, 2.0f * SCALE_RECIPROCAL, 0.0f);
+				AnimUtils.renderPartOverBone(model.leftArm, bone, stack, armBuilder, packedLightIn, OverlayTexture.NO_OVERLAY, armsAlpha);
+				AnimUtils.renderPartOverBone(model.leftSleeve, bone, stack, sleeveBuilder, packedLightIn, OverlayTexture.NO_OVERLAY, armsAlpha);
+			} else if (name.equals("LeftArm")) {
+				stack.translate(1.0f * SCALE_RECIPROCAL, 2.0f * SCALE_RECIPROCAL, 0.0f);
+				AnimUtils.renderPartOverBone(model.rightArm, bone, stack, armBuilder, packedLightIn, OverlayTexture.NO_OVERLAY, armsAlpha);
+				AnimUtils.renderPartOverBone(model.rightSleeve, bone, stack, sleeveBuilder, packedLightIn, OverlayTexture.NO_OVERLAY, armsAlpha);
+			}
+			this.currentBuffer.getBuffer(RenderType.entityTranslucent(getTextureLocation(this.animatable)));
+			stack.popPose();
+		}
+		super.renderRecursively(stack, animatable, bone, type, buffer, bufferIn, isReRender, partialTick, packedLightIn, packedOverlayIn, red, green, blue, alpha);
 	}
 
 	@Override

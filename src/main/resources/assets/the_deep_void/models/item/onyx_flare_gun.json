@@ -1,6 +1,14 @@
 {
-  "parent": "item/handheld",
+  "parent": "item/generated",
   "textures": {
-    "layer0": "the_deep_void:item/flare_texture_new"
-  }
+    "layer0": "the_deep_void:item/flare_gun_loaded"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "the_deep_void:onyx_flare_gun_state": 1
+      },
+      "model": "the_deep_void:item/onyx_flare_gun_0"
+    }
+  ]
 }

@@ -30,14 +30,14 @@ public class OnyxFullArmorProcedure {
 						&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_LEGGINGS.get()
 						&& (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.FEET) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.DARK_STEEL_ONYX_BOOTS.get()) {
 			if ((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).armorToggle == false) {
-				if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) == 0) {
+				if (world.getMaxLocalRawBrightness(BlockPos.containing(x, y, z)) <= 4 && (entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.NIGHT_VISION) ? _livEnt.getEffect(MobEffects.NIGHT_VISION).getDuration() : 0) <= 100) {
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 100, 0));
+						_entity.addEffect(new MobEffectInstance(MobEffects.NIGHT_VISION, 400, 0));
 				}
 			}
 		}
-		if (!(entity instanceof ServerPlayer _plr18 && _plr18.level() instanceof ServerLevel
-				&& _plr18.getAdvancements().getOrStartProgress(_plr18.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:cover_me_with_onyx"))).isDone())) {
+		if (!(entity instanceof ServerPlayer _plr19 && _plr19.level() instanceof ServerLevel
+				&& _plr19.getAdvancements().getOrStartProgress(_plr19.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:cover_me_with_onyx"))).isDone())) {
 			if (entity instanceof ServerPlayer _player) {
 				Advancement _adv = _player.server.getAdvancements().getAdvancement(new ResourceLocation("the_deep_void:cover_me_with_onyx"));
 				AdvancementProgress _ap = _player.getAdvancements().getOrStartProgress(_adv);

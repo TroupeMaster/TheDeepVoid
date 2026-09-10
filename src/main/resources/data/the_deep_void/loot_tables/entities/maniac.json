@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "the_deep_void:double_barrel_shotgun",
+          "name": "the_deep_void:simple_gun_part",
           "weight": 20,
           "functions": [
             {
@@ -54,7 +54,7 @@
         {
           "type": "minecraft:item",
           "name": "the_deep_void:dark_steel_chainmail",
-          "weight": 50,
+          "weight": 33,
           "functions": [
             {
               "function": "set_count",
@@ -68,13 +68,27 @@
         {
           "type": "minecraft:item",
           "name": "the_deep_void:dark_cloth",
-          "weight": 50,
+          "weight": 33,
           "functions": [
             {
               "function": "set_count",
               "count": {
                 "min": 2,
                 "max": 6
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "the_deep_void:dark_steel_coin",
+          "weight": 33,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 4
               }
             }
           ]

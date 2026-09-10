@@ -157,6 +157,20 @@
               }
             }
           ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "the_deep_void:esoteric_tome",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "set_count",
+              "count": {
+                "min": 1,
+                "max": 1
+              }
+            }
+          ]
         }
       ]
     }

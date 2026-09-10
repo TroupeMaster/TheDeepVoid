@@ -56,6 +56,7 @@ public class PrisonGuardEntity extends Monster implements GeoEntity {
 	public static final EntityDataAccessor<Integer> DATA_jump = SynchedEntityData.defineId(PrisonGuardEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_roll = SynchedEntityData.defineId(PrisonGuardEntity.class, EntityDataSerializers.INT);
 	public static final EntityDataAccessor<Integer> DATA_shield = SynchedEntityData.defineId(PrisonGuardEntity.class, EntityDataSerializers.INT);
+	public static final EntityDataAccessor<Integer> DATA_whistle = SynchedEntityData.defineId(PrisonGuardEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -79,12 +80,13 @@ public class PrisonGuardEntity extends Monster implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "prison_guard");
+		this.entityData.define(TEXTURE, "prisonguard");
 		this.entityData.define(DATA_attackChance, 0);
 		this.entityData.define(DATA_push, 0);
 		this.entityData.define(DATA_jump, 0);
 		this.entityData.define(DATA_roll, 0);
 		this.entityData.define(DATA_shield, 0);
+		this.entityData.define(DATA_whistle, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -166,6 +168,7 @@ public class PrisonGuardEntity extends Monster implements GeoEntity {
 		compound.putInt("Datajump", this.entityData.get(DATA_jump));
 		compound.putInt("Dataroll", this.entityData.get(DATA_roll));
 		compound.putInt("Datashield", this.entityData.get(DATA_shield));
+		compound.putInt("Datawhistle", this.entityData.get(DATA_whistle));
 	}
 
 	@Override
@@ -183,6 +186,8 @@ public class PrisonGuardEntity extends Monster implements GeoEntity {
 			this.entityData.set(DATA_roll, compound.getInt("Dataroll"));
 		if (compound.contains("Datashield"))
 			this.entityData.set(DATA_shield, compound.getInt("Datashield"));
+		if (compound.contains("Datawhistle"))
+			this.entityData.set(DATA_whistle, compound.getInt("Datawhistle"));
 	}
 
 	@Override

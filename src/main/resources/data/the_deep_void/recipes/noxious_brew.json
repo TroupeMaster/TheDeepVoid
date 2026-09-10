@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " ab",
+    "aca",
+    "da "
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:leather"
+    },
+    "b": {
+      "item": "minecraft:gold_ingot"
+    },
+    "c": {
+      "item": "the_deep_void:garum"
+    },
+    "d": {
+      "item": "the_deep_void:opened_dead_man_hand"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:noxious_brew",
+    "count": 1
+  }
+}

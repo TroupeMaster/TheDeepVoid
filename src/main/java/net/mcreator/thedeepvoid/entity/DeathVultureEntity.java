@@ -182,7 +182,7 @@ public class DeathVultureEntity extends Monster implements GeoEntity {
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
 		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.31);
-		builder = builder.add(Attributes.MAX_HEALTH, 55);
+		builder = builder.add(Attributes.MAX_HEALTH, 45);
 		builder = builder.add(Attributes.ARMOR, 4);
 		builder = builder.add(Attributes.ATTACK_DAMAGE, 6);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 50);

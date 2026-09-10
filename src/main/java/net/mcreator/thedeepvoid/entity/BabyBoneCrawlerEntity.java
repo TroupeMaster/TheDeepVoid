@@ -51,6 +51,7 @@ import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 
+import net.mcreator.thedeepvoid.procedures.BoneCrawlerAttackPlayerConditionProcedure;
 import net.mcreator.thedeepvoid.procedures.BabyBoneCrawlerNeutralRightClickedOnEntityProcedure;
 import net.mcreator.thedeepvoid.procedures.BabyBoneCrawlerDigInBoneProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
@@ -117,7 +118,27 @@ public class BabyBoneCrawlerEntity extends TamableAnimal implements GeoEntity {
 		this.goalSelector.addGoal(4, new RandomLookAroundGoal(this));
 		this.goalSelector.addGoal(5, new LeapAtTargetGoal(this, (float) 0.5));
 		this.goalSelector.addGoal(6, new FloatGoal(this));
-		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, Player.class, false, false));
+		this.targetSelector.addGoal(7, new NearestAttackableTargetGoal(this, Player.class, false, false) {
+			@Override
+			public boolean canUse() {
+				double x = BabyBoneCrawlerEntity.this.getX();
+				double y = BabyBoneCrawlerEntity.this.getY();
+				double z = BabyBoneCrawlerEntity.this.getZ();
+				Entity entity = BabyBoneCrawlerEntity.this;
+				Level world = BabyBoneCrawlerEntity.this.level();
+				return super.canUse() && BoneCrawlerAttackPlayerConditionProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = BabyBoneCrawlerEntity.this.getX();
+				double y = BabyBoneCrawlerEntity.this.getY();
+				double z = BabyBoneCrawlerEntity.this.getZ();
+				Entity entity = BabyBoneCrawlerEntity.this;
+				Level world = BabyBoneCrawlerEntity.this.level();
+				return super.canContinueToUse() && BoneCrawlerAttackPlayerConditionProcedure.execute(entity);
+			}
+		});
 	}
 
 	@Override

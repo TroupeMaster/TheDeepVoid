@@ -90,7 +90,7 @@ public class ShankPrisonerEntity extends Monster implements GeoEntity {
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.1, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
-				return 6.25;
+				return 3.326976;
 			}
 		});
 		this.goalSelector.addGoal(2, new RandomStrollGoal(this, 0.7));
@@ -147,12 +147,11 @@ public class ShankPrisonerEntity extends Monster implements GeoEntity {
 
 	public static AttributeSupplier.Builder createAttributes() {
 		AttributeSupplier.Builder builder = Mob.createMobAttributes();
-		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.26);
+		builder = builder.add(Attributes.MOVEMENT_SPEED, 0.22);
 		builder = builder.add(Attributes.MAX_HEALTH, 45);
 		builder = builder.add(Attributes.ARMOR, 5);
-		builder = builder.add(Attributes.ATTACK_DAMAGE, 7);
+		builder = builder.add(Attributes.ATTACK_DAMAGE, 6);
 		builder = builder.add(Attributes.FOLLOW_RANGE, 10);
-		builder = builder.add(Attributes.KNOCKBACK_RESISTANCE, 0.5);
 		return builder;
 	}
 

@@ -32,12 +32,9 @@ public class DebilitatedUsesItemsProcedure {
 	private static void execute(@Nullable Event event, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TheDeepVoidModMobEffects.DEBILITATED.get()) && !itemstack.getItem().isEdible()) {
-			if (Math.random() < 0.68) {
-				if (event != null && event.isCancelable()) {
-					event.setCanceled(true);
-				}
-			}
+		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TheDeepVoidModMobEffects.DEBILITATED.get())) {
+			if (entity instanceof Player _player)
+				_player.getCooldowns().addCooldown(itemstack.getItem(), 30);
 		}
 		if (entity instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(TheDeepVoidModMobEffects.TERROR.get())) {
 			if (entity instanceof Player _player)

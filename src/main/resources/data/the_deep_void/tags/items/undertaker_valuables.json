@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "the_deep_void:hammer_and_chisel",
+    "the_deep_void:licker_hook",
+    "the_deep_void:smithing_template_onyx",
+    "the_deep_void:smithing_template_grim",
+    "the_deep_void:smithing_template_bismuth",
+    "the_deep_void:ferryman_lantern",
+    "the_deep_void:rotten_sickle",
+    "the_deep_void:simple_gun_part",
+    "the_deep_void:bright_flare",
+    "the_deep_void:bismuth_flare",
+    "the_deep_void:hexed_doll",
+    "the_deep_void:death_whistle",
+    "the_deep_void:lurking_music_disc",
+    "the_deep_void:chasms_music_disc",
+    "the_deep_void:gravedigger_shovel",
+    "the_deep_void:rotten_crate",
+    "the_deep_void:coffin",
+    "minecraft:netherite_scrap",
+    "the_deep_void:ceremonial_dagger",
+    "the_deep_void:bone_climbing_pick",
+    "the_deep_void:necrosed_skin_backpack",
+    "the_deep_void:onyx_naginata",
+    "the_deep_void:penitent_cross",
+    "the_deep_void:coin_bag"
+  ]
+}

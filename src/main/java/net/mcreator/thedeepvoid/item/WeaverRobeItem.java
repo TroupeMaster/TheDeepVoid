@@ -72,7 +72,7 @@ public abstract class WeaverRobeItem extends ArmorItem {
 
 		@Override
 		public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
-			return "the_deep_void:textures/models/armor/weaver_robe__layer_1.png";
+			return "the_deep_void:textures/models/armor/spite__layer_1.png";
 		}
 
 		@Override

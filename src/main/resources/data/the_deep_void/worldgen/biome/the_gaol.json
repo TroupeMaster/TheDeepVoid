@@ -3,12 +3,10 @@
   "temperature": 0.8,
   "downfall": 0,
   "effects": {
-    "ambient_sound": "the_deep_void:under_the_asylum",
-    "mood_sound": {
+    "ambient_sound": "the_deep_void:gaol_of_heretics_loop",
+    "additions_sound": {
       "sound": "the_deep_void:quiet_slow_whisper",
-      "tick_delay": 300,
-      "offset": 8,
-      "block_search_extent": 2
+      "tick_chance": 0.0111
     },
     "music": {
       "sound": "intentionally_empty",
@@ -20,7 +18,7 @@
       "options": {
         "type": "white_ash"
       },
-      "probability": 0.15
+      "probability": 0.008
     },
     "foliage_color": -16053236,
     "grass_color": -16053236,

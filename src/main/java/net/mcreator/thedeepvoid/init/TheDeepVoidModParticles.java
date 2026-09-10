@@ -20,14 +20,15 @@ import net.mcreator.thedeepvoid.client.particle.SoulFusedBloodParticle;
 import net.mcreator.thedeepvoid.client.particle.ShotgunShellParticle;
 import net.mcreator.thedeepvoid.client.particle.ShadeDropParticle;
 import net.mcreator.thedeepvoid.client.particle.RedSmokeParticle;
-import net.mcreator.thedeepvoid.client.particle.RedGreatSlashParticle;
 import net.mcreator.thedeepvoid.client.particle.PusSporeParticle;
 import net.mcreator.thedeepvoid.client.particle.PlagueSmokeParticle;
 import net.mcreator.thedeepvoid.client.particle.PentagramParticle;
+import net.mcreator.thedeepvoid.client.particle.MorningstarChainParticle;
 import net.mcreator.thedeepvoid.client.particle.MobRespawnParticle;
 import net.mcreator.thedeepvoid.client.particle.LunaticEyeParticle;
 import net.mcreator.thedeepvoid.client.particle.LickerTongueParticle;
 import net.mcreator.thedeepvoid.client.particle.LastingBloodParticle;
+import net.mcreator.thedeepvoid.client.particle.IchorSmokeParticle;
 import net.mcreator.thedeepvoid.client.particle.IchorLavaParticle;
 import net.mcreator.thedeepvoid.client.particle.IchorFlameParticle;
 import net.mcreator.thedeepvoid.client.particle.HydraSweepParticle;
@@ -45,6 +46,7 @@ import net.mcreator.thedeepvoid.client.particle.EldritchEyeParticle;
 import net.mcreator.thedeepvoid.client.particle.DeepslatePebbleParticle;
 import net.mcreator.thedeepvoid.client.particle.DarkTearParticle;
 import net.mcreator.thedeepvoid.client.particle.DarkSweepParticle;
+import net.mcreator.thedeepvoid.client.particle.ConnectingDarkSteelChainParticle;
 import net.mcreator.thedeepvoid.client.particle.ChainParticle;
 import net.mcreator.thedeepvoid.client.particle.BrokenBoneParticle;
 import net.mcreator.thedeepvoid.client.particle.BrightSmokeParticle;
@@ -79,7 +81,6 @@ public class TheDeepVoidModParticles {
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.HOOK_LINE.get(), HookLineParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.GRIM_HOOK_LINE.get(), GrimHookLineParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.SOUL_HOOK_LINE.get(), SoulHookLineParticle::provider);
-		event.registerSpriteSet(TheDeepVoidModParticleTypes.RED_GREAT_SLASH.get(), RedGreatSlashParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.SOUL_FUSED_BLOOD.get(), SoulFusedBloodParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.MOB_RESPAWN.get(), MobRespawnParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.AMBROSIA_DROPLET.get(), AmbrosiaDropletParticle::provider);
@@ -108,5 +109,8 @@ public class TheDeepVoidModParticles {
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.LASTING_BLOOD.get(), LastingBloodParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.HYDRA_SWEEP.get(), HydraSweepParticle::provider);
 		event.registerSpriteSet(TheDeepVoidModParticleTypes.ABERRATION_HAND.get(), AberrationHandParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.ICHOR_SMOKE.get(), IchorSmokeParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.CONNECTING_DARK_STEEL_CHAIN.get(), ConnectingDarkSteelChainParticle::provider);
+		event.registerSpriteSet(TheDeepVoidModParticleTypes.MORNINGSTAR_CHAIN.get(), MorningstarChainParticle::provider);
 	}
 }

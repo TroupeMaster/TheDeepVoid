@@ -128,8 +128,6 @@ public class CrawlerTickUpdateProcedure {
 		}
 		WeaverBossMusicProcedure.execute(world, x, y, z, entity);
 		if (!(!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 80, 80, 80), e -> true).isEmpty()) && DeepVoidConfigConfiguration.BOSSIDLES.get() == true) {
-			if (!entity.level().isClientSide())
-				entity.discard();
 			if (world instanceof ServerLevel _level) {
 				Entity entityToSpawn = TheDeepVoidModEntities.SLEEPING_PRIMORDIAL_CRAWLER.get().spawn(_level, BlockPos.containing(x, y, z), MobSpawnType.MOB_SUMMONED);
 				if (entityToSpawn != null) {
@@ -144,6 +142,8 @@ public class CrawlerTickUpdateProcedure {
 					_level.getServer().getCommands().performPrefixedCommand(new CommandSourceStack(CommandSource.NULL, new Vec3(x, y, z), Vec2.ZERO, _level, 4, "", Component.literal(""), _level.getServer(), null).withSuppressedOutput(),
 							"stopsound @a record the_deep_void:the_haunt");
 			});
+			if (!entity.level().isClientSide())
+				entity.discard();
 		}
 		if (!world.getEntitiesOfClass(Player.class, AABB.ofSize(new Vec3(x, y, z), 50, 50, 50), e -> true).isEmpty()) {
 			{

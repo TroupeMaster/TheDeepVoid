@@ -65,6 +65,7 @@ import net.mcreator.thedeepvoid.procedures.TamedMotherBoneCrawlerRightClickedOnE
 import net.mcreator.thedeepvoid.procedures.TamedMotherBoneCrawlerOnEntityTickUpdateProcedure;
 import net.mcreator.thedeepvoid.procedures.MotherBoneCrawlerEntityIsHurtProcedure;
 import net.mcreator.thedeepvoid.procedures.MotherBoneCrawlerEntityDiesProcedure;
+import net.mcreator.thedeepvoid.procedures.BoneCrawlerAttackPlayerConditionProcedure;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
 
 import java.util.List;
@@ -132,7 +133,48 @@ public class MotherBoneCrawlerEntity extends TamableAnimal implements GeoEntity 
 		this.goalSelector.addGoal(7, new AvoidEntityGoal<>(this, StalkerEntity.class, (float) 60, 1.2, 1.2));
 		this.targetSelector.addGoal(8, new OwnerHurtTargetGoal(this));
 		this.goalSelector.addGoal(9, new OwnerHurtByTargetGoal(this));
-		this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, Player.class, false, false));
+		this.targetSelector.addGoal(10, new NearestAttackableTargetGoal(this, Player.class, false, false) {
+			@Override
+			public boolean canUse() {
+				double x = MotherBoneCrawlerEntity.this.getX();
+				double y = MotherBoneCrawlerEntity.this.getY();
+				double z = MotherBoneCrawlerEntity.this.getZ();
+				Entity entity = MotherBoneCrawlerEntity.this;
+				Level world = MotherBoneCrawlerEntity.this.level();
+				return super.canUse() && BoneCrawlerAttackPlayerConditionProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = MotherBoneCrawlerEntity.this.getX();
+				double y = MotherBoneCrawlerEntity.this.getY();
+				double z = MotherBoneCrawlerEntity.this.getZ();
+				Entity entity = MotherBoneCrawlerEntity.this;
+				Level world = MotherBoneCrawlerEntity.this.level();
+				return super.canContinueToUse() && BoneCrawlerAttackPlayerConditionProcedure.execute(entity);
+			}
+		});
+		this.targetSelector.addGoal(11, new NearestAttackableTargetGoal(this, LightEntity.class, false, true) {
+			@Override
+			public boolean canUse() {
+				double x = MotherBoneCrawlerEntity.this.getX();
+				double y = MotherBoneCrawlerEntity.this.getY();
+				double z = MotherBoneCrawlerEntity.this.getZ();
+				Entity entity = MotherBoneCrawlerEntity.this;
+				Level world = MotherBoneCrawlerEntity.this.level();
+				return super.canUse() && BoneCrawlerAttackPlayerConditionProcedure.execute(entity);
+			}
+
+			@Override
+			public boolean canContinueToUse() {
+				double x = MotherBoneCrawlerEntity.this.getX();
+				double y = MotherBoneCrawlerEntity.this.getY();
+				double z = MotherBoneCrawlerEntity.this.getZ();
+				Entity entity = MotherBoneCrawlerEntity.this;
+				Level world = MotherBoneCrawlerEntity.this.level();
+				return super.canContinueToUse() && BoneCrawlerAttackPlayerConditionProcedure.execute(entity);
+			}
+		});
 	}
 
 	@Override

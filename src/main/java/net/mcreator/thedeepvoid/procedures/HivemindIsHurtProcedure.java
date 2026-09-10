@@ -10,6 +10,8 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.damagesource.DamageTypes;
+import net.minecraft.world.damagesource.DamageSource;
 
 import net.mcreator.thedeepvoid.entity.MisanthropicHivemindEntity;
 import net.mcreator.thedeepvoid.entity.HivemindTentaclesEntity;
@@ -24,16 +26,17 @@ public class HivemindIsHurtProcedure {
 	@SubscribeEvent
 	public static void onEntityAttacked(LivingAttackEvent event) {
 		if (event != null && event.getEntity() != null) {
-			execute(event, event.getEntity().level(), event.getEntity(), event.getAmount());
+			execute(event, event.getEntity().level(), event.getEntity().getX(), event.getEntity().getY(), event.getEntity().getZ(), event.getSource(), event.getEntity(), event.getSource().getDirectEntity(), event.getSource().getEntity(),
+					event.getAmount());
 		}
 	}
 
-	public static void execute(LevelAccessor world, Entity entity, double amount) {
-		execute(null, world, entity, amount);
+	public static void execute(LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity immediatesourceentity, Entity sourceentity, double amount) {
+		execute(null, world, x, y, z, damagesource, entity, immediatesourceentity, sourceentity, amount);
 	}
 
-	private static void execute(@Nullable Event event, LevelAccessor world, Entity entity, double amount) {
-		if (entity == null)
+	private static void execute(@Nullable Event event, LevelAccessor world, double x, double y, double z, DamageSource damagesource, Entity entity, Entity immediatesourceentity, Entity sourceentity, double amount) {
+		if (damagesource == null || entity == null || immediatesourceentity == null || sourceentity == null)
 			return;
 		if (entity instanceof MisanthropicHivemindEntity && (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) - amount <= 0
 				&& (entity instanceof MisanthropicHivemindEntity _datEntL2 && _datEntL2.getEntityData().get(MisanthropicHivemindEntity.DATA_skipSummons)) == false
@@ -50,6 +53,14 @@ public class HivemindIsHurtProcedure {
 			}
 			if (entity instanceof MisanthropicHivemindEntity _datEntSetL)
 				_datEntSetL.getEntityData().set(MisanthropicHivemindEntity.DATA_skipSummons, true);
+		} else if (entity instanceof MisanthropicHivemindEntity && !world.getEntitiesOfClass(HivemindTentaclesEntity.class, AABB.ofSize(new Vec3(x, y, z), 4, 4, 4), e -> true).isEmpty()) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			}
+		} else if (entity instanceof HivemindTentaclesEntity && (!(immediatesourceentity == sourceentity) || damagesource.is(DamageTypes.MAGIC))) {
+			if (event != null && event.isCancelable()) {
+				event.setCanceled(true);
+			}
 		}
 	}
 }

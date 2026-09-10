@@ -6,7 +6,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ClipContext;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -26,6 +26,7 @@ import net.mcreator.thedeepvoid.item.ApostasyItem;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModParticleTypes;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModEntities;
+import net.mcreator.thedeepvoid.init.TheDeepVoidModEnchantments;
 import net.mcreator.thedeepvoid.entity.SoulFusedShotEntity;
 import net.mcreator.thedeepvoid.configuration.DeepVoidConfigConfiguration;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
@@ -34,10 +35,10 @@ public class ApostasyRightClickedProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity, ItemStack itemstack) {
 		if (entity == null)
 			return;
-		if (!((entity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == Items.SPYGLASS)) {
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == itemstack.getItem()) {
 			if (itemstack.getOrCreateTag().getDouble("deep_void:rounds") > 0) {
 				if (entity instanceof Player _player)
-					_player.getCooldowns().addCooldown(itemstack.getItem(), 25);
+					_player.getCooldowns().addCooldown(itemstack.getItem(), (int) (EnchantmentHelper.getItemEnchantmentLevel(TheDeepVoidModEnchantments.MARKSMAN.get(), itemstack) != 0 ? 45 : 25));
 				if (itemstack.getItem() instanceof ApostasyItem)
 					itemstack.getOrCreateTag().putString("geckoAnim", "animation.apostasy_shoot");
 				if (world instanceof Level)
@@ -106,7 +107,9 @@ public class ApostasyRightClickedProcedure {
 						}
 					}
 				}
-				entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entity.getYRot() + 180)) * (-1.7)), (Math.sin(Math.toRadians(0 - entity.getXRot())) * (-0.8)), (Math.cos(Math.toRadians(entity.getYRot())) * (-1.7))));
+				if (!(EnchantmentHelper.getItemEnchantmentLevel(TheDeepVoidModEnchantments.MARKSMAN.get(), itemstack) != 0)) {
+					entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entity.getYRot() + 180)) * (-1.7)), (Math.sin(Math.toRadians(0 - entity.getXRot())) * (-0.8)), (Math.cos(Math.toRadians(entity.getYRot())) * (-1.7))));
+				}
 				itemstack.getOrCreateTag().putDouble("deep_void:rounds", (itemstack.getOrCreateTag().getDouble("deep_void:rounds") - 1));
 			} else if (itemstack.getOrCreateTag().getDouble("deep_void:rounds") <= 0) {
 				if (entity instanceof Player _player)

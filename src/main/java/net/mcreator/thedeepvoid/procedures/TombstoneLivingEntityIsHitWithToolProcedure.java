@@ -22,6 +22,7 @@ import net.minecraft.core.BlockPos;
 import net.mcreator.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.mcreator.thedeepvoid.entity.LightEntity;
 import net.mcreator.thedeepvoid.entity.DoomingTombstoneEntity;
+import net.mcreator.thedeepvoid.entity.DoomingCoffinEntity;
 import net.mcreator.thedeepvoid.TheDeepVoidMod;
 
 import java.util.List;
@@ -70,7 +71,8 @@ public class TombstoneLivingEntityIsHitWithToolProcedure {
 				final Vec3 _center = new Vec3((entity.getX()), (entity.getY()), (entity.getZ()));
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(20 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
-					if (entityiterator instanceof LivingEntity && !(entityiterator == sourceentity) && !(entityiterator instanceof DoomingTombstoneEntity) && !(entityiterator instanceof LightEntity)) {
+					if (entityiterator instanceof LivingEntity && !(entityiterator == sourceentity) && !(entityiterator instanceof DoomingTombstoneEntity) && !(entityiterator instanceof DoomingCoffinEntity)
+							&& !(entityiterator instanceof LightEntity)) {
 						TheDeepVoidMod.queueServerWork(Mth.nextInt(RandomSource.create(), 0, 20), () -> {
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
 								_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.DOOM.get(), 20, 0));
