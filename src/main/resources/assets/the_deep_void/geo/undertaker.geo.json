@@ -6,7 +6,7 @@
 				"identifier": "geometry.unknown",
 				"texture_width": 256,
 				"texture_height": 256,
-				"visible_bounds_width": 3,
+				"visible_bounds_width": 4,
 				"visible_bounds_height": 4.5,
 				"visible_bounds_offset": [0, 1.75, 0]
 			},
@@ -21,35 +21,13 @@
 					"pivot": [0, 0, 13],
 					"cubes": [
 						{"origin": [-7, 0, 9], "size": [14, 2, 8], "uv": [40, 33]},
-						{
-							"origin": [-8, 1, 8.99],
-							"size": [16, 48, 0],
-							"uv": {
-								"north": {"uv": [56, 86], "uv_size": [16, 48]},
-								"east": {"uv": [0, 0], "uv_size": [0, 48]},
-								"south": {"uv": [72, 88], "uv_size": [16, 48]},
-								"west": {"uv": [0, 0], "uv_size": [0, 48]},
-								"up": {"uv": [0, 0], "uv_size": [16, 0]},
-								"down": {"uv": [0, 0], "uv_size": [16, 0]}
-							}
-						},
-						{
-							"origin": [-8, 1, 17.01],
-							"size": [16, 48, 0],
-							"uv": {
-								"north": {"uv": [56, 86], "uv_size": [16, 48]},
-								"east": {"uv": [0, 0], "uv_size": [0, 48]},
-								"south": {"uv": [72, 88], "uv_size": [16, 48]},
-								"west": {"uv": [0, 0], "uv_size": [0, 48]},
-								"up": {"uv": [0, 0], "uv_size": [16, 0]},
-								"down": {"uv": [0, 0], "uv_size": [16, 0]}
-							}
-						},
+						{"origin": [-8, 1, 8.99], "size": [16, 48, 0], "uv": [72, 88]},
 						{"origin": [-6.5, 48.25, 9], "size": [13, 2, 8], "uv": [0, 70]},
 						{"origin": [6, 0, 9], "size": [2, 41, 8], "pivot": [6, 0, 13], "rotation": [0, 0, 2.5], "uv": [0, 0]},
 						{"origin": [-8, 0, 9], "size": [2, 41, 8], "pivot": [-6, 0, 13], "rotation": [0, 0, -2.5], "uv": [20, 0]},
 						{"origin": [-9.8, 40.2, 9], "size": [2, 10, 8], "pivot": [-7.9, 40.45, 13], "rotation": [0, 0, 20], "uv": [74, 70]},
-						{"origin": [7.8, 40.2, 9], "size": [2, 10, 8], "pivot": [7.9, 40.45, 13], "rotation": [0, 0, -20], "uv": [0, 80]}
+						{"origin": [7.8, 40.2, 9], "size": [2, 10, 8], "pivot": [7.9, 40.45, 13], "rotation": [0, 0, -20], "uv": [0, 80]},
+						{"origin": [-8, 1, 17.01], "size": [16, 48, 0], "uv": [72, 88]}
 					]
 				},
 				{

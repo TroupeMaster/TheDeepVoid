@@ -92,7 +92,7 @@ public class UndertakerEntity extends PathfinderMob implements GeoEntity {
 		super.defineSynchedData();
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
-		this.entityData.define(TEXTURE, "undertaker");
+		this.entityData.define(TEXTURE, "undertakernew");
 		this.entityData.define(DATA_despawn, -1);
 		this.entityData.define(DATA_empty, false);
 		this.entityData.define(DATA_dialogueCooldown, 0);

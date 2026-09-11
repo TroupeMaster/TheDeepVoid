@@ -59,37 +59,43 @@ public class ThrownNoxiousBrewProjectileHitsLivingEntityProcedure {
 				}
 			}
 			if (entity instanceof UndertakerEntity) {
-				if (entity instanceof Mob) {
-					try {
-						((Mob) entity).setTarget(null);
-					} catch (Exception e) {
-						e.printStackTrace();
-					}
-				}
-				if ((entity instanceof UndertakerEntity _datEntL4 && _datEntL4.getEntityData().get(UndertakerEntity.DATA_empty)) == true) {
-					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal(("<" + Component.translatable("entity.the_deep_void.undertaker").getString() + "> " + Component.translatable("entity.the_deep_void.undertaker.receive_brew_empty").getString())),
-								false);
-					if (sourceentity instanceof Player _player) {
-						ItemStack _setstack = new ItemStack(TheDeepVoidModItems.DARK_STEEL_COIN.get()).copy();
-						_setstack.setCount(Mth.nextInt(RandomSource.create(), 8, 16));
-						ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
-					}
-				} else {
-					if (world instanceof ServerLevel _serverLevel) {
-						Entity entityinstance = TheDeepVoidModEntities.UNDERTAKER.get().create(_serverLevel, null, null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED, false, false);
-						if (entityinstance != null) {
-							entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
-							if (entityinstance instanceof UndertakerEntity _datEntSetL)
-								_datEntSetL.getEntityData().set(UndertakerEntity.DATA_talkedTo, true);
-							entityinstance.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((sourceentity.getX()), (sourceentity.getY() + 1.5), (sourceentity.getZ())));
-							_serverLevel.addFreshEntity(entityinstance);
+				if (!(entity instanceof LivingEntity _livEnt3 && _livEnt3.hasEffect(MobEffects.MOVEMENT_SLOWDOWN))) {
+					if (entity instanceof Mob) {
+						try {
+							((Mob) entity).setTarget(null);
+						} catch (Exception e) {
+							e.printStackTrace();
 						}
 					}
-					if (sourceentity instanceof Player _player && !_player.level().isClientSide())
-						_player.displayClientMessage(Component.literal(("<" + Component.translatable("entity.the_deep_void.undertaker").getString() + "> " + Component.translatable("entity.the_deep_void.undertaker.receive_brew").getString())), false);
-					if (!entity.level().isClientSide())
-						entity.discard();
+					if ((entity instanceof UndertakerEntity _datEntL5 && _datEntL5.getEntityData().get(UndertakerEntity.DATA_empty)) == true) {
+						if (sourceentity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(
+									Component.literal(("<" + Component.translatable("entity.the_deep_void.undertaker").getString() + "> " + Component.translatable("entity.the_deep_void.undertaker.receive_brew_empty").getString())), false);
+						if (sourceentity instanceof Player _player) {
+							ItemStack _setstack = new ItemStack(TheDeepVoidModItems.DARK_STEEL_COIN.get()).copy();
+							_setstack.setCount(Mth.nextInt(RandomSource.create(), 4, 8));
+							ItemHandlerHelper.giveItemToPlayer(_player, _setstack);
+						}
+					} else {
+						if (world instanceof ServerLevel _serverLevel) {
+							Entity entityinstance = TheDeepVoidModEntities.UNDERTAKER.get().create(_serverLevel, null, null, BlockPos.containing(entity.getX(), entity.getY(), entity.getZ()), MobSpawnType.MOB_SUMMONED, false, false);
+							if (entityinstance != null) {
+								entityinstance.setYRot(world.getRandom().nextFloat() * 360.0F);
+								if (entityinstance instanceof UndertakerEntity _datEntSetL)
+									_datEntSetL.getEntityData().set(UndertakerEntity.DATA_talkedTo, true);
+								if (entity.getPersistentData().getDouble("conversionQut") == 0) {
+									entityinstance.getPersistentData().putBoolean("noConversion", true);
+								}
+								entityinstance.lookAt(EntityAnchorArgument.Anchor.EYES, new Vec3((sourceentity.getX()), (sourceentity.getY() + 1.5), (sourceentity.getZ())));
+								_serverLevel.addFreshEntity(entityinstance);
+							}
+						}
+						if (sourceentity instanceof Player _player && !_player.level().isClientSide())
+							_player.displayClientMessage(Component.literal(("<" + Component.translatable("entity.the_deep_void.undertaker").getString() + "> " + Component.translatable("entity.the_deep_void.undertaker.receive_brew").getString())),
+									false);
+						if (!entity.level().isClientSide())
+							entity.discard();
+					}
 				}
 			} else {
 				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())

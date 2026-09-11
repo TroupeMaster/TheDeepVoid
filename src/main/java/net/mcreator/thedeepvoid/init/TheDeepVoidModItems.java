@@ -32,6 +32,7 @@ import net.mcreator.thedeepvoid.procedures.OnyxFlareGunPropertyValueProviderProc
 import net.mcreator.thedeepvoid.procedures.NervesOfSteelPropertyValueProviderProcedure;
 import net.mcreator.thedeepvoid.procedures.NervesOfSteelPropertyValueProvider2Procedure;
 import net.mcreator.thedeepvoid.procedures.KnivesGlovePropertyValueProviderProcedure;
+import net.mcreator.thedeepvoid.procedures.HunterBowValueProviderProcedure;
 import net.mcreator.thedeepvoid.procedures.HammerAndChiselPropertyValueProviderProcedure;
 import net.mcreator.thedeepvoid.procedures.ClawScythePropertyValueProviderProcedure;
 import net.mcreator.thedeepvoid.procedures.BloodyChainsawPropertyValueProviderProcedure;
@@ -217,6 +218,7 @@ import net.mcreator.thedeepvoid.item.IchorCarverItem;
 import net.mcreator.thedeepvoid.item.HuntersItem;
 import net.mcreator.thedeepvoid.item.HunterHideItem;
 import net.mcreator.thedeepvoid.item.HunterClawsItem;
+import net.mcreator.thedeepvoid.item.HunterBowItem;
 import net.mcreator.thedeepvoid.item.HiveWatcherTreasureBagItem;
 import net.mcreator.thedeepvoid.item.HexedNeedleItem;
 import net.mcreator.thedeepvoid.item.HexedDollItem;
@@ -1393,6 +1395,7 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> DARK_STEEL_ORE = block(TheDeepVoidModBlocks.DARK_STEEL_ORE);
 	public static final RegistryObject<Item> DARK_STEEL_NUGGET = REGISTRY.register("dark_steel_nugget", () -> new DarkSteelNuggetItem());
 	public static final RegistryObject<Item> NOXIOUS_BREW = REGISTRY.register("noxious_brew", () -> new NoxiousBrewItem());
+	public static final RegistryObject<Item> HUNTER_BOW = REGISTRY.register("hunter_bow", () -> new HunterBowItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items
@@ -1437,6 +1440,7 @@ public class TheDeepVoidModItems {
 					(itemStackToRender, clientWorld, entity, itemEntityId) -> (float) BallAndChainPropertyValueProviderProcedure.execute(itemStackToRender));
 			ItemProperties.register(HAMMER_AND_CHISEL.get(), new ResourceLocation("the_deep_void:hammer_and_chisel_state"),
 					(itemStackToRender, clientWorld, entity, itemEntityId) -> (float) HammerAndChiselPropertyValueProviderProcedure.execute(itemStackToRender));
+			ItemProperties.register(HUNTER_BOW.get(), new ResourceLocation("the_deep_void:hunter_bow_pulling"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) HunterBowValueProviderProcedure.execute(itemStackToRender));
 		});
 	}
 }

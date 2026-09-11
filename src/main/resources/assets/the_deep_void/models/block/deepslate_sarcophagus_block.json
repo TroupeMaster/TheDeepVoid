@@ -1,9 +1,9 @@
 {
-  "parent": "the_deep_void:custom/deepslatesarcophagusnew",
+  "parent": "the_deep_void:custom/deepslatesarcophagusnewer",
   "textures": {
-    "all": "the_deep_void:block/deepslatesarcophagusnew",
+    "all": "the_deep_void:block/deepslatesarcophagusnewer",
     "particle": "the_deep_void:block/cobbled_deepslate",
-    "0": "the_deep_void:block/deepslatesarcophagusnew"
+    "0": "the_deep_void:block/deepslatesarcophagusnewer"
   },
   "render_type": "solid"
 }

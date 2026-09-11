@@ -17,7 +17,7 @@ import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 
 public class ForbiddenFruitItem extends Item {
 	public ForbiddenFruitItem() {
-		super(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(4).saturationMod(1f).build()));
+		super(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON).food((new FoodProperties.Builder()).nutrition(5).saturationMod(1f).build()));
 	}
 
 	@Override

@@ -6,6 +6,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffect;
 
 import net.mcreator.thedeepvoid.procedures.IchorBurnOnEffectActiveTickProcedure;
+import net.mcreator.thedeepvoid.procedures.IchorBurnActiveTickConditionProcedure;
 
 public class IchorBurnMobEffect extends MobEffect {
 	public IchorBurnMobEffect() {
@@ -14,11 +15,11 @@ public class IchorBurnMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		IchorBurnOnEffectActiveTickProcedure.execute(entity.level(), entity);
+		IchorBurnOnEffectActiveTickProcedure.execute(entity.level(), entity, amplifier);
 	}
 
 	@Override
 	public boolean isDurationEffectTick(int duration, int amplifier) {
-		return true;
+		return IchorBurnActiveTickConditionProcedure.execute(duration);
 	}
 }

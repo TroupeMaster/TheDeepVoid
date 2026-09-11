@@ -28,7 +28,7 @@ import java.util.List;
 
 public class BloodBowItem extends Item {
 	public BloodBowItem() {
-		super(new Item.Properties().durability(850).fireResistant().rarity(Rarity.COMMON));
+		super(new Item.Properties().durability(850).fireResistant().rarity(Rarity.UNCOMMON));
 	}
 
 	@Override

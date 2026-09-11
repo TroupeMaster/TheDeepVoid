@@ -24,7 +24,7 @@ public class UndertakerOnInitialEntitySpawnProcedure {
 		double rndConvert = 0;
 		if (world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:grim_canopy")) || world.getBiome(BlockPos.containing(x, y, z)).is(new ResourceLocation("the_deep_void:watching_undergrowth"))) {
 			if (entity instanceof UndertakerEntity animatable)
-				animatable.setTexture("undertaker_shot");
+				animatable.setTexture("undertakershotnew");
 		} //Roll the first trade
 		for (int index0 = 0; index0 < 16; index0++) {
 			temp = ForgeRegistries.ITEMS.getKey((ForgeRegistries.ITEMS.tags().getTag(ItemTags.create(new ResourceLocation("the_deep_void:undertaker_void_misc"))).getRandomElement(RandomSource.create()).orElseGet(() -> Items.AIR))).toString();

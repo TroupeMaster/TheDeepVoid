@@ -62,6 +62,7 @@ import net.mcreator.thedeepvoid.potion.BrokenArmorMobEffect;
 import net.mcreator.thedeepvoid.potion.BrainFogMobEffect;
 import net.mcreator.thedeepvoid.potion.BlossomMobEffect;
 import net.mcreator.thedeepvoid.potion.BloodBoilMobEffect;
+import net.mcreator.thedeepvoid.potion.BarbedTipsMobEffect;
 import net.mcreator.thedeepvoid.potion.AmbrosiaWithdrawalMobEffect;
 import net.mcreator.thedeepvoid.potion.AdaptiveMobEffect;
 import net.mcreator.thedeepvoid.potion.AdaptedMobEffect;
@@ -126,4 +127,5 @@ public class TheDeepVoidModMobEffects {
 	public static final RegistryObject<MobEffect> PIT_SHAKE = REGISTRY.register("pit_shake", () -> new PitShakeMobEffect());
 	public static final RegistryObject<MobEffect> SUNDER = REGISTRY.register("sunder", () -> new SunderMobEffect());
 	public static final RegistryObject<MobEffect> DESTINED_TO_DIE = REGISTRY.register("destined_to_die", () -> new DestinedToDieMobEffect());
+	public static final RegistryObject<MobEffect> BARBED_TIPS = REGISTRY.register("barbed_tips", () -> new BarbedTipsMobEffect());
 }

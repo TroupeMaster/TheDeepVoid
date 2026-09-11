@@ -160,6 +160,7 @@ import net.mcreator.thedeepvoid.client.renderer.BigShadeArrowRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BigOverseerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BigEyeRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BeholderRenderer;
+import net.mcreator.thedeepvoid.client.renderer.BarbedArrowRenderer;
 import net.mcreator.thedeepvoid.client.renderer.BabyBoneCrawlerRenderer;
 import net.mcreator.thedeepvoid.client.renderer.ApostleCloneRenderer;
 import net.mcreator.thedeepvoid.client.renderer.ApostleBossRenderer;
@@ -360,5 +361,6 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.UNDERTAKER.get(), UndertakerRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.DOOMING_COFFIN.get(), DoomingCoffinRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.THROWN_NOXIOUS_BREW.get(), ThrownItemRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.BARBED_ARROW.get(), BarbedArrowRenderer::new);
 	}
 }

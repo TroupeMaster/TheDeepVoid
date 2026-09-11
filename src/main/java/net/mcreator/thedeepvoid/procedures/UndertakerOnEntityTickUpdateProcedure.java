@@ -18,6 +18,9 @@ public class UndertakerOnEntityTickUpdateProcedure {
 			return;
 		boolean success = false;
 		UndertakerAttacksProcedure.execute(world, entity);
+		if (entity.getPersistentData().getBoolean("noConversion") == true && entity.getPersistentData().getDouble("conversionQut") != 0) {
+			entity.getPersistentData().putDouble("conversionQut", 0);
+		}
 		if ((entity instanceof UndertakerEntity _datEntI ? _datEntI.getEntityData().get(UndertakerEntity.DATA_despawn) : 0) > 0) {
 			if (entity instanceof UndertakerEntity _datEntSetI)
 				_datEntSetI.getEntityData().set(UndertakerEntity.DATA_despawn, (int) ((entity instanceof UndertakerEntity _datEntI ? _datEntI.getEntityData().get(UndertakerEntity.DATA_despawn) : 0) - 1));
@@ -41,7 +44,7 @@ public class UndertakerOnEntityTickUpdateProcedure {
 					_datEntSetI.getEntityData().set(UndertakerEntity.DATA_despawn, 4000);
 			}
 		}
-		if ((entity instanceof UndertakerEntity _datEntL9 && _datEntL9.getEntityData().get(UndertakerEntity.DATA_empty)) == false && entity.getPersistentData().getDouble("firstTradeQut") == 0
+		if ((entity instanceof UndertakerEntity _datEntL12 && _datEntL12.getEntityData().get(UndertakerEntity.DATA_empty)) == false && entity.getPersistentData().getDouble("firstTradeQut") == 0
 				&& entity.getPersistentData().getDouble("secondTradeQut") == 0 && entity.getPersistentData().getDouble("thirdTradeQut") == 0 && entity.getPersistentData().getDouble("fourthTradeQut") == 0
 				&& entity.getPersistentData().getDouble("potionTradeQut") == 0) {
 			if (entity instanceof UndertakerEntity _datEntSetL)

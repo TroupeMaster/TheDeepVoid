@@ -659,6 +659,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.NERVES_OF_STEEL.get());
 				tabData.accept(TheDeepVoidModItems.BLOOD_BOW.get());
 				tabData.accept(TheDeepVoidModItems.SHARPSHOOTER.get());
+				tabData.accept(TheDeepVoidModItems.HUNTER_BOW.get());
 				tabData.accept(TheDeepVoidModItems.BLACK_HOLE.get());
 				tabData.accept(TheDeepVoidModItems.ENDLESS_QUIVER.get());
 				tabData.accept(TheDeepVoidModItems.ARROW_OF_SPITE.get());

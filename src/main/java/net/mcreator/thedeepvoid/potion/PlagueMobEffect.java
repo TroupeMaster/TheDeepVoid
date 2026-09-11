@@ -6,6 +6,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffect;
 
 import net.mcreator.thedeepvoid.procedures.PlagueOnEffectActiveTickProcedure;
+import net.mcreator.thedeepvoid.procedures.PlagueActiveTickConditionProcedure;
 
 public class PlagueMobEffect extends MobEffect {
 	public PlagueMobEffect() {
@@ -14,11 +15,11 @@ public class PlagueMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		PlagueOnEffectActiveTickProcedure.execute(entity.level(), entity);
+		PlagueOnEffectActiveTickProcedure.execute(entity.level(), entity, amplifier);
 	}
 
 	@Override
 	public boolean isDurationEffectTick(int duration, int amplifier) {
-		return true;
+		return PlagueActiveTickConditionProcedure.execute(amplifier, duration);
 	}
 }

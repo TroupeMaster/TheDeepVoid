@@ -16,7 +16,7 @@ public class AbyssalMarkMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		AbyssalMarkOnEffectActiveTickProcedure.execute(entity);
+		AbyssalMarkOnEffectActiveTickProcedure.execute(entity, amplifier);
 	}
 
 	@Override

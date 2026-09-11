@@ -2,22 +2,25 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    " ab",
-    "aca",
-    "da "
+    "abc",
+    "bdb",
+    "eba"
   ],
   "key": {
     "a": {
-      "item": "minecraft:leather"
+      "item": "the_deep_void:mourner_hide"
     },
     "b": {
-      "item": "minecraft:gold_ingot"
+      "item": "minecraft:leather"
     },
     "c": {
-      "item": "the_deep_void:garum"
+      "item": "minecraft:gold_ingot"
     },
     "d": {
-      "item": "the_deep_void:opened_dead_man_hand"
+      "item": "the_deep_void:gooey_delight"
+    },
+    "e": {
+      "item": "the_deep_void:garum"
     }
   },
   "result": {

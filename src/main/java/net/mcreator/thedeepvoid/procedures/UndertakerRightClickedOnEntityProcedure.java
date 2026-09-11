@@ -3,6 +3,7 @@ package net.mcreator.thedeepvoid.procedures;
 import net.minecraftforge.network.NetworkHooks;
 
 import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.player.Inventory;
@@ -21,6 +22,7 @@ import net.minecraft.core.BlockPos;
 
 import net.mcreator.thedeepvoid.world.inventory.UndertakerTradeGuiMenu;
 import net.mcreator.thedeepvoid.network.TheDeepVoidModVariables;
+import net.mcreator.thedeepvoid.init.TheDeepVoidModItems;
 import net.mcreator.thedeepvoid.entity.UndertakerEntity;
 
 import io.netty.buffer.Unpooled;
@@ -46,7 +48,10 @@ public class UndertakerRightClickedOnEntityProcedure {
 				UndertakerRandomBiomeDialogueProcedure.execute(world, x, y, z, sourceentity);
 			}
 			return InteractionResult.PASS;
-		} else if ((entity instanceof UndertakerEntity _datEntL8 && _datEntL8.getEntityData().get(UndertakerEntity.DATA_empty)) == true && (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) {
+		} else if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.NOXIOUS_BREW.get()
+				|| (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getOffhandItem() : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.NOXIOUS_BREW.get()) {
+			return InteractionResult.PASS;
+		} else if ((entity instanceof UndertakerEntity _datEntL13 && _datEntL13.getEntityData().get(UndertakerEntity.DATA_empty)) == true && (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) {
 			if ((entity instanceof UndertakerEntity _datEntI ? _datEntI.getEntityData().get(UndertakerEntity.DATA_dialogueCooldown) : 0) <= 0) {
 				if (entity instanceof UndertakerEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(UndertakerEntity.DATA_dialogueCooldown, 25);
@@ -78,7 +83,7 @@ public class UndertakerRightClickedOnEntityProcedure {
 				}
 			}
 			return InteractionResult.PASS;
-		} else if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null && !(entity instanceof LivingEntity _livEnt41 && _livEnt41.hasEffect(MobEffects.MOVEMENT_SLOWDOWN))
+		} else if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null && !(entity instanceof LivingEntity _livEnt46 && _livEnt46.hasEffect(MobEffects.MOVEMENT_SLOWDOWN))
 				&& (entity instanceof UndertakerEntity _datEntI ? _datEntI.getEntityData().get(UndertakerEntity.DATA_talkCooldown) : 0) <= 0) {
 			sourceentity.getPersistentData().putString("undertakerUuid", (entity.getStringUUID()));
 			if (sourceentity instanceof ServerPlayer _ent) {
@@ -96,7 +101,7 @@ public class UndertakerRightClickedOnEntityProcedure {
 				}, _bpos);
 			}
 			if ((entity instanceof UndertakerEntity _datEntI ? _datEntI.getEntityData().get(UndertakerEntity.DATA_dialogueCooldown) : 0) <= 0
-					&& (entity instanceof UndertakerEntity _datEntL47 && _datEntL47.getEntityData().get(UndertakerEntity.DATA_angry)) == false) {
+					&& (entity instanceof UndertakerEntity _datEntL52 && _datEntL52.getEntityData().get(UndertakerEntity.DATA_angry)) == false) {
 				if (entity instanceof UndertakerEntity _datEntSetI)
 					_datEntSetI.getEntityData().set(UndertakerEntity.DATA_dialogueCooldown, 25);
 				dialogue = Mth.nextInt(RandomSource.create(), 1, 8);

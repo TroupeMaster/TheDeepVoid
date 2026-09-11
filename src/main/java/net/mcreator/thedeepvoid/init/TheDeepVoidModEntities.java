@@ -196,6 +196,7 @@ import net.mcreator.thedeepvoid.entity.BigShadeArrowEntity;
 import net.mcreator.thedeepvoid.entity.BigOverseerEntity;
 import net.mcreator.thedeepvoid.entity.BigEyeEntity;
 import net.mcreator.thedeepvoid.entity.BeholderEntity;
+import net.mcreator.thedeepvoid.entity.BarbedArrowEntity;
 import net.mcreator.thedeepvoid.entity.BabyBoneCrawlerEntity;
 import net.mcreator.thedeepvoid.entity.ApostleCloneEntity;
 import net.mcreator.thedeepvoid.entity.ApostleBossEntity;
@@ -743,6 +744,8 @@ public class TheDeepVoidModEntities {
 			.setTrackingRange(1).setUpdateInterval(3).setCustomClientFactory(DoomingCoffinEntity::new).fireImmune().sized(0.6f, 1.8f));
 	public static final RegistryObject<EntityType<ThrownNoxiousBrewEntity>> THROWN_NOXIOUS_BREW = register("thrown_noxious_brew", EntityType.Builder.<ThrownNoxiousBrewEntity>of(ThrownNoxiousBrewEntity::new, MobCategory.MISC)
 			.setCustomClientFactory(ThrownNoxiousBrewEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
+	public static final RegistryObject<EntityType<BarbedArrowEntity>> BARBED_ARROW = register("barbed_arrow",
+			EntityType.Builder.<BarbedArrowEntity>of(BarbedArrowEntity::new, MobCategory.MISC).setCustomClientFactory(BarbedArrowEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));

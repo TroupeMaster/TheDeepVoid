@@ -6,6 +6,7 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.effect.MobEffect;
 
 import net.mcreator.thedeepvoid.procedures.BlossomOnEffectActiveTickProcedure;
+import net.mcreator.thedeepvoid.procedures.BlossomActiveTickConditionProcedure;
 
 public class BlossomMobEffect extends MobEffect {
 	public BlossomMobEffect() {
@@ -14,11 +15,11 @@ public class BlossomMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		BlossomOnEffectActiveTickProcedure.execute(entity.level(), entity);
+		BlossomOnEffectActiveTickProcedure.execute(entity.level(), entity, amplifier);
 	}
 
 	@Override
 	public boolean isDurationEffectTick(int duration, int amplifier) {
-		return true;
+		return BlossomActiveTickConditionProcedure.execute(amplifier, duration);
 	}
 }

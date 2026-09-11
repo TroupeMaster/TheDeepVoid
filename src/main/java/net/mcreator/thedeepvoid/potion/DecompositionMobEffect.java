@@ -14,7 +14,7 @@ public class DecompositionMobEffect extends MobEffect {
 
 	@Override
 	public void applyEffectTick(LivingEntity entity, int amplifier) {
-		DecompositionOnEffectActiveTickProcedure.execute(entity.level(), entity);
+		DecompositionOnEffectActiveTickProcedure.execute(entity.level(), entity, amplifier);
 	}
 
 	@Override
