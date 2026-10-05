@@ -1,0 +1,7 @@
+{
+  "parent": "the_deep_void:custom/ichorgreatswordblock",
+  "textures": {
+    "0": "the_deep_void:block/ichor_greatsword",
+    "particle": "the_deep_void:item/ichor_greatsword"
+  }
+}

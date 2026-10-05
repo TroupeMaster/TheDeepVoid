@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "the_deep_void:misted_bone"
+    },
+    "b": {
+      "item": "the_deep_void:slaughter"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:chant_of_the_forgotten",
+    "count": 1
+  }
+}

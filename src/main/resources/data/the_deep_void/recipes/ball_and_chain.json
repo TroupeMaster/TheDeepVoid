@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "equipment",
+  "ingredients": [
+    {
+      "item": "the_deep_void:block_of_dark_steel"
+    },
+    {
+      "item": "the_deep_void:dark_steel_chain"
+    },
+    {
+      "item": "the_deep_void:dark_steel_chain"
+    },
+    {
+      "item": "the_deep_void:dark_steel_chain"
+    },
+    {
+      "item": "the_deep_void:dark_steel_chain"
+    }
+  ],
+  "result": {
+    "item": "the_deep_void:ball_and_chain",
+    "count": 1
+  }
+}

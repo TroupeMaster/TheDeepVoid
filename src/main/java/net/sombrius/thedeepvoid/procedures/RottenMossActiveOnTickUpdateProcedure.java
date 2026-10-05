@@ -1,0 +1,39 @@
+package net.sombrius.thedeepvoid.procedures;
+
+import net.sombrius.thedeepvoid.init.TheDeepVoidModBlocks;
+import net.sombrius.thedeepvoid.configuration.DeepVoidConfigConfiguration;
+
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.core.BlockPos;
+
+public class RottenMossActiveOnTickUpdateProcedure {
+	public static void execute(LevelAccessor world, double x, double y, double z) {
+		if (DeepVoidConfigConfiguration.STOPACTIVEBLOCKGENERATION.get() == true) {
+			world.setBlock(BlockPos.containing(x, y, z), TheDeepVoidModBlocks.ROTTEN_MOSS.get().defaultBlockState(), 3);
+		}
+		if (DeepVoidConfigConfiguration.STOPACTIVEBLOCKGENERATION.get() == false) {
+			if ((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == Blocks.AIR) {
+				if (Math.random() < 0.6) {
+					world.setBlock(BlockPos.containing(x, y, z), TheDeepVoidModBlocks.ROTTEN_MOSS.get().defaultBlockState(), 3);
+					if (Math.random() < 0.55) {
+						world.setBlock(BlockPos.containing(x, y - 1, z), TheDeepVoidModBlocks.HANGING_MARROW.get().defaultBlockState(), 3);
+					} else {
+						world.setBlock(BlockPos.containing(x, y - 1, z), TheDeepVoidModBlocks.CONNECTED_MARROW.get().defaultBlockState(), 3);
+					}
+				} else {
+					world.setBlock(BlockPos.containing(x, y, z), TheDeepVoidModBlocks.ROTTEN_MOSS.get().defaultBlockState(), 3);
+				}
+			} else if ((world.getBlockState(BlockPos.containing(x, y + 1, z))).getBlock() == Blocks.AIR) {
+				if (Math.random() < 0.6) {
+					world.setBlock(BlockPos.containing(x, y, z), TheDeepVoidModBlocks.ROTTEN_MOSS.get().defaultBlockState(), 3);
+					world.setBlock(BlockPos.containing(x, y + 1, z), TheDeepVoidModBlocks.BONE_MARROW.get().defaultBlockState(), 3);
+				} else {
+					world.setBlock(BlockPos.containing(x, y, z), TheDeepVoidModBlocks.ROTTEN_MOSS.get().defaultBlockState(), 3);
+				}
+			} else {
+				world.setBlock(BlockPos.containing(x, y, z), TheDeepVoidModBlocks.ROTTEN_MOSS.get().defaultBlockState(), 3);
+			}
+		}
+	}
+}

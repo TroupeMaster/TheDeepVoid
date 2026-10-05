@@ -2092,5 +2092,27 @@
         "stream": false
       }
     ]
+  },
+  "false_hydra_sing_mono": {
+    "subtitle": "subtitles.false_hydra_sing_mono",
+    "sounds": [
+      {
+        "name": "the_deep_void:false_hydra_sing_mono",
+        "stream": true
+      }
+    ]
+  },
+  "gravedigger_shovel_use": {
+    "subtitle": "subtitles.gravedigger_shovel_use",
+    "sounds": [
+      {
+        "name": "the_deep_void:gravedigger_shovel_use1",
+        "stream": false
+      },
+      {
+        "name": "the_deep_void:gravedigger_shovel_use2",
+        "stream": false
+      }
+    ]
   }
 }

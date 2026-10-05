@@ -2,18 +2,24 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
-    "a",
-    "b",
-    "c"
+    "aaa",
+    "bcb",
+    "ded"
   ],
   "key": {
     "a": {
-      "item": "the_deep_void:tendrils"
+      "item": "the_deep_void:cooked_flesh"
     },
     "b": {
       "item": "the_deep_void:eyeball"
     },
     "c": {
+      "tag": "the_deep_void:big_eyes"
+    },
+    "d": {
+      "item": "the_deep_void:tendrils"
+    },
+    "e": {
       "item": "minecraft:bowl"
     }
   },

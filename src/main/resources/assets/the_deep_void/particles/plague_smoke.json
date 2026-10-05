@@ -1,5 +1,9 @@
 {
   "textures": [
-    "the_deep_void:plague_smoke"
+    "the_deep_void:plague_smoke_1",
+    "the_deep_void:plague_smoke_2",
+    "the_deep_void:plague_smoke_3",
+    "the_deep_void:plague_smoke_4",
+    "the_deep_void:plague_smoke_5"
   ]
 }

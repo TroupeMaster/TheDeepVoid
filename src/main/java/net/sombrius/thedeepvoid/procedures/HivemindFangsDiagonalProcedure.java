@@ -1,0 +1,125 @@
+package net.sombrius.thedeepvoid.procedures;
+
+import net.sombrius.thedeepvoid.init.TheDeepVoidModEntities;
+import net.sombrius.thedeepvoid.entity.MisanthropicHivemindEntity;
+import net.sombrius.thedeepvoid.TheDeepVoidMod;
+
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.core.BlockPos;
+
+public class HivemindFangsDiagonalProcedure {
+	public static void execute(LevelAccessor world, Entity entity) {
+		if (entity == null)
+			return;
+		if (entity instanceof MisanthropicHivemindEntity) {
+			((MisanthropicHivemindEntity) entity).setAnimation("animation.hivemind_scream");
+		}
+		TheDeepVoidMod.queueServerWork(10, () -> {
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() + 2, entity.getY(), entity.getZ() + 2), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() + 2, entity.getY(), entity.getZ() - 2), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() - 2, entity.getY(), entity.getZ() + 2), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() - 2, entity.getY(), entity.getZ() - 2), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+		});
+		TheDeepVoidMod.queueServerWork(20, () -> {
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() + 6, entity.getY(), entity.getZ() + 6), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() + 6, entity.getY(), entity.getZ() - 6), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() - 6, entity.getY(), entity.getZ() + 6), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() - 6, entity.getY(), entity.getZ() - 6), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+		});
+		TheDeepVoidMod.queueServerWork(30, () -> {
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() + 10, entity.getY(), entity.getZ() + 10), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() + 10, entity.getY(), entity.getZ() - 10), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() - 10, entity.getY(), entity.getZ() + 10), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() - 10, entity.getY(), entity.getZ() - 10), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+		});
+		TheDeepVoidMod.queueServerWork(40, () -> {
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() + 14, entity.getY(), entity.getZ() + 14), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() + 14, entity.getY(), entity.getZ() - 14), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() - 14, entity.getY(), entity.getZ() + 14), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+			if (world instanceof ServerLevel _level) {
+				Entity entityToSpawn = TheDeepVoidModEntities.FLESH_FANGS.get().spawn(_level, BlockPos.containing(entity.getX() - 14, entity.getY(), entity.getZ() - 14), MobSpawnType.MOB_SUMMONED);
+				if (entityToSpawn != null) {
+					entityToSpawn.setYRot(world.getRandom().nextFloat() * 360F);
+				}
+			}
+		});
+	}
+}

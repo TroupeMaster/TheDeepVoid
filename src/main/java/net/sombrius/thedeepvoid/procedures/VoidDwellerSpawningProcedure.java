@@ -1,0 +1,15 @@
+package net.sombrius.thedeepvoid.procedures;
+
+import net.sombrius.thedeepvoid.init.TheDeepVoidModBlocks;
+
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.core.BlockPos;
+
+public class VoidDwellerSpawningProcedure {
+	public static boolean execute(LevelAccessor world, double x, double y, double z) {
+		if (y <= 40 && (world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.DESOLATE_SOIL.get() && !((world.getBlockState(BlockPos.containing(x, y - 1, z))).getBlock() == TheDeepVoidModBlocks.ASH_BLOCK.get())) {
+			return true;
+		}
+		return false;
+	}
+}

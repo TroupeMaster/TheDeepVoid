@@ -1,0 +1,11 @@
+
+package net.sombrius.thedeepvoid.item;
+
+import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.Item;
+
+public class SacredCinnabarItem extends Item {
+	public SacredCinnabarItem() {
+		super(new Item.Properties().stacksTo(64).fireResistant().rarity(Rarity.UNCOMMON));
+	}
+}

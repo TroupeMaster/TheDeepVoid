@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "pattern": [
+    "aaa",
+    "aba",
+    "aaa"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:bone"
+    },
+    "b": {
+      "item": "the_deep_void:block_of_bone"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:block_of_skull",
+    "count": 1
+  }
+}

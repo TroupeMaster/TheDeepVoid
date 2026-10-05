@@ -1,0 +1,21 @@
+{
+  "parent": "the_deep_void:custom/ichorgreatsword",
+  "textures": {
+    "0": "the_deep_void:block/ichor_greatsword",
+    "particle": "the_deep_void:item/ichor_greatsword"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "the_deep_void:ichor_greatsword_blocking": 0
+      },
+      "model": "the_deep_void:item/ichor_greatsword_0"
+    },
+    {
+      "predicate": {
+        "the_deep_void:ichor_greatsword_blocking": 1
+      },
+      "model": "the_deep_void:item/ichor_greatsword_1"
+    }
+  ]
+}

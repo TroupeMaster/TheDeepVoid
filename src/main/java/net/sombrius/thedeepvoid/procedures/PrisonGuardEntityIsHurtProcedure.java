@@ -1,0 +1,19 @@
+package net.sombrius.thedeepvoid.procedures;
+
+import net.sombrius.thedeepvoid.entity.PrisonGuardEntity;
+
+import net.minecraft.world.entity.Entity;
+
+public class PrisonGuardEntityIsHurtProcedure {
+	public static void execute(Entity entity) {
+		if (entity == null)
+			return;
+		if (Math.random() < 0.2 && (entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_jump) : 0) > 0) {
+			if (entity instanceof PrisonGuardEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrisonGuardEntity.DATA_jump, 0);
+		} else if (Math.random() < 0.2 && (entity instanceof PrisonGuardEntity _datEntI ? _datEntI.getEntityData().get(PrisonGuardEntity.DATA_roll) : 0) > 0) {
+			if (entity instanceof PrisonGuardEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(PrisonGuardEntity.DATA_roll, 0);
+		}
+	}
+}

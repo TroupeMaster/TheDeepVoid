@@ -1,0 +1,9 @@
+{
+  "parent": "the_deep_void:custom/mandrake",
+  "textures": {
+    "all": "the_deep_void:block/mandrake",
+    "particle": "the_deep_void:block/stripped_rotten_log_side",
+    "0": "the_deep_void:block/mandrake"
+  },
+  "render_type": "solid"
+}

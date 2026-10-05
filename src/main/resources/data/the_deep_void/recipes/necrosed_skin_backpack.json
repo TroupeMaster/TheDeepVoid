@@ -2,19 +2,25 @@
   "type": "minecraft:crafting_shaped",
   "category": "equipment",
   "pattern": [
-    "aaa",
-    "bcb",
-    "bbb"
+    "aba",
+    "cdc",
+    "eee"
   ],
   "key": {
     "a": {
       "item": "the_deep_void:dark_cloth"
     },
     "b": {
-      "item": "the_deep_void:mourner_hide"
+      "item": "minecraft:crafting_table"
     },
     "c": {
       "item": "minecraft:gold_ingot"
+    },
+    "d": {
+      "item": "minecraft:chest"
+    },
+    "e": {
+      "item": "the_deep_void:mourner_hide"
     }
   },
   "result": {
