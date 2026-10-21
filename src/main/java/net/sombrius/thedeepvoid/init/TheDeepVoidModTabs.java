@@ -333,6 +333,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModBlocks.BLOCK_OF_BLOODSTONE.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.ROTTEN_FOSSIL.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.BLOCK_OF_SOUL_FUSED_INGOTS.get().asItem());
+				tabData.accept(TheDeepVoidModBlocks.BLOCK_OF_BLASPHEMITE.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.MISTED_REMAINS.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.BLOCK_OF_MISTED_BONE_PILE.get().asItem());
 				tabData.accept(TheDeepVoidModBlocks.DARK_STEEL_ORE.get().asItem());
@@ -796,6 +797,10 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.DARK_STEEL_CHAINMAIL_ARMOR_CHESTPLATE.get());
 				tabData.accept(TheDeepVoidModItems.DARK_STEEL_CHAINMAIL_ARMOR_LEGGINGS.get());
 				tabData.accept(TheDeepVoidModItems.DARK_STEEL_CHAINMAIL_ARMOR_BOOTS.get());
+				tabData.accept(TheDeepVoidModItems.GILDED_HELMET.get());
+				tabData.accept(TheDeepVoidModItems.GILDED_CHESTPLATE.get());
+				tabData.accept(TheDeepVoidModItems.GILDED_LEGGINGS.get());
+				tabData.accept(TheDeepVoidModItems.GILDED_BOOTS.get());
 				tabData.accept(TheDeepVoidModItems.BISMUTH_NETHERITE_HELMET.get());
 				tabData.accept(TheDeepVoidModItems.BISMUTH_NETHERITE_CHESTPLATE.get());
 				tabData.accept(TheDeepVoidModItems.BISMUTH_NETHERITE_LEGGINGS.get());

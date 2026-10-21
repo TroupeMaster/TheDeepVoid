@@ -423,6 +423,7 @@ import net.sombrius.thedeepvoid.block.BlockOfBonePileBlock;
 import net.sombrius.thedeepvoid.block.BlockOfBoneMarrowBlock;
 import net.sombrius.thedeepvoid.block.BlockOfBoneBlock;
 import net.sombrius.thedeepvoid.block.BlockOfBloodstoneBlock;
+import net.sombrius.thedeepvoid.block.BlockOfBlasphemiteBlock;
 import net.sombrius.thedeepvoid.block.BlockOfBlackMossBlock;
 import net.sombrius.thedeepvoid.block.BlockOfBismuthBlock;
 import net.sombrius.thedeepvoid.block.BlockOfAncientOnyxBlock;
@@ -958,6 +959,7 @@ public class TheDeepVoidModBlocks {
 	public static final RegistryObject<Block> BLOCK_OF_ROTTEN_SKULL_PILE = REGISTRY.register("block_of_rotten_skull_pile", () -> new BlockOfRottenSkullPileBlock());
 	public static final RegistryObject<Block> BLOCK_OF_SKULL = REGISTRY.register("block_of_skull", () -> new BlockOfSkullBlock());
 	public static final RegistryObject<Block> SERRATED_DEEPSLATE_BLOCK = REGISTRY.register("serrated_deepslate_block", () -> new SerratedDeepslateBlockBlock());
+	public static final RegistryObject<Block> BLOCK_OF_BLASPHEMITE = REGISTRY.register("block_of_blasphemite", () -> new BlockOfBlasphemiteBlock());
 	// Start of user code block custom blocks
 	// End of user code block custom blocks
 }

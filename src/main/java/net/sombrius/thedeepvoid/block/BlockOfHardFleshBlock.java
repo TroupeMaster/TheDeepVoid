@@ -1,6 +1,7 @@
 
 package net.sombrius.thedeepvoid.block;
 
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
@@ -10,7 +11,7 @@ import net.minecraft.core.BlockPos;
 
 public class BlockOfHardFleshBlock extends Block {
 	public BlockOfHardFleshBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.COPPER).strength(10f, 8f).friction(0.7f));
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.COPPER).strength(10f, 8f).friction(0.7f));
 	}
 
 	@Override

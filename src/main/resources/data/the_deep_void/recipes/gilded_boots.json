@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a a",
+    "b b"
+  ],
+  "key": {
+    "a": {
+      "item": "minecraft:gold_ingot"
+    },
+    "b": {
+      "item": "the_deep_void:refined_bismuth"
+    }
+  },
+  "result": {
+    "item": "the_deep_void:gilded_boots",
+    "count": 1
+  }
+}

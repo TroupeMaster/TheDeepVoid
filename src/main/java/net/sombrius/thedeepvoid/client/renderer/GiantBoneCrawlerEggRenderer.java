@@ -10,7 +10,7 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 
 public class GiantBoneCrawlerEggRenderer extends MobRenderer<GiantBoneCrawlerEggEntity, Modelgiant_crawler_egg<GiantBoneCrawlerEggEntity>> {
 	public GiantBoneCrawlerEggRenderer(EntityRendererProvider.Context context) {
-		super(context, new Modelgiant_crawler_egg(context.bakeLayer(Modelgiant_crawler_egg.LAYER_LOCATION)), 2.3f);
+		super(context, new Modelgiant_crawler_egg(context.bakeLayer(Modelgiant_crawler_egg.LAYER_LOCATION)), 0f);
 	}
 
 	@Override

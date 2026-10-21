@@ -8,6 +8,7 @@ import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.GameType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
@@ -17,11 +18,13 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.client.Minecraft;
 
 import java.util.List;
 import java.util.Comparator;
@@ -69,12 +72,24 @@ public class ClawScytheItemInHandTickProcedure {
 					&& !(entity instanceof LivingEntity _livEnt37 && _livEnt37.hasEffect(TheDeepVoidModMobEffects.ROOT_BLIND.get())) && !(entity instanceof LivingEntity _livEnt38 && _livEnt38.hasEffect(TheDeepVoidModMobEffects.HEAVY.get()))) {
 				entity.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entity.getYRot() + 180)) * 0.3), (-0.6), (Math.cos(Math.toRadians(entity.getYRot())) * 0.3)));
 			}
-			if (itemstack.getOrCreateTag().getDouble("food") >= 10) {
-				itemstack.getOrCreateTag().putDouble("food", 0);
-				if (entity instanceof Player _player)
-					_player.getFoodData().setFoodLevel((int) ((entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) - 0.4));
-			} else {
-				itemstack.getOrCreateTag().putDouble("food", (itemstack.getOrCreateTag().getDouble("food") + 1));
+			if (!(new Object() {
+				public boolean checkGamemode(Entity _ent) {
+					if (_ent instanceof ServerPlayer _serverPlayer) {
+						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+					} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+						return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+								&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+					}
+					return false;
+				}
+			}.checkGamemode(entity))) {
+				if (itemstack.getOrCreateTag().getDouble("food") >= 10) {
+					itemstack.getOrCreateTag().putDouble("food", 0);
+					if (entity instanceof Player _player)
+						_player.getFoodData().setFoodLevel((int) ((entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) - 0.4));
+				} else {
+					itemstack.getOrCreateTag().putDouble("food", (itemstack.getOrCreateTag().getDouble("food") + 1));
+				}
 			}
 		}
 	}

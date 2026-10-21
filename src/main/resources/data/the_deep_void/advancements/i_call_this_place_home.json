@@ -1,0 +1,263 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:voidrium_boots"
+    },
+    "title": {
+      "translate": "advancements.i_call_this_place_home.title"
+    },
+    "description": {
+      "translate": "advancements.i_call_this_place_home.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "i_call_this_place_home_0": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:ashen_crags"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_1": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:befouled_marsh"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_2": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:crawler_nest"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_3": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:deep_marrows"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_4": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:drifting_monoliths"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_5": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:filled_graveyard"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_6": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:forgotten_valley"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_7": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:gaol_of_heretics"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_8": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:gathering_grounds"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_9": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:gloomy_deathgrounds"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_10": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:grim_canopy"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_11": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:misted_remnants"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_12": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:mourning_graveyard"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_13": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:staring_hills"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "i_call_this_place_home_14": {
+      "trigger": "minecraft:location",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "biome": "the_deep_void:windswept_hollow"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 500
+  },
+  "parent": "the_deep_void:bone_bottom"
+}

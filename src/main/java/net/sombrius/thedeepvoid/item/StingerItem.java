@@ -2,7 +2,6 @@
 package net.sombrius.thedeepvoid.item;
 
 import net.sombrius.thedeepvoid.procedures.StingerRightclickedProcedure;
-import net.sombrius.thedeepvoid.procedures.StingerOnPlayerStoppedUsingProcedure;
 import net.sombrius.thedeepvoid.procedures.StingerItemInInventoryTickProcedure;
 import net.sombrius.thedeepvoid.procedures.StingerItemInHandTickProcedure;
 import net.sombrius.thedeepvoid.procedures.StingerDescriptionProcedure;
@@ -34,16 +33,11 @@ public class StingerItem extends Item {
 	}
 
 	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 72000;
-	}
-
-	@Override
 	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot equipmentSlot) {
 		if (equipmentSlot == EquipmentSlot.MAINHAND) {
 			ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
 			builder.putAll(super.getDefaultAttributeModifiers(equipmentSlot));
-			builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Item modifier", 5d, AttributeModifier.Operation.ADDITION));
+			builder.put(Attributes.ATTACK_DAMAGE, new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Item modifier", 3d, AttributeModifier.Operation.ADDITION));
 			builder.put(Attributes.ATTACK_SPEED, new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Item modifier", -2.4, AttributeModifier.Operation.ADDITION));
 			return builder.build();
 		}
@@ -60,19 +54,8 @@ public class StingerItem extends Item {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level world, Player entity, InteractionHand hand) {
 		InteractionResultHolder<ItemStack> ar = super.use(world, entity, hand);
-		entity.startUsingItem(hand);
-		StingerRightclickedProcedure.execute(entity, ar.getObject());
+		StingerRightclickedProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity, ar.getObject());
 		return ar;
-	}
-
-	@Override
-	public ItemStack finishUsingItem(ItemStack itemstack, Level world, LivingEntity entity) {
-		ItemStack retval = super.finishUsingItem(itemstack, world, entity);
-		double x = entity.getX();
-		double y = entity.getY();
-		double z = entity.getZ();
-		StingerOnPlayerStoppedUsingProcedure.execute(itemstack);
-		return retval;
 	}
 
 	@Override
@@ -86,11 +69,6 @@ public class StingerItem extends Item {
 		super.inventoryTick(itemstack, world, entity, slot, selected);
 		if (selected)
 			StingerItemInHandTickProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity, itemstack);
-		StingerItemInInventoryTickProcedure.execute(entity, itemstack);
-	}
-
-	@Override
-	public void releaseUsing(ItemStack itemstack, Level world, LivingEntity entity, int time) {
-		StingerOnPlayerStoppedUsingProcedure.execute(itemstack);
+		StingerItemInInventoryTickProcedure.execute(itemstack);
 	}
 }

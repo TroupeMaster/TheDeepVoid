@@ -2114,5 +2114,23 @@
         "stream": false
       }
     ]
+  },
+  "stinger_lunge": {
+    "subtitle": "subtitles.stinger_lunge",
+    "sounds": [
+      {
+        "name": "the_deep_void:spear_lunge2",
+        "stream": false
+      }
+    ]
+  },
+  "shank_steal_coins": {
+    "subtitle": "subtitles.shank_steal_coins",
+    "sounds": [
+      {
+        "name": "the_deep_void:shank_steal_coins_new",
+        "stream": false
+      }
+    ]
   }
 }

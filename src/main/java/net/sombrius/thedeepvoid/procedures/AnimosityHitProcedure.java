@@ -1,6 +1,7 @@
 package net.sombrius.thedeepvoid.procedures;
 
 import net.sombrius.thedeepvoid.network.TheDeepVoidModVariables;
+import net.sombrius.thedeepvoid.init.TheDeepVoidModMobEffects;
 import net.sombrius.thedeepvoid.init.TheDeepVoidModItems;
 
 import net.minecraftforge.fml.common.Mod;
@@ -13,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
@@ -57,6 +59,8 @@ public class AnimosityHitProcedure {
 						}
 						entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:assassination"))), sourceentity),
 								(float) (amount * 2.5));
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VULNERABLE.get(), 60, 0));
 					}
 				} else {
 					if (entity.getPersistentData().getBoolean("deep_void:attackedByAnimosity") == false) {
@@ -66,6 +70,8 @@ public class AnimosityHitProcedure {
 						}
 						entity.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:assassination"))), sourceentity),
 								(float) (amount * 2));
+						if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VULNERABLE.get(), 60, 0));
 					}
 				}
 			}

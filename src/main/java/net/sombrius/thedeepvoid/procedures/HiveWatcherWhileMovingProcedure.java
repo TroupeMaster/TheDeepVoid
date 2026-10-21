@@ -21,7 +21,8 @@ public class HiveWatcherWhileMovingProcedure {
 	public static void execute(LevelAccessor world, double x, double y, double z, Entity entity) {
 		if (entity == null)
 			return;
-		entity.getPersistentData().putDouble("speedBuildUp", (entity.getPersistentData().getDouble("speedBuildUp") + 0.025));
+		entity.getPersistentData().putDouble("speedBuildUp",
+				(entity.getPersistentData().getDouble("speedBuildUp") + ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 4 ? 0.05 : 0.025)));
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 2.5
 				&& (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 4) {
 			if (!(!world.getEntitiesOfClass(WatcherBlockadeEntity.class, AABB.ofSize(new Vec3(x, y, z), 1, 1, 1), e -> true).isEmpty())) {

@@ -6,7 +6,6 @@ package net.sombrius.thedeepvoid.init;
 
 import net.sombrius.thedeepvoid.procedures.VoidBowPropertyProcedure;
 import net.sombrius.thedeepvoid.procedures.TheCatcherPropertyValueProviderProcedure;
-import net.sombrius.thedeepvoid.procedures.StingerPropertyValueProviderProcedure;
 import net.sombrius.thedeepvoid.procedures.SharpshooterValueProviderProcedure;
 import net.sombrius.thedeepvoid.procedures.ShadestormPropertyValueProviderProcedure;
 import net.sombrius.thedeepvoid.procedures.RotTonguePropertyValueProviderProcedure;
@@ -235,6 +234,7 @@ import net.sombrius.thedeepvoid.item.GooBallItem;
 import net.sombrius.thedeepvoid.item.GoldenFlareItem;
 import net.sombrius.thedeepvoid.item.GoldenEyeballItem;
 import net.sombrius.thedeepvoid.item.GlowingNeedleItem;
+import net.sombrius.thedeepvoid.item.GildedItem;
 import net.sombrius.thedeepvoid.item.GarumItem;
 import net.sombrius.thedeepvoid.item.ForgottenTokenItem;
 import net.sombrius.thedeepvoid.item.ForbiddenTomeItem;
@@ -1409,6 +1409,11 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> BLOCK_OF_SKULL = block(TheDeepVoidModBlocks.BLOCK_OF_SKULL);
 	public static final RegistryObject<Item> ICHOR_GREATSWORD = REGISTRY.register("ichor_greatsword", () -> new IchorGreatswordItem());
 	public static final RegistryObject<Item> SERRATED_DEEPSLATE_BLOCK = block(TheDeepVoidModBlocks.SERRATED_DEEPSLATE_BLOCK);
+	public static final RegistryObject<Item> BLOCK_OF_BLASPHEMITE = block(TheDeepVoidModBlocks.BLOCK_OF_BLASPHEMITE);
+	public static final RegistryObject<Item> GILDED_HELMET = REGISTRY.register("gilded_helmet", () -> new GildedItem.Helmet());
+	public static final RegistryObject<Item> GILDED_CHESTPLATE = REGISTRY.register("gilded_chestplate", () -> new GildedItem.Chestplate());
+	public static final RegistryObject<Item> GILDED_LEGGINGS = REGISTRY.register("gilded_leggings", () -> new GildedItem.Leggings());
+	public static final RegistryObject<Item> GILDED_BOOTS = REGISTRY.register("gilded_boots", () -> new GildedItem.Boots());
 
 	// Start of user code block custom items
 	// End of user code block custom items
@@ -1448,7 +1453,6 @@ public class TheDeepVoidModItems {
 			ItemProperties.register(BISMUTH_BOTTLE.get(), new ResourceLocation("the_deep_void:bismuth_bottle_xp"),
 					(itemStackToRender, clientWorld, entity, itemEntityId) -> (float) BismuthVialPropertyValueProviderProcedure.execute(itemStackToRender));
 			ItemProperties.register(BISMUTH_JAR.get(), new ResourceLocation("the_deep_void:bismuth_jar_xp"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) BismuthVialPropertyValueProviderProcedure.execute(itemStackToRender));
-			ItemProperties.register(STINGER.get(), new ResourceLocation("the_deep_void:stinger_state"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) StingerPropertyValueProviderProcedure.execute(itemStackToRender));
 			ItemProperties.register(CLAW_SCYTHE.get(), new ResourceLocation("the_deep_void:claw_scythe_state"), (itemStackToRender, clientWorld, entity, itemEntityId) -> (float) ClawScythePropertyValueProviderProcedure.execute(itemStackToRender));
 			ItemProperties.register(BALL_AND_CHAIN.get(), new ResourceLocation("the_deep_void:ball_and_chain_secret"),
 					(itemStackToRender, clientWorld, entity, itemEntityId) -> (float) BallAndChainPropertyValueProviderProcedure.execute(itemStackToRender));

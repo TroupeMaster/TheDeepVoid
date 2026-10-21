@@ -30,17 +30,25 @@ public class HiveWatcherRamPlayerProcedure {
 			if (entity instanceof HiveWatcherEntity animatable)
 				animatable.setTexture("hivewatcher");
 		}
-		entity.getPersistentData().putDouble("speedBuildUpTarget",
-				(entity.getPersistentData().getDouble("speedBuildUpTarget") + ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 1.4 ? 0.025 : 0.015)));
+		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 1.4) {
+			entity.getPersistentData().putDouble("setRamSpeed", 0.015);
+		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 1.4) {
+			entity.getPersistentData().putDouble("setRamSpeed", 0.025);
+		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 2) {
+			entity.getPersistentData().putDouble("setRamSpeed", 0.035);
+		} else if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 4) {
+			entity.getPersistentData().putDouble("setRamSpeed", 0.5);
+		}
+		entity.getPersistentData().putDouble("speedBuildUpTarget", (entity.getPersistentData().getDouble("speedBuildUpTarget") + entity.getPersistentData().getDouble("setRamSpeed")));
 		entity.getPersistentData().putDouble("stopRamming", (entity.getPersistentData().getDouble("stopRamming") + 1));
 		if (entity.getPersistentData().getDouble("playerIsIn") == 1) {
-			entity.setDeltaMovement(new Vec3((entity.getPersistentData().getDouble("speedBuildUpTarget")), 0, 0));
+			entity.setDeltaMovement(new Vec3((entity.getPersistentData().getDouble("speedBuildUpTarget")), (-1), 0));
 		} else if (entity.getPersistentData().getDouble("playerIsIn") == 2) {
-			entity.setDeltaMovement(new Vec3((entity.getPersistentData().getDouble("speedBuildUpTarget") * (-1)), 0, 0));
+			entity.setDeltaMovement(new Vec3((entity.getPersistentData().getDouble("speedBuildUpTarget") * (-1)), (-1), 0));
 		} else if (entity.getPersistentData().getDouble("playerIsIn") == 3) {
-			entity.setDeltaMovement(new Vec3(0, 0, (entity.getPersistentData().getDouble("speedBuildUpTarget"))));
+			entity.setDeltaMovement(new Vec3(0, (-1), (entity.getPersistentData().getDouble("speedBuildUpTarget"))));
 		} else if (entity.getPersistentData().getDouble("playerIsIn") == 4) {
-			entity.setDeltaMovement(new Vec3(0, 0, (entity.getPersistentData().getDouble("speedBuildUpTarget") * (-1))));
+			entity.setDeltaMovement(new Vec3(0, (-1), (entity.getPersistentData().getDouble("speedBuildUpTarget") * (-1))));
 		}
 		if ((world.getBlockFloorHeight(BlockPos.containing(entity.getX() + 3, entity.getY(), entity.getZ())) > 0 || world.getBlockFloorHeight(BlockPos.containing(entity.getX() - 3, entity.getY(), entity.getZ())) > 0
 				|| world.getBlockFloorHeight(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ() + 3)) > 0 || world.getBlockFloorHeight(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ() - 3)) > 0)
@@ -77,7 +85,7 @@ public class HiveWatcherRamPlayerProcedure {
 					&& (entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) <= (entity instanceof LivingEntity _livEnt ? _livEnt.getMaxHealth() : -1) / 1.2) {
 				HiveWatcherSpawnTeethProcedure.execute(world, x, y, z, entity);
 			}
-			if ((entity instanceof HiveWatcherEntity _datEntL61 && _datEntL61.getEntityData().get(HiveWatcherEntity.DATA_changeTexture)) == true) {
+			if ((entity instanceof HiveWatcherEntity _datEntL72 && _datEntL72.getEntityData().get(HiveWatcherEntity.DATA_changeTexture)) == true) {
 				if (entity instanceof HiveWatcherEntity _datEntSetL)
 					_datEntSetL.getEntityData().set(HiveWatcherEntity.DATA_changeTexture, false);
 				if (entity instanceof HiveWatcherEntity animatable)

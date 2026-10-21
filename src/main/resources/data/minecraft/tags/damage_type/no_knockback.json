@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "the_deep_void:boss_attack"
+    "the_deep_void:boss_attack",
+    "the_deep_void:blood_loss"
   ]
 }

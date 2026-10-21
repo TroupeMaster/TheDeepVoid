@@ -4,16 +4,19 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.GameType;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.RandomSource;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.client.Minecraft;
 
 public class BloodyChainsawPlayerFinishesUsingItemProcedure {
 	public static void execute(LevelAccessor world, double x, double z, Entity entity, ItemStack itemstack) {
@@ -34,11 +37,23 @@ public class BloodyChainsawPlayerFinishesUsingItemProcedure {
 			}
 			if (world instanceof ServerLevel _level)
 				_level.sendParticles(ParticleTypes.LAVA, entity.getX() + entity.getLookAngle().x * 0.5, (entity.getY() + 1.4), entity.getZ() + entity.getLookAngle().z * 0.5, 5, 0.01, 0.2, 0.01, 0.1);
-			{
-				ItemStack _ist = itemstack;
-				if (_ist.hurt(25, RandomSource.create(), null)) {
-					_ist.shrink(1);
-					_ist.setDamageValue(0);
+			if (!(new Object() {
+				public boolean checkGamemode(Entity _ent) {
+					if (_ent instanceof ServerPlayer _serverPlayer) {
+						return _serverPlayer.gameMode.getGameModeForPlayer() == GameType.CREATIVE;
+					} else if (_ent.level().isClientSide() && _ent instanceof Player _player) {
+						return Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()) != null
+								&& Minecraft.getInstance().getConnection().getPlayerInfo(_player.getGameProfile().getId()).getGameMode() == GameType.CREATIVE;
+					}
+					return false;
+				}
+			}.checkGamemode(entity))) {
+				{
+					ItemStack _ist = itemstack;
+					if (_ist.hurt(25, RandomSource.create(), null)) {
+						_ist.shrink(1);
+						_ist.setDamageValue(0);
+					}
 				}
 			}
 		}

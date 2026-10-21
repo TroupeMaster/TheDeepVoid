@@ -55,6 +55,7 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Boolean> DOBRAINFOG;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> FALSEHYDRAREMOVESBRAINFOG;
 	public static final ForgeConfigSpec.ConfigValue<Double> BRAINFOGDURATION;
+	public static final ForgeConfigSpec.ConfigValue<Double> MODIFICATIONTEMPLATELIMIT;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> ENDLESSABYSS;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> PURGATORY;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> GIVETORCHES;
@@ -221,6 +222,7 @@ public class DeepVoidConfigConfiguration {
 		DOBRAINFOG = BUILDER.comment("If brain fog should be applied to the player when in the misted remnants").define("DoBrainFog", true);
 		FALSEHYDRAREMOVESBRAINFOG = BUILDER.comment("If the false hydra should remove brain fog when it is killed").define("FalseHydraRemovesBrainFog", true);
 		BRAINFOGDURATION = BUILDER.comment("In ticks").define("BrainFogDuration", (double) 2000);
+		MODIFICATIONTEMPLATELIMIT = BUILDER.comment("The limit for how many modification templates can be added to an item").define("ModificationTemplateLimit", (double) 5);
 		BUILDER.pop();
 		BUILDER.push("Gameplay Changes");
 		ENDLESSABYSS = BUILDER.comment("The player spawns in the Deep Void").define("EndlessAbyss", false);
@@ -280,8 +282,8 @@ public class DeepVoidConfigConfiguration {
 		THEHARVESTSLASH = BUILDER.comment("Damage dealt in an AOE each tick (ignores armor)").define("TheHarvestSlash", (double) 8);
 		HERESYBLOODSHOT = BUILDER.comment("Damage (velocity increases that number)").define("HeresyBloodShot", (double) 4);
 		HERESYGOLDENBLOODSHOT = BUILDER.comment("Damage (velocity increases that number)").define("HeresyGoldenBloodShot", (double) 2.5);
-		HERESYBLOODSHOTSHOTGUN = BUILDER.comment("Damage (velocity increases that number)").define("HeresyBloodShotShotgun", (double) 25);
-		HERESYGOLDENBLOODSHOTSHOTGUN = BUILDER.comment("Damage (velocity increases that number)").define("HeresyGoldenBloodShotShotgun", (double) 20);
+		HERESYBLOODSHOTSHOTGUN = BUILDER.comment("Damage (velocity increases that number)").define("HeresyBloodShotShotgun", (double) 38);
+		HERESYGOLDENBLOODSHOTSHOTGUN = BUILDER.comment("Damage (velocity increases that number)").define("HeresyGoldenBloodShotShotgun", (double) 22);
 		APOSTASYSOULFUSEDSHOT = BUILDER.comment("Damage (velocity increases that number)").define("ApostasySoulFusedShot", (double) 3.8);
 		KNIFEGLOVE = BUILDER.comment("Damage (velocity increases that number)").define("KnifeGlove", (double) 4.5);
 		ICHORSWORDSPIT = BUILDER.comment("Damage per projectile").define("IchorSwordSpit", (double) 5);
@@ -298,7 +300,7 @@ public class DeepVoidConfigConfiguration {
 		TOMBSTONEDOOM = BUILDER.comment("Ignores armor").define("TombstoneDoom", (double) 16);
 		NECRONOMICONRANGE = BUILDER.define("NecronomiconRange", (double) 16);
 		THECATCHERINITIALDAMAGE = BUILDER.comment("Damage upon successfully catching an entity").define("TheCatcherInitialDamage", (double) 2);
-		THECATCHEREXTRADAMAGE = BUILDER.comment("Damage added to the weapon's base damage upon catching an entity").define("TheCatcherExtraDamage", (double) 4);
+		THECATCHEREXTRADAMAGE = BUILDER.comment("Damage added to the weapon's base damage upon catching an entity").define("TheCatcherExtraDamage", (double) 7);
 		FLYWINGSDURATION = BUILDER.comment("For how long can the player fly (in ticks)").define("FlyWingsDuration", (double) 100);
 		PENITENTCROSSREACHADDITION = BUILDER.define("PenitentCrossReachAddition", (double) 1);
 		ELDRITCHMAW = BUILDER.comment("Damage (velocity increases that number)").define("EldritchMaw", (double) 0.7);

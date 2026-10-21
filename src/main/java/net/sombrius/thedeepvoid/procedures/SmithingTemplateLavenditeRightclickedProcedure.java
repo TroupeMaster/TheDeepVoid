@@ -1,5 +1,7 @@
 package net.sombrius.thedeepvoid.procedures;
 
+import net.sombrius.thedeepvoid.configuration.DeepVoidConfigConfiguration;
+
 import net.minecraftforge.registries.ForgeRegistries;
 
 import net.minecraft.world.level.LevelAccessor;
@@ -35,7 +37,7 @@ public class SmithingTemplateLavenditeRightclickedProcedure {
 				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() instanceof HoeItem
 				|| (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).is(ItemTags.create(new ResourceLocation("the_deep_void:weapons"))))
 				&& !(entity instanceof LivingEntity _livEnt14 && _livEnt14.hasEffect(MobEffects.WEAKNESS))
-				&& (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("lavenditeUpgradeLimit") < 10) {
+				&& (entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getOrCreateTag().getDouble("lavenditeUpgradeLimit") < (double) DeepVoidConfigConfiguration.MODIFICATIONTEMPLATELIMIT.get()) {
 			if (entity instanceof Player _player)
 				_player.getCooldowns().addCooldown(itemstack.getItem(), 5);
 			if (!(new Object() {

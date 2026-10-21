@@ -227,4 +227,6 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> HAMMER_AND_CHISEL_HIT = REGISTRY.register("hammer_and_chisel_hit", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "hammer_and_chisel_hit")));
 	public static final RegistryObject<SoundEvent> FALSE_HYDRA_SING_MONO = REGISTRY.register("false_hydra_sing_mono", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "false_hydra_sing_mono")));
 	public static final RegistryObject<SoundEvent> GRAVEDIGGER_SHOVEL_USE = REGISTRY.register("gravedigger_shovel_use", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "gravedigger_shovel_use")));
+	public static final RegistryObject<SoundEvent> STINGER_LUNGE = REGISTRY.register("stinger_lunge", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "stinger_lunge")));
+	public static final RegistryObject<SoundEvent> SHANK_STEAL_COINS = REGISTRY.register("shank_steal_coins", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "shank_steal_coins")));
 }

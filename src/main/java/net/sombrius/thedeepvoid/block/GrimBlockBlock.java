@@ -1,6 +1,7 @@
 
 package net.sombrius.thedeepvoid.block;
 
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.SoundType;
@@ -10,7 +11,7 @@ import net.minecraft.core.BlockPos;
 
 public class GrimBlockBlock extends Block {
 	public GrimBlockBlock() {
-		super(BlockBehaviour.Properties.of().sound(SoundType.METAL).strength(8f, 6f).requiresCorrectToolForDrops());
+		super(BlockBehaviour.Properties.of().instrument(NoteBlockInstrument.BASEDRUM).sound(SoundType.METAL).strength(8f, 6f).requiresCorrectToolForDrops());
 	}
 
 	@Override

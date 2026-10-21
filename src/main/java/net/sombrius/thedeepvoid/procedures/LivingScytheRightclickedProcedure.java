@@ -39,7 +39,7 @@ public class LivingScytheRightclickedProcedure {
 							for (MobEffectInstance mobeffectiterator : _mobEffectContext.getActiveEffects()) {
 								entityiterator.hurt(
 										new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_sickness"))), entity),
-										(float) (((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() * 0.5));
+										(float) (((LivingEntity) entity).getAttribute(net.minecraft.world.entity.ai.attributes.Attributes.ATTACK_DAMAGE).getValue() * 0.8));
 								if (entity instanceof LivingEntity _entity)
 									_entity.setHealth((float) ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) + 0.5));
 							}

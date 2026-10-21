@@ -10,7 +10,9 @@ public class SoulFusedShotProjectileHitsLivingEntityProcedure {
 	public static void execute(Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-			_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.HEXED.get(), 80, 1));
+		if (!(entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TheDeepVoidModMobEffects.HEXED.get()))) {
+			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.HEXED.get(), 100, 1));
+		}
 	}
 }

@@ -1,0 +1,39 @@
+{
+  "display": {
+    "icon": {
+      "item": "the_deep_void:hammer_and_chisel"
+    },
+    "title": {
+      "translate": "advancements.hammering_it_in.title"
+    },
+    "description": {
+      "translate": "advancements.hammering_it_in.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "hammering_it_in_0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "the_deep_void:hammer_and_chisel"
+            ],
+            "count": {
+              "min": 1,
+              "max": 99
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rewards": {
+    "experience": 10
+  },
+  "parent": "the_deep_void:bone_bottom"
+}

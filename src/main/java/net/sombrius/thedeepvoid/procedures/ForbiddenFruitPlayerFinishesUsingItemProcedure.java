@@ -1,10 +1,6 @@
 package net.sombrius.thedeepvoid.procedures;
 
-import net.sombrius.thedeepvoid.init.TheDeepVoidModMobEffects;
-
-import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffectInstance;
 
 public class ForbiddenFruitPlayerFinishesUsingItemProcedure {
 	public static void execute(Entity entity) {
@@ -12,13 +8,6 @@ public class ForbiddenFruitPlayerFinishesUsingItemProcedure {
 			return;
 		if (entity.getPersistentData().getBoolean("tastedForbiddenFruit") == false) {
 			entity.getPersistentData().putBoolean("tastedForbiddenFruit", true);
-		}
-		if (entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(TheDeepVoidModMobEffects.AMBROSIA_WITHDRAWAL.get())) {
-			if (entity instanceof LivingEntity _entity)
-				_entity.removeEffect(TheDeepVoidModMobEffects.AMBROSIA_WITHDRAWAL.get());
-		} else {
-			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-				_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.AMBROSIA_WITHDRAWAL.get(), 400, 0, true, true));
 		}
 	}
 }

@@ -72,7 +72,7 @@ public class SharpshooterItem extends Item {
 
 	@Override
 	public void releaseUsing(ItemStack itemstack, Level world, LivingEntity entity, int time) {
-		SharpshooterStoppedUsingProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), itemstack);
+		SharpshooterStoppedUsingProcedure.execute(world, entity.getX(), entity.getY(), entity.getZ(), entity, itemstack);
 		if (!world.isClientSide() && entity instanceof ServerPlayer player) {
 			float pullingPower = BowItem.getPowerForTime(this.getUseDuration(itemstack) - time);
 			if (pullingPower < 0.1)

@@ -1,6 +1,7 @@
 package net.sombrius.thedeepvoid.procedures;
 
 import net.sombrius.thedeepvoid.init.TheDeepVoidModParticleTypes;
+import net.sombrius.thedeepvoid.init.TheDeepVoidModMobEffects;
 
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -13,6 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerPlayer;
@@ -67,6 +69,8 @@ public class JudgementRightclickedProcedure {
 							_level.sendParticles((SimpleParticleType) (TheDeepVoidModParticleTypes.FLAME_OF_SPITE.get()), (entityiterator.getX()), (entityiterator.getY()), (entityiterator.getZ()), 20, 0.1, 2, 0.1, 0.1);
 						entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:void_energy"))), entity),
 								(float) Math.floor((entityiterator instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) / 5));
+						if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+							_entity.addEffect(new MobEffectInstance(TheDeepVoidModMobEffects.VULNERABLE.get(), 80, 0));
 					}
 				}
 			}

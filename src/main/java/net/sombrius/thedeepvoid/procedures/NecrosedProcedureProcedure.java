@@ -34,29 +34,26 @@ public class NecrosedProcedureProcedure {
 	private static void execute(@Nullable Event event, Entity entity) {
 		if (entity == null)
 			return;
-		if (entity instanceof LivingEntity _livEnt0 && _livEnt0.hasEffect(TheDeepVoidModMobEffects.ROT.get())) {
-			if (EnchantmentHelper.getItemEnchantmentLevel(TheDeepVoidModEnchantments.NECROSED.get(), (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)) != 0) {
-				if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(TheDeepVoidModEnchantments.NECROSED.get()) == 1) {
-					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.WITHER,
-								(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.ROT.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.ROT.get()).getDuration() : 0) * 1.25), 0));
-					if (entity instanceof LivingEntity _entity)
-						_entity.removeEffect(TheDeepVoidModMobEffects.ROT.get());
-				}
-				if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(TheDeepVoidModEnchantments.NECROSED.get()) == 2) {
-					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(
-								new MobEffectInstance(MobEffects.WITHER, entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.ROT.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.ROT.get()).getDuration() : 0, 0));
-					if (entity instanceof LivingEntity _entity)
-						_entity.removeEffect(TheDeepVoidModMobEffects.ROT.get());
-				}
-				if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(TheDeepVoidModEnchantments.NECROSED.get()) == 3) {
-					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-						_entity.addEffect(new MobEffectInstance(MobEffects.WITHER,
-								(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.ROT.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.ROT.get()).getDuration() : 0) / 1.4), 0));
-					if (entity instanceof LivingEntity _entity)
-						_entity.removeEffect(TheDeepVoidModMobEffects.ROT.get());
-				}
+		if (EnchantmentHelper.getItemEnchantmentLevel(TheDeepVoidModEnchantments.NECROSED.get(), (entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY)) != 0
+				&& entity instanceof LivingEntity _livEnt2 && _livEnt2.hasEffect(TheDeepVoidModMobEffects.ROT.get())) {
+			if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(TheDeepVoidModEnchantments.NECROSED.get()) == 1) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.WITHER,
+							(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.ROT.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.ROT.get()).getDuration() : 0) * 1.25), 0));
+				if (entity instanceof LivingEntity _entity)
+					_entity.removeEffect(TheDeepVoidModMobEffects.ROT.get());
+			} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(TheDeepVoidModEnchantments.NECROSED.get()) == 2) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(
+							new MobEffectInstance(MobEffects.WITHER, entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.ROT.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.ROT.get()).getDuration() : 0, 0));
+				if (entity instanceof LivingEntity _entity)
+					_entity.removeEffect(TheDeepVoidModMobEffects.ROT.get());
+			} else if ((entity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getEnchantmentLevel(TheDeepVoidModEnchantments.NECROSED.get()) == 3) {
+				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+					_entity.addEffect(new MobEffectInstance(MobEffects.WITHER,
+							(int) ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(TheDeepVoidModMobEffects.ROT.get()) ? _livEnt.getEffect(TheDeepVoidModMobEffects.ROT.get()).getDuration() : 0) / 1.4), 0));
+				if (entity instanceof LivingEntity _entity)
+					_entity.removeEffect(TheDeepVoidModMobEffects.ROT.get());
 			}
 		}
 	}

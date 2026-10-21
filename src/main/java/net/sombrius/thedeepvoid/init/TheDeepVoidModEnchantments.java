@@ -8,11 +8,13 @@ import net.sombrius.thedeepvoid.enchantment.VoidVisionEnchantment;
 import net.sombrius.thedeepvoid.enchantment.ScourgeOfFleshEnchantment;
 import net.sombrius.thedeepvoid.enchantment.RadianceEnchantment;
 import net.sombrius.thedeepvoid.enchantment.QuickTriggerEnchantment;
+import net.sombrius.thedeepvoid.enchantment.PointBlankEnchantment;
 import net.sombrius.thedeepvoid.enchantment.NecrosedEnchantment;
 import net.sombrius.thedeepvoid.enchantment.MarksmanEnchantment;
 import net.sombrius.thedeepvoid.enchantment.DimensionalBurstEnchantment;
 import net.sombrius.thedeepvoid.enchantment.CurseOfSorrowEnchantment;
 import net.sombrius.thedeepvoid.enchantment.CurseOfGodsBloodEnchantment;
+import net.sombrius.thedeepvoid.enchantment.CurseOfBloodMendingEnchantment;
 import net.sombrius.thedeepvoid.enchantment.CrateCatcherEnchantment;
 import net.sombrius.thedeepvoid.enchantment.ConservationEnchantment;
 import net.sombrius.thedeepvoid.enchantment.BoneWalkerEnchantment;
@@ -42,4 +44,6 @@ public class TheDeepVoidModEnchantments {
 	public static final RegistryObject<Enchantment> QUICK_TRIGGER = REGISTRY.register("quick_trigger", () -> new QuickTriggerEnchantment());
 	public static final RegistryObject<Enchantment> MARKSMAN = REGISTRY.register("marksman", () -> new MarksmanEnchantment());
 	public static final RegistryObject<Enchantment> AKIMBO = REGISTRY.register("akimbo", () -> new AkimboEnchantment());
+	public static final RegistryObject<Enchantment> CURSE_OF_BLOOD_MENDING = REGISTRY.register("curse_of_blood_mending", () -> new CurseOfBloodMendingEnchantment());
+	public static final RegistryObject<Enchantment> POINT_BLANK = REGISTRY.register("point_blank", () -> new PointBlankEnchantment());
 }

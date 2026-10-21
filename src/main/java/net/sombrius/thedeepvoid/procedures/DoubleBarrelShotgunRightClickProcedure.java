@@ -55,7 +55,7 @@ public class DoubleBarrelShotgunRightClickProcedure {
 								}
 							}.getArrow(projectileLevel, entity, (float) (double) DeepVoidConfigConfiguration.DOUBLEBARRELSHOTGUN.get(), 0);
 							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 3, 60);
+							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 3.3, 25);
 							projectileLevel.addFreshEntity(_entityToSpawn);
 						}
 					}
@@ -76,7 +76,7 @@ public class DoubleBarrelShotgunRightClickProcedure {
 								}
 							}.getArrow(projectileLevel, entity, (float) (double) DeepVoidConfigConfiguration.DOUBLEBARRELSHOTGUN.get(), 0);
 							_entityToSpawn.setPos(_shootFrom.getX(), _shootFrom.getEyeY() - 0.1, _shootFrom.getZ());
-							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, 3, 35);
+							_entityToSpawn.shoot(_shootFrom.getLookAngle().x, _shootFrom.getLookAngle().y, _shootFrom.getLookAngle().z, (float) 3.3, 8);
 							projectileLevel.addFreshEntity(_entityToSpawn);
 						}
 					}
