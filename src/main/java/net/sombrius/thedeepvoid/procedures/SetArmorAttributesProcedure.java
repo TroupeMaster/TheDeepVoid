@@ -41,9 +41,9 @@ public class SetArmorAttributesProcedure {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
 						(new AttributeModifier(UUID.fromString("02a154be-a982-4399-bdbf-47feb640e42f"), "bismuth_helmet_speed", (-0.05), AttributeModifier.Operation.MULTIPLY_BASE)));
 			} else if (itemstack.getItem() == TheDeepVoidModItems.GILDED_HELMET.get()) {
-				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, (new AttributeModifier(UUID.fromString("78b47ea4-b067-4e03-9b9a-66fb374edaa7"), "gilded_helmet_health", 3, AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, (new AttributeModifier(UUID.fromString("9d18d951-ffed-419b-b9a5-16b4960d4952"), "gilded_helmet_health", 3, AttributeModifier.Operation.ADDITION)));
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
-						(new AttributeModifier(UUID.fromString("e3e28def-5bc7-4786-bf1b-9c10b2afbe13"), "gilded_helmet_speed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
+						(new AttributeModifier(UUID.fromString("cd4a064c-15e3-4363-ba3f-c4e7775eb2b0"), "gilded_helmet_speed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
 			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.CHEST) {
@@ -59,9 +59,9 @@ public class SetArmorAttributesProcedure {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
 						(new AttributeModifier(UUID.fromString("337de984-8c20-47fe-aaa5-8d7ff1f8db59"), "bismuth_chestplate_speed", (-0.05), AttributeModifier.Operation.MULTIPLY_BASE)));
 			} else if (itemstack.getItem() == TheDeepVoidModItems.GILDED_CHESTPLATE.get()) {
-				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, (new AttributeModifier(UUID.fromString("247c69d1-0a0d-412c-b4f8-73176496ce4a"), "gilded_chestplate_health", 8, AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, (new AttributeModifier(UUID.fromString("385c3632-c224-4ca1-869f-17054ad74ef0"), "gilded_chestplate_health", 8, AttributeModifier.Operation.ADDITION)));
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
-						(new AttributeModifier(UUID.fromString("e3e27def-5cc7-4786-bf1b-9c10b5acbe13"), "gilded_chestplate_speed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
+						(new AttributeModifier(UUID.fromString("4bc8f21b-0529-478f-bed2-deb11650de99"), "gilded_chestplate_speed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
 			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.LEGS) {
@@ -77,9 +77,9 @@ public class SetArmorAttributesProcedure {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
 						(new AttributeModifier(UUID.fromString("0294bfa7-a54b-40e6-b2ad-16284859dbaf"), "bismuth_leggings_speed", (-0.05), AttributeModifier.Operation.MULTIPLY_BASE)));
 			} else if (itemstack.getItem() == TheDeepVoidModItems.GILDED_LEGGINGS.get()) {
-				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, (new AttributeModifier(UUID.fromString("904045a0-b5e2-4166-8573-49cb2c5ea8c3"), "gilded_leggings_health", 6, AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, (new AttributeModifier(UUID.fromString("eef5b9dc-2aaa-44e1-ba81-f73b48f227d3"), "gilded_leggings_health", 6, AttributeModifier.Operation.ADDITION)));
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
-						(new AttributeModifier(UUID.fromString("e3e27def-5bf9-4786-bf1b-9c12b5acbe15"), "gilded_leggings_speed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
+						(new AttributeModifier(UUID.fromString("632374dd-a111-430b-b8f0-9d4769271781"), "gilded_leggings_speed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
 			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.FEET) {
@@ -97,9 +97,9 @@ public class SetArmorAttributesProcedure {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
 						(new AttributeModifier(UUID.fromString("7cf3def5-b317-48c4-9958-9cd0e57bb6a7"), "bismuth_boots_speed", (-0.05), AttributeModifier.Operation.MULTIPLY_BASE)));
 			} else if (itemstack.getItem() == TheDeepVoidModItems.GILDED_BOOTS.get()) {
-				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, (new AttributeModifier(UUID.fromString("c3d42de2-7c59-46fc-923f-bd8fa9399c44"), "gilded_boots_health", 3, AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MAX_HEALTH, (new AttributeModifier(UUID.fromString("f8083ed3-a076-439b-a994-2f25115bee33"), "gilded_boots_health", 3, AttributeModifier.Operation.ADDITION)));
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
-						(new AttributeModifier(UUID.fromString("e3e22cbf-5bf9-4786-bf1b-7c12b6acbe21"), "gilded_boots_speed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
+						(new AttributeModifier(UUID.fromString("3698450a-4b22-4932-af20-efc95fa1c3cc"), "gilded_boots_speed", 0.05, AttributeModifier.Operation.MULTIPLY_BASE)));
 			}
 		}
 	}

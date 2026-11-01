@@ -56,6 +56,7 @@ import net.sombrius.thedeepvoid.item.VoidDaggerItem;
 import net.sombrius.thedeepvoid.item.VoidCloakItem;
 import net.sombrius.thedeepvoid.item.VoidBowItem;
 import net.sombrius.thedeepvoid.item.VengefulLickerHookItem;
+import net.sombrius.thedeepvoid.item.VehemenceItem;
 import net.sombrius.thedeepvoid.item.UmbriumGemItem;
 import net.sombrius.thedeepvoid.item.TombstoneItem;
 import net.sombrius.thedeepvoid.item.ThumperItem;
@@ -320,6 +321,7 @@ import net.sombrius.thedeepvoid.item.ChasmsMusicDiscItem;
 import net.sombrius.thedeepvoid.item.ChantOfTheForgottenItem;
 import net.sombrius.thedeepvoid.item.ChantOfTheForgottenDistortedItem;
 import net.sombrius.thedeepvoid.item.ChainsawItem;
+import net.sombrius.thedeepvoid.item.ChainsOfBindingItem;
 import net.sombrius.thedeepvoid.item.ChainGauntletItem;
 import net.sombrius.thedeepvoid.item.CeremonialDaggerItem;
 import net.sombrius.thedeepvoid.item.CallUponTheHiveItem;
@@ -1414,6 +1416,8 @@ public class TheDeepVoidModItems {
 	public static final RegistryObject<Item> GILDED_CHESTPLATE = REGISTRY.register("gilded_chestplate", () -> new GildedItem.Chestplate());
 	public static final RegistryObject<Item> GILDED_LEGGINGS = REGISTRY.register("gilded_leggings", () -> new GildedItem.Leggings());
 	public static final RegistryObject<Item> GILDED_BOOTS = REGISTRY.register("gilded_boots", () -> new GildedItem.Boots());
+	public static final RegistryObject<Item> VEHEMENCE = REGISTRY.register("vehemence", () -> new VehemenceItem());
+	public static final RegistryObject<Item> CHAINS_OF_BINDING = REGISTRY.register("chains_of_binding", () -> new ChainsOfBindingItem());
 
 	// Start of user code block custom items
 	// End of user code block custom items

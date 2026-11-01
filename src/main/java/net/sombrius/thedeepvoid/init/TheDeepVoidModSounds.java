@@ -229,4 +229,9 @@ public class TheDeepVoidModSounds {
 	public static final RegistryObject<SoundEvent> GRAVEDIGGER_SHOVEL_USE = REGISTRY.register("gravedigger_shovel_use", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "gravedigger_shovel_use")));
 	public static final RegistryObject<SoundEvent> STINGER_LUNGE = REGISTRY.register("stinger_lunge", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "stinger_lunge")));
 	public static final RegistryObject<SoundEvent> SHANK_STEAL_COINS = REGISTRY.register("shank_steal_coins", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "shank_steal_coins")));
+	public static final RegistryObject<SoundEvent> VEHEMENCE_SHOOT = REGISTRY.register("vehemence_shoot", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "vehemence_shoot")));
+	public static final RegistryObject<SoundEvent> VEHEMENCE_EJECT = REGISTRY.register("vehemence_eject", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "vehemence_eject")));
+	public static final RegistryObject<SoundEvent> VEHEMENCE_OPEN = REGISTRY.register("vehemence_open", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "vehemence_open")));
+	public static final RegistryObject<SoundEvent> VEHEMENCE_INSERT = REGISTRY.register("vehemence_insert", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "vehemence_insert")));
+	public static final RegistryObject<SoundEvent> APOSTLE_BIND = REGISTRY.register("apostle_bind", () -> SoundEvent.createVariableRangeEvent(new ResourceLocation("the_deep_void", "apostle_bind")));
 }

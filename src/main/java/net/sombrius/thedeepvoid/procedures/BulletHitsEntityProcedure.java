@@ -2,6 +2,7 @@ package net.sombrius.thedeepvoid.procedures;
 
 import net.sombrius.thedeepvoid.init.TheDeepVoidModItems;
 import net.sombrius.thedeepvoid.init.TheDeepVoidModEnchantments;
+import net.sombrius.thedeepvoid.entity.IronSpikeEntity;
 import net.sombrius.thedeepvoid.entity.BloodthirstyClawsBloodSpitEntity;
 import net.sombrius.thedeepvoid.entity.BloodSpikeEntity;
 
@@ -14,6 +15,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.ShieldItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
@@ -75,9 +77,17 @@ public class BulletHitsEntityProcedure {
 			}
 			if (!immediatesourceentity.level().isClientSide())
 				immediatesourceentity.discard();
+		} else if (immediatesourceentity instanceof IronSpikeEntity && !((entity instanceof LivingEntity _entUseItem52 ? _entUseItem52.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
+				&& EnchantmentHelper.getItemEnchantmentLevel(TheDeepVoidModEnchantments.POINT_BLANK.get(), (sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY)) != 0) {
+			dist = Math.pow(entity.getX() - sourceentity.getX(), 2) + Math.pow(entity.getY() - sourceentity.getY(), 2) + Math.pow(entity.getZ() - sourceentity.getZ(), 2);
+			if (dist <= 5 && immediatesourceentity.getPersistentData().getBoolean("pointBlank") == false) {
+				immediatesourceentity.getPersistentData().putBoolean("pointBlank", true);
+				if (immediatesourceentity instanceof AbstractArrow _abstractArrow)
+					_abstractArrow.setBaseDamage(((immediatesourceentity instanceof AbstractArrow _arrowContext ? _arrowContext.getBaseDamage() : 0.0D) * 1.2));
+			}
 		} else if (immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:bullet")))
 				&& !immediatesourceentity.getType().is(TagKey.create(Registries.ENTITY_TYPE, new ResourceLocation("the_deep_void:nocooldown_bullet")))
-				&& !((entity instanceof LivingEntity _entUseItem53 ? _entUseItem53.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
+				&& !((entity instanceof LivingEntity _entUseItem68 ? _entUseItem68.getUseItem() : ItemStack.EMPTY).getItem() instanceof ShieldItem)
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.HEAD) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_HELMET.get()
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.CHEST) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_CHESTPLATE.get()
 				&& (sourceentity instanceof LivingEntity _entGetArmor ? _entGetArmor.getItemBySlot(EquipmentSlot.LEGS) : ItemStack.EMPTY).getItem() == TheDeepVoidModItems.GUNSLINGER_LEGGINGS.get()

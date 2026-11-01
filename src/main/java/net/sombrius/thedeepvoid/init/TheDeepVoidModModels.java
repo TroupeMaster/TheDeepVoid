@@ -57,6 +57,7 @@ import net.sombrius.thedeepvoid.client.model.Modelgiant_crawler_egg;
 import net.sombrius.thedeepvoid.client.model.Modelfool_eater_rework;
 import net.sombrius.thedeepvoid.client.model.Modelfool_eater_new;
 import net.sombrius.thedeepvoid.client.model.Modelflesh_cube;
+import net.sombrius.thedeepvoid.client.model.Modelfishcage;
 import net.sombrius.thedeepvoid.client.model.Modelferryman;
 import net.sombrius.thedeepvoid.client.model.Modelfalling_corpse;
 import net.sombrius.thedeepvoid.client.model.Modeleverhunger;
@@ -141,6 +142,7 @@ public class TheDeepVoidModModels {
 		event.registerLayerDefinition(Modelmourner_remodel.LAYER_LOCATION, Modelmourner_remodel::createBodyLayer);
 		event.registerLayerDefinition(Modelswarmer.LAYER_LOCATION, Modelswarmer::createBodyLayer);
 		event.registerLayerDefinition(Modeldark_steel_flail.LAYER_LOCATION, Modeldark_steel_flail::createBodyLayer);
+		event.registerLayerDefinition(Modelfishcage.LAYER_LOCATION, Modelfishcage::createBodyLayer);
 		event.registerLayerDefinition(Modelnightmare_remodel.LAYER_LOCATION, Modelnightmare_remodel::createBodyLayer);
 		event.registerLayerDefinition(Modeldark_throw_knife.LAYER_LOCATION, Modeldark_throw_knife::createBodyLayer);
 		event.registerLayerDefinition(Modelbig_shade_arrow.LAYER_LOCATION, Modelbig_shade_arrow::createBodyLayer);

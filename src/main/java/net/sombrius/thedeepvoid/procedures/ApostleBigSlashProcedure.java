@@ -90,10 +90,14 @@ public class ApostleBigSlashProcedure {
 								}
 							}
 							entityiterator.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entityiterator.getYRot() + 180)) * (-0.8)), 0.2, (Math.cos(Math.toRadians(entityiterator.getYRot())) * (-0.8))));
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 0));
 						} else if (!(entityiterator.isShiftKeyDown() && entityiterator.onGround())) {
 							entityiterator.hurt(new DamageSource(world.registryAccess().registryOrThrow(Registries.DAMAGE_TYPE).getHolderOrThrow(ResourceKey.create(Registries.DAMAGE_TYPE, new ResourceLocation("the_deep_void:boss_attack"))), entity),
 									(float) (double) DeepVoidConfigConfiguration.APOSTLEBIGSLASH.get());
 							entityiterator.setDeltaMovement(new Vec3((Math.sin(Math.toRadians(entityiterator.getYRot() + 180)) * (-1)), 0.2, (Math.cos(Math.toRadians(entityiterator.getYRot())) * (-1))));
+							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 40, 1));
 						}
 					}
 				}

@@ -72,8 +72,16 @@ public class WatchingStalkerOnEntityTickUpdateProcedure {
 			if (!entity.level().isClientSide())
 				entity.discard();
 		}
-		if (entity.getPersistentData().getDouble("despawning") >= 180) {
-			entity.getPersistentData().putDouble("despawning", 40);
+		if (entity.getPersistentData().getBoolean("despawning") == true) {
+			TheDeepVoidMod.queueServerWork(35, () -> {
+				if (!(entity == null)) {
+					if (!entity.level().isClientSide())
+						entity.discard();
+				}
+			});
+		}
+		if (entity.getPersistentData().getDouble("despawnTimer") >= 180) {
+			entity.getPersistentData().putDouble("despawnTimer", 40);
 			if (entity instanceof WatchingStalkerEntity) {
 				((WatchingStalkerEntity) entity).setAnimation("animation.stalker_hide");
 			}
@@ -88,7 +96,7 @@ public class WatchingStalkerOnEntityTickUpdateProcedure {
 					entity.discard();
 			});
 		} else {
-			entity.getPersistentData().putDouble("despawning", (entity.getPersistentData().getDouble("despawning") + 1));
+			entity.getPersistentData().putDouble("despawnTimer", (entity.getPersistentData().getDouble("despawnTimer") + 1));
 		}
 	}
 }

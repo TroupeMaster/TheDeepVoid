@@ -167,6 +167,7 @@ public class TheDeepVoidModVariables {
 				clone.playMusicPit = original.playMusicPit;
 				clone.remnantsFog = original.remnantsFog;
 				clone.remnantsColor = original.remnantsColor;
+				clone.checkForOverseers = original.checkForOverseers;
 			}
 		}
 
@@ -470,6 +471,7 @@ public class TheDeepVoidModVariables {
 		public boolean pitShowText = false;
 		public double remnantsFog = 400.0;
 		public double remnantsColor = 24.0;
+		public double checkForOverseers = 0;
 
 		public void syncPlayerVariables(Entity entity) {
 			if (entity instanceof ServerPlayer serverPlayer)
@@ -571,6 +573,7 @@ public class TheDeepVoidModVariables {
 			nbt.putBoolean("pitShowText", pitShowText);
 			nbt.putDouble("remnantsFog", remnantsFog);
 			nbt.putDouble("remnantsColor", remnantsColor);
+			nbt.putDouble("checkForOverseers", checkForOverseers);
 			return nbt;
 		}
 
@@ -669,6 +672,7 @@ public class TheDeepVoidModVariables {
 			pitShowText = nbt.getBoolean("pitShowText");
 			remnantsFog = nbt.getDouble("remnantsFog");
 			remnantsColor = nbt.getDouble("remnantsColor");
+			checkForOverseers = nbt.getDouble("checkForOverseers");
 		}
 	}
 
@@ -786,6 +790,7 @@ public class TheDeepVoidModVariables {
 					variables.pitShowText = message.data.pitShowText;
 					variables.remnantsFog = message.data.remnantsFog;
 					variables.remnantsColor = message.data.remnantsColor;
+					variables.checkForOverseers = message.data.checkForOverseers;
 				}
 			});
 			context.setPacketHandled(true);

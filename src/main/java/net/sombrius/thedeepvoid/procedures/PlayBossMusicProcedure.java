@@ -50,8 +50,6 @@ public class PlayBossMusicProcedure {
 				PlayMusicSlaughterProcedure.execute(world, x, y, z, entity);
 			} else if (((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).MusicPlay).equals("under_the_asylum")) {
 				PlayMusicUnderTheAsylumProcedure.execute(entity);
-			} else if (((entity.getCapability(TheDeepVoidModVariables.PLAYER_VARIABLES_CAPABILITY, null).orElse(new TheDeepVoidModVariables.PlayerVariables())).MusicPlay).equals("dealing_with_the_devil")) {
-				PlayMusicDealingWithTheDevilProcedure.execute(world, x, y, z, entity);
 			}
 		}
 	}

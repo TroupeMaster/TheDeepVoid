@@ -252,6 +252,9 @@ public class UndertakerEntity extends PathfinderMob implements GeoEntity {
 			) {
 				return event.setAndContinue(RawAnimation.begin().thenLoop("animation.undertaker_walk"));
 			}
+			if (this.isDeadOrDying()) {
+				return event.setAndContinue(RawAnimation.begin().thenPlay("animation.undertaker_death"));
+			}
 			return event.setAndContinue(RawAnimation.begin().thenLoop("animation.undertaker_idle"));
 		}
 		return PlayState.STOP;
@@ -279,7 +282,7 @@ public class UndertakerEntity extends PathfinderMob implements GeoEntity {
 	@Override
 	protected void tickDeath() {
 		++this.deathTime;
-		if (this.deathTime == 20) {
+		if (this.deathTime == 47) {
 			this.remove(UndertakerEntity.RemovalReason.KILLED);
 			this.dropExperience();
 		}

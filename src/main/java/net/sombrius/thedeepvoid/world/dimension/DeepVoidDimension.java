@@ -1,5 +1,5 @@
 
-package net.mcreator.thedeepvoid.world.dimension;
+package net.sombrius.thedeepvoid.world.dimension;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

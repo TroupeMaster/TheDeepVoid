@@ -2,6 +2,7 @@ package net.sombrius.thedeepvoid.init;
 
 import software.bernie.geckolib.animatable.GeoItem;
 
+import net.sombrius.thedeepvoid.item.VehemenceItem;
 import net.sombrius.thedeepvoid.item.PerilOffHandItem;
 import net.sombrius.thedeepvoid.item.PerilItem;
 import net.sombrius.thedeepvoid.item.MisanthropyItem;
@@ -163,6 +164,24 @@ public class ItemAnimationFactory {
 					event.player.getOffhandItem().getOrCreateTag().putString("geckoAnim", "");
 					if (event.player.level().isClientSide()) {
 						((PerilOffHandItem) event.player.getOffhandItem().getItem()).animationprocedure = animation;
+					}
+				}
+			}
+			if (mainhandItem.getItem() instanceof VehemenceItem animatable) {
+				animation = mainhandItem.getOrCreateTag().getString("geckoAnim");
+				if (!animation.isEmpty()) {
+					event.player.getMainHandItem().getOrCreateTag().putString("geckoAnim", "");
+					if (event.player.level().isClientSide()) {
+						((VehemenceItem) event.player.getMainHandItem().getItem()).animationprocedure = animation;
+					}
+				}
+			}
+			if (offhandItem.getItem() instanceof VehemenceItem animatable) {
+				animation = offhandItem.getOrCreateTag().getString("geckoAnim");
+				if (!animation.isEmpty()) {
+					event.player.getOffhandItem().getOrCreateTag().putString("geckoAnim", "");
+					if (event.player.level().isClientSide()) {
+						((VehemenceItem) event.player.getOffhandItem().getItem()).animationprocedure = animation;
 					}
 				}
 			}

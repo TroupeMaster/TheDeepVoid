@@ -113,9 +113,11 @@ public class ApostleTickUpdateProcedure {
 					_datEntSetL.getEntityData().set(ApostleBossEntity.DATA_grabbedPlayer, false);
 			}
 		}
+		ApostleCheckForStompProcedure.execute(world, x, y, z, entity);
 		ApostleUsesChainProcedure.execute(world, x, y, z, entity);
 		ApostleDoingSpinProcedure.execute(world, entity);
 		ApostleTickUpdateAdditionsProcedure.execute(world, x, y, z, entity);
+		ApostleIsBoundProcedure.execute(entity);
 		if ((entity instanceof LivingEntity _livEnt ? _livEnt.getHealth() : -1) > 0) {
 			WeaverBossMusicProcedure.execute(world, x, y, z, entity);
 		}

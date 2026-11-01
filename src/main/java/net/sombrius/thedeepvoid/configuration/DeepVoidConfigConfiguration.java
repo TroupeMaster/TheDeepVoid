@@ -76,6 +76,7 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> APOSTLEANGERTIMER;
 	public static final ForgeConfigSpec.ConfigValue<Double> APOSTLECHAINDISTANCE;
 	public static final ForgeConfigSpec.ConfigValue<Double> APOSTLECHAINYDISTANCE;
+	public static final ForgeConfigSpec.ConfigValue<Double> APOSTLESTOMP;
 	public static final ForgeConfigSpec.ConfigValue<Double> THROWERBONESAW;
 	public static final ForgeConfigSpec.ConfigValue<Double> THROWERSPIN;
 	public static final ForgeConfigSpec.ConfigValue<Double> SMASHERSLASH;
@@ -144,6 +145,8 @@ public class DeepVoidConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> DOUBLEBARRELSHOTGUN;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> PERILSHOWADRENALINE;
 	public static final ForgeConfigSpec.ConfigValue<Double> COFFINDOOM;
+	public static final ForgeConfigSpec.ConfigValue<Double> VEHEMENCE;
+	public static final ForgeConfigSpec.ConfigValue<Double> VEHEMENCEPIERCE;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERWHILEMOVING;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIT;
 	public static final ForgeConfigSpec.ConfigValue<Double> HIVEWATCHERSPIKEDURATION;
@@ -247,6 +250,7 @@ public class DeepVoidConfigConfiguration {
 		APOSTLEANGERTIMER = BUILDER.comment("How long does the player need to keep using a shield before angering the apostle (in ticks)").define("ApostleAngerTimer", (double) 200);
 		APOSTLECHAINDISTANCE = BUILDER.comment("How far the player has to be for the apostle to use his chain attack").define("ApostleChainDistance", (double) 28);
 		APOSTLECHAINYDISTANCE = BUILDER.comment("How far the player has to be (y position) for the apostle to use his chain attack").define("ApostleChainYDistance", (double) 4);
+		APOSTLESTOMP = BUILDER.define("ApostleStomp", (double) 12);
 		BUILDER.pop();
 		BUILDER.push("Misanthropic Hivemind");
 		THROWERBONESAW = BUILDER.comment("Damage each tick").define("ThrowerBoneSaw", (double) 6);
@@ -321,6 +325,8 @@ public class DeepVoidConfigConfiguration {
 		DOUBLEBARRELSHOTGUN = BUILDER.comment("Damage (ignores i-frames)").define("DoubleBarrelShotgun", (double) 0.7);
 		PERILSHOWADRENALINE = BUILDER.define("PerilShowAdrenaline", true);
 		COFFINDOOM = BUILDER.define("CoffinDoom", (double) 10);
+		VEHEMENCE = BUILDER.define("Vehemence", (double) 3);
+		VEHEMENCEPIERCE = BUILDER.comment("Damage added to the projectile every time it pierces a target").define("VehemencePierce", (double) 2);
 		BUILDER.pop();
 		BUILDER.push("Hive's Watcher");
 		HIVEWATCHERWHILEMOVING = BUILDER.comment("Damage upon colliding with the boss").define("HiveWatcherWhileMoving", (double) 10);

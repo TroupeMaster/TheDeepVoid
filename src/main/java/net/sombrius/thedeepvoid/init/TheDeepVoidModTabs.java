@@ -535,6 +535,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.RUNE_OF_VOID.get());
 				tabData.accept(TheDeepVoidModItems.BLOOD_EFFIGY.get());
 				tabData.accept(TheDeepVoidModItems.INCENSE_BURNER.get());
+				tabData.accept(TheDeepVoidModItems.CHAINS_OF_BINDING.get());
 				tabData.accept(TheDeepVoidModItems.MEMORY_LOCKET.get());
 				tabData.accept(TheDeepVoidModItems.CALL_UPON_THE_HIVE.get());
 				tabData.accept(TheDeepVoidModItems.LICKER_HOOK.get());
@@ -696,6 +697,7 @@ public class TheDeepVoidModTabs {
 				tabData.accept(TheDeepVoidModItems.PULL_FROM_BELOW.get());
 				tabData.accept(TheDeepVoidModItems.VOODOO_DOLL.get());
 				tabData.accept(TheDeepVoidModItems.DOUBLE_BARREL_SHOTGUN.get());
+				tabData.accept(TheDeepVoidModItems.VEHEMENCE.get());
 				tabData.accept(TheDeepVoidModItems.MISANTHROPY.get());
 				tabData.accept(TheDeepVoidModItems.ELDRITCH_MAW.get());
 				tabData.accept(TheDeepVoidModItems.PERIL.get());

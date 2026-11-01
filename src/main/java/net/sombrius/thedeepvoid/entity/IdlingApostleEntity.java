@@ -195,7 +195,7 @@ public class IdlingApostleEntity extends PathfinderMob implements GeoEntity {
 		Entity entity = this;
 		Level world = this.level();
 
-		IdlingApostleRightClickedOnEntityProcedure.execute(world, entity, sourceentity);
+		IdlingApostleRightClickedOnEntityProcedure.execute(world, x, y, z, entity, sourceentity);
 		return retval;
 	}
 

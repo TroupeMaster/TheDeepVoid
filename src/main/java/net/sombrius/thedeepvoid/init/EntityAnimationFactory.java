@@ -26,7 +26,6 @@ import net.sombrius.thedeepvoid.entity.ShadowHandEntity;
 import net.sombrius.thedeepvoid.entity.SeekerEntity;
 import net.sombrius.thedeepvoid.entity.ScarecrowEntity;
 import net.sombrius.thedeepvoid.entity.SawThrowerEntity;
-import net.sombrius.thedeepvoid.entity.SageOfWrathEntity;
 import net.sombrius.thedeepvoid.entity.RottenCultMemberEntity;
 import net.sombrius.thedeepvoid.entity.RottenCorpseEntity;
 import net.sombrius.thedeepvoid.entity.RootedEntity;
@@ -59,8 +58,6 @@ import net.sombrius.thedeepvoid.entity.HivemindTentaclesEntity;
 import net.sombrius.thedeepvoid.entity.HiveWatcherEntity;
 import net.sombrius.thedeepvoid.entity.HiveFangsEntity;
 import net.sombrius.thedeepvoid.entity.HiveBrainEntity;
-import net.sombrius.thedeepvoid.entity.HarbingerOfCataclysmEntity;
-import net.sombrius.thedeepvoid.entity.HarbingerCloneEntity;
 import net.sombrius.thedeepvoid.entity.GravekeeperEntity;
 import net.sombrius.thedeepvoid.entity.GrabbingHandsEntity;
 import net.sombrius.thedeepvoid.entity.GoreLurkerEntity;
@@ -859,27 +856,6 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof FlailExecutionerEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof HarbingerOfCataclysmEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof HarbingerCloneEntity syncable) {
-				String animation = syncable.getSyncedAnimation();
-				if (!animation.equals("undefined")) {
-					syncable.setAnimation("undefined");
-					syncable.animationprocedure = animation;
-				}
-			}
-			if (event.getEntity() instanceof SageOfWrathEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

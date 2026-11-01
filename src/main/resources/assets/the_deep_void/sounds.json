@@ -2132,5 +2132,50 @@
         "stream": false
       }
     ]
+  },
+  "vehemence_shoot": {
+    "subtitle": "subtitles.vehemence_shoot",
+    "sounds": [
+      {
+        "name": "the_deep_void:vehemence_shoot",
+        "stream": false
+      }
+    ]
+  },
+  "vehemence_eject": {
+    "subtitle": "subtitles.vehemence_eject",
+    "sounds": [
+      {
+        "name": "the_deep_void:vehemence_eject",
+        "stream": false
+      }
+    ]
+  },
+  "vehemence_open": {
+    "subtitle": "subtitles.vehemence_open",
+    "sounds": [
+      {
+        "name": "the_deep_void:vehemence_open",
+        "stream": false
+      }
+    ]
+  },
+  "vehemence_insert": {
+    "subtitle": "subtitles.vehemence_insert",
+    "sounds": [
+      {
+        "name": "the_deep_void:vehemence_insert",
+        "stream": false
+      }
+    ]
+  },
+  "apostle_bind": {
+    "subtitle": "subtitles.apostle_bind",
+    "sounds": [
+      {
+        "name": "the_deep_void:apostle_bind",
+        "stream": false
+      }
+    ]
   }
 }

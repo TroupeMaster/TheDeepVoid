@@ -90,6 +90,10 @@
     "the_deep_void:dark_steel_bismuth_netherite_helmet",
     "the_deep_void:dark_steel_bismuth_netherite_chestplate",
     "the_deep_void:dark_steel_bismuth_netherite_leggings",
-    "the_deep_void:dark_steel_bismuth_netherite_boots"
+    "the_deep_void:dark_steel_bismuth_netherite_boots",
+    "the_deep_void:gilded_helmet",
+    "the_deep_void:gilded_chestplate",
+    "the_deep_void:gilded_leggings",
+    "the_deep_void:gilded_boots"
   ]
 }

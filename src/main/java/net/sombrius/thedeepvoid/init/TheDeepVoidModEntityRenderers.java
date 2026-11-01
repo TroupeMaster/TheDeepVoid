@@ -39,7 +39,6 @@ import net.sombrius.thedeepvoid.client.renderer.ShadeArrowRenderer;
 import net.sombrius.thedeepvoid.client.renderer.SeekerRenderer;
 import net.sombrius.thedeepvoid.client.renderer.ScarecrowRenderer;
 import net.sombrius.thedeepvoid.client.renderer.SawThrowerRenderer;
-import net.sombrius.thedeepvoid.client.renderer.SageOfWrathRenderer;
 import net.sombrius.thedeepvoid.client.renderer.RottenDartProjectileRenderer;
 import net.sombrius.thedeepvoid.client.renderer.RottenCultMemberRenderer;
 import net.sombrius.thedeepvoid.client.renderer.RottenCorpseRenderer;
@@ -78,6 +77,7 @@ import net.sombrius.thedeepvoid.client.renderer.LightRenderer;
 import net.sombrius.thedeepvoid.client.renderer.LickerRenderer;
 import net.sombrius.thedeepvoid.client.renderer.LastingShadowHandRenderer;
 import net.sombrius.thedeepvoid.client.renderer.KunaiRenderer;
+import net.sombrius.thedeepvoid.client.renderer.IronSpikeRenderer;
 import net.sombrius.thedeepvoid.client.renderer.InvisibleRenderer;
 import net.sombrius.thedeepvoid.client.renderer.IdlingApostleRenderer;
 import net.sombrius.thedeepvoid.client.renderer.IchorSpitRenderer;
@@ -88,8 +88,6 @@ import net.sombrius.thedeepvoid.client.renderer.HivemindTentaclesRenderer;
 import net.sombrius.thedeepvoid.client.renderer.HiveWatcherRenderer;
 import net.sombrius.thedeepvoid.client.renderer.HiveFangsRenderer;
 import net.sombrius.thedeepvoid.client.renderer.HiveBrainRenderer;
-import net.sombrius.thedeepvoid.client.renderer.HarbingerOfCataclysmRenderer;
-import net.sombrius.thedeepvoid.client.renderer.HarbingerCloneRenderer;
 import net.sombrius.thedeepvoid.client.renderer.HandSpawnRenderer;
 import net.sombrius.thedeepvoid.client.renderer.GravekeeperRenderer;
 import net.sombrius.thedeepvoid.client.renderer.GrabbingHandsRenderer;
@@ -358,9 +356,6 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.FLAIL_EXECUTIONER.get(), FlailExecutionerRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.EXECUTIONER_DARK_STEEL_FLAIL.get(), ExecutionerDarkSteelFlailRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.PERIL_BULLET_NO_COOLDOWN.get(), ThrownItemRenderer::new);
-		event.registerEntityRenderer(TheDeepVoidModEntities.HARBINGER_OF_CATACLYSM.get(), HarbingerOfCataclysmRenderer::new);
-		event.registerEntityRenderer(TheDeepVoidModEntities.HARBINGER_CLONE.get(), HarbingerCloneRenderer::new);
-		event.registerEntityRenderer(TheDeepVoidModEntities.SAGE_OF_WRATH.get(), SageOfWrathRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.UNDERTAKER.get(), UndertakerRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.DOOMING_COFFIN.get(), DoomingCoffinRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.THROWN_NOXIOUS_BREW.get(), ThrownItemRenderer::new);
@@ -368,5 +363,6 @@ public class TheDeepVoidModEntityRenderers {
 		event.registerEntityRenderer(TheDeepVoidModEntities.AMBROSIA_CLOUD.get(), AmbrosiaCloudRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.WATCHER_TEETH.get(), WatcherTeethRenderer::new);
 		event.registerEntityRenderer(TheDeepVoidModEntities.WATCHER_BLOCKADE.get(), WatcherBlockadeRenderer::new);
+		event.registerEntityRenderer(TheDeepVoidModEntities.IRON_SPIKE.get(), IronSpikeRenderer::new);
 	}
 }

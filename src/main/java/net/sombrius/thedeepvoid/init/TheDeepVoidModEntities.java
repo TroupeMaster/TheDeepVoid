@@ -50,7 +50,6 @@ import net.sombrius.thedeepvoid.entity.ShadeArrowEntity;
 import net.sombrius.thedeepvoid.entity.SeekerEntity;
 import net.sombrius.thedeepvoid.entity.ScarecrowEntity;
 import net.sombrius.thedeepvoid.entity.SawThrowerEntity;
-import net.sombrius.thedeepvoid.entity.SageOfWrathEntity;
 import net.sombrius.thedeepvoid.entity.RottenDartProjectileEntity;
 import net.sombrius.thedeepvoid.entity.RottenCultMemberEntity;
 import net.sombrius.thedeepvoid.entity.RottenCorpseEntity;
@@ -95,6 +94,7 @@ import net.sombrius.thedeepvoid.entity.LickerEntity;
 import net.sombrius.thedeepvoid.entity.LavenditeShardProjEntity;
 import net.sombrius.thedeepvoid.entity.LastingShadowHandEntity;
 import net.sombrius.thedeepvoid.entity.KunaiEntity;
+import net.sombrius.thedeepvoid.entity.IronSpikeEntity;
 import net.sombrius.thedeepvoid.entity.InvisibleEntity;
 import net.sombrius.thedeepvoid.entity.IdlingApostleEntity;
 import net.sombrius.thedeepvoid.entity.IchorSpitEntity;
@@ -108,8 +108,6 @@ import net.sombrius.thedeepvoid.entity.HivemindTentaclesEntity;
 import net.sombrius.thedeepvoid.entity.HiveWatcherEntity;
 import net.sombrius.thedeepvoid.entity.HiveFangsEntity;
 import net.sombrius.thedeepvoid.entity.HiveBrainEntity;
-import net.sombrius.thedeepvoid.entity.HarbingerOfCataclysmEntity;
-import net.sombrius.thedeepvoid.entity.HarbingerCloneEntity;
 import net.sombrius.thedeepvoid.entity.HandSpawnEntity;
 import net.sombrius.thedeepvoid.entity.GrimHookEntity;
 import net.sombrius.thedeepvoid.entity.GreaterXpBottleEntity;
@@ -728,17 +726,6 @@ public class TheDeepVoidModEntities {
 					.setCustomClientFactory(ExecutionerDarkSteelFlailEntity::new).fireImmune().sized(1f, 1f));
 	public static final RegistryObject<EntityType<PerilBulletNoCooldownEntity>> PERIL_BULLET_NO_COOLDOWN = register("peril_bullet_no_cooldown", EntityType.Builder.<PerilBulletNoCooldownEntity>of(PerilBulletNoCooldownEntity::new, MobCategory.MISC)
 			.setCustomClientFactory(PerilBulletNoCooldownEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
-	public static final RegistryObject<EntityType<HarbingerOfCataclysmEntity>> HARBINGER_OF_CATACLYSM = register("harbinger_of_cataclysm",
-			EntityType.Builder.<HarbingerOfCataclysmEntity>of(HarbingerOfCataclysmEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(78).setUpdateInterval(3)
-					.setCustomClientFactory(HarbingerOfCataclysmEntity::new)
-
-					.sized(0.8f, 3.12f));
-	public static final RegistryObject<EntityType<HarbingerCloneEntity>> HARBINGER_CLONE = register("harbinger_clone", EntityType.Builder.<HarbingerCloneEntity>of(HarbingerCloneEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true)
-			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(HarbingerCloneEntity::new).fireImmune().sized(0.8f, 3.12f));
-	public static final RegistryObject<EntityType<SageOfWrathEntity>> SAGE_OF_WRATH = register("sage_of_wrath",
-			EntityType.Builder.<SageOfWrathEntity>of(SageOfWrathEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(78).setUpdateInterval(3).setCustomClientFactory(SageOfWrathEntity::new)
-
-					.sized(0.8f, 2.875f));
 	public static final RegistryObject<EntityType<UndertakerEntity>> UNDERTAKER = register("undertaker",
 			EntityType.Builder.<UndertakerEntity>of(UndertakerEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(UndertakerEntity::new)
 
@@ -755,6 +742,8 @@ public class TheDeepVoidModEntities {
 			.setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(WatcherTeethEntity::new).fireImmune().sized(1f, 1f));
 	public static final RegistryObject<EntityType<WatcherBlockadeEntity>> WATCHER_BLOCKADE = register("watcher_blockade", EntityType.Builder.<WatcherBlockadeEntity>of(WatcherBlockadeEntity::new, MobCategory.MONSTER)
 			.setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(WatcherBlockadeEntity::new).fireImmune().sized(1f, 3f));
+	public static final RegistryObject<EntityType<IronSpikeEntity>> IRON_SPIKE = register("iron_spike",
+			EntityType.Builder.<IronSpikeEntity>of(IronSpikeEntity::new, MobCategory.MISC).setCustomClientFactory(IronSpikeEntity::new).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(1).sized(0.5f, 0.5f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -894,9 +883,6 @@ public class TheDeepVoidModEntities {
 			DarkSteelFlailEntity.init();
 			FlailExecutionerEntity.init();
 			ExecutionerDarkSteelFlailEntity.init();
-			HarbingerOfCataclysmEntity.init();
-			HarbingerCloneEntity.init();
-			SageOfWrathEntity.init();
 			UndertakerEntity.init();
 			DoomingCoffinEntity.init();
 			AmbrosiaCloudEntity.init();
@@ -1038,9 +1024,6 @@ public class TheDeepVoidModEntities {
 		event.put(DARK_STEEL_FLAIL.get(), DarkSteelFlailEntity.createAttributes().build());
 		event.put(FLAIL_EXECUTIONER.get(), FlailExecutionerEntity.createAttributes().build());
 		event.put(EXECUTIONER_DARK_STEEL_FLAIL.get(), ExecutionerDarkSteelFlailEntity.createAttributes().build());
-		event.put(HARBINGER_OF_CATACLYSM.get(), HarbingerOfCataclysmEntity.createAttributes().build());
-		event.put(HARBINGER_CLONE.get(), HarbingerCloneEntity.createAttributes().build());
-		event.put(SAGE_OF_WRATH.get(), SageOfWrathEntity.createAttributes().build());
 		event.put(UNDERTAKER.get(), UndertakerEntity.createAttributes().build());
 		event.put(DOOMING_COFFIN.get(), DoomingCoffinEntity.createAttributes().build());
 		event.put(AMBROSIA_CLOUD.get(), AmbrosiaCloudEntity.createAttributes().build());
